@@ -28,6 +28,8 @@ _2. 过往更新_
 </note>
 #+END_EXPORT
 
+- 变更了项目结构，添加部署脚本，方便直接部署在 Github/Gitee Pages （2021-03-01 Mon 14:36）
+-----
 - 新增 =user.config.js= ，抽离一些配置项（微博、GitHub、Author 等）（2020-07-26 Sun 22:36）
 - 新增执行脚本 =copy.sh= ，用来在 Emacs 外部同步拷贝图片、JS、CSS 等资源文件（2020-05-29 Fri 21:04）
 - 新增执行脚本 =update.sh= ，原因详见 [[*%E5%85%B3%E4%BA%8E%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC][关于执行脚本]]  (2020-05-26 Tue 16:45)
@@ -60,7 +62,7 @@ _1. 克隆项目到本地家目录_
   cd ~
 
   # 克隆项目到家目录
-  git clone https://github.com/loveminimal/site.git site
+  git clone -b source --depth=1 https://github.com/loveminimal/loveminimal.github.io.git site
 #+END_SRC
 
 _*2. 克隆 Emacs 配置到家目录_

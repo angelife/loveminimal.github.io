@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:44 -->
+<!-- 2021-03-01 Mon 14:52 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Org To Site Tutor</title>
@@ -97,6 +97,10 @@ Emacs China 中的描述，比较散乱，这里整理一下。我尽量把所�
 </note>
 
 <ul class="org-ul">
+<li>变更了项目结构，添加部署脚本，方便直接部署在 Github/Gitee Pages （2021-03-01 Mon 14:36）</li>
+</ul>
+<hr>
+<ul class="org-ul">
 <li>新增 <code>user.config.js</code> ，抽离一些配置项（微博、GitHub、Author 等）（2020-07-26 Sun 22:36）</li>
 <li>新增执行脚本 <code>copy.sh</code> ，用来在 Emacs 外部同步拷贝图片、JS、CSS 等资源文件（2020-05-29 Fri 21:04）</li>
 <li>新增执行脚本 <code>update.sh</code> ，原因详见 <a href="#orgcd2e5d7">关于执行脚本</a>  (2020-05-26 Tue 16:45)</li>
@@ -137,7 +141,7 @@ Emacs China 中的描述，比较散乱，这里整理一下。我尽量把所�
 <span class="linenr">6: </span><span style="color: #a626a4;">cd</span> ~
 <span class="linenr">7: </span>
 <span class="linenr">8: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#20811;&#38534;&#39033;&#30446;&#21040;&#23478;&#30446;&#24405;</span>
-<span class="linenr">9: </span>git clone https://github.com/loveminimal/site.git site
+<span class="linenr">9: </span>git clone -b source --depth=1 https://github.com/loveminimal/loveminimal.github.io.git site
 </pre>
 </div>
 
@@ -829,7 +833,7 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 <div id="postamble" class="status">
 <p class="date">Date: 2020-01-01 Wed 14:26</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:44</p>
+<p class="date">Created: 2021-03-01 Mon 14:52</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

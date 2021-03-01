@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-25 Thu 09:41 -->
+<!-- 2021-03-01 Mon 18:02 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Git</title>
@@ -18,10 +18,13 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgcd3dd77">序言</a></li>
+<li><a href="#orgc53438a">序言</a></li>
+<li><a href="#org8c214c1">设置与配置</a></li>
+<li><a href="#org2527a3d">获取与创建项目</a></li>
+<li><a href="#orgecf10db">快照基础</a></li>
 <li><a href="#org9de500d">FAQ</a>
 <ul>
-<li><a href="#orgfee0b4b">推送指定分支到远程分支上</a></li>
+<li><a href="#org6c018b1">推送指定分支到远程分支上</a></li>
 </ul>
 </li>
 </ul>
@@ -31,9 +34,9 @@
 → 深度学习 Git ，可以参考官网挂出的这本 <a href="https://git-scm.com/book/zh/v2">《Pro Git》</a> 。
 </p>
 
-<div id="outline-container-orgcd3dd77" class="outline-2">
-<h2 id="orgcd3dd77">序言</h2>
-<div class="outline-text-2" id="text-orgcd3dd77">
+<div id="outline-container-orgc53438a" class="outline-2">
+<h2 id="orgc53438a">序言</h2>
+<div class="outline-text-2" id="text-orgc53438a">
 <p>
 <b>Git 是一个神奇的工具，对，神奇的！！！</b>
 </p>
@@ -52,13 +55,91 @@ title=""
 </div>
 </div>
 
+<div id="outline-container-org8c214c1" class="outline-2">
+<h2 id="org8c214c1">设置与配置</h2>
+<div class="outline-text-2" id="text-org8c214c1">
+<p>
+有两个十分常用的命令： <code>config</code> 和 <code>help</code> 。
+</p>
+
+<p>
+在开始使用 Git 之前，我们用它来指定我们的名字，邮箱地址和编辑器偏好，如下：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>$ git config --global user.name <span style="color: #50a14f;">"John Doe"</span>
+<span class="linenr">2: </span>$ git config --global user.email johndoe@example.com
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2527a3d" class="outline-2">
+<h2 id="org2527a3d">获取与创建项目</h2>
+<div class="outline-text-2" id="text-org2527a3d">
+<p>
+有几种方式获取一个 Git 仓库。 一种是从网络上或者其他地方拷贝一个现有的仓库（ <code>git clone</code> ），另一种就是在一个目录中创建一个新的仓库（ <code>git init</code> ）。
+</p>
+
+<p>
+<code>git clone</code> 实际上是一个封装了其他几个命令的命令。过程如下：
+</p>
+<ol class="org-ol">
+<li>它创建了一个新目录，切换到新的目录，</li>
+<li>然后 <code>git init</code> 来初始化一个空的 Git 仓库，</li>
+<li>然后为你指定的 URL 添加一个（默认名称为 <code>origin</code> 的）远程仓库（ <code>git remote add</code> ），</li>
+<li>再针对远程仓库执行 <code>git fetch</code> ，</li>
+<li>最后通过 <code>git checkout</code> 将远程仓库的最新提交检出到本地的工作目录。</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgecf10db" class="outline-2">
+<h2 id="orgecf10db">快照基础</h2>
+<div class="outline-text-2" id="text-orgecf10db">
+<p>
+……
+</p>
+
+<p>
+我们只看一些很有趣，但以前没有注意的命令。
+</p>
+
+<p>
+<span class="underline">1. 交互式暂存</span>
+</p>
+
+<p>
+运行 <code>git add [-i|--inteactive]</code> ，Git 将会进入一个交互式终端模式，显示类似下面的东西：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr"> 1: </span>$ git add -i
+<span class="linenr"> 2: </span>           staged     unstaged path
+<span class="linenr"> 3: </span>  1:    unchanged        +0/-1 TODO
+<span class="linenr"> 4: </span>  2:    unchanged        +1/-1 index.html
+<span class="linenr"> 5: </span>  3:    unchanged        +5/-1 lib/simplegit.rb
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span><span style="color: #50a14f;">\*</span>** Commands ***
+<span class="linenr"> 8: </span>  1: <span style="color: #4078f2;">[</span>s<span style="color: #4078f2;">]</span>tatus     2: <span style="color: #4078f2;">[</span>u<span style="color: #4078f2;">]</span>pdate      3: <span style="color: #4078f2;">[</span>r<span style="color: #4078f2;">]</span>evert     4: <span style="color: #4078f2;">[</span>a<span style="color: #4078f2;">]</span>dd untracked
+<span class="linenr"> 9: </span>  5: <span style="color: #4078f2;">[</span>p<span style="color: #4078f2;">]</span>atch      6: <span style="color: #4078f2;">[</span>d<span style="color: #4078f2;">]</span>iff        7: <span style="color: #4078f2;">[</span>q<span style="color: #4078f2;">]</span>uit       8: <span style="color: #4078f2;">[</span>h<span style="color: #4078f2;">]</span>elp
+<span class="linenr">10: </span>What now&gt;
+</pre>
+</div>
+
+<p>
+它将暂存的修改列在左侧，未暂存的修改列在右侧。
+</p>
+</div>
+</div>
+
 <div id="outline-container-org9de500d" class="outline-2">
 <h2 id="org9de500d">FAQ</h2>
 <div class="outline-text-2" id="text-org9de500d">
 </div>
-<div id="outline-container-orgfee0b4b" class="outline-3">
-<h3 id="orgfee0b4b">推送指定分支到远程分支上</h3>
-<div class="outline-text-3" id="text-orgfee0b4b">
+<div id="outline-container-org6c018b1" class="outline-3">
+<h3 id="org6c018b1">推送指定分支到远程分支上</h3>
+<div class="outline-text-3" id="text-org6c018b1">
 <p>
 如果你本地的分支名称和远程名称相同，则使用以下命令：
 </p>
@@ -83,7 +164,7 @@ title=""
 <div id="postamble" class="status">
 <p class="date">Date: 2020-11-20 Fri 14:59</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-25 Thu 09:41</p>
+<p class="date">Created: 2021-03-01 Mon 18:02</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
