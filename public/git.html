@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-03-01 Mon 18:02 -->
+<!-- 2021-03-01 Mon 18:12 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Git</title>
@@ -130,6 +130,42 @@ title=""
 <p>
 它将暂存的修改列在左侧，未暂存的修改列在右侧。
 </p>
+
+<p>
+<span class="underline">2. 检查文件状态</span>
+</p>
+
+<p>
+使用 <code>git status [-s|--short]</code> 用来输出简洁的文件描述形式。
+</p>
+
+<p>
+<span class="underline">3. git difftool</span>
+</p>
+
+<p>
+<code>git difftool</code> 可以用来简单地启动一个外部工具来为你展示两棵树之间的差异。
+</p>
+
+<p>
+<span class="underline">4. git commit</span>
+</p>
+
+<p>
+<code>git commit</code> 命令将所有通过 <code>git add</code> 暂存的文件内容在数据库中创建一个持久的快照， <b>然后将当前分支上的分支指针移到其之上</b> 。
+</p>
+
+<p>
+可以通过使用 <code>-a</code> 标志来跳过 <code>git add</code> 这一步，及如何使用 <code>-m</code> 标志通过命令行而不启动一个编辑器来传递提交信息。
+</p>
+
+<p>
+有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行 <code>git commit --amend</code> 选项的提交命令来重新提交。
+</p>
+
+<p>
+这个命令会将暂存区中的文件提交。 如果自上次提交以来你还未做任何修改（例如，在上次提交后马上执行了此命令）， 那么快照会保持不变，而你所修改的只是提交信息。
+</p>
 </div>
 </div>
 
@@ -164,7 +200,7 @@ title=""
 <div id="postamble" class="status">
 <p class="date">Date: 2020-11-20 Fri 14:59</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-03-01 Mon 18:02</p>
+<p class="date">Created: 2021-03-01 Mon 18:12</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
