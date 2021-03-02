@@ -1,5 +1,5 @@
 #+DATE: <2021-02-26 Fri 11:11>
-#+TITLE: Shell Scripts
+#+TITLE: Shell
 
 ** 参考资源
 
