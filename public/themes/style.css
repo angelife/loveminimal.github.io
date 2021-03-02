@@ -166,6 +166,7 @@ li > ol {
     font-size: 0.32rem;
 
     background: linear-gradient(to right bottom, #369, #333);
+    background: linear-gradient(to bottom, #77a2d3, rgb(37, 74, 110));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -179,7 +180,7 @@ h6 {
     margin: 0.16rem 0;
     font-size: 0.18rem;
 
-    background: linear-gradient(to bottom, #668bb6, #369);
+    background: linear-gradient(to bottom, #77a2d3, rgb(37, 74, 110));
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -193,14 +194,14 @@ h3 {
 }
 
 h4 {
-    background: linear-gradient(to bottom, #669999, #336666);
+    background: linear-gradient(to bottom, #7fbebe, #152b2b);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
 }
 
 h5 {
-    background: linear-gradient(to bottom, #cccc66, #339933);
+    background: linear-gradient(to bottom, #919148, #339933);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -213,13 +214,13 @@ h2:before {
     content: '🐬 ';
 }
 h3:before {
-    content: '❤ ';
+    content: '⚡ ';
 }
 h4:before {
-    content: '🍁 ';
+    content: '🚩 ';
 }
 h5:before {
-    content: '🍀 ';
+    content: '🍁 ';
 }
 
 h2 code:last-child,
