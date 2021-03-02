@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-03-01 Mon 18:12 -->
+<!-- 2021-03-02 Tue 14:13 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Git</title>
@@ -19,10 +19,29 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#orgc53438a">序言</a></li>
-<li><a href="#org8c214c1">设置与配置</a></li>
-<li><a href="#org2527a3d">获取与创建项目</a></li>
-<li><a href="#orgecf10db">快照基础</a></li>
-<li><a href="#org9de500d">FAQ</a>
+<li><a href="#org3a6ec6b">命令备忘录</a>
+<ul>
+<li><a href="#org2a3de9d">配置</a></li>
+<li><a href="#org9ef3cb3">获取帮助</a></li>
+<li><a href="#org6183e9a">获取 Git 仓库</a></li>
+<li><a href="#org5f4f17d">远程仓库</a>
+<ul>
+<li><a href="#org9152992">查看远程仓库</a></li>
+<li><a href="#orgbc9b877">添加远程仓库</a></li>
+<li><a href="#org73adc00">从远程仓库中抓取与拉取</a></li>
+<li><a href="#org37d3df5">查看某个远程仓库</a></li>
+<li><a href="#orgb0f5deb">远程仓库的重命名与移除</a></li>
+</ul>
+</li>
+<li><a href="#org44684a9">标签 Tag</a>
+<ul>
+<li><a href="#org01c9ddb">列出标签</a></li>
+<li><a href="#orgeacb0e3">创建标签</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org6f2a2f9">WIKI</a>
 <ul>
 <li><a href="#org6c018b1">推送指定分支到远程分支上</a></li>
 </ul>
@@ -55,123 +74,229 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org8c214c1" class="outline-2">
-<h2 id="org8c214c1">设置与配置</h2>
-<div class="outline-text-2" id="text-org8c214c1">
-<p>
-有两个十分常用的命令： <code>config</code> 和 <code>help</code> 。
-</p>
+<div id="outline-container-org3a6ec6b" class="outline-2">
+<h2 id="org3a6ec6b">命令备忘录</h2>
+<div class="outline-text-2" id="text-org3a6ec6b">
+<essay>
+要完整地精通 Git ，注定旷日持久。实际上，我们在日常工作中并不需要这么多，这个板块我们用来列出常用的一些命令。
+</essay>
+</div>
 
+<div id="outline-container-org2a3de9d" class="outline-3">
+<h3 id="org2a3de9d">配置</h3>
+<div class="outline-text-3" id="text-org2a3de9d">
 <p>
-在开始使用 Git 之前，我们用它来指定我们的名字，邮箱地址和编辑器偏好，如下：
+Git 自带一个 <code>git config</code> 的工具来帮助设置控制 Git 外观和行为的配置变量。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span class="linenr">1: </span>$ git config --global user.name <span style="color: #50a14f;">"John Doe"</span>
-<span class="linenr">2: </span>$ git config --global user.email johndoe@example.com
+<pre class="src src-sh"><span class="linenr">1: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">~/.gitconfig &#25110; ~/.config/git/config</span>
+<span class="linenr">2: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#21482;&#38024;&#23545;&#24403;&#21069;&#29992;&#25143;</span>
+<span class="linenr">3: </span>$ git config --global user.name <span style="color: #50a14f;">"John Doe"</span>
+<span class="linenr">4: </span>$ git config --global user.email johndoe@example.com
+<span class="linenr">5: </span>
+<span class="linenr">6: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#20854;&#20182;&#22914; --local &#38024;&#23545;&#24403;&#21069;&#20179;&#24211; --system &#38024;&#23545;&#31995;&#32479;&#36890;&#29992;&#37197;&#32622;</span>
+</pre>
+</div>
+
+<p>
+如果想要检查你的配置，可以使用 <code>git config --list</code> 命令来列出所有 Git 当时能找到的配置。
+</p>
+
+<p>
+<b>*ssh-keygen</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>$ ssh-keygen -t rsa -C <span style="color: #50a14f;">"loveminimal@163.com"</span>
+<span class="linenr">2: </span>$ cd ~/.ssh
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org2527a3d" class="outline-2">
-<h2 id="org2527a3d">获取与创建项目</h2>
-<div class="outline-text-2" id="text-org2527a3d">
+<div id="outline-container-org9ef3cb3" class="outline-3">
+<h3 id="org9ef3cb3">获取帮助</h3>
+<div class="outline-text-3" id="text-org9ef3cb3">
 <p>
-有几种方式获取一个 Git 仓库。 一种是从网络上或者其他地方拷贝一个现有的仓库（ <code>git clone</code> ），另一种就是在一个目录中创建一个新的仓库（ <code>git init</code> ）。
-</p>
-
-<p>
-<code>git clone</code> 实际上是一个封装了其他几个命令的命令。过程如下：
-</p>
-<ol class="org-ol">
-<li>它创建了一个新目录，切换到新的目录，</li>
-<li>然后 <code>git init</code> 来初始化一个空的 Git 仓库，</li>
-<li>然后为你指定的 URL 添加一个（默认名称为 <code>origin</code> 的）远程仓库（ <code>git remote add</code> ），</li>
-<li>再针对远程仓库执行 <code>git fetch</code> ，</li>
-<li>最后通过 <code>git checkout</code> 将远程仓库的最新提交检出到本地的工作目录。</li>
-</ol>
-</div>
-</div>
-
-<div id="outline-container-orgecf10db" class="outline-2">
-<h2 id="orgecf10db">快照基础</h2>
-<div class="outline-text-2" id="text-orgecf10db">
-<p>
-……
-</p>
-
-<p>
-我们只看一些很有趣，但以前没有注意的命令。
-</p>
-
-<p>
-<span class="underline">1. 交互式暂存</span>
-</p>
-
-<p>
-运行 <code>git add [-i|--inteactive]</code> ，Git 将会进入一个交互式终端模式，显示类似下面的东西：
+若你使用 Git 时需要获取帮助，有三种等价的方法可以找到 Git 命令的综合手册（manpage）：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span class="linenr"> 1: </span>$ git add -i
-<span class="linenr"> 2: </span>           staged     unstaged path
-<span class="linenr"> 3: </span>  1:    unchanged        +0/-1 TODO
-<span class="linenr"> 4: </span>  2:    unchanged        +1/-1 index.html
-<span class="linenr"> 5: </span>  3:    unchanged        +5/-1 lib/simplegit.rb
-<span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span><span style="color: #50a14f;">\*</span>** Commands ***
-<span class="linenr"> 8: </span>  1: <span style="color: #4078f2;">[</span>s<span style="color: #4078f2;">]</span>tatus     2: <span style="color: #4078f2;">[</span>u<span style="color: #4078f2;">]</span>pdate      3: <span style="color: #4078f2;">[</span>r<span style="color: #4078f2;">]</span>evert     4: <span style="color: #4078f2;">[</span>a<span style="color: #4078f2;">]</span>dd untracked
-<span class="linenr"> 9: </span>  5: <span style="color: #4078f2;">[</span>p<span style="color: #4078f2;">]</span>atch      6: <span style="color: #4078f2;">[</span>d<span style="color: #4078f2;">]</span>iff        7: <span style="color: #4078f2;">[</span>q<span style="color: #4078f2;">]</span>uit       8: <span style="color: #4078f2;">[</span>h<span style="color: #4078f2;">]</span>elp
-<span class="linenr">10: </span>What now&gt;
+<pre class="src src-sh"><span class="linenr">1: </span>$ git help &lt;verb&gt;
+<span class="linenr">2: </span>$ git &lt;verb&gt; --help
+<span class="linenr">3: </span>$ man git-&lt;verb&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6183e9a" class="outline-3">
+<h3 id="org6183e9a">获取 Git 仓库</h3>
+<div class="outline-text-3" id="text-org6183e9a">
+<p>
+通常有两种获取 Git 项目仓库的方式：
+</p>
+<ul class="org-ul">
+<li>将尚未进行版本控制的本地目录转换为 Git 仓库（ <code>git init</code> ）；</li>
+<li>从其它服务器克隆一个已存在的 Git 仓库（ <code>git clone</code> ）。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5f4f17d" class="outline-3">
+<h3 id="org5f4f17d">远程仓库</h3>
+<div class="outline-text-3" id="text-org5f4f17d">
+<p>
+远程仓库是指托管在因特网或其他网络中的你的项目的版本库。
+</p>
+
+<note>
+词语“远程”未必表示仓库在网络或互联网上的其它位置，而只是表示它在别处。
+</note>
+</div>
+
+<div id="outline-container-org9152992" class="outline-4">
+<h4 id="org9152992">查看远程仓库</h4>
+<div class="outline-text-4" id="text-org9152992">
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>$ git remote -v
+<span class="linenr">2: </span>origin  https://github.com/schacon/ticgit <span style="color: #4078f2;">(</span>fetch<span style="color: #4078f2;">)</span>
+<span class="linenr">3: </span>origin  https://github.com/schacon/ticgit <span style="color: #4078f2;">(</span>push<span style="color: #4078f2;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgbc9b877" class="outline-4">
+<h4 id="orgbc9b877">添加远程仓库</h4>
+<div class="outline-text-4" id="text-orgbc9b877">
+<p>
+运行 <code>git remote add &lt;shortname&gt; &lt;url&gt;</code> 添加一个新的远程 Git 仓库，同时指定一个方便使用的简写：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>$ git remote
+<span class="linenr">2: </span>origin
+<span class="linenr">3: </span>$ git remote add pb https://github.com/paulboone/ticgit
+<span class="linenr">4: </span>$ git remote -v
+<span class="linenr">5: </span>origin  https://github.com/schacon/ticgit <span style="color: #4078f2;">(</span>fetch<span style="color: #4078f2;">)</span>
+<span class="linenr">6: </span>origin  https://github.com/schacon/ticgit <span style="color: #4078f2;">(</span>push<span style="color: #4078f2;">)</span>
+<span class="linenr">7: </span>pb      https://github.com/paulboone/ticgit <span style="color: #4078f2;">(</span>fetch<span style="color: #4078f2;">)</span>
+<span class="linenr">8: </span>pb      https://github.com/paulboone/ticgit <span style="color: #4078f2;">(</span>push<span style="color: #4078f2;">)</span>
 </pre>
 </div>
 
 <p>
-它将暂存的修改列在左侧，未暂存的修改列在右侧。
-</p>
-
-<p>
-<span class="underline">2. 检查文件状态</span>
-</p>
-
-<p>
-使用 <code>git status [-s|--short]</code> 用来输出简洁的文件描述形式。
-</p>
-
-<p>
-<span class="underline">3. git difftool</span>
-</p>
-
-<p>
-<code>git difftool</code> 可以用来简单地启动一个外部工具来为你展示两棵树之间的差异。
-</p>
-
-<p>
-<span class="underline">4. git commit</span>
-</p>
-
-<p>
-<code>git commit</code> 命令将所有通过 <code>git add</code> 暂存的文件内容在数据库中创建一个持久的快照， <b>然后将当前分支上的分支指针移到其之上</b> 。
-</p>
-
-<p>
-可以通过使用 <code>-a</code> 标志来跳过 <code>git add</code> 这一步，及如何使用 <code>-m</code> 标志通过命令行而不启动一个编辑器来传递提交信息。
-</p>
-
-<p>
-有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，可以运行 <code>git commit --amend</code> 选项的提交命令来重新提交。
-</p>
-
-<p>
-这个命令会将暂存区中的文件提交。 如果自上次提交以来你还未做任何修改（例如，在上次提交后马上执行了此命令）， 那么快照会保持不变，而你所修改的只是提交信息。
+现在你可以在命令行中使用字符串 <code>pb</code> 来代替整个 URL。 例如，如果你想拉取 Paul 的仓库中有但你没有的信息，可以运行 <code>git fetch pb</code> 。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org9de500d" class="outline-2">
-<h2 id="org9de500d">FAQ</h2>
-<div class="outline-text-2" id="text-org9de500d">
+<div id="outline-container-org73adc00" class="outline-4">
+<h4 id="org73adc00">从远程仓库中抓取与拉取</h4>
+<div class="outline-text-4" id="text-org73adc00">
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>$ git fetch &lt;remote&gt;
+</pre>
+</div>
+
+<p>
+必须注意 <code>git fetch</code> 命令只会将数据下载到你的本地仓库——它并不会自动合并或修改你当前的工作。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org37d3df5" class="outline-4">
+<h4 id="org37d3df5">查看某个远程仓库</h4>
+<div class="outline-text-4" id="text-org37d3df5">
+<p>
+如果想要查看某一个远程仓库的更多信息，可以使用 <code>git remote show &lt;remote&gt;</code> 命令。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr"> 1: </span>$ git remote show origin
+<span class="linenr"> 2: </span><span style="color: #50a14f;">\*</span> remote origin
+<span class="linenr"> 3: </span>  Fetch URL: https://github.com/schacon/ticgit
+<span class="linenr"> 4: </span>  Push  URL: https://github.com/schacon/ticgit
+<span class="linenr"> 5: </span>  HEAD branch: master
+<span class="linenr"> 6: </span>  Remote branches:
+<span class="linenr"> 7: </span>    master                               tracked
+<span class="linenr"> 8: </span>    dev-branch                           tracked
+<span class="linenr"> 9: </span>  Local branch configured for <span style="color: #50a14f;">'git pull'</span>:
+<span class="linenr">10: </span>    master merges with remote master
+<span class="linenr">11: </span>  Local ref configured for <span style="color: #50a14f;">'git push'</span>:
+<span class="linenr">12: </span>    master pushes to master <span style="color: #4078f2;">(</span>up to date<span style="color: #4078f2;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb0f5deb" class="outline-4">
+<h4 id="orgb0f5deb">远程仓库的重命名与移除</h4>
+<div class="outline-text-4" id="text-orgb0f5deb">
+<p>
+你可以运行 <code>git remote rename</code> 来修改一个远程仓库的简写名。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>$ git remote rename pb paul
+<span class="linenr">2: </span>$ git remote
+<span class="linenr">3: </span>origin
+<span class="linenr">4: </span>paul
+</pre>
+</div>
+
+<p>
+可以使用 <code>git remote remove</code> 或 <code>git remote rm</code> 除一个远程仓库。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>$ git remote remove paul
+<span class="linenr">2: </span>$ git remote
+<span class="linenr">3: </span>origin
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org44684a9" class="outline-3">
+<h3 id="org44684a9">标签 Tag</h3>
+<div class="outline-text-3" id="text-org44684a9">
+</div>
+<div id="outline-container-org01c9ddb" class="outline-4">
+<h4 id="org01c9ddb">列出标签</h4>
+<div class="outline-text-4" id="text-org01c9ddb">
+<p>
+在 Git 中列出已有的标签非常简单，只需要输入 <code>git tag</code> ，按照通配符列出标签需要 <code>-l</code> 或 <code>--list</code> 选项。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr"> 1: </span>$ git tag
+<span class="linenr"> 2: </span>v1.0
+<span class="linenr"> 3: </span>v2.0
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span>$ git tag -l <span style="color: #50a14f;">"v1.8.5*"</span>
+<span class="linenr"> 6: </span>v1.8.5
+<span class="linenr"> 7: </span>v1.8.5-rc0
+<span class="linenr"> 8: </span>v1.8.5-rc1
+<span class="linenr"> 9: </span>v1.8.5-rc2
+<span class="linenr">10: </span>...
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgeacb0e3" class="outline-4">
+<h4 id="orgeacb0e3">创建标签</h4>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6f2a2f9" class="outline-2">
+<h2 id="org6f2a2f9">WIKI</h2>
+<div class="outline-text-2" id="text-org6f2a2f9">
 </div>
 <div id="outline-container-org6c018b1" class="outline-3">
 <h3 id="org6c018b1">推送指定分支到远程分支上</h3>
@@ -181,7 +306,7 @@ title=""
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span class="linenr">1: </span>git push origin branchName
+<pre class="src src-sh"><span class="linenr">1: </span>$ git push origin branchName
 </pre>
 </div>
 
@@ -190,7 +315,7 @@ title=""
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span class="linenr">1: </span>git push origin localBranchName:remoteBranchName
+<pre class="src src-sh"><span class="linenr">1: </span>$ git push origin localBranchName:remoteBranchName
 </pre>
 </div>
 </div>
@@ -200,7 +325,7 @@ title=""
 <div id="postamble" class="status">
 <p class="date">Date: 2020-11-20 Fri 14:59</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-03-01 Mon 18:12</p>
+<p class="date">Created: 2021-03-02 Tue 14:13</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
