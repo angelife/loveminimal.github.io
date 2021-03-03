@@ -24,6 +24,7 @@ export default {
             'story',
             'wiki',
             'web-developer-roadmap',
+            'yinwang',
         ],
     },
     // 加密的页面
