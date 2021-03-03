@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<!-- 2021-03-03 Wed 12:17 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>当然我在扯淡</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Jack Liu">
+<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+           <link rel="stylesheet" href="themes/style.css" type="text/css"  />
+           <script type="module" src="themes/main.js" defer></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">当然我在扯淡</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org32ae8cf">Blog Excepts</a>
+<ul>
+<li><a href="#org5e30c88">什么是“对用户友好”</a></li>
+<li><a href="#org19b8a27">GTF - Great Teacher Friedman</a></li>
+<li><a href="#orga759d85">什么是语义学</a></li>
+<li><a href="#org9860de2">怎样写一个解释器</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+我并不喜欢王垠这个人，甚至有些反感，但他的某些博文我很喜欢，也因此而受益，Hmm&#x2026;
+</p>
+</blockquote>
+
+<p>
+*Tip. 非原文摘录，各别语句进行了删减和改动，建议看原文（点击章节标题）。
+</p>
+
+<div id="outline-container-org32ae8cf" class="outline-2">
+<h2 id="org32ae8cf">Blog Excepts</h2>
+<div class="outline-text-2" id="text-org32ae8cf">
+</div>
+<div id="outline-container-org5e30c88" class="outline-3">
+<h3 id="org5e30c88"><a href="http://www.yinwang.org/blog-cn/2012/05/18/user-friendliness">什么是“对用户友好”</a></h3>
+<div class="outline-text-3" id="text-org5e30c88">
+<img
+src="images/yinwang-1.jpg"
+width="160"
+height=""
+style="float: right; margin-left: 8px;"
+title=""
+/>
+
+<blockquote>
+<p>
+Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius - and a lot of courage - to move in the opposite direction.
+</p>
+
+<p>
+&#x2013; Albert Einstein
+</p>
+
+<p>
+任何聪明的傻瓜都能把事情做得更大、更复杂、更暴力，而在相反的方向上前进则需要一点天才和很大的勇气。
+</p>
+</blockquote>
+
+<p>
+“对用户不友好”的背后，其实是程序设计的不合理使得它们 <b>缺少抽象</b> ，而不是用户的问题。
+</p>
+
+<essay>
+这点确实，比如，我就总是搞不清楚冰箱中的致冷程度数字、洗衣机面板上的各种设置开关……
+</essay>
+
+<p>
+如何对用户更加友好呢？ <b>统一、抽象！</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org19b8a27" class="outline-3">
+<h3 id="org19b8a27"><a href="http://www.yinwang.org/blog-cn/2012/07/04/dan-friedman">GTF - Great Teacher Friedman</a></h3>
+<div class="outline-text-3" id="text-org19b8a27">
+<p>
+程序语言的研究者们往往追逐一些“新概念”，却未能想到很多这些新概念早在几十年前就被 Friedman 想到了。
+</p>
+
+<p>
+知识的深度是无止境的。
+</p>
+
+<p>
+Friedman 研究一个东西的时候总是全身心的投入，执着的热爱。
+</p>
+
+<p>
+在 Friedman 的课上，我利用它们（如 closure 、CPS 等概念）来完成有实际意义的目标，才真正的体会到这些概念的内涵和价值。
+</p>
+
+<blockquote>
+<p>
+一个例子就是课程进入到没几个星期的时候，我们开始 <b>写解释器</b> 来执行简单的 Scheme 程序。然后我们把这个解释器 <b>进行 CPS 变换</b> ，引入全局变量作为 <b>“寄存器”</b> (register)，把 CPS 产生的 continuation 转换成 <b>数据结构（也就是堆栈）</b> 。最后我们得到的是一个 <b>抽象机</b> (abstract machine)，而这在本质上相当于一个真实机器里的中央处理器（CPU）或者虚拟机（比如 JVM）。所以我们其实从无到有，“发明”了 CPU！从这里，我才真正的理解到寄存器，堆栈等的本质，以及我们为什么需要它们。我才真正的明白了，冯诺依曼体系构架为什么要设计成这个样子。后来他让我们去看一篇他的好朋友 Olivier Danvy 的论文，讲述如何从各种不同的解释器经过 CPS 变换得出不同种类的抽象机模型。这是我第一次感觉到程序语言的理论对于现实世界的巨大威力，也让我理解到， <b>机器并不是计算的本质</b> 。机器可以用任何可行的技术实现，比如集成电路，激光，分子，DNA…… 但是无论用什么作为机器的材料， <b>我们所要表达的语义，也就是计算的本质，却是不变的。</b>
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+当然， <b>重新发明</b> 东西并不会给我带来论文发表，但是它却给我带来了更重要的东西，这就是 <b>独立的思考能力</b> 。一旦一个东西被你“想”出来，而不是从别人那里 “学”过来，那么你就知道这个想法是 <b>如何产生</b> 的。这比起直接学会这个想法要有用很多，因为你知道这里面 <b>所有的细节和犯过的错误</b> 。而最重要的，其实是由此得到的 <b>直觉</b> 。如果直接去看别人的书或者论文，你就很难得到这种直觉，因为一般人写论文都会把直觉埋藏在一堆符号公式之下，让你看不到背后的真实想法。如果得到了直觉，下一次遇到类似的问题，你就有可能很快的利用已有的直觉来解决新的问题。
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orga759d85" class="outline-3">
+<h3 id="orga759d85"><a href="http://www.yinwang.org/blog-cn/2012/07/25/semantics">什么是语义学</a></h3>
+<div class="outline-text-3" id="text-orga759d85">
+<p>
+<b>一个程序的“语义” 通常是由另一个程序（“解释器”）决定的 。 <span class="underline">程序只是一个数据结构</span> ，通常表示为语法树(abstract syntax tree)或者指令序列</b> 。这个数据结构本身其实没有意义，是解释器让它产生了意义，对同一个程序可以有不同的解释。
+</p>
+
+<p>
+解释器接受一个“程序”(program)，输出一个“值”(value)。这个所谓的“值”可以具有非常广泛的含义。它可能是一个整数，一个字符串，也有可能是更加奇妙的东西。
+</p>
+
+<p>
+CPU 其实也是一个解释器，它的输入是以二进制表示的机器指令，输出是一些电信号。人脑也是一个解释器，它的输入是图像或者声音，输出是神经元之间产生的“概念”。
+</p>
+
+<p>
+<b>所以“语义学”，基本上就是研究各种解释器。</b>
+</p>
+
+<p>
+解释器的原理其实很简单，但是结构非常精巧微妙，如果你从复杂的语言入手，恐怕永远也学不会。最好的起步方式是写一个基本的 lambda calculus 的解释器。lambda calculus 只有三种元素，却可以表达所有程序语言的复杂结构。
+</p>
+
+<blockquote>
+<p>
+专门讲语义的书很少，现在推荐一本我觉得深入浅出的：《Programming Languages and Lambda Calculi》。只需要看完前半部分（Part I 和 II，100来页）就可以了。这书好在什么地方呢？它是从非常简单的布尔表达式（而不是 lambda calculus）开始讲解 <b>什么是递归定义，什么是解释，什么是 Church-Rosser，什么是上下文 (evaluation context)</b> 。在让你理解了这种简单语言的语义，有了足够的信心之后，才告诉你更多的东西。比如 lambda calculus 和 CEK，SECD 等抽象机 (abstract machine)。理解了这些概念之后，你就会发现所有的程序语言都可以比较容易的理解了。
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org9860de2" class="outline-3">
+<h3 id="org9860de2"><a href="http://www.yinwang.org/blog-cn/2012/08/01/interpreter">怎样写一个解释器</a></h3>
+<div class="outline-text-3" id="text-org9860de2">
+<p>
+写一个解释器，通常是设计和实现程序语言的第一步。
+</p>
+
+<p>
+实现语言容易犯的一个错误，就是一开头就试图去实现很复杂的语言（比如 JavaScript 或者 Python）。这样你很快就会因为这些语言的复杂性，以及各种历史遗留的设计问题而受到挫折，最后不了了之。
+</p>
+
+<p>
+学习实现语言，最好是从最简单，最干净的语言开始，迅速写出一个可用的解释器。之后再逐步往里面添加特性，同时保持正确。这样你才能有条不紊地构造出复杂的解释器。
+</p>
+
+<essay>
+文中王垠实现了一个很简单的语言 - “R2” ，详见原文。
+</essay>
+
+<p>
+说白了，解释器跟计算器差不多。解释器是一个函数，你输入一个“表达式”，它就输出一个 “值”。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-03-03 Wed 10:19</p>
+<p class="author">Author: Jack Liu</p>
+<p class="date">Created: 2021-03-03 Wed 12:17</p>
+<p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
+</div>
+</body>
+</html>
