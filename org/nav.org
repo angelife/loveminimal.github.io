@@ -82,3 +82,5 @@
 - JS source map http://www.ruanyifeng.com/blog/2013/01/javascript_source_map.html
 - [[https://blog.csdn.net/a772304419/article/details/104741395][Linux echo命令：给文本着色/背景色/文本]]
 - [[https://blog.csdn.net/gx_1_11_real/article/details/80990250][shell脚本中无法使用cd的问题原因及解决方法]]
+- Visitory Pattern https://blog.csdn.net/eyabc/article/details/80737226
+
