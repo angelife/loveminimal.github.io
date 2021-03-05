@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<!-- 2021-03-05 Fri 10:48 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elisp</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Jack Liu">
+<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+           <link rel="stylesheet" href="themes/style.css" type="text/css"  />
+           <script type="module" src="themes/main.js" defer></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Elisp</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org56c69a4">Intro</a></li>
+<li><a href="#orge09b0e5">Emacs Lisp Basics</a>
+<ul>
+<li><a href="#orga1239ff">Evaluate and Help</a></li>
+<li><a href="#org5d5c21e">Printing</a></li>
+<li><a href="#org1f520a9">Arithmetic</a></li>
+<li><a href="#org4fa94d0">True, Flase</a></li>
+<li><a href="#orge8c4263">Variables</a>
+<ul>
+<li><a href="#org9bff07c">Global Variables</a></li>
+<li><a href="#org04dbe90">Local Variables</a></li>
+</ul>
+</li>
+<li><a href="#orgd82662b">If Then Else</a></li>
+<li><a href="#org5376d90">Loop</a></li>
+<li><a href="#org43d1066">Sequence, List, Vector</a></li>
+<li><a href="#orgf84a2ec">Define a Function or Command</a></li>
+</ul>
+</li>
+<li><a href="#orgcf296e4">Lisp Data Structure</a>
+<ul>
+<li><a href="#org52125be">List</a>
+<ul>
+<li><a href="#orgd9b090f">Create List</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+An excerpt from XahLee's <a href="http://ergoemacs.org/emacs/elisp.html">Practical Emacs Lisp</a> .
+</p>
+
+<div id="outline-container-org56c69a4" class="outline-2">
+<h2 id="org56c69a4">Intro</h2>
+<div class="outline-text-2" id="text-org56c69a4">
+<p>
+Here just some fragment that help me to remind relative aspects. And you want know more, please learn from XahLee's <a href="http://ergoemacs.org/emacs/elisp.html">Practical Emacs Lisp</a> .
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge09b0e5" class="outline-2">
+<h2 id="orge09b0e5">Emacs Lisp Basics</h2>
+<div class="outline-text-2" id="text-orge09b0e5">
+</div>
+<div id="outline-container-orga1239ff" class="outline-3">
+<h3 id="orga1239ff">Evaluate and Help</h3>
+<div class="outline-text-3" id="text-orga1239ff">
+<p>
+How to evaluate elisp code?
+</p>
+
+<table>
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Command</th>
+<th scope="col" class="org-left">Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">eval-last-sexp</td>
+<td class="org-left">C-x C-e</td>
+</tr>
+
+<tr>
+<td class="org-left">eval-region</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">eval-buffer</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+To find the doc string of a function, run <code>describe-function &lt;C-h f&gt;</code>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5d5c21e" class="outline-3">
+<h3 id="org5d5c21e">Printing</h3>
+<div class="outline-text-3" id="text-org5d5c21e">
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">printing</span>
+<span class="linenr">2: </span><span style="color: #4078f2;">(</span>message <span style="color: #50a14f;">"Hello world!"</span><span style="color: #4078f2;">)</span>                <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">"Hello world!"</span>
+</pre>
+</div>
+
+<p>
+You can see the output in the buffer named <code>*Messages*</code>. You can switch to it by <code>view-echo-area-messages &lt;C-h e&gt;</code> .
+</p>
+
+<p>
+[see <a href="http://ergoemacs.org/emacs/elisp_printing.html">Elisp: Print, Output</a>]
+</p>
+
+<p>
+[see <a href="http://ergoemacs.org/emacs/elisp_format.html">Elisp: Format String</a>]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1f520a9" class="outline-3">
+<h3 id="org1f520a9">Arithmetic</h3>
+<div class="outline-text-3" id="text-org1f520a9">
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">3. is a integer, 3.0 is a float</span>
+<span class="linenr">2: </span><span style="color: #4078f2;">(</span>integerp 3.<span style="color: #4078f2;">)</span>                           <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">t</span>
+<span class="linenr">3: </span><span style="color: #4078f2;">(</span>floatp 3.<span style="color: #4078f2;">)</span>                             <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">nil</span>
+<span class="linenr">4: </span><span style="color: #4078f2;">(</span>floatp 3.0<span style="color: #4078f2;">)</span>                            <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">t</span>
+</pre>
+</div>
+
+<p>
+Function names that end with a <b>"p"</b> often means it return either true of false. (The "p" stands for <b>"predicate"</b>) <code>t</code> means true, <code>nil</code> means false.
+</p>
+
+<p>
+<b>Convert String and Number</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #4078f2;">(</span>string-to-number <span style="color: #50a14f;">"3"</span><span style="color: #4078f2;">)</span>
+<span class="linenr">2: </span><span style="color: #4078f2;">(</span>number-to-string 3<span style="color: #4078f2;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4fa94d0" class="outline-3">
+<h3 id="org4fa94d0">True, Flase</h3>
+<div class="outline-text-3" id="text-org4fa94d0">
+<p>
+<b>There is no "boolean datatype" in elisp.</b> Just remember that <code>nil</code> and empty list <code>()</code> are false, anything else is true.
+</p>
+
+<p>
+<b>Boolean Functions</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Comparing numbers</span>
+<span class="linenr">2: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">&lt; &gt; &lt;= &gt;= = /=</span>
+<span class="linenr">3: </span><span style="color: #4078f2;">(</span>= 3 3<span style="color: #4078f2;">)</span>                                 <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">t</span>
+<span class="linenr">4: </span><span style="color: #4078f2;">(</span>= 3 3.00000000000000001<span style="color: #4078f2;">)</span>               <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">t</span>
+<span class="linenr">5: </span>
+<span class="linenr">6: </span><span style="color: #4078f2;">(</span>/= 3 4<span style="color: #4078f2;">)</span>                                <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">not equal. &#8658; t</span>
+</pre>
+</div>
+
+<p>
+*Tips: <code>=</code> is used to compare numbers but not assign.
+</p>
+
+<p>
+For generic equality test, use <code>equal</code>. It test if two values have the same <b>datatype</b> and <b>value</b>.
+</p>
+
+<p>
+There's alse the function <code>eq</code>, it returns <code>t</code> if the two args are the same <b>Lisp object</b>. This is usually not what you want. e.g. <code>(eq "e" "e")</code> returns <code>nil</code>.
+</p>
+
+<p>
+To test for inequality, the <code>/=</code> is for numbers only, and doesn't work for strings and other lisp data. Use <code>not</code> to negate your equality test.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge8c4263" class="outline-3">
+<h3 id="orge8c4263">Variables</h3>
+<div class="outline-text-3" id="text-orge8c4263">
+</div>
+<div id="outline-container-org9bff07c" class="outline-4">
+<h4 id="org9bff07c">Global Variables</h4>
+<div class="outline-text-4" id="text-org9bff07c">
+<p>
+<code>setq</code> is used to set variables. Variables need not be declared, and is global.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">setq</span> x 1<span style="color: #4078f2;">)</span>                              <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">assign 1 to x</span>
+<span class="linenr">2: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">setq</span> a 3 b 2 c 7<span style="color: #4078f2;">)</span>                      <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">multiple assignment</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org04dbe90" class="outline-4">
+<h4 id="org04dbe90">Local Variables</h4>
+<div class="outline-text-4" id="text-org04dbe90">
+<p>
+To define local variables, use <code>let</code>. The form is:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(let  (var1 var2 ...) body)</span>
+<span class="linenr"> 2: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">let</span> <span style="color: #a626a4;">(</span>a b<span style="color: #a626a4;">)</span>
+<span class="linenr"> 3: </span> <span style="color: #a626a4;">(</span><span style="color: #e45649;">setq</span> a 3<span style="color: #a626a4;">)</span>
+<span class="linenr"> 4: </span> <span style="color: #a626a4;">(</span><span style="color: #e45649;">setq</span> b 4<span style="color: #a626a4;">)</span>
+<span class="linenr"> 5: </span> <span style="color: #a626a4;">(</span>+ a b<span style="color: #a626a4;">)</span>
+<span class="linenr"> 6: </span> <span style="color: #4078f2;">)</span>                                      <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">7</span>
+<span class="linenr"> 7: </span>
+<span class="linenr"> 8: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(let ((var1 val1) (var2 val2) &#8230;) body)</span>
+<span class="linenr"> 9: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">This form is convenient if you just have a few simle local vars with known values.</span>
+<span class="linenr">10: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">let</span> <span style="color: #a626a4;">(</span><span style="color: #50a14f;">(</span>a 3<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">(</span>b 4<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span>
+<span class="linenr">11: </span> <span style="color: #a626a4;">(</span>+ a b<span style="color: #a626a4;">)</span>
+<span class="linenr">12: </span><span style="color: #4078f2;">)</span>                                       <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">7</span>
+</pre>
+</div>
+
+<p>
+Where <code>body</code> is (onre or more) lisp expressions. The body's last expression's value is returned.
+</p>
+
+<p>
+[REF <a href="http://ergoemacs.org/emacs_manual/elisp/Variables.html">(info "(elisp) Variables")</a>]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd82662b" class="outline-3">
+<h3 id="orgd82662b">If Then Else</h3>
+<div class="outline-text-3" id="text-orgd82662b">
+<p>
+The form for "if" expression is:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(if test body)</span>
+<span class="linenr">2: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">or</span>
+<span class="linenr">3: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(if test true_body false_body)</span>
+<span class="linenr">4: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">and if no flase expression, return nil. e.g.</span>
+<span class="linenr">5: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">if</span> <span style="color: #a626a4;">(</span>&lt; 3 2<span style="color: #a626a4;">)</span> <span style="color: #a626a4;">(</span>message <span style="color: #50a14f;">"yes"</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>            <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">nil</span>
+</pre>
+</div>
+
+<p>
+[REF <a href="http://ergoemacs.org/emacs_manual/elisp/Control-Structures.html">(info "(elisp) Control Structures")</a>]
+</p>
+
+<p>
+If you do not need a "else" part, you should use the function <code>when</code> instead, because it is more clear. The form is:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(when test expr1 expr2 ...)</span>
+<span class="linenr">2: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Its meaning is the same as</span>
+<span class="linenr">3: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(if test (progn expr1 expr2 ...))</span>
+</pre>
+</div>
+
+<p>
+<b>Block of Expressions</b>
+</p>
+
+<p>
+Sometimes you need to group several expressions together as one single expression. This can be done with <code>progn</code>.
+</p>
+
+<p>
+The purpose of <code>(progn ...)</code> is similar to a block of code <code>{...}</code> in C-like languages. <code>progn</code> returns the last expression in its body.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5376d90" class="outline-3">
+<h3 id="org5376d90">Loop</h3>
+<div class="outline-text-3" id="text-org5376d90">
+<p>
+Most basic loop in elisp is with <code>(while test body)</code>, where <code>body</code> is one or more lisp expressions.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">setq</span> x 0<span style="color: #4078f2;">)</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">while</span> <span style="color: #a626a4;">(</span>&lt; x 4<span style="color: #a626a4;">)</span>
+<span class="linenr">4: </span>  <span style="color: #a626a4;">(</span>print <span style="color: #50a14f;">(</span>format <span style="color: #50a14f;">"number is %d"</span> x<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span>
+<span class="linenr">5: </span>  <span style="color: #a626a4;">(</span><span style="color: #e45649;">setq</span> x <span style="color: #50a14f;">(</span>1+ x<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<p>
+Usually it's better to use <code>dolist</code> or <code>dotimes</code> .
+</p>
+
+<p>
+[see <a href="http://ergoemacs.org/emacs/elisp_mapcar_loop.html">Elisp: Map List/Vector</a>]
+</p>
+
+<p>
+[REF <a href="http://ergoemacs.org/emacs_manual/elisp/Iteration.html">(info "(elisp) Iteration")</a>]
+</p>
+
+<p>
+[see <a href="http://ergoemacs.org/emacs/elisp_break_loop.html">Elisp: throw, catch</a>]
+</p>
+</div>
+</div>
+
+<div id="outline-container-org43d1066" class="outline-3">
+<h3 id="org43d1066">Sequence, List, Vector</h3>
+<div class="outline-text-3" id="text-org43d1066">
+<p>
+Here's a chart of elisp's most important list-like datatypes.
+</p>
+
+<img
+src="images/elisp-1.svg"
+width="360"
+height=""
+style=""
+title=""
+/>
+
+<p>
+*Tips: "Sequence" and "Array" are note actual datatypes in elisp. They are grouping names for other actual datatypes.
+</p>
+
+<p>
+When a function's doc says that an argument is a sequence type, it means that it can be list, vector, or string. (e.g. <code>mapcar</code>).
+</p>
+
+<p>
+When a function's doc says an argument is a array type, it means that it can be vectory or string. (e.g. <code>aref</code>)
+</p>
+
+<p>
+List and Vector both hold a ordered sequence of values, each value can be any type.
+</p>
+
+<p>
+<b>Differences Between List and Vector</b>
+</p>
+
+<p>
+Here's the primary differences between list and vector:
+</p>
+<ul class="org-ul">
+<li>Vector, access time to any element is constant.</li>
+<li>Vector's length cannot change. If you create a new copy of a vector, the time required is proportional to the vector's length.</li>
+<li>List, access time to a element is proportional to the distance of the element's position in the list.</li>
+<li>List's length can grow by prepending element, and can shorten by rempoving first element. These operations have constant time.</li>
+</ul>
+
+<p>
+We will learn more at <a href="#orgcf296e4">Lisp Data Structure</a>.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf84a2ec" class="outline-3">
+<h3 id="orgf84a2ec">Define a Function or Command</h3>
+<div class="outline-text-3" id="text-orgf84a2ec">
+<p>
+Basic function definition is of the form:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(defun function_name (param1 param2 ...) "doc_string" body)</span>
+<span class="linenr">2: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">defun</span> <span style="color: #a626a4;">myFunction</span> <span style="color: #a626a4;">()</span>
+<span class="linenr">3: </span>  <span style="color: #84888b; font-style: italic;">"testing"</span>
+<span class="linenr">4: </span>  <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(interactive)</span>
+<span class="linenr">5: </span>  <span style="color: #a626a4;">(</span>message <span style="color: #50a14f;">"Yay!"</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<p>
+When a function is called, the last expression in the function's definition body is returned. (there's no "return statement".)
+</p>
+
+<p>
+[REF <a href="http://ergoemacs.org/emacs_manual/elisp/Defining-Functions.html">(info "(elisp) Defining Functions")</a>]
+</p>
+
+<p>
+When a function is also a command, we say that the function is avilable for interactive use.
+</p>
+
+<p>
+To make a function availiable for interactive use, add <code>(interactive)</code> right after the "doc string". Evaluate the following code. Then, you can call it by <code>execute-extended-command</code>.
+</p>
+
+<p>
+[REF <a href="http://ergoemacs.org/emacs_manual/elisp/Defining-Commands.html">(info "(elisp) Defining Commands")</a>]
+</p>
+
+<p>
+Here is a function definition template that majority of elisp commands follow:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr"> 1: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">defun</span> <span style="color: #a626a4;">myCommand</span> <span style="color: #a626a4;">()</span>
+<span class="linenr"> 2: </span>  <span style="color: #84888b; font-style: italic;">"One sentence summary of what this command do.</span>
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #84888b; font-style: italic;">More detailed documentation here."</span>
+<span class="linenr"> 5: </span>  <span style="color: #a626a4;">(</span><span style="color: #e45649;">interactive</span><span style="color: #a626a4;">)</span>
+<span class="linenr"> 6: </span>  <span style="color: #a626a4;">(</span><span style="color: #e45649;">let</span> <span style="color: #50a14f;">(</span>localVar1 localVar2 ...<span style="color: #50a14f;">)</span>
+<span class="linenr"> 7: </span>    <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">do somethins here...</span>
+<span class="linenr"> 8: </span>    <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">...</span>
+<span class="linenr"> 9: </span>    <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">last expression is returned</span>
+<span class="linenr">10: </span>    <span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<p>
+[see <a href="http://ergoemacs.org/emacs/elisp_optional_params.html">Elisp: Function Optional Parameters</a>]
+</p>
+
+<p>
+[see <a href="http://ergoemacs.org/emacs/inline_doc.html">Elisp: Doc String Markup</a>]
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcf296e4" class="outline-2">
+<h2 id="orgcf296e4">Lisp Data Structure</h2>
+<div class="outline-text-2" id="text-orgcf296e4">
+</div>
+<div id="outline-container-org52125be" class="outline-3">
+<h3 id="org52125be">List</h3>
+<div class="outline-text-3" id="text-org52125be">
+<p>
+Emacs Lisp's list datatype is known as linked list in computer science.
+</p>
+</div>
+
+<div id="outline-container-orgd9b090f" class="outline-4">
+<h4 id="orgd9b090f">Create List</h4>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-03-05 Fri 09:15</p>
+<p class="author">Author: Jack Liu</p>
+<p class="date">Created: 2021-03-05 Fri 10:48</p>
+<p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
+</div>
+</body>
+</html>
