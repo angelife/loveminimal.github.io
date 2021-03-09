@@ -797,7 +797,7 @@ Parser 的研究其实是在解决一些根本不存在或者人为制造的问�
 </essay>
 #+END_EXPORT
 
-*** [[http://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy][编程的智慧]]
+*** TODO [[http://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy][编程的智慧]]
 
 编程是一种创造性的工作，是一门艺术。精通任何一门艺术，都需要很多的 *练习和领悟* ，所以这里提出的“智慧”，并不是号称一天瘦十斤的减肥药，它并不能代替你自己的勤奋。
 
