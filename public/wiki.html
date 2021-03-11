@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:44 -->
+<!-- 2021-03-11 Thu 18:01 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wiki</title>
@@ -18,43 +18,78 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgd640e15">WIKI</a>
+<li><a href="#org9ec2c41">WIKI</a>
 <ul>
-<li><a href="#orgaec8755">GitHub 图片不加载问题</a></li>
-<li><a href="#org9032793">vue/cli 3 切换为 dart-sass</a></li>
-<li><a href="#orgf7f8cfe">glob</a></li>
-<li><a href="#orgb6930f1">设计模式准则</a></li>
-<li><a href="#org4048368">文件的描述符和重定向</a></li>
-<li><a href="#org0e22964">数据归档和解压缩</a></li>
-<li><a href="#orgfb86c61">关于 CSS 中设置 height 为 100% 不起作用</a></li>
-<li><a href="#orgfa9bec1">JavaScript 中的 bind、call、apply 方法</a></li>
-<li><a href="#orgd291bfb">JavaScript 对 url 的编码和解码</a></li>
-<li><a href="#orgb662a46">JavaScript indexOf</a></li>
-<li><a href="#org5354f83">Emacs 宏操作</a></li>
-<li><a href="#org2882e3e">如何设置终端 256 色</a></li>
-<li><a href="#org1a5888b">input 中 placeholder、disabled 状态样式修改</a></li>
-<li><a href="#org46c11b5">CSS 换行</a></li>
-<li><a href="#orgf224363">JS 获取 DPI</a></li>
-<li><a href="#org3805898">时间日期的格式化</a></li>
-<li><a href="#org3289c89">小程序跳转 H5 时 url 参数截断</a></li>
-<li><a href="#orgf1696aa">FormData</a></li>
-<li><a href="#orgd089814">滚动懒加载的实现</a></li>
-<li><a href="#org4a7cf99">JavaScript 中的 || 和 &amp;&amp; 所遵循的短路现象</a></li>
-<li><a href="#orgeb33cb9">刷新 DNS</a></li>
+<li><a href="#org8490be0">Ubuntu 下清空 DNS 缓存</a></li>
+<li><a href="#orgf538858">GitHub 图片不加载问题</a></li>
+<li><a href="#org8fd71b5">vue/cli 3 切换为 dart-sass</a></li>
+<li><a href="#orga82a596">glob</a></li>
+<li><a href="#org376f765">设计模式准则</a></li>
+<li><a href="#orge5af0e2">文件的描述符和重定向</a></li>
+<li><a href="#orgf49c6e6">数据归档和解压缩</a></li>
+<li><a href="#org47e7873">关于 CSS 中设置 height 为 100% 不起作用</a></li>
+<li><a href="#org2638fe2">JavaScript 中的 bind、call、apply 方法</a></li>
+<li><a href="#org19076a0">JavaScript 对 url 的编码和解码</a></li>
+<li><a href="#org797258b">JavaScript indexOf</a></li>
+<li><a href="#org1a18755">Emacs 宏操作</a></li>
+<li><a href="#org3c0056c">如何设置终端 256 色</a></li>
+<li><a href="#orge3dad29">input 中 placeholder、disabled 状态样式修改</a></li>
+<li><a href="#org1f5b71c">CSS 换行</a></li>
+<li><a href="#org30b7e6a">JS 获取 DPI</a></li>
+<li><a href="#orgcbe4f34">时间日期的格式化</a></li>
+<li><a href="#orgb2b404d">小程序跳转 H5 时 url 参数截断</a></li>
+<li><a href="#orgc532c8b">FormData</a></li>
+<li><a href="#orgcf7f930">滚动懒加载的实现</a></li>
+<li><a href="#orgfe467e8">JavaScript 中的 || 和 &amp;&amp; 所遵循的短路现象</a></li>
+<li><a href="#org586cf54">刷新 DNS</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgd640e15" class="outline-2">
-<h2 id="orgd640e15">WIKI</h2>
-<div class="outline-text-2" id="text-orgd640e15">
+<div id="outline-container-org9ec2c41" class="outline-2">
+<h2 id="org9ec2c41">WIKI</h2>
+<div class="outline-text-2" id="text-org9ec2c41">
 </div>
 
-<div id="outline-container-orgaec8755" class="outline-3">
-<h3 id="orgaec8755">GitHub 图片不加载问题</h3>
-<div class="outline-text-3" id="text-orgaec8755">
+<div id="outline-container-org8490be0" class="outline-3">
+<h3 id="org8490be0">Ubuntu 下清空 DNS 缓存</h3>
+<div class="outline-text-3" id="text-org8490be0">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-03-11 Thu 17:58]</span></span>
+</p>
+
+<p>
+为什么要清空 DNS 缓存呢？
+</p>
+
+<p>
+大多数的 DNS 客户端会把域名解析的结果缓存到本地，这样可以提升对于同一个地址的访问速度。当您打开一个单页面的时候，通常会有多次对同一个域名的访问请求。基本上每个文件、图片、样式表……这些都是在同一个页面内部的对同一个域名的 DNS 解析请求。
+</p>
+
+<p>
+所以如果您已经在本地缓存了不正确的 DNS 条目，那么您需要清空您的缓存来使 DNS 客户端提出新的 DNS 请求并更新解析结果。当然，您也可以等缓存的 DNS 条目过期以后让系统自动冲掉该条目……这通常需要24个小时。
+</p>
+
+<p>
+在 Ubuntu 中冲掉 DNS 缓存的方式是重新启动 nscd 守护程序
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#23433;&#35013; nscd &#65288;&#22914;&#26524;&#27809;&#26377;&#65289;</span>
+<span class="linenr">2: </span>sudo aptitude install nscd
+<span class="linenr">3: </span>
+<span class="linenr">4: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#28165;&#38500; DNS</span>
+<span class="linenr">5: </span>sudo /etc/init.d/nscd restart
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf538858" class="outline-3">
+<h3 id="orgf538858">GitHub 图片不加载问题</h3>
+<div class="outline-text-3" id="text-orgf538858">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2021-01-25 Mon 14:20]</span></span>
 </p>
@@ -78,9 +113,9 @@
 </div>
 </div>
 
-<div id="outline-container-org9032793" class="outline-3">
-<h3 id="org9032793">vue/cli 3 切换为 dart-sass</h3>
-<div class="outline-text-3" id="text-org9032793">
+<div id="outline-container-org8fd71b5" class="outline-3">
+<h3 id="org8fd71b5">vue/cli 3 切换为 dart-sass</h3>
+<div class="outline-text-3" id="text-org8fd71b5">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2021-01-06 Wed 17:55]</span></span>
 </p>
@@ -103,9 +138,9 @@
 <pre class="src src-js"><span class="linenr"> 1: </span>module.exports = <span style="color: #4078f2;">{</span>
 <span class="linenr"> 2: </span>  css: <span style="color: #a626a4;">{</span>
 <span class="linenr"> 3: </span>    loaderOptions: <span style="color: #50a14f;">{</span>
-<span class="linenr"> 4: </span>      sass: <span style="color: #da8548;">{</span>
+<span class="linenr"> 4: </span>      sass: <span style="color: #dd8844;">{</span>
 <span class="linenr"> 5: </span>        implementation: require<span style="color: #b751b6;">(</span><span style="color: #50a14f;">'sass'</span><span style="color: #b751b6;">)</span>, <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">This line must in sass option</span>
-<span class="linenr"> 6: </span>      <span style="color: #da8548;">}</span>,
+<span class="linenr"> 6: </span>      <span style="color: #dd8844;">}</span>,
 <span class="linenr"> 7: </span>    <span style="color: #50a14f;">}</span>,
 <span class="linenr"> 8: </span>  <span style="color: #a626a4;">}</span>
 <span class="linenr"> 9: </span><span style="color: #9ca0a4;">//</span><span style="color: #9ca0a4;">...</span>
@@ -115,9 +150,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgf7f8cfe" class="outline-3">
-<h3 id="orgf7f8cfe">glob</h3>
-<div class="outline-text-3" id="text-orgf7f8cfe">
+<div id="outline-container-orga82a596" class="outline-3">
+<h3 id="orga82a596">glob</h3>
+<div class="outline-text-3" id="text-orga82a596">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-12-22 Tue 17:49]</span></span>
 </p>
@@ -222,9 +257,9 @@ glob 最早是出现在 Unix 系统的命令中，是用来匹配文件路径的
 </div>
 </div>
 
-<div id="outline-container-orgb6930f1" class="outline-3">
-<h3 id="orgb6930f1">设计模式准则</h3>
-<div class="outline-text-3" id="text-orgb6930f1">
+<div id="outline-container-org376f765" class="outline-3">
+<h3 id="org376f765">设计模式准则</h3>
+<div class="outline-text-3" id="text-org376f765">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-06-24 Wed 10:57]</span></span>
 </p>
@@ -248,9 +283,9 @@ glob 最早是出现在 Unix 系统的命令中，是用来匹配文件路径的
 </div>
 </div>
 
-<div id="outline-container-org4048368" class="outline-3">
-<h3 id="org4048368">文件的描述符和重定向</h3>
-<div class="outline-text-3" id="text-org4048368">
+<div id="outline-container-orge5af0e2" class="outline-3">
+<h3 id="orge5af0e2">文件的描述符和重定向</h3>
+<div class="outline-text-3" id="text-orge5af0e2">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-05-12 Tue 18:36]</span></span>
 </p>
@@ -294,9 +329,9 @@ glob 最早是出现在 Unix 系统的命令中，是用来匹配文件路径的
 </div>
 </div>
 
-<div id="outline-container-org0e22964" class="outline-3">
-<h3 id="org0e22964">数据归档和解压缩</h3>
-<div class="outline-text-3" id="text-org0e22964">
+<div id="outline-container-orgf49c6e6" class="outline-3">
+<h3 id="orgf49c6e6">数据归档和解压缩</h3>
+<div class="outline-text-3" id="text-orgf49c6e6">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-05-12 Tue 18:35]</span></span>
 </p>
@@ -415,9 +450,9 @@ tar (选项) (参数)
 </div>
 </div>
 
-<div id="outline-container-orgfb86c61" class="outline-3">
-<h3 id="orgfb86c61">关于 CSS 中设置 height 为 100% 不起作用</h3>
-<div class="outline-text-3" id="text-orgfb86c61">
+<div id="outline-container-org47e7873" class="outline-3">
+<h3 id="org47e7873">关于 CSS 中设置 height 为 100% 不起作用</h3>
+<div class="outline-text-3" id="text-org47e7873">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-04-25 Sat 15:57]</span></span>
 </p>
@@ -469,9 +504,9 @@ Web 浏览器有计算有效宽度时会考虑浏览器窗口的打开宽度，�
 </div>
 </div>
 
-<div id="outline-container-orgfa9bec1" class="outline-3">
-<h3 id="orgfa9bec1">JavaScript 中的 bind、call、apply 方法<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
-<div class="outline-text-3" id="text-orgfa9bec1">
+<div id="outline-container-org2638fe2" class="outline-3">
+<h3 id="org2638fe2">JavaScript 中的 bind、call、apply 方法<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
+<div class="outline-text-3" id="text-org2638fe2">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-04-20 Mon 14:25]</span></span>
 </p>
@@ -519,9 +554,9 @@ Web 浏览器有计算有效宽度时会考虑浏览器窗口的打开宽度，�
 </div>
 </div>
 
-<div id="outline-container-orgd291bfb" class="outline-3">
-<h3 id="orgd291bfb">JavaScript 对 url 的编码和解码</h3>
-<div class="outline-text-3" id="text-orgd291bfb">
+<div id="outline-container-org19076a0" class="outline-3">
+<h3 id="org19076a0">JavaScript 对 url 的编码和解码</h3>
+<div class="outline-text-3" id="text-org19076a0">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-04-18 Sat 18:26]</span></span>
 </p>
@@ -558,9 +593,9 @@ http://w3cschools.com/my test.asp?name=ståle&amp;car=saab
 </div>
 </div>
 
-<div id="outline-container-orgb662a46" class="outline-3">
-<h3 id="orgb662a46">JavaScript indexOf</h3>
-<div class="outline-text-3" id="text-orgb662a46">
+<div id="outline-container-org797258b" class="outline-3">
+<h3 id="org797258b">JavaScript indexOf</h3>
+<div class="outline-text-3" id="text-org797258b">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-03-19 Thu 09:18]</span></span>
 </p>
@@ -679,9 +714,9 @@ arr.includes(searchElement, fromIndex)
 </div>
 </div>
 
-<div id="outline-container-org5354f83" class="outline-3">
-<h3 id="org5354f83">Emacs 宏操作</h3>
-<div class="outline-text-3" id="text-org5354f83">
+<div id="outline-container-org1a18755" class="outline-3">
+<h3 id="org1a18755">Emacs 宏操作</h3>
+<div class="outline-text-3" id="text-org1a18755">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-02-28 Fri 12:02]</span></span>
 <a href="https://www.jianshu.com/p/6ad946eb8ebc">https://www.jianshu.com/p/6ad946eb8ebc</a>
@@ -765,9 +800,9 @@ arr.includes(searchElement, fromIndex)
 </div>
 </div>
 
-<div id="outline-container-org2882e3e" class="outline-3">
-<h3 id="org2882e3e">如何设置终端 256 色</h3>
-<div class="outline-text-3" id="text-org2882e3e">
+<div id="outline-container-org3c0056c" class="outline-3">
+<h3 id="org3c0056c">如何设置终端 256 色</h3>
+<div class="outline-text-3" id="text-org3c0056c">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-02-28 Fri 11:37]</span></span>
 <a href="https://stackoverflow.com/questions/63950/how-to-make-emacs-terminal-colors-the-same-as-emacs-gui-colors?r=SearchResults">https://stackoverflow.com/questions/63950/how-to-make-emacs-terminal-colors-the-same-as-emacs-gui-colors?r=SearchResults</a>
@@ -792,9 +827,9 @@ arr.includes(searchElement, fromIndex)
 </div>
 </div>
 
-<div id="outline-container-org1a5888b" class="outline-3">
-<h3 id="org1a5888b">input 中 placeholder、disabled 状态样式修改</h3>
-<div class="outline-text-3" id="text-org1a5888b">
+<div id="outline-container-orge3dad29" class="outline-3">
+<h3 id="orge3dad29">input 中 placeholder、disabled 状态样式修改</h3>
+<div class="outline-text-3" id="text-orge3dad29">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-01-28 Tue 14:00]</span></span>
 </p>
@@ -814,24 +849,24 @@ arr.includes(searchElement, fromIndex)
 <div class="org-src-container">
 <pre class="src src-css"><span class="linenr"> 1: </span><span style="color: #50a14f;">input</span>::-webkit-input-placeholder <span style="color: #4078f2;">{</span>
 <span class="linenr"> 2: </span>    <span style="color: #50a14f;">color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
-<span class="linenr"> 3: </span>    <span style="color: #da8548;">-webkit-text-fill-color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
+<span class="linenr"> 3: </span>    <span style="color: #dd8844;">-webkit-text-fill-color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
 <span class="linenr"> 4: </span>    <span style="color: #50a14f;">opacity</span>: 1;
-<span class="linenr"> 5: </span>    <span style="color: #da8548;">-webkit-opacity</span>: 1;
+<span class="linenr"> 5: </span>    <span style="color: #dd8844;">-webkit-opacity</span>: 1;
 <span class="linenr"> 6: </span><span style="color: #4078f2;">}</span>
 <span class="linenr"> 7: </span>
 <span class="linenr"> 8: </span><span style="color: #4078f2;">input:disabled </span><span style="color: #4078f2;">{</span>
 <span class="linenr"> 9: </span>    <span style="color: #50a14f;">background</span>: none;
 <span class="linenr">10: </span>    <span style="color: #50a14f;">color</span>: <span style="color: #ffffff; background-color: #333;">#333</span>;
-<span class="linenr">11: </span>    <span style="color: #da8548;">-webkit-text-fill-color</span>: <span style="color: #ffffff; background-color: #333;">#333</span>;
+<span class="linenr">11: </span>    <span style="color: #dd8844;">-webkit-text-fill-color</span>: <span style="color: #ffffff; background-color: #333;">#333</span>;
 <span class="linenr">12: </span>    <span style="color: #50a14f;">opacity</span>: 1;
-<span class="linenr">13: </span>    <span style="color: #da8548;">-webkit-opacity</span>: 1;
+<span class="linenr">13: </span>    <span style="color: #dd8844;">-webkit-opacity</span>: 1;
 <span class="linenr">14: </span><span style="color: #4078f2;">}</span>
 <span class="linenr">15: </span>
 <span class="linenr">16: </span><span style="color: #50a14f;">input</span>:disabled::-webkit-input-placeholder <span style="color: #4078f2;">{</span>
 <span class="linenr">17: </span>    <span style="color: #50a14f;">color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
-<span class="linenr">18: </span>    <span style="color: #da8548;">-webkit-text-fill-color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
+<span class="linenr">18: </span>    <span style="color: #dd8844;">-webkit-text-fill-color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
 <span class="linenr">19: </span>    <span style="color: #50a14f;">opacity</span>: 1;
-<span class="linenr">20: </span>    <span style="color: #da8548;">-webkit-opacity</span>: 1;
+<span class="linenr">20: </span>    <span style="color: #dd8844;">-webkit-opacity</span>: 1;
 <span class="linenr">21: </span><span style="color: #4078f2;">}</span>
 </pre>
 </div>
@@ -848,9 +883,9 @@ arr.includes(searchElement, fromIndex)
 </div>
 </div>
 
-<div id="outline-container-org46c11b5" class="outline-3">
-<h3 id="org46c11b5">CSS 换行</h3>
-<div class="outline-text-3" id="text-org46c11b5">
+<div id="outline-container-org1f5b71c" class="outline-3">
+<h3 id="org1f5b71c">CSS 换行</h3>
+<div class="outline-text-3" id="text-org1f5b71c">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-01-28 Tue 13:59]</span></span>
 </p>
@@ -922,9 +957,9 @@ arr.includes(searchElement, fromIndex)
 </div>
 </div>
 
-<div id="outline-container-orgf224363" class="outline-3">
-<h3 id="orgf224363">JS 获取 DPI</h3>
-<div class="outline-text-3" id="text-orgf224363">
+<div id="outline-container-org30b7e6a" class="outline-3">
+<h3 id="org30b7e6a">JS 获取 DPI</h3>
+<div class="outline-text-3" id="text-org30b7e6a">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-01-28 Tue 13:59]</span></span>
 </p>
@@ -955,9 +990,9 @@ arr.includes(searchElement, fromIndex)
 </div>
 </div>
 
-<div id="outline-container-org3805898" class="outline-3">
-<h3 id="org3805898">时间日期的格式化</h3>
-<div class="outline-text-3" id="text-org3805898">
+<div id="outline-container-orgcbe4f34" class="outline-3">
+<h3 id="orgcbe4f34">时间日期的格式化</h3>
+<div class="outline-text-3" id="text-orgcbe4f34">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-01-28 Tue 13:58]</span></span>
 </p>
@@ -1004,9 +1039,9 @@ arr.includes(searchElement, fromIndex)
 </div>
 </div>
 
-<div id="outline-container-org3289c89" class="outline-3">
-<h3 id="org3289c89">小程序跳转 H5 时 url 参数截断</h3>
-<div class="outline-text-3" id="text-org3289c89">
+<div id="outline-container-orgb2b404d" class="outline-3">
+<h3 id="orgb2b404d">小程序跳转 H5 时 url 参数截断</h3>
+<div class="outline-text-3" id="text-orgb2b404d">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-01-28 Tue 13:57]</span></span>
 </p>
@@ -1024,14 +1059,14 @@ arr.includes(searchElement, fromIndex)
 <span class="linenr"> 2: </span><span style="color: #a626a4;">targetUrl</span>: <span style="color: #e45649;">function</span><span style="color: #4078f2;">()</span> <span style="color: #4078f2;">{</span>
 <span class="linenr"> 3: </span>    console.log<span style="color: #a626a4;">(</span><span style="color: #b751b6;">this</span>.data.mod_textUrl<span style="color: #a626a4;">)</span>;
 <span class="linenr"> 4: </span>    wx.navigateTo<span style="color: #a626a4;">(</span><span style="color: #50a14f;">{</span>
-<span class="linenr"> 5: </span>        url: <span style="color: #50a14f;">'../webview/webview?url='</span> + encodeURIComponent<span style="color: #da8548;">(</span><span style="color: #b751b6;">this</span>.data.mod_textUrl<span style="color: #da8548;">)</span> <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#27492;&#22788;&#38656;&#35201;&#32534;&#30721;&#65292;&#22240;&#20026;&#26377; '?' &#65292;&#21487;&#33021;&#27983;&#35272;&#22120;&#19981;&#35748;</span>
+<span class="linenr"> 5: </span>        url: <span style="color: #50a14f;">'../webview/webview?url='</span> + encodeURIComponent<span style="color: #dd8844;">(</span><span style="color: #b751b6;">this</span>.data.mod_textUrl<span style="color: #dd8844;">)</span> <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#27492;&#22788;&#38656;&#35201;&#32534;&#30721;&#65292;&#22240;&#20026;&#26377; '?' &#65292;&#21487;&#33021;&#27983;&#35272;&#22120;&#19981;&#35748;</span>
 <span class="linenr"> 6: </span>    <span style="color: #50a14f;">}</span><span style="color: #a626a4;">)</span>
 <span class="linenr"> 7: </span><span style="color: #4078f2;">}</span>
 <span class="linenr"> 8: </span>
 <span class="linenr"> 9: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36339;&#36716;&#21040;&#30340; H5 &#39029;&#38754;&#36827;&#34892;&#35299;&#30721;</span>
 <span class="linenr">10: </span><span style="color: #a626a4;">onLoad</span>: <span style="color: #e45649;">function</span><span style="color: #4078f2;">(</span><span style="color: #6a1868;">options</span><span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
 <span class="linenr">11: </span>    <span style="color: #b751b6;">this</span>.setData<span style="color: #a626a4;">(</span><span style="color: #50a14f;">{</span>
-<span class="linenr">12: </span>        targetUrl: decodeURIComponent<span style="color: #da8548;">(</span>options.url<span style="color: #da8548;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#29992; decodeURIComponent &#36827;&#34892;&#35299;&#30721;</span>
+<span class="linenr">12: </span>        targetUrl: decodeURIComponent<span style="color: #dd8844;">(</span>options.url<span style="color: #dd8844;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#29992; decodeURIComponent &#36827;&#34892;&#35299;&#30721;</span>
 <span class="linenr">13: </span>    <span style="color: #50a14f;">}</span><span style="color: #a626a4;">)</span>
 <span class="linenr">14: </span>    console.log<span style="color: #a626a4;">(</span>options.url<span style="color: #a626a4;">)</span>;
 <span class="linenr">15: </span><span style="color: #4078f2;">}</span>
@@ -1040,9 +1075,9 @@ arr.includes(searchElement, fromIndex)
 </div>
 </div>
 
-<div id="outline-container-orgf1696aa" class="outline-3">
-<h3 id="orgf1696aa">FormData</h3>
-<div class="outline-text-3" id="text-orgf1696aa">
+<div id="outline-container-orgc532c8b" class="outline-3">
+<h3 id="orgc532c8b">FormData</h3>
+<div class="outline-text-3" id="text-orgc532c8b">
 <p>
 <a href="https://www.cnblogs.com/gczmn/p/9437935.html">→ 参考链接</a>
 </p>
@@ -1173,9 +1208,9 @@ formData 里面存储的数据形式是什么？一对 key/value 组成一条数
 </div>
 </div>
 
-<div id="outline-container-orgd089814" class="outline-3">
-<h3 id="orgd089814">滚动懒加载的实现</h3>
-<div class="outline-text-3" id="text-orgd089814">
+<div id="outline-container-orgcf7f930" class="outline-3">
+<h3 id="orgcf7f930">滚动懒加载的实现</h3>
+<div class="outline-text-3" id="text-orgcf7f930">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-01-28 Tue 13:55]</span></span>
 </p>
@@ -1235,15 +1270,15 @@ formData 里面存储的数据形式是什么？一对 key/value 组成一条数
 <span class="linenr"> 4: </span>    <span style="color: #e45649;">let</span> <span style="color: #6a1868;">scrollDistance</span> = DOM.scrollHeight - DOM.scrollTop - DOM.clientHeight;
 <span class="linenr"> 5: </span>
 <span class="linenr"> 6: </span>    <span style="color: #e45649;">if</span><span style="color: #50a14f;">(</span>scrollDistance &lt;= 0<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>                      <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20026; 0 &#35777;&#26126;&#28378;&#21160;&#26465;&#24050;&#32463;&#21040;&#24213;&#65292;&#21487;&#20197;&#35831;&#27714;&#25509;&#21475;</span>
-<span class="linenr"> 7: </span>        <span style="color: #e45649;">if</span><span style="color: #da8548;">(</span><span style="color: #b751b6;">this</span>.currentPage &lt; <span style="color: #b751b6;">this</span>.totalPage<span style="color: #da8548;">)</span> <span style="color: #da8548;">{</span>   <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24403;&#21069;&#39029;&#25968;&#23567;&#20110;&#24635;&#39029;&#25968;&#32487;&#32493;&#35831;&#27714;</span>
+<span class="linenr"> 7: </span>        <span style="color: #e45649;">if</span><span style="color: #dd8844;">(</span><span style="color: #b751b6;">this</span>.currentPage &lt; <span style="color: #b751b6;">this</span>.totalPage<span style="color: #dd8844;">)</span> <span style="color: #dd8844;">{</span>   <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24403;&#21069;&#39029;&#25968;&#23567;&#20110;&#24635;&#39029;&#25968;&#32487;&#32493;&#35831;&#27714;</span>
 <span class="linenr"> 8: </span>            <span style="color: #b751b6;">this</span>.currentPage++;                   <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24403;&#21069;&#39029;&#25968;&#33258;&#22686;</span>
 <span class="linenr"> 9: </span>
 <span class="linenr">10: </span>            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35831;&#27714;&#25509;&#21475;&#20195;&#30721;</span>
 <span class="linenr">11: </span>            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">data &#20026;&#35831;&#27714;&#21442;&#25968;</span>
 <span class="linenr">12: </span>            <span style="color: #b751b6;">this</span>.apiGetTableData<span style="color: #b751b6;">(</span>data<span style="color: #b751b6;">)</span>.then<span style="color: #b751b6;">(</span>res =&gt; <span style="color: #986801;">{</span>
-<span class="linenr">13: </span>                <span style="color: #b751b6;">this</span>.tableData = $this.tableData.concat<span style="color: #4db5bd;">(</span>res.data<span style="color: #4db5bd;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23558;&#35831;&#27714;&#22238;&#26469;&#30340;&#25968;&#25454;&#21644;&#24403;&#21069;&#23637;&#31034;&#30340;&#25968;&#25454;&#21512;&#24182;</span>
+<span class="linenr">13: </span>                <span style="color: #b751b6;">this</span>.tableData = $this.tableData.concat<span style="color: #44b9b1;">(</span>res.data<span style="color: #44b9b1;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23558;&#35831;&#27714;&#22238;&#26469;&#30340;&#25968;&#25454;&#21644;&#24403;&#21069;&#23637;&#31034;&#30340;&#25968;&#25454;&#21512;&#24182;</span>
 <span class="linenr">14: </span>            <span style="color: #986801;">}</span><span style="color: #b751b6;">)</span>
-<span class="linenr">15: </span>        <span style="color: #da8548;">}</span>
+<span class="linenr">15: </span>        <span style="color: #dd8844;">}</span>
 <span class="linenr">16: </span>    <span style="color: #50a14f;">}</span>
 <span class="linenr">17: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
 </pre>
@@ -1255,9 +1290,9 @@ formData 里面存储的数据形式是什么？一对 key/value 组成一条数
 </div>
 </div>
 
-<div id="outline-container-org4a7cf99" class="outline-3">
-<h3 id="org4a7cf99">JavaScript 中的 || 和 &amp;&amp; 所遵循的短路现象</h3>
-<div class="outline-text-3" id="text-org4a7cf99">
+<div id="outline-container-orgfe467e8" class="outline-3">
+<h3 id="orgfe467e8">JavaScript 中的 || 和 &amp;&amp; 所遵循的短路现象</h3>
+<div class="outline-text-3" id="text-orgfe467e8">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-01-28 Tue 13:55]</span></span>
 </p>
@@ -1272,9 +1307,9 @@ formData 里面存储的数据形式是什么？一对 key/value 组成一条数
 </div>
 </div>
 
-<div id="outline-container-orgeb33cb9" class="outline-3">
-<h3 id="orgeb33cb9">刷新 DNS</h3>
-<div class="outline-text-3" id="text-orgeb33cb9">
+<div id="outline-container-org586cf54" class="outline-3">
+<h3 id="org586cf54">刷新 DNS</h3>
+<div class="outline-text-3" id="text-org586cf54">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-01-28 Tue 13:54]</span></span>
 </p>
@@ -1298,7 +1333,7 @@ windows 下 <span class="underline">刷新 DNS</span> 的方法：打开 cmd →
 <div id="postamble" class="status">
 <p class="date">Date: 2020-01-28 Tue 14:02</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:44</p>
+<p class="date">Created: 2021-03-11 Thu 18:01</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
