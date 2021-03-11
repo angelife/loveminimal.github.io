@@ -20,7 +20,7 @@
 |      | [[https://developer.huawei.com/consumer/cn/forum/][鸿蒙论坛]]   | [[https://www.freebuf.com/][FREEBUF]]      |                |                |                |
 |------+------------+--------------+----------------+----------------+----------------|
 | 博客 | [[https://bitsofco.de/][Bitsofco]]   | [[http://www.ruanyifeng.com/blog/developer/][阮一峰]]       | [[http://xahlee.org/][李杀网]]         | [[https://coolshell.cn/][酷壳]]           | [[https://www.zhangxinxu.com/][张鑫旭]]         |
-|      | [[http://www.tripod.fun/][阿汤]]       | [[https://www.ituring.com.cn/][图灵社区]]     | [[https://manateelazycat.github.io/index.html][ManateeLazyCat]] |                |                |
+|      | [[http://www.tripod.fun/][阿汤]]       | [[https://www.ituring.com.cn/][图灵社区]]     | [[https://manateelazycat.github.io/index.html][ManateeLazyCat]] | [[http://www.yinwang.org/][当然我在扯淡]]   |                |
 
  *Bookmarks InboX*
 
