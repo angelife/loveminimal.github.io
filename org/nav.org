@@ -10,6 +10,7 @@
 |------+------------+--------------+----------------+----------------+----------------|
 | 工具 | [[http://fanyi.youdao.com/][有道翻译]]   | [[http://www.fhdq.net/emoji.html][符号大全]]     | [[https://www.bejson.com/ui/compress_img/][图压缩]]         | [[https://man.linuxde.net/][Linux 命令大全]] | [[https://www.bootcss.com/][BootNav]]        |
 |      | [[http://tool.c7sky.com/webcolor/][Web Color]]  | [[https://pixabay.com/zh/][Pixabay]]      | [[http://www.fonts.net.cn/][字体之家]]       | [[http://tools.jb51.net/][脚本之家]]       | [[https://www.sojson.com][SoJSON]]         |
+|      | [[https://c.runoob.com/front-end/854][RegExp]]     |              |                |                |                |
 |------+------------+--------------+----------------+----------------+----------------|
 | 娱乐 | [[http://www.etymon.cn/index.html][英语字根]]   | [[https://www.hanjutv.com/][韩剧]]         |                | [[https://www.meijutt.tv/][天天美剧]]       | [[https://www.gushiwen.org/][古诗文网]]       |
 |------+------------+--------------+----------------+----------------+----------------|
@@ -83,4 +84,5 @@
 - [[https://blog.csdn.net/a772304419/article/details/104741395][Linux echo命令：给文本着色/背景色/文本]]
 - [[https://blog.csdn.net/gx_1_11_real/article/details/80990250][shell脚本中无法使用cd的问题原因及解决方法]]
 - Visitory Pattern https://blog.csdn.net/eyabc/article/details/80737226
-
+- Windows Terminal Doc https://docs.microsoft.com/zh-cn/windows/terminal/
+- Vue Source Code https://blog.csdn.net/fyyyr/article/details/80518768

@@ -46,6 +46,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./modular-programming.org][模块化编程]]            |
 | [[./test-talking.org][Test Talking]]          |
 | [[./scroll-bar.org][Scroll Bar]]            |
+| [[./vue-inbox.org][Vue Inbox]]             |
 
 | Asm                    |
 |------------------------|

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:44 -->
+<!-- 2021-03-15 Mon 11:10 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>模块化编程</title>
@@ -39,6 +39,7 @@
 <li><a href="#org3218427">export</a></li>
 <li><a href="#orge164d34">import</a></li>
 <li><a href="#org5fa3df7">export default</a></li>
+<li><a href="#org2aafc92">export 与 import 的复合写法</a></li>
 <li><a href="#orgd7a746f">import()</a></li>
 </ul>
 </li>
@@ -78,7 +79,7 @@ i.e. Modular Programming
 </p>
 
 <p>
-在模块化的过程中可能会产生什么问题呢？命名冲突，本质在于作用域。
+在模块化的过程中可能会产生什么问题呢？ <b>命名冲突</b> ，本质在于作用域。
 </p>
 
 <essay>
@@ -110,7 +111,7 @@ style=""
 title=""
 />
 <p>
-<code>Figure：万维网的发明者，互联网之父蒂姆·伯纳斯·李</code>
+<code>万维网的发明者，互联网之父蒂姆·伯纳斯·李</code>
 </p>
 
 <p>
@@ -444,6 +445,16 @@ NodeJS 利用 JavaScript 的函数式编程特性 &#x2013; 闭包，轻松实现
 ES Module 模块的设计思想是尽量的 <b>静态化</b> ，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东东。比如，CommonJS 模块输出的就是 <code>module.exports</code> 对象，输入时必须查找对象属性。
 </p>
 
+<note>
+有了 ES6 静态加载，使得静态分析成为可能，就能进一步拓宽 JavaScript 的语法，比如引入宏（macro）和类型系统（type system）。
+</note>
+
+<essay>
+想一想，为什么 CommonJS 和 AMD 只有在运行时才能确定模块的依赖关系及输入输出变量呢？
+
+<p>因为它们本质上都是“立即执行函数”（IIFE），不执行自然无法得到！</p>
+</essay>
+
 <div class="org-src-container">
 <pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">let</span> <span style="color: #4078f2;">{</span> stat, exists, readfile <span style="color: #4078f2;">}</span> = require<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'fs'</span><span style="color: #4078f2;">)</span>
 <span class="linenr">2: </span>
@@ -681,6 +692,58 @@ ES Module 模块功能主要由两个命令构成： <code>export</code> 和 <co
 </div>
 </div>
 
+<div id="outline-container-org2aafc92" class="outline-3">
+<h3 id="org2aafc92">export 与 import 的复合写法</h3>
+<div class="outline-text-3" id="text-org2aafc92">
+<p>
+如果在一个模块之中，先输入后输出同一个模块， <code>import</code> 语句可以与 <code>export</code> 语句写在一起。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">export</span> <span style="color: #4078f2;">{</span> foo, bar <span style="color: #4078f2;">}</span> from <span style="color: #50a14f;">'my_module'</span>;
+<span class="linenr">2: </span>
+<span class="linenr">3: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#31561;&#20215;&#20110;</span>
+<span class="linenr">4: </span><span style="color: #e45649;">import</span> <span style="color: #4078f2;">{</span> foo, bar <span style="color: #4078f2;">}</span> from <span style="color: #50a14f;">'my_module'</span>;
+<span class="linenr">5: </span><span style="color: #e45649;">export</span> <span style="color: #4078f2;">{</span> foo, bar <span style="color: #4078f2;">}</span>;
+</pre>
+</div>
+
+<p>
+上面代码中， <code>export</code> 和 <code>import</code> 语句可以结合在一起，写成一行。
+</p>
+
+<p>
+但需要注意的是，写成一行以后， <code>foo</code> 和 <code>bar</code> 实际上 <b>并没有被导入当前模块，只是相当于对外转发</b> 了这两个接口，导致当前模块不能直接使用 <code>foo</code> 和 <code>bar</code> 。
+</p>
+
+<p>
+模块的接口改名和整体输出，也可以采用这种写法。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25509;&#21475;&#25913;&#21517;</span>
+<span class="linenr"> 2: </span><span style="color: #e45649;">export</span> <span style="color: #4078f2;">{</span> foo as myFoo <span style="color: #4078f2;">}</span> from <span style="color: #50a14f;">'my_module'</span>;
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25972;&#20307;&#36755;&#20986;</span>
+<span class="linenr"> 5: </span><span style="color: #e45649;">export</span> * from <span style="color: #50a14f;">'my_module'</span>;
+<span class="linenr"> 6: </span><span style="color: #e45649;">export</span> * as ns from <span style="color: #50a14f;">"mod"</span>;
+<span class="linenr"> 7: </span>
+<span class="linenr"> 8: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#40664;&#35748;&#25509;&#21475;&#30340;&#20889;&#27861;</span>
+<span class="linenr"> 9: </span><span style="color: #e45649;">export</span> <span style="color: #4078f2;">{</span> <span style="color: #e45649;">default</span> <span style="color: #4078f2;">}</span> from <span style="color: #50a14f;">'foo'</span>;
+<span class="linenr">10: </span>
+<span class="linenr">11: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20855;&#21517;&#25509;&#21475;&#25913;&#20026;&#40664;&#35748;&#25509;&#21475;&#30340;&#20889;&#27861;</span>
+<span class="linenr">12: </span><span style="color: #e45649;">export</span> <span style="color: #4078f2;">{</span> es6 as <span style="color: #e45649;">default</span> <span style="color: #4078f2;">}</span> from <span style="color: #50a14f;">'./someModule'</span>;
+<span class="linenr">13: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#31561;&#21516;&#20110;</span>
+<span class="linenr">14: </span><span style="color: #e45649;">import</span> <span style="color: #4078f2;">{</span> es6 <span style="color: #4078f2;">}</span> from <span style="color: #50a14f;">'./someModule'</span>;
+<span class="linenr">15: </span><span style="color: #e45649;">export</span> <span style="color: #e45649;">default</span> es6;
+<span class="linenr">16: </span>
+<span class="linenr">17: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#40664;&#35748;&#25509;&#21475;&#20063;&#21487;&#20197;&#25913;&#21517;&#20026;&#20855;&#21517;&#25509;&#21475;</span>
+<span class="linenr">18: </span><span style="color: #e45649;">export</span> <span style="color: #4078f2;">{</span> <span style="color: #e45649;">default</span> as es6 <span style="color: #4078f2;">}</span> from <span style="color: #50a14f;">'./someModule'</span>;
+</pre>
+</div>
+</div>
+</div>
+
 <div id="outline-container-orgd7a746f" class="outline-3">
 <h3 id="orgd7a746f">import()</h3>
 <div class="outline-text-3" id="text-orgd7a746f">
@@ -709,7 +772,7 @@ import(specifier)               // `specifier` 指定所要加载的模块的位
 </pre>
 
 <p>
-<code>import()</code> 函数和 <code>import</code> 命令接受的参数相同，区别在于 <code>import()</code> 可以动态加载，且与所加载的模块并没有静态链接关系，返回一个 Promise 对象。
+<code>import()</code> 函数和 <code>import</code> 命令接受的参数相同，区别在于 <code>import()</code> 可以动态加载，且与所加载的模块并没有静态链接关系， <b>返回一个 Promise 对象</b> 。
 </p>
 
 <p>
@@ -805,7 +868,7 @@ Webpack 通过 loader 可以支持各种语言和预处理器编写模块。load
 <div id="postamble" class="status">
 <p class="date">Date: 2020-12-11 Fri 12:12</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:44</p>
+<p class="date">Created: 2021-03-15 Mon 11:10</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
