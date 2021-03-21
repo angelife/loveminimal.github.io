@@ -23,7 +23,7 @@ _模块化编程_ （模块化程序设计），是指在进行程序设计时�
 
 随着程序规模的扩大，无论是项目本身（编写、扩展、测试、维护），还是经济上的考虑（效率、收支），分工协作都是不可避免的。
 
-在模块化的过程中可能会产生什么问题呢？命名冲突，本质在于作用域。
+在模块化的过程中可能会产生什么问题呢？ *命名冲突* ，本质在于作用域。
 
 #+BEGIN_EXPORT html
 <essay>
@@ -52,7 +52,7 @@ style=""
 title=""
 />
 #+END_EXPORT
-=Figure：万维网的发明者，互联网之父蒂姆·伯纳斯·李=
+=万维网的发明者，互联网之父蒂姆·伯纳斯·李=
 
 检查一下网页源码的话，你会发现，它只是纯 HTML 文本，没有 CSS ，更没有 JavaScript 。
 
@@ -276,6 +276,20 @@ NodeJS 利用 JavaScript 的函数式编程特性 -- 闭包，轻松实现了模
 
 ES Module 模块的设计思想是尽量的 *静态化* ，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东东。比如，CommonJS 模块输出的就是 =module.exports= 对象，输入时必须查找对象属性。
 
+#+BEGIN_EXPORT html
+<note>
+有了 ES6 静态加载，使得静态分析成为可能，就能进一步拓宽 JavaScript 的语法，比如引入宏（macro）和类型系统（type system）。
+</note>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
+<essay>
+想一想，为什么 CommonJS 和 AMD 只有在运行时才能确定模块的依赖关系及输入输出变量呢？
+
+<p>因为它们本质上都是“立即执行函数”（IIFE），不执行自然无法得到！</p>
+</essay>
+#+END_EXPORT
+
 #+BEGIN_SRC js -n
   let { stat, exists, readfile } = require('fs')
 
@@ -450,6 +464,45 @@ ES Module 模块功能主要由两个命令构成： =export= 和 =import= ：
   export default var a = 1        // ✘
 #+END_SRC
 
+*** export 与 import 的复合写法
+
+如果在一个模块之中，先输入后输出同一个模块， =import= 语句可以与 =export= 语句写在一起。
+
+#+BEGIN_SRC js -n
+  export { foo, bar } from 'my_module';
+
+  // 等价于
+  import { foo, bar } from 'my_module';
+  export { foo, bar };
+#+END_SRC
+
+上面代码中， =export= 和 =import= 语句可以结合在一起，写成一行。
+
+但需要注意的是，写成一行以后， =foo= 和 =bar= 实际上 *并没有被导入当前模块，只是相当于对外转发* 了这两个接口，导致当前模块不能直接使用 =foo= 和 =bar= 。
+
+模块的接口改名和整体输出，也可以采用这种写法。
+
+#+BEGIN_SRC js -n
+  // 接口改名
+  export { foo as myFoo } from 'my_module';
+
+  // 整体输出
+  export * from 'my_module';
+  export * as ns from "mod";
+
+  // 默认接口的写法
+  export { default } from 'foo';
+
+  // 具名接口改为默认接口的写法
+  export { es6 as default } from './someModule';
+  // 等同于
+  import { es6 } from './someModule';
+  export default es6;
+
+  // 默认接口也可以改名为具名接口
+  export { default as es6 } from './someModule';
+#+END_SRC
+
 *** import()
 
 前面介绍过， =import= 命令会被 JavaScript 引擎静态分析，先于模块内的其他语句执行。
@@ -469,7 +522,7 @@ ES Module 模块功能主要由两个命令构成： =export= 和 =import= ：
   import(specifier)               // `specifier` 指定所要加载的模块的位置
 #+END_EXAMPLE
 
-=import()= 函数和 =import= 命令接受的参数相同，区别在于 =import()= 可以动态加载，且与所加载的模块并没有静态链接关系，返回一个 Promise 对象。
+=import()= 函数和 =import= 命令接受的参数相同，区别在于 =import()= 可以动态加载，且与所加载的模块并没有静态链接关系， *返回一个 Promise 对象* 。
 
 =import()= 函数类似于 Node 的 =require= 方法，区别在于 =import()= 是异步加载，而 =require= 是同步加载。
 

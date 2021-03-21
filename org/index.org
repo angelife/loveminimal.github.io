@@ -45,20 +45,14 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./webpack.org][Webpack]]               |
 | [[./modular-programming.org][模块化编程]]            |
 | [[./test-talking.org][Test Talking]]          |
-
-| JS                        |
-|---------------------------|
-| [[./js-4.org][第四章 变量、作用域与内存]] |
+| [[./scroll-bar.org][Scroll Bar]]            |
+| [[./vue-inbox.org][Vue Inbox]]             |
 
 | Asm                    |
 |------------------------|
 | [[./assembly-1.org][Asm 汇编语言的基本概念]] |
 | [[./assembly-2.org][Asm x86 处理器架构]]     |
 | [[./assembly-3.org][Asm 汇编语言基础]]       |
-
-| C          |
-|------------|
-| [[./c-0.org][C 语言序言]] |
 
 | Java                  |
 |-----------------------|
@@ -80,15 +74,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./java-12.org][Java 反射机制]]         |
 | [[./java-13.org][Java 输入/输出流]]      |
 | [[./java-14.org][Java 注解]]             |
-
-| Android         |
-|-----------------|
-| [[./android-talking.org][Android Talking]] |
-
-| CS                     |
-|------------------------|
-| [[./cs-0.org][深入理解计算机系统序言]] |
-| [[./cs-1.org][第 1 章 计算机系统漫游]] |
 
 | 休闲     |
 |----------|

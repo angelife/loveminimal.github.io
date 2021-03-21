@@ -1,0 +1,1770 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<!-- 2021-03-18 Thu 14:18 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vue Inbox</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Jack Liu">
+<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+           <link rel="stylesheet" href="themes/style.css" type="text/css"  />
+           <script type="module" src="themes/main.js" defer></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Vue Inbox</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orga11b067">Vue Inbox</a>
+<ul>
+<li><a href="#org1adcc04">声明式渲染</a></li>
+<li><a href="#orgcaeed6b">处理用户输入</a></li>
+<li><a href="#org355f651">组件化应用构建</a></li>
+<li><a href="#orga943d32">Vue 实例</a></li>
+<li><a href="#org70ad77f">模板语法</a></li>
+<li><a href="#orga8d0063">计算属性</a></li>
+<li><a href="#org1e6f55c">绑定 HTML Class</a></li>
+<li><a href="#org75b509c">绑定内联样式</a></li>
+<li><a href="#org42bc803">条件渲染和列表渲染</a></li>
+<li><a href="#org5ec4c00">事件处理</a></li>
+<li><a href="#orga352bf7">表单输入绑定</a></li>
+<li><a href="#org10cfeb2">组件基础</a></li>
+</ul>
+</li>
+<li><a href="#orgcd455de">深入了解组件</a>
+<ul>
+<li><a href="#orga75d83f">组件注册</a></li>
+<li><a href="#org4458abf">Prop</a></li>
+<li><a href="#orgb953da1"><span class="todo TODO">TODO</span> 自定义事件</a></li>
+<li><a href="#org100a610"><span class="todo TODO">TODO</span> 插槽</a></li>
+<li><a href="#orgeba775c">动态组件 &amp; 异步组件</a></li>
+</ul>
+</li>
+<li><a href="#orgf078c6c">处理边界情况</a>
+<ul>
+<li><a href="#org1275bb8">访问元素 &amp; 组件</a></li>
+</ul>
+</li>
+<li><a href="#org8830e86">可复用性 &amp; 组合</a>
+<ul>
+<li><a href="#org1c74617">混入</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga11b067" class="outline-2">
+<h2 id="orga11b067">Vue Inbox</h2>
+<div class="outline-text-2" id="text-orga11b067">
+</div>
+<div id="outline-container-org1adcc04" class="outline-3">
+<h3 id="org1adcc04">声明式渲染</h3>
+<div class="outline-text-3" id="text-org1adcc04">
+<p>
+Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统。
+</p>
+
+<p>
+数据和 DOM 已经被建立了关联，所有东西都是响应式的。
+</p>
+
+<p>
+我们不再和 HTML 直接交互了。一个 Vue 应用会将其挂载到一个 DOM 元素上，然后对其进行完全控制。那个 HTML 是我们的入口，但其余都会发生在新创建的 Vue 实例内部。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcaeed6b" class="outline-3">
+<h3 id="orgcaeed6b">处理用户输入</h3>
+<div class="outline-text-3" id="text-orgcaeed6b">
+<p>
+为了让用户和你的应用进行交互，我们可以用 <code>v-on</code> 指令添加一个事件监听器，通过它调用在 Vue 实例中定义的方法。
+</p>
+
+<p>
+Vue 还提供了 <code>v-model</code> 指令，它能轻松实现表单输入和应用状态之间的双向绑定。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org355f651" class="outline-3">
+<h3 id="org355f651">组件化应用构建</h3>
+<div class="outline-text-3" id="text-org355f651">
+<p>
+组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。
+</p>
+
+<p>
+在 Vue 里，一个组件本质上是一个拥有预定义选项的一个 Vue 实例。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga943d32" class="outline-3">
+<h3 id="orga943d32">Vue 实例</h3>
+<div class="outline-text-3" id="text-orga943d32">
+<p>
+<b>创建一个 Vue 实例</b>
+</p>
+
+<p>
+每个 Vue 应用都是通过用 Vue 函数创建一个新的 Vue 实例开始的，当创建一个 Vue 实例时，你可以传入一个 <b>选项对象</b> 。
+</p>
+
+<p>
+一个 Vue 应用由一个通过 <code>new Vue</code> 创建的根 Vue 实例，以及可选的嵌套的、可复用的组件树组成。
+</p>
+
+<hr>
+<p>
+<b>数据与方法</b>
+</p>
+
+<p>
+当一个 Vue 实例被创建时，它将 data 对象中的所有的 property 加入到 Vue 的响应式系统中。当这些 property 的值发生改变时，视图将会产生“响应”，即匹配更新为新的值。
+</p>
+
+<p>
+*值得注意的是只有当实例被创建时就已经存在于 data 中的 property 才是响应式的。
+</p>
+
+<p>
+使用 <code>Object.freeze()</code> ，这会阻止修改现有的 property，也意味着响应系统无法再追踪变化。
+</p>
+
+<p>
+除了数据 property，Vue 实例还暴露了一些有用的实例 property 与方法。它们都有前缀 <code>$</code> ，以便与用户定义的 property 区分开来。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org70ad77f" class="outline-3">
+<h3 id="org70ad77f">模板语法</h3>
+<div class="outline-text-3" id="text-org70ad77f">
+<p>
+在底层的实现上，Vue 将模板编译成虚拟 DOM 渲染函数。
+</p>
+
+<p>
+如果你熟悉虚拟 DOM 并且偏爱 JavaScript 的原始力量，你也可以不用模板，直接写渲染 (render) 函数，使用可选的 JSX 语法。
+</p>
+
+<p>
+更多关于 <a href="https://cn.vuejs.org/v2/guide/render-function.html">渲染函数 &amp; JSX</a> 。
+</p>
+
+<p>
+数据绑定最常见的形式就是使用“Mustache”语法 (双大括号) 的文本插值。
+</p>
+
+<p>
+Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使用 <code>v-bind</code> 指令。
+</p>
+
+<p>
+实际上，对于所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。这些表达式会在所属 Vue 实例的数据作用域下作为 JavaScript 被解析。
+</p>
+
+<p>
+*限制就是，每个绑定都只能包含单个表达式。
+</p>
+
+<p>
+一些指令能够接收一个“参数”，在指令名称之后以冒号表示。如：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">href</span>=<span style="color: #50a14f;">"url"</span>&gt;...&lt;/<span style="color: #a626a4;">a</span>&gt;
+<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"doSomething"</span>&gt;...&lt;/<span style="color: #a626a4;">a</span>&gt;
+</pre>
+</div>
+
+<p>
+从 2.6.0 开始，可以用方括号括起来的 JavaScript 表达式作为一个指令的参数。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#65288;&#21160;&#24577;&#21442;&#25968;&#65289; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">a</span> v-bind:[attributeName]=<span style="color: #50a14f;">"url"</span>&gt; ... &lt;/<span style="color: #a626a4;">a</span>&gt;
+</pre>
+</div>
+
+<p>
+动态参数预期会求出一个字符串，异常情况下值为 null。这个特殊的 null 值可以被显性地用于移除绑定。
+</p>
+
+<p>
+修饰符 (modifier) 是以半角句号 <code>.</code> 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如， <code>.prevent</code> 修饰符告诉 v-on 指令对于触发的事件调用 <code>event.preventDefault()</code> 。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga8d0063" class="outline-3">
+<h3 id="orga8d0063">计算属性</h3>
+<div class="outline-text-3" id="text-orga8d0063">
+<p>
+模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。
+</p>
+
+<essay>
+编写代码一定要注意语义表述的简洁性和可读性。
+</essay>
+
+<p>
+*对于任何复杂逻辑，你都应当使用计算属性。
+</p>
+
+<p>
+你可以像绑定普通 property 一样在模板中绑定计算属性。计算属性的 getter 函数是没有副作用 (side effect) 的，这使它更易于测试和理解。
+</p>
+
+<p>
+<b>计算属性缓存 vs 方法</b>
+</p>
+
+<p>
+我们可以将同一函数定义为一个方法而不是一个计算属性。不同的是 <b>计算属性是基于它们的响应式依赖进行缓存的</b> ，只在相关响应式依赖发生改变时它们才会重新求值。相比之下，每当触发重新渲染时，调用方法将总会再次执行函数。
+</p>
+
+<p>
+计算属性默认只有 getter，不过在需要时你也可以提供一个 setter 。
+</p>
+
+<p>
+<b>计算属性 vs 侦听属性</b>
+</p>
+
+<p>
+Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据变动：侦听属性。虽然计算属性在大多数情况下更合适，但有时也需要一个自定义的侦听器。
+</p>
+
+<p>
+！当需要在数据变化时执行异步或开销较大的操作时，这个方式（侦听属性）是最有用的。
+</p>
+
+<p>
+使用 watch 选项允许我们执行异步操作 (访问一个 API)，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1e6f55c" class="outline-3">
+<h3 id="org1e6f55c">绑定 HTML Class</h3>
+<div class="outline-text-3" id="text-org1e6f55c">
+<p>
+在将 v-bind 用于 class 和 style 时，Vue.js 做了专门的增强。表达式结果的类型除了字符串之外，还可以是对象或数组。
+</p>
+
+<essay>
+结构化的数据总是更便于处理的。
+</essay>
+
+<p>
+<b>1.对象语法</b>
+</p>
+
+<p>
+我们可以传给 <code>v-bind:class</code> 一个对象，以动态地切换 class：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"{ active: isActive }"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+<span class="linenr">2: </span>
+<span class="linenr">3: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21487;&#20197;&#22312;&#23545;&#35937;&#20013;&#20256;&#20837;&#26356;&#22810;&#23383;&#27573;&#26469;&#21160;&#24577;&#20999;&#25442;&#22810;&#20010; class </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">4: </span>&lt;<span style="color: #a626a4;">div</span>
+<span class="linenr">5: </span>  <span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"static"</span>
+<span class="linenr">6: </span>  <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"{ active: isActive, 'text-danger': hasError }"</span>
+<span class="linenr">7: </span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+</pre>
+</div>
+
+<p>
+绑定的数据对象不必内联定义在模板里：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:class="classObject"&gt;&lt;/div&gt;</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span>data: <span style="color: #4078f2;">{</span>
+<span class="linenr">4: </span>  classObject: <span style="color: #a626a4;">{</span>
+<span class="linenr">5: </span>    active: <span style="color: #b751b6;">true</span>,
+<span class="linenr">6: </span>    <span style="color: #50a14f;">'text-danger'</span>: <span style="color: #b751b6;">false</span>
+<span class="linenr">7: </span>  <span style="color: #a626a4;">}</span>
+<span class="linenr">8: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<p>
+我们也可以在这里绑定一个返回对象的计算属性。这是一个常用且强大的模式：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:class="classObject"&gt;&lt;/div&gt;</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span>data: <span style="color: #4078f2;">{</span>
+<span class="linenr"> 4: </span>  isActive: <span style="color: #b751b6;">true</span>,
+<span class="linenr"> 5: </span>  error: <span style="color: #b751b6;">null</span>
+<span class="linenr"> 6: </span><span style="color: #4078f2;">}</span>,
+<span class="linenr"> 7: </span>computed: <span style="color: #4078f2;">{</span>
+<span class="linenr"> 8: </span>  <span style="color: #a626a4;">classObject</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
+<span class="linenr"> 9: </span>    <span style="color: #e45649;">return</span> <span style="color: #50a14f;">{</span>
+<span class="linenr">10: </span>      active: <span style="color: #b751b6;">this</span>.isActive &amp;&amp; !<span style="color: #b751b6;">this</span>.error,
+<span class="linenr">11: </span>      <span style="color: #50a14f;">'text-danger'</span>: <span style="color: #b751b6;">this</span>.error &amp;&amp; <span style="color: #b751b6;">this</span>.error.type === <span style="color: #50a14f;">'fatal'</span>
+<span class="linenr">12: </span>    <span style="color: #50a14f;">}</span>
+<span class="linenr">13: </span>  <span style="color: #a626a4;">}</span>
+<span class="linenr">14: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<hr>
+<p>
+<b>2.数组语法</b>
+</p>
+
+<p>
+我们可以把一个数组传给 v-bind:class，以应用一个 class 列表：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:class="[activeClass, errorClass]"&gt;&lt;/div&gt;</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span>data: <span style="color: #4078f2;">{</span>
+<span class="linenr">4: </span>  activeClass: <span style="color: #50a14f;">'active'</span>,
+<span class="linenr">5: </span>  errorClass: <span style="color: #50a14f;">'text-danger'</span>
+<span class="linenr">6: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<p>
+渲染为：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"active text-danger"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+</pre>
+</div>
+
+<p>
+在数组语法中也可以使用对象语法：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&lt;div v-bind:class="[isActive ? activeClass : '', errorClass]"&gt;&lt;/div&gt; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">2: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#31561;&#20215;&#20110; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">3: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"[{ active: isActive }, errorClass]"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+</pre>
+</div>
+
+<hr>
+<p>
+<b>3.用在组件上</b>
+</p>
+
+<p>
+当在一个自定义组件上使用 class property 时，这些 class 将被添加到该 <b>组件的根元素</b> 上面。这个元素上已经存在的 class 不会被覆盖。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org75b509c" class="outline-3">
+<h3 id="org75b509c">绑定内联样式</h3>
+<div class="outline-text-3" id="text-org75b509c">
+<p>
+<b>1.对象语法</b>
+</p>
+
+<p>
+<code>v-bind:style</code> 的对象语法十分直观——看着非常像 CSS，但其实是一个 JavaScript 对象。
+</p>
+
+<p>
+CSS property 名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，记得用引号括起来) 来命名：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"&gt;&lt;/div&gt;</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span>data: <span style="color: #4078f2;">{</span>
+<span class="linenr">4: </span>  activeColor: <span style="color: #50a14f;">'red'</span>,
+<span class="linenr">5: </span>  fontSize: 30
+<span class="linenr">6: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<p>
+直接绑定到一个样式对象通常更好，这会让模板更清晰：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:style="styleObject"&gt;&lt;/div&gt;</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span>data: <span style="color: #4078f2;">{</span>
+<span class="linenr">4: </span>  styleObject: <span style="color: #a626a4;">{</span>
+<span class="linenr">5: </span>    color: <span style="color: #50a14f;">'red'</span>,
+<span class="linenr">6: </span>    fontSize: <span style="color: #50a14f;">'13px'</span>
+<span class="linenr">7: </span>  <span style="color: #a626a4;">}</span>
+<span class="linenr">8: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<p>
+同样的，对象语法常常结合返回对象的计算属性使用。
+</p>
+
+<hr>
+<p>
+<b>2.数组语法</b>
+</p>
+
+<p>
+v-bind:style 的数组语法可以将多个样式对象应用到同一个元素上：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"[baseStyles, overridingStyles]"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org42bc803" class="outline-3">
+<h3 id="org42bc803">条件渲染和列表渲染</h3>
+<div class="outline-text-3" id="text-org42bc803">
+<p>
+Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这样也不总是符合实际需求，所以 Vue 为你提供了一种方式来表达“这两个元素是完全独立的，不要复用它们”。只需添加一个具有唯一值的 key attribute 即可。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">template</span> <span style="color: #6a1868;">v-if</span>=<span style="color: #50a14f;">"loginType === 'username'"</span>&gt;
+<span class="linenr">2: </span>  &lt;<span style="color: #a626a4;">label</span>&gt;Username&lt;/<span style="color: #a626a4;">label</span>&gt;
+<span class="linenr">3: </span>  &lt;<span style="color: #a626a4;">input</span> <span style="color: #6a1868;">placeholder</span>=<span style="color: #50a14f;">"Enter your username"</span> <span style="color: #6a1868;">key</span>=<span style="color: #50a14f;">"username-input"</span>&gt;
+<span class="linenr">4: </span>&lt;/<span style="color: #a626a4;">template</span>&gt;
+<span class="linenr">5: </span>&lt;<span style="color: #a626a4;">template</span> v-else&gt;
+<span class="linenr">6: </span>  &lt;<span style="color: #a626a4;">label</span>&gt;Email&lt;/<span style="color: #a626a4;">label</span>&gt;
+<span class="linenr">7: </span>  &lt;<span style="color: #a626a4;">input</span> <span style="color: #6a1868;">placeholder</span>=<span style="color: #50a14f;">"Enter your email address"</span> <span style="color: #6a1868;">key</span>=<span style="color: #50a14f;">"email-input"</span>&gt;
+<span class="linenr">8: </span>&lt;/<span style="color: #a626a4;">template</span>&gt;
+</pre>
+</div>
+
+<p>
+当 Vue 正在更新使用 v-for 渲染的元素列表时，它默认使用“就地更新”的策略。如果数据项的顺序被改变，Vue 将 <b>不会移动 DOM 元素来匹配数据项的顺序</b> ，而是就地更新每个元素，并且确保它们在每个索引位置正确渲染。
+</p>
+
+<p>
+*这个默认的模式是高效的，但是只适用于不依赖子组件状态或临时 DOM 状态 (例如：表单输入值) 的列表渲染输出。
+</p>
+
+<p>
+为了给 Vue 一个提示，以便它能跟踪每个节点的身份，从而重用和重新排序现有元素，你需要为每项提供一个唯一 key attribute：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">v-for</span>=<span style="color: #50a14f;">"item in items"</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">key</span>=<span style="color: #50a14f;">"item.id"</span>&gt;
+<span class="linenr">2: </span>  <span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#20869;&#23481; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">div</span>&gt;
+</pre>
+</div>
+
+<p>
+*不要使用对象或数组之类的非基本类型值作为 v-for 的 key。请用字符串或数值类型的值。
+</p>
+
+<p>
+当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级。
+</p>
+
+<hr>
+<p>
+<b>数组更新检测</b>
+</p>
+
+<p>
+Vue 将被侦听的数组的变更方法进行了包裹，所以它们也将会触发视图更新。这些被包裹过的方法包括：
+</p>
+
+<pre class="example">
+- push()
+- pop()
+- shift()
+- unshift()
+- splice()
+- sort()
+- reverse()
+</pre>
+
+<p>
+变更方法，顾名思义，会变更调用了这些方法的原始数组。相比之下，也有非变更方法，例如 <code>filter()、concat()</code> 和 <code>slice()</code> 。它们不会变更原始数组，而总是返回一个新数组。当使用非变更方法时，可以用新数组替换旧数组：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>example1.items = example1.items.filter<span style="color: #4078f2;">(</span><span style="color: #e45649;">function</span> <span style="color: #a626a4;">(</span><span style="color: #6a1868;">item</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+<span class="linenr">2: </span>    <span style="color: #e45649;">return</span> item.message.match<span style="color: #50a14f;">(</span><span style="color: #50a14f;">/Foo/</span><span style="color: #50a14f;">)</span>
+<span class="linenr">3: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<p>
+<b>！由于 JavaScript 的限制，Vue 不能检测数组和对象的变化。</b>
+</p>
+
+<hr>
+<p>
+<b>显示过滤/排序后的结果</b>
+</p>
+
+<p>
+有时，我们想要显示一个数组经过过滤或排序后的版本，而不实际变更或重置原始数据。在这种情况下，可以创建一个计算属性，来返回过滤或排序后的数组。
+</p>
+
+<p>
+在计算属性不适用的情况下 (例如，在嵌套 v-for 循环中) 你可以使用一个方法：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;ul v-for="set in sets"&gt;</span>
+<span class="linenr"> 2: </span><span style="color: #9ca0a4;">//  </span><span style="color: #9ca0a4;">&lt;li v-for="n in even(set)"&gt;{{ n }}&lt;/li&gt;</span>
+<span class="linenr"> 3: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;/ul&gt;</span>
+<span class="linenr"> 4: </span>
+<span class="linenr"> 5: </span>data: <span style="color: #4078f2;">{</span>
+<span class="linenr"> 6: </span>  sets: <span style="color: #a626a4;">[</span><span style="color: #50a14f;">[</span> 1, 2, 3, 4, 5 <span style="color: #50a14f;">]</span>, <span style="color: #50a14f;">[</span>6, 7, 8, 9, 10<span style="color: #50a14f;">]</span><span style="color: #a626a4;">]</span>
+<span class="linenr"> 7: </span><span style="color: #4078f2;">}</span>,
+<span class="linenr"> 8: </span>methods: <span style="color: #4078f2;">{</span>
+<span class="linenr"> 9: </span>  <span style="color: #a626a4;">even</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">(</span><span style="color: #6a1868;">numbers</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+<span class="linenr">10: </span>    <span style="color: #e45649;">return</span> numbers.filter<span style="color: #50a14f;">(</span><span style="color: #e45649;">function</span> <span style="color: #da8548;">(</span><span style="color: #6a1868;">number</span><span style="color: #da8548;">)</span> <span style="color: #da8548;">{</span>
+<span class="linenr">11: </span>      <span style="color: #e45649;">return</span> number % 2 === 0
+<span class="linenr">12: </span>    <span style="color: #da8548;">}</span><span style="color: #50a14f;">)</span>
+<span class="linenr">13: </span>  <span style="color: #a626a4;">}</span>
+<span class="linenr">14: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<p>
+v-for 也可以接受整数。在这种情况下，它会把模板重复对应次数。
+</p>
+
+<p>
+类似于 v-if，你也可以利用带有 v-for 的 &lt;template&gt; 来循环渲染一段包含多个元素的内容。
+</p>
+
+<hr>
+<p>
+<b>v-for 与 v-if 一同使用</b>
+</p>
+
+<p>
+当它们处于同一节点，v-for 的优先级比 v-if 更高，这意味着 v-if 将分别重复运行于每个 v-for 循环中。当你只想为部分项渲染节点时，这种优先级的机制会十分有用。而如果你的目的是有条件地跳过循环的执行，那么可以将 v-if 置于外层元素 (或 &lt;template&gt;) 上。
+</p>
+
+<hr>
+<p>
+<b>在组件上使用 v-for</b>
+</p>
+
+<p>
+在自定义组件上，你可以像在任何普通元素上一样使用 v-for。然而，任何数据都不会被自动传递到组件里，因为 <b>组件有自己独立的作用域</b> 。 <b>为了把迭代数据传递到组件里，我们要使用 prop</b> 。
+</p>
+
+<blockquote>
+<p>
+不自动将 item 注入到组件里的原因是，这会使得组件与 v-for 的运作紧密耦合。 <b>明确组件数据的来源能够使组件在其他场合重复使用</b> 。
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org5ec4c00" class="outline-3">
+<h3 id="org5ec4c00">事件处理</h3>
+<div class="outline-text-3" id="text-org5ec4c00">
+<p>
+可以用 v-on 指令监听 DOM 事件，并在触发时运行一些 JavaScript 代码。
+</p>
+
+<p>
+然而许多事件处理逻辑会更为复杂，所以直接把 JavaScript 代码写在 v-on 指令中是不可行的。因此 v-on 还可以接收 <b>一个需要调用的方法名称</b> 。
+</p>
+
+<p>
+除了直接绑定到一个方法，也可以在内联 JavaScript 语句中调用方法。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span> &lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"counter += 1"</span>&gt;Add 1&lt;/<span style="color: #a626a4;">button</span>&gt;
+<span class="linenr">2: </span>
+<span class="linenr">3: </span> <span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">`greet` &#26159;&#22312;&#19979;&#38754;&#23450;&#20041;&#30340;&#26041;&#27861;&#21517; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">4: </span> &lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"greet"</span>&gt;Greet&lt;/<span style="color: #a626a4;">button</span>&gt;
+<span class="linenr">5: </span>
+<span class="linenr">6: </span>&lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"say('hi')"</span>&gt;Say hi&lt;/<span style="color: #a626a4;">button</span>&gt;
+</pre>
+</div>
+
+<p>
+<b>有时也需要在内联语句处理器中访问原始的 DOM 事件。可以用特殊变量 <code>$event</code> 把它传入方法：</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;button v-on:click="warn('Form cannot be submitted yet.', $event)"&gt;Submit&lt;/button&gt;</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">...</span>
+<span class="linenr"> 4: </span>methods: <span style="color: #4078f2;">{</span>
+<span class="linenr"> 5: </span>  <span style="color: #a626a4;">warn</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">(</span><span style="color: #6a1868;">message</span>, <span style="color: #6a1868;">event</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+<span class="linenr"> 6: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#29616;&#22312;&#25105;&#20204;&#21487;&#20197;&#35775;&#38382;&#21407;&#29983;&#20107;&#20214;&#23545;&#35937;</span>
+<span class="linenr"> 7: </span>    <span style="color: #e45649;">if</span> <span style="color: #50a14f;">(</span>event<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
+<span class="linenr"> 8: </span>      event.preventDefault<span style="color: #da8548;">()</span>
+<span class="linenr"> 9: </span>    <span style="color: #50a14f;">}</span>
+<span class="linenr">10: </span>    alert<span style="color: #50a14f;">(</span>message<span style="color: #50a14f;">)</span>
+<span class="linenr">11: </span>  <span style="color: #a626a4;">}</span>
+<span class="linenr">12: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<hr>
+<p>
+<b>事件修饰符</b>
+</p>
+
+<p>
+在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。
+</p>
+
+<p>
+尽管我们可以在方法中轻松实现这点，但更好的方式是： <b>方法只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。</b>
+</p>
+
+<p>
+为了解决这个问题，Vue.js 为 v-on 提供了事件修饰符。之前提过，修饰符是由点开头的指令后缀来表示的。
+</p>
+
+<pre class="example">
+- .stop
+- .prevent
+- .capture
+- .self
+- .once
+- .passive
+</pre>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#38459;&#27490;&#21333;&#20987;&#20107;&#20214;&#32487;&#32493;&#20256;&#25773; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr"> 2: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.stop</span>=<span style="color: #50a14f;">"doThis"</span>&gt;&lt;/<span style="color: #a626a4;">a</span>&gt;
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#25552;&#20132;&#20107;&#20214;&#19981;&#20877;&#37325;&#36733;&#39029;&#38754; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr"> 5: </span>&lt;<span style="color: #a626a4;">form</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">submit.prevent</span>=<span style="color: #50a14f;">"onSubmit"</span>&gt;&lt;/<span style="color: #a626a4;">form</span>&gt;
+<span class="linenr"> 6: </span>
+<span class="linenr"> 7: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#20462;&#39280;&#31526;&#21487;&#20197;&#20018;&#32852; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr"> 8: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.stop.prevent</span>=<span style="color: #50a14f;">"doThat"</span>&gt;&lt;/<span style="color: #a626a4;">a</span>&gt;
+<span class="linenr"> 9: </span>
+<span class="linenr">10: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21482;&#26377;&#20462;&#39280;&#31526; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">11: </span>&lt;<span style="color: #a626a4;">form</span> v-on:submit.prevent&gt;&lt;/<span style="color: #a626a4;">form</span>&gt;
+<span class="linenr">12: </span>
+<span class="linenr">13: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#28155;&#21152;&#20107;&#20214;&#30417;&#21548;&#22120;&#26102;&#20351;&#29992;&#20107;&#20214;&#25429;&#33719;&#27169;&#24335; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">14: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21363;&#20869;&#37096;&#20803;&#32032;&#35302;&#21457;&#30340;&#20107;&#20214;&#20808;&#22312;&#27492;&#22788;&#29702;&#65292;&#28982;&#21518;&#25165;&#20132;&#30001;&#20869;&#37096;&#20803;&#32032;&#36827;&#34892;&#22788;&#29702; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">15: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.capture</span>=<span style="color: #50a14f;">"doThis"</span>&gt;...&lt;/<span style="color: #a626a4;">div</span>&gt;
+<span class="linenr">16: </span>
+<span class="linenr">17: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21482;&#24403;&#22312; event.target &#26159;&#24403;&#21069;&#20803;&#32032;&#33258;&#36523;&#26102;&#35302;&#21457;&#22788;&#29702;&#20989;&#25968; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">18: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21363;&#20107;&#20214;&#19981;&#26159;&#20174;&#20869;&#37096;&#20803;&#32032;&#35302;&#21457;&#30340; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">19: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.self</span>=<span style="color: #50a14f;">"doThat"</span>&gt;...&lt;/<span style="color: #a626a4;">div</span>&gt;
+<span class="linenr">20: </span>
+<span class="linenr">21: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#28857;&#20987;&#20107;&#20214;&#23558;&#21482;&#20250;&#35302;&#21457;&#19968;&#27425; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">22: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.once</span>=<span style="color: #50a14f;">"doThis"</span>&gt;&lt;/<span style="color: #a626a4;">a</span>&gt;
+<span class="linenr">23: </span>
+<span class="linenr">24: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">Vue &#36824;&#23545;&#24212; addEventListener &#20013;&#30340; passive &#36873;&#39033;&#25552;&#20379;&#20102; .passive &#20462;&#39280;&#31526; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">25: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#28378;&#21160;&#20107;&#20214;&#30340;&#40664;&#35748;&#34892;&#20026; (&#21363;&#28378;&#21160;&#34892;&#20026;) &#23558;&#20250;&#31435;&#21363;&#35302;&#21457; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">26: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#32780;&#19981;&#20250;&#31561;&#24453; `onScroll` &#23436;&#25104;  </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">27: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#36825;&#20854;&#20013;&#21253;&#21547; `event.preventDefault()` &#30340;&#24773;&#20917; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">28: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">scroll.passive</span>=<span style="color: #50a14f;">"onScroll"</span>&gt;...&lt;/<span style="color: #a626a4;">div</span>&gt;
+</pre>
+</div>
+
+<blockquote>
+<p>
+使用修饰符时，顺序很重要；相应的代码会以同样的顺序产生。因此，用 <code>v-on:click.prevent.self</code> 会阻止所有的点击，而 <code>v-on:click.self.prevent</code> 只会阻止对元素自身的点击。
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orga352bf7" class="outline-3">
+<h3 id="orga352bf7">表单输入绑定</h3>
+<div class="outline-text-3" id="text-orga352bf7">
+<p>
+你可以用 v-model 指令在表单 <code>&lt;input&gt;、&lt;textarea&gt;</code> 及 <code>&lt;select&gt;</code> 元素上创建双向数据绑定。
+</p>
+
+<p>
+它会根据控件类型自动选取正确的方法来更新元素。尽管有些神奇，但 v-model 本质上不过是语法糖。 <b>它负责监听用户的输入事件以更新数据</b> ，并对一些极端场景进行一些特殊处理。
+</p>
+
+<blockquote>
+<p>
+v-model 会忽略所有表单元素的 <code>value、checked、selected</code> attribute 的初始值而总是将 Vue 实例的数据作为数据来源。你应该通过 JavaScript 在组件的 data 选项中声明初始值。
+</p>
+</blockquote>
+
+<p>
+v-model 在内部为不同的输入元素使用不同的 property 并抛出不同的事件：
+</p>
+<ul class="org-ul">
+<li>text 和 textarea 元素使用 <code>value</code> property 和 <code>input</code> 事件；</li>
+<li>checkbox 和 radio 使用 <code>checked</code> property 和 <code>change</code> 事件；</li>
+<li>select 字段将 <code>value</code> 作为 prop 并将 <code>change</code> 作为事件。</li>
+</ul>
+
+<blockquote>
+<p>
+对于需要使用输入法 (如中文、日文、韩文等) 的语言，你会发现 v-model 不会在输入法组合文字过程中得到更新。如果你也想处理这个过程，请使用 input 事件。
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org10cfeb2" class="outline-3">
+<h3 id="org10cfeb2">组件基础</h3>
+<div class="outline-text-3" id="text-org10cfeb2">
+<p>
+组件是可复用的 Vue 实例，且带有一个名字，它们与 new Vue 接收相同的选项，例如 <code>data、computed、watch、methods</code> 以及生命周期钩子等。
+</p>
+
+<p>
+*仅有的例外是像 <code>el</code> 这样根实例特有的选项。
+</p>
+
+<p>
+<b>一个组件的 data 选项必须是一个函数</b> ，因此每个实例可以维护一份被返回对象的独立的拷贝。
+</p>
+
+<p>
+为了能在模板中使用，这些组件必须先注册以便 Vue 能够识别。这里有两种组件的注册类型：全局注册和局部注册。
+</p>
+
+<p>
+全局注册的组件可以用在其被注册之后的任何 (通过 new Vue) 新创建的 Vue 根实例，也包括其组件树中的所有子组件的模板中。
+</p>
+
+<hr>
+<p>
+<b>通过 Prop 向子组件传递数据</b>
+</p>
+
+<p>
+Prop 是你可以在组件上注册的一些自定义 attribute。当一个值传递给一个 prop attribute 的时候，它就变成了那个组件实例的一个 property。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20840;&#23616;&#27880;&#20876; `blog-post` &#32452;&#20214;</span>
+<span class="linenr">2: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'blog-post'</span>, <span style="color: #a626a4;">{</span>
+<span class="linenr">3: </span>  props: <span style="color: #50a14f;">[</span><span style="color: #50a14f;">'title'</span><span style="color: #50a14f;">]</span>,
+<span class="linenr">4: </span>  template: <span style="color: #50a14f;">'&lt;h3&gt;{{ title }}&lt;/h3&gt;'</span>
+<span class="linenr">5: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">6: </span>
+<span class="linenr">7: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#19968;&#20010; prop &#34987;&#27880;&#20876;&#20043;&#21518;&#65292;&#20320;&#23601;&#21487;&#20197;&#20687;&#36825;&#26679;&#25226;&#25968;&#25454;&#20316;&#20026;&#19968;&#20010;&#33258;&#23450;&#20041; attribute &#20256;&#36882;&#36827;&#26469;</span>
+<span class="linenr">8: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;blog-post title="My journey with Vue"&gt;&lt;/blog-post&gt;</span>
+<span class="linenr">9: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;blog-post title="Blogging with Vue"&gt;&lt;/blog-post&gt;</span>
+</pre>
+</div>
+
+<p>
+*我们能够在组件实例中访问这个值，就像访问 data 中的值一样。
+</p>
+
+<p>
+一个组件默认可以拥有任意数量的 prop， <b>任何值</b> 都可以传递给任何 prop。
+</p>
+
+<p>
+<b>！每个组件必须只有一个根元素。</b>
+</p>
+
+<hr>
+<p>
+<b>监听子组件事件</b>
+</p>
+
+<p>
+在我们开发 <code>&lt;blog-post&gt;</code> 组件时，它的一些功能可能要求我们和父级组件进行沟通。例如我们可能会引入一个辅助功能来放大博文的字号，同时让页面的其它部分保持默认的字号。
+</p>
+
+<p>
+Vue 实例提供了一个自定义事件的系统来解决这个问题。父级组件可以像处理 native DOM 事件一样通过 v-on 监听子组件实例的任意事件：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">blog-post</span>
+<span class="linenr">2: </span>  ...
+<span class="linenr">3: </span>  <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">enlarge-text</span>=<span style="color: #50a14f;">"postFontSize += 0.1"</span>
+<span class="linenr">4: </span>&gt;&lt;/<span style="color: #a626a4;">blog-post</span>&gt;
+</pre>
+</div>
+
+<p>
+同时子组件可以通过调用内建的 <code>$emit</code> 方法并传入事件名称来触发一个事件：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"$emit('enlarge-text')"</span>&gt;
+<span class="linenr">2: </span>  Enlarge text
+<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">button</span>&gt;
+</pre>
+</div>
+
+<hr>
+<p>
+<b>使用事件抛出一个值</b>
+</p>
+
+<p>
+有的时候用一个事件来抛出一个特定的值是非常有用的。
+</p>
+
+<p>
+例如我们可能想让 <code>&lt;blog-post&gt;</code> 组件决定它的文本要放大多少。这时可以使用 <code>$emit</code> 的第二个参数来提供这个值：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"$emit('enlarge-text', 0.1)"</span>&gt;
+<span class="linenr">2: </span>  Enlarge text
+<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">button</span>&gt;
+</pre>
+</div>
+
+<p>
+然后当在 <b>父级组件监听这个事件</b> 的时候，我们 <b>可以通过 <code>$event</code> 访问到被抛出的这个值</b> ：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">blog-post</span>
+<span class="linenr">2: </span>  ...
+<span class="linenr">3: </span>  <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">enlarge-text</span>=<span style="color: #50a14f;">"postFontSize += $event"</span>
+<span class="linenr">4: </span>&gt;&lt;/<span style="color: #a626a4;">blog-post</span>&gt;
+</pre>
+</div>
+
+<p>
+或者，如果这个事件处理函数是 <b>一个方法</b> ，那么这个值将会 <b>作为第一个参数传入这个方法</b> ：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;blog-post</span>
+<span class="linenr"> 2: </span><span style="color: #9ca0a4;">//   </span><span style="color: #9ca0a4;">...</span>
+<span class="linenr"> 3: </span><span style="color: #9ca0a4;">//   </span><span style="color: #9ca0a4;">v-on:enlarge-text="onEnlargeText"</span>
+<span class="linenr"> 4: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&gt;&lt;/blog-post&gt;</span>
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span>methods: <span style="color: #4078f2;">{</span>
+<span class="linenr"> 7: </span>  <span style="color: #a626a4;">onEnlargeText</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">(</span><span style="color: #6a1868;">enlargeAmount</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+<span class="linenr"> 8: </span>    <span style="color: #b751b6;">this</span>.postFontSize += enlargeAmount
+<span class="linenr"> 9: </span>  <span style="color: #a626a4;">}</span>
+<span class="linenr">10: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">11: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">`enlargeAmount` &#23601;&#26159;&#32452;&#20214;&#25243;&#20986;&#26469;&#30340;&#20540;</span>
+</pre>
+</div>
+
+<hr>
+<p>
+<b>通过插槽分发内容</b>
+</p>
+
+<p>
+和 HTML 元素一样，我们经常需要向一个组件传递内容，像这样：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">alert-box</span>&gt;
+<span class="linenr">2: </span>  Something bad happened.
+<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">alert-box</span>&gt;
+</pre>
+</div>
+
+<p>
+幸好，Vue 自定义的 &lt;slot&gt; 元素让这变得非常简单：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'alert-box'</span>, <span style="color: #a626a4;">{</span>
+<span class="linenr">2: </span>  template: <span style="color: #50a14f;">`</span>
+<span class="linenr">3: </span><span style="color: #50a14f;">    &lt;div class="demo-alert-box"&gt;</span>
+<span class="linenr">4: </span><span style="color: #50a14f;">      &lt;strong&gt;Error!&lt;/strong&gt;</span>
+<span class="linenr">5: </span><span style="color: #50a14f;">      &lt;slot&gt;&lt;/slot&gt;</span>
+<span class="linenr">6: </span><span style="color: #50a14f;">    &lt;/div&gt;</span>
+<span class="linenr">7: </span><span style="color: #50a14f;">  `</span>
+<span class="linenr">8: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<hr>
+<p>
+<b>动态组件</b>
+</p>
+
+<p>
+在不同组件之间进行动态切换是非常有用的，可以通过 Vue 的 <code>&lt;component&gt;</code> 元素加一个特殊的 <code>is</code> attribute 来实现，如：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#32452;&#20214;&#20250;&#22312; `currentTabComponent` &#25913;&#21464;&#26102;&#25913;&#21464; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">component</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">is</span>=<span style="color: #50a14f;">"currentTabComponent"</span>&gt;&lt;/<span style="color: #a626a4;">component</span>&gt;
+</pre>
+</div>
+
+<p>
+*？请留意，这个 attribute 可以用于常规 HTML 元素，但这些元素将被视为组件，这意味着所有的 attribute 都会作为 DOM attribute 被绑定。对于像 <code>value</code> 这样的 property，若想让其如预期般工作，你需要使用 <code>.prop</code> 修饰器。
+</p>
+
+<p>
+有些 HTML 元素，诸如 <code>&lt;ul&gt;、&lt;ol&gt;、&lt;table&gt;</code> 和 <code>&lt;select&gt;</code> ，对于哪些元素可以出现在其内部是有严格限制的。而有些元素，诸如 <code>&lt;li&gt;、&lt;tr&gt;</code> 和 <code>&lt;option&gt;</code> ，只能出现在其它某些特定的元素内部。
+</p>
+
+<p>
+这会导致我们使用这些有约束条件的元素时遇到一些问题。例如：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">table</span>&gt;
+<span class="linenr">2: </span>  &lt;<span style="color: #a626a4;">blog-post-row</span>&gt;&lt;/<span style="color: #a626a4;">blog-post-row</span>&gt;
+<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">table</span>&gt;
+</pre>
+</div>
+
+<p>
+这个自定义组件 <code>&lt;blog-post-row&gt;</code> 会被作为无效的内容提升到外部，并导致最终渲染结果出错。幸好这个特殊的 <code>is</code> attribute 给了我们一个变通的办法：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">table</span>&gt;
+<span class="linenr">2: </span>  &lt;<span style="color: #a626a4;">tr</span> <span style="color: #6a1868;">is</span>=<span style="color: #50a14f;">"blog-post-row"</span>&gt;&lt;/<span style="color: #a626a4;">tr</span>&gt;
+<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">table</span>&gt;
+</pre>
+</div>
+
+<p>
+需要注意的是 <b>如果我们从以下来源使用模板的话，这条限制是不存在的：</b>
+</p>
+<ul class="org-ul">
+<li>字符串 (例如： <code>template: '...'</code> )</li>
+<li>单文件组件 (<code>.vue</code>)</li>
+<li><code>&lt;script type="text/x-template"&gt;</code></li>
+</ul>
+
+<p>
+到这里，你需要了解的解析 DOM 模板时的注意事项——实际上也是 Vue 的全部必要内容，大概就是这些了。恭喜你！
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcd455de" class="outline-2">
+<h2 id="orgcd455de">深入了解组件</h2>
+<div class="outline-text-2" id="text-orgcd455de">
+</div>
+<div id="outline-container-orga75d83f" class="outline-3">
+<h3 id="orga75d83f">组件注册</h3>
+<div class="outline-text-3" id="text-orga75d83f">
+<p>
+<b>组件名</b>
+</p>
+
+<p>
+当使用 kebab-case (短横线分隔命名) 定义一个组件时，你也必须在引用这个自定义元素时使用 kebab-case 。当使用 PascalCase (首字母大写命名) 定义一个组件时，你在引用这个自定义元素时两种命名法都可以使用。
+</p>
+
+<p>
+*注意，尽管如此，直接在 DOM (即非字符串的模板) 中使用时只有 kebab-case 是有效的。
+</p>
+
+<p>
+<b>全局注册和局部注册</b>
+</p>
+
+<p>
+用过 <code>Vue.component</code> 来创建的组件是全局组件，它们在注册之后可以用在任何新创建的 Vue 根实例 (<code>new Vue</code>) 的模板中。在所有子组件中也是如此，也就是说这三个组件在各自内部也都可以相互使用。
+</p>
+
+<blockquote>
+<p>
+全局注册往往是不够理想的。比如，如果你使用一个像 webpack 这样的构建系统，全局注册所有的组件意味着即便你已经不再使用一个组件了，它仍然会被包含在你最终的构建结果中。这造成了用户下载的 JavaScript 的无谓的增加。
+</p>
+</blockquote>
+
+<p>
+在这些情况下，你可以通过一个普通的 JavaScript 对象来定义组件，然后在 <code>components</code> 选项中定义你想要使用的组件，对于 <code>components</code> 对象中的每个 property 来说，其 property 名就是自定义元素的名字，其 property 值就是这个组件的选项对象。
+</p>
+
+<p>
+*局部注册的组件在其子组件中不可用。
+</p>
+
+<hr>
+<p>
+<b>基础组件的自动化全局注册</b>
+</p>
+
+<p>
+如果你恰好使用了 webpack (或在内部使用了 webpack 的 Vue CLI 3+)，那么就可以使用 <code>require.context</code> 只全局注册这些非常通用的基础组件。
+</p>
+
+<essay>
+这个地方可以在用的时候，再看一下。
+</essay>
+
+<p>
+<b>记住全局注册的行为必须在根 Vue 实例 (通过 new Vue) 创建之前发生。</b>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4458abf" class="outline-3">
+<h3 id="org4458abf">Prop</h3>
+<div class="outline-text-3" id="text-org4458abf">
+<p>
+<b>Prop 的大小写 (camelCase vs kebab-case)</b>
+</p>
+
+<p>
+HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有大写字符解释为小写字符。这意味着当你使用 DOM 中的模板时，camelCase (驼峰命名法) 的 prop 名需要使用其等价的 kebab-case (短横线分隔命名) 命名：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'blog-post'</span>, <span style="color: #a626a4;">{</span>
+<span class="linenr">2: </span>  <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22312; JavaScript &#20013;&#26159; camelCase &#30340;</span>
+<span class="linenr">3: </span>  props: <span style="color: #50a14f;">[</span><span style="color: #50a14f;">'postTitle'</span><span style="color: #50a14f;">]</span>,
+<span class="linenr">4: </span>  template: <span style="color: #50a14f;">'&lt;h3&gt;{{ postTitle }}&lt;/h3&gt;'</span>
+<span class="linenr">5: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">6: </span>
+<span class="linenr">7: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;!-- &#22312; HTML &#20013;&#26159; kebab-case &#30340; --&gt;</span>
+<span class="linenr">8: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;blog-post post-title="hello!"&gt;&lt;/blog-post&gt;</span>
+</pre>
+</div>
+
+<p>
+*重申一次，如果你使用字符串模板，那么这个限制就不存在了。
+</p>
+
+<hr>
+<p>
+<b>Prop 类型</b>
+</p>
+
+<p>
+到这里，我们只看到了以 <b>字符串数组形式</b> 列出的 prop：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #4078f2;">[</span><span style="color: #50a14f;">'title'</span>, <span style="color: #50a14f;">'likes'</span>, <span style="color: #50a14f;">'isPublished'</span>, <span style="color: #50a14f;">'commentIds'</span>, <span style="color: #50a14f;">'author'</span><span style="color: #4078f2;">]</span>
+</pre>
+</div>
+
+<p>
+但是，通常你希望每个 prop 都有指定的值类型。这时，你可以以 <b>对象形式</b> 列出 prop，这些 property 的名称和值分别是 prop 各自的名称和类型：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #4078f2;">{</span>
+<span class="linenr">2: </span>  title: String,
+<span class="linenr">3: </span>  likes: Number,
+<span class="linenr">4: </span>  isPublished: Boolean,
+<span class="linenr">5: </span>  commentIds: Array,
+<span class="linenr">6: </span>  author: Object,
+<span class="linenr">7: </span>  callback: Function,
+<span class="linenr">8: </span>  contactsPromise: Promise <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">or any other constructor</span>
+<span class="linenr">9: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<hr>
+<p>
+<b>传递静态或动态 Prop</b>
+</p>
+
+<p>
+！任何类型的值都可以传给一个 prop 。
+</p>
+
+<p>
+对于数字、布尔值、数组、对象等，即便是静态的，我们仍然需要 `v-bind` 来告诉 Vue 。
+</p>
+
+<p>
+如果你想要将一个对象的所有 property 都作为 prop 传入，你可以使用 <b>不带参数</b> 的 v-bind (取代 <code>v-bind:prop-name</code>)。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">blog-post</span> <span style="color: #6a1868;">v-bind</span>=<span style="color: #50a14f;">"post"</span>&gt;&lt;/<span style="color: #a626a4;">blog-post</span>&gt;
+<span class="linenr">2: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#31561;&#20215;&#20110; </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">3: </span>&lt;<span style="color: #a626a4;">blog-post</span>
+<span class="linenr">4: </span>  <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">id</span>=<span style="color: #50a14f;">"post.id"</span>
+<span class="linenr">5: </span>  <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">title</span>=<span style="color: #50a14f;">"post.title"</span>
+<span class="linenr">6: </span>&gt;&lt;/<span style="color: #a626a4;">blog-post</span>&gt;
+</pre>
+</div>
+
+<hr>
+<p>
+<b>单向数据流</b>
+</p>
+
+<p>
+所有的 prop 都使得其父子 prop 之间形成了一个 <b>单向下行绑定</b> ：父级 prop 的更新会向下流动到子组件中，但是反过来则不行。
+</p>
+
+<blockquote>
+<p>
+这样会防止从子组件意外变更父级组件的状态，从而导致你的应用的数据流向难以理解。
+</p>
+</blockquote>
+
+<p>
+额外的， <b>每次父级组件发生变更时，子组件中所有的 prop 都将会刷新为最新的值</b> 。
+</p>
+
+<p>
+这意味着你不应该在一个子组件内部改变 prop。如果你这样做了，Vue 会在浏览器的控制台中发出警告。
+</p>
+
+<p>
+有两种常见的试图变更一个 prop 的情形：
+</p>
+
+<p>
+1)这个 prop 用来传递一个初始值；这个子组件接下来希望将其作为一个本地的 prop 数据来使用。
+</p>
+
+<p>
+在这种情况下，最好定义一个本地的 data property 并将这个 prop 用作其初始值：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #4078f2;">[</span><span style="color: #50a14f;">'initialCounter'</span><span style="color: #4078f2;">]</span>,
+<span class="linenr">2: </span><span style="color: #a626a4;">data</span>: <span style="color: #e45649;">function</span> <span style="color: #4078f2;">()</span> <span style="color: #4078f2;">{</span>
+<span class="linenr">3: </span>  <span style="color: #e45649;">return</span> <span style="color: #a626a4;">{</span>
+<span class="linenr">4: </span>    counter: <span style="color: #b751b6;">this</span>.initialCounter
+<span class="linenr">5: </span>  <span style="color: #a626a4;">}</span>
+<span class="linenr">6: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<p>
+2)这个 prop 以一种原始的值传入且需要进行转换。
+</p>
+
+<p>
+在这种情况下，最好使用这个 prop 的值来定义一个计算属性：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #4078f2;">[</span><span style="color: #50a14f;">'size'</span><span style="color: #4078f2;">]</span>,
+<span class="linenr">2: </span>computed: <span style="color: #4078f2;">{</span>
+<span class="linenr">3: </span>  <span style="color: #a626a4;">normalizedSize</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
+<span class="linenr">4: </span>    <span style="color: #e45649;">return</span> <span style="color: #b751b6;">this</span>.size.trim<span style="color: #50a14f;">()</span>.toLowerCase<span style="color: #50a14f;">()</span>
+<span class="linenr">5: </span>  <span style="color: #a626a4;">}</span>
+<span class="linenr">6: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<blockquote>
+<p>
+！注意在 JavaScript 中对象和数组是通过引用传入的，所以对于一个数组或对象类型的 prop 来说，在子组件中改变变更这个对象或数组本身将会影响到父组件的状态。
+</p>
+</blockquote>
+
+<hr>
+<p>
+<b>Prop 验证</b>
+</p>
+
+<p>
+我们可以为组件的 prop 指定验证要求，例如你知道的这些类型。如果有一个需求没有被满足，则 Vue 会在浏览器控制台中警告你。这在开发一个会被别人用到的组件时尤其有帮助。
+</p>
+
+<p>
+为了定制 prop 的验证方式，你可以为 props 中的值 <b>提供一个带有验证需求的对象，而不是一个字符串数组</b> 。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'my-component'</span>, <span style="color: #a626a4;">{</span>
+<span class="linenr"> 2: </span>    props: <span style="color: #50a14f;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22522;&#30784;&#30340;&#31867;&#22411;&#26816;&#26597;&#65288;`null` &#21644; `undefined` &#20250;&#36890;&#36807;&#20219;&#20309;&#31867;&#22411;&#39564;&#35777;&#65289;</span>
+<span class="linenr"> 4: </span>        propA: Number,
+<span class="linenr"> 5: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22810;&#20010;&#21487;&#33021;&#30340;&#31867;&#22411;</span>
+<span class="linenr"> 6: </span>        propB: <span style="color: #da8548;">[</span>String, Number<span style="color: #da8548;">]</span>,
+<span class="linenr"> 7: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24517;&#22635;&#30340;&#23383;&#31526;&#20018;</span>
+<span class="linenr"> 8: </span>        propC: <span style="color: #da8548;">{</span>
+<span class="linenr"> 9: </span>            type: String,
+<span class="linenr">10: </span>            required: <span style="color: #b751b6;">true</span>
+<span class="linenr">11: </span>        <span style="color: #da8548;">}</span>,
+<span class="linenr">12: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24102;&#26377;&#40664;&#35748;&#20540;&#30340;&#25968;&#23383;</span>
+<span class="linenr">13: </span>        propD: <span style="color: #da8548;">{</span>
+<span class="linenr">14: </span>            type: Number,
+<span class="linenr">15: </span>            <span style="color: #e45649;">default</span>: 100
+<span class="linenr">16: </span>        <span style="color: #da8548;">}</span>,
+<span class="linenr">17: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24102;&#26377;&#40664;&#35748;&#20540;&#30340;&#23545;&#35937;</span>
+<span class="linenr">18: </span>        propE: <span style="color: #da8548;">{</span>
+<span class="linenr">19: </span>            type: Object,
+<span class="linenr">20: </span>            <span style="color: #9ca0a4;">//</span><span style="color: #9ca0a4;">&#65281;&#23545;&#35937;&#25110;&#25968;&#32452;&#40664;&#35748;&#20540;_&#24517;&#39035;_&#20174;&#19968;&#20010;&#24037;&#21378;&#20989;&#25968;&#33719;&#21462;</span>
+<span class="linenr">21: </span>            <span style="color: #a626a4;">default</span>: <span style="color: #e45649;">function</span><span style="color: #b751b6;">()</span> <span style="color: #b751b6;">{</span>
+<span class="linenr">22: </span>                <span style="color: #e45649;">return</span> <span style="color: #986801;">{</span> message: <span style="color: #50a14f;">'hello'</span> <span style="color: #986801;">}</span>
+<span class="linenr">23: </span>            <span style="color: #b751b6;">}</span>
+<span class="linenr">24: </span>        <span style="color: #da8548;">}</span>,
+<span class="linenr">25: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33258;&#23450;&#20041;&#39564;&#35777;&#20989;&#25968;</span>
+<span class="linenr">26: </span>        propF: <span style="color: #da8548;">{</span>
+<span class="linenr">27: </span>            <span style="color: #a626a4;">validator</span>: <span style="color: #e45649;">function</span><span style="color: #b751b6;">(</span><span style="color: #6a1868;">value</span><span style="color: #b751b6;">)</span> <span style="color: #b751b6;">{</span>
+<span class="linenr">28: </span>                <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#20010;&#20540;&#24517;&#39035;&#21305;&#37197;&#19979;&#21015;&#23383;&#31526;&#20018;&#20013;&#30340;&#19968;&#20010;</span>
+<span class="linenr">29: </span>                <span style="color: #e45649;">return</span> <span style="color: #986801;">[</span><span style="color: #50a14f;">'success'</span>, <span style="color: #50a14f;">'warning'</span>, <span style="color: #50a14f;">'danger'</span><span style="color: #986801;">]</span>.indexOf<span style="color: #986801;">(</span>value<span style="color: #986801;">)</span> !== -1
+<span class="linenr">30: </span>            <span style="color: #b751b6;">}</span>
+<span class="linenr">31: </span>        <span style="color: #da8548;">}</span>
+<span class="linenr">32: </span>    <span style="color: #50a14f;">}</span>
+<span class="linenr">33: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<blockquote>
+<p>
+注意那些 <b>prop 会在一个组件实例创建之前进行验证</b> ，所以实例的 property (如 data、computed 等) 在 default 或 validator 函数中是 <b>不可用</b> 的。
+</p>
+</blockquote>
+
+<hr>
+<p>
+<b>类型检查</b>
+</p>
+
+<p>
+<code>type</code> 可以是下列原生构造函数中的一个： <code>String、 Number、 Boolean、 Array、 Object、 Date、 Function、 Symbol</code> 。
+</p>
+
+<p>
+额外的， <code>type</code> 还可以是一个自定义的构造函数，并且通过 <code>instanceof</code> 来进行检查确认。
+</p>
+
+<hr>
+<p>
+<b>非 Prop 的 Attribute</b>
+</p>
+
+<p>
+一个非 prop 的 attribute 是指传向一个组件，但是该组件并没有相应 prop 定义的 attribute。
+</p>
+
+<p>
+因为显式定义的 prop 适用于向一个子组件传入信息，然而组件库的作者并不总能预见组件会被用于怎样的场景。这也是为什么 <b>组件可以接受任意的 attribute</b> ，而这些 attribute 会被添加到这个 <b>组件的根元素</b> 上。
+</p>
+
+<p>
+如果你不希望组件的根元素继承 attribute，你可以在组件的选项中设置 <code>inheritAttrs: false</code> 。
+</p>
+
+<p>
+这尤其适合配合实例的 <code>$attrs</code> property 使用，该 property 包含了传递给一个组件的 attribute 名和 attribute 值。
+</p>
+
+<blockquote>
+<p>
+包含了父作用域中不作为 prop 被识别 (且获取) 的 attribute 绑定 (class 和 style 除外)。当一个组件没有声明任何 prop 时，这里会包含所有父作用域的绑定 (class 和 style 除外)，并且可以通过 <code>v-bind="$attrs"</code> 传入内部组件——在创建高级别的组件时非常有用。
+</p>
+</blockquote>
+
+<p>
+有了 <code>inheritAttrs: false</code> 和 <code>$attrs</code> ，你就可以手动决定这些 attribute 会被赋予哪个元素。在撰写基础组件的时候是常会用到的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb953da1" class="outline-3">
+<h3 id="orgb953da1"><span class="todo TODO">TODO</span> 自定义事件</h3>
+<div class="outline-text-3" id="text-orgb953da1">
+<p>
+<b>事件名</b>
+</p>
+
+<p>
+不同于组件和 prop， <b>事件名不存在任何自动化的大小写转换</b> ，而是触发的事件名 <b>需要完全匹配</b> 监听这个事件所用的名称。
+</p>
+
+<p>
+*我们推荐你始终使用 kebab-case 的事件名。
+</p>
+
+<p>
+<b>自定义组件的 v-model</b>
+</p>
+
+<p>
+一个组件上的 <code>v-model</code> 默认会利用名为 <code>value</code> 的 prop 和名为 <code>input</code> 的事件，但是像单选框、复选框等类型的输入控件可能会将 <code>value</code> attribute 用于不同的目的。 <code>model</code> 选项可以用来避免这样的冲突：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'base-checkbox'</span>, <span style="color: #a626a4;">{</span>
+<span class="linenr"> 2: </span>  model: <span style="color: #50a14f;">{</span>
+<span class="linenr"> 3: </span>    prop: <span style="color: #50a14f;">'checked'</span>,
+<span class="linenr"> 4: </span>    event: <span style="color: #50a14f;">'change'</span>
+<span class="linenr"> 5: </span>  <span style="color: #50a14f;">}</span>,
+<span class="linenr"> 6: </span>  props: <span style="color: #50a14f;">{</span>
+<span class="linenr"> 7: </span>    checked: Boolean
+<span class="linenr"> 8: </span>  <span style="color: #50a14f;">}</span>,
+<span class="linenr"> 9: </span>  template: <span style="color: #50a14f;">`</span>
+<span class="linenr">10: </span><span style="color: #50a14f;">    &lt;input</span>
+<span class="linenr">11: </span><span style="color: #50a14f;">      type="checkbox"</span>
+<span class="linenr">12: </span><span style="color: #50a14f;">      v-bind:checked="checked"</span>
+<span class="linenr">13: </span><span style="color: #50a14f;">      v-on:change="$emit('change', $event.target.checked)"</span>
+<span class="linenr">14: </span><span style="color: #50a14f;">    &gt;</span>
+<span class="linenr">15: </span><span style="color: #50a14f;">  `</span>
+<span class="linenr">16: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">17: </span>
+<span class="linenr">18: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#29616;&#22312;&#22312;&#36825;&#20010;&#32452;&#20214;&#19978;&#20351;&#29992; v-model &#30340;&#26102;&#20505;</span>
+<span class="linenr">19: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;base-checkbox v-model="lovingVue"&gt;&lt;/base-checkbox&gt;</span>
+<span class="linenr">20: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#37324;&#30340; lovingVue &#30340;&#20540;&#23558;&#20250;&#20256;&#20837;&#36825;&#20010;&#21517;&#20026; checked &#30340; prop&#12290;</span>
+<span class="linenr">21: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21516;&#26102;&#24403; &lt;base-checkbox&gt; &#35302;&#21457;&#19968;&#20010; change &#20107;&#20214;&#24182;&#38468;&#24102;&#19968;&#20010;&#26032;&#30340;&#20540;&#30340;&#26102;&#20505;&#65292;&#36825;&#20010; lovingVue &#30340; property &#23558;&#20250;&#34987;&#26356;&#26032;&#12290;</span>
+</pre>
+</div>
+
+<p>
+！注意你仍然需要在组件的 <code>props</code> 选项里声明 <code>checked</code> 这个 prop。
+</p>
+
+<hr>
+<p>
+<b>TODO 将原生事件绑定到组件</b>
+</p>
+
+<p>
+你可能有很多次想要在一个组件的根元素上 <b>直接监听一个原生事件</b> 。这时，你可以使用 <code>v-on</code> 的 <code>.native</code> 修饰符：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">base-input</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">focus.native</span>=<span style="color: #50a14f;">"onFocus"</span>&gt;&lt;/<span style="color: #a626a4;">base-input</span>&gt;
+</pre>
+</div>
+
+<hr>
+<p>
+<b><code>.sync</code> 修饰符</b>
+</p>
+
+<p>
+在有些情况下，我们可能需要对一个 prop 进行“双向绑定”。
+</p>
+
+<p>
+不幸的是，真正的双向绑定会带来维护上的问题，因为子组件可以变更父组件，且在父组件和子组件都没有明显的变更来源。
+</p>
+
+<p>
+这也是为什么我们推荐以 <code>update:myPropName</code> 的模式触发事件取而代之。
+</p>
+
+<p>
+举个例子，在一个包含 <code>title</code> prop 的假设的组件中，我们可以用以下方法表达对其赋新值的意图：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #b751b6;">this</span>.$emit<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'update:title'</span>, newTitle<span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<p>
+然后父组件可以监听那个事件并根据需要更新一个本地的数据 property。例如：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">text-document</span>
+<span class="linenr">2: </span>  <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">title</span>=<span style="color: #50a14f;">"doc.title"</span>
+<span class="linenr">3: </span>  <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">update:title</span>=<span style="color: #50a14f;">"doc.title = $event"</span>
+<span class="linenr">4: </span>&gt;&lt;/<span style="color: #a626a4;">text-document</span>&gt;
+</pre>
+</div>
+
+<p>
+为了方便起见，我们为这种模式提供一个缩写，即 <code>.sync</code> 修饰符：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">text-document</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">title.sync</span>=<span style="color: #50a14f;">"doc.title"</span>&gt;&lt;/<span style="color: #a626a4;">text-document</span>&gt;
+</pre>
+</div>
+
+<blockquote>
+<p>
+注意带有 <code>.sync</code> 修饰符的 <code>v-bind</code> <b>不能和表达式一起使用</b> (例如 <code>v-bind:title.sync="doc.title + '!'"</code> 是无效的)。取而代之的是，你只能提供你想要绑定的 property 名，类似 <code>v-model</code> 。
+</p>
+</blockquote>
+
+<p>
+当我们用一个对象同时设置多个 prop 的时候，也可以将这个 <code>.sync</code> 修饰符和 <code>v-bind</code> 配合使用：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">text-document</span> <span style="color: #6a1868;">v-bind.sync</span>=<span style="color: #50a14f;">"doc"</span>&gt;&lt;/<span style="color: #a626a4;">text-document</span>&gt;
+</pre>
+</div>
+
+<p>
+这样会把 <code>doc</code> 对象中的每一个 property (如 <code>title</code>) 都作为一个独立的 prop 传进去，然后各自添加用于更新的 <code>v-on</code> 监听器。
+</p>
+
+<blockquote>
+<p>
+将 <code>v-bind.sync</code> 用在一个字面量的对象上，例如 <code>v-bind.sync="{ title: doc.title }"</code> ，是无法正常工作的，因为在解析一个像这样的复杂表达式的时候，有很多边缘情况需要考虑。
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org100a610" class="outline-3">
+<h3 id="org100a610"><span class="todo TODO">TODO</span> 插槽</h3>
+<div class="outline-text-3" id="text-org100a610">
+<p>
+<b>插槽内容</b>
+</p>
+
+<p>
+Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Components 规范草案，将 <code>&lt;slot&gt;</code> 元素作为承载分发内容的出口。
+</p>
+
+<p>
+插槽内可以包含任何模板代码，包括 HTML 。
+</p>
+
+<p>
+如果组件的 <code>template</code> 中没有包含一个 <code>&lt;slot&gt;</code> 元素，则该组件起始标签和结束标签之间的任何内容都会 <b>被抛弃</b> 。
+</p>
+
+<hr>
+<p>
+<b>编译作用域</b>
+</p>
+
+<p>
+当你想在一个插槽中使用数据时，例如：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">navigation-link</span> <span style="color: #6a1868;">url</span>=<span style="color: #50a14f;">"/profile"</span>&gt;
+<span class="linenr">2: </span>  Logged in as {{ user.name }}
+<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">navigation-link</span>&gt;
+</pre>
+</div>
+
+<p>
+该插槽跟模板的其它地方一样可以访问相同的实例 property (也就是相同的“作用域”)，而不能访问 <code>&lt;navigation-link&gt;</code> 的作用域。例如 <code>url</code> 是访问不到的：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">navigation-link</span> <span style="color: #6a1868;">url</span>=<span style="color: #50a14f;">"/profile"</span>&gt;
+<span class="linenr">2: </span>  Clicking here will send you to: {{ url }}
+<span class="linenr">3: </span>  <span style="color: #9ca0a4;">&lt;!--</span>
+<span class="linenr">4: </span><span style="color: #9ca0a4;">  &#36825;&#37324;&#30340; `url` &#20250;&#26159; undefined&#65292;&#22240;&#20026;&#20854; (&#25351;&#35813;&#25554;&#27133;&#30340;) &#20869;&#23481;&#26159;</span>
+<span class="linenr">5: </span><span style="color: #9ca0a4;">  _&#20256;&#36882;&#32473;_ &lt;navigation-link&gt; &#30340;&#32780;&#19981;&#26159;</span>
+<span class="linenr">6: </span><span style="color: #9ca0a4;">  &#22312; &lt;navigation-link&gt; &#32452;&#20214;*&#20869;&#37096;*&#23450;&#20041;&#30340;&#12290;</span>
+<span class="linenr">7: </span><span style="color: #9ca0a4;">  </span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">8: </span>&lt;/<span style="color: #a626a4;">navigation-link</span>&gt;
+</pre>
+</div>
+
+<p>
+作为一条规则，请记住：
+</p>
+
+<p>
+<b>*父级模板里的所有内容都是在父级作用域中编译的；子模板里的所有内容都是在子作用域中编译的。</b>
+</p>
+
+<hr>
+<p>
+<b>后备内容</b>
+</p>
+
+<p>
+有时为一个插槽设置具体的后备 (也就是默认的) 内容是很有用的，它只会在没有提供内容的时候被渲染。
+</p>
+
+<p>
+……
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgeba775c" class="outline-3">
+<h3 id="orgeba775c">动态组件 &amp; 异步组件</h3>
+<div class="outline-text-3" id="text-orgeba775c">
+<p>
+当在这些组件之间切换的时候，你有时会想保持这些组件的状态，以避免反复重渲染导致的性能问题。
+</p>
+
+<p>
+为了解决这个问题，我们可以用一个 <code>&lt;keep-alive&gt;</code> 元素将其动态组件包裹起来。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#22833;&#27963;&#30340;&#32452;&#20214;&#23558;&#20250;&#34987;&#32531;&#23384;&#65281;</span><span style="color: #9ca0a4;">--&gt;</span>
+<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">keep-alive</span>&gt;
+<span class="linenr">3: </span>  &lt;<span style="color: #a626a4;">component</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">is</span>=<span style="color: #50a14f;">"currentTabComponent"</span>&gt;&lt;/<span style="color: #a626a4;">component</span>&gt;
+<span class="linenr">4: </span>&lt;/<span style="color: #a626a4;">keep-alive</span>&gt;
+</pre>
+</div>
+
+<blockquote>
+<p>
+！注意这个 <code>&lt;keep-alive&gt;</code> 要求被切换到的组件都有自己的名字，不论是通过组件的 <code>name</code> 选项还是局部/全局注册。
+</p>
+</blockquote>
+
+<hr>
+<p>
+<b>异步组件</b>
+</p>
+
+<p>
+在大型应用中，我们可能需要将应用分割成小一些的代码块，并且只在需要的时候才从服务器加载一个模块。
+</p>
+
+<p>
+为了简化，Vue 允许你以一个 <b>工厂函数的方式</b> 定义你的组件，这个工厂函数会 <b>异步解析</b> 你的组件定义。Vue 只有在这个组件需要被渲染的时候才会触发该工厂函数，且会把结果缓存起来供未来重渲染。如：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'async-example'</span>, <span style="color: #e45649;">function</span><span style="color: #a626a4;">(</span><span style="color: #6a1868;">resolve</span>, <span style="color: #6a1868;">reject</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+<span class="linenr">2: </span>    setTimeout<span style="color: #50a14f;">(</span><span style="color: #e45649;">function</span><span style="color: #da8548;">()</span> <span style="color: #da8548;">{</span>
+<span class="linenr">3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21521; `resolve` &#22238;&#35843;&#20256;&#36882;&#32452;&#20214;&#23450;&#20041;</span>
+<span class="linenr">4: </span>        resolve<span style="color: #b751b6;">(</span><span style="color: #986801;">{</span>
+<span class="linenr">5: </span>            template: <span style="color: #50a14f;">'&lt;div&gt;I am async!&lt;/div&gt;'</span>
+<span class="linenr">6: </span>        <span style="color: #986801;">}</span><span style="color: #b751b6;">)</span>
+<span class="linenr">7: </span>    <span style="color: #da8548;">}</span>, 1000<span style="color: #50a14f;">)</span>
+<span class="linenr">8: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<p>
+如你所见，这个工厂函数会收到一个 <code>resolve</code> 回调，这个回调函数会在你从服务器得到组件定义的时候被调用。你也可以调用 <code>reject(reason)</code> 来表示加载失败。这里的 <code>setTimeout</code> 是为了演示用的，如何获取组件取决于你自己。
+</p>
+
+<p>
+一个推荐的做法是将异步组件和 <code>webpack 的 code-splitting 功能</code> 一起配合使用：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'async-webpack-example'</span>, <span style="color: #e45649;">function</span><span style="color: #a626a4;">(</span><span style="color: #6a1868;">resolve</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+<span class="linenr">2: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#20010;&#29305;&#27530;&#30340; `require` &#35821;&#27861;&#23558;&#20250;&#21578;&#35785; webpack</span>
+<span class="linenr">3: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33258;&#21160;&#23558;&#20320;&#30340;&#26500;&#24314;&#20195;&#30721;&#20999;&#21106;&#25104;&#22810;&#20010;&#21253;</span>
+<span class="linenr">4: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20250;&#36890;&#36807; Ajax &#35831;&#27714;&#21152;&#36733;</span>
+<span class="linenr">5: </span>    require<span style="color: #50a14f;">(</span><span style="color: #da8548;">[</span><span style="color: #50a14f;">'./my-async-component'</span><span style="color: #da8548;">]</span>, resolve<span style="color: #50a14f;">)</span>
+<span class="linenr">6: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<p>
+你也可以在工厂函数中返回一个 <code>Promise</code> ，所以把 webpack 2 和 ES2015 语法加在一起，我们可以这样使用动态导入：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span>
+<span class="linenr">2: </span>  <span style="color: #50a14f;">'async-webpack-example'</span>,
+<span class="linenr">3: </span>  <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#20010;&#21160;&#24577;&#23548;&#20837;&#20250;&#36820;&#22238;&#19968;&#20010; `Promise` &#23545;&#35937;&#12290;</span>
+<span class="linenr">4: </span>  <span style="color: #a626a4;">()</span> =&gt; <span style="color: #e45649;">import</span><span style="color: #a626a4;">(</span><span style="color: #50a14f;">'./my-async-component'</span><span style="color: #a626a4;">)</span>
+<span class="linenr">5: </span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+
+<p>
+当使用局部注册的时候，你也可以直接提供一个返回 <code>Promise</code> 的函数：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">new</span> <span style="color: #986801;">Vue</span><span style="color: #4078f2;">(</span><span style="color: #a626a4;">{</span>
+<span class="linenr">2: </span>  <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">...</span>
+<span class="linenr">3: </span>  components: <span style="color: #50a14f;">{</span>
+<span class="linenr">4: </span>    <span style="color: #50a14f;">'my-component'</span>: <span style="color: #da8548;">()</span> =&gt; <span style="color: #e45649;">import</span><span style="color: #da8548;">(</span><span style="color: #50a14f;">'./my-async-component'</span><span style="color: #da8548;">)</span>
+<span class="linenr">5: </span>  <span style="color: #50a14f;">}</span>
+<span class="linenr">6: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf078c6c" class="outline-2">
+<h2 id="orgf078c6c">处理边界情况</h2>
+<div class="outline-text-2" id="text-orgf078c6c">
+</div>
+<div id="outline-container-org1275bb8" class="outline-3">
+<h3 id="org1275bb8">访问元素 &amp; 组件</h3>
+<div class="outline-text-3" id="text-org1275bb8">
+<p>
+在绝大多数情况下，我们最好不要触达另一个组件实例内部或手动操作 DOM 元素。不过也确实在一些情况下做这些事情是合适的。
+</p>
+
+<p>
+<b>访问根实例</b>
+</p>
+
+<p>
+在每个 <code>new Vue</code> 实例的子组件中，其根实例可以通过 <code>$root</code> property 进行访问。所有的子组件都可以将这个实例作为一个全局 store 来访问或使用。
+</p>
+
+<blockquote>
+<p>
+对于 demo 或非常小型的有少量组件的应用来说这是很方便的。不过这个模式扩展到中大型应用来说就不然了。因此在绝大多数情况下，我们强烈推荐使用 Vuex 来管理应用的状态。
+</p>
+</blockquote>
+
+<p>
+<b>访问父级组件实例</b>
+</p>
+
+<p>
+和 <code>$root</code> 类似， <code>$parent</code> property 可以用来从一个子组件访问父组件的实例。它提供了一种机会，可以在后期随时触达父级组件，以替代将数据以 prop 的方式传入子组件的方式。
+</p>
+
+<blockquote>
+<p>
+在绝大多数情况下，触达父级组件会使得你的应用更难调试和理解，尤其是当你变更了父级组件的数据的时候。当我们稍后回看那个组件的时候，很难找出那个变更是从哪里发起的。
+</p>
+</blockquote>
+
+<p>
+<b>访问子组件实例或子元素</b>
+</p>
+
+<p>
+尽管存在 prop 和事件，有的时候你仍可能需要在 JavaScript 里直接访问一个子组件。为了达到这个目的，你可以通过 <code>ref</code> 这个 attribute 为子组件赋予一个 ID 引用。如：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">base-input</span> <span style="color: #6a1868;">ref</span>=<span style="color: #50a14f;">"usernameInput"</span>&gt;&lt;/<span style="color: #a626a4;">base-input</span>&gt;
+</pre>
+</div>
+
+<p>
+现在在你已经定义了这个 <code>ref</code> 的组件里，你可以使用：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #b751b6;">this</span>.$refs.usernameInput
+</pre>
+</div>
+
+<p>
+来访问这个 <code>&lt;base-input&gt;</code> 实例，以便不时之需。
+</p>
+
+<blockquote>
+<p>
+<code>$refs</code> 只会在组件渲染完成之后生效，并且它们不是响应式的。这仅作为一个用于直接操作子组件的“逃生舱”——你应该避免在模板或计算属性中访问 <code>$refs</code> 。
+</p>
+</blockquote>
+
+<hr>
+<p>
+<b>依赖注入</b>
+</p>
+
+<p>
+在此之前，在我们描述访问父级组件实例的时候，展示过一个类似这样的例子：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">google-map</span>&gt;
+<span class="linenr">2: </span>  &lt;<span style="color: #a626a4;">google-map-region</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">shape</span>=<span style="color: #50a14f;">"cityBoundaries"</span>&gt;
+<span class="linenr">3: </span>    &lt;<span style="color: #a626a4;">google-map-markers</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">places</span>=<span style="color: #50a14f;">"iceCreamShops"</span>&gt;&lt;/<span style="color: #a626a4;">google-map-markers</span>&gt;
+<span class="linenr">4: </span>  &lt;/<span style="color: #a626a4;">google-map-region</span>&gt;
+<span class="linenr">5: </span>&lt;/<span style="color: #a626a4;">google-map</span>&gt;
+</pre>
+</div>
+
+<p>
+在这个组件里，所有 <code>&lt;google-map&gt;</code> 的后代都需要访问一个 <code>getMap</code> 方法，以便知道要跟哪个地图进行交互。不幸的是，使用 <code>$parent</code> property 无法很好的扩展到更深层级的嵌套组件上。这也是依赖注入的用武之地，它用到了两个新的实例选项： <code>provide</code> 和 <code>inject</code> 。
+</p>
+
+<p>
+<code>provide</code> 选项允许我们指定我们想要提供给后代组件的数据/方法。在这个例子中，就是 <code>&lt;google-map&gt;</code> 内部的 <code>getMap</code> 方法：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">provide</span>: <span style="color: #e45649;">function</span> <span style="color: #4078f2;">()</span> <span style="color: #4078f2;">{</span>
+<span class="linenr">2: </span>  <span style="color: #e45649;">return</span> <span style="color: #a626a4;">{</span>
+<span class="linenr">3: </span>    getMap: <span style="color: #b751b6;">this</span>.getMap
+<span class="linenr">4: </span>  <span style="color: #a626a4;">}</span>
+<span class="linenr">5: </span><span style="color: #4078f2;">}</span>
+</pre>
+</div>
+
+<p>
+然后在任何后代组件里，我们都可以使用 <code>inject</code> 选项来接收指定的我们想要添加在这个实例上的 property。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>inject: <span style="color: #4078f2;">[</span><span style="color: #50a14f;">'getMap'</span><span style="color: #4078f2;">]</span>
+</pre>
+</div>
+
+<p>
+相比 <code>$parent</code> 来说，这个用法可以让我们在任意后代组件中访问 <code>getMap</code> ，而不需要暴露整个 <code>&lt;google-map&gt;</code> 实例。这允许我们更好的持续研发该组件，而不需要担心我们可能会改变/移除一些子组件依赖的东西。同时这些组件之间的接口是始终明确定义的，就和 <code>props</code> 一样。
+</p>
+
+<p>
+实际上，你可以把依赖注入看作一部分“大范围有效的 prop”，除了：
+</p>
+<ul class="org-ul">
+<li>祖先组件不需要知道哪些后代组件使用它提供的 property</li>
+<li>后代组件不需要知道被注入的 property 来自哪里</li>
+</ul>
+
+<blockquote>
+<p>
+然而，依赖注入还是有负面影响的。它将你应用程序中的组件与它们当前的组织方式耦合起来，使重构变得更加困难。同时所提供的 property 是非响应式的。这是出于设计的考虑，因为使用它们来创建一个中心化规模化的数据跟使用 <code>$root</code> 做这件事都是不够好的。如果你想要共享的这个 property 是你的应用特有的，而不是通用化的，或者如果你想在祖先组件中更新所提供的数据，那么这意味着你可能需要换用一个像 Vuex 这样真正的状态管理方案了。
+</p>
+</blockquote>
+
+<p>
+……
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8830e86" class="outline-2">
+<h2 id="org8830e86">可复用性 &amp; 组合</h2>
+<div class="outline-text-2" id="text-org8830e86">
+</div>
+<div id="outline-container-org1c74617" class="outline-3">
+<h3 id="org1c74617">混入</h3>
+<div class="outline-text-3" id="text-org1c74617">
+<p>
+混入 (mixin) 提供了一种非常灵活的方式，来分发 Vue 组件中的可复用功能。 <b>一个混入对象可以包含任意组件选项</b> 。当组件使用混入对象时，所有混入对象的选项将被“混合”进入该组件本身的选项。
+</p>
+
+<p>
+当组件和混入对象含有同名选项时，这些选项将以恰当的方式进行“合并”。
+</p>
+
+<p>
+数据对象在内部会进行递归合并，并在发生冲突时以组件数据优先。
+</p>
+
+<p>
+同名钩子函数将合并为一个数组，因此都将被调用。另外，混入对象的钩子将在组件自身钩子 <b>之前</b> 调用。
+</p>
+
+<p>
+值为对象的选项，例如 <code>methods、components</code> 和 <code>directives</code> ，将被合并为同一个对象。两个对象键名冲突时，取组件对象的键值对。
+</p>
+
+<p>
+*注意： <code>Vue.extend()</code> 也使用同样的策略进行合并。
+</p>
+
+<p>
+混入也可以进行全局注册（ <code>Vue.mixin</code> ）。使用时格外小心！一旦使用全局混入，它将影响每一个之后创建的 Vue 实例。
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-03-17 Wed 16:21</p>
+<p class="author">Author: Jack Liu</p>
+<p class="date">Created: 2021-03-18 Thu 14:18</p>
+<p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
+</div>
+</body>
+</html>
