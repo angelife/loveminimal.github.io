@@ -31,7 +31,7 @@ initImageZoom();
 
 // Init global variables
 // ------------------------------------------------------------------
-const isPC = browserRedirect() === 'PC' ? true : false;
+const isPC = browserRedirect() === 'PC';
 const isMB = !isPC;
 
 const TOC = $('#table-of-contents');
@@ -114,9 +114,9 @@ if (isHome()) {
     });
 
     // Open link in a new tab
-    $('a').each(function () {
-        $(this).attr('target', '_blank');
-    });
+    // $('a').each(function () {
+    //     $(this).attr('target', '_blank');
+    // });
 }
 
 // Customize annotations
