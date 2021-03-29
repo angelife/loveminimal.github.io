@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-03-12 Fri 11:09 -->
+<!-- 2021-03-25 Thu 11:56 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>当然我在扯淡</title>
@@ -541,9 +541,9 @@ Lisp 是世界上第一个使用垃圾回收（ garbage collection）的语言�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-lisp"><span class="linenr">1: </span><span style="color: #4078f2;">(</span>setq f
-<span class="linenr">2: </span>      <span style="color: #a626a4;">(</span><span style="color: #e45649;">let</span> <span style="color: #50a14f;">(</span><span style="color: #da8548;">(</span>x 1<span style="color: #da8548;">)</span><span style="color: #50a14f;">)</span>
-<span class="linenr">3: </span>        <span style="color: #50a14f;">(</span><span style="color: #e45649;">lambda</span> <span style="color: #da8548;">(</span>y<span style="color: #da8548;">)</span> <span style="color: #da8548;">(</span>* x y<span style="color: #da8548;">)</span><span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+<pre class="src src-lisp"><span class="linenr">1: </span><span style="color: #707183;">(</span>setq f
+<span class="linenr">2: </span>      <span style="color: #7388d6;">(</span><span style="color: #a020f0;">let</span> <span style="color: #909183;">(</span><span style="color: #709870;">(</span>x 1<span style="color: #709870;">)</span><span style="color: #909183;">)</span>
+<span class="linenr">3: </span>        <span style="color: #909183;">(</span><span style="color: #a020f0;">lambda</span> <span style="color: #709870;">(</span>y<span style="color: #709870;">)</span> <span style="color: #709870;">(</span>* x y<span style="color: #709870;">)</span><span style="color: #909183;">)</span><span style="color: #7388d6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -1645,14 +1645,14 @@ put(elephant1, fridge2);
 
 <div class="org-src-container">
 <pre class="src src-js"><span class="linenr"> 1: </span>...
-<span class="linenr"> 2: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">put elephant1 into fridge2</span>
-<span class="linenr"> 3: </span>openDoor<span style="color: #4078f2;">(</span>fridge2<span style="color: #4078f2;">)</span>;
-<span class="linenr"> 4: </span><span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>&#8;elephant1.&#8;alive<span style="color: #a626a4;">()</span><span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
+<span class="linenr"> 2: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">put elephant1 into fridge2</span>
+<span class="linenr"> 3: </span>openDoor<span style="color: #707183;">(</span>fridge2<span style="color: #707183;">)</span>;
+<span class="linenr"> 4: </span><span style="color: #a020f0;">if</span> <span style="color: #707183;">(</span>&#8;elephant1.&#8;alive<span style="color: #7388d6;">()</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
 <span class="linenr"> 5: </span>  ...
-<span class="linenr"> 6: </span><span style="color: #4078f2;">}</span> <span style="color: #e45649;">else</span> <span style="color: #4078f2;">{</span>
+<span class="linenr"> 6: </span><span style="color: #707183;">}</span> <span style="color: #a020f0;">else</span> <span style="color: #707183;">{</span>
 <span class="linenr"> 7: </span>   ...
-<span class="linenr"> 8: </span><span style="color: #4078f2;">}</span>
-<span class="linenr"> 9: </span>closeDoor<span style="color: #4078f2;">(</span>fridge2<span style="color: #4078f2;">)</span>;
+<span class="linenr"> 8: </span><span style="color: #707183;">}</span>
+<span class="linenr"> 9: </span>closeDoor<span style="color: #707183;">(</span>fridge2<span style="color: #707183;">)</span>;
 <span class="linenr">10: </span>...
 </pre>
 </div>
@@ -1662,15 +1662,15 @@ put(elephant1, fridge2);
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">void</span> <span style="color: #6a1868;">put</span><span style="color: #4078f2;">(</span>Elephant elephant, Fridge fridge<span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>  openDoor<span style="color: #a626a4;">(</span>fridge<span style="color: #a626a4;">)</span>;
-<span class="linenr">3: </span>  <span style="color: #e45649;">if</span> <span style="color: #a626a4;">(</span>&#8;elephant.alive<span style="color: #50a14f;">()</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a020f0;">void</span> <span style="color: SystemWindowText;">put</span><span style="color: #707183;">(</span>Elephant elephant, Fridge fridge<span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>  openDoor<span style="color: #7388d6;">(</span>fridge<span style="color: #7388d6;">)</span>;
+<span class="linenr">3: </span>  <span style="color: #a020f0;">if</span> <span style="color: #7388d6;">(</span>&#8;elephant.alive<span style="color: #909183;">()</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
 <span class="linenr">4: </span>    ...
-<span class="linenr">5: </span>  <span style="color: #a626a4;">}</span> <span style="color: #e45649;">else</span> <span style="color: #a626a4;">{</span>
+<span class="linenr">5: </span>  <span style="color: #7388d6;">}</span> <span style="color: #a020f0;">else</span> <span style="color: #7388d6;">{</span>
 <span class="linenr">6: </span>     ...
-<span class="linenr">7: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">8: </span>  closeDoor<span style="color: #a626a4;">(</span>fridge<span style="color: #a626a4;">)</span>;
-<span class="linenr">9: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">7: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">8: </span>  closeDoor<span style="color: #7388d6;">(</span>fridge<span style="color: #7388d6;">)</span>;
+<span class="linenr">9: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1680,7 +1680,7 @@ put(elephant1, fridge2);
 
 <div class="org-src-container">
 <pre class="src src-js"><span class="linenr">1: </span>...
-<span class="linenr">2: </span>put<span style="color: #4078f2;">(</span>elephant1, fridge2<span style="color: #4078f2;">)</span>;
+<span class="linenr">2: </span>put<span style="color: #707183;">(</span>elephant1, fridge2<span style="color: #707183;">)</span>;
 <span class="linenr">3: </span>...
 </pre>
 </div>
@@ -1694,12 +1694,12 @@ put(elephant1, fridge2);
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>Pizza pizza = makePizza<span style="color: #4078f2;">(</span>crust<span style="color: #a626a4;">(</span>salt<span style="color: #50a14f;">()</span>, butter<span style="color: #50a14f;">()</span><span style="color: #a626a4;">)</span>,
-<span class="linenr">2: </span>    topping<span style="color: #a626a4;">(</span>onion<span style="color: #50a14f;">()</span>, tomato<span style="color: #50a14f;">()</span>, sausage<span style="color: #50a14f;">()</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>;
-<span class="linenr">3: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8595;&#8595;&#8595;</span>
-<span class="linenr">4: </span>Crust crust = crust<span style="color: #4078f2;">(</span>salt<span style="color: #a626a4;">()</span>, butter<span style="color: #a626a4;">()</span><span style="color: #4078f2;">)</span>;
-<span class="linenr">5: </span>Topping topping = topping<span style="color: #4078f2;">(</span>onion<span style="color: #a626a4;">()</span>, tomato<span style="color: #a626a4;">()</span>, sausage<span style="color: #a626a4;">()</span><span style="color: #4078f2;">)</span>;
-<span class="linenr">6: </span>Pizza pizza = makePizza<span style="color: #4078f2;">(</span>crust, topping<span style="color: #4078f2;">)</span>;
+<pre class="src src-js"><span class="linenr">1: </span>Pizza pizza = makePizza<span style="color: #707183;">(</span>crust<span style="color: #7388d6;">(</span>salt<span style="color: #909183;">()</span>, butter<span style="color: #909183;">()</span><span style="color: #7388d6;">)</span>,
+<span class="linenr">2: </span>    topping<span style="color: #7388d6;">(</span>onion<span style="color: #909183;">()</span>, tomato<span style="color: #909183;">()</span>, sausage<span style="color: #909183;">()</span><span style="color: #7388d6;">)</span><span style="color: #707183;">)</span>;
+<span class="linenr">3: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#8595;&#8595;&#8595;</span>
+<span class="linenr">4: </span>Crust crust = crust<span style="color: #707183;">(</span>salt<span style="color: #7388d6;">()</span>, butter<span style="color: #7388d6;">()</span><span style="color: #707183;">)</span>;
+<span class="linenr">5: </span>Topping topping = topping<span style="color: #707183;">(</span>onion<span style="color: #7388d6;">()</span>, tomato<span style="color: #7388d6;">()</span>, sausage<span style="color: #7388d6;">()</span><span style="color: #707183;">)</span>;
+<span class="linenr">6: </span>Pizza pizza = makePizza<span style="color: #707183;">(</span>crust, topping<span style="color: #707183;">)</span>;
 </pre>
 </div>
 
@@ -1756,14 +1756,14 @@ put(elephant1, fridge2);
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>foo<span style="color: #4078f2;">(</span>i++<span style="color: #4078f2;">)</span>;
-<span class="linenr">2: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8595;&#8595;&#8595;</span>
-<span class="linenr">3: </span><span style="color: #e45649;">let</span> <span style="color: #6a1868;">t</span> = i; i += 1; foo<span style="color: #4078f2;">(</span>t<span style="color: #4078f2;">)</span>;
+<pre class="src src-js"><span class="linenr">1: </span>foo<span style="color: #707183;">(</span>i++<span style="color: #707183;">)</span>;
+<span class="linenr">2: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#8595;&#8595;&#8595;</span>
+<span class="linenr">3: </span><span style="color: #a020f0;">let</span> <span style="color: SystemWindowText;">t</span> = i; i += 1; foo<span style="color: #707183;">(</span>t<span style="color: #707183;">)</span>;
 <span class="linenr">4: </span>
-<span class="linenr">5: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">-------</span>
-<span class="linenr">6: </span>foo<span style="color: #4078f2;">(</span>++i<span style="color: #4078f2;">)</span>
-<span class="linenr">7: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8595;&#8595;&#8595;</span>
-<span class="linenr">8: </span>i += 1; foo<span style="color: #4078f2;">(</span>i<span style="color: #4078f2;">)</span>;
+<span class="linenr">5: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">-------</span>
+<span class="linenr">6: </span>foo<span style="color: #707183;">(</span>++i<span style="color: #707183;">)</span>
+<span class="linenr">7: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#8595;&#8595;&#8595;</span>
+<span class="linenr">8: </span>i += 1; foo<span style="color: #707183;">(</span>i<span style="color: #707183;">)</span>;
 </pre>
 </div>
 
@@ -1848,20 +1848,20 @@ put(elephant1, fridge2);
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25512;&#33616; &#10004;</span>
-<span class="linenr"> 2: </span><span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>...<span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 3: </span>  <span style="color: #e45649;">if</span> <span style="color: #a626a4;">(</span>...<span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#25512;&#33616; &#10004;</span>
+<span class="linenr"> 2: </span><span style="color: #a020f0;">if</span> <span style="color: #707183;">(</span>...<span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 3: </span>  <span style="color: #a020f0;">if</span> <span style="color: #7388d6;">(</span>...<span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
 <span class="linenr"> 4: </span>    ...
-<span class="linenr"> 5: </span>    <span style="color: #e45649;">return</span> <span style="color: #b751b6;">false</span>;
-<span class="linenr"> 6: </span>  <span style="color: #a626a4;">}</span> <span style="color: #e45649;">else</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 7: </span>    <span style="color: #e45649;">return</span> <span style="color: #b751b6;">true</span>;
-<span class="linenr"> 8: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr"> 9: </span><span style="color: #4078f2;">}</span> <span style="color: #e45649;">else</span> <span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>...<span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
+<span class="linenr"> 5: </span>    <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">false</span>;
+<span class="linenr"> 6: </span>  <span style="color: #7388d6;">}</span> <span style="color: #a020f0;">else</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 7: </span>    <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">true</span>;
+<span class="linenr"> 8: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr"> 9: </span><span style="color: #707183;">}</span> <span style="color: #a020f0;">else</span> <span style="color: #a020f0;">if</span> <span style="color: #707183;">(</span>...<span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
 <span class="linenr">10: </span>  ...
-<span class="linenr">11: </span>  <span style="color: #e45649;">return</span> <span style="color: #b751b6;">false</span>;
-<span class="linenr">12: </span><span style="color: #4078f2;">}</span> <span style="color: #e45649;">else</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">13: </span>  <span style="color: #e45649;">return</span> <span style="color: #b751b6;">true</span>;
-<span class="linenr">14: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">11: </span>  <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">false</span>;
+<span class="linenr">12: </span><span style="color: #707183;">}</span> <span style="color: #a020f0;">else</span> <span style="color: #707183;">{</span>
+<span class="linenr">13: </span>  <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">true</span>;
+<span class="linenr">14: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1870,17 +1870,17 @@ put(elephant1, fridge2);
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#19981;&#25512;&#33616; &#10008;</span>
-<span class="linenr"> 2: </span><span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>...<span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 3: </span>  <span style="color: #e45649;">if</span> <span style="color: #a626a4;">(</span>...<span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#19981;&#25512;&#33616; &#10008;</span>
+<span class="linenr"> 2: </span><span style="color: #a020f0;">if</span> <span style="color: #707183;">(</span>...<span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 3: </span>  <span style="color: #a020f0;">if</span> <span style="color: #7388d6;">(</span>...<span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
 <span class="linenr"> 4: </span>    ...
-<span class="linenr"> 5: </span>    <span style="color: #e45649;">return</span> <span style="color: #b751b6;">false</span>;
-<span class="linenr"> 6: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr"> 7: </span><span style="color: #4078f2;">}</span> <span style="color: #e45649;">else</span> <span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>...<span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
+<span class="linenr"> 5: </span>    <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">false</span>;
+<span class="linenr"> 6: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr"> 7: </span><span style="color: #707183;">}</span> <span style="color: #a020f0;">else</span> <span style="color: #a020f0;">if</span> <span style="color: #707183;">(</span>...<span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
 <span class="linenr"> 8: </span>  ...
-<span class="linenr"> 9: </span>  <span style="color: #e45649;">return</span> <span style="color: #b751b6;">false</span>;
-<span class="linenr">10: </span><span style="color: #4078f2;">}</span>
-<span class="linenr">11: </span><span style="color: #e45649;">return</span> <span style="color: #b751b6;">true</span>;
+<span class="linenr"> 9: </span>  <span style="color: #a020f0;">return</span> <span style="color: #a020f0;">false</span>;
+<span class="linenr">10: </span><span style="color: #707183;">}</span>
+<span class="linenr">11: </span><span style="color: #a020f0;">return</span> <span style="color: #a020f0;">true</span>;
 </pre>
 </div>
 
@@ -1899,11 +1899,11 @@ put(elephant1, fridge2);
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#19981;&#25512;&#33616; &#10008;</span>
-<span class="linenr">2: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">s</span> = <span style="color: #50a14f;">""</span>;
-<span class="linenr">3: </span><span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>x &lt; 5<span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">4: </span>  s = <span style="color: #50a14f;">"ok"</span>;
-<span class="linenr">5: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#19981;&#25512;&#33616; &#10008;</span>
+<span class="linenr">2: </span><span style="color: #a020f0;">String</span> <span style="color: SystemWindowText;">s</span> = <span style="color: #8b2252;">""</span>;
+<span class="linenr">3: </span><span style="color: #a020f0;">if</span> <span style="color: #707183;">(</span>x &lt; 5<span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr">4: </span>  s = <span style="color: #8b2252;">"ok"</span>;
+<span class="linenr">5: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1912,17 +1912,17 @@ put(elephant1, fridge2);
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25512;&#33616; &#10004;</span>
-<span class="linenr"> 2: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">s</span>;
-<span class="linenr"> 3: </span><span style="color: #e45649;">if</span> <span style="color: #4078f2;">(</span>x &lt; 5<span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 4: </span>  s = <span style="color: #50a14f;">"ok"</span>;
-<span class="linenr"> 5: </span><span style="color: #4078f2;">}</span> <span style="color: #e45649;">else</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 6: </span>  s = <span style="color: #50a14f;">""</span>;
-<span class="linenr"> 7: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#25512;&#33616; &#10004;</span>
+<span class="linenr"> 2: </span><span style="color: #a020f0;">String</span> <span style="color: SystemWindowText;">s</span>;
+<span class="linenr"> 3: </span><span style="color: #a020f0;">if</span> <span style="color: #707183;">(</span>x &lt; 5<span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 4: </span>  s = <span style="color: #8b2252;">"ok"</span>;
+<span class="linenr"> 5: </span><span style="color: #707183;">}</span> <span style="color: #a020f0;">else</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 6: </span>  s = <span style="color: #8b2252;">""</span>;
+<span class="linenr"> 7: </span><span style="color: #707183;">}</span>
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#20010;&#24773;&#20917;&#27604;&#36739;&#31616;&#21333;&#65292;&#20320;&#36824;&#21487;&#20197;&#25226;&#23427;&#20889;&#25104;&#36825;&#26679;</span>
-<span class="linenr">10: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">(&#23545;&#20110;&#26356;&#21152;&#22797;&#26434;&#30340;&#24773;&#20917;&#65292;&#25105;&#24314;&#35758;&#36824;&#26159;&#20889;&#25104; if&#35821;&#21477;&#20026;&#22909;)</span>
-<span class="linenr">11: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">s</span> = x &lt; 5 ? <span style="color: #50a14f;">"ok"</span> : <span style="color: #50a14f;">""</span>;
+<span class="linenr"> 9: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#36825;&#20010;&#24773;&#20917;&#27604;&#36739;&#31616;&#21333;&#65292;&#20320;&#36824;&#21487;&#20197;&#25226;&#23427;&#20889;&#25104;&#36825;&#26679;</span>
+<span class="linenr">10: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">(&#23545;&#20110;&#26356;&#21152;&#22797;&#26434;&#30340;&#24773;&#20917;&#65292;&#25105;&#24314;&#35758;&#36824;&#26159;&#20889;&#25104; if&#35821;&#21477;&#20026;&#22909;)</span>
+<span class="linenr">11: </span><span style="color: #a020f0;">String</span> <span style="color: SystemWindowText;">s</span> = x &lt; 5 ? <span style="color: #8b2252;">"ok"</span> : <span style="color: #8b2252;">""</span>;
 </pre>
 </div>
 
@@ -2745,7 +2745,7 @@ title=""
 <div id="postamble" class="status">
 <p class="date">Date: 2021-03-03 Wed 10:19</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-03-12 Fri 11:09</p>
+<p class="date">Created: 2021-03-25 Thu 11:56</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
