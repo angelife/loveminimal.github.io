@@ -3,6 +3,14 @@
 
 [[https://emacs-china.org/t/org-mode-site/13874][→ 为什么会有这个页面呢？ :)]]
 
+#+BEGIN_EXPORT html
+<div style="background: #eee; color: #A33; padding: 10px; font-weight: 700;">
+<p>!!TIPs： </p>
+<p>因后期对项目结构做了破坏性调整，故原有的部署方法已经不再可用，后续有时间了，会更新该文档。</p>
+</div>
+
+#+END_EXPORT
+
 *如果你是第一次访问这个页面，强烈建议先跳转至附录的 [[*%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%9B%BE%E7%A4%BA][网站功能图示]] 章节，浏览一下站点的功能使用概要 :)*
 
 #+BEGIN_QUOTE
@@ -19,6 +27,7 @@ _1. 预计更新_
 _2. 过往更新_
 
 #+BEGIN_QUOTE
+- 结构调整，新增部署 Github Page 脚本（2021-03-29 Mon 09:53）
 - 新增文内随笔样式，随手记录一些东西（2020-08-26 Wed 18:51）
 - 新增批注样式，如右侧所示，使用方法见附录右侧批注样式（2020-07-27 Mon 11:01）
 
@@ -29,7 +38,6 @@ _2. 过往更新_
 #+END_EXPORT
 
 - 变更了项目结构，添加部署脚本，方便直接部署在 Github/Gitee Pages （2021-03-01 Mon 14:36）
------
 - 新增 =user.config.js= ，抽离一些配置项（微博、GitHub、Author 等）（2020-07-26 Sun 22:36）
 - 新增执行脚本 =copy.sh= ，用来在 Emacs 外部同步拷贝图片、JS、CSS 等资源文件（2020-05-29 Fri 21:04）
 - 新增执行脚本 =update.sh= ，原因详见 [[*%E5%85%B3%E4%BA%8E%E6%89%A7%E8%A1%8C%E8%84%9A%E6%9C%AC][关于执行脚本]]  (2020-05-26 Tue 16:45)
