@@ -94,6 +94,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 
 | 读书 |
 |------|
+| [[./book-inbox.org][书单]] |
 | [[./yi-jing.org][易经]] |
 | [[./lao-zi.org][老子]] |
 
