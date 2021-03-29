@@ -12,7 +12,8 @@ then
     git add .
     git commit -m "Posts update."
     git remote add origin https://github.com/loveminimal/loveminimal.github.io.git
-    git push -f origin master:main
+    # git push -f origin master:main
+    git push -f origin master
     cd ..
     rm -rf ".temp"
     cd "site"
