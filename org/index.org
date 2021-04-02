@@ -25,6 +25,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./sdk.org][SDK]]                 |
 | [[./shell.org][Shell]]               |
 | [[./elisp.org][Elisp]]               |
+| [[./sql-inbox.org][SQL Inbox]]           |
 
 | GTD             |
 |-----------------|

@@ -1,0 +1,360 @@
+#+DATE: <2021-04-02 Fri 10:19>
+#+TITLE: SQL
+
+* Inbox
+
+→ 摘录自廖雪峰老师的 https://www.liaoxuefeng.com/wiki/1177760294764384
+
+SQL（Structured Query Language 结构化查询语言），是访问和处理 *关系数据库* 的计算机标准语言，用来访问和操作数据库系统。
+
+** 为什么需要数据库
+
+要保存用户的数据，一个最简单的方法是把用户数据写入文件。但是，随着应用程序的功能越来越复杂，数据量越来越大，如何管理这些数据就成了大问题：
+
+- 读写文件并解析出数据需要大量重复代码；
+- 从成千上万的数据中快速查询出指定数据需要复杂的逻辑。
+
+如果每个应用程序都各自写自己的读写数据的代码，低效且易错；另一方面，每个应用程序访问数据的接口都不相同，数据难以复用。
+
+所以，数据库作为一种专门管理数据的软件就出现了。应用程序不需要自己管理数据，而是通过数据库软件提供的接口来读写数据。至于数据本身如何存储到文件，那是数据库软件的事情，应用程序自己并不关心。
+
+#+BEGIN_EXPORT html
+<essay>
+通用性，就需要统一的标准！
+<p>数据库软件其实就是你的数据中介，她们接收统一的指令。</p>
+</essay>
+#+END_EXPORT
+
+** 数据模型
+
+数据库按照数据结构来组织、存储和管理数据，实际上，数据库一共有三种模型：层次模型（树状）、网状模型和关系模型（二维表格）。
+
+*关系数据库的关系模型是基于数学理论建立的。
+
+** 数据类型
+
+对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。关系数据库支持的标准数据类型包括数值、字符串、时间等：
+
+| 名称         | 类型           | 说明                                                                                       |
+|--------------+----------------+--------------------------------------------------------------------------------------------|
+| INT          | 整型           | 4字节整数类型，范围约+/-21亿                                                               |
+| BIGINT       | 长整型         | 8字节整数类型，范围约+/-922亿亿                                                            |
+| REAL         | 浮点型         | 4字节浮点数，范围约+/-1038                                                                 |
+| DOUBLE       | 浮点型         | 8字节浮点数，范围约+/-10308                                                                |
+| DECIMAL(M,N) | 高精度小数     | 由用户指定精度的小数，例如， =DECIMAL(20,10)= 表示一共20位，其中小数10位，通常用于财务计算 |
+| CHAR(N)      | 定长字符串     | 存储指定长度的字符串，例如， =CHAR(100)= 总是存储100个字符的字符串                         |
+| VARCHAR(N)   | 变长字符串     | 存储可变长度的字符串，例如， =VARCHAR(100)= 可以存储0~100个字符的字符串                    |
+| BOOLEAN      | 布尔类型       | 存储True或者False                                                                          |
+| DATE         | 日期类型       | 存储日期，例如，2018-06-22                                                                 |
+| TIME         | 时间类型       | 存储时间，例如，12:20:59                                                                   |
+| DATETIME     | 日期和时间类型 | 存储日期+时间，例如，2018-06-22 12:20:59                                                   |
+
+*各数据库厂商还会支持特定的数据类型，例如 JSON 。
+
+** SQL 语言
+
+什么是SQL？SQL是结构化查询语言的缩写，用来访问和操作数据库系统。
+
+总的来说，SQL语言定义了这么几种操作数据库的能力：
+
+1.DDL（Data Definition Language）允许用户定义数据，也就是创建表、删除表、修改表结构这些操作。通常，DDL由数据库管理员执行。
+
+2.DML（Data Manipulation Language）为用户提供添加、删除、更新数据的能力，这些是应用程序对数据库的日常操作。
+
+3.DQL（Data Query Language）允许用户查询数据，这也是通常最频繁的数据库日常操作。
+
+*SQL语言关键字不区分大小写！！！
+
+** 主流关系数据库
+
+目前，主流的关系数据库主要分为以下几类：
+
+- 商用数据库，例如：Oracle，SQL Server，DB2等；
+- 开源数据库，例如：MySQL，PostgreSQL等；
+- 桌面数据库，以微软Access为代表，适合桌面应用程序使用；
+- 嵌入式数据库，以Sqlite为代表，适合手机应用和桌面程序。
+
+* 关系模型
+
+关系数据库是建立在关系模型上的，而关系模型本质上就是若干个存储数据的二维表。
+
+在关系数据库中，关系是通过主键和外键来维护的。
+
+** 主键
+
+在关系数据库中，一张表中的每一行数据被称为一条记录（record）。每一条记录都包含若干定义好的字段。同一个表的所有记录都有相同的字段定义。
+
+对于关系表，有个很重要的约束，就是 *任意两条记录不能重复* 。不能重复不是指两条记录不完全相同，而是指能够 *通过某个字段唯一区分出不同的记录* ，这个字段被称为 _主键_ 。
+
+*！选取主键的一个基本原则是：不使用任何业务相关的字段作为主键。*
+
+我们一般把这个字段命名为id。常见的可作为id字段的类型有：
+
+- 自增整数类型；
+- 全局唯一GUID类型，类似于 =8f55d96b-8acc-4636-8cb8-76bf8abc2f57= 。
+
+关系数据库实际上还允许通过多个字段唯一标识记录，即两个或更多的字段都设置为主键，这种主键被称为 _联合主键_ （并不常用）。
+
+** 外键
+
+把数据与另一张表关联起来，这种列称为 _外键_ 。
+
+外键并不是通过列名实现的，而是通过定义外键约束实现的，如：
+
+#+BEGIN_SRC sql -n
+  ALTER TABLE students
+  ADD CONSTRAINT fk_class_id      -- 外键约束的名称
+  FOREIGN KEY (class_id)          -- 指定了class_id作为外键
+  REFERENCES classes (id);        -- 指定了这个外键将关联到classes表的id列
+#+END_SRC
+
+通过定义外键约束，关系数据库可以保证无法插入无效的数据。
+
+#+BEGIN_QUOTE
+*注：由于外键约束会降低数据库的性能，大部分互联网应用程序为了追求速度，并不设置外键约束，而是仅靠应用程序自身来保证逻辑的正确性。这种情况下， =class_id= 仅仅是一个普通的列，只是它起到了外键的作用而已。
+#+END_QUOTE
+
+要删除一个外键约束，也是通过ALTER TABLE实现的：
+
+#+BEGIN_SRC sql -n
+  ALTER TABLE students
+  DROP FOREIGN KEY fk_class_id;
+#+END_SRC
+
+*注意：删除外键约束并没有删除外键这一列。删除列是通过 =DROP COLUMN ...= 实现的。
+
+-----
+
+通过一个表的外键关联到另一个表，我们可以定义出一对多关系。
+
+多对多关系实际上是通过两个一对多关系实现的，即通过一个中间表，关联两个一对多关系，就形成了多对多关系。
+
+一对一关系是指，一个表的记录对应到另一个表的唯一一个记录。
+
+#+BEGIN_QUOTE
+*注：关系数据库通过外键可以实现一对多、多对多和一对一的关系。外键既可以通过数据库来约束，也可以不设置约束，仅依靠应用程序的逻辑来保证。
+#+END_QUOTE
+
+** TODO 索引
+
+数据库索引对于用户和应用程序来说都是透明的。
+
+……
+
+* 查询数据
+
+** 基本查询
+
+ #+BEGIN_EXAMPLE
+ SELECT * FROM <表名>
+ #+END_EXAMPLE
+
+** 条件查询
+
+ #+BEGIN_EXAMPLE
+ SELECT * FROM <表名> WHERE <条件表达式>
+ #+END_EXAMPLE
+
+ 如果不加括号，条件运算按照 =NOT、AND、OR= 的优先级进行。
+
+** 投影查询
+
+ 如果我们只希望返回某些列的数据，而不是所有列的数据，我们可以用 =SELECT 列1, 列2, 列3 FROM ...= ，让结果集仅包含指定列。这种操作称为投影查询。
+
+ 还可以给每一列起个别名，这样，结果集的列名就可以与原表的列名不同。它的语法是 =SELECT 列1 别名1, 列2 别名2, 列3 别名3 FROM ...= 。
+
+** 排序
+
+ 使用 =ORDER BY= 可以对结果集进行排序，默认的排序规则是 =ASC= ：“升序”，即从小到大， =ASC= 可以省略。 =DESC= 表示“倒序” 。要进一步排序，可以继续添加列名。如：
+
+ #+BEGIN_SRC sql -n
+   SELECT id, name, gender, score FROM students ORDER BY score; -- 升序
+   SELECT id, name, gender, score FROM students ORDER BY score DESC; -- 降序
+   SELECT id, name, gender, score FROM students ORDER BY score DESC, gender; -- 多列排序
+ #+END_SRC
+
+** 分页查询
+
+ 分页实际上就是从结果集中“截取”出第 M~N 条记录。这个查询可以通过 =LIMIT <M> OFFSET <N>= 子句实现，表示从 =N= 记录开始，最多取 =M= 条。
+
+ 分页查询的关键在于，首先要确定每页需要显示的结果数量 =pageSize= （这里是3），然后根据当前页的索引 =pageIndex= （从1开始），确定 =LIMIT= 和 =OFFSET= 应该设定的值：
+
+ - =LIMIT= 总是设定为 =pageSize= ；
+ - =OFFSET= 计算公式为 =pageSize * (pageIndex - 1)= 。
+
+ 这样就能正确查询出第N页的记录集。
+
+ =OFFSET= 超过了查询的最大数量并不会报错，而是得到一个空的结果集。它是可选的，如果只写 =LIMIT 15= ，那么相当于 =LIMIT 15 OFFSET 0= 。
+
+** 聚合查询
+
+ 对于统计总数、平均数这类计算，SQL 提供了专门的聚合函数，使用聚合函数进行查询，就是 _聚合查询_ ，它可以快速获得结果。
+
+ 如以查询 =students= 表一共有多少条记录为例，我们可以使用SQL内置的 =COUNT()= 函数查询：
+
+ #+BEGIN_SRC sql -n
+   SELECT COUNT(*) FROM students;
+   -- 使用聚合查询时，我们应该给列名设置一个别名，便于处理结果
+   SELECT COUNT(*) num FROM students;
+
+ #+END_SRC
+
+ =COUNT(*)= 表示查询所有列的行数，要注意聚合的计算结果虽然是一个数字，但查询的结果仍然是一个二维表，只是这个二维表只有一行一列，并且列名是 =COUNT(*)= 。除了 =COUNT()= 函数外，SQL还提供了如下聚合函数：
+
+| 函数 | 	说明                           |
+|------+----------------------------------------|
+| SUM  | 计算某一列的合计值，该列必须为数值类型 |
+| AVG  | 计算某一列的平均值，该列必须为数值类型 |
+| MAX  | 计算某一列的最大值                     |
+| MIN  | 计算某一列的最小值                     |
+
+-----
+*分组*
+
+对于聚合查询，SQL还提供了“分组聚合”的功能。 如：
+
+#+BEGIN_SRC sql -n
+  SELECT COUNT(*) num FROM students GROUP BY class_id;
+  -- 可以把 class_id 列也放入结果集中
+  SELECT class_id, COUNT(*) num FROM students GROUP BY class_id;
+  -- 也可以使用多个列进行分组
+  SELECT class_id, gender, COUNT(*) num FROM students GROUP BY class_id, gender;
+
+#+END_SRC
+
+执行该 SELECT 语句时，会把 =class_id= 相同的列先分组，再分别计算，因此，得到了 3 行结果。
+
+*注意：聚合查询的列中，只能放入分组的列。
+
+** 多表查询
+
+查询多张表的语法是： =SELECT * FROM <表1>, <表2>= 。
+
+这种多表查询又称笛卡尔查询，结果集的列数是两表的列数之和，行数是两表的行数之积。
+
+们仍然可以利用投影查询的“设置列的别名”来给两个表各自的 =id= 和 =name= 列起别名：
+
+#+BEGIN_SRC sql -n
+  SELECT
+      students.id sid,
+      students.name,
+      students.gender,
+      students.score,
+      classes.id cid,
+      classes.name cname
+  FROM students, classes;
+
+  -- 还允许给表设置一个别名，以简化 表名·列名
+  SELECT
+      s.id sid,
+      s.name,
+      s.gender,
+      s.score,
+      c.id cid,
+      c.name cname
+  FROM students s, classes c;
+#+END_SRC
+
+*多表查询也是可以添加 =WHERE= 条件的。
+
+** TODO 连接查询
+
+……
+
+* 修改数据
+
+关系数据库的基本操作就是增删改查，即 =CRUD：Create、Retrieve、Update、Delete= 。
+
+** INSERT
+
+INSERT语句的基本语法是：
+
+#+BEGIN_EXAMPLE
+INSERT INTO <表名> (字段1, 字段2, ...) VALUES (值1, 值2, ...);
+#+END_EXAMPLE
+
+- 对于自增主键，它的值可以由数据库自己推算出来，可以不列出；
+- 字段顺序不必和数据库表的字段顺序一致，但值的顺序必须和字段顺序一致；
+- 还可以一次性添加多条记录。
+
+#+BEGIN_SRC sql -n
+INSERT INTO students (class_id, name, gender, score) VALUES
+  (1, '大宝', 'M', 87),
+  (2, '二宝', 'M', 81);
+
+SELECT * FROM students;
+#+END_SRC
+
+** UPDATE
+
+UPDATE语句的基本语法是：
+
+#+BEGIN_EXAMPLE
+UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;
+#+END_EXAMPLE
+
+UPDATE 语句可以没有 WHERE 条件，这时，整个表的所有记录都会被更新。
+
+** DELETE
+
+DELETE语句的基本语法是：
+
+#+BEGIN_EXAMPLE
+DELETE FROM <表名> WHERE ...;
+#+END_EXAMPLE
+
+和 UPDATE 类似，不带 WHERE 条件的 DELETE 语句会删除整个表的数据。
+
+* MySQL
+
+** Client & Server
+
+ 命令行程序 =mysql= 实际上是 MySQL 客户端，真正的 MySQL 服务器程序是 =mysqld= ，在后台运行。
+
+ 在 MySQL Client 中输入的SQL语句通过 TCP 连接发送到 MySQL Server。默认端口号是 =3306= ，即如果发送到本机 MySQL Server，地址就是 =127.0.0.1:3306= 。
+
+ 也可以只安装 MySQL Client，然后连接到远程 MySQL Server。假设远程 MySQL Server 的 IP 地址是 =10.0.1.99= ，那么就使用 =-h= 指定 IP 或域名：
+
+ #+BEGIN_EXAMPLE
+ mysql -h 10.0.1.99 -u root -p
+ #+END_EXAMPLE
+
+** 管理 MySQL
+
+在一个运行MySQL的服务器上，实际上可以创建多个数据库（Database）。
+
+数据库相关：
+
+| 操作                 | 说明            |
+|----------------------+-----------------|
+| SHOW databases;      | 列出所有数据库  |
+| CREAT database test; | 创建数据库 test |
+| DROP database test;  | 删除数据库 test |
+| USE test;            | 切换数据库 test |
+
+表相关：
+
+| 操作                        | 说明                |
+|-----------------------------+---------------------|
+| SHOW tables;                | 列出                |
+| DESC students;              | 查看表的结构        |
+| SHOW create table students; | 查看创建表的SQL语句 |
+| DROP table students;        | 删除                |
+
+修改表就比较复杂。如果要给 students 表新增一列 birth，使用：
+
+#+BEGIN_SRC sql -n
+  ALTER TABLE students ADD COLUMN birth VARCHAR(10) NOT NULL;
+  -- 要修改birth列，例如把列名改为birthday，类型改为VARCHAR(20)
+  ALTER TABLE students CHANGE COLUMN birth birthday VARCHAR(20) NOT NULL;
+  -- 要删除列
+  ALTER TABLE students DROP COLUMN birthday;
+#+END_SRC
+
+** TODO 实用 SQL 语句
+
+……
+
+* TODO 事务
+
+……
