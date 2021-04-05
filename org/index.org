@@ -57,6 +57,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 
 | Java                  |
 |-----------------------|
+| [[./java-inbox.org][Java Inbox]]            |
 | [[./network-programming.org][网络编程]]              |
 | [[./socket.org][Socket]]                |
 | [[./servlet.org][Servlet]]               |

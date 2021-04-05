@@ -1,0 +1,50 @@
+#+DATE: <2021-04-04 Sun 17:23>
+#+TITLE: Java Inbox
+
+→ 摘录自廖雪峰老师的 https://www.liaoxuefeng.com/wiki/1252599548343744
+
+* 面向对象
+
+** 模块
+
+*为什么需要模块？*
+
+=.class= 文件是 JVM 看到的最小可执行文件，jar 是用于存放 class 的容器，它并不关心 class 之间的依赖。
+
+从Java 9开始引入了自带“依赖关系”的 class 容器 -- *模块* 。
+
+*如何编写模块呢？*
+
+#+BEGIN_EXPORT html
+<img
+src="images/java-42.png"
+width="660"
+height=""
+style=""
+title=""
+/>
+#+END_EXPORT
+
+仅仅在 =src= 目录下多了一个 =module-info.java= 这个文件，这就是模块的描述文件。如：
+
+#+BEGIN_SRC java -n
+module hello.world {
+	requires java.base; // 可不写，任何模块都会自动引入java.base
+	requires java.xml;
+}
+#+END_SRC
+
+*当我们使用模块声明了依赖关系后，才能使用引入的模块。
+
+*模块有什么用？*
+
+我们可以用它来打包 JRE ！
+
+模块进一步隔离了代码的访问权限，只有它声明的导出的包，外部代码才被允许访问。
+
+* Maven
+
+Maven 是一个 Java 项目管理和构建工具，它可以定义项目结构、项目依赖，并且用统一的方式进行自动化构建。
+
+** Maven 项目结构
+

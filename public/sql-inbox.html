@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-04-02 Fri 16:41 -->
+<!-- 2021-04-04 Sun 18:08 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SQL</title>
@@ -18,56 +18,56 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org3c3f3e6">Inbox</a>
+<li><a href="#org62a390f">Inbox</a>
 <ul>
-<li><a href="#org33d6df6">为什么需要数据库</a></li>
-<li><a href="#org68ffbae">数据模型</a></li>
-<li><a href="#orgbba9024">数据类型</a></li>
-<li><a href="#org085494c">SQL 语言</a></li>
-<li><a href="#orga95fc90">主流关系数据库</a></li>
+<li><a href="#org01a2664">为什么需要数据库</a></li>
+<li><a href="#org654e2c0">数据模型</a></li>
+<li><a href="#orga6cbab8">数据类型</a></li>
+<li><a href="#org2f894ff">SQL 语言</a></li>
+<li><a href="#org5d27685">主流关系数据库</a></li>
 </ul>
 </li>
-<li><a href="#org32eb4dd">关系模型</a>
+<li><a href="#org96c23b3">关系模型</a>
 <ul>
-<li><a href="#org8ff1a28">主键</a></li>
-<li><a href="#org908e3df">外键</a></li>
-<li><a href="#org1405e42"><span class="todo TODO">TODO</span> 索引</a></li>
+<li><a href="#org719d391">主键</a></li>
+<li><a href="#org44336e5">外键</a></li>
+<li><a href="#org678ab61"><span class="todo TODO">TODO</span> 索引</a></li>
 </ul>
 </li>
-<li><a href="#orgd43376d">查询数据</a>
+<li><a href="#orgae06ac0">查询数据</a>
 <ul>
-<li><a href="#org3e07370">基本查询</a></li>
-<li><a href="#org64a33d5">条件查询</a></li>
-<li><a href="#org9127c07">投影查询</a></li>
-<li><a href="#orgcdab3e5">排序</a></li>
-<li><a href="#org89f6d37">分页查询</a></li>
-<li><a href="#org310b5af">聚合查询</a></li>
-<li><a href="#org360377a">多表查询</a></li>
-<li><a href="#org1eb6429"><span class="todo TODO">TODO</span> 连接查询</a></li>
+<li><a href="#org1f10c81">基本查询</a></li>
+<li><a href="#org3d03854">条件查询</a></li>
+<li><a href="#org5e5b5fd">投影查询</a></li>
+<li><a href="#org6afce15">排序</a></li>
+<li><a href="#org7b21feb">分页查询</a></li>
+<li><a href="#org87e789b">聚合查询</a></li>
+<li><a href="#org2ac5e33">多表查询</a></li>
+<li><a href="#org17f732c"><span class="todo TODO">TODO</span> 连接查询</a></li>
 </ul>
 </li>
-<li><a href="#org3e0ffc2">修改数据</a>
+<li><a href="#org223f5c4">修改数据</a>
 <ul>
-<li><a href="#org9a11e52">INSERT</a></li>
-<li><a href="#org470e69e">UPDATE</a></li>
-<li><a href="#org49b2801">DELETE</a></li>
+<li><a href="#orgef92b02">INSERT</a></li>
+<li><a href="#orgceccfaf">UPDATE</a></li>
+<li><a href="#org1d16126">DELETE</a></li>
 </ul>
 </li>
-<li><a href="#org1506140">MySQL</a>
+<li><a href="#orga260040">MySQL</a>
 <ul>
-<li><a href="#orgd12fa3b">Client &amp; Server</a></li>
-<li><a href="#org42921a8">管理 MySQL</a></li>
-<li><a href="#org4bfc369"><span class="todo TODO">TODO</span> 实用 SQL 语句</a></li>
+<li><a href="#orgc47d8c4">Client &amp; Server</a></li>
+<li><a href="#org6588d82">管理 MySQL</a></li>
+<li><a href="#orgdd05313"><span class="todo TODO">TODO</span> 实用 SQL 语句</a></li>
 </ul>
 </li>
-<li><a href="#orgc3ac17c"><span class="todo TODO">TODO</span> 事务</a></li>
+<li><a href="#org0a9cfce"><span class="todo TODO">TODO</span> 事务</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3c3f3e6" class="outline-2">
-<h2 id="org3c3f3e6">Inbox</h2>
-<div class="outline-text-2" id="text-org3c3f3e6">
+<div id="outline-container-org62a390f" class="outline-2">
+<h2 id="org62a390f">Inbox</h2>
+<div class="outline-text-2" id="text-org62a390f">
 <p>
 → 摘录自廖雪峰老师的 <a href="https://www.liaoxuefeng.com/wiki/1177760294764384">https://www.liaoxuefeng.com/wiki/1177760294764384</a>
 </p>
@@ -77,9 +77,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </p>
 </div>
 
-<div id="outline-container-org33d6df6" class="outline-3">
-<h3 id="org33d6df6">为什么需要数据库</h3>
-<div class="outline-text-3" id="text-org33d6df6">
+<div id="outline-container-org01a2664" class="outline-3">
+<h3 id="org01a2664">为什么需要数据库</h3>
+<div class="outline-text-3" id="text-org01a2664">
 <p>
 要保存用户的数据，一个最简单的方法是把用户数据写入文件。但是，随着应用程序的功能越来越复杂，数据量越来越大，如何管理这些数据就成了大问题：
 </p>
@@ -104,9 +104,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org68ffbae" class="outline-3">
-<h3 id="org68ffbae">数据模型</h3>
-<div class="outline-text-3" id="text-org68ffbae">
+<div id="outline-container-org654e2c0" class="outline-3">
+<h3 id="org654e2c0">数据模型</h3>
+<div class="outline-text-3" id="text-org654e2c0">
 <p>
 数据库按照数据结构来组织、存储和管理数据，实际上，数据库一共有三种模型：层次模型（树状）、网状模型和关系模型（二维表格）。
 </p>
@@ -117,9 +117,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-orgbba9024" class="outline-3">
-<h3 id="orgbba9024">数据类型</h3>
-<div class="outline-text-3" id="text-orgbba9024">
+<div id="outline-container-orga6cbab8" class="outline-3">
+<h3 id="orga6cbab8">数据类型</h3>
+<div class="outline-text-3" id="text-orga6cbab8">
 <p>
 对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。关系数据库支持的标准数据类型包括数值、字符串、时间等：
 </p>
@@ -215,9 +215,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org085494c" class="outline-3">
-<h3 id="org085494c">SQL 语言</h3>
-<div class="outline-text-3" id="text-org085494c">
+<div id="outline-container-org2f894ff" class="outline-3">
+<h3 id="org2f894ff">SQL 语言</h3>
+<div class="outline-text-3" id="text-org2f894ff">
 <p>
 什么是SQL？SQL是结构化查询语言的缩写，用来访问和操作数据库系统。
 </p>
@@ -244,9 +244,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-orga95fc90" class="outline-3">
-<h3 id="orga95fc90">主流关系数据库</h3>
-<div class="outline-text-3" id="text-orga95fc90">
+<div id="outline-container-org5d27685" class="outline-3">
+<h3 id="org5d27685">主流关系数据库</h3>
+<div class="outline-text-3" id="text-org5d27685">
 <p>
 目前，主流的关系数据库主要分为以下几类：
 </p>
@@ -261,9 +261,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org32eb4dd" class="outline-2">
-<h2 id="org32eb4dd">关系模型</h2>
-<div class="outline-text-2" id="text-org32eb4dd">
+<div id="outline-container-org96c23b3" class="outline-2">
+<h2 id="org96c23b3">关系模型</h2>
+<div class="outline-text-2" id="text-org96c23b3">
 <p>
 关系数据库是建立在关系模型上的，而关系模型本质上就是若干个存储数据的二维表。
 </p>
@@ -273,9 +273,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </p>
 </div>
 
-<div id="outline-container-org8ff1a28" class="outline-3">
-<h3 id="org8ff1a28">主键</h3>
-<div class="outline-text-3" id="text-org8ff1a28">
+<div id="outline-container-org719d391" class="outline-3">
+<h3 id="org719d391">主键</h3>
+<div class="outline-text-3" id="text-org719d391">
 <p>
 在关系数据库中，一张表中的每一行数据被称为一条记录（record）。每一条记录都包含若干定义好的字段。同一个表的所有记录都有相同的字段定义。
 </p>
@@ -303,9 +303,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org908e3df" class="outline-3">
-<h3 id="org908e3df">外键</h3>
-<div class="outline-text-3" id="text-org908e3df">
+<div id="outline-container-org44336e5" class="outline-3">
+<h3 id="org44336e5">外键</h3>
+<div class="outline-text-3" id="text-org44336e5">
 <p>
 把数据与另一张表关联起来，这种列称为 <span class="underline">外键</span> 。
 </p>
@@ -368,9 +368,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org1405e42" class="outline-3">
-<h3 id="org1405e42"><span class="todo TODO">TODO</span> 索引</h3>
-<div class="outline-text-3" id="text-org1405e42">
+<div id="outline-container-org678ab61" class="outline-3">
+<h3 id="org678ab61"><span class="todo TODO">TODO</span> 索引</h3>
+<div class="outline-text-3" id="text-org678ab61">
 <p>
 数据库索引对于用户和应用程序来说都是透明的。
 </p>
@@ -382,22 +382,22 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-orgd43376d" class="outline-2">
-<h2 id="orgd43376d">查询数据</h2>
-<div class="outline-text-2" id="text-orgd43376d">
+<div id="outline-container-orgae06ac0" class="outline-2">
+<h2 id="orgae06ac0">查询数据</h2>
+<div class="outline-text-2" id="text-orgae06ac0">
 </div>
-<div id="outline-container-org3e07370" class="outline-3">
-<h3 id="org3e07370">基本查询</h3>
-<div class="outline-text-3" id="text-org3e07370">
+<div id="outline-container-org1f10c81" class="outline-3">
+<h3 id="org1f10c81">基本查询</h3>
+<div class="outline-text-3" id="text-org1f10c81">
 <pre class="example">
 SELECT * FROM &lt;表名&gt;
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org64a33d5" class="outline-3">
-<h3 id="org64a33d5">条件查询</h3>
-<div class="outline-text-3" id="text-org64a33d5">
+<div id="outline-container-org3d03854" class="outline-3">
+<h3 id="org3d03854">条件查询</h3>
+<div class="outline-text-3" id="text-org3d03854">
 <pre class="example">
 SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </pre>
@@ -408,9 +408,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org9127c07" class="outline-3">
-<h3 id="org9127c07">投影查询</h3>
-<div class="outline-text-3" id="text-org9127c07">
+<div id="outline-container-org5e5b5fd" class="outline-3">
+<h3 id="org5e5b5fd">投影查询</h3>
+<div class="outline-text-3" id="text-org5e5b5fd">
 <p>
 如果我们只希望返回某些列的数据，而不是所有列的数据，我们可以用 <code>SELECT 列1, 列2, 列3 FROM ...</code> ，让结果集仅包含指定列。这种操作称为投影查询。
 </p>
@@ -421,9 +421,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-orgcdab3e5" class="outline-3">
-<h3 id="orgcdab3e5">排序</h3>
-<div class="outline-text-3" id="text-orgcdab3e5">
+<div id="outline-container-org6afce15" class="outline-3">
+<h3 id="org6afce15">排序</h3>
+<div class="outline-text-3" id="text-org6afce15">
 <p>
 使用 <code>ORDER BY</code> 可以对结果集进行排序，默认的排序规则是 <code>ASC</code> ：“升序”，即从小到大， <code>ASC</code> 可以省略。 <code>DESC</code> 表示“倒序” 。要进一步排序，可以继续添加列名。如：
 </p>
@@ -437,9 +437,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org89f6d37" class="outline-3">
-<h3 id="org89f6d37">分页查询</h3>
-<div class="outline-text-3" id="text-org89f6d37">
+<div id="outline-container-org7b21feb" class="outline-3">
+<h3 id="org7b21feb">分页查询</h3>
+<div class="outline-text-3" id="text-org7b21feb">
 <p>
 分页实际上就是从结果集中“截取”出第 M~N 条记录。这个查询可以通过 <code>LIMIT &lt;M&gt; OFFSET &lt;N&gt;</code> 子句实现，表示从 <code>N</code> 记录开始，最多取 <code>M</code> 条。
 </p>
@@ -463,9 +463,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org310b5af" class="outline-3">
-<h3 id="org310b5af">聚合查询</h3>
-<div class="outline-text-3" id="text-org310b5af">
+<div id="outline-container-org87e789b" class="outline-3">
+<h3 id="org87e789b">聚合查询</h3>
+<div class="outline-text-3" id="text-org87e789b">
 <p>
 对于统计总数、平均数这类计算，SQL 提供了专门的聚合函数，使用聚合函数进行查询，就是 <span class="underline">聚合查询</span> ，它可以快速获得结果。
 </p>
@@ -551,9 +551,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org360377a" class="outline-3">
-<h3 id="org360377a">多表查询</h3>
-<div class="outline-text-3" id="text-org360377a">
+<div id="outline-container-org2ac5e33" class="outline-3">
+<h3 id="org2ac5e33">多表查询</h3>
+<div class="outline-text-3" id="text-org2ac5e33">
 <p>
 查询多张表的语法是： <code>SELECT * FROM &lt;表1&gt;, &lt;表2&gt;</code> 。
 </p>
@@ -594,9 +594,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org1eb6429" class="outline-3">
-<h3 id="org1eb6429"><span class="todo TODO">TODO</span> 连接查询</h3>
-<div class="outline-text-3" id="text-org1eb6429">
+<div id="outline-container-org17f732c" class="outline-3">
+<h3 id="org17f732c"><span class="todo TODO">TODO</span> 连接查询</h3>
+<div class="outline-text-3" id="text-org17f732c">
 <p>
 ……
 </p>
@@ -604,17 +604,17 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org3e0ffc2" class="outline-2">
-<h2 id="org3e0ffc2">修改数据</h2>
-<div class="outline-text-2" id="text-org3e0ffc2">
+<div id="outline-container-org223f5c4" class="outline-2">
+<h2 id="org223f5c4">修改数据</h2>
+<div class="outline-text-2" id="text-org223f5c4">
 <p>
 关系数据库的基本操作就是增删改查，即 <code>CRUD：Create、Retrieve、Update、Delete</code> 。
 </p>
 </div>
 
-<div id="outline-container-org9a11e52" class="outline-3">
-<h3 id="org9a11e52">INSERT</h3>
-<div class="outline-text-3" id="text-org9a11e52">
+<div id="outline-container-orgef92b02" class="outline-3">
+<h3 id="orgef92b02">INSERT</h3>
+<div class="outline-text-3" id="text-orgef92b02">
 <p>
 INSERT语句的基本语法是：
 </p>
@@ -640,9 +640,9 @@ INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...);
 </div>
 </div>
 
-<div id="outline-container-org470e69e" class="outline-3">
-<h3 id="org470e69e">UPDATE</h3>
-<div class="outline-text-3" id="text-org470e69e">
+<div id="outline-container-orgceccfaf" class="outline-3">
+<h3 id="orgceccfaf">UPDATE</h3>
+<div class="outline-text-3" id="text-orgceccfaf">
 <p>
 UPDATE语句的基本语法是：
 </p>
@@ -657,9 +657,9 @@ UPDATE 语句可以没有 WHERE 条件，这时，整个表的所有记录都会
 </div>
 </div>
 
-<div id="outline-container-org49b2801" class="outline-3">
-<h3 id="org49b2801">DELETE</h3>
-<div class="outline-text-3" id="text-org49b2801">
+<div id="outline-container-org1d16126" class="outline-3">
+<h3 id="org1d16126">DELETE</h3>
+<div class="outline-text-3" id="text-org1d16126">
 <p>
 DELETE语句的基本语法是：
 </p>
@@ -675,13 +675,13 @@ DELETE FROM &lt;表名&gt; WHERE ...;
 </div>
 </div>
 
-<div id="outline-container-org1506140" class="outline-2">
-<h2 id="org1506140">MySQL</h2>
-<div class="outline-text-2" id="text-org1506140">
+<div id="outline-container-orga260040" class="outline-2">
+<h2 id="orga260040">MySQL</h2>
+<div class="outline-text-2" id="text-orga260040">
 </div>
-<div id="outline-container-orgd12fa3b" class="outline-3">
-<h3 id="orgd12fa3b">Client &amp; Server</h3>
-<div class="outline-text-3" id="text-orgd12fa3b">
+<div id="outline-container-orgc47d8c4" class="outline-3">
+<h3 id="orgc47d8c4">Client &amp; Server</h3>
+<div class="outline-text-3" id="text-orgc47d8c4">
 <p>
 命令行程序 <code>mysql</code> 实际上是 MySQL 客户端，真正的 MySQL 服务器程序是 <code>mysqld</code> ，在后台运行。
 </p>
@@ -700,9 +700,9 @@ mysql -h 10.0.1.99 -u root -p
 </div>
 </div>
 
-<div id="outline-container-org42921a8" class="outline-3">
-<h3 id="org42921a8">管理 MySQL</h3>
-<div class="outline-text-3" id="text-org42921a8">
+<div id="outline-container-org6588d82" class="outline-3">
+<h3 id="org6588d82">管理 MySQL</h3>
+<div class="outline-text-3" id="text-org6588d82">
 <p>
 在一个运行MySQL的服务器上，实际上可以创建多个数据库（Database）。
 </p>
@@ -802,9 +802,9 @@ mysql -h 10.0.1.99 -u root -p
 </div>
 </div>
 
-<div id="outline-container-org4bfc369" class="outline-3">
-<h3 id="org4bfc369"><span class="todo TODO">TODO</span> 实用 SQL 语句</h3>
-<div class="outline-text-3" id="text-org4bfc369">
+<div id="outline-container-orgdd05313" class="outline-3">
+<h3 id="orgdd05313"><span class="todo TODO">TODO</span> 实用 SQL 语句</h3>
+<div class="outline-text-3" id="text-orgdd05313">
 <p>
 ……
 </p>
@@ -812,11 +812,37 @@ mysql -h 10.0.1.99 -u root -p
 </div>
 </div>
 
-<div id="outline-container-orgc3ac17c" class="outline-2">
-<h2 id="orgc3ac17c"><span class="todo TODO">TODO</span> 事务</h2>
-<div class="outline-text-2" id="text-orgc3ac17c">
+<div id="outline-container-org0a9cfce" class="outline-2">
+<h2 id="org0a9cfce"><span class="todo TODO">TODO</span> 事务</h2>
+<div class="outline-text-2" id="text-org0a9cfce">
 <p>
-……
+这种把多条语句作为一个整体进行操作的功能，被称为 <b>数据库事务</b> 。
+</p>
+
+<blockquote>
+<p>
+数据库事务可以确保该事务范围内的所有操作都可以全部成功或者全部失败。如果事务失败，那么效果就和没有执行这些SQL一样，不会对数据库数据有任何改动。
+</p>
+</blockquote>
+
+<p>
+对于单条SQL语句，数据库系统自动将其作为一个事务执行，这种事务被称为隐式事务。
+</p>
+
+<p>
+要手动把多条SQL语句作为一个事务执行，使用 <code>BEGIN</code> 开启一个事务，使用 <code>COMMIT</code> 提交一个事务，这种事务被称为显式事务。
+</p>
+
+<p>
+很显然多条SQL语句要想作为一个事务执行，就必须使用显式事务。
+</p>
+
+<p>
+<code>COMMIT</code> 是指提交事务，即试图把事务内的所有SQL所做的修改永久保存。如果 <code>COMMIT</code> 语句执行失败了，整个事务也会失败。
+</p>
+
+<p>
+有些时候，我们希望主动让事务失败，这时，可以用 <code>ROLLBACK</code> 回滚事务，整个事务会失败。
 </p>
 </div>
 </div>
@@ -824,7 +850,7 @@ mysql -h 10.0.1.99 -u root -p
 <div id="postamble" class="status">
 <p class="date">Date: 2021-04-02 Fri 10:19</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-04-02 Fri 16:41</p>
+<p class="date">Created: 2021-04-04 Sun 18:08</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
