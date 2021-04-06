@@ -29,6 +29,7 @@
  *Bookmarks InboX*
 
 - 合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。
+- axios timeout 无效 https://segmentfault.com/q/1010000017569212
 - mysql 初始化 https://blog.csdn.net/chen97_08/article/details/81484286
 - [[https://www.cnblogs.com/kenshinobiy/p/10720151.html][javaScript -- touch事件详解（touchstart、touchmove和touchend）]]
 - Search Engine [[https://endler.dev/2019/tinysearch/#searchbox]]
