@@ -14,7 +14,7 @@
 |      | [[https://c.runoob.com/front-end/854][RegExp]]      |              | [[https://www.sojson.com][SoJSON]]         | [[https://www.bootcss.com/][BootNav]]        |
 |------+-------------+--------------+----------------+----------------|
 | 娱乐 | [[http://www.etymon.cn/index.html][英语字根]]    | [[https://www.hanjutv.com/][韩剧]]         | [[https://www.gushiwen.org/][古诗文网]]       | [[https://www.meijutt.tv/][天天美剧]]       |
-|      | [[https://v.kyikan.com/][看一看]]      |              |                |                |
+|      | [[https://v.kyikan.com/][看一看]]      | [[https://www.flvcd.com/index.htm][硕鼠]]         |                |                |
 |------+-------------+--------------+----------------+----------------|
 | 插件 | [[https://www.crx4chrome.com/][Crx4Chrome]]  | [[https://chocolatey.org/packages][Chocolatey]]   | [[https://vimawesome.com/][VimAwesome]]     | [[http://www.melpa.org/#/][Melpa]]          |
 |------+-------------+--------------+----------------+----------------|
