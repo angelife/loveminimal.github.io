@@ -42,6 +42,68 @@ module hello.world {
 
 模块进一步隔离了代码的访问权限，只有它声明的导出的包，外部代码才被允许访问。
 
+* 反射
+
+反射就是 Reflection， Java 的反射是指程序在运行期（对某个实例一无所知的情况下）可以拿到一个对象的所有信息。
+
+** Class 类
+
+除了 =int= 等基本类型外，Java 的其他类型全部都是 =class= （包括 =interface= ）。
+
+=class= 是由 JVM 在执行过程中动态加载的。 JVM 在第一次读取到一种 =class= 类型时，将其加载进内存。
+
+*每加载一种 =class= ，JVM 就为其创建一个 =Class= 类型的实例，* 并关联进来。
+这里的 =Class= 类型是一个名叫 "Class" 的 =class= 。它长这样：
+
+#+BEGIN_SRC java -n
+  public final class Class {
+      private Class() {}
+  }
+#+END_SRC
+
+这个 =Class= 实例是 JVM 内部创建的，可以发现 =Class= 类的构造方法是 =private= ，只有 JVM 能创建 =Class= 实例，我们自己的 Java 程序是无法创建 =Class= 实例的。
+
+**JVM持有的每个 =Class= 实例都指向一个数据类型（ =class= 或 =interface= ）。*
+
+一个 =Class= 实例包含了该 =class= 的所有完整信息：
+
+#+BEGIN_EXPORT html
+<img
+src="images/java-50.jpg"
+width="420"
+height=""
+style=""
+title=""
+/>
+#+END_EXPORT
+
+由于 JVM 为每个加载的 =class= 创建了对应的 =Class= 实例，并在实例中保存了该 =class= 的所有信息，包括类名、包名、父类、实现的接口、所有方法、字段等，因此，如果获取了某个 =Class= 实例，我们就可以通过这个 =Class= 实例获取到该实例对应的 =class= 的所有信息。
+
+#+BEGIN_QUOTE
+这种通过 =Class= 实例获取 =class= 信息的方法称为反射 （Reflection）。
+#+END_QUOTE
+
+如何获取一个 =class= 的 =Class= 实例？有三个方法：
+1. 直接通过一个 =class= 的静态变量 =class= 获取；
+2. 通过实例变量（如果有）提供的 =getClass()= 方法获取；
+3. 如果知道一个 =class= 的完整类名，通过静态方法 =Class.forName()= 获取。
+
+#+BEGIN_SRC java -n
+  // 1
+  Class cls = String.class;
+  // 2
+  String s = "Hello";
+  Class cls = s.getClass();
+  // 3
+  Class cls = Class.forName("java.lang.String");
+#+END_SRC
+
+=Class= 实例在 JVM 中是唯一的，所以，上述方法获取的 =Class= 实例是同一个实例。
+
+JVM 为每一种基本类型如 =int= 也创建了 =Class= ，通过 =int.class= 访问。
+
+JVM 总是动态加载 =class= ，可以在运行期根据条件来控制加载 =class= 。
+
 * Maven
 
 Maven 是一个 Java 项目管理和构建工具，它可以定义 _项目结构_ 、 _项目依赖_ ，并且用统一的方式进行 _自动化构建_ （编译、测试、打包、发布……）。
@@ -591,4 +653,6 @@ title=""
 #+END_QUOTE
 
 *开发 Servlet 时，推荐使用 =main()= 方法启动嵌入式 Tomcat 服务器并加载当前工程的 webapp，便于开发调试，且不影响打包部署，能极大地提升开发效率。
+
+* Spring 开发
 

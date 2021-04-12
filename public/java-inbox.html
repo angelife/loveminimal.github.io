@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-04-09 Fri 17:44 -->
+<!-- 2021-04-12 Mon 17:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Java Inbox</title>
@@ -21,6 +21,11 @@
 <li><a href="#orge5786f1">面向对象</a>
 <ul>
 <li><a href="#org414b509">模块</a></li>
+</ul>
+</li>
+<li><a href="#org8f0eff6">反射</a>
+<ul>
+<li><a href="#org7513a8a">Class 类</a></li>
 </ul>
 </li>
 <li><a href="#org2239133">Maven</a>
@@ -52,6 +57,7 @@
 <li><a href="#orgab0faa8">Servlet 开发</a></li>
 </ul>
 </li>
+<li><a href="#org7e4868b">Spring 开发</a></li>
 </ul>
 </div>
 </div>
@@ -116,6 +122,102 @@ title=""
 
 <p>
 模块进一步隔离了代码的访问权限，只有它声明的导出的包，外部代码才被允许访问。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org8f0eff6" class="outline-2">
+<h2 id="org8f0eff6">反射</h2>
+<div class="outline-text-2" id="text-org8f0eff6">
+<p>
+反射就是 Reflection， Java 的反射是指程序在运行期（对某个实例一无所知的情况下）可以拿到一个对象的所有信息。
+</p>
+</div>
+
+<div id="outline-container-org7513a8a" class="outline-3">
+<h3 id="org7513a8a">Class 类</h3>
+<div class="outline-text-3" id="text-org7513a8a">
+<p>
+除了 <code>int</code> 等基本类型外，Java 的其他类型全部都是 <code>class</code> （包括 <code>interface</code> ）。
+</p>
+
+<p>
+<code>class</code> 是由 JVM 在执行过程中动态加载的。 JVM 在第一次读取到一种 <code>class</code> 类型时，将其加载进内存。
+</p>
+
+<p>
+<b>每加载一种 <code>class</code> ，JVM 就为其创建一个 <code>Class</code> 类型的实例，</b> 并关联进来。
+这里的 <code>Class</code> 类型是一个名叫 "Class" 的 <code>class</code> 。它长这样：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">final</span> <span style="color: #a020f0;">class</span> <span style="color: #a020f0;">Class</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a020f0;">private</span> <span style="color: SystemWindowText;">Class</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{}</span>
+<span class="linenr">3: </span><span style="color: #707183;">}</span>
+</pre>
+</div>
+
+<p>
+这个 <code>Class</code> 实例是 JVM 内部创建的，可以发现 <code>Class</code> 类的构造方法是 <code>private</code> ，只有 JVM 能创建 <code>Class</code> 实例，我们自己的 Java 程序是无法创建 <code>Class</code> 实例的。
+</p>
+
+<p>
+<b>*JVM持有的每个 <code>Class</code> 实例都指向一个数据类型（ <code>class</code> 或 <code>interface</code> ）。</b>
+</p>
+
+<p>
+一个 <code>Class</code> 实例包含了该 <code>class</code> 的所有完整信息：
+</p>
+
+<img
+src="images/java-50.jpg"
+width="420"
+height=""
+style=""
+title=""
+/>
+
+<p>
+由于 JVM 为每个加载的 <code>class</code> 创建了对应的 <code>Class</code> 实例，并在实例中保存了该 <code>class</code> 的所有信息，包括类名、包名、父类、实现的接口、所有方法、字段等，因此，如果获取了某个 <code>Class</code> 实例，我们就可以通过这个 <code>Class</code> 实例获取到该实例对应的 <code>class</code> 的所有信息。
+</p>
+
+<blockquote>
+<p>
+这种通过 <code>Class</code> 实例获取 <code>class</code> 信息的方法称为反射 （Reflection）。
+</p>
+</blockquote>
+
+<p>
+如何获取一个 <code>class</code> 的 <code>Class</code> 实例？有三个方法：
+</p>
+<ol class="org-ol">
+<li>直接通过一个 <code>class</code> 的静态变量 <code>class</code> 获取；</li>
+<li>通过实例变量（如果有）提供的 <code>getClass()</code> 方法获取；</li>
+<li>如果知道一个 <code>class</code> 的完整类名，通过静态方法 <code>Class.forName()</code> 获取。</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">1</span>
+<span class="linenr">2: </span><span style="color: #a020f0;">Class</span> <span style="color: SystemWindowText;">cls</span> = String.<span style="color: #a020f0;">class</span>;
+<span class="linenr">3: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">2</span>
+<span class="linenr">4: </span><span style="color: #a020f0;">String</span> <span style="color: SystemWindowText;">s</span> = <span style="color: #8b2252;">"Hello"</span>;
+<span class="linenr">5: </span><span style="color: #a020f0;">Class</span> <span style="color: SystemWindowText;">cls</span> = s.getClass<span style="color: #707183;">()</span>;
+<span class="linenr">6: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">3</span>
+<span class="linenr">7: </span><span style="color: #a020f0;">Class</span> <span style="color: SystemWindowText;">cls</span> = Class.forName<span style="color: #707183;">(</span><span style="color: #8b2252;">"java.lang.String"</span><span style="color: #707183;">)</span>;
+</pre>
+</div>
+
+<p>
+<code>Class</code> 实例在 JVM 中是唯一的，所以，上述方法获取的 <code>Class</code> 实例是同一个实例。
+</p>
+
+<p>
+JVM 为每一种基本类型如 <code>int</code> 也创建了 <code>Class</code> ，通过 <code>int.class</code> 访问。
+</p>
+
+<p>
+JVM 总是动态加载 <code>class</code> ，可以在运行期根据条件来控制加载 <code>class</code> 。
 </p>
 </div>
 </div>
@@ -960,11 +1062,15 @@ title=""
 </div>
 </div>
 </div>
+
+<div id="outline-container-org7e4868b" class="outline-2">
+<h2 id="org7e4868b">Spring 开发</h2>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-04-04 Sun 17:23</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-04-09 Fri 17:44</p>
+<p class="date">Created: 2021-04-12 Mon 17:55</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
