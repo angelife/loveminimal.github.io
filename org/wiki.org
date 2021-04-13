@@ -11,6 +11,12 @@
 # />
 # #+END_EXPORT
 
+** IDE Active
+ [2021-04-13 Tue 11:41]
+
+https://plugins.zhile.io
+
+https://gitee.com/loveminimal/ide.git
 ** Ubuntu 下清空 DNS 缓存
  [2021-03-11 Thu 17:58]
 
