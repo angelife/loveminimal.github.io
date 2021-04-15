@@ -1,0 +1,11 @@
+#+DATE: <2021-04-15 Thu 17:54>
+#+TITLE: App Inbox
+
+* Android
+
+#+BEGIN_QUOTE
+学习安卓的目的是为了制作华为手机的主题自用……
+#+END_QUOTE
+
+→ https://developer.android.google.cn/docs
+

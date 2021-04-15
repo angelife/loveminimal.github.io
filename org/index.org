@@ -77,6 +77,10 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./java-13.org][Java 输入/输出流]]      |
 | [[./java-14.org][Java 注解]]             |
 
+| 鸿蒙/安卓/IOS |
+|---------------|
+| [[./app-inbox.org][App Inbox]]     |
+
 | 休闲     |
 |----------|
 | [[./diet-modification.org][饮食调整]] |
