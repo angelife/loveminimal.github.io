@@ -9,3 +9,49 @@
 
 → https://developer.android.google.cn/docs
 
+* Android FAQ
+
+** Android studio 配置国内镜像源
+
+几个国内镜像源：
+
+#+BEGIN_EXAMPLE
+# 东软信息学院
+- mirrors.neusoft.edu.cn            port：80
+# 北京化工大学
+- ubuntu.buct.edu.cn/ubuntu.buct.cn port:80
+# 电子科技大学
+- mirrors.dormforce.net             port:80
+#+END_EXAMPLE
+
+*如何配置呢？*
+
+=File -> setting -> System Settings -> HTTP Proxy= ，配置镜像地址，如下：
+
+#+BEGIN_EXPORT html
+<img
+src="images/android-6.jpg"
+width="400"
+height=""
+style="float: left; margin-right: 8px;"
+title=""
+/>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
+<img
+src="images/android-7.jpg"
+width="400"
+height=""
+style=""
+title=""
+/>
+#+END_EXPORT
+
+重启 AS 查看。
+
+如果配置后还不可以，则有可能得查一下 Android SDK 中 SDK Update Sites 中的配置，如上右图。
+
+** Waiting for Target Device to Come Online
+
+打开 AVD manager，选中你的模拟器，右键，wipe，擦出数据，OK。
