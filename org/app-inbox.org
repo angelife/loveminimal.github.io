@@ -7,9 +7,12 @@
 学习安卓的目的是为了制作华为手机的主题自用……
 #+END_QUOTE
 
-→ https://developer.android.google.cn/docs
-
 * Android FAQ
+
+** Android Studio
+
+- 历史版本 https://developer.android.google.cn/studio/archive
+- 官方文档 https://developer.android.google.cn/training/basics/firstapp/creating-project
 
 ** Android studio 配置国内镜像源
 
