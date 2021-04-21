@@ -16,6 +16,13 @@
 
 ** Android studio 配置国内镜像源
 
+#+BEGIN_EXPORT html
+<div style="background: #eee; color: #933; margin: 16px 0; padding: 10px; font-weight: 700;">
+  安装的时候，不要加代理！不要加代理！！不要加代理！！！
+  <p>加了代理会出现各种各样的问题，现在默认的源已经支持下载，网速也还行。</p>
+</div>
+#+END_EXPORT
+
 几个国内镜像源：
 
 #+BEGIN_EXAMPLE
