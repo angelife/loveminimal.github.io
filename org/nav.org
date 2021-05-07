@@ -30,6 +30,7 @@
  *Bookmarks InboX*
 
 - 合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。
+- vue-element-ui https://juejin.cn/post/6844903476661583880
 - Element UI 表格多选 https://blog.csdn.net/qq_37639389/article/details/90482917
 - 官方文档 https://developer.android.google.cn/training/basics/firstapp/creating-project
 - JB_IDE activate https://zhile.io/2020/11/18/jetbrains-eval-reset-da33a93d.html
