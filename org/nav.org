@@ -5,7 +5,7 @@
 |------+-------------+--------------+----------------+----------------|
 | 我的 | [[./index.org][Virgo]]       | [[https://www.dida365.com/webapp/#p/inbox/tasks][GTD]]          | [[https://emacs-china.org/][Emacs China]]    | [[https://github.com/loveminimal][Github]]         |
 |      | [[https://cloud.huawei.com/home#/notepad/task/2f0739e3$ee3c$4049$8422$461c7e46d116/none][华为云]]      | [[https://cloud.tencent.com/developer/labs][腾讯云]]       | [[https://www.youtube.com/][YouTube]]        | [[https://www.icourse163.org/][MOOC]]           |
-|      | [[https://twitter.com/home][Twitter]]     | [[https://gitee.com/loveminimal][Gitee]]        | [[https://www.quora.com/][Quora]]          | [[http://www.people.com.cn/][人民网]]         |
+|      | [[https://twitter.com/home][Twitter]]     | [[https://gitee.com/loveminimal][Gitee]]        |                | [[http://www.people.com.cn/][人民网]]         |
 |      |             | [[https://www.bilibili.com/][Bilibili]]     |                |                |
 |      |             | [[https://www.daodejing.org/][道德经]]       | [[https://www.zhihu.com/][知乎]]           | [[https://www.jianshu.com/u/eebcc2974936][简书]]           |
 |------+-------------+--------------+----------------+----------------|
@@ -20,12 +20,12 @@
 |------+-------------+--------------+----------------+----------------|
 | 教程 | [[http://www.runoob.com/][菜鸟教程]]    | [[http://es6.ruanyifeng.com/][ES6]]          | [[https://www.liaoxuefeng.com/][廖雪峰]]         | [[http://www.softwhy.com/][蚂蚁部落]]       |
 |      | [[http://www.nginx.cn/doc/][Nginx Doc]]   | [[http://c.biancheng.net/][C 语言中文网]] | [[https://www.lmonkey.com/][学习猿地]]       | [[https://cloud.tencent.com/developer/devdocs][腾讯云开发手册]] |
-|      | [[https://developer.huawei.com/consumer/cn/forum/][鸿蒙论坛]]    | [[https://www.freebuf.com/][FREEBUF]]      | [[https://www.interviewcake.com/data-structures-reference][Interview Cake]] | [[https://help.aliyun.com/?spm=a2c4g.750001.J_8058803260.1296.30757b132G3d1w][阿里云文档]]     |
+|      | [[https://developer.huawei.com/consumer/cn/forum/][鸿蒙论坛]]    |              | [[https://www.interviewcake.com/data-structures-reference][Interview Cake]] | [[https://help.aliyun.com/?spm=a2c4g.750001.J_8058803260.1296.30757b132G3d1w][阿里云文档]]     |
 |      | [[https://axios-http.com/docs/zh/intro/][Axios Doc]]   | [[https://developer.android.google.cn/training/basics/firstapp/creating-project][Android Doc]]  |                |                |
 |------+-------------+--------------+----------------+----------------|
 | 博客 | [[https://bitsofco.de/][Bitsofco]]    | [[http://www.ruanyifeng.com/blog/developer/][阮一峰]]       | [[http://xahlee.org/][李杀网]]         | [[https://coolshell.cn/][酷壳]]           |
 |      | [[http://www.tripod.fun/][阿汤]]        | [[https://www.ituring.com.cn/][图灵社区]]     | [[https://manateelazycat.github.io/index.html][ManateeLazyCat]] | [[http://www.yinwang.org/][当然我在扯淡]]   |
-|      | [[https://blog.codingnow.com/][云风的 BLOG]] | [[https://www.zhangxinxu.com/][张鑫旭]]       | [[http://mindhacks.cn/][刘未鹏]]         |                |
+|      | [[https://blog.codingnow.com/][云风的 BLOG]] | [[https://www.zhangxinxu.com/][张鑫旭]]       |                |                |
 
  *Bookmarks InboX*
 

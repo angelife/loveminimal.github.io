@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<!-- 2021-05-08 Sat 15:46 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vuex Inbox</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Jack Liu">
+<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+           <link rel="stylesheet" href="themes/style.css" type="text/css"  />
+           <script type="module" src="themes/main.js" defer></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Vuex Inbox</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org419e911">介绍</a>
+<ul>
+<li><a href="#org146455d">Vuex 是什么</a></li>
+<li><a href="#orga06253e">安装</a></li>
+<li><a href="#orgaed9560">开始</a></li>
+</ul>
+</li>
+<li><a href="#orgddf7f81">核心概念</a>
+<ul>
+<li><a href="#org49118f5">State</a></li>
+<li><a href="#orgd64f59b">Getter</a></li>
+<li><a href="#org1e64619">Mutation</a></li>
+<li><a href="#org585589a"><span class="todo TODO">TODO</span> Actions</a></li>
+<li><a href="#orge4c2da1"><span class="todo TODO">TODO</span> Module</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+→ Vuex 文档 <a href="https://vuex.vuejs.org/zh/">https://vuex.vuejs.org/zh/</a>
+</p>
+
+<div id="outline-container-org419e911" class="outline-2">
+<h2 id="org419e911">介绍</h2>
+<div class="outline-text-2" id="text-org419e911">
+</div>
+<div id="outline-container-org146455d" class="outline-3">
+<h3 id="org146455d">Vuex 是什么</h3>
+<div class="outline-text-3" id="text-org146455d">
+<p>
+Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用 <b>集中式</b> 存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
+</p>
+
+<essay>
+MVVM 框架的好处在于，你只需要关心数据，因为核心就是数据，其他如钩子、方法皆是改变数据的方法，是为了数据而服务的。
+
+<p>细想来，整个程序不也就是数据那点事儿嘛……</p>
+</essay>
+
+<p>
+以下是一个表示“单向数据流”理念的简单示意：
+</p>
+
+<img
+src="https://vuex.vuejs.org/flow.png"
+width="300"
+height=""
+style=""
+title=""
+/>
+
+<p>
+其中：
+</p>
+<ul class="org-ul">
+<li>state，驱动应用的数据源；</li>
+<li>view，以声明方式将 state 映射到视图；</li>
+<li>actions，响应在 view 上的用户输入导致的状态变化。</li>
+</ul>
+
+<p>
+但是，当我们的应用遇到 <b>多个组件共享状态时</b> ，单向数据流的简洁性很容易被破坏：
+</p>
+
+<ol class="org-ol">
+<li>多个视图依赖于同一状态;</li>
+<li>来自不同视图的行为需要变更同一状态。</li>
+</ol>
+
+<p>
+对于问题一，传参的方法对于多层嵌套的组件将会非常繁琐，并且对于兄弟组件间的状态传递无能为力。对于问题二，我们经常会采用父子组件直接引用或者通过事件来变更和同步状态的多份拷贝。
+</p>
+
+<p>
+以上的这些模式非常脆弱，通常会导致无法维护的代码。
+</p>
+
+<p>
+<b>因此，我们为什么不把组件的共享状态抽取出来，以一个全局单例模式管理呢？</b>
+</p>
+
+<p>
+在这种模式下，我们的组件树构成了一个巨大的“视图”，不管在树的哪个位置，任何组件都能获取状态或者触发行为！
+</p>
+
+<p>
+通过 <b>定义和隔离状态管理中的各种概念</b> 并 <b>通过强制规则维持视图和状态间的独立性</b> ，我们的代码将会变得更结构化且易维护。
+</p>
+
+<img
+src="https://vuex.vuejs.org/vuex.png"
+width="600"
+height=""
+style=""
+title=""
+/>
+</div>
+</div>
+
+<div id="outline-container-orga06253e" class="outline-3">
+<h3 id="orga06253e">安装</h3>
+<div class="outline-text-3" id="text-orga06253e">
+<p>
+→ 详见 <a href="https://vuex.vuejs.org/zh/installation.html">https://vuex.vuejs.org/zh/installation.html</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaed9560" class="outline-3">
+<h3 id="orgaed9560">开始</h3>
+<div class="outline-text-3" id="text-orgaed9560">
+<p>
+<b>每一个 Vuex 应用的核心就是 store（仓库）。</b>
+</p>
+
+<p>
+Vuex 和单纯的全局对象有以下两点不同：
+</p>
+<ol class="org-ol">
+<li>Vuex 的状态存储是响应式的；</li>
+<li>不能直接改变 store 中的状态，改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。</li>
+</ol>
+
+<p>
+为了在 Vue 组件中访问 <code>this.$store</code> property ，你需要为 Vue 实例提供创建好的 store。 Vuex 提供了一个从根组件向所有子组件，以 store 选项的方式“注入”该 store 的机制。
+</p>
+
+<p>
+由于 store 中的状态是响应式的，在组件中调用 store 中的状态简单到仅需要在 <b>计算属性</b> 中返回即可。触发变化也仅仅是在组件的 methods 中提交 mutation。
+</p>
+
+<p>
+这里有一点需要注意，一般我们用 <code>computed</code> property 中的转换的值直接用来渲染，而不会对其进行直接变化，否则，控制台会输出以下错误。
+</p>
+
+<pre class="example">
+[Vue warn]: Computed property "count" was assigned to but it has no setter.
+found in
+---&gt; &lt;HelloWorld&gt; at src/components/HelloWorld.vue
+       &lt;App&gt; at src/App.vue
+         &lt;Root&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgddf7f81" class="outline-2">
+<h2 id="orgddf7f81">核心概念</h2>
+<div class="outline-text-2" id="text-orgddf7f81">
+</div>
+<div id="outline-container-org49118f5" class="outline-3">
+<h3 id="org49118f5">State</h3>
+<div class="outline-text-3" id="text-org49118f5">
+<p>
+Vuex 使用 <b>单一状态树</b> &#x2013; 是的，用一个对象就包含了全部的应用层级状态，单状态树和模块化并不冲突。
+</p>
+
+<p>
+<b>如何在 Vue 组件中展示状态呢？</b>
+</p>
+
+<p>
+从 store 实例中读取状态最简单的方法就是在计算属性 (opens new window)中返回某个状态。每当 <code>store.state.count</code> 变化的时候, 都会重新求取计算属性，并且触发更新相关联的 DOM。
+</p>
+
+<p>
+然而，这种模式导致组件依赖全局状态单例。在模块化的构建系统中，在每个需要使用 state 的组件中需要频繁地导入，并且在测试组件时需要模拟状态。
+</p>
+
+<p>
+Vuex 通过 <code>store</code> 选项，提供了一种机制将状态从根组件“注入”到每一个子组件中（需调用 <code>Vue.use(Vuex)</code> ）。
+</p>
+
+<p>
+通过在根实例中注册 <code>store</code> 选项，该 store 实例会注入到根组件下的所有子组件中，且子组件能通过 <code>this.$store</code> 访问到。
+</p>
+
+<p>
+<b>mapState 辅助函数</b>
+</p>
+
+<p>
+当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，我们可以使用 <code>mapState</code> 辅助函数帮助我们生成计算属性，让你少按几次键。
+</p>
+
+<p>
+具体示例见 <a href="https://vuex.vuejs.org/zh/guide/state.html">https://vuex.vuejs.org/zh/guide/state.html</a> 。
+</p>
+
+<p>
+<code>mapState</code> 函数返回的是一个对象， 使用 <b>对象展开运算符</b> 将此对象混入到外部对象中。
+</p>
+
+<p>
+<b>组件仍然保有局部状态！</b>
+</p>
+
+<p>
+使用 Vuex 并不意味着你需要将所有的状态放入 Vuex。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd64f59b" class="outline-3">
+<h3 id="orgd64f59b">Getter</h3>
+<div class="outline-text-3" id="text-orgd64f59b">
+<p>
+有时候我们需要从 store 中的 state 中派生出一些状态，例如对列表进行过滤并计数：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>computed: <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>  doneTodosCount <span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">3: </span>    <span style="color: #a626a4;">return</span> <span style="color: #008b8b;">this</span>.$store.state.todos.filter<span style="color: #909183;">(</span>todo =&gt; todo.done<span style="color: #909183;">)</span>.length
+<span class="linenr">4: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">5: </span><span style="color: #707183;">}</span>
+</pre>
+</div>
+
+<p>
+如果有多个组件需要用到此属性，我们要么复制这个函数，或者抽取到一个共享函数然后在多处导入它 —— 无论哪种方式都不是很理想。
+</p>
+
+<p>
+<b>Vuex 允许我们在 store 中定义“getter”（可以认为是 store 的计算属性）。</b>
+</p>
+
+<p>
+就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。
+</p>
+
+<p>
+<b>通过属性访问</b>
+</p>
+
+<p>
+Getter 会暴露为 <code>store.getters</code> 对象，你可以以属性的形式访问这些值。
+</p>
+
+<p>
+Getter 接受 state 作为其第一个参数。
+</p>
+
+<p>
+Getter 也可以接受其他 getter 作为第二个参数。
+</p>
+
+<p>
+<b>通过方法访问</b>
+</p>
+
+<p>
+你也可以通过让 getter <b>返回一个函数</b> ，来实现给 getter 传参。在你对 store 里的数组进行查询时非常有用。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>getters: <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>  <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">...</span>
+<span class="linenr">3: </span>  getTodoById: <span style="color: #7388d6;">(</span>state<span style="color: #7388d6;">)</span> =&gt; <span style="color: #7388d6;">(</span>id<span style="color: #7388d6;">)</span> =&gt; <span style="color: #7388d6;">{</span>
+<span class="linenr">4: </span>    <span style="color: #a626a4;">return</span> state.todos.find<span style="color: #909183;">(</span>todo =&gt; todo.id === id<span style="color: #909183;">)</span>
+<span class="linenr">5: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">6: </span><span style="color: #707183;">}</span>
+<span class="linenr">7: </span>
+<span class="linenr">8: </span>store.getters.getTodoById<span style="color: #707183;">(</span>2<span style="color: #707183;">)</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">-&gt; { id: 2, text: '...', done: false }</span>
+</pre>
+</div>
+
+<p>
+<b>mapGetters 辅助函数</b>
+</p>
+
+<p>
+<code>mapGetters</code> 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性。
+</p>
+
+<essay>
+Vuex 提供了诸如 mapState 、 mapGetters 等方法，用来简化操作。有些用法你可能感觉比较突兀，不用担心，在其内部已经做了处理，最好先了解一下它们的用法。
+</essay>
+</div>
+</div>
+
+<div id="outline-container-org1e64619" class="outline-3">
+<h3 id="org1e64619">Mutation</h3>
+<div class="outline-text-3" id="text-org1e64619">
+<p>
+更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。
+</p>
+
+<p>
+Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">store</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Vuex.Store</span><span style="color: #707183;">(</span><span style="color: #7388d6;">{</span>
+<span class="linenr"> 2: </span>  state: <span style="color: #909183;">{</span>
+<span class="linenr"> 3: </span>    count: 1
+<span class="linenr"> 4: </span>  <span style="color: #909183;">}</span>,
+<span class="linenr"> 5: </span>  mutations: <span style="color: #909183;">{</span>
+<span class="linenr"> 6: </span>    increment <span style="color: #709870;">(</span>state<span style="color: #709870;">)</span> <span style="color: #709870;">{</span>
+<span class="linenr"> 7: </span>      <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21464;&#26356;&#29366;&#24577;</span>
+<span class="linenr"> 8: </span>      state.count++
+<span class="linenr"> 9: </span>    <span style="color: #709870;">}</span>
+<span class="linenr">10: </span>  <span style="color: #909183;">}</span>
+<span class="linenr">11: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<p>
+<b>*你不能直接调用一个 mutation handler。</b>
+</p>
+
+<p>
+<b>这个选项更像是事件注册</b> ：“当触发一个类型为 <code>increment</code> 的 mutation 时，调用此函数。”要唤醒一个 mutation handler，你需要以相应的 type 调用 <code>store.commit</code> 方法：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>store.commit<span style="color: #707183;">(</span><span style="color: #50a14f;">'increment'</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<p>
+<b>提交载荷（Payload）</b>
+</p>
+
+<p>
+你可以向 store.commit 传入额外的参数，即 mutation 的 载荷（payload）。
+</p>
+
+<p>
+在大多数情况下，载荷应该是一个对象，这样可以包含多个字段并且记录的 mutation 会更易读。
+</p>
+
+<hr>
+
+<p>
+<b>Mutation 需遵守 Vue 的响应规则</b>
+</p>
+
+<ol class="org-ol">
+<li>最好提前在你的 store 中初始化好所有所需属性；</li>
+<li>当需要在对象上添加新属性时，你应该
+<ul class="org-ul">
+<li>使用 Vue.set(obj, 'newProp', 123), 或者</li>
+<li>以新对象替换老对象。</li>
+</ul></li>
+</ol>
+
+<p>
+<b>使用常量替代 Mutation 事件类型</b>
+</p>
+
+<p>
+使用常量替代 mutation 事件类型在各种 Flux 实现中是很常见的模式。这样可以使 linter 之类的工具发挥作用，同时把这些常量放在单独的文件中可以让你的代码合作者对整个 app 包含的 mutation 一目了然。
+</p>
+
+<p>
+<b>Mutation 必须是同步函数！！！</b>
+</p>
+
+<p>
+<b>在组件中提交 Mutation</b>
+</p>
+
+<p>
+你可以在组件中使用 <code>this.$store.commit('xxx')</code> 提交 mutation，或者使用 <code>mapMutations</code> 辅助函数将组件中的 methods 映射为 <code>store.commit</code> 调用（需要在根节点注入 <code>store</code> ）。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">import</span> <span style="color: #707183;">{</span> mapMutations <span style="color: #707183;">}</span> from <span style="color: #50a14f;">'vuex'</span>
+<span class="linenr"> 2: </span>
+<span class="linenr"> 3: </span><span style="color: #a626a4;">export</span> <span style="color: #a626a4;">default</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 4: </span>  <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">...</span>
+<span class="linenr"> 5: </span>  methods: <span style="color: #7388d6;">{</span>
+<span class="linenr"> 6: </span>    ...mapMutations<span style="color: #909183;">(</span><span style="color: #709870;">[</span>
+<span class="linenr"> 7: </span>      <span style="color: #50a14f;">'increment'</span>, <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23558; `this.increment()` &#26144;&#23556;&#20026; `this.$store.commit('increment')`</span>
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span>      <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">`mapMutations` &#20063;&#25903;&#25345;&#36733;&#33655;&#65306;</span>
+<span class="linenr">10: </span>      <span style="color: #50a14f;">'incrementBy'</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23558; `this.incrementBy(amount)` &#26144;&#23556;&#20026; `this.$store.commit('incrementBy', amount)`</span>
+<span class="linenr">11: </span>    <span style="color: #709870;">]</span><span style="color: #909183;">)</span>,
+<span class="linenr">12: </span>    ...mapMutations<span style="color: #909183;">(</span><span style="color: #709870;">{</span>
+<span class="linenr">13: </span>      add: <span style="color: #50a14f;">'increment'</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23558; `this.add()` &#26144;&#23556;&#20026; `this.$store.commit('increment')`</span>
+<span class="linenr">14: </span>    <span style="color: #709870;">}</span><span style="color: #909183;">)</span>
+<span class="linenr">15: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">16: </span><span style="color: #707183;">}</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org585589a" class="outline-3">
+<h3 id="org585589a"><span class="todo TODO">TODO</span> Actions</h3>
+<div class="outline-text-3" id="text-org585589a">
+<p>
+Action 类似于 mutation，不同在于：
+</p>
+
+<ul class="org-ul">
+<li>Action 提交的是 mutation，而不是直接变更状态；</li>
+<li>Action 可以包含任意异步操作。</li>
+</ul>
+
+<p>
+<b>注册 Action</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>actions: <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>  increment <span style="color: #7388d6;">(</span><span style="color: #909183;">{</span> commit <span style="color: #909183;">}</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">3: </span>    commit<span style="color: #909183;">(</span><span style="color: #50a14f;">'increment'</span><span style="color: #909183;">)</span>
+<span class="linenr">4: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">5: </span><span style="color: #707183;">}</span>
+</pre>
+</div>
+
+<p>
+<b>分发 Action</b>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>store.dispatch<span style="color: #707183;">(</span><span style="color: #50a14f;">'increment'</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<p>
+我们直接分发 mutation 岂不更方便？实际上并非如此，还记得 mutation 必须同步执行这个限制么？Action 就不受约束！我们可以在 action 内部执行异步操作。
+</p>
+
+<p>
+Actions 支持同样的载荷方式和对象方式进行分发。
+</p>
+
+<p>
+<b>在组件中分发 Action</b>
+</p>
+
+<p>
+你在组件中使用 <code>this.$store.dispatch('xxx')</code> 分发 action，或者使用 <code>mapActions</code> 辅助函数将组件的 methods 映射为 <code>store.dispatch</code> 调用（需要先在根节点注入 <code>store</code> ）。
+</p>
+
+<p>
+<b>组合 Action</b>
+</p>
+
+<p>
+Action 通常是异步的，那么如何知道 action 什么时候结束呢？更重要的是，我们如何才能组合多个 action，以处理更加复杂的异步流程？
+</p>
+
+<p>
+……
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge4c2da1" class="outline-3">
+<h3 id="orge4c2da1"><span class="todo TODO">TODO</span> Module</h3>
+<div class="outline-text-3" id="text-orge4c2da1">
+<p>
+……
+</p>
+
+<essay>
+所有的模块化都离不开一个配置文件……
+</essay>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-05-08 Sat 11:37</p>
+<p class="author">Author: Jack Liu</p>
+<p class="date">Created: 2021-05-08 Sat 15:46</p>
+<p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
+</div>
+</body>
+</html>

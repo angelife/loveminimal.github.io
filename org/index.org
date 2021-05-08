@@ -33,23 +33,25 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 |-----------------|
 | [[./get-things-done.org][Get Things Done]] |
 
-| Web                   |
-|-----------------------|
-| [[./web-developer-roadmap.org][Web Developer Roadmap]] |
-| [[./webpack-dev-server-proxy.org][Webpack Proxy]]         |
-| [[./cross-domain.org][Cross Domain]]          |
-| [[./drag-and-drop.org][Drag and Drop]]         |
-| [[./file-conversion.org][File Conversion]]       |
-| [[./ajax.org][Ajax]]                  |
-| [[./virtual-dom.org][Virtual DOM]]           |
-| [[./build-tools.org][Build Tools]]           |
-| [[./css-talking.org][CSS Talking]]           |
-| [[./css-tta.org][CSS 中的动效]]          |
-| [[./webpack.org][Webpack]]               |
-| [[./modular-programming.org][模块化编程]]            |
-| [[./test-talking.org][Test Talking]]          |
-| [[./scroll-bar.org][Scroll Bar]]            |
-| [[./vue-inbox.org][Vue Inbox]]             |
+| Web                     |
+|-------------------------|
+| [[./web-developer-roadmap.org][Web Developer Roadmap]]   |
+| [[./webpack-dev-server-proxy.org][Webpack Proxy]]           |
+| [[./cross-domain.org][Cross Domain]]            |
+| [[./drag-and-drop.org][Drag and Drop]]           |
+| [[./file-conversion.org][File Conversion]]         |
+| [[./ajax.org][Ajax]]                    |
+| [[./virtual-dom.org][Virtual DOM]]             |
+| [[./build-tools.org][Build Tools]]             |
+| [[./css-talking.org][CSS Talking]]             |
+| [[./css-tta.org][CSS 中的动效]]            |
+| [[./webpack.org][Webpack]]                 |
+| [[./modular-programming.org][模块化编程]]              |
+| [[./test-talking.org][Test Talking]]            |
+| [[./scroll-bar.org][Scroll Bar]]              |
+| [[./vue-inbox.org][Vue Inbox]]               |
+| [[./vue-element-admin-inbox.org][Vue Element Admin Inbox]] |
+| [[./vuex-inbox.org][Vuex Inbox]]              |
 
 | Asm                    |
 |------------------------|

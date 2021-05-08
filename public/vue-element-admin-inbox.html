@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<!-- 2021-05-08 Sat 15:57 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vue Element Admin Inbox</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Jack Liu">
+<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+           <link rel="stylesheet" href="themes/style.css" type="text/css"  />
+           <script type="module" src="themes/main.js" defer></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Vue Element Admin Inbox</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org3290887">前序准备（基础篇）</a>
+<ul>
+<li><a href="#orgcba0d72">目录结构</a></li>
+<li><a href="#org0209f7e">webpack</a></li>
+<li><a href="#orga561051">ESLint</a></li>
+<li><a href="#org0f6c131">封装 axios</a></li>
+<li><a href="#org8b53a57">多环境</a></li>
+<li><a href="#orgabc54da">前后端交互</a></li>
+<li><a href="#org5156f60">router-view</a></li>
+</ul>
+</li>
+<li><a href="#org6387e30">前序准备（登录权限篇）</a>
+<ul>
+<li><a href="#org9ac5106">前言</a></li>
+<li><a href="#org63a6b72">登录篇</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+→ 项目文档 <a href="https://panjiachen.gitee.io/vue-element-admin-site/zh/">https://panjiachen.gitee.io/vue-element-admin-site/zh/</a>
+</p>
+
+<div id="outline-container-org3290887" class="outline-2">
+<h2 id="org3290887">前序准备（基础篇）</h2>
+<div class="outline-text-2" id="text-org3290887">
+<p>
+如何从零构建一个完整的管理后台项目？
+</p>
+</div>
+
+<div id="outline-container-orgcba0d72" class="outline-3">
+<h3 id="orgcba0d72">目录结构</h3>
+<div class="outline-text-3" id="text-orgcba0d72">
+<p>
+<b>1.api 和 views</b>
+</p>
+
+<p>
+随着业务的迭代，模块会越来越多。建议根据业务模块来划分 views，并且 将 views  和 api 两个模块一一对应，从而方便维护。
+</p>
+
+<img
+src="images/vea-1.jpg"
+width="300"
+height=""
+style=""
+title=""
+/>
+
+<p>
+当然也有一些全区公用的 api 模块，如七牛 upload，remoteSearch 等等，这些单独放置就行。
+</p>
+
+<p>
+<b>2.components</b>
+</p>
+
+<p>
+这里的 components 放置的都是全局公用的一些组件，如上传组件，富文本等等。一些页面级的组件建议还是放在各自 views 文件下，方便管理。
+</p>
+
+<p>
+<b>3.store</b>
+</p>
+
+<p>
+建议不要为了用 vuex 而用 vuex。当然有些数据还是需要用 vuex 来统一管理的，如登录 token，用户信息，或者是一些全局个人偏好设置等，还是用 vuex 管理更加的方便，具体当然还是要结合自己的业务场景的。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0209f7e" class="outline-3">
+<h3 id="org0209f7e">webpack</h3>
+<div class="outline-text-3" id="text-org0209f7e">
+<p>
+<b>1.jquery</b>
+</p>
+
+<p>
+管理后台不同于前台项目，会经常用到一些第三方插件，但有些插件是不得不依赖 jquery 的，直接引入到项目中省事。但如果第三方库的代码中出现
+</p>
+
+<img
+src="images/vea-2.svg"
+width="600"
+height=""
+style=""
+title=""
+/>
+
+<p>
+则会直接报错。
+</p>
+
+<p>
+需要使用 webpack 内置的 <code>ProvidePlugin</code> 插件，配置很简单，只需要：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">new</span> <span style="color: #c18401;">webpack.ProvidePlugin</span><span style="color: #707183;">(</span><span style="color: #7388d6;">{</span>
+<span class="linenr">2: </span>  $: <span style="color: #50a14f;">'jquery'</span> ,
+<span class="linenr">3: </span>  <span style="color: #50a14f;">'jQuery'</span>: <span style="color: #50a14f;">'jquery'</span>
+<span class="linenr">4: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
+<span class="linenr">5: </span>
+</pre>
+</div>
+
+<p>
+这样当 webpack 碰到 <code>require</code> 的第三方库中出现全局的 <code>$、jQeury和window.jQuery</code> 时，就会使用 <code>node_module</code> 下 jquery 包 export 出来的东西了。
+</p>
+
+<p>
+<b>2.alias</b>
+</p>
+
+<p>
+当项目逐渐变大之后，文件与文件直接的引用关系会很复杂，这时候就需要使用 <a href="https://webpack.js.org/configuration/resolve/">alias</a> 了。
+</p>
+
+<p>
+有的人喜欢 alias 指向 <code>src</code> 目录下，再使用相对路径找文件：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr">1: </span>resolve: <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>  alias: <span style="color: #7388d6;">{</span>
+<span class="linenr">3: </span>    <span style="color: #50a14f;">'~'</span>: resolve<span style="color: #909183;">(</span>__dirname, <span style="color: #50a14f;">'src'</span><span style="color: #909183;">)</span>
+<span class="linenr">4: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">5: </span><span style="color: #707183;">}</span>
+<span class="linenr">6: </span>
+<span class="linenr">7: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20351;&#29992;</span>
+<span class="linenr">8: </span><span style="color: #a626a4;">import</span> stickTop from <span style="color: #50a14f;">'~/components/stickTop'</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga561051" class="outline-3">
+<h3 id="orga561051">ESLint</h3>
+<div class="outline-text-3" id="text-orga561051">
+<p>
+每个人和团队都有自己的代码规范，统一就好了，去打造一份属于自己的 eslint  规则上传到 npm 吧，如饿了么团队的 <a href="https://www.npmjs.com/package/eslint-config-elemefe">config</a> ，vue 的 <a href="https://github.com/vuejs/eslint-config-vue">config</a>。
+</p>
+
+<p>
+*这里提供了一份我平时的 eslint 规则<a href="https://github.com/PanJiaChen/vue-element-admin/blob/master/.eslintrc.js">地址</a>，都简单写上了注释。
+</p>
+
+<p>
+更多请参考 <a href="https://github.com/varHarrie/Dawn-Blossoms/issues/10">vscode 插件和配置推荐</a>。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0f6c131" class="outline-3">
+<h3 id="org0f6c131">封装 axios</h3>
+<div class="outline-text-3" id="text-org0f6c131">
+<p>
+我们经常遇到一些线上 的 bug，但测试环境很难模拟。其实可以通过简单的配置就可以在本地调试线上环境
+</p>
+
+<p>
+……
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b53a57" class="outline-3">
+<h3 id="org8b53a57">多环境</h3>
+<div class="outline-text-3" id="text-org8b53a57">
+<p>
+vue-cli 默认只提供了 <code>dev</code> 和 <code>prod</code> 两种环境。但其实正真的开发流程可能还会多一个 <code>sit</code> 或者 <code>stage</code> 环境，就是所谓的测试环境和预发布环境。所以我们就要简单的修改一下代码。其实很简单就是设置不同的环境变量：
+</p>
+
+<pre class="example">
+"build:prod": "NODE_ENV=production node build/build.js",
+"build:sit": "NODE_ENV=sit node build/build.js",
+</pre>
+
+<p>
+新版的 vue-cli 也内置了 <code>webpack-bundle-analyzer</code> 一个模块分析的东西，相当的好用，可以研究下。
+</p>
+
+<img
+src="images/vea-3.jpg"
+width=""
+height=""
+style=""
+title=""
+/>
+</div>
+</div>
+
+<div id="outline-container-orgabc54da" class="outline-3">
+<h3 id="orgabc54da">前后端交互</h3>
+<div class="outline-text-3" id="text-orgabc54da">
+<p>
+<b>1.跨域问题</b>
+</p>
+
+<p>
+首先前后端交互不可避免的就会遇到跨域问题，我司现在全是用 CORS 来解决的，如果你司后端嫌麻烦不肯配置的话， <code>dev</code> 环境也可以通过 <code>webpack-dev-server</code> 的 proxy 来解决，开发环境用 nginx 反代理一下就好了，具体配置这里就不展开了。
+</p>
+
+<p>
+<b>2.交互问题</b>
+</p>
+
+<p>
+平时的开发中交流成本占据了我们很大一部分时间，但前后端如果有一个好的协作方式的话能解决很多时间。
+</p>
+
+<p>
+我司开发流程都是前后端和产品一起开会讨论项目，之后后端根据需求，首先定义数据格式和 api，然后 mock api 生成好文档，我们前端才是对接接口的。
+</p>
+
+<p>
+这里推荐一个文档生成器 <a href="http://swagger.io/">swagger</a> - 一个 REST APIs 文档生成工具。
+</p>
+
+<p>
+<b>3.前端自行 mock</b>
+</p>
+
+<p>
+如果后端不肯来帮你 mock 数据的话，前端自己来 mock 也是很简单的。你可以使用 mock server 或者使用 mockjs + rap 也是很方便的。 不久前出的 easy-mock 也相当的不错，还能结合 swagger。
+</p>
+
+<p>
+<b>4.iconfont</b>
+</p>
+
+<p>
+安利一波阿里的神器 <a href="http://iconfont.cn/">iconfont</a> 。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5156f60" class="outline-3">
+<h3 id="org5156f60">router-view</h3>
+<div class="outline-text-3" id="text-org5156f60">
+<p>
+真实的业务场景中，经常会遇到不同路由复用同一组件的情况，如：
+</p>
+
+<img
+src="images/vea-4.jpg"
+width="560"
+height=""
+style=""
+title=""
+/>
+
+<p>
+我创建和编辑的页面使用的是同一个 component ，默认情况下当这两个页面切换时并不会触发 vue 的 <code>created</code> 或者 <code>mounted</code> 钩子，官方说你可以通过 watch <code>$route</code> 的变化来做处理，但其实说真的还是蛮麻烦的。
+</p>
+
+<p>
+后来发现其实可以简单的在 <code>router-view</code> 上加上一个唯一的 <code>key</code> ，来保证路由切换时都会重新渲染触发钩子了，这样简单的多了。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-html">&lt;<span style="color: #0184bc;">router-view</span> :key=<span style="color: #50a14f;">"key"</span>&gt;&lt;/<span style="color: #0184bc;">router-view</span>&gt;
+
+&lt;<span style="color: #0184bc;">script</span>&gt;
+computed: {
+    key() {
+        return this.$route.name !== undefined ? this.$route.name + +new Date() : this.$route + +new Date()
+    }
+ }
+&lt;/<span style="color: #0184bc;">script</span>&gt;
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6387e30" class="outline-2">
+<h2 id="org6387e30">前序准备（登录权限篇）</h2>
+<div class="outline-text-2" id="text-org6387e30">
+</div>
+<div id="outline-container-org9ac5106" class="outline-3">
+<h3 id="org9ac5106">前言</h3>
+<div class="outline-text-3" id="text-org9ac5106">
+<p>
+做后台项目区别于做其它的项目， <b>权限验证与安全性</b> 是非常重要的，可以说是一个后台项目一开始就必须考虑和搭建的基础核心功能。
+</p>
+
+<p>
+我们所要做到的是：
+</p>
+<ul class="org-ul">
+<li>不同的权限对应着不同的路由；</li>
+<li>同时侧边栏也需根据不同的权限，异步生成。</li>
+</ul>
+
+<p>
+这里先简单说一下，我实现登录和权限验证的思路。
+</p>
+
+<p>
+<b>1.登录</b>
+</p>
+
+<p>
+当用户填写完账号和密码后向服务端验证是否正确，验证通过之后，服务端会返回一个 <b>token</b> ，拿到 token 之后（我会将这个 token 存贮到 cookie 中，保证刷新页面后能记住用户登录状态），前端会根据 token 再去拉取一个   <b><code>user_info</code></b> 的接口来获取用户的详细信息（如用户权限，用户名等等信息）。
+</p>
+
+<p>
+<b>2.权限验证</b>
+</p>
+
+<p>
+通过 token 获取用户对应的 <b>role</b> ，动态根据用户的 role 算出其对应有权限的路由，通过 <code>router.addRoutes</code> 动态挂载这些路由。
+</p>
+
+<p>
+上述所有的数据和操作都是通过vuex全局管理控制的。
+</p>
+
+<p>
+*补充说明：刷新页面后 vuex 的内容也会丢失，所以需要重复上述的那些操作。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org63a6b72" class="outline-3">
+<h3 id="org63a6b72">登录篇</h3>
+<div class="outline-text-3" id="text-org63a6b72">
+<p>
+……
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-05-08 Sat 10:09</p>
+<p class="author">Author: Jack Liu</p>
+<p class="date">Created: 2021-05-08 Sat 15:57</p>
+<p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
+</div>
+</body>
+</html>

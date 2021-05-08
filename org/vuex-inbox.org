@@ -1,0 +1,284 @@
+#+DATE: <2021-05-08 Sat 11:37>
+#+TITLE: Vuex Inbox
+
+→ Vuex 文档 https://vuex.vuejs.org/zh/
+
+* 介绍
+
+** Vuex 是什么
+
+Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。它采用 *集中式* 存储管理应用的所有组件的状态，并以相应的规则保证状态以一种可预测的方式发生变化。
+
+#+BEGIN_EXPORT html
+<essay>
+MVVM 框架的好处在于，你只需要关心数据，因为核心就是数据，其他如钩子、方法皆是改变数据的方法，是为了数据而服务的。
+
+<p>细想来，整个程序不也就是数据那点事儿嘛……</p>
+</essay>
+#+END_EXPORT
+
+以下是一个表示“单向数据流”理念的简单示意：
+
+#+BEGIN_EXPORT html
+<img
+src="https://vuex.vuejs.org/flow.png"
+width="300"
+height=""
+style=""
+title=""
+/>
+#+END_EXPORT
+
+其中：
+- state，驱动应用的数据源；
+- view，以声明方式将 state 映射到视图；
+- actions，响应在 view 上的用户输入导致的状态变化。
+
+但是，当我们的应用遇到 *多个组件共享状态时* ，单向数据流的简洁性很容易被破坏：
+
+1. 多个视图依赖于同一状态;
+2. 来自不同视图的行为需要变更同一状态。
+
+对于问题一，传参的方法对于多层嵌套的组件将会非常繁琐，并且对于兄弟组件间的状态传递无能为力。对于问题二，我们经常会采用父子组件直接引用或者通过事件来变更和同步状态的多份拷贝。
+
+以上的这些模式非常脆弱，通常会导致无法维护的代码。
+
+*因此，我们为什么不把组件的共享状态抽取出来，以一个全局单例模式管理呢？*
+
+在这种模式下，我们的组件树构成了一个巨大的“视图”，不管在树的哪个位置，任何组件都能获取状态或者触发行为！
+
+通过 *定义和隔离状态管理中的各种概念* 并 *通过强制规则维持视图和状态间的独立性* ，我们的代码将会变得更结构化且易维护。
+
+#+BEGIN_EXPORT html
+<img
+src="https://vuex.vuejs.org/vuex.png"
+width="600"
+height=""
+style=""
+title=""
+/>
+#+END_EXPORT
+
+** 安装
+
+→ 详见 https://vuex.vuejs.org/zh/installation.html
+
+** 开始
+
+*每一个 Vuex 应用的核心就是 store（仓库）。*
+
+Vuex 和单纯的全局对象有以下两点不同：
+1. Vuex 的状态存储是响应式的；
+2. 不能直接改变 store 中的状态，改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。
+
+为了在 Vue 组件中访问 =this.$store= property ，你需要为 Vue 实例提供创建好的 store。 Vuex 提供了一个从根组件向所有子组件，以 store 选项的方式“注入”该 store 的机制。
+
+由于 store 中的状态是响应式的，在组件中调用 store 中的状态简单到仅需要在 *计算属性* 中返回即可。触发变化也仅仅是在组件的 methods 中提交 mutation。
+
+这里有一点需要注意，一般我们用 =computed= property 中的转换的值直接用来渲染，而不会对其进行直接变化，否则，控制台会输出以下错误。
+
+#+BEGIN_EXAMPLE
+[Vue warn]: Computed property "count" was assigned to but it has no setter.
+found in
+---> <HelloWorld> at src/components/HelloWorld.vue
+       <App> at src/App.vue
+         <Root>
+#+END_EXAMPLE
+
+* 核心概念
+
+** State
+
+Vuex 使用 *单一状态树* -- 是的，用一个对象就包含了全部的应用层级状态，单状态树和模块化并不冲突。
+
+*如何在 Vue 组件中展示状态呢？*
+
+从 store 实例中读取状态最简单的方法就是在计算属性 (opens new window)中返回某个状态。每当 =store.state.count= 变化的时候, 都会重新求取计算属性，并且触发更新相关联的 DOM。
+
+然而，这种模式导致组件依赖全局状态单例。在模块化的构建系统中，在每个需要使用 state 的组件中需要频繁地导入，并且在测试组件时需要模拟状态。
+
+Vuex 通过 =store= 选项，提供了一种机制将状态从根组件“注入”到每一个子组件中（需调用 =Vue.use(Vuex)= ）。
+
+通过在根实例中注册 =store= 选项，该 store 实例会注入到根组件下的所有子组件中，且子组件能通过 =this.$store= 访问到。
+
+*mapState 辅助函数*
+
+当一个组件需要获取多个状态的时候，将这些状态都声明为计算属性会有些重复和冗余。为了解决这个问题，我们可以使用 =mapState= 辅助函数帮助我们生成计算属性，让你少按几次键。
+
+具体示例见 https://vuex.vuejs.org/zh/guide/state.html 。
+
+=mapState= 函数返回的是一个对象， 使用 *对象展开运算符* 将此对象混入到外部对象中。
+
+*组件仍然保有局部状态！*
+
+使用 Vuex 并不意味着你需要将所有的状态放入 Vuex。
+
+** Getter
+
+有时候我们需要从 store 中的 state 中派生出一些状态，例如对列表进行过滤并计数：
+
+#+BEGIN_SRC js -n
+computed: {
+  doneTodosCount () {
+    return this.$store.state.todos.filter(todo => todo.done).length
+  }
+}
+#+END_SRC
+
+如果有多个组件需要用到此属性，我们要么复制这个函数，或者抽取到一个共享函数然后在多处导入它 —— 无论哪种方式都不是很理想。
+
+*Vuex 允许我们在 store 中定义“getter”（可以认为是 store 的计算属性）。*
+
+就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。
+
+*通过属性访问*
+
+Getter 会暴露为 =store.getters= 对象，你可以以属性的形式访问这些值。
+
+Getter 接受 state 作为其第一个参数。
+
+Getter 也可以接受其他 getter 作为第二个参数。
+
+*通过方法访问*
+
+你也可以通过让 getter *返回一个函数* ，来实现给 getter 传参。在你对 store 里的数组进行查询时非常有用。
+
+#+BEGIN_SRC js -n
+getters: {
+  // ...
+  getTodoById: (state) => (id) => {
+    return state.todos.find(todo => todo.id === id)
+  }
+}
+
+store.getters.getTodoById(2) // -> { id: 2, text: '...', done: false }
+#+END_SRC
+
+*mapGetters 辅助函数*
+
+=mapGetters= 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性。
+
+#+BEGIN_EXPORT html
+<essay>
+Vuex 提供了诸如 mapState 、 mapGetters 等方法，用来简化操作。有些用法你可能感觉比较突兀，不用担心，在其内部已经做了处理，最好先了解一下它们的用法。
+</essay>
+#+END_EXPORT
+
+** Mutation
+
+更改 Vuex 的 store 中的状态的唯一方法是提交 mutation。
+
+Vuex 中的 mutation 非常类似于事件：每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。这个回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数。
+
+#+BEGIN_SRC js -n
+const store = new Vuex.Store({
+  state: {
+    count: 1
+  },
+  mutations: {
+    increment (state) {
+      // 变更状态
+      state.count++
+    }
+  }
+})
+#+END_SRC
+
+**你不能直接调用一个 mutation handler。*
+
+*这个选项更像是事件注册* ：“当触发一个类型为 =increment= 的 mutation 时，调用此函数。”要唤醒一个 mutation handler，你需要以相应的 type 调用 =store.commit= 方法：
+
+#+BEGIN_SRC js -n
+  store.commit('increment')
+#+END_SRC
+
+*提交载荷（Payload）*
+
+你可以向 store.commit 传入额外的参数，即 mutation 的 载荷（payload）。
+
+在大多数情况下，载荷应该是一个对象，这样可以包含多个字段并且记录的 mutation 会更易读。
+
+-----
+
+*Mutation 需遵守 Vue 的响应规则*
+
+1. 最好提前在你的 store 中初始化好所有所需属性；
+2. 当需要在对象上添加新属性时，你应该
+   - 使用 Vue.set(obj, 'newProp', 123), 或者
+   - 以新对象替换老对象。
+
+*使用常量替代 Mutation 事件类型*
+
+使用常量替代 mutation 事件类型在各种 Flux 实现中是很常见的模式。这样可以使 linter 之类的工具发挥作用，同时把这些常量放在单独的文件中可以让你的代码合作者对整个 app 包含的 mutation 一目了然。
+
+*Mutation 必须是同步函数！！！*
+
+*在组件中提交 Mutation*
+
+你可以在组件中使用 =this.$store.commit('xxx')= 提交 mutation，或者使用 =mapMutations= 辅助函数将组件中的 methods 映射为 =store.commit= 调用（需要在根节点注入 =store= ）。
+
+#+BEGIN_SRC js -n
+import { mapMutations } from 'vuex'
+
+export default {
+  // ...
+  methods: {
+    ...mapMutations([
+      'increment', // 将 `this.increment()` 映射为 `this.$store.commit('increment')`
+
+      // `mapMutations` 也支持载荷：
+      'incrementBy' // 将 `this.incrementBy(amount)` 映射为 `this.$store.commit('incrementBy', amount)`
+    ]),
+    ...mapMutations({
+      add: 'increment' // 将 `this.add()` 映射为 `this.$store.commit('increment')`
+    })
+  }
+}
+#+END_SRC
+
+** TODO Actions
+
+Action 类似于 mutation，不同在于：
+
+- Action 提交的是 mutation，而不是直接变更状态；
+- Action 可以包含任意异步操作。
+
+*注册 Action*
+
+#+BEGIN_SRC js -n
+actions: {
+  increment ({ commit }) {
+    commit('increment')
+  }
+}
+#+END_SRC
+
+*分发 Action*
+
+#+BEGIN_SRC js -n
+store.dispatch('increment')
+#+END_SRC
+
+我们直接分发 mutation 岂不更方便？实际上并非如此，还记得 mutation 必须同步执行这个限制么？Action 就不受约束！我们可以在 action 内部执行异步操作。
+
+Actions 支持同样的载荷方式和对象方式进行分发。
+
+*在组件中分发 Action*
+
+你在组件中使用 =this.$store.dispatch('xxx')= 分发 action，或者使用 =mapActions= 辅助函数将组件的 methods 映射为 =store.dispatch= 调用（需要先在根节点注入 =store= ）。
+
+*组合 Action*
+
+Action 通常是异步的，那么如何知道 action 什么时候结束呢？更重要的是，我们如何才能组合多个 action，以处理更加复杂的异步流程？
+
+……
+
+** TODO Module
+
+……
+
+#+BEGIN_EXPORT html
+<essay>
+所有的模块化都离不开一个配置文件……
+</essay>
+#+END_EXPORT
