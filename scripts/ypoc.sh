@@ -20,6 +20,7 @@ then
     rm -rf "themes" && cp -r "public/themes" "./"
     rm -rf "images" && cp -r "public/images" "./"
     rm -rf "user.config.js" && cp -r "public/user.config.js" "./"
+    rm -rf "CNAME" && cp -r "public/CNAME" "./"
 
     echo -e "\e[1;42mDONE\e[0m\n"
 fi
