@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:44 -->
+<!-- 2021-05-18 Tue 15:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Test Talking</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,39 +18,39 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb5aefa6"><span class="todo TODO">TODO</span> Index</a>
+<li><a href="#orgcf36515"><span class="todo TODO">TODO</span> Index</a>
 <ul>
-<li><a href="#org6742900">Jest</a></li>
-<li><a href="#orgc02a55e">Vue Testing Librart</a></li>
-<li><a href="#org5856112">Cypress</a></li>
+<li><a href="#org3444dbe">Jest</a></li>
+<li><a href="#orgc8bc7ab">Vue Testing Librart</a></li>
+<li><a href="#org64f3297">Cypress</a></li>
 </ul>
 </li>
-<li><a href="#org05b569c">*Vue 中的测试</a>
+<li><a href="#org17dc55b">*Vue 中的测试</a>
 <ul>
-<li><a href="#org452ce9a">单元测试</a></li>
-<li><a href="#org5b75cdc">组件测试</a></li>
-<li><a href="#orgb2f6f2a">端到端（E2E）测试</a></li>
+<li><a href="#org46d9c7d">单元测试</a></li>
+<li><a href="#orgf91b075">组件测试</a></li>
+<li><a href="#org6db637b">端到端（E2E）测试</a></li>
 </ul>
 </li>
-<li><a href="#orgbaddf82">简介</a></li>
-<li><a href="#org50b62d4">单元测试</a>
+<li><a href="#org7ff9c2b">简介</a></li>
+<li><a href="#orgd313bf5">单元测试</a>
 <ul>
-<li><a href="#org161517c">详解</a></li>
-<li><a href="#org3ed2b17">使用效果</a></li>
-<li><a href="#orgbbb0448">结论</a></li>
-<li><a href="#orgb3a3f8c">优点</a></li>
-<li><a href="#org7700700">范畴</a></li>
-<li><a href="#orgc1e547a">测试用例</a></li>
-<li><a href="#org2d741a3">应用</a></li>
+<li><a href="#org9746d18">详解</a></li>
+<li><a href="#org5f558e8">使用效果</a></li>
+<li><a href="#orga8626d6">结论</a></li>
+<li><a href="#org23da3c9">优点</a></li>
+<li><a href="#org0ce1ffc">范畴</a></li>
+<li><a href="#org468c806">测试用例</a></li>
+<li><a href="#org0c17ed7">应用</a></li>
 </ul>
 </li>
-<li><a href="#orgb7fa72e">集成测试</a>
+<li><a href="#org9a0c97e">集成测试</a>
 <ul>
-<li><a href="#org5d1c76f">详解</a></li>
-<li><a href="#org3147b80">目标</a></li>
+<li><a href="#orgfafd912">详解</a></li>
+<li><a href="#orgb0a9730">目标</a></li>
 </ul>
 </li>
-<li><a href="#org915f8c1">功能测试</a></li>
+<li><a href="#org2816018">功能测试</a></li>
 </ul>
 </div>
 </div>
@@ -62,9 +62,9 @@ style=""
 title=""
 />
 
-<div id="outline-container-orgb5aefa6" class="outline-2">
-<h2 id="orgb5aefa6"><span class="todo TODO">TODO</span> Index</h2>
-<div class="outline-text-2" id="text-orgb5aefa6">
+<div id="outline-container-orgcf36515" class="outline-2">
+<h2 id="orgcf36515"><span class="todo TODO">TODO</span> Index</h2>
+<div class="outline-text-2" id="text-orgcf36515">
 <p>
 Learn the difference between <b>Unit, Integration and Functional</b> tests and learn how to write them with the tools listed on the followwing.
 </p>
@@ -110,16 +110,16 @@ Type Checkers:
 </blockquote>
 </div>
 
-<div id="outline-container-org6742900" class="outline-3">
-<h3 id="org6742900">Jest<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
-<div class="outline-text-3" id="text-org6742900">
+<div id="outline-container-org3444dbe" class="outline-3">
+<h3 id="org3444dbe">Jest<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
+<div class="outline-text-3" id="text-org3444dbe">
 <p>
 <span class="underline">1. 安装</span>
 </p>
 
 <div class="org-src-container">
 <pre class="src src-sh"><span class="linenr">1: </span>yarn add --dev jest
-<span class="linenr">2: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">or</span>
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">or</span>
 <span class="linenr">3: </span>npm install --save-dev jest
 </pre>
 </div>
@@ -133,9 +133,9 @@ Type Checkers:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">function</span> <span style="color: #a626a4;">sum</span><span style="color: #4078f2;">(</span><span style="color: #6a1868;">a</span>, <span style="color: #6a1868;">b</span><span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>  <span style="color: #e45649;">return</span> a + b;
-<span class="linenr">3: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">function</span> <span style="color: #0184bc;">sum</span><span style="color: #707183;">(</span><span style="color: #8b4513;">a</span>, <span style="color: #8b4513;">b</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>  <span style="color: #a626a4;">return</span> a + b;
+<span class="linenr">3: </span><span style="color: #707183;">}</span>
 <span class="linenr">4: </span>module.exports = sum;
 </pre>
 </div>
@@ -145,11 +145,11 @@ Type Checkers:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">sum</span> = require<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'./sum'</span><span style="color: #4078f2;">)</span>;
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">sum</span> = require<span style="color: #707183;">(</span><span style="color: #50a14f;">'./sum'</span><span style="color: #707183;">)</span>;
 <span class="linenr">2: </span>
-<span class="linenr">3: </span>test<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'adds 1 + 2 to equal 3'</span>, <span style="color: #a626a4;">()</span> =&gt; <span style="color: #a626a4;">{</span>
-<span class="linenr">4: </span>  expect<span style="color: #50a14f;">(</span>sum<span style="color: #da8548;">(</span>1, 2<span style="color: #da8548;">)</span><span style="color: #50a14f;">)</span>.toBe<span style="color: #50a14f;">(</span>3<span style="color: #50a14f;">)</span>;
-<span class="linenr">5: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>;
+<span class="linenr">3: </span>test<span style="color: #707183;">(</span><span style="color: #50a14f;">'adds 1 + 2 to equal 3'</span>, <span style="color: #7388d6;">()</span> =&gt; <span style="color: #7388d6;">{</span>
+<span class="linenr">4: </span>  expect<span style="color: #909183;">(</span>sum<span style="color: #709870;">(</span>1, 2<span style="color: #709870;">)</span><span style="color: #909183;">)</span>.toBe<span style="color: #909183;">(</span>3<span style="color: #909183;">)</span>;
+<span class="linenr">5: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>;
 </pre>
 </div>
 
@@ -172,7 +172,7 @@ Type Checkers:
 
 <div class="org-src-container">
 <pre class="src src-sh"><span class="linenr">1: </span>PASS  ./sum.test.js
-<span class="linenr">2: </span>&#10003; adds 1 + 2 to equal 3 <span style="color: #4078f2;">(</span>5ms<span style="color: #4078f2;">)</span>
+<span class="linenr">2: </span>&#10003; adds 1 + 2 to equal 3 <span style="color: #707183;">(</span>5ms<span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -186,9 +186,9 @@ Type Checkers:
 </div>
 </div>
 
-<div id="outline-container-orgc02a55e" class="outline-3">
-<h3 id="orgc02a55e">Vue Testing Librart<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h3>
-<div class="outline-text-3" id="text-orgc02a55e">
+<div id="outline-container-orgc8bc7ab" class="outline-3">
+<h3 id="orgc8bc7ab">Vue Testing Librart<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h3>
+<div class="outline-text-3" id="text-orgc8bc7ab">
 <p>
 Vue Testing Library builds on top of <b>DOM Testing Library</b> by adding APIs for working with Vue components. It is built on top of <a href="https://github.com/vuejs/vue-test-utils">@vue/test-utils</a> , the official testing library for Vue.
 </p>
@@ -213,9 +213,9 @@ You can now use all of <b>DOM Testing Library</b>'s <code>getBy, getAllBy, query
 </div>
 </div>
 
-<div id="outline-container-org5856112" class="outline-3">
-<h3 id="org5856112">Cypress<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h3>
-<div class="outline-text-3" id="text-org5856112">
+<div id="outline-container-org64f3297" class="outline-3">
+<h3 id="org64f3297">Cypress<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h3>
+<div class="outline-text-3" id="text-org64f3297">
 <p>
 Our users are typically developers or QA engineers building web applications using modern JavaScript frameworks.
 </p>
@@ -236,9 +236,9 @@ Cypress can test anything that runs in a browser.
 </div>
 </div>
 
-<div id="outline-container-org05b569c" class="outline-2">
-<h2 id="org05b569c">*Vue 中的测试<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup></h2>
-<div class="outline-text-2" id="text-org05b569c">
+<div id="outline-container-org17dc55b" class="outline-2">
+<h2 id="org17dc55b">*Vue 中的测试<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup></h2>
+<div class="outline-text-2" id="text-org17dc55b">
 <blockquote>
 <p>
 该章节是个引子，先以 Vue 中的测试为切入点，在这个应用场景下引入一些测试相关的概念。
@@ -260,9 +260,9 @@ Cypress can test anything that runs in a browser.
 </p>
 </div>
 
-<div id="outline-container-org452ce9a" class="outline-3">
-<h3 id="org452ce9a">单元测试</h3>
-<div class="outline-text-3" id="text-org452ce9a">
+<div id="outline-container-org46d9c7d" class="outline-3">
+<h3 id="org46d9c7d">单元测试</h3>
+<div class="outline-text-3" id="text-org46d9c7d">
 <p>
 单元测试允许你将独立单元的代码进行隔离测试，其目的是为开发者提供对代码的信心。通过编写细致且有意义的测试，你能够有信心在构建新特性或重构已有代码的同时，保持应用的功能和稳定。
 </p>
@@ -337,9 +337,9 @@ Mocha 一个专注于灵活性的 JavaScript 测试框架。因为其灵活性�
 </div>
 </div>
 
-<div id="outline-container-org5b75cdc" class="outline-3">
-<h3 id="org5b75cdc">组件测试</h3>
-<div class="outline-text-3" id="text-org5b75cdc">
+<div id="outline-container-orgf91b075" class="outline-3">
+<h3 id="orgf91b075">组件测试</h3>
+<div class="outline-text-3" id="text-orgf91b075">
 <p>
 测试大多数 Vue 组件时都必须将它们挂载到 DOM （虚拟或真实）上，才能完全断言它们在工作。这是另一个与框架无头的概念。因此组件测试框架的诞生，是为了让用户能够以可靠的方式完成这项工作，同时还提供了 Vue 特有的诸如对 Vuex、Vue Router 和其他 Vue 插件的集成的便利性。
 </p>
@@ -406,9 +406,9 @@ Vue Test Utils 是官方的偏底层的组件测试库，它是为用户提供�
 </div>
 </div>
 
-<div id="outline-container-orgb2f6f2a" class="outline-3">
-<h3 id="orgb2f6f2a">端到端（E2E）测试</h3>
-<div class="outline-text-3" id="text-orgb2f6f2a">
+<div id="outline-container-org6db637b" class="outline-3">
+<h3 id="org6db637b">端到端（E2E）测试</h3>
+<div class="outline-text-3" id="text-org6db637b">
 <p>
 虽然单元测试为开发者提供了一定程度的信心，但是单元测试和组件测试在部署到生产环境时提供应用整体覆盖的能力是有限的。因此，端到端测试可以说从应用最重要的方面进行测试覆盖：当用户实际使用应用时会发生什么。
 </p>
@@ -518,9 +518,9 @@ TestCafe 是一个基于端到端的 NodeJS 框架，旨在提供简单的设置
 </div>
 </div>
 
-<div id="outline-container-orgbaddf82" class="outline-2">
-<h2 id="orgbaddf82">简介</h2>
-<div class="outline-text-2" id="text-orgbaddf82">
+<div id="outline-container-org7ff9c2b" class="outline-2">
+<h2 id="org7ff9c2b">简介</h2>
+<div class="outline-text-2" id="text-org7ff9c2b">
 <img
 src="images/test-2.jpg"
 width="420"
@@ -539,9 +539,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org50b62d4" class="outline-2">
-<h2 id="org50b62d4">单元测试<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></h2>
-<div class="outline-text-2" id="text-org50b62d4">
+<div id="outline-container-orgd313bf5" class="outline-2">
+<h2 id="orgd313bf5">单元测试<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></h2>
+<div class="outline-text-2" id="text-orgd313bf5">
 <p>
 单元测试（Unit Testing），是指对软件中的最小可测试单元进行检查和验证。
 </p>
@@ -566,9 +566,9 @@ _静态分析_ 就是对软件的源代码进行研读，查找错误或收集�
 </note>
 </div>
 
-<div id="outline-container-org161517c" class="outline-3">
-<h3 id="org161517c">详解</h3>
-<div class="outline-text-3" id="text-org161517c">
+<div id="outline-container-org9746d18" class="outline-3">
+<h3 id="org9746d18">详解</h3>
+<div class="outline-text-3" id="text-org9746d18">
 <p>
 单元测试（模块测试）是开发者编写的一小段代码，用于检验被测代码的一个很小的、很明确的功能是否正确。通常而言，一个单元测试是用于判断某个特定条件（或者场景）下某个特定函数的行为。
 </p>
@@ -599,9 +599,9 @@ _静态分析_ 就是对软件的源代码进行研读，查找错误或收集�
 </div>
 </div>
 
-<div id="outline-container-org3ed2b17" class="outline-3">
-<h3 id="org3ed2b17">使用效果</h3>
-<div class="outline-text-3" id="text-org3ed2b17">
+<div id="outline-container-org5f558e8" class="outline-3">
+<h3 id="org5f558e8">使用效果</h3>
+<div class="outline-text-3" id="text-org5f558e8">
 <p>
 我们编写代码时，一定会反复调试保证它能够编译通过。但代码通过编译，只是说明了它的语法正确，我们却无法保证它的语义也一定正确。
 </p>
@@ -737,9 +737,9 @@ Hmm... 公司目前的项目，好像没有人写测试...
 </div>
 </div>
 
-<div id="outline-container-orgbbb0448" class="outline-3">
-<h3 id="orgbbb0448">结论</h3>
-<div class="outline-text-3" id="text-orgbbb0448">
+<div id="outline-container-orga8626d6" class="outline-3">
+<h3 id="orga8626d6">结论</h3>
+<div class="outline-text-3" id="text-orga8626d6">
 <p>
 经验表明一个尽责的单元测试方法将会在软件开发的某个阶段发现很多的 Bug，并且修改它们的成本很低。在软件开发的后期阶段，Bug 的发现并修改将会变得更加困难，并要消耗大量的时间和开发费用。
 </p>
@@ -754,9 +754,9 @@ Hmm... 公司目前的项目，好像没有人写测试...
 </div>
 </div>
 
-<div id="outline-container-orgb3a3f8c" class="outline-3">
-<h3 id="orgb3a3f8c">优点</h3>
-<div class="outline-text-3" id="text-orgb3a3f8c">
+<div id="outline-container-org23da3c9" class="outline-3">
+<h3 id="org23da3c9">优点</h3>
+<div class="outline-text-3" id="text-org23da3c9">
 <p>
 <span class="underline">1. 它是一种验证行为</span>
 </p>
@@ -791,9 +791,9 @@ Hmm... 公司目前的项目，好像没有人写测试...
 </div>
 </div>
 
-<div id="outline-container-org7700700" class="outline-3">
-<h3 id="org7700700">范畴</h3>
-<div class="outline-text-3" id="text-org7700700">
+<div id="outline-container-org0ce1ffc" class="outline-3">
+<h3 id="org0ce1ffc">范畴</h3>
+<div class="outline-text-3" id="text-org0ce1ffc">
 <p>
 如果要给单元测试一个明确的范畴，指出哪些功能是属于单元测试，这似乎很难。我们下面讨论四个问题，基本上可以说明单元测试的范畴，单元测试所要做的工作。
 </p>
@@ -836,9 +836,9 @@ Hmm... 公司目前的项目，好像没有人写测试...
 </div>
 </div>
 
-<div id="outline-container-orgc1e547a" class="outline-3">
-<h3 id="orgc1e547a">测试用例</h3>
-<div class="outline-text-3" id="text-orgc1e547a">
+<div id="outline-container-org468c806" class="outline-3">
+<h3 id="org468c806">测试用例</h3>
+<div class="outline-text-3" id="text-org468c806">
 <p>
 下面说说测试用例，输入数据及预期输出。
 </p>
@@ -919,9 +919,9 @@ Hmm... 公司目前的项目，好像没有人写测试...
 </div>
 </div>
 
-<div id="outline-container-org2d741a3" class="outline-3">
-<h3 id="org2d741a3">应用</h3>
-<div class="outline-text-3" id="text-org2d741a3">
+<div id="outline-container-org0c17ed7" class="outline-3">
+<h3 id="org0c17ed7">应用</h3>
+<div class="outline-text-3" id="text-org0c17ed7">
 <p>
 <span class="underline">1. 极限编程</span>
 </p>
@@ -977,9 +977,9 @@ Hmm... 公司目前的项目，好像没有人写测试...
 </div>
 </div>
 
-<div id="outline-container-orgb7fa72e" class="outline-2">
-<h2 id="orgb7fa72e">集成测试<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup></h2>
-<div class="outline-text-2" id="text-orgb7fa72e">
+<div id="outline-container-org9a0c97e" class="outline-2">
+<h2 id="org9a0c97e">集成测试<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup></h2>
+<div class="outline-text-2" id="text-org9a0c97e">
 <p>
 集成测试，也叫组装测试或联合测试。在单元测试的基础上，将所有模块按照设计要求（如根据结构图）组装成为子系统或系统，进行集成测试。
 </p>
@@ -989,9 +989,9 @@ Hmm... 公司目前的项目，好像没有人写测试...
 </p>
 </div>
 
-<div id="outline-container-org5d1c76f" class="outline-3">
-<h3 id="org5d1c76f">详解</h3>
-<div class="outline-text-3" id="text-org5d1c76f">
+<div id="outline-container-orgfafd912" class="outline-3">
+<h3 id="orgfafd912">详解</h3>
+<div class="outline-text-3" id="text-orgfafd912">
 <p>
 集成测试（也叫组装测试，联合测试）是单元测试的逻辑扩展。它最简单的形式是：把两个已经测试过的单元组合成一个组件，测试它们之间的接口。
 </p>
@@ -1019,9 +1019,9 @@ Hmm... 公司目前的项目，好像没有人写测试...
 </div>
 </div>
 
-<div id="outline-container-org3147b80" class="outline-3">
-<h3 id="org3147b80">目标</h3>
-<div class="outline-text-3" id="text-org3147b80">
+<div id="outline-container-orgb0a9730" class="outline-3">
+<h3 id="orgb0a9730">目标</h3>
+<div class="outline-text-3" id="text-orgb0a9730">
 <p>
 集成测试的目标是按照设计要求使用那些通过单元测试的构件来构造程序结构。单个模块具有高质量但不足以保证整个系统的质量。有许多隐蔽的失效是高质量模块间发生非预期交互而产生的。
 </p>
@@ -1049,9 +1049,9 @@ Hmm... 公司目前的项目，好像没有人写测试...
 </div>
 </div>
 
-<div id="outline-container-org915f8c1" class="outline-2">
-<h2 id="org915f8c1">功能测试<sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup></h2>
-<div class="outline-text-2" id="text-org915f8c1">
+<div id="outline-container-org2816018" class="outline-2">
+<h2 id="org2816018">功能测试<sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup></h2>
+<div class="outline-text-2" id="text-org2816018">
 <p>
 功能测试就是对产品的各功能进行验证，根据功能测试用例，逐项测试，检查产品是否达到用户要求的功能。
 </p>
@@ -1098,7 +1098,7 @@ Hmm... 公司目前的项目，好像没有人写测试...
 <div id="postamble" class="status">
 <p class="date">Date: 2020-12-15 Tue 10:17</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:44</p>
+<p class="date">Created: 2021-05-18 Tue 15:55</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

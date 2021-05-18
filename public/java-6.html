@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:43 -->
+<!-- 2021-05-18 Tue 15:54 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>内置包装类</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,7 +18,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1b0812c">包装类、装箱和拆箱</a></li>
+<li><a href="#org53088f8">包装类、装箱和拆箱</a></li>
 </ul>
 </div>
 </div>
@@ -30,9 +30,9 @@ Java 是一种面向对象的编程语言， <b>Java 中的类把方法与数据
 *注：虽然 Java 可以直接处理基本类型，但是在有些情况下需要将其作为对象来处理，这时就需要将其转换为包装类。
 </p>
 
-<div id="outline-container-org1b0812c" class="outline-2">
-<h2 id="org1b0812c">包装类、装箱和拆箱</h2>
-<div class="outline-text-2" id="text-org1b0812c">
+<div id="outline-container-org53088f8" class="outline-2">
+<h2 id="org53088f8">包装类、装箱和拆箱</h2>
+<div class="outline-text-2" id="text-org53088f8">
 <p>
 在 Java 的设计中提倡一种思想，即一切皆对象。
 </p>
@@ -126,18 +126,18 @@ Java 是一种面向对象的编程语言， <b>Java 中的类把方法与数据
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Demo</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">int</span> <span style="color: #6a1868;">m</span> = 500;
-<span class="linenr"> 4: </span>        <span style="color: #986801;">Integer</span> <span style="color: #6a1868;">obj</span> = m;                <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33258;&#21160;&#35013;&#31665;</span>
-<span class="linenr"> 5: </span>        <span style="color: #986801;">int</span> <span style="color: #6a1868;">n</span> = obj;                    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33258;&#21160;&#25286;&#31665;</span>
-<span class="linenr"> 6: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"n = "</span> + n<span style="color: #50a14f;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; n = 500</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Demo</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">int</span> <span style="color: #8b4513;">m</span> = 500;
+<span class="linenr"> 4: </span>        <span style="color: #c18401;">Integer</span> <span style="color: #8b4513;">obj</span> = m;                <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33258;&#21160;&#35013;&#31665;</span>
+<span class="linenr"> 5: </span>        <span style="color: #c18401;">int</span> <span style="color: #8b4513;">n</span> = obj;                    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33258;&#21160;&#25286;&#31665;</span>
+<span class="linenr"> 6: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"n = "</span> + n<span style="color: #909183;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; n = 500</span>
 <span class="linenr"> 7: </span>
-<span class="linenr"> 8: </span>        <span style="color: #986801;">Integer</span> <span style="color: #6a1868;">obj1</span> = 500;
-<span class="linenr"> 9: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"obj &#31561;&#20215;&#20110; obj1 &#36820;&#22238;&#32467;&#26524;&#20026;"</span> + obj.equals<span style="color: #da8548;">(</span>obj1<span style="color: #da8548;">)</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">10: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; obj&#31561;&#20215;&#20110;obj1&#36820;&#22238;&#32467;&#26524;&#20026;true</span>
-<span class="linenr">11: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">12: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 8: </span>        <span style="color: #c18401;">Integer</span> <span style="color: #8b4513;">obj1</span> = 500;
+<span class="linenr"> 9: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"obj &#31561;&#20215;&#20110; obj1 &#36820;&#22238;&#32467;&#26524;&#20026;"</span> + obj.equals<span style="color: #709870;">(</span>obj1<span style="color: #709870;">)</span><span style="color: #909183;">)</span>;
+<span class="linenr">10: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; obj&#31561;&#20215;&#20110;obj1&#36820;&#22238;&#32467;&#26524;&#20026;true</span>
+<span class="linenr">11: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">12: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -150,7 +150,7 @@ Java 是一种面向对象的编程语言， <b>Java 中的类把方法与数据
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-18 Fri 19:08</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:43</p>
+<p class="date">Created: 2021-05-18 Tue 15:54</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

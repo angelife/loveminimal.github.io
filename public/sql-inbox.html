@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-04-04 Sun 18:08 -->
+<!-- 2021-05-18 Tue 15:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SQL</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,56 +18,56 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org62a390f">Inbox</a>
+<li><a href="#orgb764a85">Inbox</a>
 <ul>
-<li><a href="#org01a2664">为什么需要数据库</a></li>
-<li><a href="#org654e2c0">数据模型</a></li>
-<li><a href="#orga6cbab8">数据类型</a></li>
-<li><a href="#org2f894ff">SQL 语言</a></li>
-<li><a href="#org5d27685">主流关系数据库</a></li>
+<li><a href="#orgc59c440">为什么需要数据库</a></li>
+<li><a href="#org21610a8">数据模型</a></li>
+<li><a href="#org698029a">数据类型</a></li>
+<li><a href="#org00a8aac">SQL 语言</a></li>
+<li><a href="#orgf78f880">主流关系数据库</a></li>
 </ul>
 </li>
-<li><a href="#org96c23b3">关系模型</a>
+<li><a href="#org8419f5a">关系模型</a>
 <ul>
-<li><a href="#org719d391">主键</a></li>
-<li><a href="#org44336e5">外键</a></li>
-<li><a href="#org678ab61"><span class="todo TODO">TODO</span> 索引</a></li>
+<li><a href="#org905ba6b">主键</a></li>
+<li><a href="#org167932a">外键</a></li>
+<li><a href="#org426f464"><span class="todo TODO">TODO</span> 索引</a></li>
 </ul>
 </li>
-<li><a href="#orgae06ac0">查询数据</a>
+<li><a href="#org720b9a3">查询数据</a>
 <ul>
-<li><a href="#org1f10c81">基本查询</a></li>
-<li><a href="#org3d03854">条件查询</a></li>
-<li><a href="#org5e5b5fd">投影查询</a></li>
-<li><a href="#org6afce15">排序</a></li>
-<li><a href="#org7b21feb">分页查询</a></li>
-<li><a href="#org87e789b">聚合查询</a></li>
-<li><a href="#org2ac5e33">多表查询</a></li>
-<li><a href="#org17f732c"><span class="todo TODO">TODO</span> 连接查询</a></li>
+<li><a href="#orgf439702">基本查询</a></li>
+<li><a href="#orgcc03a50">条件查询</a></li>
+<li><a href="#org5827d3f">投影查询</a></li>
+<li><a href="#org4bc0da4">排序</a></li>
+<li><a href="#org124dbfa">分页查询</a></li>
+<li><a href="#org4dd926d">聚合查询</a></li>
+<li><a href="#org113f24d">多表查询</a></li>
+<li><a href="#org194aa4f"><span class="todo TODO">TODO</span> 连接查询</a></li>
 </ul>
 </li>
-<li><a href="#org223f5c4">修改数据</a>
+<li><a href="#org840ae5a">修改数据</a>
 <ul>
-<li><a href="#orgef92b02">INSERT</a></li>
-<li><a href="#orgceccfaf">UPDATE</a></li>
-<li><a href="#org1d16126">DELETE</a></li>
+<li><a href="#orgb9f5525">INSERT</a></li>
+<li><a href="#org0cb593c">UPDATE</a></li>
+<li><a href="#org5732d22">DELETE</a></li>
 </ul>
 </li>
-<li><a href="#orga260040">MySQL</a>
+<li><a href="#orge5b2d43">MySQL</a>
 <ul>
-<li><a href="#orgc47d8c4">Client &amp; Server</a></li>
-<li><a href="#org6588d82">管理 MySQL</a></li>
-<li><a href="#orgdd05313"><span class="todo TODO">TODO</span> 实用 SQL 语句</a></li>
+<li><a href="#org83ea812">Client &amp; Server</a></li>
+<li><a href="#org2d87f83">管理 MySQL</a></li>
+<li><a href="#org2c46187"><span class="todo TODO">TODO</span> 实用 SQL 语句</a></li>
 </ul>
 </li>
-<li><a href="#org0a9cfce"><span class="todo TODO">TODO</span> 事务</a></li>
+<li><a href="#orgdb76924"><span class="todo TODO">TODO</span> 事务</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org62a390f" class="outline-2">
-<h2 id="org62a390f">Inbox</h2>
-<div class="outline-text-2" id="text-org62a390f">
+<div id="outline-container-orgb764a85" class="outline-2">
+<h2 id="orgb764a85">Inbox</h2>
+<div class="outline-text-2" id="text-orgb764a85">
 <p>
 → 摘录自廖雪峰老师的 <a href="https://www.liaoxuefeng.com/wiki/1177760294764384">https://www.liaoxuefeng.com/wiki/1177760294764384</a>
 </p>
@@ -77,9 +77,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </p>
 </div>
 
-<div id="outline-container-org01a2664" class="outline-3">
-<h3 id="org01a2664">为什么需要数据库</h3>
-<div class="outline-text-3" id="text-org01a2664">
+<div id="outline-container-orgc59c440" class="outline-3">
+<h3 id="orgc59c440">为什么需要数据库</h3>
+<div class="outline-text-3" id="text-orgc59c440">
 <p>
 要保存用户的数据，一个最简单的方法是把用户数据写入文件。但是，随着应用程序的功能越来越复杂，数据量越来越大，如何管理这些数据就成了大问题：
 </p>
@@ -104,9 +104,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org654e2c0" class="outline-3">
-<h3 id="org654e2c0">数据模型</h3>
-<div class="outline-text-3" id="text-org654e2c0">
+<div id="outline-container-org21610a8" class="outline-3">
+<h3 id="org21610a8">数据模型</h3>
+<div class="outline-text-3" id="text-org21610a8">
 <p>
 数据库按照数据结构来组织、存储和管理数据，实际上，数据库一共有三种模型：层次模型（树状）、网状模型和关系模型（二维表格）。
 </p>
@@ -117,9 +117,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-orga6cbab8" class="outline-3">
-<h3 id="orga6cbab8">数据类型</h3>
-<div class="outline-text-3" id="text-orga6cbab8">
+<div id="outline-container-org698029a" class="outline-3">
+<h3 id="org698029a">数据类型</h3>
+<div class="outline-text-3" id="text-org698029a">
 <p>
 对于一个关系表，除了定义每一列的名称外，还需要定义每一列的数据类型。关系数据库支持的标准数据类型包括数值、字符串、时间等：
 </p>
@@ -215,9 +215,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org2f894ff" class="outline-3">
-<h3 id="org2f894ff">SQL 语言</h3>
-<div class="outline-text-3" id="text-org2f894ff">
+<div id="outline-container-org00a8aac" class="outline-3">
+<h3 id="org00a8aac">SQL 语言</h3>
+<div class="outline-text-3" id="text-org00a8aac">
 <p>
 什么是SQL？SQL是结构化查询语言的缩写，用来访问和操作数据库系统。
 </p>
@@ -244,9 +244,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org5d27685" class="outline-3">
-<h3 id="org5d27685">主流关系数据库</h3>
-<div class="outline-text-3" id="text-org5d27685">
+<div id="outline-container-orgf78f880" class="outline-3">
+<h3 id="orgf78f880">主流关系数据库</h3>
+<div class="outline-text-3" id="text-orgf78f880">
 <p>
 目前，主流的关系数据库主要分为以下几类：
 </p>
@@ -261,9 +261,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org96c23b3" class="outline-2">
-<h2 id="org96c23b3">关系模型</h2>
-<div class="outline-text-2" id="text-org96c23b3">
+<div id="outline-container-org8419f5a" class="outline-2">
+<h2 id="org8419f5a">关系模型</h2>
+<div class="outline-text-2" id="text-org8419f5a">
 <p>
 关系数据库是建立在关系模型上的，而关系模型本质上就是若干个存储数据的二维表。
 </p>
@@ -273,9 +273,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </p>
 </div>
 
-<div id="outline-container-org719d391" class="outline-3">
-<h3 id="org719d391">主键</h3>
-<div class="outline-text-3" id="text-org719d391">
+<div id="outline-container-org905ba6b" class="outline-3">
+<h3 id="org905ba6b">主键</h3>
+<div class="outline-text-3" id="text-org905ba6b">
 <p>
 在关系数据库中，一张表中的每一行数据被称为一条记录（record）。每一条记录都包含若干定义好的字段。同一个表的所有记录都有相同的字段定义。
 </p>
@@ -303,9 +303,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org44336e5" class="outline-3">
-<h3 id="org44336e5">外键</h3>
-<div class="outline-text-3" id="text-org44336e5">
+<div id="outline-container-org167932a" class="outline-3">
+<h3 id="org167932a">外键</h3>
+<div class="outline-text-3" id="text-org167932a">
 <p>
 把数据与另一张表关联起来，这种列称为 <span class="underline">外键</span> 。
 </p>
@@ -315,10 +315,10 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a020f0;">ALTER</span> <span style="color: #a020f0;">TABLE</span> <span style="color: SystemWindowText;">students</span>
-<span class="linenr">2: </span><span style="color: #a020f0;">ADD</span> <span style="color: #a020f0;">CONSTRAINT</span> fk_class_id      <span style="color: #7f7f7f;">-- &#22806;&#38190;&#32422;&#26463;&#30340;&#21517;&#31216;</span>
-<span class="linenr">3: </span><span style="color: #a020f0;">FOREIGN</span> <span style="color: #a020f0;">KEY</span> <span style="color: #707183;">(</span>class_id<span style="color: #707183;">)</span>          <span style="color: #7f7f7f;">-- &#25351;&#23450;&#20102;class_id&#20316;&#20026;&#22806;&#38190;</span>
-<span class="linenr">4: </span><span style="color: #a020f0;">REFERENCES</span> classes <span style="color: #707183;">(</span>id<span style="color: #707183;">)</span>;        <span style="color: #7f7f7f;">-- &#25351;&#23450;&#20102;&#36825;&#20010;&#22806;&#38190;&#23558;&#20851;&#32852;&#21040;classes&#34920;&#30340;id&#21015;</span>
+<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a626a4;">ALTER</span> <span style="color: #a626a4;">TABLE</span> <span style="color: #0184bc;">students</span>
+<span class="linenr">2: </span><span style="color: #a626a4;">ADD</span> <span style="color: #a626a4;">CONSTRAINT</span> fk_class_id      <span style="color: #a0a1a7;">-- &#22806;&#38190;&#32422;&#26463;&#30340;&#21517;&#31216;</span>
+<span class="linenr">3: </span><span style="color: #a626a4;">FOREIGN</span> <span style="color: #a626a4;">KEY</span> <span style="color: #707183;">(</span>class_id<span style="color: #707183;">)</span>          <span style="color: #a0a1a7;">-- &#25351;&#23450;&#20102;class_id&#20316;&#20026;&#22806;&#38190;</span>
+<span class="linenr">4: </span><span style="color: #a626a4;">REFERENCES</span> classes <span style="color: #707183;">(</span>id<span style="color: #707183;">)</span>;        <span style="color: #a0a1a7;">-- &#25351;&#23450;&#20102;&#36825;&#20010;&#22806;&#38190;&#23558;&#20851;&#32852;&#21040;classes&#34920;&#30340;id&#21015;</span>
 </pre>
 </div>
 
@@ -337,8 +337,8 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a020f0;">ALTER</span> <span style="color: #a020f0;">TABLE</span> <span style="color: SystemWindowText;">students</span>
-<span class="linenr">2: </span><span style="color: #a020f0;">DROP</span> <span style="color: #a020f0;">FOREIGN</span> <span style="color: #a020f0;">KEY</span> fk_class_id;
+<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a626a4;">ALTER</span> <span style="color: #a626a4;">TABLE</span> <span style="color: #0184bc;">students</span>
+<span class="linenr">2: </span><span style="color: #a626a4;">DROP</span> <span style="color: #a626a4;">FOREIGN</span> <span style="color: #a626a4;">KEY</span> fk_class_id;
 </pre>
 </div>
 
@@ -368,9 +368,9 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-org678ab61" class="outline-3">
-<h3 id="org678ab61"><span class="todo TODO">TODO</span> 索引</h3>
-<div class="outline-text-3" id="text-org678ab61">
+<div id="outline-container-org426f464" class="outline-3">
+<h3 id="org426f464"><span class="todo TODO">TODO</span> 索引</h3>
+<div class="outline-text-3" id="text-org426f464">
 <p>
 数据库索引对于用户和应用程序来说都是透明的。
 </p>
@@ -382,22 +382,22 @@ SQL（Structured Query Language 结构化查询语言），是访问和处理 <b
 </div>
 </div>
 
-<div id="outline-container-orgae06ac0" class="outline-2">
-<h2 id="orgae06ac0">查询数据</h2>
-<div class="outline-text-2" id="text-orgae06ac0">
+<div id="outline-container-org720b9a3" class="outline-2">
+<h2 id="org720b9a3">查询数据</h2>
+<div class="outline-text-2" id="text-org720b9a3">
 </div>
-<div id="outline-container-org1f10c81" class="outline-3">
-<h3 id="org1f10c81">基本查询</h3>
-<div class="outline-text-3" id="text-org1f10c81">
+<div id="outline-container-orgf439702" class="outline-3">
+<h3 id="orgf439702">基本查询</h3>
+<div class="outline-text-3" id="text-orgf439702">
 <pre class="example">
 SELECT * FROM &lt;表名&gt;
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org3d03854" class="outline-3">
-<h3 id="org3d03854">条件查询</h3>
-<div class="outline-text-3" id="text-org3d03854">
+<div id="outline-container-orgcc03a50" class="outline-3">
+<h3 id="orgcc03a50">条件查询</h3>
+<div class="outline-text-3" id="text-orgcc03a50">
 <pre class="example">
 SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </pre>
@@ -408,9 +408,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org5e5b5fd" class="outline-3">
-<h3 id="org5e5b5fd">投影查询</h3>
-<div class="outline-text-3" id="text-org5e5b5fd">
+<div id="outline-container-org5827d3f" class="outline-3">
+<h3 id="org5827d3f">投影查询</h3>
+<div class="outline-text-3" id="text-org5827d3f">
 <p>
 如果我们只希望返回某些列的数据，而不是所有列的数据，我们可以用 <code>SELECT 列1, 列2, 列3 FROM ...</code> ，让结果集仅包含指定列。这种操作称为投影查询。
 </p>
@@ -421,25 +421,25 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org6afce15" class="outline-3">
-<h3 id="org6afce15">排序</h3>
-<div class="outline-text-3" id="text-org6afce15">
+<div id="outline-container-org4bc0da4" class="outline-3">
+<h3 id="org4bc0da4">排序</h3>
+<div class="outline-text-3" id="text-org4bc0da4">
 <p>
 使用 <code>ORDER BY</code> 可以对结果集进行排序，默认的排序规则是 <code>ASC</code> ：“升序”，即从小到大， <code>ASC</code> 可以省略。 <code>DESC</code> 表示“倒序” 。要进一步排序，可以继续添加列名。如：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a020f0;">SELECT</span> id, <span style="color: #a020f0;">name</span>, gender, score <span style="color: #a020f0;">FROM</span> students <span style="color: #a020f0;">ORDER</span> <span style="color: #a020f0;">BY</span> score; <span style="color: #7f7f7f;">-- &#21319;&#24207;</span>
-<span class="linenr">2: </span><span style="color: #a020f0;">SELECT</span> id, <span style="color: #a020f0;">name</span>, gender, score <span style="color: #a020f0;">FROM</span> students <span style="color: #a020f0;">ORDER</span> <span style="color: #a020f0;">BY</span> score <span style="color: #a020f0;">DESC</span>; <span style="color: #7f7f7f;">-- &#38477;&#24207;</span>
-<span class="linenr">3: </span><span style="color: #a020f0;">SELECT</span> id, <span style="color: #a020f0;">name</span>, gender, score <span style="color: #a020f0;">FROM</span> students <span style="color: #a020f0;">ORDER</span> <span style="color: #a020f0;">BY</span> score <span style="color: #a020f0;">DESC</span>, gender; <span style="color: #7f7f7f;">-- &#22810;&#21015;&#25490;&#24207;</span>
+<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a626a4;">SELECT</span> id, <span style="color: #a626a4;">name</span>, gender, score <span style="color: #a626a4;">FROM</span> students <span style="color: #a626a4;">ORDER</span> <span style="color: #a626a4;">BY</span> score; <span style="color: #a0a1a7;">-- &#21319;&#24207;</span>
+<span class="linenr">2: </span><span style="color: #a626a4;">SELECT</span> id, <span style="color: #a626a4;">name</span>, gender, score <span style="color: #a626a4;">FROM</span> students <span style="color: #a626a4;">ORDER</span> <span style="color: #a626a4;">BY</span> score <span style="color: #a626a4;">DESC</span>; <span style="color: #a0a1a7;">-- &#38477;&#24207;</span>
+<span class="linenr">3: </span><span style="color: #a626a4;">SELECT</span> id, <span style="color: #a626a4;">name</span>, gender, score <span style="color: #a626a4;">FROM</span> students <span style="color: #a626a4;">ORDER</span> <span style="color: #a626a4;">BY</span> score <span style="color: #a626a4;">DESC</span>, gender; <span style="color: #a0a1a7;">-- &#22810;&#21015;&#25490;&#24207;</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org7b21feb" class="outline-3">
-<h3 id="org7b21feb">分页查询</h3>
-<div class="outline-text-3" id="text-org7b21feb">
+<div id="outline-container-org124dbfa" class="outline-3">
+<h3 id="org124dbfa">分页查询</h3>
+<div class="outline-text-3" id="text-org124dbfa">
 <p>
 分页实际上就是从结果集中“截取”出第 M~N 条记录。这个查询可以通过 <code>LIMIT &lt;M&gt; OFFSET &lt;N&gt;</code> 子句实现，表示从 <code>N</code> 记录开始，最多取 <code>M</code> 条。
 </p>
@@ -463,9 +463,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org87e789b" class="outline-3">
-<h3 id="org87e789b">聚合查询</h3>
-<div class="outline-text-3" id="text-org87e789b">
+<div id="outline-container-org4dd926d" class="outline-3">
+<h3 id="org4dd926d">聚合查询</h3>
+<div class="outline-text-3" id="text-org4dd926d">
 <p>
 对于统计总数、平均数这类计算，SQL 提供了专门的聚合函数，使用聚合函数进行查询，就是 <span class="underline">聚合查询</span> ，它可以快速获得结果。
 </p>
@@ -475,9 +475,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a020f0;">SELECT</span> <span style="color: #a020f0;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> <span style="color: #a020f0;">FROM</span> students;
-<span class="linenr">2: </span><span style="color: #7f7f7f;">-- &#20351;&#29992;&#32858;&#21512;&#26597;&#35810;&#26102;&#65292;&#25105;&#20204;&#24212;&#35813;&#32473;&#21015;&#21517;&#35774;&#32622;&#19968;&#20010;&#21035;&#21517;&#65292;&#20415;&#20110;&#22788;&#29702;&#32467;&#26524;</span>
-<span class="linenr">3: </span><span style="color: #a020f0;">SELECT</span> <span style="color: #a020f0;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> num <span style="color: #a020f0;">FROM</span> students;
+<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a626a4;">SELECT</span> <span style="color: #e44649;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> <span style="color: #a626a4;">FROM</span> students;
+<span class="linenr">2: </span><span style="color: #a0a1a7;">-- &#20351;&#29992;&#32858;&#21512;&#26597;&#35810;&#26102;&#65292;&#25105;&#20204;&#24212;&#35813;&#32473;&#21015;&#21517;&#35774;&#32622;&#19968;&#20010;&#21035;&#21517;&#65292;&#20415;&#20110;&#22788;&#29702;&#32467;&#26524;</span>
+<span class="linenr">3: </span><span style="color: #a626a4;">SELECT</span> <span style="color: #e44649;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> num <span style="color: #a626a4;">FROM</span> students;
 <span class="linenr">4: </span>
 </pre>
 </div>
@@ -532,11 +532,11 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a020f0;">SELECT</span> <span style="color: #a020f0;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> num <span style="color: #a020f0;">FROM</span> students <span style="color: #a020f0;">GROUP</span> <span style="color: #a020f0;">BY</span> class_id;
-<span class="linenr">2: </span><span style="color: #7f7f7f;">-- &#21487;&#20197;&#25226; class_id &#21015;&#20063;&#25918;&#20837;&#32467;&#26524;&#38598;&#20013;</span>
-<span class="linenr">3: </span><span style="color: #a020f0;">SELECT</span> class_id, <span style="color: #a020f0;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> num <span style="color: #a020f0;">FROM</span> students <span style="color: #a020f0;">GROUP</span> <span style="color: #a020f0;">BY</span> class_id;
-<span class="linenr">4: </span><span style="color: #7f7f7f;">-- &#20063;&#21487;&#20197;&#20351;&#29992;&#22810;&#20010;&#21015;&#36827;&#34892;&#20998;&#32452;</span>
-<span class="linenr">5: </span><span style="color: #a020f0;">SELECT</span> class_id, gender, <span style="color: #a020f0;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> num <span style="color: #a020f0;">FROM</span> students <span style="color: #a020f0;">GROUP</span> <span style="color: #a020f0;">BY</span> class_id, gender;
+<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a626a4;">SELECT</span> <span style="color: #e44649;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> num <span style="color: #a626a4;">FROM</span> students <span style="color: #a626a4;">GROUP</span> <span style="color: #a626a4;">BY</span> class_id;
+<span class="linenr">2: </span><span style="color: #a0a1a7;">-- &#21487;&#20197;&#25226; class_id &#21015;&#20063;&#25918;&#20837;&#32467;&#26524;&#38598;&#20013;</span>
+<span class="linenr">3: </span><span style="color: #a626a4;">SELECT</span> class_id, <span style="color: #e44649;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> num <span style="color: #a626a4;">FROM</span> students <span style="color: #a626a4;">GROUP</span> <span style="color: #a626a4;">BY</span> class_id;
+<span class="linenr">4: </span><span style="color: #a0a1a7;">-- &#20063;&#21487;&#20197;&#20351;&#29992;&#22810;&#20010;&#21015;&#36827;&#34892;&#20998;&#32452;</span>
+<span class="linenr">5: </span><span style="color: #a626a4;">SELECT</span> class_id, gender, <span style="color: #e44649;">COUNT</span><span style="color: #707183;">(</span>*<span style="color: #707183;">)</span> num <span style="color: #a626a4;">FROM</span> students <span style="color: #a626a4;">GROUP</span> <span style="color: #a626a4;">BY</span> class_id, gender;
 <span class="linenr">6: </span>
 </pre>
 </div>
@@ -551,9 +551,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org2ac5e33" class="outline-3">
-<h3 id="org2ac5e33">多表查询</h3>
-<div class="outline-text-3" id="text-org2ac5e33">
+<div id="outline-container-org113f24d" class="outline-3">
+<h3 id="org113f24d">多表查询</h3>
+<div class="outline-text-3" id="text-org113f24d">
 <p>
 查询多张表的语法是： <code>SELECT * FROM &lt;表1&gt;, &lt;表2&gt;</code> 。
 </p>
@@ -567,24 +567,24 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sql"><span class="linenr"> 1: </span><span style="color: #a020f0;">SELECT</span>
+<pre class="src src-sql"><span class="linenr"> 1: </span><span style="color: #a626a4;">SELECT</span>
 <span class="linenr"> 2: </span>    students.id sid,
-<span class="linenr"> 3: </span>    students.<span style="color: #a020f0;">name</span>,
+<span class="linenr"> 3: </span>    students.<span style="color: #a626a4;">name</span>,
 <span class="linenr"> 4: </span>    students.gender,
 <span class="linenr"> 5: </span>    students.score,
 <span class="linenr"> 6: </span>    classes.id cid,
-<span class="linenr"> 7: </span>    classes.<span style="color: #a020f0;">name</span> cname
-<span class="linenr"> 8: </span><span style="color: #a020f0;">FROM</span> students, classes;
+<span class="linenr"> 7: </span>    classes.<span style="color: #a626a4;">name</span> cname
+<span class="linenr"> 8: </span><span style="color: #a626a4;">FROM</span> students, classes;
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #7f7f7f;">-- &#36824;&#20801;&#35768;&#32473;&#34920;&#35774;&#32622;&#19968;&#20010;&#21035;&#21517;&#65292;&#20197;&#31616;&#21270; &#34920;&#21517;&#183;&#21015;&#21517;</span>
-<span class="linenr">11: </span><span style="color: #a020f0;">SELECT</span>
+<span class="linenr">10: </span><span style="color: #a0a1a7;">-- &#36824;&#20801;&#35768;&#32473;&#34920;&#35774;&#32622;&#19968;&#20010;&#21035;&#21517;&#65292;&#20197;&#31616;&#21270; &#34920;&#21517;&#183;&#21015;&#21517;</span>
+<span class="linenr">11: </span><span style="color: #a626a4;">SELECT</span>
 <span class="linenr">12: </span>    s.id sid,
-<span class="linenr">13: </span>    s.<span style="color: #a020f0;">name</span>,
+<span class="linenr">13: </span>    s.<span style="color: #a626a4;">name</span>,
 <span class="linenr">14: </span>    s.gender,
 <span class="linenr">15: </span>    s.score,
 <span class="linenr">16: </span>    c.id cid,
-<span class="linenr">17: </span>    c.<span style="color: #a020f0;">name</span> cname
-<span class="linenr">18: </span><span style="color: #a020f0;">FROM</span> students s, classes c;
+<span class="linenr">17: </span>    c.<span style="color: #a626a4;">name</span> cname
+<span class="linenr">18: </span><span style="color: #a626a4;">FROM</span> students s, classes c;
 </pre>
 </div>
 
@@ -594,9 +594,9 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org17f732c" class="outline-3">
-<h3 id="org17f732c"><span class="todo TODO">TODO</span> 连接查询</h3>
-<div class="outline-text-3" id="text-org17f732c">
+<div id="outline-container-org194aa4f" class="outline-3">
+<h3 id="org194aa4f"><span class="todo TODO">TODO</span> 连接查询</h3>
+<div class="outline-text-3" id="text-org194aa4f">
 <p>
 ……
 </p>
@@ -604,17 +604,17 @@ SELECT * FROM &lt;表名&gt; WHERE &lt;条件表达式&gt;
 </div>
 </div>
 
-<div id="outline-container-org223f5c4" class="outline-2">
-<h2 id="org223f5c4">修改数据</h2>
-<div class="outline-text-2" id="text-org223f5c4">
+<div id="outline-container-org840ae5a" class="outline-2">
+<h2 id="org840ae5a">修改数据</h2>
+<div class="outline-text-2" id="text-org840ae5a">
 <p>
 关系数据库的基本操作就是增删改查，即 <code>CRUD：Create、Retrieve、Update、Delete</code> 。
 </p>
 </div>
 
-<div id="outline-container-orgef92b02" class="outline-3">
-<h3 id="orgef92b02">INSERT</h3>
-<div class="outline-text-3" id="text-orgef92b02">
+<div id="outline-container-orgb9f5525" class="outline-3">
+<h3 id="orgb9f5525">INSERT</h3>
+<div class="outline-text-3" id="text-orgb9f5525">
 <p>
 INSERT语句的基本语法是：
 </p>
@@ -630,19 +630,19 @@ INSERT INTO &lt;表名&gt; (字段1, 字段2, ...) VALUES (值1, 值2, ...);
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a020f0;">INSERT</span> <span style="color: #a020f0;">INTO</span> students <span style="color: #707183;">(</span>class_id, <span style="color: #a020f0;">name</span>, gender, score<span style="color: #707183;">)</span> <span style="color: #a020f0;">VALUES</span>
-<span class="linenr">2: </span>  <span style="color: #707183;">(</span>1, <span style="color: #8b2252;">'&#22823;&#23453;'</span>, <span style="color: #8b2252;">'M'</span>, 87<span style="color: #707183;">)</span>,
-<span class="linenr">3: </span>  <span style="color: #707183;">(</span>2, <span style="color: #8b2252;">'&#20108;&#23453;'</span>, <span style="color: #8b2252;">'M'</span>, 81<span style="color: #707183;">)</span>;
+<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a626a4;">INSERT</span> <span style="color: #a626a4;">INTO</span> students <span style="color: #707183;">(</span>class_id, <span style="color: #a626a4;">name</span>, gender, score<span style="color: #707183;">)</span> <span style="color: #a626a4;">VALUES</span>
+<span class="linenr">2: </span>  <span style="color: #707183;">(</span>1, <span style="color: #50a14f;">'&#22823;&#23453;'</span>, <span style="color: #50a14f;">'M'</span>, 87<span style="color: #707183;">)</span>,
+<span class="linenr">3: </span>  <span style="color: #707183;">(</span>2, <span style="color: #50a14f;">'&#20108;&#23453;'</span>, <span style="color: #50a14f;">'M'</span>, 81<span style="color: #707183;">)</span>;
 <span class="linenr">4: </span>
-<span class="linenr">5: </span><span style="color: #a020f0;">SELECT</span> * <span style="color: #a020f0;">FROM</span> students;
+<span class="linenr">5: </span><span style="color: #a626a4;">SELECT</span> * <span style="color: #a626a4;">FROM</span> students;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgceccfaf" class="outline-3">
-<h3 id="orgceccfaf">UPDATE</h3>
-<div class="outline-text-3" id="text-orgceccfaf">
+<div id="outline-container-org0cb593c" class="outline-3">
+<h3 id="org0cb593c">UPDATE</h3>
+<div class="outline-text-3" id="text-org0cb593c">
 <p>
 UPDATE语句的基本语法是：
 </p>
@@ -657,9 +657,9 @@ UPDATE 语句可以没有 WHERE 条件，这时，整个表的所有记录都会
 </div>
 </div>
 
-<div id="outline-container-org1d16126" class="outline-3">
-<h3 id="org1d16126">DELETE</h3>
-<div class="outline-text-3" id="text-org1d16126">
+<div id="outline-container-org5732d22" class="outline-3">
+<h3 id="org5732d22">DELETE</h3>
+<div class="outline-text-3" id="text-org5732d22">
 <p>
 DELETE语句的基本语法是：
 </p>
@@ -675,13 +675,13 @@ DELETE FROM &lt;表名&gt; WHERE ...;
 </div>
 </div>
 
-<div id="outline-container-orga260040" class="outline-2">
-<h2 id="orga260040">MySQL</h2>
-<div class="outline-text-2" id="text-orga260040">
+<div id="outline-container-orge5b2d43" class="outline-2">
+<h2 id="orge5b2d43">MySQL</h2>
+<div class="outline-text-2" id="text-orge5b2d43">
 </div>
-<div id="outline-container-orgc47d8c4" class="outline-3">
-<h3 id="orgc47d8c4">Client &amp; Server</h3>
-<div class="outline-text-3" id="text-orgc47d8c4">
+<div id="outline-container-org83ea812" class="outline-3">
+<h3 id="org83ea812">Client &amp; Server</h3>
+<div class="outline-text-3" id="text-org83ea812">
 <p>
 命令行程序 <code>mysql</code> 实际上是 MySQL 客户端，真正的 MySQL 服务器程序是 <code>mysqld</code> ，在后台运行。
 </p>
@@ -700,9 +700,9 @@ mysql -h 10.0.1.99 -u root -p
 </div>
 </div>
 
-<div id="outline-container-org6588d82" class="outline-3">
-<h3 id="org6588d82">管理 MySQL</h3>
-<div class="outline-text-3" id="text-org6588d82">
+<div id="outline-container-org2d87f83" class="outline-3">
+<h3 id="org2d87f83">管理 MySQL</h3>
+<div class="outline-text-3" id="text-org2d87f83">
 <p>
 在一个运行MySQL的服务器上，实际上可以创建多个数据库（Database）。
 </p>
@@ -792,19 +792,19 @@ mysql -h 10.0.1.99 -u root -p
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a020f0;">ALTER</span> <span style="color: #a020f0;">TABLE</span> <span style="color: SystemWindowText;">students</span> <span style="color: #a020f0;">ADD</span> <span style="color: #a020f0;">COLUMN</span> birth <span style="color: #a020f0;">VARCHAR</span><span style="color: #707183;">(</span>10<span style="color: #707183;">)</span> <span style="color: #a020f0;">NOT</span> <span style="color: #a020f0;">NULL</span>;
-<span class="linenr">2: </span><span style="color: #7f7f7f;">-- &#35201;&#20462;&#25913;birth&#21015;&#65292;&#20363;&#22914;&#25226;&#21015;&#21517;&#25913;&#20026;birthday&#65292;&#31867;&#22411;&#25913;&#20026;VARCHAR(20)</span>
-<span class="linenr">3: </span><span style="color: #a020f0;">ALTER</span> <span style="color: #a020f0;">TABLE</span> <span style="color: SystemWindowText;">students</span> CHANGE <span style="color: #a020f0;">COLUMN</span> birth birthday <span style="color: #a020f0;">VARCHAR</span><span style="color: #707183;">(</span>20<span style="color: #707183;">)</span> <span style="color: #a020f0;">NOT</span> <span style="color: #a020f0;">NULL</span>;
-<span class="linenr">4: </span><span style="color: #7f7f7f;">-- &#35201;&#21024;&#38500;&#21015;</span>
-<span class="linenr">5: </span><span style="color: #a020f0;">ALTER</span> <span style="color: #a020f0;">TABLE</span> <span style="color: SystemWindowText;">students</span> <span style="color: #a020f0;">DROP</span> <span style="color: #a020f0;">COLUMN</span> birthday;
+<pre class="src src-sql"><span class="linenr">1: </span><span style="color: #a626a4;">ALTER</span> <span style="color: #a626a4;">TABLE</span> <span style="color: #0184bc;">students</span> <span style="color: #a626a4;">ADD</span> <span style="color: #a626a4;">COLUMN</span> birth <span style="color: #c18401;">VARCHAR</span><span style="color: #707183;">(</span>10<span style="color: #707183;">)</span> <span style="color: #a626a4;">NOT</span> <span style="color: #a626a4;">NULL</span>;
+<span class="linenr">2: </span><span style="color: #a0a1a7;">-- &#35201;&#20462;&#25913;birth&#21015;&#65292;&#20363;&#22914;&#25226;&#21015;&#21517;&#25913;&#20026;birthday&#65292;&#31867;&#22411;&#25913;&#20026;VARCHAR(20)</span>
+<span class="linenr">3: </span><span style="color: #a626a4;">ALTER</span> <span style="color: #a626a4;">TABLE</span> <span style="color: #0184bc;">students</span> CHANGE <span style="color: #a626a4;">COLUMN</span> birth birthday <span style="color: #c18401;">VARCHAR</span><span style="color: #707183;">(</span>20<span style="color: #707183;">)</span> <span style="color: #a626a4;">NOT</span> <span style="color: #a626a4;">NULL</span>;
+<span class="linenr">4: </span><span style="color: #a0a1a7;">-- &#35201;&#21024;&#38500;&#21015;</span>
+<span class="linenr">5: </span><span style="color: #a626a4;">ALTER</span> <span style="color: #a626a4;">TABLE</span> <span style="color: #0184bc;">students</span> <span style="color: #a626a4;">DROP</span> <span style="color: #a626a4;">COLUMN</span> birthday;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgdd05313" class="outline-3">
-<h3 id="orgdd05313"><span class="todo TODO">TODO</span> 实用 SQL 语句</h3>
-<div class="outline-text-3" id="text-orgdd05313">
+<div id="outline-container-org2c46187" class="outline-3">
+<h3 id="org2c46187"><span class="todo TODO">TODO</span> 实用 SQL 语句</h3>
+<div class="outline-text-3" id="text-org2c46187">
 <p>
 ……
 </p>
@@ -812,9 +812,9 @@ mysql -h 10.0.1.99 -u root -p
 </div>
 </div>
 
-<div id="outline-container-org0a9cfce" class="outline-2">
-<h2 id="org0a9cfce"><span class="todo TODO">TODO</span> 事务</h2>
-<div class="outline-text-2" id="text-org0a9cfce">
+<div id="outline-container-orgdb76924" class="outline-2">
+<h2 id="orgdb76924"><span class="todo TODO">TODO</span> 事务</h2>
+<div class="outline-text-2" id="text-orgdb76924">
 <p>
 这种把多条语句作为一个整体进行操作的功能，被称为 <b>数据库事务</b> 。
 </p>
@@ -850,7 +850,7 @@ mysql -h 10.0.1.99 -u root -p
 <div id="postamble" class="status">
 <p class="date">Date: 2021-04-02 Fri 10:19</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-04-04 Sun 18:08</p>
+<p class="date">Created: 2021-05-18 Tue 15:55</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

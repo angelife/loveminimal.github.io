@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:44 -->
+<!-- 2021-05-18 Tue 15:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>十分钟掌握 TMUX</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,8 +18,8 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga9b7f1c">Layouts 布局、Window 窗口、Pane 窗格</a></li>
-<li><a href="#org645b821">配置</a></li>
+<li><a href="#org2c1265b">Layouts 布局、Window 窗口、Pane 窗格</a></li>
+<li><a href="#orgf3d6a23">配置</a></li>
 </ul>
 </div>
 </div>
@@ -29,9 +29,9 @@
 → <a href="http://www.ruanyifeng.com/blog/2019/10/tmux.html">友情链接</a>
 </p>
 
-<div id="outline-container-orga9b7f1c" class="outline-2">
-<h2 id="orga9b7f1c">Layouts 布局、Window 窗口、Pane 窗格</h2>
-<div class="outline-text-2" id="text-orga9b7f1c">
+<div id="outline-container-org2c1265b" class="outline-2">
+<h2 id="org2c1265b">Layouts 布局、Window 窗口、Pane 窗格</h2>
+<div class="outline-text-2" id="text-org2c1265b">
 <table>
 
 <colgroup>
@@ -155,25 +155,25 @@
 </div>
 </div>
 
-<div id="outline-container-org645b821" class="outline-2">
-<h2 id="org645b821">配置<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> <sup>, </sup><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h2>
-<div class="outline-text-2" id="text-org645b821">
+<div id="outline-container-orgf3d6a23" class="outline-2">
+<h2 id="orgf3d6a23">配置<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> <sup>, </sup><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h2>
+<div class="outline-text-2" id="text-orgf3d6a23">
 <p>
 新建 <code>~/.tmux.conf</code> 文件，并写入：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">Set new default prefix</span>
-<span class="linenr"> 2: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#20462;&#25913;&#20027;&#38190;</span>
+<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">Set new default prefix</span>
+<span class="linenr"> 2: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#20462;&#25913;&#20027;&#38190;</span>
 <span class="linenr"> 3: </span>unbind C-b
 <span class="linenr"> 4: </span>set-option -g prefix C-j
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">Mouse</span>
-<span class="linenr"> 7: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#28608;&#27963;&#40736;&#26631;&#27169;&#24335;</span>
+<span class="linenr"> 6: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">Mouse</span>
+<span class="linenr"> 7: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#28608;&#27963;&#40736;&#26631;&#27169;&#24335;</span>
 <span class="linenr"> 8: </span>set-option -g -q mouse on
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">Easy split pane commands</span>
-<span class="linenr">11: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#20462;&#25913;&#20998;&#23631;&#25353;&#38190;</span>
+<span class="linenr">10: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">Easy split pane commands</span>
+<span class="linenr">11: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#20462;&#25913;&#20998;&#23631;&#25353;&#38190;</span>
 <span class="linenr">12: </span>bind h split-window -h
 <span class="linenr">13: </span>bind v split-window -v
 <span class="linenr">14: </span>unbind <span style="color: #50a14f;">'"'</span>
@@ -199,7 +199,7 @@
 <div id="postamble" class="status">
 <p class="date">Date: 2020-02-26 Wed 18:00</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:44</p>
+<p class="date">Created: 2021-05-18 Tue 15:55</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

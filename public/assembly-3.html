@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:42 -->
+<!-- 2021-05-18 Tue 15:52 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>汇编语言基础</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,11 +18,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org31f30de">第一个汇编语言程序</a></li>
-<li><a href="#org1b1f8c7">汇编语言常量</a>
+<li><a href="#org6a98470">第一个汇编语言程序</a></li>
+<li><a href="#orga908a3d">汇编语言常量</a>
 <ul>
-<li><a href="#orge3e9818">整数常量</a></li>
-<li><a href="#org44610aa">整型常量表达式</a></li>
+<li><a href="#org332ba41">整数常量</a></li>
+<li><a href="#orgad56009">整型常量表达式</a></li>
 </ul>
 </li>
 </ul>
@@ -32,9 +32,9 @@
 本章侧重于 Microsoft MASM 汇编程序的基本组成部分，通过学习将会了解到如何定义常数和变量，数字和字符常量的标准格式，以及怎样汇编并运行你的第一个程序。
 </p>
 
-<div id="outline-container-org31f30de" class="outline-2">
-<h2 id="org31f30de">第一个汇编语言程序</h2>
-<div class="outline-text-2" id="text-org31f30de">
+<div id="outline-container-org6a98470" class="outline-2">
+<h2 id="org6a98470">第一个汇编语言程序</h2>
+<div class="outline-text-2" id="text-org6a98470">
 <p>
 汇编语言以隐晦难懂而著名，但是它也是一种几乎提供了全部信息的语言。程序员可以看到正在发生的事情，甚至包括 CPU 中的寄存器和标志。
 </p>
@@ -48,12 +48,12 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span class="linenr">1: </span><span style="color: #a626a4;">main</span> <span style="color: #e45649;">PROC</span>
-<span class="linenr">2: </span>        <span style="color: #e45649;">move</span> eax, 5             <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">&#23558;&#25968;&#23383; 5 &#36865;&#20837; eax &#23492;&#23384;&#22120;</span>
-<span class="linenr">3: </span>        <span style="color: #e45649;">add</span> eax, 6              <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">eax &#23492;&#23384;&#22120;&#21152; 6</span>
+<pre class="src src-asm"><span class="linenr">1: </span><span style="color: #0184bc;">main</span> <span style="color: #a626a4;">PROC</span>
+<span class="linenr">2: </span>        <span style="color: #a626a4;">move</span> eax, 5             <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">&#23558;&#25968;&#23383; 5 &#36865;&#20837; eax &#23492;&#23384;&#22120;</span>
+<span class="linenr">3: </span>        <span style="color: #a626a4;">add</span> eax, 6              <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">eax &#23492;&#23384;&#22120;&#21152; 6</span>
 <span class="linenr">4: </span>
-<span class="linenr">5: </span>        <span style="color: #e45649;">INVOKE</span> ExitProcess, 0   <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">&#31243;&#24207;&#32467;&#26463;</span>
-<span class="linenr">6: </span><span style="color: #a626a4;">main</span> <span style="color: #e45649;">ENDP</span>
+<span class="linenr">5: </span>        <span style="color: #a626a4;">INVOKE</span> ExitProcess, 0   <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">&#31243;&#24207;&#32467;&#26463;</span>
+<span class="linenr">6: </span><span style="color: #0184bc;">main</span> <span style="color: #a626a4;">ENDP</span>
 </pre>
 </div>
 
@@ -85,17 +85,17 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-asm"><span class="linenr"> 1: </span><span style="color: #e45649;">.data</span>                           <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">&#27492;&#20026;&#25968;&#25454;&#21306;</span>
-<span class="linenr"> 2: </span><span style="color: #a626a4;">sum</span> <span style="color: #e45649;">DWORD</span> 0                     <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">&#23450;&#20041;&#21517;&#20026; sum &#30340;&#21464;&#37327;</span>
+<pre class="src src-asm"><span class="linenr"> 1: </span><span style="color: #a626a4;">.data</span>                           <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">&#27492;&#20026;&#25968;&#25454;&#21306;</span>
+<span class="linenr"> 2: </span><span style="color: #0184bc;">sum</span> <span style="color: #a626a4;">DWORD</span> 0                     <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">&#23450;&#20041;&#21517;&#20026; sum &#30340;&#21464;&#37327;</span>
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #e45649;">.code</span>                           <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">&#27492;&#20026;&#20195;&#30721;&#21306;</span>
-<span class="linenr"> 5: </span><span style="color: #a626a4;">main</span> <span style="color: #e45649;">PROC</span>
-<span class="linenr"> 6: </span>        <span style="color: #e45649;">mov</span> eax,5               <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">&#23558;&#25968;&#23383; 5 &#36865;&#20837; eax &#23492;&#23384;&#22120;</span>
-<span class="linenr"> 7: </span>        <span style="color: #e45649;">add</span> eax,6               <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">eax &#23492;&#23384;&#22120;&#21152; 6</span>
-<span class="linenr"> 8: </span>        <span style="color: #e45649;">mox</span> sum,eax
+<span class="linenr"> 4: </span><span style="color: #a626a4;">.code</span>                           <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">&#27492;&#20026;&#20195;&#30721;&#21306;</span>
+<span class="linenr"> 5: </span><span style="color: #0184bc;">main</span> <span style="color: #a626a4;">PROC</span>
+<span class="linenr"> 6: </span>        <span style="color: #a626a4;">mov</span> eax,5               <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">&#23558;&#25968;&#23383; 5 &#36865;&#20837; eax &#23492;&#23384;&#22120;</span>
+<span class="linenr"> 7: </span>        <span style="color: #a626a4;">add</span> eax,6               <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">eax &#23492;&#23384;&#22120;&#21152; 6</span>
+<span class="linenr"> 8: </span>        <span style="color: #a626a4;">mox</span> sum,eax
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span>        <span style="color: #e45649;">INVOKE</span> ExitProcess,0    <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">&#32467;&#26463;&#31243;&#24207;</span>
-<span class="linenr">11: </span><span style="color: #a626a4;">main</span> <span style="color: #e45649;">ENDP</span>
+<span class="linenr">10: </span>        <span style="color: #a626a4;">INVOKE</span> ExitProcess,0    <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">&#32467;&#26463;&#31243;&#24207;</span>
+<span class="linenr">11: </span><span style="color: #0184bc;">main</span> <span style="color: #a626a4;">ENDP</span>
 </pre>
 </div>
 
@@ -113,17 +113,17 @@
 </div>
 </div>
 
-<div id="outline-container-org1b1f8c7" class="outline-2">
-<h2 id="org1b1f8c7">汇编语言常量</h2>
-<div class="outline-text-2" id="text-org1b1f8c7">
+<div id="outline-container-orga908a3d" class="outline-2">
+<h2 id="orga908a3d">汇编语言常量</h2>
+<div class="outline-text-2" id="text-orga908a3d">
 <p>
 <span class="underline">常量</span> （constant）是程序中使用的一个确定数值，在汇编阶段就可以确定，直接编码于指令代码中，不是保存在存储器中可变的变量，因为是编码在指令中的量，和指令一起存储了，所以不用单独开辟主存空间，所以也就没法动态改变它了，这也正是高级语言常量无法修改的原因。
 </p>
 </div>
 
-<div id="outline-container-orge3e9818" class="outline-3">
-<h3 id="orge3e9818">整数常量</h3>
-<div class="outline-text-3" id="text-orge3e9818">
+<div id="outline-container-org332ba41" class="outline-3">
+<h3 id="org332ba41">整数常量</h3>
+<div class="outline-text-3" id="text-org332ba41">
 <p>
 整数常量（integer literal），又称为整型常量（integer constant），由一个可选前置符号、一个或多个数字，以及一个指明其基数的可选基数字符构成：
 </p>
@@ -190,9 +190,9 @@
 </div>
 </div>
 
-<div id="outline-container-org44610aa" class="outline-3">
-<h3 id="org44610aa">整型常量表达式</h3>
-<div class="outline-text-3" id="text-org44610aa">
+<div id="outline-container-orgad56009" class="outline-3">
+<h3 id="orgad56009">整型常量表达式</h3>
+<div class="outline-text-3" id="text-orgad56009">
 <p>
 整型常量表达式（constant integer expression）是一种算术表达式，它包含了整数常量和算术运算符。每个结果必须是一个整数，并可用 32 位（从 <code>0</code> 到 <code>FFFFFFh</code> ）来存放。
 </p>
@@ -260,7 +260,7 @@
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-12 Sat 17:24</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:42</p>
+<p class="date">Created: 2021-05-18 Tue 15:52</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

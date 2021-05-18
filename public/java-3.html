@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:43 -->
+<!-- 2021-05-18 Tue 15:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Java 流程控制语句</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,10 +18,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgada76c1">语句</a></li>
-<li><a href="#orgc06e1b1">选择结构</a></li>
-<li><a href="#org6e38ff4">循环结构</a></li>
-<li><a href="#orgd3093de">return、break、continue 语句</a></li>
+<li><a href="#org2346f31">语句</a></li>
+<li><a href="#org071cc83">选择结构</a></li>
+<li><a href="#orgea4a02e">循环结构</a></li>
+<li><a href="#org6054661">return、break、continue 语句</a></li>
 </ul>
 </div>
 </div>
@@ -33,9 +33,9 @@
 若是在程序中没有给出特别的执行目标，系统则默认自上而下一行一行地执行程序，这类程序的结构就称为 <span class="underline">顺序结构</span> 。
 </p>
 
-<div id="outline-container-orgada76c1" class="outline-2">
-<h2 id="orgada76c1">语句</h2>
-<div class="outline-text-2" id="text-orgada76c1">
+<div id="outline-container-org2346f31" class="outline-2">
+<h2 id="org2346f31">语句</h2>
+<div class="outline-text-2" id="text-org2346f31">
 <p>
 按照语句的组成部分，可以将顺序结构中语句分为 3 大类：表达式语句、空语句和复合语句。
 </p>
@@ -53,7 +53,7 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span>;                               <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20854;&#23454;&#23601;&#26159;&#19968;&#20010;&#20998;&#21495;</span>
+<pre class="src src-java"><span class="linenr">1: </span>;                               <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20854;&#23454;&#23601;&#26159;&#19968;&#20010;&#20998;&#21495;</span>
 </pre>
 </div>
 
@@ -66,8 +66,8 @@
 </p>
 <div class="org-src-container">
 <pre class="src src-java"><span class="linenr">1: </span>3.1415926;
-<span class="linenr">2: </span><span style="color: #4078f2;">(</span>a+b<span style="color: #4078f2;">)</span>/2;
-<span class="linenr">3: </span>x*y*z-y+<span style="color: #4078f2;">(</span>20-x<span style="color: #4078f2;">)</span>;
+<span class="linenr">2: </span><span style="color: #707183;">(</span>a+b<span style="color: #707183;">)</span>/2;
+<span class="linenr">3: </span>x*y*z-y+<span style="color: #707183;">(</span>20-x<span style="color: #707183;">)</span>;
 </pre>
 </div>
 
@@ -81,10 +81,10 @@
 
 <div class="org-src-container">
 <pre class="src src-java"><span class="linenr">1: </span>pi = 3.1415926;
-<span class="linenr">2: </span>output<span style="color: #4078f2;">(</span>pi<span style="color: #4078f2;">)</span>;                      <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23558;pi&#30340;&#20540;&#20256;&#36882;&#21040;output()&#20989;&#25968;&#20013;&#20316;&#20026;&#21442;&#25968;</span>
-<span class="linenr">3: </span>sum = <span style="color: #4078f2;">(</span>a + b<span style="color: #4078f2;">)</span> / 2;
-<span class="linenr">4: </span>printf<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"%f"</span>, sum<span style="color: #4078f2;">)</span>;               <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23558;sum&#30340;&#20540;&#20256;&#36882;&#21040;printf()&#20989;&#25968;&#36755;&#20986;</span>
-<span class="linenr">5: </span>temp = x * y * z - y + <span style="color: #4078f2;">(</span>20 - x<span style="color: #4078f2;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23558;&#34920;&#36798;&#24335;&#30340;&#20540;&#20445;&#23384;&#21040;temp&#21464;&#37327;&#20013;</span>
+<span class="linenr">2: </span>output<span style="color: #707183;">(</span>pi<span style="color: #707183;">)</span>;                      <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23558;pi&#30340;&#20540;&#20256;&#36882;&#21040;output()&#20989;&#25968;&#20013;&#20316;&#20026;&#21442;&#25968;</span>
+<span class="linenr">3: </span>sum = <span style="color: #707183;">(</span>a + b<span style="color: #707183;">)</span> / 2;
+<span class="linenr">4: </span>printf<span style="color: #707183;">(</span><span style="color: #50a14f;">"%f"</span>, sum<span style="color: #707183;">)</span>;               <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23558;sum&#30340;&#20540;&#20256;&#36882;&#21040;printf()&#20989;&#25968;&#36755;&#20986;</span>
+<span class="linenr">5: </span>temp = x * y * z - y + <span style="color: #707183;">(</span>20 - x<span style="color: #707183;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23558;&#34920;&#36798;&#24335;&#30340;&#20540;&#20445;&#23384;&#21040;temp&#21464;&#37327;&#20013;</span>
 </pre>
 </div>
 
@@ -108,9 +108,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgc06e1b1" class="outline-2">
-<h2 id="orgc06e1b1">选择结构</h2>
-<div class="outline-text-2" id="text-orgc06e1b1">
+<div id="outline-container-org071cc83" class="outline-2">
+<h2 id="org071cc83">选择结构</h2>
+<div class="outline-text-2" id="text-org071cc83">
 <p>
 i.e. 分支结构
 </p>
@@ -210,9 +210,9 @@ switch(表达式) {
 </div>
 </div>
 
-<div id="outline-container-org6e38ff4" class="outline-2">
-<h2 id="org6e38ff4">循环结构</h2>
-<div class="outline-text-2" id="text-org6e38ff4">
+<div id="outline-container-orgea4a02e" class="outline-2">
+<h2 id="orgea4a02e">循环结构</h2>
+<div class="outline-text-2" id="text-orgea4a02e">
 <p>
 循环是程序中的重要流程结构之一，所有流行的编程语言中都有循环语句。
 </p>
@@ -345,13 +345,13 @@ for(类型 变量名:集合) {
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22768;&#26126;&#24182;&#21021;&#22987;&#21270; int &#25968;&#32452;</span>
-<span class="linenr">2: </span><span style="color: #986801;">int</span><span style="color: #4078f2;">[]</span> <span style="color: #6a1868;">numbers</span> = <span style="color: #4078f2;">{</span> 43, 32, 53, 54, 75, 7, 10 <span style="color: #4078f2;">}</span>;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22768;&#26126;&#24182;&#21021;&#22987;&#21270; int &#25968;&#32452;</span>
+<span class="linenr">2: </span><span style="color: #c18401;">int</span><span style="color: #707183;">[]</span> <span style="color: #8b4513;">numbers</span> = <span style="color: #707183;">{</span> 43, 32, 53, 54, 75, 7, 10 <span style="color: #707183;">}</span>;
 <span class="linenr">3: </span>
-<span class="linenr">4: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">for-each &#35821;&#21477;</span>
-<span class="linenr">5: </span><span style="color: #e45649;">for</span> <span style="color: #4078f2;">(</span><span style="color: #986801;">int</span> <span style="color: #6a1868;">item</span> : numbers<span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">6: </span>    System.out.println<span style="color: #a626a4;">(</span><span style="color: #50a14f;">"Count is:"</span> + item<span style="color: #a626a4;">)</span>;
-<span class="linenr">7: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">4: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">for-each &#35821;&#21477;</span>
+<span class="linenr">5: </span><span style="color: #a626a4;">for</span> <span style="color: #707183;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">item</span> : numbers<span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr">6: </span>    System.out.println<span style="color: #7388d6;">(</span><span style="color: #50a14f;">"Count is:"</span> + item<span style="color: #7388d6;">)</span>;
+<span class="linenr">7: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -377,9 +377,9 @@ foreach 循环和普通循环不同的是，它无须循环条件，无须循环
 </div>
 </div>
 
-<div id="outline-container-orgd3093de" class="outline-2">
-<h2 id="orgd3093de">return、break、continue 语句</h2>
-<div class="outline-text-2" id="text-orgd3093de">
+<div id="outline-container-org6054661" class="outline-2">
+<h2 id="org6054661">return、break、continue 语句</h2>
+<div class="outline-text-2" id="text-org6054661">
 <p>
 <span class="underline">1. return 语句</span>
 </p>
@@ -448,7 +448,7 @@ continue 语句是跳过循环体中剩余的语句而强制执行下一次循�
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-16 Wed 17:23</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:43</p>
+<p class="date">Created: 2021-05-18 Tue 15:53</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

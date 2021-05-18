@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-03-18 Thu 14:18 -->
+<!-- 2021-05-18 Tue 15:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Vue Inbox</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,52 +18,52 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga11b067">Vue Inbox</a>
+<li><a href="#org9956026">Vue Inbox</a>
 <ul>
-<li><a href="#org1adcc04">声明式渲染</a></li>
-<li><a href="#orgcaeed6b">处理用户输入</a></li>
-<li><a href="#org355f651">组件化应用构建</a></li>
-<li><a href="#orga943d32">Vue 实例</a></li>
-<li><a href="#org70ad77f">模板语法</a></li>
-<li><a href="#orga8d0063">计算属性</a></li>
-<li><a href="#org1e6f55c">绑定 HTML Class</a></li>
-<li><a href="#org75b509c">绑定内联样式</a></li>
-<li><a href="#org42bc803">条件渲染和列表渲染</a></li>
-<li><a href="#org5ec4c00">事件处理</a></li>
-<li><a href="#orga352bf7">表单输入绑定</a></li>
-<li><a href="#org10cfeb2">组件基础</a></li>
+<li><a href="#orgb44872a">声明式渲染</a></li>
+<li><a href="#org54fa861">处理用户输入</a></li>
+<li><a href="#orgb59e7a6">组件化应用构建</a></li>
+<li><a href="#org0a5008c">Vue 实例</a></li>
+<li><a href="#org3cc4975">模板语法</a></li>
+<li><a href="#org3df1012">计算属性</a></li>
+<li><a href="#org7c13b82">绑定 HTML Class</a></li>
+<li><a href="#orga6ae260">绑定内联样式</a></li>
+<li><a href="#orgef6363c">条件渲染和列表渲染</a></li>
+<li><a href="#orgb24b2ea">事件处理</a></li>
+<li><a href="#orgefe17de">表单输入绑定</a></li>
+<li><a href="#orga62821e">组件基础</a></li>
 </ul>
 </li>
-<li><a href="#orgcd455de">深入了解组件</a>
+<li><a href="#org2f17980">深入了解组件</a>
 <ul>
-<li><a href="#orga75d83f">组件注册</a></li>
-<li><a href="#org4458abf">Prop</a></li>
-<li><a href="#orgb953da1"><span class="todo TODO">TODO</span> 自定义事件</a></li>
-<li><a href="#org100a610"><span class="todo TODO">TODO</span> 插槽</a></li>
-<li><a href="#orgeba775c">动态组件 &amp; 异步组件</a></li>
+<li><a href="#org1e17200">组件注册</a></li>
+<li><a href="#org3d5f1fb">Prop</a></li>
+<li><a href="#orgfeecaf2"><span class="todo TODO">TODO</span> 自定义事件</a></li>
+<li><a href="#orga230a9c"><span class="todo TODO">TODO</span> 插槽</a></li>
+<li><a href="#orgf0a7473">动态组件 &amp; 异步组件</a></li>
 </ul>
 </li>
-<li><a href="#orgf078c6c">处理边界情况</a>
+<li><a href="#org4a3d481">处理边界情况</a>
 <ul>
-<li><a href="#org1275bb8">访问元素 &amp; 组件</a></li>
+<li><a href="#org6f879b7">访问元素 &amp; 组件</a></li>
 </ul>
 </li>
-<li><a href="#org8830e86">可复用性 &amp; 组合</a>
+<li><a href="#org3c88cff">可复用性 &amp; 组合</a>
 <ul>
-<li><a href="#org1c74617">混入</a></li>
+<li><a href="#org8da7fa5">混入</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orga11b067" class="outline-2">
-<h2 id="orga11b067">Vue Inbox</h2>
-<div class="outline-text-2" id="text-orga11b067">
+<div id="outline-container-org9956026" class="outline-2">
+<h2 id="org9956026">Vue Inbox</h2>
+<div class="outline-text-2" id="text-org9956026">
 </div>
-<div id="outline-container-org1adcc04" class="outline-3">
-<h3 id="org1adcc04">声明式渲染</h3>
-<div class="outline-text-3" id="text-org1adcc04">
+<div id="outline-container-orgb44872a" class="outline-3">
+<h3 id="orgb44872a">声明式渲染</h3>
+<div class="outline-text-3" id="text-orgb44872a">
 <p>
 Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数据渲染进 DOM 的系统。
 </p>
@@ -78,9 +78,9 @@ Vue.js 的核心是一个允许采用简洁的模板语法来声明式地将数�
 </div>
 </div>
 
-<div id="outline-container-orgcaeed6b" class="outline-3">
-<h3 id="orgcaeed6b">处理用户输入</h3>
-<div class="outline-text-3" id="text-orgcaeed6b">
+<div id="outline-container-org54fa861" class="outline-3">
+<h3 id="org54fa861">处理用户输入</h3>
+<div class="outline-text-3" id="text-org54fa861">
 <p>
 为了让用户和你的应用进行交互，我们可以用 <code>v-on</code> 指令添加一个事件监听器，通过它调用在 Vue 实例中定义的方法。
 </p>
@@ -91,9 +91,9 @@ Vue 还提供了 <code>v-model</code> 指令，它能轻松实现表单输入和
 </div>
 </div>
 
-<div id="outline-container-org355f651" class="outline-3">
-<h3 id="org355f651">组件化应用构建</h3>
-<div class="outline-text-3" id="text-org355f651">
+<div id="outline-container-orgb59e7a6" class="outline-3">
+<h3 id="orgb59e7a6">组件化应用构建</h3>
+<div class="outline-text-3" id="text-orgb59e7a6">
 <p>
 组件系统是 Vue 的另一个重要概念，因为它是一种抽象，允许我们使用小型、独立和通常可复用的组件构建大型应用。
 </p>
@@ -104,9 +104,9 @@ Vue 还提供了 <code>v-model</code> 指令，它能轻松实现表单输入和
 </div>
 </div>
 
-<div id="outline-container-orga943d32" class="outline-3">
-<h3 id="orga943d32">Vue 实例</h3>
-<div class="outline-text-3" id="text-orga943d32">
+<div id="outline-container-org0a5008c" class="outline-3">
+<h3 id="org0a5008c">Vue 实例</h3>
+<div class="outline-text-3" id="text-org0a5008c">
 <p>
 <b>创建一个 Vue 实例</b>
 </p>
@@ -142,9 +142,9 @@ Vue 还提供了 <code>v-model</code> 指令，它能轻松实现表单输入和
 </div>
 </div>
 
-<div id="outline-container-org70ad77f" class="outline-3">
-<h3 id="org70ad77f">模板语法</h3>
-<div class="outline-text-3" id="text-org70ad77f">
+<div id="outline-container-org3cc4975" class="outline-3">
+<h3 id="org3cc4975">模板语法</h3>
+<div class="outline-text-3" id="text-org3cc4975">
 <p>
 在底层的实现上，Vue 将模板编译成虚拟 DOM 渲染函数。
 </p>
@@ -178,8 +178,8 @@ Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">href</span>=<span style="color: #50a14f;">"url"</span>&gt;...&lt;/<span style="color: #a626a4;">a</span>&gt;
-<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"doSomething"</span>&gt;...&lt;/<span style="color: #a626a4;">a</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">a</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">href</span>=<span style="color: #50a14f;">"url"</span>&gt;...&lt;/<span style="color: #0184bc;">a</span>&gt;
+<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">a</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click</span>=<span style="color: #50a14f;">"doSomething"</span>&gt;...&lt;/<span style="color: #0184bc;">a</span>&gt;
 </pre>
 </div>
 
@@ -188,8 +188,8 @@ Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#65288;&#21160;&#24577;&#21442;&#25968;&#65289; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">a</span> v-bind:[attributeName]=<span style="color: #50a14f;">"url"</span>&gt; ... &lt;/<span style="color: #a626a4;">a</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#65288;&#21160;&#24577;&#21442;&#25968;&#65289; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">a</span> v-bind:[attributeName]=<span style="color: #50a14f;">"url"</span>&gt; ... &lt;/<span style="color: #0184bc;">a</span>&gt;
 </pre>
 </div>
 
@@ -203,9 +203,9 @@ Mustache 语法不能作用在 HTML attribute 上，遇到这种情况应该使�
 </div>
 </div>
 
-<div id="outline-container-orga8d0063" class="outline-3">
-<h3 id="orga8d0063">计算属性</h3>
-<div class="outline-text-3" id="text-orga8d0063">
+<div id="outline-container-org3df1012" class="outline-3">
+<h3 id="org3df1012">计算属性</h3>
+<div class="outline-text-3" id="text-org3df1012">
 <p>
 模板内的表达式非常便利，但是设计它们的初衷是用于简单运算的。在模板中放入太多的逻辑会让模板过重且难以维护。
 </p>
@@ -252,9 +252,9 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 </div>
 </div>
 
-<div id="outline-container-org1e6f55c" class="outline-3">
-<h3 id="org1e6f55c">绑定 HTML Class</h3>
-<div class="outline-text-3" id="text-org1e6f55c">
+<div id="outline-container-org7c13b82" class="outline-3">
+<h3 id="org7c13b82">绑定 HTML Class</h3>
+<div class="outline-text-3" id="text-org7c13b82">
 <p>
 在将 v-bind 用于 class 和 style 时，Vue.js 做了专门的增强。表达式结果的类型除了字符串之外，还可以是对象或数组。
 </p>
@@ -272,13 +272,13 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"{ active: isActive }"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"{ active: isActive }"</span>&gt;&lt;/<span style="color: #0184bc;">div</span>&gt;
 <span class="linenr">2: </span>
-<span class="linenr">3: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21487;&#20197;&#22312;&#23545;&#35937;&#20013;&#20256;&#20837;&#26356;&#22810;&#23383;&#27573;&#26469;&#21160;&#24577;&#20999;&#25442;&#22810;&#20010; class </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">4: </span>&lt;<span style="color: #a626a4;">div</span>
-<span class="linenr">5: </span>  <span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"static"</span>
-<span class="linenr">6: </span>  <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"{ active: isActive, 'text-danger': hasError }"</span>
-<span class="linenr">7: </span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+<span class="linenr">3: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#21487;&#20197;&#22312;&#23545;&#35937;&#20013;&#20256;&#20837;&#26356;&#22810;&#23383;&#27573;&#26469;&#21160;&#24577;&#20999;&#25442;&#22810;&#20010; class </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">4: </span>&lt;<span style="color: #0184bc;">div</span>
+<span class="linenr">5: </span>  <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"static"</span>
+<span class="linenr">6: </span>  <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"{ active: isActive, 'text-danger': hasError }"</span>
+<span class="linenr">7: </span>&gt;&lt;/<span style="color: #0184bc;">div</span>&gt;
 </pre>
 </div>
 
@@ -287,14 +287,14 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:class="classObject"&gt;&lt;/div&gt;</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;div v-bind:class="classObject"&gt;&lt;/div&gt;</span>
 <span class="linenr">2: </span>
-<span class="linenr">3: </span>data: <span style="color: #4078f2;">{</span>
-<span class="linenr">4: </span>  classObject: <span style="color: #a626a4;">{</span>
-<span class="linenr">5: </span>    active: <span style="color: #b751b6;">true</span>,
-<span class="linenr">6: </span>    <span style="color: #50a14f;">'text-danger'</span>: <span style="color: #b751b6;">false</span>
-<span class="linenr">7: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">8: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">3: </span>data: <span style="color: #707183;">{</span>
+<span class="linenr">4: </span>  classObject: <span style="color: #7388d6;">{</span>
+<span class="linenr">5: </span>    active: <span style="color: #008b8b;">true</span>,
+<span class="linenr">6: </span>    <span style="color: #50a14f;">'text-danger'</span>: <span style="color: #008b8b;">false</span>
+<span class="linenr">7: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">8: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -303,20 +303,20 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:class="classObject"&gt;&lt;/div&gt;</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;div v-bind:class="classObject"&gt;&lt;/div&gt;</span>
 <span class="linenr"> 2: </span>
-<span class="linenr"> 3: </span>data: <span style="color: #4078f2;">{</span>
-<span class="linenr"> 4: </span>  isActive: <span style="color: #b751b6;">true</span>,
-<span class="linenr"> 5: </span>  error: <span style="color: #b751b6;">null</span>
-<span class="linenr"> 6: </span><span style="color: #4078f2;">}</span>,
-<span class="linenr"> 7: </span>computed: <span style="color: #4078f2;">{</span>
-<span class="linenr"> 8: </span>  <span style="color: #a626a4;">classObject</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 9: </span>    <span style="color: #e45649;">return</span> <span style="color: #50a14f;">{</span>
-<span class="linenr">10: </span>      active: <span style="color: #b751b6;">this</span>.isActive &amp;&amp; !<span style="color: #b751b6;">this</span>.error,
-<span class="linenr">11: </span>      <span style="color: #50a14f;">'text-danger'</span>: <span style="color: #b751b6;">this</span>.error &amp;&amp; <span style="color: #b751b6;">this</span>.error.type === <span style="color: #50a14f;">'fatal'</span>
-<span class="linenr">12: </span>    <span style="color: #50a14f;">}</span>
-<span class="linenr">13: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">14: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 3: </span>data: <span style="color: #707183;">{</span>
+<span class="linenr"> 4: </span>  isActive: <span style="color: #008b8b;">true</span>,
+<span class="linenr"> 5: </span>  error: <span style="color: #008b8b;">null</span>
+<span class="linenr"> 6: </span><span style="color: #707183;">}</span>,
+<span class="linenr"> 7: </span>computed: <span style="color: #707183;">{</span>
+<span class="linenr"> 8: </span>  <span style="color: #0184bc;">classObject</span>: <span style="color: #a626a4;">function</span> <span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 9: </span>    <span style="color: #a626a4;">return</span> <span style="color: #909183;">{</span>
+<span class="linenr">10: </span>      active: <span style="color: #008b8b;">this</span>.isActive &amp;&amp; !<span style="color: #008b8b;">this</span>.error,
+<span class="linenr">11: </span>      <span style="color: #50a14f;">'text-danger'</span>: <span style="color: #008b8b;">this</span>.error &amp;&amp; <span style="color: #008b8b;">this</span>.error.type === <span style="color: #50a14f;">'fatal'</span>
+<span class="linenr">12: </span>    <span style="color: #909183;">}</span>
+<span class="linenr">13: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">14: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -330,12 +330,12 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:class="[activeClass, errorClass]"&gt;&lt;/div&gt;</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;div v-bind:class="[activeClass, errorClass]"&gt;&lt;/div&gt;</span>
 <span class="linenr">2: </span>
-<span class="linenr">3: </span>data: <span style="color: #4078f2;">{</span>
+<span class="linenr">3: </span>data: <span style="color: #707183;">{</span>
 <span class="linenr">4: </span>  activeClass: <span style="color: #50a14f;">'active'</span>,
 <span class="linenr">5: </span>  errorClass: <span style="color: #50a14f;">'text-danger'</span>
-<span class="linenr">6: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">6: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -344,7 +344,7 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"active text-danger"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"active text-danger"</span>&gt;&lt;/<span style="color: #0184bc;">div</span>&gt;
 </pre>
 </div>
 
@@ -353,9 +353,9 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&lt;div v-bind:class="[isActive ? activeClass : '', errorClass]"&gt;&lt;/div&gt; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">2: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#31561;&#20215;&#20110; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">3: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">class</span>=<span style="color: #50a14f;">"[{ active: isActive }, errorClass]"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&lt;div v-bind:class="[isActive ? activeClass : '', errorClass]"&gt;&lt;/div&gt; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#31561;&#20215;&#20110; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">3: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"[{ active: isActive }, errorClass]"</span>&gt;&lt;/<span style="color: #0184bc;">div</span>&gt;
 </pre>
 </div>
 
@@ -370,9 +370,9 @@ Vue 提供了一种更通用的方式来观察和响应 Vue 实例上的数据�
 </div>
 </div>
 
-<div id="outline-container-org75b509c" class="outline-3">
-<h3 id="org75b509c">绑定内联样式</h3>
-<div class="outline-text-3" id="text-org75b509c">
+<div id="outline-container-orga6ae260" class="outline-3">
+<h3 id="orga6ae260">绑定内联样式</h3>
+<div class="outline-text-3" id="text-orga6ae260">
 <p>
 <b>1.对象语法</b>
 </p>
@@ -386,12 +386,12 @@ CSS property 名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"&gt;&lt;/div&gt;</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"&gt;&lt;/div&gt;</span>
 <span class="linenr">2: </span>
-<span class="linenr">3: </span>data: <span style="color: #4078f2;">{</span>
+<span class="linenr">3: </span>data: <span style="color: #707183;">{</span>
 <span class="linenr">4: </span>  activeColor: <span style="color: #50a14f;">'red'</span>,
 <span class="linenr">5: </span>  fontSize: 30
-<span class="linenr">6: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">6: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -400,14 +400,14 @@ CSS property 名可以用驼峰式 (camelCase) 或短横线分隔 (kebab-case，
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;div v-bind:style="styleObject"&gt;&lt;/div&gt;</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;div v-bind:style="styleObject"&gt;&lt;/div&gt;</span>
 <span class="linenr">2: </span>
-<span class="linenr">3: </span>data: <span style="color: #4078f2;">{</span>
-<span class="linenr">4: </span>  styleObject: <span style="color: #a626a4;">{</span>
+<span class="linenr">3: </span>data: <span style="color: #707183;">{</span>
+<span class="linenr">4: </span>  styleObject: <span style="color: #7388d6;">{</span>
 <span class="linenr">5: </span>    color: <span style="color: #50a14f;">'red'</span>,
 <span class="linenr">6: </span>    fontSize: <span style="color: #50a14f;">'13px'</span>
-<span class="linenr">7: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">8: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">7: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">8: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -425,28 +425,28 @@ v-bind:style 的数组语法可以将多个样式对象应用到同一个元素�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"[baseStyles, overridingStyles]"</span>&gt;&lt;/<span style="color: #a626a4;">div</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">style</span>=<span style="color: #50a14f;">"[baseStyles, overridingStyles]"</span>&gt;&lt;/<span style="color: #0184bc;">div</span>&gt;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org42bc803" class="outline-3">
-<h3 id="org42bc803">条件渲染和列表渲染</h3>
-<div class="outline-text-3" id="text-org42bc803">
+<div id="outline-container-orgef6363c" class="outline-3">
+<h3 id="orgef6363c">条件渲染和列表渲染</h3>
+<div class="outline-text-3" id="text-orgef6363c">
 <p>
 Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从头开始渲染。这样也不总是符合实际需求，所以 Vue 为你提供了一种方式来表达“这两个元素是完全独立的，不要复用它们”。只需添加一个具有唯一值的 key attribute 即可。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">template</span> <span style="color: #6a1868;">v-if</span>=<span style="color: #50a14f;">"loginType === 'username'"</span>&gt;
-<span class="linenr">2: </span>  &lt;<span style="color: #a626a4;">label</span>&gt;Username&lt;/<span style="color: #a626a4;">label</span>&gt;
-<span class="linenr">3: </span>  &lt;<span style="color: #a626a4;">input</span> <span style="color: #6a1868;">placeholder</span>=<span style="color: #50a14f;">"Enter your username"</span> <span style="color: #6a1868;">key</span>=<span style="color: #50a14f;">"username-input"</span>&gt;
-<span class="linenr">4: </span>&lt;/<span style="color: #a626a4;">template</span>&gt;
-<span class="linenr">5: </span>&lt;<span style="color: #a626a4;">template</span> v-else&gt;
-<span class="linenr">6: </span>  &lt;<span style="color: #a626a4;">label</span>&gt;Email&lt;/<span style="color: #a626a4;">label</span>&gt;
-<span class="linenr">7: </span>  &lt;<span style="color: #a626a4;">input</span> <span style="color: #6a1868;">placeholder</span>=<span style="color: #50a14f;">"Enter your email address"</span> <span style="color: #6a1868;">key</span>=<span style="color: #50a14f;">"email-input"</span>&gt;
-<span class="linenr">8: </span>&lt;/<span style="color: #a626a4;">template</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">template</span> <span style="color: #8b4513;">v-if</span>=<span style="color: #50a14f;">"loginType === 'username'"</span>&gt;
+<span class="linenr">2: </span>  &lt;<span style="color: #0184bc;">label</span>&gt;Username&lt;/<span style="color: #0184bc;">label</span>&gt;
+<span class="linenr">3: </span>  &lt;<span style="color: #0184bc;">input</span> <span style="color: #8b4513;">placeholder</span>=<span style="color: #50a14f;">"Enter your username"</span> <span style="color: #8b4513;">key</span>=<span style="color: #50a14f;">"username-input"</span>&gt;
+<span class="linenr">4: </span>&lt;/<span style="color: #0184bc;">template</span>&gt;
+<span class="linenr">5: </span>&lt;<span style="color: #0184bc;">template</span> v-else&gt;
+<span class="linenr">6: </span>  &lt;<span style="color: #0184bc;">label</span>&gt;Email&lt;/<span style="color: #0184bc;">label</span>&gt;
+<span class="linenr">7: </span>  &lt;<span style="color: #0184bc;">input</span> <span style="color: #8b4513;">placeholder</span>=<span style="color: #50a14f;">"Enter your email address"</span> <span style="color: #8b4513;">key</span>=<span style="color: #50a14f;">"email-input"</span>&gt;
+<span class="linenr">8: </span>&lt;/<span style="color: #0184bc;">template</span>&gt;
 </pre>
 </div>
 
@@ -463,9 +463,9 @@ Vue 会尽可能高效地渲染元素，通常会复用已有元素而不是从�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">v-for</span>=<span style="color: #50a14f;">"item in items"</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">key</span>=<span style="color: #50a14f;">"item.id"</span>&gt;
-<span class="linenr">2: </span>  <span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#20869;&#23481; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">div</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">v-for</span>=<span style="color: #50a14f;">"item in items"</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">key</span>=<span style="color: #50a14f;">"item.id"</span>&gt;
+<span class="linenr">2: </span>  <span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#20869;&#23481; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">3: </span>&lt;/<span style="color: #0184bc;">div</span>&gt;
 </pre>
 </div>
 
@@ -501,9 +501,9 @@ Vue 将被侦听的数组的变更方法进行了包裹，所以它们也将会�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>example1.items = example1.items.filter<span style="color: #4078f2;">(</span><span style="color: #e45649;">function</span> <span style="color: #a626a4;">(</span><span style="color: #6a1868;">item</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">2: </span>    <span style="color: #e45649;">return</span> item.message.match<span style="color: #50a14f;">(</span><span style="color: #50a14f;">/Foo/</span><span style="color: #50a14f;">)</span>
-<span class="linenr">3: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<pre class="src src-js"><span class="linenr">1: </span>example1.items = example1.items.filter<span style="color: #707183;">(</span><span style="color: #a626a4;">function</span> <span style="color: #7388d6;">(</span><span style="color: #8b4513;">item</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a626a4;">return</span> item.message.match<span style="color: #909183;">(</span><span style="color: #50a14f;">/Foo/</span><span style="color: #909183;">)</span>
+<span class="linenr">3: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -525,20 +525,20 @@ Vue 将被侦听的数组的变更方法进行了包裹，所以它们也将会�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;ul v-for="set in sets"&gt;</span>
-<span class="linenr"> 2: </span><span style="color: #9ca0a4;">//  </span><span style="color: #9ca0a4;">&lt;li v-for="n in even(set)"&gt;{{ n }}&lt;/li&gt;</span>
-<span class="linenr"> 3: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;/ul&gt;</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;ul v-for="set in sets"&gt;</span>
+<span class="linenr"> 2: </span><span style="color: #a0a1a7; font-weight: bold;">//  </span><span style="color: #a0a1a7;">&lt;li v-for="n in even(set)"&gt;{{ n }}&lt;/li&gt;</span>
+<span class="linenr"> 3: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;/ul&gt;</span>
 <span class="linenr"> 4: </span>
-<span class="linenr"> 5: </span>data: <span style="color: #4078f2;">{</span>
-<span class="linenr"> 6: </span>  sets: <span style="color: #a626a4;">[</span><span style="color: #50a14f;">[</span> 1, 2, 3, 4, 5 <span style="color: #50a14f;">]</span>, <span style="color: #50a14f;">[</span>6, 7, 8, 9, 10<span style="color: #50a14f;">]</span><span style="color: #a626a4;">]</span>
-<span class="linenr"> 7: </span><span style="color: #4078f2;">}</span>,
-<span class="linenr"> 8: </span>methods: <span style="color: #4078f2;">{</span>
-<span class="linenr"> 9: </span>  <span style="color: #a626a4;">even</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">(</span><span style="color: #6a1868;">numbers</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">10: </span>    <span style="color: #e45649;">return</span> numbers.filter<span style="color: #50a14f;">(</span><span style="color: #e45649;">function</span> <span style="color: #da8548;">(</span><span style="color: #6a1868;">number</span><span style="color: #da8548;">)</span> <span style="color: #da8548;">{</span>
-<span class="linenr">11: </span>      <span style="color: #e45649;">return</span> number % 2 === 0
-<span class="linenr">12: </span>    <span style="color: #da8548;">}</span><span style="color: #50a14f;">)</span>
-<span class="linenr">13: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">14: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 5: </span>data: <span style="color: #707183;">{</span>
+<span class="linenr"> 6: </span>  sets: <span style="color: #7388d6;">[</span><span style="color: #909183;">[</span> 1, 2, 3, 4, 5 <span style="color: #909183;">]</span>, <span style="color: #909183;">[</span>6, 7, 8, 9, 10<span style="color: #909183;">]</span><span style="color: #7388d6;">]</span>
+<span class="linenr"> 7: </span><span style="color: #707183;">}</span>,
+<span class="linenr"> 8: </span>methods: <span style="color: #707183;">{</span>
+<span class="linenr"> 9: </span>  <span style="color: #0184bc;">even</span>: <span style="color: #a626a4;">function</span> <span style="color: #7388d6;">(</span><span style="color: #8b4513;">numbers</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">10: </span>    <span style="color: #a626a4;">return</span> numbers.filter<span style="color: #909183;">(</span><span style="color: #a626a4;">function</span> <span style="color: #709870;">(</span><span style="color: #8b4513;">number</span><span style="color: #709870;">)</span> <span style="color: #709870;">{</span>
+<span class="linenr">11: </span>      <span style="color: #a626a4;">return</span> number % 2 === 0
+<span class="linenr">12: </span>    <span style="color: #709870;">}</span><span style="color: #909183;">)</span>
+<span class="linenr">13: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">14: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -576,9 +576,9 @@ v-for 也可以接受整数。在这种情况下，它会把模板重复对应�
 </div>
 </div>
 
-<div id="outline-container-org5ec4c00" class="outline-3">
-<h3 id="org5ec4c00">事件处理</h3>
-<div class="outline-text-3" id="text-org5ec4c00">
+<div id="outline-container-orgb24b2ea" class="outline-3">
+<h3 id="orgb24b2ea">事件处理</h3>
+<div class="outline-text-3" id="text-orgb24b2ea">
 <p>
 可以用 v-on 指令监听 DOM 事件，并在触发时运行一些 JavaScript 代码。
 </p>
@@ -592,12 +592,12 @@ v-for 也可以接受整数。在这种情况下，它会把模板重复对应�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span> &lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"counter += 1"</span>&gt;Add 1&lt;/<span style="color: #a626a4;">button</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span> &lt;<span style="color: #0184bc;">button</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click</span>=<span style="color: #50a14f;">"counter += 1"</span>&gt;Add 1&lt;/<span style="color: #0184bc;">button</span>&gt;
 <span class="linenr">2: </span>
-<span class="linenr">3: </span> <span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">`greet` &#26159;&#22312;&#19979;&#38754;&#23450;&#20041;&#30340;&#26041;&#27861;&#21517; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">4: </span> &lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"greet"</span>&gt;Greet&lt;/<span style="color: #a626a4;">button</span>&gt;
+<span class="linenr">3: </span> <span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">`greet` &#26159;&#22312;&#19979;&#38754;&#23450;&#20041;&#30340;&#26041;&#27861;&#21517; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">4: </span> &lt;<span style="color: #0184bc;">button</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click</span>=<span style="color: #50a14f;">"greet"</span>&gt;Greet&lt;/<span style="color: #0184bc;">button</span>&gt;
 <span class="linenr">5: </span>
-<span class="linenr">6: </span>&lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"say('hi')"</span>&gt;Say hi&lt;/<span style="color: #a626a4;">button</span>&gt;
+<span class="linenr">6: </span>&lt;<span style="color: #0184bc;">button</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click</span>=<span style="color: #50a14f;">"say('hi')"</span>&gt;Say hi&lt;/<span style="color: #0184bc;">button</span>&gt;
 </pre>
 </div>
 
@@ -606,18 +606,18 @@ v-for 也可以接受整数。在这种情况下，它会把模板重复对应�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;button v-on:click="warn('Form cannot be submitted yet.', $event)"&gt;Submit&lt;/button&gt;</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;button v-on:click="warn('Form cannot be submitted yet.', $event)"&gt;Submit&lt;/button&gt;</span>
 <span class="linenr"> 2: </span>
-<span class="linenr"> 3: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">...</span>
-<span class="linenr"> 4: </span>methods: <span style="color: #4078f2;">{</span>
-<span class="linenr"> 5: </span>  <span style="color: #a626a4;">warn</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">(</span><span style="color: #6a1868;">message</span>, <span style="color: #6a1868;">event</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 6: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#29616;&#22312;&#25105;&#20204;&#21487;&#20197;&#35775;&#38382;&#21407;&#29983;&#20107;&#20214;&#23545;&#35937;</span>
-<span class="linenr"> 7: </span>    <span style="color: #e45649;">if</span> <span style="color: #50a14f;">(</span>event<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 8: </span>      event.preventDefault<span style="color: #da8548;">()</span>
-<span class="linenr"> 9: </span>    <span style="color: #50a14f;">}</span>
-<span class="linenr">10: </span>    alert<span style="color: #50a14f;">(</span>message<span style="color: #50a14f;">)</span>
-<span class="linenr">11: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">12: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 3: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">...</span>
+<span class="linenr"> 4: </span>methods: <span style="color: #707183;">{</span>
+<span class="linenr"> 5: </span>  <span style="color: #0184bc;">warn</span>: <span style="color: #a626a4;">function</span> <span style="color: #7388d6;">(</span><span style="color: #8b4513;">message</span>, <span style="color: #8b4513;">event</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 6: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#29616;&#22312;&#25105;&#20204;&#21487;&#20197;&#35775;&#38382;&#21407;&#29983;&#20107;&#20214;&#23545;&#35937;</span>
+<span class="linenr"> 7: </span>    <span style="color: #a626a4;">if</span> <span style="color: #909183;">(</span>event<span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 8: </span>      event.preventDefault<span style="color: #709870;">()</span>
+<span class="linenr"> 9: </span>    <span style="color: #909183;">}</span>
+<span class="linenr">10: </span>    alert<span style="color: #909183;">(</span>message<span style="color: #909183;">)</span>
+<span class="linenr">11: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">12: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -648,34 +648,34 @@ v-for 也可以接受整数。在这种情况下，它会把模板重复对应�
 </pre>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#38459;&#27490;&#21333;&#20987;&#20107;&#20214;&#32487;&#32493;&#20256;&#25773; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr"> 2: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.stop</span>=<span style="color: #50a14f;">"doThis"</span>&gt;&lt;/<span style="color: #a626a4;">a</span>&gt;
+<pre class="src src-html"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#38459;&#27490;&#21333;&#20987;&#20107;&#20214;&#32487;&#32493;&#20256;&#25773; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr"> 2: </span>&lt;<span style="color: #0184bc;">a</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click.stop</span>=<span style="color: #50a14f;">"doThis"</span>&gt;&lt;/<span style="color: #0184bc;">a</span>&gt;
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#25552;&#20132;&#20107;&#20214;&#19981;&#20877;&#37325;&#36733;&#39029;&#38754; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr"> 5: </span>&lt;<span style="color: #a626a4;">form</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">submit.prevent</span>=<span style="color: #50a14f;">"onSubmit"</span>&gt;&lt;/<span style="color: #a626a4;">form</span>&gt;
+<span class="linenr"> 4: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#25552;&#20132;&#20107;&#20214;&#19981;&#20877;&#37325;&#36733;&#39029;&#38754; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr"> 5: </span>&lt;<span style="color: #0184bc;">form</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">submit.prevent</span>=<span style="color: #50a14f;">"onSubmit"</span>&gt;&lt;/<span style="color: #0184bc;">form</span>&gt;
 <span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#20462;&#39280;&#31526;&#21487;&#20197;&#20018;&#32852; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr"> 8: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.stop.prevent</span>=<span style="color: #50a14f;">"doThat"</span>&gt;&lt;/<span style="color: #a626a4;">a</span>&gt;
+<span class="linenr"> 7: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#20462;&#39280;&#31526;&#21487;&#20197;&#20018;&#32852; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr"> 8: </span>&lt;<span style="color: #0184bc;">a</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click.stop.prevent</span>=<span style="color: #50a14f;">"doThat"</span>&gt;&lt;/<span style="color: #0184bc;">a</span>&gt;
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21482;&#26377;&#20462;&#39280;&#31526; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">11: </span>&lt;<span style="color: #a626a4;">form</span> v-on:submit.prevent&gt;&lt;/<span style="color: #a626a4;">form</span>&gt;
+<span class="linenr">10: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#21482;&#26377;&#20462;&#39280;&#31526; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">11: </span>&lt;<span style="color: #0184bc;">form</span> v-on:submit.prevent&gt;&lt;/<span style="color: #0184bc;">form</span>&gt;
 <span class="linenr">12: </span>
-<span class="linenr">13: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#28155;&#21152;&#20107;&#20214;&#30417;&#21548;&#22120;&#26102;&#20351;&#29992;&#20107;&#20214;&#25429;&#33719;&#27169;&#24335; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">14: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21363;&#20869;&#37096;&#20803;&#32032;&#35302;&#21457;&#30340;&#20107;&#20214;&#20808;&#22312;&#27492;&#22788;&#29702;&#65292;&#28982;&#21518;&#25165;&#20132;&#30001;&#20869;&#37096;&#20803;&#32032;&#36827;&#34892;&#22788;&#29702; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">15: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.capture</span>=<span style="color: #50a14f;">"doThis"</span>&gt;...&lt;/<span style="color: #a626a4;">div</span>&gt;
+<span class="linenr">13: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#28155;&#21152;&#20107;&#20214;&#30417;&#21548;&#22120;&#26102;&#20351;&#29992;&#20107;&#20214;&#25429;&#33719;&#27169;&#24335; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">14: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#21363;&#20869;&#37096;&#20803;&#32032;&#35302;&#21457;&#30340;&#20107;&#20214;&#20808;&#22312;&#27492;&#22788;&#29702;&#65292;&#28982;&#21518;&#25165;&#20132;&#30001;&#20869;&#37096;&#20803;&#32032;&#36827;&#34892;&#22788;&#29702; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">15: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click.capture</span>=<span style="color: #50a14f;">"doThis"</span>&gt;...&lt;/<span style="color: #0184bc;">div</span>&gt;
 <span class="linenr">16: </span>
-<span class="linenr">17: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21482;&#24403;&#22312; event.target &#26159;&#24403;&#21069;&#20803;&#32032;&#33258;&#36523;&#26102;&#35302;&#21457;&#22788;&#29702;&#20989;&#25968; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">18: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#21363;&#20107;&#20214;&#19981;&#26159;&#20174;&#20869;&#37096;&#20803;&#32032;&#35302;&#21457;&#30340; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">19: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.self</span>=<span style="color: #50a14f;">"doThat"</span>&gt;...&lt;/<span style="color: #a626a4;">div</span>&gt;
+<span class="linenr">17: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#21482;&#24403;&#22312; event.target &#26159;&#24403;&#21069;&#20803;&#32032;&#33258;&#36523;&#26102;&#35302;&#21457;&#22788;&#29702;&#20989;&#25968; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">18: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#21363;&#20107;&#20214;&#19981;&#26159;&#20174;&#20869;&#37096;&#20803;&#32032;&#35302;&#21457;&#30340; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">19: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click.self</span>=<span style="color: #50a14f;">"doThat"</span>&gt;...&lt;/<span style="color: #0184bc;">div</span>&gt;
 <span class="linenr">20: </span>
-<span class="linenr">21: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#28857;&#20987;&#20107;&#20214;&#23558;&#21482;&#20250;&#35302;&#21457;&#19968;&#27425; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">22: </span>&lt;<span style="color: #a626a4;">a</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click.once</span>=<span style="color: #50a14f;">"doThis"</span>&gt;&lt;/<span style="color: #a626a4;">a</span>&gt;
+<span class="linenr">21: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#28857;&#20987;&#20107;&#20214;&#23558;&#21482;&#20250;&#35302;&#21457;&#19968;&#27425; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">22: </span>&lt;<span style="color: #0184bc;">a</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click.once</span>=<span style="color: #50a14f;">"doThis"</span>&gt;&lt;/<span style="color: #0184bc;">a</span>&gt;
 <span class="linenr">23: </span>
-<span class="linenr">24: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">Vue &#36824;&#23545;&#24212; addEventListener &#20013;&#30340; passive &#36873;&#39033;&#25552;&#20379;&#20102; .passive &#20462;&#39280;&#31526; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">25: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#28378;&#21160;&#20107;&#20214;&#30340;&#40664;&#35748;&#34892;&#20026; (&#21363;&#28378;&#21160;&#34892;&#20026;) &#23558;&#20250;&#31435;&#21363;&#35302;&#21457; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">26: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#32780;&#19981;&#20250;&#31561;&#24453; `onScroll` &#23436;&#25104;  </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">27: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#36825;&#20854;&#20013;&#21253;&#21547; `event.preventDefault()` &#30340;&#24773;&#20917; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">28: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">scroll.passive</span>=<span style="color: #50a14f;">"onScroll"</span>&gt;...&lt;/<span style="color: #a626a4;">div</span>&gt;
+<span class="linenr">24: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">Vue &#36824;&#23545;&#24212; addEventListener &#20013;&#30340; passive &#36873;&#39033;&#25552;&#20379;&#20102; .passive &#20462;&#39280;&#31526; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">25: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#28378;&#21160;&#20107;&#20214;&#30340;&#40664;&#35748;&#34892;&#20026; (&#21363;&#28378;&#21160;&#34892;&#20026;) &#23558;&#20250;&#31435;&#21363;&#35302;&#21457; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">26: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#32780;&#19981;&#20250;&#31561;&#24453; `onScroll` &#23436;&#25104;  </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">27: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#36825;&#20854;&#20013;&#21253;&#21547; `event.preventDefault()` &#30340;&#24773;&#20917; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">28: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">scroll.passive</span>=<span style="color: #50a14f;">"onScroll"</span>&gt;...&lt;/<span style="color: #0184bc;">div</span>&gt;
 </pre>
 </div>
 
@@ -687,9 +687,9 @@ v-for 也可以接受整数。在这种情况下，它会把模板重复对应�
 </div>
 </div>
 
-<div id="outline-container-orga352bf7" class="outline-3">
-<h3 id="orga352bf7">表单输入绑定</h3>
-<div class="outline-text-3" id="text-orga352bf7">
+<div id="outline-container-orgefe17de" class="outline-3">
+<h3 id="orgefe17de">表单输入绑定</h3>
+<div class="outline-text-3" id="text-orgefe17de">
 <p>
 你可以用 v-model 指令在表单 <code>&lt;input&gt;、&lt;textarea&gt;</code> 及 <code>&lt;select&gt;</code> 元素上创建双向数据绑定。
 </p>
@@ -721,9 +721,9 @@ v-model 在内部为不同的输入元素使用不同的 property 并抛出不�
 </div>
 </div>
 
-<div id="outline-container-org10cfeb2" class="outline-3">
-<h3 id="org10cfeb2">组件基础</h3>
-<div class="outline-text-3" id="text-org10cfeb2">
+<div id="outline-container-orga62821e" class="outline-3">
+<h3 id="orga62821e">组件基础</h3>
+<div class="outline-text-3" id="text-orga62821e">
 <p>
 组件是可复用的 Vue 实例，且带有一个名字，它们与 new Vue 接收相同的选项，例如 <code>data、computed、watch、methods</code> 以及生命周期钩子等。
 </p>
@@ -754,15 +754,15 @@ Prop 是你可以在组件上注册的一些自定义 attribute。当一个值�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20840;&#23616;&#27880;&#20876; `blog-post` &#32452;&#20214;</span>
-<span class="linenr">2: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'blog-post'</span>, <span style="color: #a626a4;">{</span>
-<span class="linenr">3: </span>  props: <span style="color: #50a14f;">[</span><span style="color: #50a14f;">'title'</span><span style="color: #50a14f;">]</span>,
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20840;&#23616;&#27880;&#20876; `blog-post` &#32452;&#20214;</span>
+<span class="linenr">2: </span>Vue.component<span style="color: #707183;">(</span><span style="color: #50a14f;">'blog-post'</span>, <span style="color: #7388d6;">{</span>
+<span class="linenr">3: </span>  props: <span style="color: #909183;">[</span><span style="color: #50a14f;">'title'</span><span style="color: #909183;">]</span>,
 <span class="linenr">4: </span>  template: <span style="color: #50a14f;">'&lt;h3&gt;{{ title }}&lt;/h3&gt;'</span>
-<span class="linenr">5: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">5: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 <span class="linenr">6: </span>
-<span class="linenr">7: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#19968;&#20010; prop &#34987;&#27880;&#20876;&#20043;&#21518;&#65292;&#20320;&#23601;&#21487;&#20197;&#20687;&#36825;&#26679;&#25226;&#25968;&#25454;&#20316;&#20026;&#19968;&#20010;&#33258;&#23450;&#20041; attribute &#20256;&#36882;&#36827;&#26469;</span>
-<span class="linenr">8: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;blog-post title="My journey with Vue"&gt;&lt;/blog-post&gt;</span>
-<span class="linenr">9: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;blog-post title="Blogging with Vue"&gt;&lt;/blog-post&gt;</span>
+<span class="linenr">7: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#19968;&#20010; prop &#34987;&#27880;&#20876;&#20043;&#21518;&#65292;&#20320;&#23601;&#21487;&#20197;&#20687;&#36825;&#26679;&#25226;&#25968;&#25454;&#20316;&#20026;&#19968;&#20010;&#33258;&#23450;&#20041; attribute &#20256;&#36882;&#36827;&#26469;</span>
+<span class="linenr">8: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;blog-post title="My journey with Vue"&gt;&lt;/blog-post&gt;</span>
+<span class="linenr">9: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;blog-post title="Blogging with Vue"&gt;&lt;/blog-post&gt;</span>
 </pre>
 </div>
 
@@ -792,10 +792,10 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">blog-post</span>
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">blog-post</span>
 <span class="linenr">2: </span>  ...
-<span class="linenr">3: </span>  <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">enlarge-text</span>=<span style="color: #50a14f;">"postFontSize += 0.1"</span>
-<span class="linenr">4: </span>&gt;&lt;/<span style="color: #a626a4;">blog-post</span>&gt;
+<span class="linenr">3: </span>  <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">enlarge-text</span>=<span style="color: #50a14f;">"postFontSize += 0.1"</span>
+<span class="linenr">4: </span>&gt;&lt;/<span style="color: #0184bc;">blog-post</span>&gt;
 </pre>
 </div>
 
@@ -804,9 +804,9 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"$emit('enlarge-text')"</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">button</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click</span>=<span style="color: #50a14f;">"$emit('enlarge-text')"</span>&gt;
 <span class="linenr">2: </span>  Enlarge text
-<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">button</span>&gt;
+<span class="linenr">3: </span>&lt;/<span style="color: #0184bc;">button</span>&gt;
 </pre>
 </div>
 
@@ -824,9 +824,9 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">button</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">click</span>=<span style="color: #50a14f;">"$emit('enlarge-text', 0.1)"</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">button</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">click</span>=<span style="color: #50a14f;">"$emit('enlarge-text', 0.1)"</span>&gt;
 <span class="linenr">2: </span>  Enlarge text
-<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">button</span>&gt;
+<span class="linenr">3: </span>&lt;/<span style="color: #0184bc;">button</span>&gt;
 </pre>
 </div>
 
@@ -835,10 +835,10 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">blog-post</span>
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">blog-post</span>
 <span class="linenr">2: </span>  ...
-<span class="linenr">3: </span>  <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">enlarge-text</span>=<span style="color: #50a14f;">"postFontSize += $event"</span>
-<span class="linenr">4: </span>&gt;&lt;/<span style="color: #a626a4;">blog-post</span>&gt;
+<span class="linenr">3: </span>  <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">enlarge-text</span>=<span style="color: #50a14f;">"postFontSize += $event"</span>
+<span class="linenr">4: </span>&gt;&lt;/<span style="color: #0184bc;">blog-post</span>&gt;
 </pre>
 </div>
 
@@ -847,17 +847,17 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;blog-post</span>
-<span class="linenr"> 2: </span><span style="color: #9ca0a4;">//   </span><span style="color: #9ca0a4;">...</span>
-<span class="linenr"> 3: </span><span style="color: #9ca0a4;">//   </span><span style="color: #9ca0a4;">v-on:enlarge-text="onEnlargeText"</span>
-<span class="linenr"> 4: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&gt;&lt;/blog-post&gt;</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;blog-post</span>
+<span class="linenr"> 2: </span><span style="color: #a0a1a7; font-weight: bold;">//   </span><span style="color: #a0a1a7;">...</span>
+<span class="linenr"> 3: </span><span style="color: #a0a1a7; font-weight: bold;">//   </span><span style="color: #a0a1a7;">v-on:enlarge-text="onEnlargeText"</span>
+<span class="linenr"> 4: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&gt;&lt;/blog-post&gt;</span>
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span>methods: <span style="color: #4078f2;">{</span>
-<span class="linenr"> 7: </span>  <span style="color: #a626a4;">onEnlargeText</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">(</span><span style="color: #6a1868;">enlargeAmount</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 8: </span>    <span style="color: #b751b6;">this</span>.postFontSize += enlargeAmount
-<span class="linenr"> 9: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">10: </span><span style="color: #4078f2;">}</span>
-<span class="linenr">11: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">`enlargeAmount` &#23601;&#26159;&#32452;&#20214;&#25243;&#20986;&#26469;&#30340;&#20540;</span>
+<span class="linenr"> 6: </span>methods: <span style="color: #707183;">{</span>
+<span class="linenr"> 7: </span>  <span style="color: #0184bc;">onEnlargeText</span>: <span style="color: #a626a4;">function</span> <span style="color: #7388d6;">(</span><span style="color: #8b4513;">enlargeAmount</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 8: </span>    <span style="color: #008b8b;">this</span>.postFontSize += enlargeAmount
+<span class="linenr"> 9: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">10: </span><span style="color: #707183;">}</span>
+<span class="linenr">11: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">`enlargeAmount` &#23601;&#26159;&#32452;&#20214;&#25243;&#20986;&#26469;&#30340;&#20540;</span>
 </pre>
 </div>
 
@@ -871,9 +871,9 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">alert-box</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">alert-box</span>&gt;
 <span class="linenr">2: </span>  Something bad happened.
-<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">alert-box</span>&gt;
+<span class="linenr">3: </span>&lt;/<span style="color: #0184bc;">alert-box</span>&gt;
 </pre>
 </div>
 
@@ -882,14 +882,14 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'alert-box'</span>, <span style="color: #a626a4;">{</span>
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #707183;">(</span><span style="color: #50a14f;">'alert-box'</span>, <span style="color: #7388d6;">{</span>
 <span class="linenr">2: </span>  template: <span style="color: #50a14f;">`</span>
 <span class="linenr">3: </span><span style="color: #50a14f;">    &lt;div class="demo-alert-box"&gt;</span>
 <span class="linenr">4: </span><span style="color: #50a14f;">      &lt;strong&gt;Error!&lt;/strong&gt;</span>
 <span class="linenr">5: </span><span style="color: #50a14f;">      &lt;slot&gt;&lt;/slot&gt;</span>
 <span class="linenr">6: </span><span style="color: #50a14f;">    &lt;/div&gt;</span>
 <span class="linenr">7: </span><span style="color: #50a14f;">  `</span>
-<span class="linenr">8: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">8: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -903,8 +903,8 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#32452;&#20214;&#20250;&#22312; `currentTabComponent` &#25913;&#21464;&#26102;&#25913;&#21464; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">component</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">is</span>=<span style="color: #50a14f;">"currentTabComponent"</span>&gt;&lt;/<span style="color: #a626a4;">component</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#32452;&#20214;&#20250;&#22312; `currentTabComponent` &#25913;&#21464;&#26102;&#25913;&#21464; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">component</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">is</span>=<span style="color: #50a14f;">"currentTabComponent"</span>&gt;&lt;/<span style="color: #0184bc;">component</span>&gt;
 </pre>
 </div>
 
@@ -921,9 +921,9 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">table</span>&gt;
-<span class="linenr">2: </span>  &lt;<span style="color: #a626a4;">blog-post-row</span>&gt;&lt;/<span style="color: #a626a4;">blog-post-row</span>&gt;
-<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">table</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">table</span>&gt;
+<span class="linenr">2: </span>  &lt;<span style="color: #0184bc;">blog-post-row</span>&gt;&lt;/<span style="color: #0184bc;">blog-post-row</span>&gt;
+<span class="linenr">3: </span>&lt;/<span style="color: #0184bc;">table</span>&gt;
 </pre>
 </div>
 
@@ -932,9 +932,9 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">table</span>&gt;
-<span class="linenr">2: </span>  &lt;<span style="color: #a626a4;">tr</span> <span style="color: #6a1868;">is</span>=<span style="color: #50a14f;">"blog-post-row"</span>&gt;&lt;/<span style="color: #a626a4;">tr</span>&gt;
-<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">table</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">table</span>&gt;
+<span class="linenr">2: </span>  &lt;<span style="color: #0184bc;">tr</span> <span style="color: #8b4513;">is</span>=<span style="color: #50a14f;">"blog-post-row"</span>&gt;&lt;/<span style="color: #0184bc;">tr</span>&gt;
+<span class="linenr">3: </span>&lt;/<span style="color: #0184bc;">table</span>&gt;
 </pre>
 </div>
 
@@ -954,13 +954,13 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </div>
 </div>
 
-<div id="outline-container-orgcd455de" class="outline-2">
-<h2 id="orgcd455de">深入了解组件</h2>
-<div class="outline-text-2" id="text-orgcd455de">
+<div id="outline-container-org2f17980" class="outline-2">
+<h2 id="org2f17980">深入了解组件</h2>
+<div class="outline-text-2" id="text-org2f17980">
 </div>
-<div id="outline-container-orga75d83f" class="outline-3">
-<h3 id="orga75d83f">组件注册</h3>
-<div class="outline-text-3" id="text-orga75d83f">
+<div id="outline-container-org1e17200" class="outline-3">
+<h3 id="org1e17200">组件注册</h3>
+<div class="outline-text-3" id="text-org1e17200">
 <p>
 <b>组件名</b>
 </p>
@@ -1014,9 +1014,9 @@ Vue 实例提供了一个自定义事件的系统来解决这个问题。父级�
 </div>
 </div>
 
-<div id="outline-container-org4458abf" class="outline-3">
-<h3 id="org4458abf">Prop</h3>
-<div class="outline-text-3" id="text-org4458abf">
+<div id="outline-container-org3d5f1fb" class="outline-3">
+<h3 id="org3d5f1fb">Prop</h3>
+<div class="outline-text-3" id="text-org3d5f1fb">
 <p>
 <b>Prop 的大小写 (camelCase vs kebab-case)</b>
 </p>
@@ -1026,14 +1026,14 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'blog-post'</span>, <span style="color: #a626a4;">{</span>
-<span class="linenr">2: </span>  <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22312; JavaScript &#20013;&#26159; camelCase &#30340;</span>
-<span class="linenr">3: </span>  props: <span style="color: #50a14f;">[</span><span style="color: #50a14f;">'postTitle'</span><span style="color: #50a14f;">]</span>,
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #707183;">(</span><span style="color: #50a14f;">'blog-post'</span>, <span style="color: #7388d6;">{</span>
+<span class="linenr">2: </span>  <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22312; JavaScript &#20013;&#26159; camelCase &#30340;</span>
+<span class="linenr">3: </span>  props: <span style="color: #909183;">[</span><span style="color: #50a14f;">'postTitle'</span><span style="color: #909183;">]</span>,
 <span class="linenr">4: </span>  template: <span style="color: #50a14f;">'&lt;h3&gt;{{ postTitle }}&lt;/h3&gt;'</span>
-<span class="linenr">5: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">5: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 <span class="linenr">6: </span>
-<span class="linenr">7: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;!-- &#22312; HTML &#20013;&#26159; kebab-case &#30340; --&gt;</span>
-<span class="linenr">8: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;blog-post post-title="hello!"&gt;&lt;/blog-post&gt;</span>
+<span class="linenr">7: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;!-- &#22312; HTML &#20013;&#26159; kebab-case &#30340; --&gt;</span>
+<span class="linenr">8: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;blog-post post-title="hello!"&gt;&lt;/blog-post&gt;</span>
 </pre>
 </div>
 
@@ -1051,7 +1051,7 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #4078f2;">[</span><span style="color: #50a14f;">'title'</span>, <span style="color: #50a14f;">'likes'</span>, <span style="color: #50a14f;">'isPublished'</span>, <span style="color: #50a14f;">'commentIds'</span>, <span style="color: #50a14f;">'author'</span><span style="color: #4078f2;">]</span>
+<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #707183;">[</span><span style="color: #50a14f;">'title'</span>, <span style="color: #50a14f;">'likes'</span>, <span style="color: #50a14f;">'isPublished'</span>, <span style="color: #50a14f;">'commentIds'</span>, <span style="color: #50a14f;">'author'</span><span style="color: #707183;">]</span>
 </pre>
 </div>
 
@@ -1060,15 +1060,15 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #4078f2;">{</span>
+<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #707183;">{</span>
 <span class="linenr">2: </span>  title: String,
 <span class="linenr">3: </span>  likes: Number,
 <span class="linenr">4: </span>  isPublished: Boolean,
 <span class="linenr">5: </span>  commentIds: Array,
 <span class="linenr">6: </span>  author: Object,
 <span class="linenr">7: </span>  callback: Function,
-<span class="linenr">8: </span>  contactsPromise: Promise <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">or any other constructor</span>
-<span class="linenr">9: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">8: </span>  contactsPromise: Promise <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">or any other constructor</span>
+<span class="linenr">9: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1090,12 +1090,12 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">blog-post</span> <span style="color: #6a1868;">v-bind</span>=<span style="color: #50a14f;">"post"</span>&gt;&lt;/<span style="color: #a626a4;">blog-post</span>&gt;
-<span class="linenr">2: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#31561;&#20215;&#20110; </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">3: </span>&lt;<span style="color: #a626a4;">blog-post</span>
-<span class="linenr">4: </span>  <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">id</span>=<span style="color: #50a14f;">"post.id"</span>
-<span class="linenr">5: </span>  <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">title</span>=<span style="color: #50a14f;">"post.title"</span>
-<span class="linenr">6: </span>&gt;&lt;/<span style="color: #a626a4;">blog-post</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">blog-post</span> <span style="color: #8b4513;">v-bind</span>=<span style="color: #50a14f;">"post"</span>&gt;&lt;/<span style="color: #0184bc;">blog-post</span>&gt;
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#31561;&#20215;&#20110; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">3: </span>&lt;<span style="color: #0184bc;">blog-post</span>
+<span class="linenr">4: </span>  <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">id</span>=<span style="color: #50a14f;">"post.id"</span>
+<span class="linenr">5: </span>  <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">title</span>=<span style="color: #50a14f;">"post.title"</span>
+<span class="linenr">6: </span>&gt;&lt;/<span style="color: #0184bc;">blog-post</span>&gt;
 </pre>
 </div>
 
@@ -1135,12 +1135,12 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #4078f2;">[</span><span style="color: #50a14f;">'initialCounter'</span><span style="color: #4078f2;">]</span>,
-<span class="linenr">2: </span><span style="color: #a626a4;">data</span>: <span style="color: #e45649;">function</span> <span style="color: #4078f2;">()</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">3: </span>  <span style="color: #e45649;">return</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">4: </span>    counter: <span style="color: #b751b6;">this</span>.initialCounter
-<span class="linenr">5: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">6: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #707183;">[</span><span style="color: #50a14f;">'initialCounter'</span><span style="color: #707183;">]</span>,
+<span class="linenr">2: </span><span style="color: #0184bc;">data</span>: <span style="color: #a626a4;">function</span> <span style="color: #707183;">()</span> <span style="color: #707183;">{</span>
+<span class="linenr">3: </span>  <span style="color: #a626a4;">return</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">4: </span>    counter: <span style="color: #008b8b;">this</span>.initialCounter
+<span class="linenr">5: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">6: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1153,12 +1153,12 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #4078f2;">[</span><span style="color: #50a14f;">'size'</span><span style="color: #4078f2;">]</span>,
-<span class="linenr">2: </span>computed: <span style="color: #4078f2;">{</span>
-<span class="linenr">3: </span>  <span style="color: #a626a4;">normalizedSize</span>: <span style="color: #e45649;">function</span> <span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">4: </span>    <span style="color: #e45649;">return</span> <span style="color: #b751b6;">this</span>.size.trim<span style="color: #50a14f;">()</span>.toLowerCase<span style="color: #50a14f;">()</span>
-<span class="linenr">5: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">6: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-js"><span class="linenr">1: </span>props: <span style="color: #707183;">[</span><span style="color: #50a14f;">'size'</span><span style="color: #707183;">]</span>,
+<span class="linenr">2: </span>computed: <span style="color: #707183;">{</span>
+<span class="linenr">3: </span>  <span style="color: #0184bc;">normalizedSize</span>: <span style="color: #a626a4;">function</span> <span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">4: </span>    <span style="color: #a626a4;">return</span> <span style="color: #008b8b;">this</span>.size.trim<span style="color: #909183;">()</span>.toLowerCase<span style="color: #909183;">()</span>
+<span class="linenr">5: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">6: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1182,39 +1182,39 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'my-component'</span>, <span style="color: #a626a4;">{</span>
-<span class="linenr"> 2: </span>    props: <span style="color: #50a14f;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22522;&#30784;&#30340;&#31867;&#22411;&#26816;&#26597;&#65288;`null` &#21644; `undefined` &#20250;&#36890;&#36807;&#20219;&#20309;&#31867;&#22411;&#39564;&#35777;&#65289;</span>
+<pre class="src src-js"><span class="linenr"> 1: </span>Vue.component<span style="color: #707183;">(</span><span style="color: #50a14f;">'my-component'</span>, <span style="color: #7388d6;">{</span>
+<span class="linenr"> 2: </span>    props: <span style="color: #909183;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22522;&#30784;&#30340;&#31867;&#22411;&#26816;&#26597;&#65288;`null` &#21644; `undefined` &#20250;&#36890;&#36807;&#20219;&#20309;&#31867;&#22411;&#39564;&#35777;&#65289;</span>
 <span class="linenr"> 4: </span>        propA: Number,
-<span class="linenr"> 5: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22810;&#20010;&#21487;&#33021;&#30340;&#31867;&#22411;</span>
-<span class="linenr"> 6: </span>        propB: <span style="color: #da8548;">[</span>String, Number<span style="color: #da8548;">]</span>,
-<span class="linenr"> 7: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24517;&#22635;&#30340;&#23383;&#31526;&#20018;</span>
-<span class="linenr"> 8: </span>        propC: <span style="color: #da8548;">{</span>
+<span class="linenr"> 5: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22810;&#20010;&#21487;&#33021;&#30340;&#31867;&#22411;</span>
+<span class="linenr"> 6: </span>        propB: <span style="color: #709870;">[</span>String, Number<span style="color: #709870;">]</span>,
+<span class="linenr"> 7: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#24517;&#22635;&#30340;&#23383;&#31526;&#20018;</span>
+<span class="linenr"> 8: </span>        propC: <span style="color: #709870;">{</span>
 <span class="linenr"> 9: </span>            type: String,
-<span class="linenr">10: </span>            required: <span style="color: #b751b6;">true</span>
-<span class="linenr">11: </span>        <span style="color: #da8548;">}</span>,
-<span class="linenr">12: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24102;&#26377;&#40664;&#35748;&#20540;&#30340;&#25968;&#23383;</span>
-<span class="linenr">13: </span>        propD: <span style="color: #da8548;">{</span>
+<span class="linenr">10: </span>            required: <span style="color: #008b8b;">true</span>
+<span class="linenr">11: </span>        <span style="color: #709870;">}</span>,
+<span class="linenr">12: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#24102;&#26377;&#40664;&#35748;&#20540;&#30340;&#25968;&#23383;</span>
+<span class="linenr">13: </span>        propD: <span style="color: #709870;">{</span>
 <span class="linenr">14: </span>            type: Number,
-<span class="linenr">15: </span>            <span style="color: #e45649;">default</span>: 100
-<span class="linenr">16: </span>        <span style="color: #da8548;">}</span>,
-<span class="linenr">17: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24102;&#26377;&#40664;&#35748;&#20540;&#30340;&#23545;&#35937;</span>
-<span class="linenr">18: </span>        propE: <span style="color: #da8548;">{</span>
+<span class="linenr">15: </span>            <span style="color: #a626a4;">default</span>: 100
+<span class="linenr">16: </span>        <span style="color: #709870;">}</span>,
+<span class="linenr">17: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#24102;&#26377;&#40664;&#35748;&#20540;&#30340;&#23545;&#35937;</span>
+<span class="linenr">18: </span>        propE: <span style="color: #709870;">{</span>
 <span class="linenr">19: </span>            type: Object,
-<span class="linenr">20: </span>            <span style="color: #9ca0a4;">//</span><span style="color: #9ca0a4;">&#65281;&#23545;&#35937;&#25110;&#25968;&#32452;&#40664;&#35748;&#20540;_&#24517;&#39035;_&#20174;&#19968;&#20010;&#24037;&#21378;&#20989;&#25968;&#33719;&#21462;</span>
-<span class="linenr">21: </span>            <span style="color: #a626a4;">default</span>: <span style="color: #e45649;">function</span><span style="color: #b751b6;">()</span> <span style="color: #b751b6;">{</span>
-<span class="linenr">22: </span>                <span style="color: #e45649;">return</span> <span style="color: #986801;">{</span> message: <span style="color: #50a14f;">'hello'</span> <span style="color: #986801;">}</span>
-<span class="linenr">23: </span>            <span style="color: #b751b6;">}</span>
-<span class="linenr">24: </span>        <span style="color: #da8548;">}</span>,
-<span class="linenr">25: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33258;&#23450;&#20041;&#39564;&#35777;&#20989;&#25968;</span>
-<span class="linenr">26: </span>        propF: <span style="color: #da8548;">{</span>
-<span class="linenr">27: </span>            <span style="color: #a626a4;">validator</span>: <span style="color: #e45649;">function</span><span style="color: #b751b6;">(</span><span style="color: #6a1868;">value</span><span style="color: #b751b6;">)</span> <span style="color: #b751b6;">{</span>
-<span class="linenr">28: </span>                <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#20010;&#20540;&#24517;&#39035;&#21305;&#37197;&#19979;&#21015;&#23383;&#31526;&#20018;&#20013;&#30340;&#19968;&#20010;</span>
-<span class="linenr">29: </span>                <span style="color: #e45649;">return</span> <span style="color: #986801;">[</span><span style="color: #50a14f;">'success'</span>, <span style="color: #50a14f;">'warning'</span>, <span style="color: #50a14f;">'danger'</span><span style="color: #986801;">]</span>.indexOf<span style="color: #986801;">(</span>value<span style="color: #986801;">)</span> !== -1
-<span class="linenr">30: </span>            <span style="color: #b751b6;">}</span>
-<span class="linenr">31: </span>        <span style="color: #da8548;">}</span>
-<span class="linenr">32: </span>    <span style="color: #50a14f;">}</span>
-<span class="linenr">33: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">20: </span>            <span style="color: #a0a1a7; font-weight: bold;">//</span><span style="color: #a0a1a7;">&#65281;&#23545;&#35937;&#25110;&#25968;&#32452;&#40664;&#35748;&#20540;_&#24517;&#39035;_&#20174;&#19968;&#20010;&#24037;&#21378;&#20989;&#25968;&#33719;&#21462;</span>
+<span class="linenr">21: </span>            <span style="color: #0184bc;">default</span>: <span style="color: #a626a4;">function</span><span style="color: #907373;">()</span> <span style="color: #907373;">{</span>
+<span class="linenr">22: </span>                <span style="color: #a626a4;">return</span> <span style="color: #6276ba;">{</span> message: <span style="color: #50a14f;">'hello'</span> <span style="color: #6276ba;">}</span>
+<span class="linenr">23: </span>            <span style="color: #907373;">}</span>
+<span class="linenr">24: </span>        <span style="color: #709870;">}</span>,
+<span class="linenr">25: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33258;&#23450;&#20041;&#39564;&#35777;&#20989;&#25968;</span>
+<span class="linenr">26: </span>        propF: <span style="color: #709870;">{</span>
+<span class="linenr">27: </span>            <span style="color: #0184bc;">validator</span>: <span style="color: #a626a4;">function</span><span style="color: #907373;">(</span><span style="color: #8b4513;">value</span><span style="color: #907373;">)</span> <span style="color: #907373;">{</span>
+<span class="linenr">28: </span>                <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36825;&#20010;&#20540;&#24517;&#39035;&#21305;&#37197;&#19979;&#21015;&#23383;&#31526;&#20018;&#20013;&#30340;&#19968;&#20010;</span>
+<span class="linenr">29: </span>                <span style="color: #a626a4;">return</span> <span style="color: #6276ba;">[</span><span style="color: #50a14f;">'success'</span>, <span style="color: #50a14f;">'warning'</span>, <span style="color: #50a14f;">'danger'</span><span style="color: #6276ba;">]</span>.indexOf<span style="color: #6276ba;">(</span>value<span style="color: #6276ba;">)</span> !== -1
+<span class="linenr">30: </span>            <span style="color: #907373;">}</span>
+<span class="linenr">31: </span>        <span style="color: #709870;">}</span>
+<span class="linenr">32: </span>    <span style="color: #909183;">}</span>
+<span class="linenr">33: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -1270,9 +1270,9 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </div>
 </div>
 
-<div id="outline-container-orgb953da1" class="outline-3">
-<h3 id="orgb953da1"><span class="todo TODO">TODO</span> 自定义事件</h3>
-<div class="outline-text-3" id="text-orgb953da1">
+<div id="outline-container-orgfeecaf2" class="outline-3">
+<h3 id="orgfeecaf2"><span class="todo TODO">TODO</span> 自定义事件</h3>
+<div class="outline-text-3" id="text-orgfeecaf2">
 <p>
 <b>事件名</b>
 </p>
@@ -1294,14 +1294,14 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'base-checkbox'</span>, <span style="color: #a626a4;">{</span>
-<span class="linenr"> 2: </span>  model: <span style="color: #50a14f;">{</span>
+<pre class="src src-js"><span class="linenr"> 1: </span>Vue.component<span style="color: #707183;">(</span><span style="color: #50a14f;">'base-checkbox'</span>, <span style="color: #7388d6;">{</span>
+<span class="linenr"> 2: </span>  model: <span style="color: #909183;">{</span>
 <span class="linenr"> 3: </span>    prop: <span style="color: #50a14f;">'checked'</span>,
 <span class="linenr"> 4: </span>    event: <span style="color: #50a14f;">'change'</span>
-<span class="linenr"> 5: </span>  <span style="color: #50a14f;">}</span>,
-<span class="linenr"> 6: </span>  props: <span style="color: #50a14f;">{</span>
+<span class="linenr"> 5: </span>  <span style="color: #909183;">}</span>,
+<span class="linenr"> 6: </span>  props: <span style="color: #909183;">{</span>
 <span class="linenr"> 7: </span>    checked: Boolean
-<span class="linenr"> 8: </span>  <span style="color: #50a14f;">}</span>,
+<span class="linenr"> 8: </span>  <span style="color: #909183;">}</span>,
 <span class="linenr"> 9: </span>  template: <span style="color: #50a14f;">`</span>
 <span class="linenr">10: </span><span style="color: #50a14f;">    &lt;input</span>
 <span class="linenr">11: </span><span style="color: #50a14f;">      type="checkbox"</span>
@@ -1309,12 +1309,12 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 <span class="linenr">13: </span><span style="color: #50a14f;">      v-on:change="$emit('change', $event.target.checked)"</span>
 <span class="linenr">14: </span><span style="color: #50a14f;">    &gt;</span>
 <span class="linenr">15: </span><span style="color: #50a14f;">  `</span>
-<span class="linenr">16: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">16: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 <span class="linenr">17: </span>
-<span class="linenr">18: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#29616;&#22312;&#22312;&#36825;&#20010;&#32452;&#20214;&#19978;&#20351;&#29992; v-model &#30340;&#26102;&#20505;</span>
-<span class="linenr">19: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&lt;base-checkbox v-model="lovingVue"&gt;&lt;/base-checkbox&gt;</span>
-<span class="linenr">20: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#37324;&#30340; lovingVue &#30340;&#20540;&#23558;&#20250;&#20256;&#20837;&#36825;&#20010;&#21517;&#20026; checked &#30340; prop&#12290;</span>
-<span class="linenr">21: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21516;&#26102;&#24403; &lt;base-checkbox&gt; &#35302;&#21457;&#19968;&#20010; change &#20107;&#20214;&#24182;&#38468;&#24102;&#19968;&#20010;&#26032;&#30340;&#20540;&#30340;&#26102;&#20505;&#65292;&#36825;&#20010; lovingVue &#30340; property &#23558;&#20250;&#34987;&#26356;&#26032;&#12290;</span>
+<span class="linenr">18: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#29616;&#22312;&#22312;&#36825;&#20010;&#32452;&#20214;&#19978;&#20351;&#29992; v-model &#30340;&#26102;&#20505;</span>
+<span class="linenr">19: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&lt;base-checkbox v-model="lovingVue"&gt;&lt;/base-checkbox&gt;</span>
+<span class="linenr">20: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36825;&#37324;&#30340; lovingVue &#30340;&#20540;&#23558;&#20250;&#20256;&#20837;&#36825;&#20010;&#21517;&#20026; checked &#30340; prop&#12290;</span>
+<span class="linenr">21: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21516;&#26102;&#24403; &lt;base-checkbox&gt; &#35302;&#21457;&#19968;&#20010; change &#20107;&#20214;&#24182;&#38468;&#24102;&#19968;&#20010;&#26032;&#30340;&#20540;&#30340;&#26102;&#20505;&#65292;&#36825;&#20010; lovingVue &#30340; property &#23558;&#20250;&#34987;&#26356;&#26032;&#12290;</span>
 </pre>
 </div>
 
@@ -1332,7 +1332,7 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">base-input</span> <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">focus.native</span>=<span style="color: #50a14f;">"onFocus"</span>&gt;&lt;/<span style="color: #a626a4;">base-input</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">base-input</span> <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">focus.native</span>=<span style="color: #50a14f;">"onFocus"</span>&gt;&lt;/<span style="color: #0184bc;">base-input</span>&gt;
 </pre>
 </div>
 
@@ -1358,7 +1358,7 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #b751b6;">this</span>.$emit<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'update:title'</span>, newTitle<span style="color: #4078f2;">)</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #008b8b;">this</span>.$emit<span style="color: #707183;">(</span><span style="color: #50a14f;">'update:title'</span>, newTitle<span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -1367,10 +1367,10 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">text-document</span>
-<span class="linenr">2: </span>  <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">title</span>=<span style="color: #50a14f;">"doc.title"</span>
-<span class="linenr">3: </span>  <span style="color: #a626a4;">v-on</span>:<span style="color: #6a1868;">update:title</span>=<span style="color: #50a14f;">"doc.title = $event"</span>
-<span class="linenr">4: </span>&gt;&lt;/<span style="color: #a626a4;">text-document</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">text-document</span>
+<span class="linenr">2: </span>  <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">title</span>=<span style="color: #50a14f;">"doc.title"</span>
+<span class="linenr">3: </span>  <span style="color: #e44649;">v-on</span>:<span style="color: #8b4513;">update:title</span>=<span style="color: #50a14f;">"doc.title = $event"</span>
+<span class="linenr">4: </span>&gt;&lt;/<span style="color: #0184bc;">text-document</span>&gt;
 </pre>
 </div>
 
@@ -1379,7 +1379,7 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">text-document</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">title.sync</span>=<span style="color: #50a14f;">"doc.title"</span>&gt;&lt;/<span style="color: #a626a4;">text-document</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">text-document</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">title.sync</span>=<span style="color: #50a14f;">"doc.title"</span>&gt;&lt;/<span style="color: #0184bc;">text-document</span>&gt;
 </pre>
 </div>
 
@@ -1394,7 +1394,7 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">text-document</span> <span style="color: #6a1868;">v-bind.sync</span>=<span style="color: #50a14f;">"doc"</span>&gt;&lt;/<span style="color: #a626a4;">text-document</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">text-document</span> <span style="color: #8b4513;">v-bind.sync</span>=<span style="color: #50a14f;">"doc"</span>&gt;&lt;/<span style="color: #0184bc;">text-document</span>&gt;
 </pre>
 </div>
 
@@ -1410,9 +1410,9 @@ HTML 中的 attribute 名是大小写不敏感的，所以浏览器会把所有�
 </div>
 </div>
 
-<div id="outline-container-org100a610" class="outline-3">
-<h3 id="org100a610"><span class="todo TODO">TODO</span> 插槽</h3>
-<div class="outline-text-3" id="text-org100a610">
+<div id="outline-container-orga230a9c" class="outline-3">
+<h3 id="orga230a9c"><span class="todo TODO">TODO</span> 插槽</h3>
+<div class="outline-text-3" id="text-orga230a9c">
 <p>
 <b>插槽内容</b>
 </p>
@@ -1439,9 +1439,9 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">navigation-link</span> <span style="color: #6a1868;">url</span>=<span style="color: #50a14f;">"/profile"</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">navigation-link</span> <span style="color: #8b4513;">url</span>=<span style="color: #50a14f;">"/profile"</span>&gt;
 <span class="linenr">2: </span>  Logged in as {{ user.name }}
-<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">navigation-link</span>&gt;
+<span class="linenr">3: </span>&lt;/<span style="color: #0184bc;">navigation-link</span>&gt;
 </pre>
 </div>
 
@@ -1450,14 +1450,14 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">navigation-link</span> <span style="color: #6a1868;">url</span>=<span style="color: #50a14f;">"/profile"</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">navigation-link</span> <span style="color: #8b4513;">url</span>=<span style="color: #50a14f;">"/profile"</span>&gt;
 <span class="linenr">2: </span>  Clicking here will send you to: {{ url }}
-<span class="linenr">3: </span>  <span style="color: #9ca0a4;">&lt;!--</span>
-<span class="linenr">4: </span><span style="color: #9ca0a4;">  &#36825;&#37324;&#30340; `url` &#20250;&#26159; undefined&#65292;&#22240;&#20026;&#20854; (&#25351;&#35813;&#25554;&#27133;&#30340;) &#20869;&#23481;&#26159;</span>
-<span class="linenr">5: </span><span style="color: #9ca0a4;">  _&#20256;&#36882;&#32473;_ &lt;navigation-link&gt; &#30340;&#32780;&#19981;&#26159;</span>
-<span class="linenr">6: </span><span style="color: #9ca0a4;">  &#22312; &lt;navigation-link&gt; &#32452;&#20214;*&#20869;&#37096;*&#23450;&#20041;&#30340;&#12290;</span>
-<span class="linenr">7: </span><span style="color: #9ca0a4;">  </span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">8: </span>&lt;/<span style="color: #a626a4;">navigation-link</span>&gt;
+<span class="linenr">3: </span>  <span style="color: #a0a1a7; font-weight: bold;">&lt;!--</span>
+<span class="linenr">4: </span><span style="color: #a0a1a7;">  &#36825;&#37324;&#30340; `url` &#20250;&#26159; undefined&#65292;&#22240;&#20026;&#20854; (&#25351;&#35813;&#25554;&#27133;&#30340;) &#20869;&#23481;&#26159;</span>
+<span class="linenr">5: </span><span style="color: #a0a1a7;">  _&#20256;&#36882;&#32473;_ &lt;navigation-link&gt; &#30340;&#32780;&#19981;&#26159;</span>
+<span class="linenr">6: </span><span style="color: #a0a1a7;">  &#22312; &lt;navigation-link&gt; &#32452;&#20214;*&#20869;&#37096;*&#23450;&#20041;&#30340;&#12290;</span>
+<span class="linenr">7: </span><span style="color: #a0a1a7;">  </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">8: </span>&lt;/<span style="color: #0184bc;">navigation-link</span>&gt;
 </pre>
 </div>
 
@@ -1484,9 +1484,9 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </div>
 </div>
 
-<div id="outline-container-orgeba775c" class="outline-3">
-<h3 id="orgeba775c">动态组件 &amp; 异步组件</h3>
-<div class="outline-text-3" id="text-orgeba775c">
+<div id="outline-container-orgf0a7473" class="outline-3">
+<h3 id="orgf0a7473">动态组件 &amp; 异步组件</h3>
+<div class="outline-text-3" id="text-orgf0a7473">
 <p>
 当在这些组件之间切换的时候，你有时会想保持这些组件的状态，以避免反复重渲染导致的性能问题。
 </p>
@@ -1496,10 +1496,10 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span><span style="color: #9ca0a4;">&lt;!-- </span><span style="color: #9ca0a4;">&#22833;&#27963;&#30340;&#32452;&#20214;&#23558;&#20250;&#34987;&#32531;&#23384;&#65281;</span><span style="color: #9ca0a4;">--&gt;</span>
-<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">keep-alive</span>&gt;
-<span class="linenr">3: </span>  &lt;<span style="color: #a626a4;">component</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">is</span>=<span style="color: #50a14f;">"currentTabComponent"</span>&gt;&lt;/<span style="color: #a626a4;">component</span>&gt;
-<span class="linenr">4: </span>&lt;/<span style="color: #a626a4;">keep-alive</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#22833;&#27963;&#30340;&#32452;&#20214;&#23558;&#20250;&#34987;&#32531;&#23384;&#65281;</span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">keep-alive</span>&gt;
+<span class="linenr">3: </span>  &lt;<span style="color: #0184bc;">component</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">is</span>=<span style="color: #50a14f;">"currentTabComponent"</span>&gt;&lt;/<span style="color: #0184bc;">component</span>&gt;
+<span class="linenr">4: </span>&lt;/<span style="color: #0184bc;">keep-alive</span>&gt;
 </pre>
 </div>
 
@@ -1523,14 +1523,14 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'async-example'</span>, <span style="color: #e45649;">function</span><span style="color: #a626a4;">(</span><span style="color: #6a1868;">resolve</span>, <span style="color: #6a1868;">reject</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">2: </span>    setTimeout<span style="color: #50a14f;">(</span><span style="color: #e45649;">function</span><span style="color: #da8548;">()</span> <span style="color: #da8548;">{</span>
-<span class="linenr">3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21521; `resolve` &#22238;&#35843;&#20256;&#36882;&#32452;&#20214;&#23450;&#20041;</span>
-<span class="linenr">4: </span>        resolve<span style="color: #b751b6;">(</span><span style="color: #986801;">{</span>
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #707183;">(</span><span style="color: #50a14f;">'async-example'</span>, <span style="color: #a626a4;">function</span><span style="color: #7388d6;">(</span><span style="color: #8b4513;">resolve</span>, <span style="color: #8b4513;">reject</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">2: </span>    setTimeout<span style="color: #909183;">(</span><span style="color: #a626a4;">function</span><span style="color: #709870;">()</span> <span style="color: #709870;">{</span>
+<span class="linenr">3: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21521; `resolve` &#22238;&#35843;&#20256;&#36882;&#32452;&#20214;&#23450;&#20041;</span>
+<span class="linenr">4: </span>        resolve<span style="color: #907373;">(</span><span style="color: #6276ba;">{</span>
 <span class="linenr">5: </span>            template: <span style="color: #50a14f;">'&lt;div&gt;I am async!&lt;/div&gt;'</span>
-<span class="linenr">6: </span>        <span style="color: #986801;">}</span><span style="color: #b751b6;">)</span>
-<span class="linenr">7: </span>    <span style="color: #da8548;">}</span>, 1000<span style="color: #50a14f;">)</span>
-<span class="linenr">8: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">6: </span>        <span style="color: #6276ba;">}</span><span style="color: #907373;">)</span>
+<span class="linenr">7: </span>    <span style="color: #709870;">}</span>, 1000<span style="color: #909183;">)</span>
+<span class="linenr">8: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -1543,12 +1543,12 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'async-webpack-example'</span>, <span style="color: #e45649;">function</span><span style="color: #a626a4;">(</span><span style="color: #6a1868;">resolve</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">2: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#20010;&#29305;&#27530;&#30340; `require` &#35821;&#27861;&#23558;&#20250;&#21578;&#35785; webpack</span>
-<span class="linenr">3: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33258;&#21160;&#23558;&#20320;&#30340;&#26500;&#24314;&#20195;&#30721;&#20999;&#21106;&#25104;&#22810;&#20010;&#21253;</span>
-<span class="linenr">4: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20250;&#36890;&#36807; Ajax &#35831;&#27714;&#21152;&#36733;</span>
-<span class="linenr">5: </span>    require<span style="color: #50a14f;">(</span><span style="color: #da8548;">[</span><span style="color: #50a14f;">'./my-async-component'</span><span style="color: #da8548;">]</span>, resolve<span style="color: #50a14f;">)</span>
-<span class="linenr">6: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #707183;">(</span><span style="color: #50a14f;">'async-webpack-example'</span>, <span style="color: #a626a4;">function</span><span style="color: #7388d6;">(</span><span style="color: #8b4513;">resolve</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36825;&#20010;&#29305;&#27530;&#30340; `require` &#35821;&#27861;&#23558;&#20250;&#21578;&#35785; webpack</span>
+<span class="linenr">3: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33258;&#21160;&#23558;&#20320;&#30340;&#26500;&#24314;&#20195;&#30721;&#20999;&#21106;&#25104;&#22810;&#20010;&#21253;</span>
+<span class="linenr">4: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20250;&#36890;&#36807; Ajax &#35831;&#27714;&#21152;&#36733;</span>
+<span class="linenr">5: </span>    require<span style="color: #909183;">(</span><span style="color: #709870;">[</span><span style="color: #50a14f;">'./my-async-component'</span><span style="color: #709870;">]</span>, resolve<span style="color: #909183;">)</span>
+<span class="linenr">6: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -1557,11 +1557,11 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #4078f2;">(</span>
+<pre class="src src-js"><span class="linenr">1: </span>Vue.component<span style="color: #707183;">(</span>
 <span class="linenr">2: </span>  <span style="color: #50a14f;">'async-webpack-example'</span>,
-<span class="linenr">3: </span>  <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#20010;&#21160;&#24577;&#23548;&#20837;&#20250;&#36820;&#22238;&#19968;&#20010; `Promise` &#23545;&#35937;&#12290;</span>
-<span class="linenr">4: </span>  <span style="color: #a626a4;">()</span> =&gt; <span style="color: #e45649;">import</span><span style="color: #a626a4;">(</span><span style="color: #50a14f;">'./my-async-component'</span><span style="color: #a626a4;">)</span>
-<span class="linenr">5: </span><span style="color: #4078f2;">)</span>
+<span class="linenr">3: </span>  <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36825;&#20010;&#21160;&#24577;&#23548;&#20837;&#20250;&#36820;&#22238;&#19968;&#20010; `Promise` &#23545;&#35937;&#12290;</span>
+<span class="linenr">4: </span>  <span style="color: #7388d6;">()</span> =&gt; <span style="color: #a626a4;">import</span><span style="color: #7388d6;">(</span><span style="color: #50a14f;">'./my-async-component'</span><span style="color: #7388d6;">)</span>
+<span class="linenr">5: </span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -1570,25 +1570,25 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">new</span> <span style="color: #986801;">Vue</span><span style="color: #4078f2;">(</span><span style="color: #a626a4;">{</span>
-<span class="linenr">2: </span>  <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">...</span>
-<span class="linenr">3: </span>  components: <span style="color: #50a14f;">{</span>
-<span class="linenr">4: </span>    <span style="color: #50a14f;">'my-component'</span>: <span style="color: #da8548;">()</span> =&gt; <span style="color: #e45649;">import</span><span style="color: #da8548;">(</span><span style="color: #50a14f;">'./my-async-component'</span><span style="color: #da8548;">)</span>
-<span class="linenr">5: </span>  <span style="color: #50a14f;">}</span>
-<span class="linenr">6: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">new</span> <span style="color: #c18401;">Vue</span><span style="color: #707183;">(</span><span style="color: #7388d6;">{</span>
+<span class="linenr">2: </span>  <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">...</span>
+<span class="linenr">3: </span>  components: <span style="color: #909183;">{</span>
+<span class="linenr">4: </span>    <span style="color: #50a14f;">'my-component'</span>: <span style="color: #709870;">()</span> =&gt; <span style="color: #a626a4;">import</span><span style="color: #709870;">(</span><span style="color: #50a14f;">'./my-async-component'</span><span style="color: #709870;">)</span>
+<span class="linenr">5: </span>  <span style="color: #909183;">}</span>
+<span class="linenr">6: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgf078c6c" class="outline-2">
-<h2 id="orgf078c6c">处理边界情况</h2>
-<div class="outline-text-2" id="text-orgf078c6c">
+<div id="outline-container-org4a3d481" class="outline-2">
+<h2 id="org4a3d481">处理边界情况</h2>
+<div class="outline-text-2" id="text-org4a3d481">
 </div>
-<div id="outline-container-org1275bb8" class="outline-3">
-<h3 id="org1275bb8">访问元素 &amp; 组件</h3>
-<div class="outline-text-3" id="text-org1275bb8">
+<div id="outline-container-org6f879b7" class="outline-3">
+<h3 id="org6f879b7">访问元素 &amp; 组件</h3>
+<div class="outline-text-3" id="text-org6f879b7">
 <p>
 在绝大多数情况下，我们最好不要触达另一个组件实例内部或手动操作 DOM 元素。不过也确实在一些情况下做这些事情是合适的。
 </p>
@@ -1630,7 +1630,7 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">base-input</span> <span style="color: #6a1868;">ref</span>=<span style="color: #50a14f;">"usernameInput"</span>&gt;&lt;/<span style="color: #a626a4;">base-input</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">base-input</span> <span style="color: #8b4513;">ref</span>=<span style="color: #50a14f;">"usernameInput"</span>&gt;&lt;/<span style="color: #0184bc;">base-input</span>&gt;
 </pre>
 </div>
 
@@ -1639,7 +1639,7 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #b751b6;">this</span>.$refs.usernameInput
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #008b8b;">this</span>.$refs.usernameInput
 </pre>
 </div>
 
@@ -1663,11 +1663,11 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">google-map</span>&gt;
-<span class="linenr">2: </span>  &lt;<span style="color: #a626a4;">google-map-region</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">shape</span>=<span style="color: #50a14f;">"cityBoundaries"</span>&gt;
-<span class="linenr">3: </span>    &lt;<span style="color: #a626a4;">google-map-markers</span> <span style="color: #a626a4;">v-bind</span>:<span style="color: #6a1868;">places</span>=<span style="color: #50a14f;">"iceCreamShops"</span>&gt;&lt;/<span style="color: #a626a4;">google-map-markers</span>&gt;
-<span class="linenr">4: </span>  &lt;/<span style="color: #a626a4;">google-map-region</span>&gt;
-<span class="linenr">5: </span>&lt;/<span style="color: #a626a4;">google-map</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">google-map</span>&gt;
+<span class="linenr">2: </span>  &lt;<span style="color: #0184bc;">google-map-region</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">shape</span>=<span style="color: #50a14f;">"cityBoundaries"</span>&gt;
+<span class="linenr">3: </span>    &lt;<span style="color: #0184bc;">google-map-markers</span> <span style="color: #e44649;">v-bind</span>:<span style="color: #8b4513;">places</span>=<span style="color: #50a14f;">"iceCreamShops"</span>&gt;&lt;/<span style="color: #0184bc;">google-map-markers</span>&gt;
+<span class="linenr">4: </span>  &lt;/<span style="color: #0184bc;">google-map-region</span>&gt;
+<span class="linenr">5: </span>&lt;/<span style="color: #0184bc;">google-map</span>&gt;
 </pre>
 </div>
 
@@ -1680,11 +1680,11 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">provide</span>: <span style="color: #e45649;">function</span> <span style="color: #4078f2;">()</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>  <span style="color: #e45649;">return</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">3: </span>    getMap: <span style="color: #b751b6;">this</span>.getMap
-<span class="linenr">4: </span>  <span style="color: #a626a4;">}</span>
-<span class="linenr">5: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #0184bc;">provide</span>: <span style="color: #a626a4;">function</span> <span style="color: #707183;">()</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>  <span style="color: #a626a4;">return</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">3: </span>    getMap: <span style="color: #008b8b;">this</span>.getMap
+<span class="linenr">4: </span>  <span style="color: #7388d6;">}</span>
+<span class="linenr">5: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1693,7 +1693,7 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>inject: <span style="color: #4078f2;">[</span><span style="color: #50a14f;">'getMap'</span><span style="color: #4078f2;">]</span>
+<pre class="src src-js"><span class="linenr">1: </span>inject: <span style="color: #707183;">[</span><span style="color: #50a14f;">'getMap'</span><span style="color: #707183;">]</span>
 </pre>
 </div>
 
@@ -1722,13 +1722,13 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 </div>
 </div>
 
-<div id="outline-container-org8830e86" class="outline-2">
-<h2 id="org8830e86">可复用性 &amp; 组合</h2>
-<div class="outline-text-2" id="text-org8830e86">
+<div id="outline-container-org3c88cff" class="outline-2">
+<h2 id="org3c88cff">可复用性 &amp; 组合</h2>
+<div class="outline-text-2" id="text-org3c88cff">
 </div>
-<div id="outline-container-org1c74617" class="outline-3">
-<h3 id="org1c74617">混入</h3>
-<div class="outline-text-3" id="text-org1c74617">
+<div id="outline-container-org8da7fa5" class="outline-3">
+<h3 id="org8da7fa5">混入</h3>
+<div class="outline-text-3" id="text-org8da7fa5">
 <p>
 混入 (mixin) 提供了一种非常灵活的方式，来分发 Vue 组件中的可复用功能。 <b>一个混入对象可以包含任意组件选项</b> 。当组件使用混入对象时，所有混入对象的选项将被“混合”进入该组件本身的选项。
 </p>
@@ -1763,7 +1763,7 @@ Vue 实现了一套内容分发的 API，这套 API 的设计灵感源自 Web Co
 <div id="postamble" class="status">
 <p class="date">Date: 2021-03-17 Wed 16:21</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-03-18 Thu 14:18</p>
+<p class="date">Created: 2021-05-18 Tue 15:55</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:44 -->
+<!-- 2021-05-18 Tue 15:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Socket</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,26 +18,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org02bcbe7">Socket 是什么</a></li>
-<li><a href="#orgdb4c4e7">Socket 原理</a>
+<li><a href="#org51ce139">Socket 是什么</a></li>
+<li><a href="#org73a7ea9">Socket 原理</a>
 <ul>
-<li><a href="#org30987dc">网络中进程之间如何通信</a></li>
-<li><a href="#org97e0693">Socket 的理解</a></li>
+<li><a href="#org88247f1">网络中进程之间如何通信</a></li>
+<li><a href="#orgb1ee392">Socket 的理解</a></li>
 </ul>
 </li>
-<li><a href="#orgde8a653">Socket 的基本函数</a>
+<li><a href="#org925dc6f">Socket 的基本函数</a>
 <ul>
-<li><a href="#org3f7feb8">socket() 函数</a></li>
-<li><a href="#orgab48028">bind() 和 connect() 函数</a></li>
-<li><a href="#org64f395e">listen() 和 accept() 函数</a></li>
-<li><a href="#orgec29dfb">send()/recv() 和 write()/read() 函数</a></li>
+<li><a href="#org80c4971">socket() 函数</a></li>
+<li><a href="#org52f0110">bind() 和 connect() 函数</a></li>
+<li><a href="#orgdb414b7">listen() 和 accept() 函数</a></li>
+<li><a href="#org31e3584">send()/recv() 和 write()/read() 函数</a></li>
 </ul>
 </li>
-<li><a href="#org2fd4154">Socket 的类型</a></li>
-<li><a href="#org070c40c">Socket 缓冲区及阻塞模式</a>
+<li><a href="#org819e483">Socket 的类型</a></li>
+<li><a href="#org54ad59d">Socket 缓冲区及阻塞模式</a>
 <ul>
-<li><a href="#org11d1588">Socket 缓冲区</a></li>
-<li><a href="#orgf20a73b">阻塞模式</a></li>
+<li><a href="#org9bc92c9">Socket 缓冲区</a></li>
+<li><a href="#orgcb3e562">阻塞模式</a></li>
 </ul>
 </li>
 </ul>
@@ -55,9 +55,9 @@ socket 是“套接字”的意思，学习 socket 编程，也就是学习计�
 <span class="underline">socket 通信技术</span> 就是两台联网的计算机之间 <b>交换数据的技术</b> ，这就是 socket 的全部内容了吗？是的！
 </p>
 
-<div id="outline-container-org02bcbe7" class="outline-2">
-<h2 id="org02bcbe7">Socket 是什么</h2>
-<div class="outline-text-2" id="text-org02bcbe7">
+<div id="outline-container-org51ce139" class="outline-2">
+<h2 id="org51ce139">Socket 是什么</h2>
+<div class="outline-text-2" id="text-org51ce139">
 <p>
 <b>网络编程就是编写程序使两台联网的计算机相互交换数据，</b> 这就是全部内容了！
 </p>
@@ -152,9 +152,9 @@ Hmmm... 说了那么多，有点懂，又好像不太懂，有点隔靴搔痒…
 </div>
 </div>
 
-<div id="outline-container-orgdb4c4e7" class="outline-2">
-<h2 id="orgdb4c4e7">Socket 原理<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-orgdb4c4e7">
+<div id="outline-container-org73a7ea9" class="outline-2">
+<h2 id="org73a7ea9">Socket 原理<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-org73a7ea9">
 <essay>
 在上个章节中，我们提到了许多概念，但不具体，你其实很难去凭空理解一个从未在你脑海中具象化或相关具象化过的事物。
 </essay>
@@ -241,9 +241,9 @@ title=""
 </p>
 </div>
 
-<div id="outline-container-org30987dc" class="outline-3">
-<h3 id="org30987dc">网络中进程之间如何通信</h3>
-<div class="outline-text-3" id="text-org30987dc">
+<div id="outline-container-org88247f1" class="outline-3">
+<h3 id="org88247f1">网络中进程之间如何通信</h3>
+<div class="outline-text-3" id="text-org88247f1">
 <p>
 本地的进程间通信（IPC，Inter-Process Communication，进程间通信）有很多种方式，可以总结为下面 4 类：
 </p>
@@ -276,9 +276,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org97e0693" class="outline-3">
-<h3 id="org97e0693">Socket 的理解</h3>
-<div class="outline-text-3" id="text-org97e0693">
+<div id="outline-container-orgb1ee392" class="outline-3">
+<h3 id="orgb1ee392">Socket 的理解</h3>
+<div class="outline-text-3" id="text-orgb1ee392">
 <p>
 Socket 起源于 UNIX，而 UNIX/Linux 基本哲学之一就是 <b>“一切皆文件”</b> ，都可以用 <span class="underline">“打开 open → 读写 write/read → 关闭 close”</span> 模式来操作。Socket 自然也是该模式的一个实现，socket 也是文件，一些 socket 函数就是对其进行的操作（读/写 IO，打开，关闭）。
 </p>
@@ -286,13 +286,13 @@ Socket 起源于 UNIX，而 UNIX/Linux 基本哲学之一就是 <b>“一切皆�
 </div>
 </div>
 
-<div id="outline-container-orgde8a653" class="outline-2">
-<h2 id="orgde8a653">Socket 的基本函数</h2>
-<div class="outline-text-2" id="text-orgde8a653">
+<div id="outline-container-org925dc6f" class="outline-2">
+<h2 id="org925dc6f">Socket 的基本函数</h2>
+<div class="outline-text-2" id="text-org925dc6f">
 </div>
-<div id="outline-container-org3f7feb8" class="outline-3">
-<h3 id="org3f7feb8">socket() 函数</h3>
-<div class="outline-text-3" id="text-org3f7feb8">
+<div id="outline-container-org80c4971" class="outline-3">
+<h3 id="org80c4971">socket() 函数</h3>
+<div class="outline-text-3" id="text-org80c4971">
 <p>
 不管是 Windows 还 Linux ，都使用 <code>socket()</code> 函数来创建套接字。 <code>socket()</code> 在两个平台下的参数是相同的，不同的是返回值。
 </p>
@@ -394,18 +394,18 @@ SOCKET socket(int af, int type, int protocol);
 </div>
 </div>
 
-<div id="outline-container-orgab48028" class="outline-3">
-<h3 id="orgab48028">bind() 和 connect() 函数</h3>
-<div class="outline-text-3" id="text-orgab48028">
+<div id="outline-container-org52f0110" class="outline-3">
+<h3 id="org52f0110">bind() 和 connect() 函数</h3>
+<div class="outline-text-3" id="text-org52f0110">
 <p>
 <code>socket()</code> 函数用来创建套接字，确定套接字的各种属性，然后服务器要用 <code>bind()</code> 函数将套接字与特定的 IP 地址和端口绑定起来，只有这样，流经该 IP 地址和端口的数据才能交给套接字处理。类似地，客户端也要用 <code>connect()</code> 函数建立连接。
 </p>
 </div>
 </div>
 
-<div id="outline-container-org64f395e" class="outline-3">
-<h3 id="org64f395e">listen() 和 accept() 函数</h3>
-<div class="outline-text-3" id="text-org64f395e">
+<div id="outline-container-orgdb414b7" class="outline-3">
+<h3 id="orgdb414b7">listen() 和 accept() 函数</h3>
+<div class="outline-text-3" id="text-orgdb414b7">
 <p>
 对于服务端程序，使用 <code>bind()</code> 绑定套接字后，还需要使用 <code>listen()</code> 函数让套接字进入被动监听状态，再调用 <code>accept()</code> 函数，就可以随时响应客户端的请求了。
 </p>
@@ -430,9 +430,9 @@ SOCKET socket(int af, int type, int protocol);
 </div>
 </div>
 
-<div id="outline-container-orgec29dfb" class="outline-3">
-<h3 id="orgec29dfb">send()/recv() 和 write()/read() 函数</h3>
-<div class="outline-text-3" id="text-orgec29dfb">
+<div id="outline-container-org31e3584" class="outline-3">
+<h3 id="org31e3584">send()/recv() 和 write()/read() 函数</h3>
+<div class="outline-text-3" id="text-org31e3584">
 <p>
 在 Linux 和 Windows 平台下，使用不同的函数发送和接收 socket 数据。
 </p>
@@ -470,9 +470,9 @@ Windows 和 Linux 不同，Windows 区分普通文件和套接字，并定义了
 </div>
 </div>
 
-<div id="outline-container-org2fd4154" class="outline-2">
-<h2 id="org2fd4154">Socket 的类型</h2>
-<div class="outline-text-2" id="text-org2fd4154">
+<div id="outline-container-org819e483" class="outline-2">
+<h2 id="org819e483">Socket 的类型</h2>
+<div class="outline-text-2" id="text-org819e483">
 <p>
 这个世界上有很多种套接字（socket），比如 DARPA Internet 地址（Internet 套接字）、本地节点的路径名（Unix 套接字）、CCITT X.25 地址（X.25 套接字）等。
 </p>
@@ -616,17 +616,17 @@ QQ 视频聊天和语音聊天就使用 <code>SOCK_DGRAM</code> 来传输数据�
 </div>
 </div>
 
-<div id="outline-container-org070c40c" class="outline-2">
-<h2 id="org070c40c">Socket 缓冲区及阻塞模式</h2>
-<div class="outline-text-2" id="text-org070c40c">
+<div id="outline-container-org54ad59d" class="outline-2">
+<h2 id="org54ad59d">Socket 缓冲区及阻塞模式</h2>
+<div class="outline-text-2" id="text-org54ad59d">
 <p>
 在 socket 中，可以使用 <code>write()/send()</code> 函数发送数据，使用 <code>read()/recv()</code> 函数接收数据，下面我们就来看看数据是如何传递的。
 </p>
 </div>
 
-<div id="outline-container-org11d1588" class="outline-3">
-<h3 id="org11d1588">Socket 缓冲区</h3>
-<div class="outline-text-3" id="text-org11d1588">
+<div id="outline-container-org9bc92c9" class="outline-3">
+<h3 id="org9bc92c9">Socket 缓冲区</h3>
+<div class="outline-text-3" id="text-org9bc92c9">
 <p>
 <b>每个 socket 被创建后，都会分配两个缓冲区，输入缓冲区和输出缓冲区。</b>
 </p>
@@ -670,9 +670,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-orgf20a73b" class="outline-3">
-<h3 id="orgf20a73b">阻塞模式</h3>
-<div class="outline-text-3" id="text-orgf20a73b">
+<div id="outline-container-orgcb3e562" class="outline-3">
+<h3 id="orgcb3e562">阻塞模式</h3>
+<div class="outline-text-3" id="text-orgcb3e562">
 <p>
 <b>所谓阻塞，就是上一步动作没有完成，下一步动作将暂停，直到上一步动作完成后才能继续，以保持同步性。</b>
 </p>
@@ -734,7 +734,7 @@ TCP套接字默认情况下是阻塞模式，也是最常用的，当然你也�
 <div id="postamble" class="status">
 <p class="date">Date: 2020-10-05 Mon 16:29</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:44</p>
+<p class="date">Created: 2021-05-18 Tue 15:55</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

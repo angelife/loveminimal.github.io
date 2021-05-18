@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:43 -->
+<!-- 2021-05-18 Tue 15:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>输入/输出流</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,27 +18,27 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org945177b">流的概念</a>
+<li><a href="#orge4b5def">流的概念</a>
 <ul>
-<li><a href="#org081a62a">什么是输入/输出流</a></li>
-<li><a href="#orgf86b5a9">输入流</a></li>
-<li><a href="#org3d118cb">输出流</a></li>
+<li><a href="#org37cdf03">什么是输入/输出流</a></li>
+<li><a href="#orgdc7f2b0">输入流</a></li>
+<li><a href="#orgaaa91c8">输出流</a></li>
 </ul>
 </li>
-<li><a href="#orgeaaab25">系统流</a></li>
-<li><a href="#org88a501a"><span class="todo TODO">TODO</span> 字符编码</a></li>
-<li><a href="#org3045eeb">File 类</a>
+<li><a href="#org0825d2f">系统流</a></li>
+<li><a href="#org5568122"><span class="todo TODO">TODO</span> 字符编码</a></li>
+<li><a href="#org5d4db60">File 类</a>
 <ul>
-<li><a href="#orgfe89925">获取文件属性</a></li>
-<li><a href="#orgaeff3a8">创建和删除文件</a></li>
-<li><a href="#org79815d6">创建和删除目录</a></li>
-<li><a href="#org685b10b">遍历目录</a></li>
+<li><a href="#orge5a1f5c">获取文件属性</a></li>
+<li><a href="#org17ae602">创建和删除文件</a></li>
+<li><a href="#org91538ce">创建和删除目录</a></li>
+<li><a href="#org214c077">遍历目录</a></li>
 </ul>
 </li>
-<li><a href="#org2504827"><span class="todo TODO">TODO</span> 字节流的使用</a></li>
-<li><a href="#org7b03843"><span class="todo TODO">TODO</span> 字符流的使用</a></li>
-<li><a href="#org87127cd"><span class="todo TODO">TODO</span> 转换流</a></li>
-<li><a href="#org81765c9"><span class="todo TODO">TODO</span> 保存图书信息</a></li>
+<li><a href="#orgc3125a5"><span class="todo TODO">TODO</span> 字节流的使用</a></li>
+<li><a href="#org9e4a4d0"><span class="todo TODO">TODO</span> 字符流的使用</a></li>
+<li><a href="#org67730d5"><span class="todo TODO">TODO</span> 转换流</a></li>
+<li><a href="#orgbcddc9e"><span class="todo TODO">TODO</span> 保存图书信息</a></li>
 </ul>
 </div>
 </div>
@@ -46,9 +46,9 @@
 在变量、数组、对象和集合中存储的数据是暂时存在的，一旦程序结束它们就会丢失。为以能够永久地保存程序创建的数据，需要将其保存到磁盘文件中，这样就可以在其他程序中使用它们。Java 的 I/O （输入输出）技术可以将数据保存到文本文件和二进制文件中，以达到永久保存数据的要求。
 </p>
 
-<div id="outline-container-org945177b" class="outline-2">
-<h2 id="org945177b">流的概念</h2>
-<div class="outline-text-2" id="text-org945177b">
+<div id="outline-container-orge4b5def" class="outline-2">
+<h2 id="orge4b5def">流的概念</h2>
+<div class="outline-text-2" id="text-orge4b5def">
 <p>
 在 Java 中所有数据都是使用流读写的。流是一组有序的数据序列，将数据从一个地方带到另一个地方。根据数据流向的不同，可以分为输入流（Input）和输出流（Output）两种。
 </p>
@@ -66,9 +66,9 @@
 </p>
 </div>
 
-<div id="outline-container-org081a62a" class="outline-3">
-<h3 id="org081a62a">什么是输入/输出流</h3>
-<div class="outline-text-3" id="text-org081a62a">
+<div id="outline-container-org37cdf03" class="outline-3">
+<h3 id="org37cdf03">什么是输入/输出流</h3>
+<div class="outline-text-3" id="text-org37cdf03">
 <p>
 <b>Java 程序通过流来完成输入/输出，所有的输入/输出以流的形式处理。</b>
 </p>
@@ -108,9 +108,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-orgf86b5a9" class="outline-3">
-<h3 id="orgf86b5a9">输入流</h3>
-<div class="outline-text-3" id="text-orgf86b5a9">
+<div id="outline-container-orgdc7f2b0" class="outline-3">
+<h3 id="orgdc7f2b0">输入流</h3>
+<div class="outline-text-3" id="text-orgdc7f2b0">
 <p>
 Java 流相关的类都封装在 <code>java.io</code> 包中，而且每个数据流都是一个对象。所有输入流都是 InputStream 抽象类（字节输入流）和 Reader 抽象类（字符输入流）的子类。其中 InputStream 类是字节输入流的抽象类，是所有字节输入流的父类，其层次结构如图所示：
 </p>
@@ -200,9 +200,9 @@ Java 中字符是 Unicode 编码，即双字节的，而 InputStream 是用来�
 </div>
 </div>
 
-<div id="outline-container-org3d118cb" class="outline-3">
-<h3 id="org3d118cb">输出流</h3>
-<div class="outline-text-3" id="text-org3d118cb">
+<div id="outline-container-orgaaa91c8" class="outline-3">
+<h3 id="orgaaa91c8">输出流</h3>
+<div class="outline-text-3" id="text-orgaaa91c8">
 <p>
 在 Java 中所有输出流都是 OutputStream 抽象类（字节输出流）和 Writer 抽象类（字符输出流）的子类。其中 OutputStream 类是字节输出流的抽象类，是所有字节输出流的父类。
 </p>
@@ -264,9 +264,9 @@ OutputStream 类是所有字节输出流的超类，用于以二进制的形式�
 </div>
 </div>
 
-<div id="outline-container-orgeaaab25" class="outline-2">
-<h2 id="orgeaaab25">系统流</h2>
-<div class="outline-text-2" id="text-orgeaaab25">
+<div id="outline-container-org0825d2f" class="outline-2">
+<h2 id="org0825d2f">系统流</h2>
+<div class="outline-text-2" id="text-org0825d2f">
 <p>
 每个 Java 程序运行时都带有一个系统流，系统流对应的类为 <code>java.lang.System</code> 。System 类封装了 Java 程序运行时的 3 个系统流，分别通过 <code>in、out</code> 和 <code>err</code> 变量来引用：
 </p>
@@ -285,21 +285,21 @@ OutputStream 类是所有字节输出流的超类，用于以二进制的形式�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Test</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">byte</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">byteData</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">byte</span><span style="color: #50a14f;">[</span>100<span style="color: #50a14f;">]</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22768;&#26126;&#19968;&#20010;&#23383;&#33410;&#25968;&#32452;</span>
-<span class="linenr"> 4: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#35831;&#36755;&#20837;&#33521;&#25991;&#65306;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 5: </span>        <span style="color: #e45649;">try</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 6: </span>            System.in.read<span style="color: #da8548;">(</span>byteData<span style="color: #da8548;">)</span>;
-<span class="linenr"> 7: </span>        <span style="color: #50a14f;">}</span> <span style="color: #e45649;">catch</span> <span style="color: #50a14f;">(</span><span style="color: #986801;">IOException</span> <span style="color: #6a1868;">e</span><span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 8: </span>            e.printStackTrace<span style="color: #da8548;">()</span>;
-<span class="linenr"> 9: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">10: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#24744;&#36755;&#20837;&#30340;&#20869;&#23481;&#22914;&#19979;&#65306;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">11: </span>        <span style="color: #e45649;">for</span> <span style="color: #50a14f;">(</span><span style="color: #986801;">int</span> <span style="color: #6a1868;">i</span> = 0; i &lt; byteData.<span style="color: #986801;">length</span>; i++<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr">12: </span>            System.out.println<span style="color: #da8548;">(</span><span style="color: #b751b6;">(</span><span style="color: #986801;">char</span><span style="color: #b751b6;">)</span> byteData<span style="color: #b751b6;">[</span>i<span style="color: #b751b6;">]</span><span style="color: #da8548;">)</span>;
-<span class="linenr">13: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">14: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">15: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Test</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">byte</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">byteData</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">byte</span><span style="color: #909183;">[</span>100<span style="color: #909183;">]</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22768;&#26126;&#19968;&#20010;&#23383;&#33410;&#25968;&#32452;</span>
+<span class="linenr"> 4: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#35831;&#36755;&#20837;&#33521;&#25991;&#65306;"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 5: </span>        <span style="color: #a626a4;">try</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 6: </span>            System.in.read<span style="color: #709870;">(</span>byteData<span style="color: #709870;">)</span>;
+<span class="linenr"> 7: </span>        <span style="color: #909183;">}</span> <span style="color: #a626a4;">catch</span> <span style="color: #909183;">(</span><span style="color: #c18401;">IOException</span> <span style="color: #8b4513;">e</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 8: </span>            e.printStackTrace<span style="color: #709870;">()</span>;
+<span class="linenr"> 9: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">10: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#24744;&#36755;&#20837;&#30340;&#20869;&#23481;&#22914;&#19979;&#65306;"</span><span style="color: #909183;">)</span>;
+<span class="linenr">11: </span>        <span style="color: #a626a4;">for</span> <span style="color: #909183;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">i</span> = 0; i &lt; byteData.<span style="color: #c18401;">length</span>; i++<span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr">12: </span>            System.out.println<span style="color: #709870;">(</span><span style="color: #907373;">(</span><span style="color: #c18401;">char</span><span style="color: #907373;">)</span> byteData<span style="color: #907373;">[</span>i<span style="color: #907373;">]</span><span style="color: #709870;">)</span>;
+<span class="linenr">13: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">14: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">15: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -329,13 +329,13 @@ void write(int byteval) throws IOException
 </div>
 </div>
 
-<div id="outline-container-org88a501a" class="outline-2">
-<h2 id="org88a501a"><span class="todo TODO">TODO</span> 字符编码</h2>
+<div id="outline-container-org5568122" class="outline-2">
+<h2 id="org5568122"><span class="todo TODO">TODO</span> 字符编码</h2>
 </div>
 
-<div id="outline-container-org3045eeb" class="outline-2">
-<h2 id="org3045eeb">File 类</h2>
-<div class="outline-text-2" id="text-org3045eeb">
+<div id="outline-container-org5d4db60" class="outline-2">
+<h2 id="org5d4db60">File 类</h2>
+<div class="outline-text-2" id="text-org5d4db60">
 <p>
 在 Java 中， <b>File 类是 <code>java.io</code> 包中唯一代表磁盘文件本身的对象</b> ，也就是说，如果希望在程序中操作文件和目录，则都可以通过 File 类来完成。File 类定义了一些方法来操作文件，比如新建、删除、重命名文件和目录等。
 </p>
@@ -475,9 +475,9 @@ Windows 的路径分隔符使用反斜线 <code>\</code> ，而 Java 程序中�
 </p>
 </div>
 
-<div id="outline-container-orgfe89925" class="outline-3">
-<h3 id="orgfe89925">获取文件属性</h3>
-<div class="outline-text-3" id="text-orgfe89925">
+<div id="outline-container-orge5a1f5c" class="outline-3">
+<h3 id="orge5a1f5c">获取文件属性</h3>
+<div class="outline-text-3" id="text-orge5a1f5c">
 <p>
 在 Java 中获取文件属性信息的第一步是先创建一个 File 类对象并指向一个已存在的文件，然后再调用上表中的方法进行操作。
 </p>
@@ -487,33 +487,33 @@ Windows 的路径分隔符使用反斜线 <code>\</code> ，而 Java 程序中�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Test</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">String</span> <span style="color: #6a1868;">path</span> = <span style="color: #50a14f;">"C:/windows/"</span>;            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25351;&#23450;&#25991;&#20214;&#25152;&#22312;&#30340;&#30446;&#24405;</span>
-<span class="linenr"> 4: </span>        <span style="color: #986801;">File</span> <span style="color: #6a1868;">f</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">File</span><span style="color: #50a14f;">(</span>path, <span style="color: #50a14f;">"notepad.exe"</span><span style="color: #50a14f;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24314;&#31435; File &#30446;&#24405;&#65292;&#24182;&#35774;&#23450;&#30001; f &#21464;&#37327;&#24341;&#29992;</span>
-<span class="linenr"> 5: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"C:\\windows\\notepad.exe&#25991;&#20214;&#20449;&#24687;&#22914;&#19979;&#65306;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 6: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"============================================"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 7: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#25991;&#20214;&#38271;&#24230;&#65306;"</span> + f.length<span style="color: #da8548;">()</span> + <span style="color: #50a14f;">"&#23383;&#33410;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 8: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#25991;&#20214;&#25110;&#32773;&#30446;&#24405;&#65306;"</span> + <span style="color: #da8548;">(</span>f.isFile<span style="color: #b751b6;">()</span> ? <span style="color: #50a14f;">"&#26159;&#25991;&#20214;"</span> : <span style="color: #50a14f;">"&#19981;&#26159;&#25991;&#20214;"</span><span style="color: #da8548;">)</span><span style="color: #50a14f;">)</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Test</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">String</span> <span style="color: #8b4513;">path</span> = <span style="color: #50a14f;">"C:/windows/"</span>;            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#25351;&#23450;&#25991;&#20214;&#25152;&#22312;&#30340;&#30446;&#24405;</span>
+<span class="linenr"> 4: </span>        <span style="color: #c18401;">File</span> <span style="color: #8b4513;">f</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">File</span><span style="color: #909183;">(</span>path, <span style="color: #50a14f;">"notepad.exe"</span><span style="color: #909183;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#24314;&#31435; File &#30446;&#24405;&#65292;&#24182;&#35774;&#23450;&#30001; f &#21464;&#37327;&#24341;&#29992;</span>
+<span class="linenr"> 5: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"C:\\windows\\notepad.exe&#25991;&#20214;&#20449;&#24687;&#22914;&#19979;&#65306;"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 6: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"============================================"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 7: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#25991;&#20214;&#38271;&#24230;&#65306;"</span> + f.length<span style="color: #709870;">()</span> + <span style="color: #50a14f;">"&#23383;&#33410;"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 8: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#25991;&#20214;&#25110;&#32773;&#30446;&#24405;&#65306;"</span> + <span style="color: #709870;">(</span>f.isFile<span style="color: #907373;">()</span> ? <span style="color: #50a14f;">"&#26159;&#25991;&#20214;"</span> : <span style="color: #50a14f;">"&#19981;&#26159;&#25991;&#20214;"</span><span style="color: #709870;">)</span><span style="color: #909183;">)</span>;
 <span class="linenr"> 9: </span>        ...
-<span class="linenr">10: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#32477;&#23545;&#36335;&#24452;&#65306;"</span> + f.getAbsolutePath<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;
+<span class="linenr">10: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#32477;&#23545;&#36335;&#24452;&#65306;"</span> + f.getAbsolutePath<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;
 <span class="linenr">11: </span>
-<span class="linenr">12: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; C:\windows\notepad.exe&#25991;&#20214;&#20449;&#24687;&#22914;&#19979;&#65306;</span>
-<span class="linenr">13: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; ============================================</span>
-<span class="linenr">14: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#25991;&#20214;&#38271;&#24230;&#65306;193536&#23383;&#33410;</span>
-<span class="linenr">15: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#25991;&#20214;&#25110;&#32773;&#30446;&#24405;&#65306;&#26159;&#25991;&#20214;</span>
-<span class="linenr">16: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">...</span>
-<span class="linenr">17: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#32477;&#23545;&#36335;&#24452;&#65306;C:\windows\notepad.exe</span>
-<span class="linenr">18: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">19: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">12: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; C:\windows\notepad.exe&#25991;&#20214;&#20449;&#24687;&#22914;&#19979;&#65306;</span>
+<span class="linenr">13: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; ============================================</span>
+<span class="linenr">14: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#25991;&#20214;&#38271;&#24230;&#65306;193536&#23383;&#33410;</span>
+<span class="linenr">15: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#25991;&#20214;&#25110;&#32773;&#30446;&#24405;&#65306;&#26159;&#25991;&#20214;</span>
+<span class="linenr">16: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">...</span>
+<span class="linenr">17: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#32477;&#23545;&#36335;&#24452;&#65306;C:\windows\notepad.exe</span>
+<span class="linenr">18: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">19: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgaeff3a8" class="outline-3">
-<h3 id="orgaeff3a8">创建和删除文件</h3>
-<div class="outline-text-3" id="text-orgaeff3a8">
+<div id="outline-container-org17ae602" class="outline-3">
+<h3 id="org17ae602">创建和删除文件</h3>
+<div class="outline-text-3" id="text-org17ae602">
 <p>
 File 类不仅可以获取已知文件的属性信息，还可以在指定路径创建文件，以及删除一个文件。创建文件需要调用 <code>createNewFile()</code> 方法，删除文件需要调用 <code>delete()</code> 方法。
 </p>
@@ -523,18 +523,18 @@ File 类不仅可以获取已知文件的属性信息，还可以在指定路径
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Test</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #e45649;">throws</span> <span style="color: #986801;">IOException</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">File f = new File("C:\\test.txt");             // &#65288;&#19981;&#25512;&#33616;&#65289; &#21019;&#24314;&#25351;&#21521;&#25991;&#20214;&#30340; File &#25991;&#20214;</span>
-<span class="linenr"> 4: </span>        <span style="color: #986801;">String</span> <span style="color: #6a1868;">path</span> = <span style="color: #50a14f;">"C:"</span> + File.separator + <span style="color: #50a14f;">"test.txt"</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#65288;&#25512;&#33616;&#65289;&#25340;&#20945;&#20986;&#21487;&#20197;&#36866;&#24212;&#25805;&#20316;&#31995;&#32479;&#30340;&#36335;&#24452;</span>
-<span class="linenr"> 5: </span>        <span style="color: #986801;">Fiel</span> <span style="color: #6a1868;">f</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">File</span><span style="color: #50a14f;">(</span>path<span style="color: #50a14f;">)</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Test</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #a626a4;">throws</span> <span style="color: #c18401;">IOException</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">File f = new File("C:\\test.txt");             // &#65288;&#19981;&#25512;&#33616;&#65289; &#21019;&#24314;&#25351;&#21521;&#25991;&#20214;&#30340; File &#25991;&#20214;</span>
+<span class="linenr"> 4: </span>        <span style="color: #c18401;">String</span> <span style="color: #8b4513;">path</span> = <span style="color: #50a14f;">"C:"</span> + File.separator + <span style="color: #50a14f;">"test.txt"</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#65288;&#25512;&#33616;&#65289;&#25340;&#20945;&#20986;&#21487;&#20197;&#36866;&#24212;&#25805;&#20316;&#31995;&#32479;&#30340;&#36335;&#24452;</span>
+<span class="linenr"> 5: </span>        <span style="color: #c18401;">Fiel</span> <span style="color: #8b4513;">f</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">File</span><span style="color: #909183;">(</span>path<span style="color: #909183;">)</span>;
 <span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span>        <span style="color: #e45649;">if</span> <span style="color: #50a14f;">(</span>f.exists<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>       <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21028;&#26029;&#25991;&#20214;&#26159;&#21542;&#23384;&#22312;</span>
-<span class="linenr"> 8: </span>            f.delete<span style="color: #da8548;">()</span>;         <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23384;&#22312;&#21017;&#20808;&#21024;&#38500;</span>
-<span class="linenr"> 9: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">10: </span>        f.createNewFile<span style="color: #50a14f;">()</span>;      <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20877;&#21019;&#24314;</span>
-<span class="linenr">11: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">12: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 7: </span>        <span style="color: #a626a4;">if</span> <span style="color: #909183;">(</span>f.exists<span style="color: #709870;">()</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>       <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21028;&#26029;&#25991;&#20214;&#26159;&#21542;&#23384;&#22312;</span>
+<span class="linenr"> 8: </span>            f.delete<span style="color: #709870;">()</span>;         <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23384;&#22312;&#21017;&#20808;&#21024;&#38500;</span>
+<span class="linenr"> 9: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">10: </span>        f.createNewFile<span style="color: #909183;">()</span>;      <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20877;&#21019;&#24314;</span>
+<span class="linenr">11: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">12: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -544,33 +544,33 @@ File 类不仅可以获取已知文件的属性信息，还可以在指定路径
 </div>
 </div>
 
-<div id="outline-container-org79815d6" class="outline-3">
-<h3 id="org79815d6">创建和删除目录</h3>
-<div class="outline-text-3" id="text-org79815d6">
+<div id="outline-container-org91538ce" class="outline-3">
+<h3 id="org91538ce">创建和删除目录</h3>
+<div class="outline-text-3" id="text-org91538ce">
 <p>
 直接用示例来说明吧。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Test</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">String</span> <span style="color: #6a1868;">path</span> = <span style="color: #50a14f;">"C:"</span> + File.separator + <span style="color: #50a14f;">"config"</span> + File.separator; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25351;&#23450;&#30446;&#24405;&#20301;&#32622;</span>
-<span class="linenr"> 4: </span>        <span style="color: #986801;">File</span> <span style="color: #6a1868;">f</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">File</span><span style="color: #50a14f;">(</span>path<span style="color: #50a14f;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21019;&#24314; File &#23545;&#35937;</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Test</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">String</span> <span style="color: #8b4513;">path</span> = <span style="color: #50a14f;">"C:"</span> + File.separator + <span style="color: #50a14f;">"config"</span> + File.separator; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#25351;&#23450;&#30446;&#24405;&#20301;&#32622;</span>
+<span class="linenr"> 4: </span>        <span style="color: #c18401;">File</span> <span style="color: #8b4513;">f</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">File</span><span style="color: #909183;">(</span>path<span style="color: #909183;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21019;&#24314; File &#23545;&#35937;</span>
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span>        <span style="color: #e45649;">if</span> <span style="color: #50a14f;">(</span>f.exists<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 7: </span>            f.delete<span style="color: #da8548;">()</span>;
-<span class="linenr"> 8: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr"> 9: </span>        f.mkdir<span style="color: #50a14f;">()</span>;               <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21019;&#24314;&#30446;&#24405;</span>
-<span class="linenr">10: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">11: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 6: </span>        <span style="color: #a626a4;">if</span> <span style="color: #909183;">(</span>f.exists<span style="color: #709870;">()</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 7: </span>            f.delete<span style="color: #709870;">()</span>;
+<span class="linenr"> 8: </span>        <span style="color: #909183;">}</span>
+<span class="linenr"> 9: </span>        f.mkdir<span style="color: #909183;">()</span>;               <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21019;&#24314;&#30446;&#24405;</span>
+<span class="linenr">10: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">11: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org685b10b" class="outline-3">
-<h3 id="org685b10b">遍历目录</h3>
-<div class="outline-text-3" id="text-org685b10b">
+<div id="outline-container-org214c077" class="outline-3">
+<h3 id="org214c077">遍历目录</h3>
+<div class="outline-text-3" id="text-org214c077">
 <p>
 通过遍历目录可以在指定目录中查找文件，或者显示所有的文件列表。
 </p>
@@ -604,28 +604,28 @@ File 类的 <code>list()</code> 方法提供了遍历目录功能，该方法有
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Test</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">String</span> <span style="color: #6a1868;">path</span> = <span style="color: #50a14f;">"C:"</span> + File.separator;
-<span class="linenr"> 4: </span>        <span style="color: #986801;">File</span> <span style="color: #6a1868;">f</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">File</span><span style="color: #50a14f;">(</span>path<span style="color: #50a14f;">)</span>;
-<span class="linenr"> 5: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#25991;&#20214;&#21517;&#31216;\t\t&#25991;&#20214;&#31867;&#22411;\t\t&#25991;&#20214;&#22823;&#23567;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 6: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"================================"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 7: </span>        <span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">fileList</span> = f.list<span style="color: #50a14f;">()</span>;               <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35843;&#29992;&#19981;&#24102;&#21442;&#25968;&#30340; list() &#26041;&#27861;</span>
-<span class="linenr"> 8: </span>        <span style="color: #e45649;">for</span> <span style="color: #50a14f;">(</span><span style="color: #986801;">int</span> <span style="color: #6a1868;">i</span> = 0; i &lt; fileList.<span style="color: #986801;">length</span>; i++<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span> <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36941;&#21382;&#36820;&#22238;&#30340;&#23383;&#31526;&#25968;&#32452;</span>
-<span class="linenr"> 9: </span>            System.out.println<span style="color: #da8548;">(</span>fileList<span style="color: #b751b6;">[</span>i<span style="color: #b751b6;">]</span> + <span style="color: #50a14f;">"\t\t"</span><span style="color: #da8548;">)</span>;
-<span class="linenr">10: </span>            System.out.println<span style="color: #da8548;">(</span><span style="color: #b751b6;">(</span><span style="color: #e45649;">new</span> <span style="color: #986801;">File</span><span style="color: #986801;">(</span><span style="color: #4db5bd;">(</span><span style="color: #50a14f;">"C:"</span> + File.separator<span style="color: #4db5bd;">)</span><span style="color: #986801;">)</span>, fileList<span style="color: #986801;">[</span>i<span style="color: #986801;">]</span><span style="color: #b751b6;">)</span>.isFile<span style="color: #b751b6;">()</span> ? <span style="color: #50a14f;">"&#25991;&#20214;"</span> + <span style="color: #50a14f;">"\t\t"</span> : <span style="color: #50a14f;">"&#25991;&#20214;&#22841;"</span> + <span style="color: #50a14f;">"\t\t"</span><span style="color: #da8548;">)</span>;
-<span class="linenr">11: </span>            System.out.println<span style="color: #da8548;">(</span><span style="color: #b751b6;">(</span><span style="color: #e45649;">new</span> <span style="color: #986801;">File</span><span style="color: #986801;">(</span><span style="color: #4db5bd;">(</span><span style="color: #50a14f;">"C:"</span> + File.separator<span style="color: #4db5bd;">)</span><span style="color: #986801;">)</span>, fileList<span style="color: #986801;">[</span>i<span style="color: #986801;">]</span><span style="color: #b751b6;">)</span>.length<span style="color: #b751b6;">()</span> + <span style="color: #50a14f;">"&#23383;&#33410;"</span><span style="color: #da8548;">)</span>;
-<span class="linenr">12: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">13: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">14: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Test</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">String</span> <span style="color: #8b4513;">path</span> = <span style="color: #50a14f;">"C:"</span> + File.separator;
+<span class="linenr"> 4: </span>        <span style="color: #c18401;">File</span> <span style="color: #8b4513;">f</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">File</span><span style="color: #909183;">(</span>path<span style="color: #909183;">)</span>;
+<span class="linenr"> 5: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#25991;&#20214;&#21517;&#31216;\t\t&#25991;&#20214;&#31867;&#22411;\t\t&#25991;&#20214;&#22823;&#23567;"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 6: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"================================"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 7: </span>        <span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">fileList</span> = f.list<span style="color: #909183;">()</span>;               <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35843;&#29992;&#19981;&#24102;&#21442;&#25968;&#30340; list() &#26041;&#27861;</span>
+<span class="linenr"> 8: </span>        <span style="color: #a626a4;">for</span> <span style="color: #909183;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">i</span> = 0; i &lt; fileList.<span style="color: #c18401;">length</span>; i++<span style="color: #909183;">)</span> <span style="color: #909183;">{</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36941;&#21382;&#36820;&#22238;&#30340;&#23383;&#31526;&#25968;&#32452;</span>
+<span class="linenr"> 9: </span>            System.out.println<span style="color: #709870;">(</span>fileList<span style="color: #907373;">[</span>i<span style="color: #907373;">]</span> + <span style="color: #50a14f;">"\t\t"</span><span style="color: #709870;">)</span>;
+<span class="linenr">10: </span>            System.out.println<span style="color: #709870;">(</span><span style="color: #907373;">(</span><span style="color: #a626a4;">new</span> <span style="color: #c18401;">File</span><span style="color: #6276ba;">(</span><span style="color: #858580;">(</span><span style="color: #50a14f;">"C:"</span> + File.separator<span style="color: #858580;">)</span><span style="color: #6276ba;">)</span>, fileList<span style="color: #6276ba;">[</span>i<span style="color: #6276ba;">]</span><span style="color: #907373;">)</span>.isFile<span style="color: #907373;">()</span> ? <span style="color: #50a14f;">"&#25991;&#20214;"</span> + <span style="color: #50a14f;">"\t\t"</span> : <span style="color: #50a14f;">"&#25991;&#20214;&#22841;"</span> + <span style="color: #50a14f;">"\t\t"</span><span style="color: #709870;">)</span>;
+<span class="linenr">11: </span>            System.out.println<span style="color: #709870;">(</span><span style="color: #907373;">(</span><span style="color: #a626a4;">new</span> <span style="color: #c18401;">File</span><span style="color: #6276ba;">(</span><span style="color: #858580;">(</span><span style="color: #50a14f;">"C:"</span> + File.separator<span style="color: #858580;">)</span><span style="color: #6276ba;">)</span>, fileList<span style="color: #6276ba;">[</span>i<span style="color: #6276ba;">]</span><span style="color: #907373;">)</span>.length<span style="color: #907373;">()</span> + <span style="color: #50a14f;">"&#23383;&#33410;"</span><span style="color: #709870;">)</span>;
+<span class="linenr">12: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">13: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">14: </span><span style="color: #707183;">}</span>
 <span class="linenr">15: </span>
-<span class="linenr">16: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#25991;&#20214;&#21517;&#31216;  &#25991;&#20214;&#31867;&#22411;  &#25991;&#20214;&#22823;&#23567;</span>
-<span class="linenr">17: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; ===================================================</span>
-<span class="linenr">18: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; $Recycle.Bin  &#25991;&#20214;&#22841;  4096&#23383;&#33410;</span>
-<span class="linenr">19: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; Documents and Settings  &#25991;&#20214;&#22841;  0&#23383;&#33410;</span>
-<span class="linenr">20: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">...</span>
-<span class="linenr">21: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; news.template  &#25991;&#20214;  417&#23383;&#33410;</span>
-<span class="linenr">22: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">...</span>
+<span class="linenr">16: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#25991;&#20214;&#21517;&#31216;  &#25991;&#20214;&#31867;&#22411;  &#25991;&#20214;&#22823;&#23567;</span>
+<span class="linenr">17: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; ===================================================</span>
+<span class="linenr">18: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; $Recycle.Bin  &#25991;&#20214;&#22841;  4096&#23383;&#33410;</span>
+<span class="linenr">19: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; Documents and Settings  &#25991;&#20214;&#22841;  0&#23383;&#33410;</span>
+<span class="linenr">20: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">...</span>
+<span class="linenr">21: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; news.template  &#25991;&#20214;  417&#23383;&#33410;</span>
+<span class="linenr">22: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">...</span>
 </pre>
 </div>
 
@@ -638,14 +638,14 @@ File 类的 <code>list()</code> 方法提供了遍历目录功能，该方法有
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">ImageFilter</span> <span style="color: #e45649;">implements</span> <span style="color: #986801;">FilenameFilter</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23454;&#29616; FilenameFileter &#25509;&#21475;</span>
-<span class="linenr">3: </span>    <span style="color: #b751b6;">@Override</span>
-<span class="linenr">4: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">boolean</span> <span style="color: #a626a4;">accept</span><span style="color: #a626a4;">(</span><span style="color: #986801;">File</span> <span style="color: #6a1868;">dir</span>, <span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">5: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25351;&#23450;&#20801;&#35768;&#30340;&#25991;&#20214;&#31867;&#22411;</span>
-<span class="linenr">6: </span>        <span style="color: #e45649;">return</span> name.endsWith<span style="color: #50a14f;">(</span><span style="color: #50a14f;">".sys"</span><span style="color: #50a14f;">)</span> || name.endsWith<span style="color: #50a14f;">(</span><span style="color: #50a14f;">".txt"</span><span style="color: #50a14f;">)</span> || name.endsWith<span style="color: #50a14f;">(</span><span style="color: #50a14f;">".bak"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">7: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">8: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">ImageFilter</span> <span style="color: #a626a4;">implements</span> <span style="color: #c18401;">FilenameFilter</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23454;&#29616; FilenameFileter &#25509;&#21475;</span>
+<span class="linenr">3: </span>    <span style="color: #008b8b;">@Override</span>
+<span class="linenr">4: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">boolean</span> <span style="color: #0184bc;">accept</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">File</span> <span style="color: #8b4513;">dir</span>, <span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">5: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#25351;&#23450;&#20801;&#35768;&#30340;&#25991;&#20214;&#31867;&#22411;</span>
+<span class="linenr">6: </span>        <span style="color: #a626a4;">return</span> name.endsWith<span style="color: #909183;">(</span><span style="color: #50a14f;">".sys"</span><span style="color: #909183;">)</span> || name.endsWith<span style="color: #909183;">(</span><span style="color: #50a14f;">".txt"</span><span style="color: #909183;">)</span> || name.endsWith<span style="color: #909183;">(</span><span style="color: #50a14f;">".bak"</span><span style="color: #909183;">)</span>;
+<span class="linenr">7: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">8: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -660,26 +660,26 @@ String[] fileList = f.list(new ImageFilter());
 </div>
 </div>
 
-<div id="outline-container-org2504827" class="outline-2">
-<h2 id="org2504827"><span class="todo TODO">TODO</span> 字节流的使用</h2>
+<div id="outline-container-orgc3125a5" class="outline-2">
+<h2 id="orgc3125a5"><span class="todo TODO">TODO</span> 字节流的使用</h2>
 </div>
 
-<div id="outline-container-org7b03843" class="outline-2">
-<h2 id="org7b03843"><span class="todo TODO">TODO</span> 字符流的使用</h2>
+<div id="outline-container-org9e4a4d0" class="outline-2">
+<h2 id="org9e4a4d0"><span class="todo TODO">TODO</span> 字符流的使用</h2>
 </div>
 
-<div id="outline-container-org87127cd" class="outline-2">
-<h2 id="org87127cd"><span class="todo TODO">TODO</span> 转换流</h2>
+<div id="outline-container-org67730d5" class="outline-2">
+<h2 id="org67730d5"><span class="todo TODO">TODO</span> 转换流</h2>
 </div>
 
-<div id="outline-container-org81765c9" class="outline-2">
-<h2 id="org81765c9"><span class="todo TODO">TODO</span> 保存图书信息</h2>
+<div id="outline-container-orgbcddc9e" class="outline-2">
+<h2 id="orgbcddc9e"><span class="todo TODO">TODO</span> 保存图书信息</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-10-02 Fri 15:09</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:43</p>
+<p class="date">Created: 2021-05-18 Tue 15:53</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

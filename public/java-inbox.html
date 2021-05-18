@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-04-13 Tue 17:43 -->
+<!-- 2021-05-18 Tue 15:54 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Java Inbox</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,61 +18,61 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgf13ff14">面向对象</a>
+<li><a href="#orgdef156f">面向对象</a>
 <ul>
-<li><a href="#orgb56b75f">模块</a></li>
+<li><a href="#orgf24915c">模块</a></li>
 </ul>
 </li>
-<li><a href="#org2f0a024">反射</a>
+<li><a href="#org094dfa2">反射</a>
 <ul>
-<li><a href="#org6a33c90">Class 类</a></li>
+<li><a href="#org6948344">Class 类</a></li>
 </ul>
 </li>
-<li><a href="#org8964923">Maven</a>
+<li><a href="#org915aec1">Maven</a>
 <ul>
-<li><a href="#org40d9289">为什么需要 Maven</a></li>
-<li><a href="#org7481515">Maven 项目结构</a></li>
-<li><a href="#org481da97">项目描述文件</a></li>
-<li><a href="#org205e806">依赖管理</a></li>
-<li><a href="#orgc35302f">Maven 镜像</a></li>
-<li><a href="#org432e165"><span class="todo TODO">TODO</span> 构建流程</a></li>
+<li><a href="#org7d8838b">为什么需要 Maven</a></li>
+<li><a href="#org21117f6">Maven 项目结构</a></li>
+<li><a href="#org71aa349">项目描述文件</a></li>
+<li><a href="#org8db082e">依赖管理</a></li>
+<li><a href="#org69994c5">Maven 镜像</a></li>
+<li><a href="#org88e52b0"><span class="todo TODO">TODO</span> 构建流程</a></li>
 </ul>
 </li>
-<li><a href="#org548f703"><span class="todo TODO">TODO</span> 多线程</a>
+<li><a href="#orged2eeec"><span class="todo TODO">TODO</span> 多线程</a>
 <ul>
-<li><a href="#org5b1528c">线程和进程</a></li>
-<li><a href="#org132c096">创建新线程</a></li>
-<li><a href="#orgac1864a">线程的状态</a></li>
-<li><a href="#org0328e5b">中断线程</a></li>
-<li><a href="#org2cf9f0d">守护进程</a></li>
-<li><a href="#orgf03d9cb">线程同步</a></li>
-<li><a href="#org0411443">同步方法</a></li>
+<li><a href="#org02c8f4a">线程和进程</a></li>
+<li><a href="#org2d5534b">创建新线程</a></li>
+<li><a href="#orgfc21d5a">线程的状态</a></li>
+<li><a href="#org0e787a2">中断线程</a></li>
+<li><a href="#org7a0cfa9">守护进程</a></li>
+<li><a href="#org5bcef3f">线程同步</a></li>
+<li><a href="#orge61e639">同步方法</a></li>
 </ul>
 </li>
-<li><a href="#orgbabdd5c">JDBC 编程</a>
+<li><a href="#org7cfdf84">JDBC 编程</a>
 <ul>
-<li><a href="#orgeb7736c">关系数据库</a></li>
-<li><a href="#org73fe419">JDBC 操作</a></li>
-<li><a href="#org462f421">JDBC 事务</a></li>
-<li><a href="#orgb7736d1">JDBC Batch</a></li>
-<li><a href="#org34af4ce">JDBC 连接池</a></li>
+<li><a href="#org2767135">关系数据库</a></li>
+<li><a href="#orgbf63ee4">JDBC 操作</a></li>
+<li><a href="#org20d34bd">JDBC 事务</a></li>
+<li><a href="#org6ff3454">JDBC Batch</a></li>
+<li><a href="#org4ac7c0c">JDBC 连接池</a></li>
 </ul>
 </li>
-<li><a href="#org90abfd7">Web 开发</a>
+<li><a href="#org908c302">Web 开发</a>
 <ul>
-<li><a href="#orgb441b15">JavaEE</a></li>
-<li><a href="#orgece8e66">Web 基础</a></li>
-<li><a href="#orgb8fc0b3">Servlet</a></li>
-<li><a href="#org63879d3">Servlet 开发</a></li>
+<li><a href="#org63f2b34">JavaEE</a></li>
+<li><a href="#org015c271">Web 基础</a></li>
+<li><a href="#orgc9af8ca">Servlet</a></li>
+<li><a href="#orgb464b7d">Servlet 开发</a></li>
 </ul>
 </li>
-<li><a href="#org6cfe720">Spring 开发</a>
+<li><a href="#org7a12aed">Spring 开发</a>
 <ul>
-<li><a href="#orga557055">AOP 本质</a></li>
-<li><a href="#orgc20326a">装配 AOP</a></li>
-<li><a href="#orgce4866b">AOP 避坑指南</a></li>
-<li><a href="#orgb597d13">访问数据库</a></li>
-<li><a href="#org04c4606"><span class="todo TODO">TODO</span> 使用 JDBC</a></li>
+<li><a href="#org9174a73">AOP 本质</a></li>
+<li><a href="#org2c7eca2">装配 AOP</a></li>
+<li><a href="#org5b9c1e5">AOP 避坑指南</a></li>
+<li><a href="#org9292c51">访问数据库</a></li>
+<li><a href="#org0bf288e"><span class="todo TODO">TODO</span> 使用 JDBC</a></li>
 </ul>
 </li>
 </ul>
@@ -82,13 +82,13 @@
 → 摘录自廖雪峰老师的 <a href="https://www.liaoxuefeng.com/wiki/1252599548343744">https://www.liaoxuefeng.com/wiki/1252599548343744</a>
 </p>
 
-<div id="outline-container-orgf13ff14" class="outline-2">
-<h2 id="orgf13ff14">面向对象</h2>
-<div class="outline-text-2" id="text-orgf13ff14">
+<div id="outline-container-orgdef156f" class="outline-2">
+<h2 id="orgdef156f">面向对象</h2>
+<div class="outline-text-2" id="text-orgdef156f">
 </div>
-<div id="outline-container-orgb56b75f" class="outline-3">
-<h3 id="orgb56b75f">模块</h3>
-<div class="outline-text-3" id="text-orgb56b75f">
+<div id="outline-container-orgf24915c" class="outline-3">
+<h3 id="orgf24915c">模块</h3>
+<div class="outline-text-3" id="text-orgf24915c">
 <p>
 <b>为什么需要模块？</b>
 </p>
@@ -118,9 +118,9 @@ title=""
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a020f0;">module</span> hello.<span style="color: SystemWindowText;">world</span> <span style="color: #707183;">{</span>
-<span class="linenr">2: </span>        <span style="color: #a020f0;">requires</span> java.<span style="color: SystemWindowText;">base</span>; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#21487;&#19981;&#20889;&#65292;&#20219;&#20309;&#27169;&#22359;&#37117;&#20250;&#33258;&#21160;&#24341;&#20837;java.base</span>
-<span class="linenr">3: </span>        <span style="color: #a020f0;">requires</span> java.<span style="color: SystemWindowText;">xml</span>;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">module</span> hello.<span style="color: #8b4513;">world</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>        <span style="color: #c18401;">requires</span> java.<span style="color: #8b4513;">base</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21487;&#19981;&#20889;&#65292;&#20219;&#20309;&#27169;&#22359;&#37117;&#20250;&#33258;&#21160;&#24341;&#20837;java.base</span>
+<span class="linenr">3: </span>        <span style="color: #c18401;">requires</span> java.<span style="color: #8b4513;">xml</span>;
 <span class="linenr">4: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
@@ -144,17 +144,17 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org2f0a024" class="outline-2">
-<h2 id="org2f0a024">反射</h2>
-<div class="outline-text-2" id="text-org2f0a024">
+<div id="outline-container-org094dfa2" class="outline-2">
+<h2 id="org094dfa2">反射</h2>
+<div class="outline-text-2" id="text-org094dfa2">
 <p>
 反射就是 Reflection， Java 的反射是指程序在运行期（对某个实例一无所知的情况下）可以拿到一个对象的所有信息。
 </p>
 </div>
 
-<div id="outline-container-org6a33c90" class="outline-3">
-<h3 id="org6a33c90">Class 类</h3>
-<div class="outline-text-3" id="text-org6a33c90">
+<div id="outline-container-org6948344" class="outline-3">
+<h3 id="org6948344">Class 类</h3>
+<div class="outline-text-3" id="text-org6948344">
 <p>
 除了 <code>int</code> 等基本类型外，Java 的其他类型全部都是 <code>class</code> （包括 <code>interface</code> ）。
 </p>
@@ -169,8 +169,8 @@ title=""
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">final</span> <span style="color: #a020f0;">class</span> <span style="color: #a020f0;">Class</span> <span style="color: #707183;">{</span>
-<span class="linenr">2: </span>    <span style="color: #a020f0;">private</span> <span style="color: SystemWindowText;">Class</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{}</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">final</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Class</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a626a4;">private</span> <span style="color: #0184bc;">Class</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{}</span>
 <span class="linenr">3: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
@@ -215,13 +215,13 @@ title=""
 </ol>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">1</span>
-<span class="linenr">2: </span><span style="color: #a020f0;">Class</span> <span style="color: SystemWindowText;">cls</span> = String.<span style="color: #a020f0;">class</span>;
-<span class="linenr">3: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">2</span>
-<span class="linenr">4: </span><span style="color: #a020f0;">String</span> <span style="color: SystemWindowText;">s</span> = <span style="color: #8b2252;">"Hello"</span>;
-<span class="linenr">5: </span><span style="color: #a020f0;">Class</span> <span style="color: SystemWindowText;">cls</span> = s.getClass<span style="color: #707183;">()</span>;
-<span class="linenr">6: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">3</span>
-<span class="linenr">7: </span><span style="color: #a020f0;">Class</span> <span style="color: SystemWindowText;">cls</span> = Class.forName<span style="color: #707183;">(</span><span style="color: #8b2252;">"java.lang.String"</span><span style="color: #707183;">)</span>;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">1</span>
+<span class="linenr">2: </span><span style="color: #c18401;">Class</span> <span style="color: #8b4513;">cls</span> = String.<span style="color: #a626a4;">class</span>;
+<span class="linenr">3: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">2</span>
+<span class="linenr">4: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">s</span> = <span style="color: #50a14f;">"Hello"</span>;
+<span class="linenr">5: </span><span style="color: #c18401;">Class</span> <span style="color: #8b4513;">cls</span> = s.getClass<span style="color: #707183;">()</span>;
+<span class="linenr">6: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">3</span>
+<span class="linenr">7: </span><span style="color: #c18401;">Class</span> <span style="color: #8b4513;">cls</span> = Class.forName<span style="color: #707183;">(</span><span style="color: #50a14f;">"java.lang.String"</span><span style="color: #707183;">)</span>;
 </pre>
 </div>
 
@@ -240,9 +240,9 @@ JVM 总是动态加载 <code>class</code> ，可以在运行期根据条件来�
 </div>
 </div>
 
-<div id="outline-container-org8964923" class="outline-2">
-<h2 id="org8964923">Maven</h2>
-<div class="outline-text-2" id="text-org8964923">
+<div id="outline-container-org915aec1" class="outline-2">
+<h2 id="org915aec1">Maven</h2>
+<div class="outline-text-2" id="text-org915aec1">
 <p>
 Maven 是一个 Java 项目管理和构建工具，它可以定义 <span class="underline">项目结构</span> 、 <span class="underline">项目依赖</span> ，并且用统一的方式进行 <span class="underline">自动化构建</span> （编译、测试、打包、发布……）。
 </p>
@@ -252,9 +252,9 @@ Maven 是一个 Java 项目管理和构建工具，它可以定义 <span class="
 </essay>
 </div>
 
-<div id="outline-container-org40d9289" class="outline-3">
-<h3 id="org40d9289">为什么需要 Maven</h3>
-<div class="outline-text-3" id="text-org40d9289">
+<div id="outline-container-org7d8838b" class="outline-3">
+<h3 id="org7d8838b">为什么需要 Maven</h3>
+<div class="outline-text-3" id="text-org7d8838b">
 <p>
 一个 Java 项目需要什么？
 </p>
@@ -285,9 +285,9 @@ Maven 是一个 Java 项目管理和构建工具，它可以定义 <span class="
 </div>
 </div>
 
-<div id="outline-container-org7481515" class="outline-3">
-<h3 id="org7481515">Maven 项目结构</h3>
-<div class="outline-text-3" id="text-org7481515">
+<div id="outline-container-org21117f6" class="outline-3">
+<h3 id="org21117f6">Maven 项目结构</h3>
+<div class="outline-text-3" id="text-org21117f6">
 <img
 src="images/java-47.jpg"
 width="200"
@@ -310,9 +310,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org481da97" class="outline-3">
-<h3 id="org481da97">项目描述文件</h3>
-<div class="outline-text-3" id="text-org481da97">
+<div id="outline-container-org71aa349" class="outline-3">
+<h3 id="org71aa349">项目描述文件</h3>
+<div class="outline-text-3" id="text-org71aa349">
 <p>
 POM( Project Object Model，项目对象模型 ) 是 Maven 工程的基本工作单元，是一个 XML 文件，包含了项目的基本信息，用于描述项目如何构建，声明项目依赖，等等。
 </p>
@@ -326,24 +326,24 @@ POM( Project Object Model，项目对象模型 ) 是 Maven 工程的基本工作
 </p>
 
 <div class="org-src-container">
-<pre class="src src-xml"><span class="linenr"> 1: </span>&lt;<span style="color: SystemWindowText;">project</span> <span style="color: #a020f0;">xmlns</span> = <span style="color: #8b2252;">"http://maven.apache.org/POM/4.0.0"</span>
-<span class="linenr"> 2: </span>    <span style="color: #a020f0;">xmlns</span>:<span style="color: SystemWindowText;">xsi</span> = <span style="color: #8b2252;">"http://www.w3.org/2001/XMLSchema-instance"</span>
-<span class="linenr"> 3: </span>    <span style="color: #a020f0;">xsi</span>:<span style="color: SystemWindowText;">schemaLocation</span> = <span style="color: #8b2252;">"http://maven.apache.org/POM/4.0.0</span>
-<span class="linenr"> 4: </span><span style="color: #8b2252;">    http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;
+<pre class="src src-xml"><span class="linenr"> 1: </span>&lt;<span style="color: #0184bc;">project</span> <span style="color: #e44649;">xmlns</span> = <span style="color: #50a14f;">"http://maven.apache.org/POM/4.0.0"</span>
+<span class="linenr"> 2: </span>    <span style="color: #e44649;">xmlns</span>:<span style="color: #8b4513;">xsi</span> = <span style="color: #50a14f;">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<span class="linenr"> 3: </span>    <span style="color: #e44649;">xsi</span>:<span style="color: #8b4513;">schemaLocation</span> = <span style="color: #50a14f;">"http://maven.apache.org/POM/4.0.0</span>
+<span class="linenr"> 4: </span><span style="color: #50a14f;">    http://maven.apache.org/xsd/maven-4.0.0.xsd"</span>&gt;
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span>    <span style="color: #7f7f7f;">&lt;!-- </span><span style="color: #7f7f7f;">&#27169;&#22411;&#29256;&#26412; </span><span style="color: #7f7f7f;">--&gt;</span>
-<span class="linenr"> 7: </span>    &lt;<span style="color: SystemWindowText;">modelVersion</span>&gt;4.0.0&lt;/<span style="color: SystemWindowText;">modelVersion</span>&gt;
-<span class="linenr"> 8: </span>    <span style="color: #7f7f7f;">&lt;!-- </span><span style="color: #7f7f7f;">&#20844;&#21496;&#25110;&#32773;&#32452;&#32455;&#30340;&#21807;&#19968;&#26631;&#24535;&#65292;&#24182;&#19988;&#37197;&#32622;&#26102;&#29983;&#25104;&#30340;&#36335;&#24452;&#20063;&#26159;&#30001;&#27492;&#29983;&#25104;&#65292;</span>
-<span class="linenr"> 9: </span><span style="color: #7f7f7f;">         &#22914;com.companyname.project-group&#65292;</span>
-<span class="linenr">10: </span><span style="color: #7f7f7f;">         maven&#20250;&#23558;&#35813;&#39033;&#30446;&#25171;&#25104;&#30340;jar&#21253;&#25918;&#26412;&#22320;&#36335;&#24452;&#65306;/com/companyname/project-group </span><span style="color: #7f7f7f;">--&gt;</span>
-<span class="linenr">11: </span>    &lt;<span style="color: SystemWindowText;">groupId</span>&gt;com.companyname.project-group&lt;/<span style="color: SystemWindowText;">groupId</span>&gt;
+<span class="linenr"> 6: </span>    <span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#27169;&#22411;&#29256;&#26412; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr"> 7: </span>    &lt;<span style="color: #0184bc;">modelVersion</span>&gt;4.0.0&lt;/<span style="color: #0184bc;">modelVersion</span>&gt;
+<span class="linenr"> 8: </span>    <span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#20844;&#21496;&#25110;&#32773;&#32452;&#32455;&#30340;&#21807;&#19968;&#26631;&#24535;&#65292;&#24182;&#19988;&#37197;&#32622;&#26102;&#29983;&#25104;&#30340;&#36335;&#24452;&#20063;&#26159;&#30001;&#27492;&#29983;&#25104;&#65292;</span>
+<span class="linenr"> 9: </span><span style="color: #a0a1a7;">         &#22914;com.companyname.project-group&#65292;</span>
+<span class="linenr">10: </span><span style="color: #a0a1a7;">         maven&#20250;&#23558;&#35813;&#39033;&#30446;&#25171;&#25104;&#30340;jar&#21253;&#25918;&#26412;&#22320;&#36335;&#24452;&#65306;/com/companyname/project-group </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">11: </span>    &lt;<span style="color: #0184bc;">groupId</span>&gt;com.companyname.project-group&lt;/<span style="color: #0184bc;">groupId</span>&gt;
 <span class="linenr">12: </span>
-<span class="linenr">13: </span>    <span style="color: #7f7f7f;">&lt;!-- </span><span style="color: #7f7f7f;">&#39033;&#30446;&#30340;&#21807;&#19968;ID&#65292;&#19968;&#20010;groupId&#19979;&#38754; _&#21487;&#33021;&#22810;&#20010;&#39033;&#30446;_&#65292;&#23601;&#26159;&#38752;artifactId&#26469;&#21306;&#20998;&#30340; </span><span style="color: #7f7f7f;">--&gt;</span>
-<span class="linenr">14: </span>    &lt;<span style="color: SystemWindowText;">artifactId</span>&gt;project&lt;/<span style="color: SystemWindowText;">artifactId</span>&gt;
+<span class="linenr">13: </span>    <span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#39033;&#30446;&#30340;&#21807;&#19968;ID&#65292;&#19968;&#20010;groupId&#19979;&#38754; _&#21487;&#33021;&#22810;&#20010;&#39033;&#30446;_&#65292;&#23601;&#26159;&#38752;artifactId&#26469;&#21306;&#20998;&#30340; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">14: </span>    &lt;<span style="color: #0184bc;">artifactId</span>&gt;project&lt;/<span style="color: #0184bc;">artifactId</span>&gt;
 <span class="linenr">15: </span>
-<span class="linenr">16: </span>    <span style="color: #7f7f7f;">&lt;!-- </span><span style="color: #7f7f7f;">&#29256;&#26412;&#21495; </span><span style="color: #7f7f7f;">--&gt;</span>
-<span class="linenr">17: </span>    &lt;<span style="color: SystemWindowText;">version</span>&gt;1.0&lt;/<span style="color: SystemWindowText;">version</span>&gt;
-<span class="linenr">18: </span>&lt;/<span style="color: SystemWindowText;">project</span>&gt;
+<span class="linenr">16: </span>    <span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#29256;&#26412;&#21495; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr">17: </span>    &lt;<span style="color: #0184bc;">version</span>&gt;1.0&lt;/<span style="color: #0184bc;">version</span>&gt;
+<span class="linenr">18: </span>&lt;/<span style="color: #0184bc;">project</span>&gt;
 </pre>
 </div>
 
@@ -380,17 +380,17 @@ Maven 使用 <code>effective pom</code> （Super pom 加上工程自己的配置
 </p>
 
 <div class="org-src-container">
-<pre class="src src-xml"><span class="linenr"> 1: </span>&lt;<span style="color: SystemWindowText;">project...</span>&gt;
+<pre class="src src-xml"><span class="linenr"> 1: </span>&lt;<span style="color: #0184bc;">project...</span>&gt;
 <span class="linenr"> 2: </span>    ...
-<span class="linenr"> 3: </span>    &lt;<span style="color: SystemWindowText;">dependencies</span>&gt;
-<span class="linenr"> 4: </span>        &lt;<span style="color: SystemWindowText;">dependency</span>&gt;
-<span class="linenr"> 5: </span>            &lt;<span style="color: SystemWindowText;">groupId</span>&gt;commons-logging&lt;/<span style="color: SystemWindowText;">groupId</span>&gt;
-<span class="linenr"> 6: </span>            &lt;<span style="color: SystemWindowText;">artifactId</span>&gt;commons-logging&lt;/<span style="color: SystemWindowText;">artifactId</span>&gt;
-<span class="linenr"> 7: </span>            &lt;<span style="color: SystemWindowText;">version</span>&gt;1.2&lt;/<span style="color: SystemWindowText;">version</span>&gt;
-<span class="linenr"> 8: </span>        &lt;/<span style="color: SystemWindowText;">dependency</span>&gt;
+<span class="linenr"> 3: </span>    &lt;<span style="color: #0184bc;">dependencies</span>&gt;
+<span class="linenr"> 4: </span>        &lt;<span style="color: #0184bc;">dependency</span>&gt;
+<span class="linenr"> 5: </span>            &lt;<span style="color: #0184bc;">groupId</span>&gt;commons-logging&lt;/<span style="color: #0184bc;">groupId</span>&gt;
+<span class="linenr"> 6: </span>            &lt;<span style="color: #0184bc;">artifactId</span>&gt;commons-logging&lt;/<span style="color: #0184bc;">artifactId</span>&gt;
+<span class="linenr"> 7: </span>            &lt;<span style="color: #0184bc;">version</span>&gt;1.2&lt;/<span style="color: #0184bc;">version</span>&gt;
+<span class="linenr"> 8: </span>        &lt;/<span style="color: #0184bc;">dependency</span>&gt;
 <span class="linenr"> 9: </span>        ...
-<span class="linenr">10: </span>    &lt;/<span style="color: SystemWindowText;">dependencies</span>&gt;
-<span class="linenr">11: </span>&lt;/<span style="color: SystemWindowText;">project</span>&gt;
+<span class="linenr">10: </span>    &lt;/<span style="color: #0184bc;">dependencies</span>&gt;
+<span class="linenr">11: </span>&lt;/<span style="color: #0184bc;">project</span>&gt;
 </pre>
 </div>
 
@@ -400,9 +400,9 @@ Maven 使用 <code>effective pom</code> （Super pom 加上工程自己的配置
 </div>
 </div>
 
-<div id="outline-container-org205e806" class="outline-3">
-<h3 id="org205e806">依赖管理</h3>
-<div class="outline-text-3" id="text-org205e806">
+<div id="outline-container-org8db082e" class="outline-3">
+<h3 id="org8db082e">依赖管理</h3>
+<div class="outline-text-3" id="text-org8db082e">
 <p>
 Maven 的第一个作用就是解决依赖管理。我们声明了自己的项目需要 <code>abc</code> ，Maven会自动导入 <code>abc</code> 的 jar包，再判断出 <code>abc</code> 需要 <code>xyz</code> ，又会自动导入 <code>xyz</code> 的jar包 ……
 </p>
@@ -449,33 +449,33 @@ Maven定义了几种依赖关系，分别是 <code>compile、test、runtime</cod
 </div>
 </div>
 
-<div id="outline-container-orgc35302f" class="outline-3">
-<h3 id="orgc35302f">Maven 镜像</h3>
-<div class="outline-text-3" id="text-orgc35302f">
+<div id="outline-container-org69994c5" class="outline-3">
+<h3 id="org69994c5">Maven 镜像</h3>
+<div class="outline-text-3" id="text-org69994c5">
 <p>
 中国区用户可以使用阿里云提供的 Maven 镜像仓库。使用 Maven 镜像仓库需要一个配置，在用户主目录下进入 <code>.m2</code> 目录，创建一个 <code>settings.xml</code> 配置文件，内容如下：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-xml"><span class="linenr"> 1: </span>&lt;<span style="color: SystemWindowText;">settings</span>&gt;
-<span class="linenr"> 2: </span>    &lt;<span style="color: SystemWindowText;">mirrors</span>&gt;
-<span class="linenr"> 3: </span>        &lt;<span style="color: SystemWindowText;">mirror</span>&gt;
-<span class="linenr"> 4: </span>            &lt;<span style="color: SystemWindowText;">id</span>&gt;aliyun&lt;/<span style="color: SystemWindowText;">id</span>&gt;
-<span class="linenr"> 5: </span>            &lt;<span style="color: SystemWindowText;">name</span>&gt;aliyun&lt;/<span style="color: SystemWindowText;">name</span>&gt;
-<span class="linenr"> 6: </span>            &lt;<span style="color: SystemWindowText;">mirrorOf</span>&gt;central&lt;/<span style="color: SystemWindowText;">mirrorOf</span>&gt;
-<span class="linenr"> 7: </span>            <span style="color: #7f7f7f;">&lt;!-- </span><span style="color: #7f7f7f;">&#22269;&#20869;&#25512;&#33616;&#38463;&#37324;&#20113;&#30340;Maven&#38236;&#20687; </span><span style="color: #7f7f7f;">--&gt;</span>
-<span class="linenr"> 8: </span>            &lt;<span style="color: SystemWindowText;">url</span>&gt;https://maven.aliyun.com/repository/central&lt;/<span style="color: SystemWindowText;">url</span>&gt;
-<span class="linenr"> 9: </span>        &lt;/<span style="color: SystemWindowText;">mirror</span>&gt;
-<span class="linenr">10: </span>    &lt;/<span style="color: SystemWindowText;">mirrors</span>&gt;
-<span class="linenr">11: </span>&lt;/<span style="color: SystemWindowText;">settings</span>&gt;
+<pre class="src src-xml"><span class="linenr"> 1: </span>&lt;<span style="color: #0184bc;">settings</span>&gt;
+<span class="linenr"> 2: </span>    &lt;<span style="color: #0184bc;">mirrors</span>&gt;
+<span class="linenr"> 3: </span>        &lt;<span style="color: #0184bc;">mirror</span>&gt;
+<span class="linenr"> 4: </span>            &lt;<span style="color: #0184bc;">id</span>&gt;aliyun&lt;/<span style="color: #0184bc;">id</span>&gt;
+<span class="linenr"> 5: </span>            &lt;<span style="color: #0184bc;">name</span>&gt;aliyun&lt;/<span style="color: #0184bc;">name</span>&gt;
+<span class="linenr"> 6: </span>            &lt;<span style="color: #0184bc;">mirrorOf</span>&gt;central&lt;/<span style="color: #0184bc;">mirrorOf</span>&gt;
+<span class="linenr"> 7: </span>            <span style="color: #a0a1a7; font-weight: bold;">&lt;!-- </span><span style="color: #a0a1a7;">&#22269;&#20869;&#25512;&#33616;&#38463;&#37324;&#20113;&#30340;Maven&#38236;&#20687; </span><span style="color: #a0a1a7; font-weight: bold;">--&gt;</span>
+<span class="linenr"> 8: </span>            &lt;<span style="color: #0184bc;">url</span>&gt;https://maven.aliyun.com/repository/central&lt;/<span style="color: #0184bc;">url</span>&gt;
+<span class="linenr"> 9: </span>        &lt;/<span style="color: #0184bc;">mirror</span>&gt;
+<span class="linenr">10: </span>    &lt;/<span style="color: #0184bc;">mirrors</span>&gt;
+<span class="linenr">11: </span>&lt;/<span style="color: #0184bc;">settings</span>&gt;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org432e165" class="outline-3">
-<h3 id="org432e165"><span class="todo TODO">TODO</span> 构建流程</h3>
-<div class="outline-text-3" id="text-org432e165">
+<div id="outline-container-org88e52b0" class="outline-3">
+<h3 id="org88e52b0"><span class="todo TODO">TODO</span> 构建流程</h3>
+<div class="outline-text-3" id="text-org88e52b0">
 <p>
 ……
 </p>
@@ -483,13 +483,13 @@ Maven定义了几种依赖关系，分别是 <code>compile、test、runtime</cod
 </div>
 </div>
 
-<div id="outline-container-org548f703" class="outline-2">
-<h2 id="org548f703"><span class="todo TODO">TODO</span> 多线程</h2>
-<div class="outline-text-2" id="text-org548f703">
+<div id="outline-container-orged2eeec" class="outline-2">
+<h2 id="orged2eeec"><span class="todo TODO">TODO</span> 多线程</h2>
+<div class="outline-text-2" id="text-orged2eeec">
 </div>
-<div id="outline-container-org5b1528c" class="outline-3">
-<h3 id="org5b1528c">线程和进程</h3>
-<div class="outline-text-3" id="text-org5b1528c">
+<div id="outline-container-org02c8f4a" class="outline-3">
+<h3 id="org02c8f4a">线程和进程</h3>
+<div class="outline-text-3" id="text-org02c8f4a">
 <p>
 进程和线程的关系就是：一个进程可以包含一个或多个线程，但至少会有一个线程。
 </p>
@@ -529,18 +529,18 @@ Java多线程编程的特点又在于：
 </div>
 </div>
 
-<div id="outline-container-org132c096" class="outline-3">
-<h3 id="org132c096">创建新线程</h3>
-<div class="outline-text-3" id="text-org132c096">
+<div id="outline-container-org2d5534b" class="outline-3">
+<h3 id="org2d5534b">创建新线程</h3>
+<div class="outline-text-3" id="text-org2d5534b">
 <p>
 要创建一个新线程非常容易，我们需要实例化一个 <code>Thread</code> 实例，然后调用它的 <code>start()</code> 方法：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #a020f0;">Main</span> <span style="color: #707183;">{</span>
-<span class="linenr">2: </span>    <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">static</span> <span style="color: #a020f0;">void</span> <span style="color: SystemWindowText;">main</span><span style="color: #7388d6;">(</span><span style="color: #a020f0;">String</span><span style="color: #909183;">[]</span> <span style="color: SystemWindowText;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
-<span class="linenr">3: </span>        <span style="color: #a020f0;">Thread</span> <span style="color: SystemWindowText;">t</span> = <span style="color: #a020f0;">new</span> <span style="color: #a020f0;">Thread</span><span style="color: #909183;">()</span>;
-<span class="linenr">4: </span>        t.start<span style="color: #909183;">()</span>; <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#21551;&#21160;&#26032;&#32447;&#31243;</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Main</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">3: </span>        <span style="color: #c18401;">Thread</span> <span style="color: #8b4513;">t</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Thread</span><span style="color: #909183;">()</span>;
+<span class="linenr">4: </span>        t.start<span style="color: #909183;">()</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21551;&#21160;&#26032;&#32447;&#31243;</span>
 <span class="linenr">5: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">6: </span><span style="color: #707183;">}</span>
 </pre>
@@ -574,9 +574,9 @@ Java多线程编程的特点又在于：
 </div>
 </div>
 
-<div id="outline-container-orgac1864a" class="outline-3">
-<h3 id="orgac1864a">线程的状态</h3>
-<div class="outline-text-3" id="text-orgac1864a">
+<div id="outline-container-orgfc21d5a" class="outline-3">
+<h3 id="orgfc21d5a">线程的状态</h3>
+<div class="outline-text-3" id="text-orgfc21d5a">
 <p>
 在Java程序中，一个线程对象只能调用一次 <code>start()</code> 方法启动新线程，并在新线程中执行 <code>run()</code> 方法。一旦 <code>run()</code> 方法执行完毕，线程就结束了。
 </p>
@@ -622,9 +622,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org0328e5b" class="outline-3">
-<h3 id="org0328e5b">中断线程</h3>
-<div class="outline-text-3" id="text-org0328e5b">
+<div id="outline-container-org0e787a2" class="outline-3">
+<h3 id="org0e787a2">中断线程</h3>
+<div class="outline-text-3" id="text-org0e787a2">
 <p>
 <code>main</code> 线程通过调用 <code>t.interrupt()</code> 方法中断 <code>t</code> 线程，但是要注意， <code>interrupt()</code> 方法仅仅向 <code>t</code> 线程发出了“中断请求”，至于 <code>t</code> 线程是否能立刻响应，要看具体代码。
 </p>
@@ -649,9 +649,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org2cf9f0d" class="outline-3">
-<h3 id="org2cf9f0d">守护进程</h3>
-<div class="outline-text-3" id="text-org2cf9f0d">
+<div id="outline-container-org7a0cfa9" class="outline-3">
+<h3 id="org7a0cfa9">守护进程</h3>
+<div class="outline-text-3" id="text-org7a0cfa9">
 <p>
 守护线程是指为其他线程服务的线程。在JVM中，所有非守护线程都执行完毕后，无论有没有守护线程，虚拟机都会自动退出。
 </p>
@@ -661,8 +661,8 @@ title=""
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a020f0;">Thread</span> <span style="color: SystemWindowText;">t</span> = <span style="color: #a020f0;">new</span> <span style="color: #a020f0;">MyThread</span><span style="color: #707183;">()</span>;
-<span class="linenr">2: </span>t.setDaemon<span style="color: #707183;">(</span><span style="color: #a020f0;">true</span><span style="color: #707183;">)</span>;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">Thread</span> <span style="color: #8b4513;">t</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">MyThread</span><span style="color: #707183;">()</span>;
+<span class="linenr">2: </span>t.setDaemon<span style="color: #707183;">(</span><span style="color: #008b8b;">true</span><span style="color: #707183;">)</span>;
 <span class="linenr">3: </span>t.start<span style="color: #707183;">()</span>;
 </pre>
 </div>
@@ -673,9 +673,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-orgf03d9cb" class="outline-3">
-<h3 id="orgf03d9cb">线程同步</h3>
-<div class="outline-text-3" id="text-orgf03d9cb">
+<div id="outline-container-org5bcef3f" class="outline-3">
+<h3 id="org5bcef3f">线程同步</h3>
+<div class="outline-text-3" id="text-org5bcef3f">
 <p>
 当多个线程同时运行时，线程的调度由操作系统决定，程序本身无法决定。这个时候，有个单线程模型下不存在的问题就来了：如果多个线程同时读写共享变量，会出现数据不一致的问题。
 </p>
@@ -773,31 +773,31 @@ JVM 只保证同一个锁在任意时刻只能被一个线程获取，但两个�
 </div>
 </div>
 
-<div id="outline-container-org0411443" class="outline-3">
-<h3 id="org0411443">同步方法</h3>
-<div class="outline-text-3" id="text-org0411443">
+<div id="outline-container-orge61e639" class="outline-3">
+<h3 id="orge61e639">同步方法</h3>
+<div class="outline-text-3" id="text-orge61e639">
 <p>
 让线程自己选择锁对象往往会使得代码逻辑混乱，也不利于封装，更好的方法是把 <code>synchronized</code> 逻辑封装起来。如下：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">class</span> <span style="color: #a020f0;">Counter</span> <span style="color: #707183;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #a020f0;">private</span> <span style="color: #a020f0;">int</span> <span style="color: SystemWindowText;">count</span> = 0;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Counter</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">private</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">count</span> = 0;
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span>    <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">void</span> <span style="color: SystemWindowText;">add</span><span style="color: #7388d6;">(</span><span style="color: #a020f0;">int</span> <span style="color: SystemWindowText;">n</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
-<span class="linenr"> 5: </span>        <span style="color: #a020f0;">synchronized</span><span style="color: #909183;">(</span><span style="color: #a020f0;">this</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 4: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">add</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">n</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 5: </span>        <span style="color: #a626a4;">synchronized</span><span style="color: #909183;">(</span><span style="color: #a626a4;">this</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
 <span class="linenr"> 6: </span>            count += n;
 <span class="linenr"> 7: </span>        <span style="color: #909183;">}</span>
 <span class="linenr"> 8: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span>    <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">void</span> <span style="color: SystemWindowText;">dec</span><span style="color: #7388d6;">(</span><span style="color: #a020f0;">int</span> <span style="color: SystemWindowText;">n</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
-<span class="linenr">11: </span>        <span style="color: #a020f0;">synchronized</span><span style="color: #909183;">(</span><span style="color: #a020f0;">this</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr">10: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">dec</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">n</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">11: </span>        <span style="color: #a626a4;">synchronized</span><span style="color: #909183;">(</span><span style="color: #a626a4;">this</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
 <span class="linenr">12: </span>            count -= n;
 <span class="linenr">13: </span>        <span style="color: #909183;">}</span>
 <span class="linenr">14: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">15: </span>
-<span class="linenr">16: </span>    <span style="color: #a020f0;">public</span> <span style="color: #a020f0;">int</span> <span style="color: SystemWindowText;">get</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
-<span class="linenr">17: </span>        <span style="color: #a020f0;">return</span> count;
+<span class="linenr">16: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">int</span> <span style="color: #0184bc;">get</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">17: </span>        <span style="color: #a626a4;">return</span> count;
 <span class="linenr">18: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">19: </span><span style="color: #707183;">}</span>
 </pre>
@@ -820,17 +820,17 @@ JVM 只保证同一个锁在任意时刻只能被一个线程获取，但两个�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">void</span> <span style="color: SystemWindowText;">add</span><span style="color: #707183;">(</span><span style="color: #a020f0;">int</span> <span style="color: SystemWindowText;">n</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #a020f0;">synchronized</span><span style="color: #7388d6;">(</span><span style="color: #a020f0;">this</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span> <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#38145;&#20303;this</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">add</span><span style="color: #707183;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">n</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">synchronized</span><span style="color: #7388d6;">(</span><span style="color: #a626a4;">this</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#38145;&#20303;this</span>
 <span class="linenr"> 3: </span>        count += n;
-<span class="linenr"> 4: </span>    <span style="color: #7388d6;">}</span> <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#35299;&#38145;</span>
+<span class="linenr"> 4: </span>    <span style="color: #7388d6;">}</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35299;&#38145;</span>
 <span class="linenr"> 5: </span><span style="color: #707183;">}</span>
 <span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#31561;&#20215;&#20110;</span>
+<span class="linenr"> 7: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#31561;&#20215;&#20110;</span>
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span><span style="color: #a020f0;">public</span> <span style="color: #a020f0;">synchronized</span> <span style="color: #a020f0;">void</span> <span style="color: SystemWindowText;">add</span><span style="color: #707183;">(</span><span style="color: #a020f0;">int</span> <span style="color: SystemWindowText;">n</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span> <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#38145;&#20303;this</span>
+<span class="linenr"> 9: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">synchronized</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">add</span><span style="color: #707183;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">n</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#38145;&#20303;this</span>
 <span class="linenr">10: </span>    count += n;
-<span class="linenr">11: </span><span style="color: #707183;">}</span> <span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#35299;&#38145;</span>
+<span class="linenr">11: </span><span style="color: #707183;">}</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35299;&#38145;</span>
 </pre>
 </div>
 
@@ -841,17 +841,17 @@ JVM 只保证同一个锁在任意时刻只能被一个线程获取，但两个�
 </div>
 </div>
 
-<div id="outline-container-orgbabdd5c" class="outline-2">
-<h2 id="orgbabdd5c">JDBC 编程</h2>
-<div class="outline-text-2" id="text-orgbabdd5c">
+<div id="outline-container-org7cfdf84" class="outline-2">
+<h2 id="org7cfdf84">JDBC 编程</h2>
+<div class="outline-text-2" id="text-org7cfdf84">
 <p>
 Java 为关系数据库定义了一套标准的访问接口：JDBC（Java Database Connectivity 。
 </p>
 </div>
 
-<div id="outline-container-orgeb7736c" class="outline-3">
-<h3 id="orgeb7736c">关系数据库</h3>
-<div class="outline-text-3" id="text-orgeb7736c">
+<div id="outline-container-org2767135" class="outline-3">
+<h3 id="org2767135">关系数据库</h3>
+<div class="outline-text-3" id="text-org2767135">
 <p>
 程序运行的时候，数据都是在内存中的。当程序终止的时候，通常都需要将数据保存到磁盘上，无论是保存到本地磁盘，还是通过网络保存到服务器上，最终都会将数据写入磁盘文件。
 </p>
@@ -901,9 +901,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org73fe419" class="outline-3">
-<h3 id="org73fe419">JDBC 操作</h3>
-<div class="outline-text-3" id="text-org73fe419">
+<div id="outline-container-orgbf63ee4" class="outline-3">
+<h3 id="orgbf63ee4">JDBC 操作</h3>
+<div class="outline-text-3" id="text-orgbf63ee4">
 <p>
 <b>1.JDBC连接</b>
 </p>
@@ -934,16 +934,16 @@ jdbc:mysql://localhost:3306/learnjdbc?useSSL=false&amp;characterEncoding=utf8
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">JDBC&#36830;&#25509;&#30340;URL, &#19981;&#21516;&#25968;&#25454;&#24211;&#26377;&#19981;&#21516;&#30340;&#26684;&#24335;:</span>
-<span class="linenr"> 2: </span><span style="color: #a020f0;">String</span> <span style="color: SystemWindowText;">JDBC_URL</span> = <span style="color: #8b2252;">"jdbc:mysql://localhost:3306/test"</span>;
-<span class="linenr"> 3: </span><span style="color: #a020f0;">String</span> <span style="color: SystemWindowText;">JDBC_USER</span> = <span style="color: #8b2252;">"root"</span>;
-<span class="linenr"> 4: </span><span style="color: #a020f0;">String</span> <span style="color: SystemWindowText;">JDBC_PASSWORD</span> = <span style="color: #8b2252;">"password"</span>;
-<span class="linenr"> 5: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#33719;&#21462;&#36830;&#25509;&#65306;</span>
-<span class="linenr"> 6: </span><span style="color: #a020f0;">Connection</span> <span style="color: SystemWindowText;">conn</span> = DriverManager.getConnection<span style="color: #707183;">(</span>JDBC_URL, JDBC_USER, JDBC_PASSWORD<span style="color: #707183;">)</span>;
-<span class="linenr"> 7: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">TODO: &#35775;&#38382;&#25968;&#25454;&#24211;...</span>
-<span class="linenr"> 8: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">...</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">JDBC&#36830;&#25509;&#30340;URL, &#19981;&#21516;&#25968;&#25454;&#24211;&#26377;&#19981;&#21516;&#30340;&#26684;&#24335;:</span>
+<span class="linenr"> 2: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">JDBC_URL</span> = <span style="color: #50a14f;">"jdbc:mysql://localhost:3306/test"</span>;
+<span class="linenr"> 3: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">JDBC_USER</span> = <span style="color: #50a14f;">"root"</span>;
+<span class="linenr"> 4: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">JDBC_PASSWORD</span> = <span style="color: #50a14f;">"password"</span>;
+<span class="linenr"> 5: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33719;&#21462;&#36830;&#25509;&#65306;</span>
+<span class="linenr"> 6: </span><span style="color: #c18401;">Connection</span> <span style="color: #8b4513;">conn</span> = DriverManager.getConnection<span style="color: #707183;">(</span>JDBC_URL, JDBC_USER, JDBC_PASSWORD<span style="color: #707183;">)</span>;
+<span class="linenr"> 7: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">TODO: &#35775;&#38382;&#25968;&#25454;&#24211;...</span>
+<span class="linenr"> 8: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">...</span>
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span><span style="color: #7f7f7f;">// </span><span style="color: #7f7f7f;">&#20851;&#38381;&#36830;&#25509;</span>
+<span class="linenr">10: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20851;&#38381;&#36830;&#25509;</span>
 <span class="linenr">11: </span>conn.close<span style="color: #707183;">()</span>;
 </pre>
 </div>
@@ -986,9 +986,9 @@ jdbc:mysql://localhost:3306/learnjdbc?useSSL=false&amp;characterEncoding=utf8
 </div>
 </div>
 
-<div id="outline-container-org462f421" class="outline-3">
-<h3 id="org462f421">JDBC 事务</h3>
-<div class="outline-text-3" id="text-org462f421">
+<div id="outline-container-org20d34bd" class="outline-3">
+<h3 id="org20d34bd">JDBC 事务</h3>
+<div class="outline-text-3" id="text-org20d34bd">
 <p>
 数据库事务（Transaction）是由若干个 SQL 语句构成的一个操作序列，数据库系统保证在一个事务中的所有 SQL 要么全部执行成功，要么全部不执行。
 </p>
@@ -1003,9 +1003,9 @@ JDBC 提供了事务的支持，使用 Connection 可以开启、提交或回滚
 </div>
 </div>
 
-<div id="outline-container-orgb7736d1" class="outline-3">
-<h3 id="orgb7736d1">JDBC Batch</h3>
-<div class="outline-text-3" id="text-orgb7736d1">
+<div id="outline-container-org6ff3454" class="outline-3">
+<h3 id="org6ff3454">JDBC Batch</h3>
+<div class="outline-text-3" id="text-org6ff3454">
 <p>
 使用 JDBC 操作数据库的时候，经常会执行一些批量操作。
 </p>
@@ -1020,9 +1020,9 @@ JDBC 提供了事务的支持，使用 Connection 可以开启、提交或回滚
 </div>
 </div>
 
-<div id="outline-container-org34af4ce" class="outline-3">
-<h3 id="org34af4ce">JDBC 连接池</h3>
-<div class="outline-text-3" id="text-org34af4ce">
+<div id="outline-container-org4ac7c0c" class="outline-3">
+<h3 id="org4ac7c0c">JDBC 连接池</h3>
+<div class="outline-text-3" id="text-org4ac7c0c">
 <p>
 为了避免频繁地创建和销毁 JDBC 连接，我们可以通过连接池（Connection Pool）复用已经创建好的连接。
 </p>
@@ -1042,13 +1042,13 @@ JDBC 连接池有一个标准的接口 <code>javax.sql.DataSource</code> ，注�
 </div>
 </div>
 
-<div id="outline-container-org90abfd7" class="outline-2">
-<h2 id="org90abfd7">Web 开发</h2>
-<div class="outline-text-2" id="text-org90abfd7">
+<div id="outline-container-org908c302" class="outline-2">
+<h2 id="org908c302">Web 开发</h2>
+<div class="outline-text-2" id="text-org908c302">
 </div>
-<div id="outline-container-orgb441b15" class="outline-3">
-<h3 id="orgb441b15">JavaEE</h3>
-<div class="outline-text-3" id="text-orgb441b15">
+<div id="outline-container-org63f2b34" class="outline-3">
+<h3 id="org63f2b34">JavaEE</h3>
+<div class="outline-text-3" id="text-org63f2b34">
 <p>
 JavaEE 是完全基于JavaSE，只是多了一大堆服务器相关的库以及 API 接口。所有的 JavaEE 程序，仍然是运行在标准的 JavaSE 的虚拟机上的。
 </p>
@@ -1075,9 +1075,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-orgece8e66" class="outline-3">
-<h3 id="orgece8e66">Web 基础</h3>
-<div class="outline-text-3" id="text-orgece8e66">
+<div id="outline-container-org015c271" class="outline-3">
+<h3 id="org015c271">Web 基础</h3>
+<div class="outline-text-3" id="text-org015c271">
 <p>
 <b>HTTP 协议（需要单独深入一下）</b>
 </p>
@@ -1100,9 +1100,9 @@ HTTP 协议是一个基于 TCP 协议之上的请求-响应协议。
 </div>
 </div>
 
-<div id="outline-container-orgb8fc0b3" class="outline-3">
-<h3 id="orgb8fc0b3">Servlet</h3>
-<div class="outline-text-3" id="text-orgb8fc0b3">
+<div id="outline-container-orgc9af8ca" class="outline-3">
+<h3 id="orgc9af8ca">Servlet</h3>
+<div class="outline-text-3" id="text-orgc9af8ca">
 <p>
 我们看到，编写 HTTP 服务器其实是非常简单的，只需要先编写基于多线程的 TCP 服务，然后在一个 TCP 连接中读取 HTTP 请求，发送 HTTP 响应即可。
 </p>
@@ -1136,21 +1136,21 @@ HTTP 协议是一个基于 TCP 协议之上的请求-响应协议。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-xml"><span class="linenr"> 1: </span>&lt;<span style="color: SystemWindowText;">project...</span>&gt;
+<pre class="src src-xml"><span class="linenr"> 1: </span>&lt;<span style="color: #0184bc;">project...</span>&gt;
 <span class="linenr"> 2: </span>    ...
-<span class="linenr"> 3: </span>    &lt;<span style="color: SystemWindowText;">packaging</span>&gt;war&lt;/<span style="color: SystemWindowText;">packaging</span>&gt;
+<span class="linenr"> 3: </span>    &lt;<span style="color: #0184bc;">packaging</span>&gt;war&lt;/<span style="color: #0184bc;">packaging</span>&gt;
 <span class="linenr"> 4: </span>    ...
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span>    &lt;<span style="color: SystemWindowText;">dependencies</span>&gt;
-<span class="linenr"> 7: </span>        &lt;<span style="color: SystemWindowText;">dependency</span>&gt;
-<span class="linenr"> 8: </span>            &lt;<span style="color: SystemWindowText;">groupId</span>&gt;javax.servlet&lt;/<span style="color: SystemWindowText;">groupId</span>&gt;
-<span class="linenr"> 9: </span>            &lt;<span style="color: SystemWindowText;">artifactId</span>&gt;javax.servlet-api&lt;/<span style="color: SystemWindowText;">artifactId</span>&gt;
-<span class="linenr">10: </span>            &lt;<span style="color: SystemWindowText;">version</span>&gt;4.0.0&lt;/<span style="color: SystemWindowText;">version</span>&gt;
-<span class="linenr">11: </span>            &lt;<span style="color: SystemWindowText;">scope</span>&gt;provided&lt;/<span style="color: SystemWindowText;">scope</span>&gt;
-<span class="linenr">12: </span>        &lt;/<span style="color: SystemWindowText;">dependency</span>&gt;
-<span class="linenr">13: </span>    &lt;/<span style="color: SystemWindowText;">dependencies</span>&gt;
+<span class="linenr"> 6: </span>    &lt;<span style="color: #0184bc;">dependencies</span>&gt;
+<span class="linenr"> 7: </span>        &lt;<span style="color: #0184bc;">dependency</span>&gt;
+<span class="linenr"> 8: </span>            &lt;<span style="color: #0184bc;">groupId</span>&gt;javax.servlet&lt;/<span style="color: #0184bc;">groupId</span>&gt;
+<span class="linenr"> 9: </span>            &lt;<span style="color: #0184bc;">artifactId</span>&gt;javax.servlet-api&lt;/<span style="color: #0184bc;">artifactId</span>&gt;
+<span class="linenr">10: </span>            &lt;<span style="color: #0184bc;">version</span>&gt;4.0.0&lt;/<span style="color: #0184bc;">version</span>&gt;
+<span class="linenr">11: </span>            &lt;<span style="color: #0184bc;">scope</span>&gt;provided&lt;/<span style="color: #0184bc;">scope</span>&gt;
+<span class="linenr">12: </span>        &lt;/<span style="color: #0184bc;">dependency</span>&gt;
+<span class="linenr">13: </span>    &lt;/<span style="color: #0184bc;">dependencies</span>&gt;
 <span class="linenr">14: </span>    ...
-<span class="linenr">15: </span>&lt;/<span style="color: SystemWindowText;">project</span>&gt;
+<span class="linenr">15: </span>&lt;/<span style="color: #0184bc;">project</span>&gt;
 </pre>
 </div>
 
@@ -1232,9 +1232,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org63879d3" class="outline-3">
-<h3 id="org63879d3">Servlet 开发</h3>
-<div class="outline-text-3" id="text-org63879d3">
+<div id="outline-container-orgb464b7d" class="outline-3">
+<h3 id="orgb464b7d">Servlet 开发</h3>
+<div class="outline-text-3" id="text-orgb464b7d">
 <p>
 一个完整的 Web 应用程序的开发流程如下：
 </p>
@@ -1281,13 +1281,13 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org6cfe720" class="outline-2">
-<h2 id="org6cfe720">Spring 开发</h2>
-<div class="outline-text-2" id="text-org6cfe720">
+<div id="outline-container-org7a12aed" class="outline-2">
+<h2 id="org7a12aed">Spring 开发</h2>
+<div class="outline-text-2" id="text-org7a12aed">
 </div>
-<div id="outline-container-orga557055" class="outline-3">
-<h3 id="orga557055">AOP 本质</h3>
-<div class="outline-text-3" id="text-orga557055">
+<div id="outline-container-org9174a73" class="outline-3">
+<h3 id="org9174a73">AOP 本质</h3>
+<div class="outline-text-3" id="text-org9174a73">
 <p>
 <b>AOP 的本质就是一个动态代理，</b> 让我们把一些常用功能如权限检查、日志、事务等，从每个业务方法中剥离出来。
 </p>
@@ -1300,9 +1300,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-orgc20326a" class="outline-3">
-<h3 id="orgc20326a">装配 AOP</h3>
-<div class="outline-text-3" id="text-orgc20326a">
+<div id="outline-container-org2c7eca2" class="outline-3">
+<h3 id="org2c7eca2">装配 AOP</h3>
+<div class="outline-text-3" id="text-org2c7eca2">
 <p>
 AOP 本质上只是一种代理模式的实现方式，在 Spring 的容器中实现 AOP 特别方便。
 </p>
@@ -1333,9 +1333,9 @@ Spring 对接口类型使用 JDK 动态代理，对普通类使用 CGLIB 创建�
 </div>
 </div>
 
-<div id="outline-container-orgce4866b" class="outline-3">
-<h3 id="orgce4866b">AOP 避坑指南</h3>
-<div class="outline-text-3" id="text-orgce4866b">
+<div id="outline-container-org5b9c1e5" class="outline-3">
+<h3 id="org5b9c1e5">AOP 避坑指南</h3>
+<div class="outline-text-3" id="text-org5b9c1e5">
 <p>
 无论是使用 AspectJ 语法，还是配合 Annotation ，使用 AOP ，实际上就是让 Spring 自动为我们创建一个 Proxy ，使得调用方能无感知地调用指定方法，但运行期却动态“织入”了其他逻辑。因此， <b>AOP 本质上就是一个代理模式</b> 。
 </p>
@@ -1354,9 +1354,9 @@ Spring 对接口类型使用 JDK 动态代理，对普通类使用 CGLIB 创建�
 </div>
 </div>
 
-<div id="outline-container-orgb597d13" class="outline-3">
-<h3 id="orgb597d13">访问数据库</h3>
-<div class="outline-text-3" id="text-orgb597d13">
+<div id="outline-container-org9292c51" class="outline-3">
+<h3 id="org9292c51">访问数据库</h3>
+<div class="outline-text-3" id="text-org9292c51">
 <p>
 使用 JDBC 虽然简单，但代码比较繁琐。Spring 为了简化数据库访问，主要做了以下几点工作：
 </p>
@@ -1370,9 +1370,9 @@ Spring 对接口类型使用 JDK 动态代理，对普通类使用 CGLIB 创建�
 </div>
 </div>
 
-<div id="outline-container-org04c4606" class="outline-3">
-<h3 id="org04c4606"><span class="todo TODO">TODO</span> 使用 JDBC</h3>
-<div class="outline-text-3" id="text-org04c4606">
+<div id="outline-container-org0bf288e" class="outline-3">
+<h3 id="org0bf288e"><span class="todo TODO">TODO</span> 使用 JDBC</h3>
+<div class="outline-text-3" id="text-org0bf288e">
 <p>
 ……
 </p>
@@ -1392,7 +1392,7 @@ Spring 对接口类型使用 JDK 动态代理，对普通类使用 CGLIB 创建�
 <div id="postamble" class="status">
 <p class="date">Date: 2021-04-04 Sun 17:23</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-04-13 Tue 17:43</p>
+<p class="date">Created: 2021-05-18 Tue 15:54</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

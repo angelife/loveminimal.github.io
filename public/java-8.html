@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:43 -->
+<!-- 2021-05-18 Tue 15:54 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>类和对象</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,53 +18,53 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgeecea85">面向对象简介</a>
+<li><a href="#org64a2959">面向对象简介</a>
 <ul>
-<li><a href="#org27ad3c5">对象的概念</a></li>
-<li><a href="#org092501c">认识类和对象</a></li>
+<li><a href="#orgd67d1da">对象的概念</a></li>
+<li><a href="#org99a9cc4">认识类和对象</a></li>
 </ul>
 </li>
-<li><a href="#org6a16bdb">类</a>
+<li><a href="#org732aa38">类</a>
 <ul>
-<li><a href="#org15d0355">成员变量</a></li>
-<li><a href="#org3109a9f">成员方法</a></li>
-<li><a href="#org328d881">this</a></li>
+<li><a href="#org2ae5857">成员变量</a></li>
+<li><a href="#orga97160b">成员方法</a></li>
+<li><a href="#orgd78aab1">this</a></li>
 </ul>
 </li>
-<li><a href="#org877604e">对象</a>
+<li><a href="#org53e865b">对象</a>
 <ul>
-<li><a href="#orgf637228">对象创建</a></li>
-<li><a href="#org198e58a">匿名对象</a></li>
-<li><a href="#orge6a06e7">属性行为</a></li>
-<li><a href="#orgcebd013">对象销毁</a></li>
-<li><a href="#org29a2120"><span class="todo TODO">TODO</span> 注释（类、方法、字段）</a></li>
-<li><a href="#orgc91fbea">访问控制修饰符</a></li>
-<li><a href="#org5babff9">static</a></li>
-<li><a href="#orgb313a08">静态导入</a></li>
-<li><a href="#orgdacd546">final</a></li>
-<li><a href="#org112990a">main()</a></li>
-<li><a href="#org72cd9f1">可变参数</a></li>
-<li><a href="#org40b56c7">构造方法</a></li>
-<li><a href="#orgcf4e1fb">析构方法</a></li>
-<li><a href="#org9ae20ab">包</a></li>
-<li><a href="#org1b9b071"><span class="todo TODO">TODO</span> 递归算法</a></li>
+<li><a href="#orgc90ad5c">对象创建</a></li>
+<li><a href="#org611fb8f">匿名对象</a></li>
+<li><a href="#orgb54134f">属性行为</a></li>
+<li><a href="#orgbda7186">对象销毁</a></li>
+<li><a href="#org26082de"><span class="todo TODO">TODO</span> 注释（类、方法、字段）</a></li>
+<li><a href="#org0d22dbe">访问控制修饰符</a></li>
+<li><a href="#org4f10491">static</a></li>
+<li><a href="#org8d9f669">静态导入</a></li>
+<li><a href="#org3e892a1">final</a></li>
+<li><a href="#orge571d60">main()</a></li>
+<li><a href="#org0e57517">可变参数</a></li>
+<li><a href="#org6d2c37c">构造方法</a></li>
+<li><a href="#org7c08815">析构方法</a></li>
+<li><a href="#org1e20ded">包</a></li>
+<li><a href="#org666a181"><span class="todo TODO">TODO</span> 递归算法</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgeecea85" class="outline-2">
-<h2 id="orgeecea85">面向对象简介</h2>
-<div class="outline-text-2" id="text-orgeecea85">
+<div id="outline-container-org64a2959" class="outline-2">
+<h2 id="org64a2959">面向对象简介</h2>
+<div class="outline-text-2" id="text-org64a2959">
 <p>
 面向对象简称 OO（Object Oriented），20 世纪 80 年代，有了面向对象分析（OOA）、面向对象设计（OOD）、面向对象程序设计（OOP）等新的系统开发方式模型的研究。
 </p>
 </div>
 
-<div id="outline-container-org27ad3c5" class="outline-3">
-<h3 id="org27ad3c5">对象的概念</h3>
-<div class="outline-text-3" id="text-org27ad3c5">
+<div id="outline-container-orgd67d1da" class="outline-3">
+<h3 id="orgd67d1da">对象的概念</h3>
+<div class="outline-text-3" id="text-orgd67d1da">
 <p>
 对 Java 语言来说，一切皆是对象，对象就是面向对象程序设计的核心。那么到底什么是对象呢？
 </p>
@@ -169,9 +169,9 @@ Java 提供了私有和公有的访问模式，类的公有接口代表外部的
 </div>
 </div>
 
-<div id="outline-container-org092501c" class="outline-3">
-<h3 id="org092501c">认识类和对象</h3>
-<div class="outline-text-3" id="text-org092501c">
+<div id="outline-container-org99a9cc4" class="outline-3">
+<h3 id="org99a9cc4">认识类和对象</h3>
+<div class="outline-text-3" id="text-org99a9cc4">
 <p>
 <b>在面向对象中，类和对象是最基本、最重要的组成单元。</b>
 </p>
@@ -199,9 +199,9 @@ Java 提供了私有和公有的访问模式，类的公有接口代表外部的
 </div>
 </div>
 
-<div id="outline-container-org6a16bdb" class="outline-2">
-<h2 id="org6a16bdb">类</h2>
-<div class="outline-text-2" id="text-org6a16bdb">
+<div id="outline-container-org732aa38" class="outline-2">
+<h2 id="org732aa38">类</h2>
+<div class="outline-text-2" id="text-org732aa38">
 <p>
 类是 Java 中的一种重要的引用数据类型，也是组成 Java 程序的基本要素，因为 Java 程序都是基于类的。
 </p>
@@ -278,21 +278,21 @@ Java 类名的命名规则：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Person</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>    <span style="color: #e45649;">private</span> <span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span>;        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22995;&#21517;</span>
-<span class="linenr">3: </span>    <span style="color: #e45649;">private</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">age</span>;            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24180;&#40836;</span>
-<span class="linenr">4: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">tell</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">5: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23450;&#20041;&#35828;&#35805;&#30340;&#26041;&#27861;</span>
-<span class="linenr">6: </span>        System.out.println<span style="color: #50a14f;">(</span>name + <span style="color: #50a14f;">"&#20170;&#24180;"</span> + age + <span style="color: #50a14f;">"&#23681;&#65281;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">7: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">8: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Person</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a626a4;">private</span> <span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span>;        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22995;&#21517;</span>
+<span class="linenr">3: </span>    <span style="color: #a626a4;">private</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">age</span>;            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#24180;&#40836;</span>
+<span class="linenr">4: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">tell</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">5: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23450;&#20041;&#35828;&#35805;&#30340;&#26041;&#27861;</span>
+<span class="linenr">6: </span>        System.out.println<span style="color: #909183;">(</span>name + <span style="color: #50a14f;">"&#20170;&#24180;"</span> + age + <span style="color: #50a14f;">"&#23681;&#65281;"</span><span style="color: #909183;">)</span>;
+<span class="linenr">7: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">8: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 </div>
 
-<div id="outline-container-org15d0355" class="outline-3">
-<h3 id="org15d0355">成员变量</h3>
-<div class="outline-text-3" id="text-org15d0355">
+<div id="outline-container-org2ae5857" class="outline-3">
+<h3 id="org2ae5857">成员变量</h3>
+<div class="outline-text-3" id="text-org2ae5857">
 <p>
 在 Java 中类的成员变量定义了类的属性。声明成员变量的语法如下：
 </p>
@@ -373,9 +373,9 @@ Java 类名的命名规则：
 </div>
 </div>
 
-<div id="outline-container-org3109a9f" class="outline-3">
-<h3 id="org3109a9f">成员方法</h3>
-<div class="outline-text-3" id="text-org3109a9f">
+<div id="outline-container-orga97160b" class="outline-3">
+<h3 id="orga97160b">成员方法</h3>
+<div class="outline-text-3" id="text-orga97160b">
 <p>
 声明成员方法可以定义类的行为，行为表示一个对象能够做的事情或者能够从一个对象取得的信息。类的各种功能操作都是用方法来实现的，属性只不过提供了相应的数据。
 </p>
@@ -522,9 +522,9 @@ return (表达式)
 </div>
 </div>
 
-<div id="outline-container-org328d881" class="outline-3">
-<h3 id="org328d881">this</h3>
-<div class="outline-text-3" id="text-org328d881">
+<div id="outline-container-orgd78aab1" class="outline-3">
+<h3 id="orgd78aab1">this</h3>
+<div class="outline-text-3" id="text-orgd78aab1">
 <p>
 <code>this</code> 关键字是 Java 常用的关键字，可用于任何实例方法内指向当前对象，也可指向对其调用当前方法的对象，或者在需要当前类型对象引用时使用。
 </p>
@@ -542,17 +542,17 @@ return (表达式)
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Teacher</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">private</span> <span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span>;
-<span class="linenr"> 3: </span>    <span style="color: #e45649;">private</span> <span style="color: #986801;">double</span> <span style="color: #6a1868;">salary</span>;
-<span class="linenr"> 4: </span>    <span style="color: #e45649;">private</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">age</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Teacher</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">private</span> <span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span>;
+<span class="linenr"> 3: </span>    <span style="color: #a626a4;">private</span> <span style="color: #c18401;">double</span> <span style="color: #8b4513;">salary</span>;
+<span class="linenr"> 4: </span>    <span style="color: #a626a4;">private</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">age</span>;
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span>    <span style="color: #e45649;">public</span> <span style="color: #a626a4;">Teacher</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span>, <span style="color: #986801;">double</span> <span style="color: #6a1868;">salary</span>, <span style="color: #986801;">int</span> <span style="color: #6a1868;">age</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 7: </span>        <span style="color: #e45649;">this</span>.name = name;
-<span class="linenr"> 8: </span>        <span style="color: #e45649;">this</span>.salary = salary;
-<span class="linenr"> 9: </span>        <span style="color: #e45649;">this</span>.age = age;
-<span class="linenr">10: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">11: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 6: </span>    <span style="color: #a626a4;">public</span> <span style="color: #0184bc;">Teacher</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span>, <span style="color: #c18401;">double</span> <span style="color: #8b4513;">salary</span>, <span style="color: #c18401;">int</span> <span style="color: #8b4513;">age</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 7: </span>        <span style="color: #a626a4;">this</span>.name = name;
+<span class="linenr"> 8: </span>        <span style="color: #a626a4;">this</span>.salary = salary;
+<span class="linenr"> 9: </span>        <span style="color: #a626a4;">this</span>.age = age;
+<span class="linenr">10: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">11: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -593,22 +593,22 @@ return (表达式)
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #84888b; font-style: italic;">/**</span>
-<span class="linenr"> 2: </span><span style="color: #84888b; font-style: italic;"> * &#31532;&#19968;&#31181;&#23450;&#20041; Dog &#31867;&#26041;&#27861;</span>
-<span class="linenr"> 3: </span><span style="color: #84888b; font-style: italic;"> **/</span>
-<span class="linenr"> 4: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Dog</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 5: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23450;&#20041;&#19968;&#20010; jump() &#26041;&#27861;</span>
-<span class="linenr"> 6: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">jump</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 7: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#27491;&#22312;&#25191;&#34892; jump &#26041;&#27861;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 8: </span>    <span style="color: #a626a4;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #50a14f; font-style: italic;">/**</span>
+<span class="linenr"> 2: </span><span style="color: #50a14f; font-style: italic;"> * &#31532;&#19968;&#31181;&#23450;&#20041; Dog &#31867;&#26041;&#27861;</span>
+<span class="linenr"> 3: </span><span style="color: #50a14f; font-style: italic;"> **/</span>
+<span class="linenr"> 4: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Dog</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 5: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23450;&#20041;&#19968;&#20010; jump() &#26041;&#27861;</span>
+<span class="linenr"> 6: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">jump</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 7: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#27491;&#22312;&#25191;&#34892; jump &#26041;&#27861;"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 8: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23450;&#20041;&#19968;&#20010; run() &#26041;&#27861;&#65292;run() &#26041;&#27861;&#38656;&#35201;&#20511;&#21161; jump() &#26041;&#27861;</span>
-<span class="linenr">11: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">run</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">12: </span>        <span style="color: #986801;">Dog</span> <span style="color: #6a1868;">d</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">Dog</span><span style="color: #50a14f;">()</span>;
-<span class="linenr">13: </span>        d.jump<span style="color: #50a14f;">()</span>;
-<span class="linenr">14: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#27491;&#22312;&#25191;&#34892; run &#26041;&#27861;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">15: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">16: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">10: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23450;&#20041;&#19968;&#20010; run() &#26041;&#27861;&#65292;run() &#26041;&#27861;&#38656;&#35201;&#20511;&#21161; jump() &#26041;&#27861;</span>
+<span class="linenr">11: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">run</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">12: </span>        <span style="color: #c18401;">Dog</span> <span style="color: #8b4513;">d</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Dog</span><span style="color: #909183;">()</span>;
+<span class="linenr">13: </span>        d.jump<span style="color: #909183;">()</span>;
+<span class="linenr">14: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#27491;&#22312;&#25191;&#34892; run &#26041;&#27861;"</span><span style="color: #909183;">)</span>;
+<span class="linenr">15: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">16: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -617,14 +617,14 @@ return (表达式)
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">DogTest</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21019;&#24314; Dog &#23545;&#35937;</span>
-<span class="linenr">4: </span>        <span style="color: #986801;">Dog</span> <span style="color: #6a1868;">dog</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">Dog</span><span style="color: #50a14f;">()</span>;
-<span class="linenr">5: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35843;&#29992; Dog &#23545;&#35937;&#30340; run() &#26041;&#27861;</span>
-<span class="linenr">6: </span>        dog.run<span style="color: #50a14f;">()</span>;
-<span class="linenr">7: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">8: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">DogTest</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">3: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21019;&#24314; Dog &#23545;&#35937;</span>
+<span class="linenr">4: </span>        <span style="color: #c18401;">Dog</span> <span style="color: #8b4513;">dog</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Dog</span><span style="color: #909183;">()</span>;
+<span class="linenr">5: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35843;&#29992; Dog &#23545;&#35937;&#30340; run() &#26041;&#27861;</span>
+<span class="linenr">6: </span>        dog.run<span style="color: #909183;">()</span>;
+<span class="linenr">7: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">8: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -667,16 +667,16 @@ this 可以代表任何对象，当 this 出现在某个方法体中时，它所
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #84888b; font-style: italic;">/**</span>
-<span class="linenr"> 2: </span><span style="color: #84888b; font-style: italic;"> * &#31532;&#20108;&#31181;&#23450;&#20041; Dog &#31867;&#26041;&#27861;</span>
-<span class="linenr"> 3: </span><span style="color: #84888b; font-style: italic;"> **/</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #50a14f; font-style: italic;">/**</span>
+<span class="linenr"> 2: </span><span style="color: #50a14f; font-style: italic;"> * &#31532;&#20108;&#31181;&#23450;&#20041; Dog &#31867;&#26041;&#27861;</span>
+<span class="linenr"> 3: </span><span style="color: #50a14f; font-style: italic;"> **/</span>
 <span class="linenr"> 4: </span>
-<span class="linenr"> 5: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23450;&#20041;&#19968;&#20010; run() &#26041;&#27861;&#65292;run() &#26041;&#27861;&#38656;&#35201;&#20511;&#21161; jump() &#26041;&#27861;</span>
-<span class="linenr"> 6: </span><span style="color: #e45649;">public</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">run</span><span style="color: #4078f2;">()</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 7: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20351;&#29992; this &#24341;&#23548;&#35843;&#29992; run() &#26041;&#27861;&#30340;&#23545;&#35937;</span>
-<span class="linenr"> 8: </span>    <span style="color: #e45649;">this</span>.jump<span style="color: #a626a4;">()</span>;
-<span class="linenr"> 9: </span>    System.out.println<span style="color: #a626a4;">(</span><span style="color: #50a14f;">"&#27491;&#22312;&#25191;&#34892; run &#26041;&#27861;"</span><span style="color: #a626a4;">)</span>;
-<span class="linenr">10: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 5: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23450;&#20041;&#19968;&#20010; run() &#26041;&#27861;&#65292;run() &#26041;&#27861;&#38656;&#35201;&#20511;&#21161; jump() &#26041;&#27861;</span>
+<span class="linenr"> 6: </span><span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">run</span><span style="color: #707183;">()</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 7: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20351;&#29992; this &#24341;&#23548;&#35843;&#29992; run() &#26041;&#27861;&#30340;&#23545;&#35937;</span>
+<span class="linenr"> 8: </span>    <span style="color: #a626a4;">this</span>.jump<span style="color: #7388d6;">()</span>;
+<span class="linenr"> 9: </span>    System.out.println<span style="color: #7388d6;">(</span><span style="color: #50a14f;">"&#27491;&#22312;&#25191;&#34892; run &#26041;&#27861;"</span><span style="color: #7388d6;">)</span>;
+<span class="linenr">10: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -693,10 +693,10 @@ this 可以代表任何对象，当 this 出现在某个方法体中时，它所
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #e45649;">public</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">run</span><span style="color: #4078f2;">()</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>    jump<span style="color: #a626a4;">()</span>;
-<span class="linenr">3: </span>    System.out.println<span style="color: #a626a4;">(</span><span style="color: #50a14f;">"&#27491;&#22312;&#25191;&#34892; run &#26041;&#27861;"</span><span style="color: #a626a4;">)</span>;
-<span class="linenr">4: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">run</span><span style="color: #707183;">()</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    jump<span style="color: #7388d6;">()</span>;
+<span class="linenr">3: </span>    System.out.println<span style="color: #7388d6;">(</span><span style="color: #50a14f;">"&#27491;&#22312;&#25191;&#34892; run &#26041;&#27861;"</span><span style="color: #7388d6;">)</span>;
+<span class="linenr">4: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -725,47 +725,47 @@ this 可以代表任何对象，当 this 出现在某个方法体中时，它所
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Student</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Student</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span>;
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#26080;&#21442;&#26500;&#36896;&#26041;&#27861;</span>
-<span class="linenr"> 5: </span>    <span style="color: #e45649;">public</span> <span style="color: #a626a4;">Student</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 6: </span>        <span style="color: #e45649;">this</span><span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#24352;&#19977;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 7: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr"> 4: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#26080;&#21442;&#26500;&#36896;&#26041;&#27861;</span>
+<span class="linenr"> 5: </span>    <span style="color: #a626a4;">public</span> <span style="color: #0184bc;">Student</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 6: </span>        <span style="color: #a626a4;">this</span><span style="color: #909183;">(</span><span style="color: #50a14f;">"&#24352;&#19977;"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 7: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#26377;&#21442;&#26500;&#36896;&#26041;&#27861;</span>
-<span class="linenr">10: </span>    <span style="color: #e45649;">public</span> <span style="color: #a626a4;">Student</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">11: </span>        <span style="color: #e45649;">this</span>.name = name;
-<span class="linenr">12: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr"> 9: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#26377;&#21442;&#26500;&#36896;&#26041;&#27861;</span>
+<span class="linenr">10: </span>    <span style="color: #a626a4;">public</span> <span style="color: #0184bc;">Student</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">11: </span>        <span style="color: #a626a4;">this</span>.name = name;
+<span class="linenr">12: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">13: </span>
-<span class="linenr">14: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36755;&#20986; name &#21644; age</span>
-<span class="linenr">15: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">print</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">16: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#22995;&#21517;&#65306;"</span> + name<span style="color: #50a14f;">)</span>;
-<span class="linenr">17: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr">14: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36755;&#20986; name &#21644; age</span>
+<span class="linenr">15: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">print</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">16: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#22995;&#21517;&#65306;"</span> + name<span style="color: #909183;">)</span>;
+<span class="linenr">17: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">18: </span>
-<span class="linenr">19: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">20: </span>        <span style="color: #986801;">Student</span> <span style="color: #6a1868;">stu</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">Student</span><span style="color: #50a14f;">()</span>;
-<span class="linenr">21: </span>        stu.print<span style="color: #50a14f;">()</span>;
-<span class="linenr">22: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">23: </span><span style="color: #4078f2;">}</span>
-<span class="linenr">24: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#22995;&#21517;&#65306;&#24352;&#19977;</span>
+<span class="linenr">19: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">20: </span>        <span style="color: #c18401;">Student</span> <span style="color: #8b4513;">stu</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Student</span><span style="color: #909183;">()</span>;
+<span class="linenr">21: </span>        stu.print<span style="color: #909183;">()</span>;
+<span class="linenr">22: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">23: </span><span style="color: #707183;">}</span>
+<span class="linenr">24: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#22995;&#21517;&#65306;&#24352;&#19977;</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org877604e" class="outline-2">
-<h2 id="org877604e">对象</h2>
-<div class="outline-text-2" id="text-org877604e">
+<div id="outline-container-org53e865b" class="outline-2">
+<h2 id="org53e865b">对象</h2>
+<div class="outline-text-2" id="text-org53e865b">
 <p>
 对象是对类的实例化。对象具有状态和行为，变量用来表明对象的状态，方法表明对象所具有的行为。Java 对象的生命周期包括创建、使用和清除。
 </p>
 </div>
 
-<div id="outline-container-orgf637228" class="outline-3">
-<h3 id="orgf637228">对象创建</h3>
-<div class="outline-text-3" id="text-orgf637228">
+<div id="outline-container-orgc90ad5c" class="outline-3">
+<h3 id="orgc90ad5c">对象创建</h3>
+<div class="outline-text-3" id="text-orgc90ad5c">
 <p>
 在 Java 语言中创建对象分显示创建与隐含创建两种情况。
 </p>
@@ -829,41 +829,41 @@ java.lang.Class Class类对象名称 = java.lang.Class.forName(要实例化的�
 </essay>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Student</span> <span style="color: #e45649;">implements</span> <span style="color: #986801;">Cloneable</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23454;&#29616; Cloneable &#25509;&#21475;</span>
-<span class="linenr"> 3: </span>    <span style="color: #e45649;">private</span> <span style="color: #986801;">String</span> <span style="color: #6a1868;">Name</span>;
-<span class="linenr"> 4: </span>    <span style="color: #e45649;">private</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">age</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Student</span> <span style="color: #a626a4;">implements</span> <span style="color: #c18401;">Cloneable</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23454;&#29616; Cloneable &#25509;&#21475;</span>
+<span class="linenr"> 3: </span>    <span style="color: #a626a4;">private</span> <span style="color: #c18401;">String</span> <span style="color: #8b4513;">Name</span>;
+<span class="linenr"> 4: </span>    <span style="color: #a626a4;">private</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">age</span>;
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span>    <span style="color: #e45649;">public</span> <span style="color: #a626a4;">Student</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span>, <span style="color: #986801;">int</span> <span style="color: #6a1868;">age</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 7: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#26500;&#36896;&#26041;&#27861;</span>
-<span class="linenr"> 8: </span>        <span style="color: #e45649;">this</span>.Name = name;
-<span class="linenr"> 9: </span>        <span style="color: #e45649;">this</span>.age = age;
-<span class="linenr">10: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr"> 6: </span>    <span style="color: #a626a4;">public</span> <span style="color: #0184bc;">Student</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span>, <span style="color: #c18401;">int</span> <span style="color: #8b4513;">age</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 7: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#26500;&#36896;&#26041;&#27861;</span>
+<span class="linenr"> 8: </span>        <span style="color: #a626a4;">this</span>.Name = name;
+<span class="linenr"> 9: </span>        <span style="color: #a626a4;">this</span>.age = age;
+<span class="linenr">10: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">11: </span>
-<span class="linenr">12: </span>    <span style="color: #e45649;">public</span> <span style="color: #a626a4;">Student</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">13: </span>        <span style="color: #e45649;">this</span>.Name = <span style="color: #50a14f;">"name"</span>;
-<span class="linenr">14: </span>        <span style="color: #e45649;">this</span>.age = 0;
-<span class="linenr">15: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr">12: </span>    <span style="color: #a626a4;">public</span> <span style="color: #0184bc;">Student</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">13: </span>        <span style="color: #a626a4;">this</span>.Name = <span style="color: #50a14f;">"name"</span>;
+<span class="linenr">14: </span>        <span style="color: #a626a4;">this</span>.age = 0;
+<span class="linenr">15: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">16: </span>
-<span class="linenr">17: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">String</span> <span style="color: #a626a4;">toString</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">18: </span>        <span style="color: #e45649;">return</span> <span style="color: #50a14f;">"&#23398;&#29983;&#21517;&#23383;&#65306;"</span> + Name + <span style="color: #50a14f;">"&#65292;&#24180;&#40836;&#65306;"</span> + age;
-<span class="linenr">19: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr">17: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">String</span> <span style="color: #0184bc;">toString</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">18: </span>        <span style="color: #a626a4;">return</span> <span style="color: #50a14f;">"&#23398;&#29983;&#21517;&#23383;&#65306;"</span> + Name + <span style="color: #50a14f;">"&#65292;&#24180;&#40836;&#65306;"</span> + age;
+<span class="linenr">19: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">20: </span>
-<span class="linenr">21: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #e45649;">throws</span> <span style="color: #986801;">Exception</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">22: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"------ &#20351;&#29992; new &#20851;&#38190;&#23383;&#21019;&#24314;&#23545;&#35937; ------"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">23: </span>        <span style="color: #986801;">Student</span> <span style="color: #6a1868;">student1</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">Student</span><span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#23567;&#21016;"</span>, 22<span style="color: #50a14f;">)</span>;
-<span class="linenr">24: </span>        System.out.println<span style="color: #50a14f;">(</span>student1<span style="color: #50a14f;">)</span>;
+<span class="linenr">21: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #a626a4;">throws</span> <span style="color: #c18401;">Exception</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">22: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"------ &#20351;&#29992; new &#20851;&#38190;&#23383;&#21019;&#24314;&#23545;&#35937; ------"</span><span style="color: #909183;">)</span>;
+<span class="linenr">23: </span>        <span style="color: #c18401;">Student</span> <span style="color: #8b4513;">student1</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Student</span><span style="color: #909183;">(</span><span style="color: #50a14f;">"&#23567;&#21016;"</span>, 22<span style="color: #909183;">)</span>;
+<span class="linenr">24: </span>        System.out.println<span style="color: #909183;">(</span>student1<span style="color: #909183;">)</span>;
 <span class="linenr">25: </span>
-<span class="linenr">26: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"------ &#35843;&#29992; java.lang.Class &#30340; newInstance() &#26041;&#27861;&#21019;&#24314;&#23545;&#35937; ------"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">27: </span>        <span style="color: #986801;">Class</span> <span style="color: #6a1868;">c1</span> = Class.forName<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"Student"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">28: </span>        <span style="color: #986801;">Student</span> <span style="color: #6a1868;">student2</span> = <span style="color: #50a14f;">(</span><span style="color: #986801;">Student</span><span style="color: #50a14f;">)</span>c1.newInstance<span style="color: #50a14f;">()</span>;
-<span class="linenr">29: </span>        System.out.println<span style="color: #50a14f;">(</span>student2<span style="color: #50a14f;">)</span>;
+<span class="linenr">26: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"------ &#35843;&#29992; java.lang.Class &#30340; newInstance() &#26041;&#27861;&#21019;&#24314;&#23545;&#35937; ------"</span><span style="color: #909183;">)</span>;
+<span class="linenr">27: </span>        <span style="color: #c18401;">Class</span> <span style="color: #8b4513;">c1</span> = Class.forName<span style="color: #909183;">(</span><span style="color: #50a14f;">"Student"</span><span style="color: #909183;">)</span>;
+<span class="linenr">28: </span>        <span style="color: #c18401;">Student</span> <span style="color: #8b4513;">student2</span> = <span style="color: #909183;">(</span><span style="color: #c18401;">Student</span><span style="color: #909183;">)</span>c1.newInstance<span style="color: #909183;">()</span>;
+<span class="linenr">29: </span>        System.out.println<span style="color: #909183;">(</span>student2<span style="color: #909183;">)</span>;
 <span class="linenr">30: </span>
-<span class="linenr">31: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"------ &#35843;&#29992;&#23545;&#35937;&#30340; clone() &#26041;&#27861;&#21019;&#24314;&#23545;&#35937; ------"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">32: </span>        <span style="color: #986801;">Student</span> <span style="color: #6a1868;">student3</span> = <span style="color: #50a14f;">(</span><span style="color: #986801;">Student</span><span style="color: #50a14f;">)</span>student2.clone<span style="color: #50a14f;">()</span>;
-<span class="linenr">33: </span>        System.out.println<span style="color: #50a14f;">(</span>student3<span style="color: #50a14f;">)</span>;
-<span class="linenr">34: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">35: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">31: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"------ &#35843;&#29992;&#23545;&#35937;&#30340; clone() &#26041;&#27861;&#21019;&#24314;&#23545;&#35937; ------"</span><span style="color: #909183;">)</span>;
+<span class="linenr">32: </span>        <span style="color: #c18401;">Student</span> <span style="color: #8b4513;">student3</span> = <span style="color: #909183;">(</span><span style="color: #c18401;">Student</span><span style="color: #909183;">)</span>student2.clone<span style="color: #909183;">()</span>;
+<span class="linenr">33: </span>        System.out.println<span style="color: #909183;">(</span>student3<span style="color: #909183;">)</span>;
+<span class="linenr">34: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">35: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -917,9 +917,9 @@ java.lang.Class Class类对象名称 = java.lang.Class.forName(要实例化的�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">str1</span> = <span style="color: #50a14f;">"Hello"</span>;
-<span class="linenr">2: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">str2</span> = <span style="color: #50a14f;">"Java"</span>;
-<span class="linenr">3: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">str3</span> = str1 + str2;      <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">str3 &#24341;&#29992;&#19968;&#20010;&#26032;&#30340; String &#23545;&#35937;</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">str1</span> = <span style="color: #50a14f;">"Hello"</span>;
+<span class="linenr">2: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">str2</span> = <span style="color: #50a14f;">"Java"</span>;
+<span class="linenr">3: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">str3</span> = str1 + str2;      <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">str3 &#24341;&#29992;&#19968;&#20010;&#26032;&#30340; String &#23545;&#35937;</span>
 </pre>
 </div>
 
@@ -948,9 +948,9 @@ java.lang.Class Class类对象名称 = java.lang.Class.forName(要实例化的�
 </div>
 </div>
 
-<div id="outline-container-org198e58a" class="outline-3">
-<h3 id="org198e58a">匿名对象</h3>
-<div class="outline-text-3" id="text-org198e58a">
+<div id="outline-container-org611fb8f" class="outline-3">
+<h3 id="org611fb8f">匿名对象</h3>
+<div class="outline-text-3" id="text-org611fb8f">
 <p>
 前面我们已经知道，创建对象的标准格式如下：
 </p>
@@ -973,9 +973,9 @@ java.lang.Class Class类对象名称 = java.lang.Class.forName(要实例化的�
 </div>
 </div>
 
-<div id="outline-container-orge6a06e7" class="outline-3">
-<h3 id="orge6a06e7">属性行为</h3>
-<div class="outline-text-3" id="text-orge6a06e7">
+<div id="outline-container-orgb54134f" class="outline-3">
+<h3 id="orgb54134f">属性行为</h3>
+<div class="outline-text-3" id="text-orgb54134f">
 <p>
 每个对象都有自己的属性和行为，这些属性和行为在类中体现为成员变量和成员方法，其中成员变量对应对象的属性，成员方法对应对象的行为。
 </p>
@@ -994,10 +994,10 @@ java.lang.Class Class类对象名称 = java.lang.Class.forName(要实例化的�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">tudent</span> <span style="color: #6a1868;">stu</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">Student</span><span style="color: #4078f2;">()</span>;    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21019;&#24314; Student &#31867;&#30340;&#23545;&#35937; stu</span>
-<span class="linenr">2: </span><span style="color: #b751b6;">stu</span>.Name = <span style="color: #50a14f;">"&#26446;&#23376;&#25991;"</span>;           <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35843;&#29992;stu&#23545;&#35937;&#30340;Name&#23646;&#24615;&#24182;&#36171;&#20540;</span>
-<span class="linenr">3: </span><span style="color: #b751b6;">stu</span>.Sex = <span style="color: #b751b6;">true</span>;                <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35843;&#29992;stu&#23545;&#35937;&#30340;Sex&#23646;&#24615;&#24182;&#36171;&#20540;</span>
-<span class="linenr">4: </span><span style="color: #b751b6;">stu</span>.Age = 15;                  <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35843;&#29992;stu&#23545;&#35937;&#30340;Age&#23646;&#24615;&#24182;&#36171;&#20540;</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">tudent</span> <span style="color: #8b4513;">stu</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Student</span><span style="color: #707183;">()</span>;    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21019;&#24314; Student &#31867;&#30340;&#23545;&#35937; stu</span>
+<span class="linenr">2: </span><span style="color: #008b8b;">stu</span>.Name = <span style="color: #50a14f;">"&#26446;&#23376;&#25991;"</span>;           <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35843;&#29992;stu&#23545;&#35937;&#30340;Name&#23646;&#24615;&#24182;&#36171;&#20540;</span>
+<span class="linenr">3: </span><span style="color: #008b8b;">stu</span>.Sex = <span style="color: #008b8b;">true</span>;                <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35843;&#29992;stu&#23545;&#35937;&#30340;Sex&#23646;&#24615;&#24182;&#36171;&#20540;</span>
+<span class="linenr">4: </span><span style="color: #008b8b;">stu</span>.Age = 15;                  <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35843;&#29992;stu&#23545;&#35937;&#30340;Age&#23646;&#24615;&#24182;&#36171;&#20540;</span>
 </pre>
 </div>
 
@@ -1006,10 +1006,10 @@ java.lang.Class Class类对象名称 = java.lang.Class.forName(要实例化的�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">tudent</span> <span style="color: #6a1868;">stu</span> = <span style="color: #b751b6;">null</span>;
-<span class="linenr">2: </span><span style="color: #b751b6;">stu</span>.Name = <span style="color: #50a14f;">"&#26446;&#23376;&#25991;"</span>;
-<span class="linenr">3: </span><span style="color: #b751b6;">stu</span>.Sex = <span style="color: #b751b6;">true</span>;
-<span class="linenr">4: </span><span style="color: #b751b6;">stu</span>.Age = 15;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">tudent</span> <span style="color: #8b4513;">stu</span> = <span style="color: #008b8b;">null</span>;
+<span class="linenr">2: </span><span style="color: #008b8b;">stu</span>.Name = <span style="color: #50a14f;">"&#26446;&#23376;&#25991;"</span>;
+<span class="linenr">3: </span><span style="color: #008b8b;">stu</span>.Sex = <span style="color: #008b8b;">true</span>;
+<span class="linenr">4: </span><span style="color: #008b8b;">stu</span>.Age = 15;
 </pre>
 </div>
 
@@ -1031,9 +1031,9 @@ Exception in thread "main" java.lang.NullPointerException
 </div>
 </div>
 
-<div id="outline-container-orgcebd013" class="outline-3">
-<h3 id="orgcebd013">对象销毁</h3>
-<div class="outline-text-3" id="text-orgcebd013">
+<div id="outline-container-orgbda7186" class="outline-3">
+<h3 id="orgbda7186">对象销毁</h3>
+<div class="outline-text-3" id="text-orgbda7186">
 <p>
 对象使用完之后需要对其进行清除（释放对象占用的内存）。在创建对象时，用户必须使用 <code>new</code> 操作符为对象分配内存，不过，Java 中在清除对象时，由系统自动进行回收，不需要用户额外处理。
 </p>
@@ -1086,13 +1086,13 @@ Java 语言的内存自动回收称为 <span class="underline">垃圾回收（Ga
 </div>
 </div>
 
-<div id="outline-container-org29a2120" class="outline-3">
-<h3 id="org29a2120"><span class="todo TODO">TODO</span> 注释（类、方法、字段）</h3>
+<div id="outline-container-org26082de" class="outline-3">
+<h3 id="org26082de"><span class="todo TODO">TODO</span> 注释（类、方法、字段）</h3>
 </div>
 
-<div id="outline-container-orgc91fbea" class="outline-3">
-<h3 id="orgc91fbea">访问控制修饰符</h3>
-<div class="outline-text-3" id="text-orgc91fbea">
+<div id="outline-container-org0d22dbe" class="outline-3">
+<h3 id="org0d22dbe">访问控制修饰符</h3>
+<div class="outline-text-3" id="text-org0d22dbe">
 <p>
 信息隐藏，是 OOP 最重要的功能之一，也是使用访问修饰符的原因。在编写程序时，有些核心数据往往不希望被用户调用，需要控制这些数据的访问。
 </p>
@@ -1188,9 +1188,9 @@ Java 语言的内存自动回收称为 <span class="underline">垃圾回收（Ga
 </div>
 </div>
 
-<div id="outline-container-org5babff9" class="outline-3">
-<h3 id="org5babff9">static</h3>
-<div class="outline-text-3" id="text-org5babff9">
+<div id="outline-container-org4f10491" class="outline-3">
+<h3 id="org4f10491">static</h3>
+<div class="outline-text-3" id="text-org4f10491">
 <p>
 在类中，使用 <code>static</code> 修饰符修饰的属性（成员变量）称为静态变量，也可以称为类变量；常量称为静态常量；方法称为静态方法或类方法。它们统称为 <span class="underline">静态成员</span> ，归整个类所有。
 </p>
@@ -1302,31 +1302,31 @@ Java 语言的内存自动回收称为 <span class="underline">垃圾回收（Ga
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">StaticCode</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">count</span> = 0;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">StaticCode</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">count</span> = 0;
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span>    <span style="color: #a626a4;">{</span>
+<span class="linenr"> 4: </span>    <span style="color: #7388d6;">{</span>
 <span class="linenr"> 5: </span>        count++;
-<span class="linenr"> 6: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#38750;&#38745;&#24577;&#20195;&#30721;&#22359; count="</span> + count<span style="color: #50a14f;">)</span>;
-<span class="linenr"> 7: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr"> 6: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#38750;&#38745;&#24577;&#20195;&#30721;&#22359; count="</span> + count<span style="color: #909183;">)</span>;
+<span class="linenr"> 7: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span>    <span style="color: #e45649;">static</span> <span style="color: #a626a4;">{</span>
+<span class="linenr"> 9: </span>    <span style="color: #a626a4;">static</span> <span style="color: #7388d6;">{</span>
 <span class="linenr">10: </span>        count++;
-<span class="linenr">11: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#38745;&#24577;&#20195;&#30721;&#22359;1 count="</span> + count<span style="color: #50a14f;">)</span>;
-<span class="linenr">12: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr">11: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#38745;&#24577;&#20195;&#30721;&#22359;1 count="</span> + count<span style="color: #909183;">)</span>;
+<span class="linenr">12: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">13: </span>
-<span class="linenr">14: </span>    <span style="color: #e45649;">static</span> <span style="color: #a626a4;">{</span>
+<span class="linenr">14: </span>    <span style="color: #a626a4;">static</span> <span style="color: #7388d6;">{</span>
 <span class="linenr">15: </span>        count++;
-<span class="linenr">16: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#38745;&#24577;&#20195;&#30721;&#22359;2 count="</span> + count<span style="color: #50a14f;">)</span>;
-<span class="linenr">17: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr">16: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#38745;&#24577;&#20195;&#30721;&#22359;2 count="</span> + count<span style="color: #909183;">)</span>;
+<span class="linenr">17: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">18: </span>
-<span class="linenr">19: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">20: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"*** StaticCode1 &#25191;&#34892; ***"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">21: </span>        <span style="color: #986801;">StaticCode</span> <span style="color: #6a1868;">sct1</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">StaticCode</span><span style="color: #50a14f;">()</span>;
-<span class="linenr">22: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"*** StaticCode2 &#25191;&#34892; ***"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">23: </span>        <span style="color: #986801;">StaticCode</span> <span style="color: #6a1868;">sct2</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">StaticCode</span><span style="color: #50a14f;">()</span>;
-<span class="linenr">24: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">25: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">19: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">20: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"*** StaticCode1 &#25191;&#34892; ***"</span><span style="color: #909183;">)</span>;
+<span class="linenr">21: </span>        <span style="color: #c18401;">StaticCode</span> <span style="color: #8b4513;">sct1</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">StaticCode</span><span style="color: #909183;">()</span>;
+<span class="linenr">22: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"*** StaticCode2 &#25191;&#34892; ***"</span><span style="color: #909183;">)</span>;
+<span class="linenr">23: </span>        <span style="color: #c18401;">StaticCode</span> <span style="color: #8b4513;">sct2</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">StaticCode</span><span style="color: #909183;">()</span>;
+<span class="linenr">24: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">25: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1349,9 +1349,9 @@ Java 语言的内存自动回收称为 <span class="underline">垃圾回收（Ga
 </div>
 </div>
 
-<div id="outline-container-orgb313a08" class="outline-3">
-<h3 id="orgb313a08">静态导入</h3>
-<div class="outline-text-3" id="text-orgb313a08">
+<div id="outline-container-org8d9f669" class="outline-3">
+<h3 id="org8d9f669">静态导入</h3>
+<div class="outline-text-3" id="text-org8d9f669">
 <p>
 在 JDK 1.5 之后增加了一种静态导入的语法，用于导入指定类的某个或全部静态成员变量、方法。如果一个类中的方法全部是使用 <code>static</code> 声明的静态方法，则在导入时就可以直接使用 <code>import static</code> 的方式导入。
 </p>
@@ -1391,18 +1391,18 @@ import static package.ClassName.*;
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">import</span> <span style="color: #e45649;">static</span> <span style="color: #b751b6;">java</span>.<span style="color: #b751b6;">lang</span>.<span style="color: #b751b6;">System</span>.*;
-<span class="linenr"> 2: </span><span style="color: #e45649;">import</span> <span style="color: #e45649;">static</span> <span style="color: #b751b6;">java</span>.<span style="color: #b751b6;">lang</span>.<span style="color: #b751b6;">Math</span>.*;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">import</span> <span style="color: #a626a4;">static</span> <span style="color: #008b8b;">java</span>.<span style="color: #008b8b;">lang</span>.<span style="color: #008b8b;">System</span>.*;
+<span class="linenr"> 2: </span><span style="color: #a626a4;">import</span> <span style="color: #a626a4;">static</span> <span style="color: #008b8b;">java</span>.<span style="color: #008b8b;">lang</span>.<span style="color: #008b8b;">Math</span>.*;
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">StaticImportTest</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 5: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 6: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">out &#26159; java.lang.System &#31867;&#30340;&#38745;&#24577;&#25104;&#21592;&#21464;&#37327;&#65292;&#20195;&#34920;&#26631;&#20934;&#36755;&#20986;</span>
-<span class="linenr"> 7: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">PI &#26159; java.lang.Math &#31867;&#30340;&#38745;&#24577;&#25104;&#21592;&#21464;&#37327;&#65292;&#34920;&#31034; &#960; &#24120;&#37327;</span>
-<span class="linenr"> 8: </span>        out.println<span style="color: #50a14f;">(</span>PI<span style="color: #50a14f;">)</span>;
-<span class="linenr"> 9: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#30452;&#25509;&#35843;&#29992; Math &#31867;&#30340;&#38745;&#24577;&#26041;&#27861;</span>
-<span class="linenr">10: </span>        out.println<span style="color: #50a14f;">(</span>sqrt<span style="color: #da8548;">(</span>256<span style="color: #da8548;">)</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">11: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">12: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 4: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">StaticImportTest</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 5: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 6: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">out &#26159; java.lang.System &#31867;&#30340;&#38745;&#24577;&#25104;&#21592;&#21464;&#37327;&#65292;&#20195;&#34920;&#26631;&#20934;&#36755;&#20986;</span>
+<span class="linenr"> 7: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">PI &#26159; java.lang.Math &#31867;&#30340;&#38745;&#24577;&#25104;&#21592;&#21464;&#37327;&#65292;&#34920;&#31034; &#960; &#24120;&#37327;</span>
+<span class="linenr"> 8: </span>        out.println<span style="color: #909183;">(</span>PI<span style="color: #909183;">)</span>;
+<span class="linenr"> 9: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#30452;&#25509;&#35843;&#29992; Math &#31867;&#30340;&#38745;&#24577;&#26041;&#27861;</span>
+<span class="linenr">10: </span>        out.println<span style="color: #909183;">(</span>sqrt<span style="color: #709870;">(</span>256<span style="color: #709870;">)</span><span style="color: #909183;">)</span>;
+<span class="linenr">11: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">12: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1412,9 +1412,9 @@ import static package.ClassName.*;
 </div>
 </div>
 
-<div id="outline-container-orgdacd546" class="outline-3">
-<h3 id="orgdacd546">final</h3>
-<div class="outline-text-3" id="text-orgdacd546">
+<div id="outline-container-org3e892a1" class="outline-3">
+<h3 id="org3e892a1">final</h3>
+<div class="outline-text-3" id="text-org3e892a1">
 <p>
 <code>final</code> 应用于类、方法和变量时意义是不同的，但本质是一样的，都表示不可改变，类似 C# 里的 <code>sealed</code> 关键字。
 </p>
@@ -1458,38 +1458,38 @@ import static package.ClassName.*;
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">FinalDemo</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #986801;">void</span> <span style="color: #a626a4;">doSomething</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#27809;&#26377;&#22312;&#22768;&#26126;&#30340;&#21516;&#26102;&#36171;&#20540;</span>
-<span class="linenr"> 4: </span>        <span style="color: #e45649;">final</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">e</span>;
-<span class="linenr"> 5: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21482;&#33021;&#36171;&#20540;&#19968;&#27425;</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">FinalDemo</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #c18401;">void</span> <span style="color: #0184bc;">doSomething</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#27809;&#26377;&#22312;&#22768;&#26126;&#30340;&#21516;&#26102;&#36171;&#20540;</span>
+<span class="linenr"> 4: </span>        <span style="color: #a626a4;">final</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">e</span>;
+<span class="linenr"> 5: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21482;&#33021;&#36171;&#20540;&#19968;&#27425;</span>
 <span class="linenr"> 6: </span>        e = 100;
-<span class="linenr"> 7: </span>        System.out.println<span style="color: #50a14f;">(</span>e<span style="color: #50a14f;">)</span>;
-<span class="linenr"> 8: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#22768;&#26126;&#30340;&#21516;&#26102;&#36171;&#20540;</span>
-<span class="linenr"> 9: </span>        <span style="color: #e45649;">final</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">f</span> = 200;
-<span class="linenr">10: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr"> 7: </span>        System.out.println<span style="color: #909183;">(</span>e<span style="color: #909183;">)</span>;
+<span class="linenr"> 8: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22768;&#26126;&#30340;&#21516;&#26102;&#36171;&#20540;</span>
+<span class="linenr"> 9: </span>        <span style="color: #a626a4;">final</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">f</span> = 200;
+<span class="linenr">10: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">11: </span>
-<span class="linenr">12: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23454;&#20363;&#24120;&#37327;</span>
-<span class="linenr">13: </span>    <span style="color: #e45649;">final</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">a</span> = 5;            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#30452;&#25509;&#36171;&#20540;</span>
-<span class="linenr">14: </span>    <span style="color: #e45649;">final</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">b</span>;                <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#31354;&#30333; final &#21464;&#37327;</span>
-<span class="linenr">15: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#38745;&#24577;&#24120;&#37327;</span>
-<span class="linenr">16: </span>    <span style="color: #e45649;">final</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">c</span> = 12;    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#30452;&#25509;&#36171;&#20540;</span>
-<span class="linenr">17: </span>    <span style="color: #e45649;">final</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">d</span>;         <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#31354;&#30333; final &#21464;&#37327;</span>
-<span class="linenr">18: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#38745;&#24577;&#20195;&#30721;&#22359;</span>
-<span class="linenr">19: </span>    <span style="color: #e45649;">static</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">20: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21021;&#22987;&#21270;&#38745;&#24577;&#21464;&#37327;</span>
+<span class="linenr">12: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23454;&#20363;&#24120;&#37327;</span>
+<span class="linenr">13: </span>    <span style="color: #a626a4;">final</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">a</span> = 5;            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#30452;&#25509;&#36171;&#20540;</span>
+<span class="linenr">14: </span>    <span style="color: #a626a4;">final</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">b</span>;                <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#31354;&#30333; final &#21464;&#37327;</span>
+<span class="linenr">15: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#38745;&#24577;&#24120;&#37327;</span>
+<span class="linenr">16: </span>    <span style="color: #a626a4;">final</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">c</span> = 12;    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#30452;&#25509;&#36171;&#20540;</span>
+<span class="linenr">17: </span>    <span style="color: #a626a4;">final</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">d</span>;         <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#31354;&#30333; final &#21464;&#37327;</span>
+<span class="linenr">18: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#38745;&#24577;&#20195;&#30721;&#22359;</span>
+<span class="linenr">19: </span>    <span style="color: #a626a4;">static</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">20: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21021;&#22987;&#21270;&#38745;&#24577;&#21464;&#37327;</span>
 <span class="linenr">21: </span>        d = 32;
-<span class="linenr">22: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr">22: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">23: </span>
-<span class="linenr">24: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#26500;&#36896;&#26041;&#27861;</span>
-<span class="linenr">25: </span>    <span style="color: #a626a4;">FinalDemo</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">26: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21021;&#22987;&#21270;&#23454;&#20363;&#21464;&#37327;</span>
+<span class="linenr">24: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#26500;&#36896;&#26041;&#27861;</span>
+<span class="linenr">25: </span>    <span style="color: #0184bc;">FinalDemo</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">26: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21021;&#22987;&#21270;&#23454;&#20363;&#21464;&#37327;</span>
 <span class="linenr">27: </span>        b = 3;
-<span class="linenr">28: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#31532;&#20108;&#27425;&#36171;&#20540;&#65292;&#20250;&#21457;&#29983;&#32534;&#35793;&#38169;&#35823;</span>
-<span class="linenr">29: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">b = 4;</span>
-<span class="linenr">30: </span>    <span style="color: #a626a4;">}</span>
+<span class="linenr">28: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#31532;&#20108;&#27425;&#36171;&#20540;&#65292;&#20250;&#21457;&#29983;&#32534;&#35793;&#38169;&#35823;</span>
+<span class="linenr">29: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">b = 4;</span>
+<span class="linenr">30: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr">31: </span>
-<span class="linenr">32: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">32: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1522,16 +1522,16 @@ Java 提供的 Object 类里就有一个 <code>final</code> 方法 <code>getClas
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">FinalMethodTest</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">final</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">test</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr"> 4: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">FinalMethodTest</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">final</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">test</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr"> 4: </span><span style="color: #707183;">}</span>
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span><span style="color: #e45649;">class</span> <span style="color: #986801;">Sub</span> <span style="color: #e45649;">extends</span> <span style="color: #986801;">FinalMethodTest</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 7: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#19979;&#38754;&#26041;&#27861;&#23450;&#20041;&#23558;&#20986;&#29616;&#32534;&#35793;&#38169;&#35823;&#65292;&#19981;&#33021;&#37325;&#20889; final &#26041;&#27861;</span>
-<span class="linenr"> 8: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">test</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 9: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">10: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 6: </span><span style="color: #a626a4;">class</span> <span style="color: #c18401;">Sub</span> <span style="color: #a626a4;">extends</span> <span style="color: #c18401;">FinalMethodTest</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 7: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#19979;&#38754;&#26041;&#27861;&#23450;&#20041;&#23558;&#20986;&#29616;&#32534;&#35793;&#38169;&#35823;&#65292;&#19981;&#33021;&#37325;&#20889; final &#26041;&#27861;</span>
+<span class="linenr"> 8: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">test</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 9: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">10: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1544,11 +1544,11 @@ Java 提供的 Object 类里就有一个 <code>final</code> 方法 <code>getClas
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">FinalOverload</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">final &#20462;&#39280;&#30340;&#26041;&#27861;&#21482;&#26159;&#19981;&#33021;&#34987;&#37325;&#20889;&#65292;&#23436;&#20840;&#21487;&#20197;&#34987;&#37325;&#36733;</span>
-<span class="linenr">3: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">final</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">test</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{}</span>
-<span class="linenr">4: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">final</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">test</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span> <span style="color: #6a1868;">arg</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{}</span>
-<span class="linenr">5: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">FinalOverload</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">final &#20462;&#39280;&#30340;&#26041;&#27861;&#21482;&#26159;&#19981;&#33021;&#34987;&#37325;&#20889;&#65292;&#23436;&#20840;&#21487;&#20197;&#34987;&#37325;&#36733;</span>
+<span class="linenr">3: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">final</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">test</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{}</span>
+<span class="linenr">4: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">final</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">test</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">arg</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{}</span>
+<span class="linenr">5: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1572,11 +1572,11 @@ Java 提供的 Object 类里就有一个 <code>final</code> 方法 <code>getClas
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #e45649;">final</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">SuperClass</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">final</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">SuperClass</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span><span style="color: #707183;">}</span>
 <span class="linenr">3: </span>
-<span class="linenr">4: </span><span style="color: #e45649;">class</span> <span style="color: #986801;">SubClass</span> <span style="color: #e45649;">extends</span> <span style="color: #986801;">SuperClass</span> <span style="color: #4078f2;">{</span> <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#32534;&#35793;&#38169;&#35823;</span>
-<span class="linenr">5: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">4: </span><span style="color: #a626a4;">class</span> <span style="color: #c18401;">SubClass</span> <span style="color: #a626a4;">extends</span> <span style="color: #c18401;">SuperClass</span> <span style="color: #707183;">{</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#32534;&#35793;&#38169;&#35823;</span>
+<span class="linenr">5: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1592,19 +1592,19 @@ Java 提供的 Object 类里就有一个 <code>final</code> 方法 <code>getClas
 </div>
 </div>
 
-<div id="outline-container-org112990a" class="outline-3">
-<h3 id="org112990a">main()</h3>
-<div class="outline-text-3" id="text-org112990a">
+<div id="outline-container-orge571d60" class="outline-3">
+<h3 id="orge571d60">main()</h3>
+<div class="outline-text-3" id="text-orge571d60">
 <p>
 在 Java 中， <code>main()</code> 方法是 Java 应用程序的入口方法，程序在运行的时候，第一个执行的方法就是 <code>main()</code> 方法，它和其他的方法有很大的不同。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">HelloWorld</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">3: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"Hello World!"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">4: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">5: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">HelloWorld</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">3: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"Hello World!"</span><span style="color: #909183;">)</span>;
+<span class="linenr">4: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">5: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1626,18 +1626,18 @@ Java 提供的 Object 类里就有一个 <code>final</code> 方法 <code>getClas
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">TestMain</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">int</span> <span style="color: #6a1868;">n</span> = args.length;    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33719;&#21462;&#21442;&#25968;&#25968;&#37327;</span>
-<span class="linenr"> 4: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#19968;&#20849;&#26377; "</span> + n + <span style="color: #50a14f;">" &#20010;&#21442;&#25968;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 5: </span>        <span style="color: #e45649;">if</span> <span style="color: #50a14f;">(</span>n &gt; 0<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 6: </span>            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21028;&#26029;&#21442;&#25968;&#20010;&#25968;&#26159;&#21542;&#22823;&#20110; 0</span>
-<span class="linenr"> 7: </span>            <span style="color: #e45649;">for</span> <span style="color: #da8548;">(</span><span style="color: #986801;">int</span> <span style="color: #6a1868;">i</span> = 0; i &lt; <span style="color: #986801;">n</span>; i++<span style="color: #da8548;">)</span> <span style="color: #da8548;">{</span>
-<span class="linenr"> 8: </span>                System.out.println<span style="color: #b751b6;">(</span>args<span style="color: #986801;">[</span>i<span style="color: #986801;">]</span><span style="color: #b751b6;">)</span>;
-<span class="linenr"> 9: </span>            <span style="color: #da8548;">}</span>
-<span class="linenr">10: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">11: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">12: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">TestMain</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">int</span> <span style="color: #8b4513;">n</span> = args.length;    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33719;&#21462;&#21442;&#25968;&#25968;&#37327;</span>
+<span class="linenr"> 4: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#19968;&#20849;&#26377; "</span> + n + <span style="color: #50a14f;">" &#20010;&#21442;&#25968;"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 5: </span>        <span style="color: #a626a4;">if</span> <span style="color: #909183;">(</span>n &gt; 0<span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 6: </span>            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21028;&#26029;&#21442;&#25968;&#20010;&#25968;&#26159;&#21542;&#22823;&#20110; 0</span>
+<span class="linenr"> 7: </span>            <span style="color: #a626a4;">for</span> <span style="color: #709870;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">i</span> = 0; i &lt; <span style="color: #c18401;">n</span>; i++<span style="color: #709870;">)</span> <span style="color: #709870;">{</span>
+<span class="linenr"> 8: </span>                System.out.println<span style="color: #907373;">(</span>args<span style="color: #6276ba;">[</span>i<span style="color: #6276ba;">]</span><span style="color: #907373;">)</span>;
+<span class="linenr"> 9: </span>            <span style="color: #709870;">}</span>
+<span class="linenr">10: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">11: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">12: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1657,9 +1657,9 @@ java TestMain one two three for five six // 一共有 6 个参数
 </div>
 </div>
 
-<div id="outline-container-org72cd9f1" class="outline-3">
-<h3 id="org72cd9f1">可变参数</h3>
-<div class="outline-text-3" id="text-org72cd9f1">
+<div id="outline-container-org0e57517" class="outline-3">
+<h3 id="org0e57517">可变参数</h3>
+<div class="outline-text-3" id="text-org0e57517">
 <p>
 在具体实际开发过程中，有时方法在参数的个数是不确定的，这时就需要可变参数了，其语法格式如下：
 </p>
@@ -1684,21 +1684,21 @@ methodName({paramList}, paramType...paramName)
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">StudentTestMethod</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">print</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span>...<span style="color: #6a1868;">names</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">int</span> <span style="color: #6a1868;">count</span> = names.length;
-<span class="linenr"> 4: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#26412;&#27425;&#21442;&#21152;&#32771;&#35797;&#30340;&#26377; "</span> + count + <span style="color: #50a14f;">" &#20154;&#65292;&#21517;&#21333;&#22914;&#19979;&#65306;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 5: </span>        <span style="color: #e45649;">for</span><span style="color: #50a14f;">(</span><span style="color: #986801;">int</span> <span style="color: #6a1868;">i</span> = 0; i &lt; names.<span style="color: #986801;">length</span>; i++<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 6: </span>            System.out.println<span style="color: #da8548;">(</span>names<span style="color: #b751b6;">[</span>i<span style="color: #b751b6;">]</span><span style="color: #da8548;">)</span>;
-<span class="linenr"> 7: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr"> 8: </span>    <span style="color: #a626a4;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">StudentTestMethod</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">print</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span>...<span style="color: #8b4513;">names</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">int</span> <span style="color: #8b4513;">count</span> = names.length;
+<span class="linenr"> 4: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#26412;&#27425;&#21442;&#21152;&#32771;&#35797;&#30340;&#26377; "</span> + count + <span style="color: #50a14f;">" &#20154;&#65292;&#21517;&#21333;&#22914;&#19979;&#65306;"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 5: </span>        <span style="color: #a626a4;">for</span><span style="color: #909183;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">i</span> = 0; i &lt; names.<span style="color: #c18401;">length</span>; i++<span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 6: </span>            System.out.println<span style="color: #709870;">(</span>names<span style="color: #907373;">[</span>i<span style="color: #907373;">]</span><span style="color: #709870;">)</span>;
+<span class="linenr"> 7: </span>        <span style="color: #909183;">}</span>
+<span class="linenr"> 8: </span>    <span style="color: #7388d6;">}</span>
 <span class="linenr"> 9: </span>
-<span class="linenr">10: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">11: </span>        <span style="color: #986801;">StudentTestMethod</span> <span style="color: #6a1868;">student</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">StudentTestMethod</span><span style="color: #50a14f;">()</span>;
-<span class="linenr">12: </span>        student.print<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"Amy"</span>, <span style="color: #50a14f;">"Lucy"</span>, <span style="color: #50a14f;">"Jessica"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">13: </span>        student.print<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#23567;&#26126;"</span>, <span style="color: #50a14f;">"&#23567;&#32418;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">14: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">15: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">10: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">11: </span>        <span style="color: #c18401;">StudentTestMethod</span> <span style="color: #8b4513;">student</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">StudentTestMethod</span><span style="color: #909183;">()</span>;
+<span class="linenr">12: </span>        student.print<span style="color: #909183;">(</span><span style="color: #50a14f;">"Amy"</span>, <span style="color: #50a14f;">"Lucy"</span>, <span style="color: #50a14f;">"Jessica"</span><span style="color: #909183;">)</span>;
+<span class="linenr">13: </span>        student.print<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#23567;&#26126;"</span>, <span style="color: #50a14f;">"&#23567;&#32418;"</span><span style="color: #909183;">)</span>;
+<span class="linenr">14: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">15: </span><span style="color: #707183;">}</span>
 <span class="linenr">16: </span>
 </pre>
 </div>
@@ -1719,9 +1719,9 @@ Jessica
 </div>
 </div>
 
-<div id="outline-container-org40b56c7" class="outline-3">
-<h3 id="org40b56c7">构造方法</h3>
-<div class="outline-text-3" id="text-org40b56c7">
+<div id="outline-container-org6d2c37c" class="outline-3">
+<h3 id="org6d2c37c">构造方法</h3>
+<div class="outline-text-3" id="text-org6d2c37c">
 <p>
 构造方法是类的一种特殊方法，用来初始化类的一个新的对象，在创建对象（ <code>new</code> 运算符 ）之后自动调用。Java 中的每个类都有一个默认构造方法，并且可以有一个以上的构造方法。
 </p>
@@ -1789,22 +1789,22 @@ public ClassName {
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Worker</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span>;
-<span class="linenr"> 3: </span>    <span style="color: #e45649;">private</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">age</span>;
-<span class="linenr"> 4: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23450;&#20041;&#24102;&#26377;&#19968;&#20010;&#21442;&#25968;&#30340;&#26500;&#36896;&#26041;&#27861;</span>
-<span class="linenr"> 5: </span>    <span style="color: #e45649;">public</span> <span style="color: #a626a4;">Worker</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 6: </span>        <span style="color: #e45649;">this</span>.name = name;
-<span class="linenr"> 7: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr"> 8: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23450;&#20041;&#24102;&#26377;&#20004;&#20010;&#21442;&#25968;&#30340;&#26500;&#36896;&#26041;&#27861;</span>
-<span class="linenr"> 9: </span>    <span style="color: #e45649;">public</span> <span style="color: #a626a4;">Worker</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span> <span style="color: #6a1868;">name</span>, <span style="color: #986801;">int</span> <span style="color: #6a1868;">age</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">10: </span>        <span style="color: #e45649;">this</span>.name = name;
-<span class="linenr">11: </span>        <span style="color: #e45649;">this</span>.age = age;
-<span class="linenr">12: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">13: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">String</span> <span style="color: #a626a4;">toString</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">14: </span>        <span style="color: #e45649;">return</span> <span style="color: #50a14f;">"&#22823;&#23478;&#22909;&#65281;&#25105;&#21483;"</span> + name + <span style="color: #50a14f;">"&#65292;&#20170;&#24180;"</span> + age + <span style="color: #50a14f;">"&#23681;&#12290;"</span>;
-<span class="linenr">15: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">16: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Worker</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span>;
+<span class="linenr"> 3: </span>    <span style="color: #a626a4;">private</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">age</span>;
+<span class="linenr"> 4: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23450;&#20041;&#24102;&#26377;&#19968;&#20010;&#21442;&#25968;&#30340;&#26500;&#36896;&#26041;&#27861;</span>
+<span class="linenr"> 5: </span>    <span style="color: #a626a4;">public</span> <span style="color: #0184bc;">Worker</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 6: </span>        <span style="color: #a626a4;">this</span>.name = name;
+<span class="linenr"> 7: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr"> 8: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23450;&#20041;&#24102;&#26377;&#20004;&#20010;&#21442;&#25968;&#30340;&#26500;&#36896;&#26041;&#27861;</span>
+<span class="linenr"> 9: </span>    <span style="color: #a626a4;">public</span> <span style="color: #0184bc;">Worker</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">name</span>, <span style="color: #c18401;">int</span> <span style="color: #8b4513;">age</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">10: </span>        <span style="color: #a626a4;">this</span>.name = name;
+<span class="linenr">11: </span>        <span style="color: #a626a4;">this</span>.age = age;
+<span class="linenr">12: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">13: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">String</span> <span style="color: #0184bc;">toString</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">14: </span>        <span style="color: #a626a4;">return</span> <span style="color: #50a14f;">"&#22823;&#23478;&#22909;&#65281;&#25105;&#21483;"</span> + name + <span style="color: #50a14f;">"&#65292;&#20170;&#24180;"</span> + age + <span style="color: #50a14f;">"&#23681;&#12290;"</span>;
+<span class="linenr">15: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">16: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1818,9 +1818,9 @@ public ClassName {
 </div>
 </div>
 
-<div id="outline-container-orgcf4e1fb" class="outline-3">
-<h3 id="orgcf4e1fb">析构方法</h3>
-<div class="outline-text-3" id="text-orgcf4e1fb">
+<div id="outline-container-org7c08815" class="outline-3">
+<h3 id="org7c08815">析构方法</h3>
+<div class="outline-text-3" id="text-org7c08815">
 <p>
 析构方法与构造方法相反，当对象脱离其作用域时（例如对象所在的方法已调用完毕），系统自动执行析构方法。析构方法往往用来做清理垃圾碎片的工作，例如在建立对象时用 <code>new</code> 开辟了一片内存空间，应退出前在析构方法中将其释放。
 </p>
@@ -1843,21 +1843,21 @@ public ClassName {
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Counter</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">private</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">int</span> <span style="color: #6a1868;">count</span> = 0; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35745;&#25968;&#22120;&#21464;&#37327;</span>
-<span class="linenr"> 3: </span>    <span style="color: #e45649;">public</span> <span style="color: #a626a4;">Counter</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 4: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#26500;&#36896;&#26041;&#27861;</span>
-<span class="linenr"> 5: </span>        <span style="color: #e45649;">this</span>.count++;             <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21019;&#24314;&#23454;&#20363;&#26102;&#22686;&#21152;&#20540;</span>
-<span class="linenr"> 6: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr"> 7: </span>    <span style="color: #e45649;">public</span> <span style="color: #986801;">int</span> <span style="color: #a626a4;">getCount</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 8: </span>        <span style="color: #e45649;">return</span> <span style="color: #e45649;">this</span>.count;
-<span class="linenr"> 9: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">10: </span>    <span style="color: #e45649;">protected</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">finalize</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">11: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#26512;&#26500;&#26041;&#27861;</span>
-<span class="linenr">12: </span>        <span style="color: #e45649;">this</span>.count--;             <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23454;&#20363;&#38144;&#27585;&#26102;&#20943;&#23569;&#20540;</span>
-<span class="linenr">13: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#23545;&#35937;&#38144;&#27585;"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">14: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">15: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Counter</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">private</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">int</span> <span style="color: #8b4513;">count</span> = 0; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35745;&#25968;&#22120;&#21464;&#37327;</span>
+<span class="linenr"> 3: </span>    <span style="color: #a626a4;">public</span> <span style="color: #0184bc;">Counter</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 4: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#26500;&#36896;&#26041;&#27861;</span>
+<span class="linenr"> 5: </span>        <span style="color: #a626a4;">this</span>.count++;             <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21019;&#24314;&#23454;&#20363;&#26102;&#22686;&#21152;&#20540;</span>
+<span class="linenr"> 6: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr"> 7: </span>    <span style="color: #a626a4;">public</span> <span style="color: #c18401;">int</span> <span style="color: #0184bc;">getCount</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 8: </span>        <span style="color: #a626a4;">return</span> <span style="color: #a626a4;">this</span>.count;
+<span class="linenr"> 9: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">10: </span>    <span style="color: #a626a4;">protected</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">finalize</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">11: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#26512;&#26500;&#26041;&#27861;</span>
+<span class="linenr">12: </span>        <span style="color: #a626a4;">this</span>.count--;             <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23454;&#20363;&#38144;&#27585;&#26102;&#20943;&#23569;&#20540;</span>
+<span class="linenr">13: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#23545;&#35937;&#38144;&#27585;"</span><span style="color: #909183;">)</span>;
+<span class="linenr">14: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">15: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1866,23 +1866,23 @@ public ClassName {
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">TestCounter</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">Counter</span> <span style="color: #6a1868;">cnt1</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">Counter</span><span style="color: #50a14f;">()</span>;
-<span class="linenr"> 4: </span>        System.out.println<span style="color: #50a14f;">(</span>cnt1.getCount<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;     <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 1</span>
-<span class="linenr"> 5: </span>        <span style="color: #986801;">Counter</span> <span style="color: #6a1868;">cnt2</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">Counter</span><span style="color: #50a14f;">()</span>;
-<span class="linenr"> 6: </span>        System.out.println<span style="color: #50a14f;">(</span>cnt2.getCount<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;     <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 2</span>
-<span class="linenr"> 7: </span>        cnt2 = <span style="color: #b751b6;">null</span>;                             <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#38144;&#27585;&#23454;&#20363; cnt2</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">TestCounter</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">Counter</span> <span style="color: #8b4513;">cnt1</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Counter</span><span style="color: #909183;">()</span>;
+<span class="linenr"> 4: </span>        System.out.println<span style="color: #909183;">(</span>cnt1.getCount<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;     <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 1</span>
+<span class="linenr"> 5: </span>        <span style="color: #c18401;">Counter</span> <span style="color: #8b4513;">cnt2</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Counter</span><span style="color: #909183;">()</span>;
+<span class="linenr"> 6: </span>        System.out.println<span style="color: #909183;">(</span>cnt2.getCount<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;     <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 2</span>
+<span class="linenr"> 7: </span>        cnt2 = <span style="color: #008b8b;">null</span>;                             <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#38144;&#27585;&#23454;&#20363; cnt2</span>
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span>        <span style="color: #e45649;">try</span> <span style="color: #50a14f;">{</span>
-<span class="linenr">10: </span>            System.gc<span style="color: #da8548;">()</span>;                         <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#28165;&#29702;&#20869;&#23384;</span>
-<span class="linenr">11: </span>            Thread.currentThread<span style="color: #da8548;">()</span>.sleep<span style="color: #da8548;">(</span>1000<span style="color: #da8548;">)</span>;  <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24310;&#26102; 1000 ms</span>
-<span class="linenr">12: </span>            System.out.println<span style="color: #da8548;">(</span>cnt1.getCount<span style="color: #b751b6;">()</span><span style="color: #da8548;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 1</span>
-<span class="linenr">13: </span>        <span style="color: #50a14f;">}</span> <span style="color: #e45649;">catch</span><span style="color: #50a14f;">(</span><span style="color: #986801;">InterruptedException</span> <span style="color: #6a1868;">e</span><span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr">14: </span>            e.printStackTrace<span style="color: #da8548;">()</span>;
-<span class="linenr">15: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">16: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">17: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 9: </span>        <span style="color: #a626a4;">try</span> <span style="color: #909183;">{</span>
+<span class="linenr">10: </span>            System.gc<span style="color: #709870;">()</span>;                         <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#28165;&#29702;&#20869;&#23384;</span>
+<span class="linenr">11: </span>            Thread.currentThread<span style="color: #709870;">()</span>.sleep<span style="color: #709870;">(</span>1000<span style="color: #709870;">)</span>;  <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#24310;&#26102; 1000 ms</span>
+<span class="linenr">12: </span>            System.out.println<span style="color: #709870;">(</span>cnt1.getCount<span style="color: #907373;">()</span><span style="color: #709870;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 1</span>
+<span class="linenr">13: </span>        <span style="color: #909183;">}</span> <span style="color: #a626a4;">catch</span><span style="color: #909183;">(</span><span style="color: #c18401;">InterruptedException</span> <span style="color: #8b4513;">e</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr">14: </span>            e.printStackTrace<span style="color: #709870;">()</span>;
+<span class="linenr">15: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">16: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">17: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1892,9 +1892,9 @@ public ClassName {
 </div>
 </div>
 
-<div id="outline-container-org9ae20ab" class="outline-3">
-<h3 id="org9ae20ab">包</h3>
-<div class="outline-text-3" id="text-org9ae20ab">
+<div id="outline-container-org1e20ded" class="outline-3">
+<h3 id="org1e20ded">包</h3>
+<div class="outline-text-3" id="text-org1e20ded">
 <p>
 在编写 Java 程序时，随着程序架构越来越大，类的个数也越来越多。Java 引入了包（package）机制，提供了类的多层命名空间，用于解决类的命名冲突、类文件管理等问题。
 </p>
@@ -1943,7 +1943,7 @@ Java 包的命名规则如下：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #b751b6;">example</span>.<span style="color: #986801;">Test</span> <span style="color: #6a1868;">test</span> = <span style="color: #e45649;">new</span> <span style="color: #b751b6;">example</span>.<span style="color: #986801;">Test</span><span style="color: #4078f2;">()</span>;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #008b8b;">example</span>.<span style="color: #c18401;">Test</span> <span style="color: #8b4513;">test</span> = <span style="color: #a626a4;">new</span> <span style="color: #008b8b;">example</span>.<span style="color: #c18401;">Test</span><span style="color: #707183;">()</span>;
 </pre>
 </div>
 
@@ -1993,8 +1993,8 @@ Java 默认为所有源文件导入 <code>java.lang</code> 包下的所有类，
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #e45649;">import</span> <span style="color: #b751b6;">java</span>.<span style="color: #b751b6;">util</span>.*;
-<span class="linenr">2: </span><span style="color: #e45649;">import</span> <span style="color: #b751b6;">java</span>.<span style="color: #b751b6;">sql</span>.*;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">import</span> <span style="color: #008b8b;">java</span>.<span style="color: #008b8b;">util</span>.*;
+<span class="linenr">2: </span><span style="color: #a626a4;">import</span> <span style="color: #008b8b;">java</span>.<span style="color: #008b8b;">sql</span>.*;
 </pre>
 </div>
 
@@ -2012,7 +2012,7 @@ Java.sql 中的类 java.sql.Date 和 java.util 中的类 java.util.Date 都匹�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #b751b6;">java</span>.<span style="color: #b751b6;">sql</span>.<span style="color: #986801;">Date</span> <span style="color: #6a1868;">d</span> = <span style="color: #e45649;">new</span> <span style="color: #b751b6;">java</span>.<span style="color: #b751b6;">sql</span>.<span style="color: #986801;">Date</span><span style="color: #4078f2;">()</span>;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #008b8b;">java</span>.<span style="color: #008b8b;">sql</span>.<span style="color: #c18401;">Date</span> <span style="color: #8b4513;">d</span> = <span style="color: #a626a4;">new</span> <span style="color: #008b8b;">java</span>.<span style="color: #008b8b;">sql</span>.<span style="color: #c18401;">Date</span><span style="color: #707183;">()</span>;
 </pre>
 </div>
 
@@ -2115,14 +2115,14 @@ Java SE 提供了一些系统包，其中包含了 Java 开发中常用的基础
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #e45649;">package</span> com.<span style="color: #b751b6;">dao</span>;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a626a4;">package</span> com.<span style="color: #008b8b;">dao</span>;
 <span class="linenr">2: </span>
-<span class="linenr">3: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Student</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">4: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">String</span><span style="color: #a626a4;">[]</span> <span style="color: #a626a4;">GetAll</span><span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">5: </span>        <span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">namelist</span> = <span style="color: #50a14f;">{</span> <span style="color: #50a14f;">"Amy"</span>, <span style="color: #50a14f;">"Peny"</span>, <span style="color: #50a14f;">"Leonard"</span>, <span style="color: #50a14f;">"Sheldon"</span>, <span style="color: #50a14f;">"Howard"</span><span style="color: #50a14f;">}</span>;
-<span class="linenr">6: </span>        <span style="color: #e45649;">return</span> namelist;
-<span class="linenr">7: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">8: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">3: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Student</span> <span style="color: #707183;">{</span>
+<span class="linenr">4: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">String</span><span style="color: #7388d6;">[]</span> <span style="color: #0184bc;">GetAll</span><span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">5: </span>        <span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">namelist</span> = <span style="color: #909183;">{</span> <span style="color: #50a14f;">"Amy"</span>, <span style="color: #50a14f;">"Peny"</span>, <span style="color: #50a14f;">"Leonard"</span>, <span style="color: #50a14f;">"Sheldon"</span>, <span style="color: #50a14f;">"Howard"</span><span style="color: #909183;">}</span>;
+<span class="linenr">6: </span>        <span style="color: #a626a4;">return</span> namelist;
+<span class="linenr">7: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">8: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -2131,26 +2131,26 @@ Java SE 提供了一些系统包，其中包含了 Java 开发中常用的基础
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">package</span> com.<span style="color: #b751b6;">test</span>;
-<span class="linenr"> 2: </span><span style="color: #e45649;">import</span> <span style="color: #b751b6;">com</span>.<span style="color: #b751b6;">dao</span>.<span style="color: #986801;">Student</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">package</span> com.<span style="color: #008b8b;">test</span>;
+<span class="linenr"> 2: </span><span style="color: #a626a4;">import</span> <span style="color: #008b8b;">com</span>.<span style="color: #008b8b;">dao</span>.<span style="color: #c18401;">Student</span>;
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">Test</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 5: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 6: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"The members of TBBT: "</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 7: </span>        <span style="color: #e45649;">for</span> <span style="color: #50a14f;">(</span><span style="color: #986801;">String</span> <span style="color: #a626a4;">str</span>:<span style="color: #b751b6;">Student</span>.GetAll<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 8: </span>            System.out.println<span style="color: #da8548;">(</span>str<span style="color: #da8548;">)</span>;
-<span class="linenr"> 9: </span>            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; The members of TBBT: Amy Peny Leonard Sheldon Howard</span>
-<span class="linenr">10: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">11: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">12: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 4: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">Test</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 5: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 6: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"The members of TBBT: "</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 7: </span>        <span style="color: #a626a4;">for</span> <span style="color: #909183;">(</span><span style="color: #c18401;">String</span> <span style="color: #0184bc;">str</span>:<span style="color: #008b8b;">Student</span>.GetAll<span style="color: #709870;">()</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 8: </span>            System.out.println<span style="color: #709870;">(</span>str<span style="color: #709870;">)</span>;
+<span class="linenr"> 9: </span>            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; The members of TBBT: Amy Peny Leonard Sheldon Howard</span>
+<span class="linenr">10: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">11: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">12: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1b9b071" class="outline-3">
-<h3 id="org1b9b071"><span class="todo TODO">TODO</span> 递归算法</h3>
-<div class="outline-text-3" id="text-org1b9b071">
+<div id="outline-container-org666a181" class="outline-3">
+<h3 id="org666a181"><span class="todo TODO">TODO</span> 递归算法</h3>
+<div class="outline-text-3" id="text-org666a181">
 <p>
 程序调用自身的编程技巧称为递归（recursion），它做为一种算法在程序设计语言中广泛应用。
 </p>
@@ -2161,7 +2161,7 @@ Java SE 提供了一些系统包，其中包含了 Java 开发中常用的基础
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-21 Mon 18:05</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:43</p>
+<p class="date">Created: 2021-05-18 Tue 15:54</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

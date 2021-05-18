@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-03-05 Fri 10:48 -->
+<!-- 2021-05-18 Tue 15:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Elisp</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,30 +18,30 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org56c69a4">Intro</a></li>
-<li><a href="#orge09b0e5">Emacs Lisp Basics</a>
+<li><a href="#orgad27dc0">Intro</a></li>
+<li><a href="#orgc1e8875">Emacs Lisp Basics</a>
 <ul>
-<li><a href="#orga1239ff">Evaluate and Help</a></li>
-<li><a href="#org5d5c21e">Printing</a></li>
-<li><a href="#org1f520a9">Arithmetic</a></li>
-<li><a href="#org4fa94d0">True, Flase</a></li>
-<li><a href="#orge8c4263">Variables</a>
+<li><a href="#org5f1f037">Evaluate and Help</a></li>
+<li><a href="#orgca7922d">Printing</a></li>
+<li><a href="#org29473ac">Arithmetic</a></li>
+<li><a href="#org0f9a46d">True, Flase</a></li>
+<li><a href="#org90a1a4f">Variables</a>
 <ul>
-<li><a href="#org9bff07c">Global Variables</a></li>
-<li><a href="#org04dbe90">Local Variables</a></li>
+<li><a href="#orgf9ff1f2">Global Variables</a></li>
+<li><a href="#orgcceaca5">Local Variables</a></li>
 </ul>
 </li>
-<li><a href="#orgd82662b">If Then Else</a></li>
-<li><a href="#org5376d90">Loop</a></li>
-<li><a href="#org43d1066">Sequence, List, Vector</a></li>
-<li><a href="#orgf84a2ec">Define a Function or Command</a></li>
+<li><a href="#orgc3d654d">If Then Else</a></li>
+<li><a href="#org6c02ede">Loop</a></li>
+<li><a href="#org0c8bbb6">Sequence, List, Vector</a></li>
+<li><a href="#org2578108">Define a Function or Command</a></li>
 </ul>
 </li>
-<li><a href="#orgcf296e4">Lisp Data Structure</a>
+<li><a href="#org631bbb6">Lisp Data Structure</a>
 <ul>
-<li><a href="#org52125be">List</a>
+<li><a href="#org52d1011">List</a>
 <ul>
-<li><a href="#orgd9b090f">Create List</a></li>
+<li><a href="#org666927b">Create List</a></li>
 </ul>
 </li>
 </ul>
@@ -53,22 +53,22 @@
 An excerpt from XahLee's <a href="http://ergoemacs.org/emacs/elisp.html">Practical Emacs Lisp</a> .
 </p>
 
-<div id="outline-container-org56c69a4" class="outline-2">
-<h2 id="org56c69a4">Intro</h2>
-<div class="outline-text-2" id="text-org56c69a4">
+<div id="outline-container-orgad27dc0" class="outline-2">
+<h2 id="orgad27dc0">Intro</h2>
+<div class="outline-text-2" id="text-orgad27dc0">
 <p>
 Here just some fragment that help me to remind relative aspects. And you want know more, please learn from XahLee's <a href="http://ergoemacs.org/emacs/elisp.html">Practical Emacs Lisp</a> .
 </p>
 </div>
 </div>
 
-<div id="outline-container-orge09b0e5" class="outline-2">
-<h2 id="orge09b0e5">Emacs Lisp Basics</h2>
-<div class="outline-text-2" id="text-orge09b0e5">
+<div id="outline-container-orgc1e8875" class="outline-2">
+<h2 id="orgc1e8875">Emacs Lisp Basics</h2>
+<div class="outline-text-2" id="text-orgc1e8875">
 </div>
-<div id="outline-container-orga1239ff" class="outline-3">
-<h3 id="orga1239ff">Evaluate and Help</h3>
-<div class="outline-text-3" id="text-orga1239ff">
+<div id="outline-container-org5f1f037" class="outline-3">
+<h3 id="org5f1f037">Evaluate and Help</h3>
+<div class="outline-text-3" id="text-org5f1f037">
 <p>
 How to evaluate elisp code?
 </p>
@@ -110,12 +110,12 @@ To find the doc string of a function, run <code>describe-function &lt;C-h f&gt;<
 </div>
 </div>
 
-<div id="outline-container-org5d5c21e" class="outline-3">
-<h3 id="org5d5c21e">Printing</h3>
-<div class="outline-text-3" id="text-org5d5c21e">
+<div id="outline-container-orgca7922d" class="outline-3">
+<h3 id="orgca7922d">Printing</h3>
+<div class="outline-text-3" id="text-orgca7922d">
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">printing</span>
-<span class="linenr">2: </span><span style="color: #4078f2;">(</span>message <span style="color: #50a14f;">"Hello world!"</span><span style="color: #4078f2;">)</span>                <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">"Hello world!"</span>
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">printing</span>
+<span class="linenr">2: </span><span style="color: #707183;">(</span>message <span style="color: #50a14f;">"Hello world!"</span><span style="color: #707183;">)</span>                <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">"Hello world!"</span>
 </pre>
 </div>
 
@@ -133,14 +133,14 @@ You can see the output in the buffer named <code>*Messages*</code>. You can swit
 </div>
 </div>
 
-<div id="outline-container-org1f520a9" class="outline-3">
-<h3 id="org1f520a9">Arithmetic</h3>
-<div class="outline-text-3" id="text-org1f520a9">
+<div id="outline-container-org29473ac" class="outline-3">
+<h3 id="org29473ac">Arithmetic</h3>
+<div class="outline-text-3" id="text-org29473ac">
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">3. is a integer, 3.0 is a float</span>
-<span class="linenr">2: </span><span style="color: #4078f2;">(</span>integerp 3.<span style="color: #4078f2;">)</span>                           <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">t</span>
-<span class="linenr">3: </span><span style="color: #4078f2;">(</span>floatp 3.<span style="color: #4078f2;">)</span>                             <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">nil</span>
-<span class="linenr">4: </span><span style="color: #4078f2;">(</span>floatp 3.0<span style="color: #4078f2;">)</span>                            <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">t</span>
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">3. is a integer, 3.0 is a float</span>
+<span class="linenr">2: </span><span style="color: #707183;">(</span>integerp 3.<span style="color: #707183;">)</span>                           <span style="color: #a0a1a7; font-weight: bold;">;  </span><span style="color: #a0a1a7;">t</span>
+<span class="linenr">3: </span><span style="color: #707183;">(</span>floatp 3.<span style="color: #707183;">)</span>                             <span style="color: #a0a1a7; font-weight: bold;">;  </span><span style="color: #a0a1a7;">nil</span>
+<span class="linenr">4: </span><span style="color: #707183;">(</span>floatp 3.0<span style="color: #707183;">)</span>                            <span style="color: #a0a1a7; font-weight: bold;">;  </span><span style="color: #a0a1a7;">t</span>
 </pre>
 </div>
 
@@ -153,16 +153,16 @@ Function names that end with a <b>"p"</b> often means it return either true of f
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #4078f2;">(</span>string-to-number <span style="color: #50a14f;">"3"</span><span style="color: #4078f2;">)</span>
-<span class="linenr">2: </span><span style="color: #4078f2;">(</span>number-to-string 3<span style="color: #4078f2;">)</span>
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #707183;">(</span>string-to-number <span style="color: #50a14f;">"3"</span><span style="color: #707183;">)</span>
+<span class="linenr">2: </span><span style="color: #707183;">(</span>number-to-string 3<span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org4fa94d0" class="outline-3">
-<h3 id="org4fa94d0">True, Flase</h3>
-<div class="outline-text-3" id="text-org4fa94d0">
+<div id="outline-container-org0f9a46d" class="outline-3">
+<h3 id="org0f9a46d">True, Flase</h3>
+<div class="outline-text-3" id="text-org0f9a46d">
 <p>
 <b>There is no "boolean datatype" in elisp.</b> Just remember that <code>nil</code> and empty list <code>()</code> are false, anything else is true.
 </p>
@@ -172,12 +172,12 @@ Function names that end with a <b>"p"</b> often means it return either true of f
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Comparing numbers</span>
-<span class="linenr">2: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">&lt; &gt; &lt;= &gt;= = /=</span>
-<span class="linenr">3: </span><span style="color: #4078f2;">(</span>= 3 3<span style="color: #4078f2;">)</span>                                 <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">t</span>
-<span class="linenr">4: </span><span style="color: #4078f2;">(</span>= 3 3.00000000000000001<span style="color: #4078f2;">)</span>               <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">t</span>
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">Comparing numbers</span>
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">&lt; &gt; &lt;= &gt;= = /=</span>
+<span class="linenr">3: </span><span style="color: #707183;">(</span>= 3 3<span style="color: #707183;">)</span>                                 <span style="color: #a0a1a7; font-weight: bold;">;  </span><span style="color: #a0a1a7;">t</span>
+<span class="linenr">4: </span><span style="color: #707183;">(</span>= 3 3.00000000000000001<span style="color: #707183;">)</span>               <span style="color: #a0a1a7; font-weight: bold;">;  </span><span style="color: #a0a1a7;">t</span>
 <span class="linenr">5: </span>
-<span class="linenr">6: </span><span style="color: #4078f2;">(</span>/= 3 4<span style="color: #4078f2;">)</span>                                <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">not equal. &#8658; t</span>
+<span class="linenr">6: </span><span style="color: #707183;">(</span>/= 3 4<span style="color: #707183;">)</span>                                <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">not equal. &#8658; t</span>
 </pre>
 </div>
 
@@ -199,45 +199,45 @@ To test for inequality, the <code>/=</code> is for numbers only, and doesn't wor
 </div>
 </div>
 
-<div id="outline-container-orge8c4263" class="outline-3">
-<h3 id="orge8c4263">Variables</h3>
-<div class="outline-text-3" id="text-orge8c4263">
+<div id="outline-container-org90a1a4f" class="outline-3">
+<h3 id="org90a1a4f">Variables</h3>
+<div class="outline-text-3" id="text-org90a1a4f">
 </div>
-<div id="outline-container-org9bff07c" class="outline-4">
-<h4 id="org9bff07c">Global Variables</h4>
-<div class="outline-text-4" id="text-org9bff07c">
+<div id="outline-container-orgf9ff1f2" class="outline-4">
+<h4 id="orgf9ff1f2">Global Variables</h4>
+<div class="outline-text-4" id="text-orgf9ff1f2">
 <p>
 <code>setq</code> is used to set variables. Variables need not be declared, and is global.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">setq</span> x 1<span style="color: #4078f2;">)</span>                              <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">assign 1 to x</span>
-<span class="linenr">2: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">setq</span> a 3 b 2 c 7<span style="color: #4078f2;">)</span>                      <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">multiple assignment</span>
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">setq</span> x 1<span style="color: #707183;">)</span>                              <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">assign 1 to x</span>
+<span class="linenr">2: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">setq</span> a 3 b 2 c 7<span style="color: #707183;">)</span>                      <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">multiple assignment</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org04dbe90" class="outline-4">
-<h4 id="org04dbe90">Local Variables</h4>
-<div class="outline-text-4" id="text-org04dbe90">
+<div id="outline-container-orgcceaca5" class="outline-4">
+<h4 id="orgcceaca5">Local Variables</h4>
+<div class="outline-text-4" id="text-orgcceaca5">
 <p>
 To define local variables, use <code>let</code>. The form is:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(let  (var1 var2 ...) body)</span>
-<span class="linenr"> 2: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">let</span> <span style="color: #a626a4;">(</span>a b<span style="color: #a626a4;">)</span>
-<span class="linenr"> 3: </span> <span style="color: #a626a4;">(</span><span style="color: #e45649;">setq</span> a 3<span style="color: #a626a4;">)</span>
-<span class="linenr"> 4: </span> <span style="color: #a626a4;">(</span><span style="color: #e45649;">setq</span> b 4<span style="color: #a626a4;">)</span>
-<span class="linenr"> 5: </span> <span style="color: #a626a4;">(</span>+ a b<span style="color: #a626a4;">)</span>
-<span class="linenr"> 6: </span> <span style="color: #4078f2;">)</span>                                      <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">7</span>
+<pre class="src src-elisp"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">(let  (var1 var2 ...) body)</span>
+<span class="linenr"> 2: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">let</span> <span style="color: #7388d6;">(</span>a b<span style="color: #7388d6;">)</span>
+<span class="linenr"> 3: </span> <span style="color: #7388d6;">(</span><span style="color: #a626a4;">setq</span> a 3<span style="color: #7388d6;">)</span>
+<span class="linenr"> 4: </span> <span style="color: #7388d6;">(</span><span style="color: #a626a4;">setq</span> b 4<span style="color: #7388d6;">)</span>
+<span class="linenr"> 5: </span> <span style="color: #7388d6;">(</span>+ a b<span style="color: #7388d6;">)</span>
+<span class="linenr"> 6: </span> <span style="color: #707183;">)</span>                                      <span style="color: #a0a1a7; font-weight: bold;">;  </span><span style="color: #a0a1a7;">7</span>
 <span class="linenr"> 7: </span>
-<span class="linenr"> 8: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(let ((var1 val1) (var2 val2) &#8230;) body)</span>
-<span class="linenr"> 9: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">This form is convenient if you just have a few simle local vars with known values.</span>
-<span class="linenr">10: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">let</span> <span style="color: #a626a4;">(</span><span style="color: #50a14f;">(</span>a 3<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">(</span>b 4<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span>
-<span class="linenr">11: </span> <span style="color: #a626a4;">(</span>+ a b<span style="color: #a626a4;">)</span>
-<span class="linenr">12: </span><span style="color: #4078f2;">)</span>                                       <span style="color: #9ca0a4;">;  </span><span style="color: #9ca0a4;">7</span>
+<span class="linenr"> 8: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">(let ((var1 val1) (var2 val2) &#8230;) body)</span>
+<span class="linenr"> 9: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">This form is convenient if you just have a few simle local vars with known values.</span>
+<span class="linenr">10: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">let</span> <span style="color: #7388d6;">(</span><span style="color: #909183;">(</span>a 3<span style="color: #909183;">)</span> <span style="color: #909183;">(</span>b 4<span style="color: #909183;">)</span><span style="color: #7388d6;">)</span>
+<span class="linenr">11: </span> <span style="color: #7388d6;">(</span>+ a b<span style="color: #7388d6;">)</span>
+<span class="linenr">12: </span><span style="color: #707183;">)</span>                                       <span style="color: #a0a1a7; font-weight: bold;">;  </span><span style="color: #a0a1a7;">7</span>
 </pre>
 </div>
 
@@ -252,19 +252,19 @@ Where <code>body</code> is (onre or more) lisp expressions. The body's last expr
 </div>
 </div>
 
-<div id="outline-container-orgd82662b" class="outline-3">
-<h3 id="orgd82662b">If Then Else</h3>
-<div class="outline-text-3" id="text-orgd82662b">
+<div id="outline-container-orgc3d654d" class="outline-3">
+<h3 id="orgc3d654d">If Then Else</h3>
+<div class="outline-text-3" id="text-orgc3d654d">
 <p>
 The form for "if" expression is:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(if test body)</span>
-<span class="linenr">2: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">or</span>
-<span class="linenr">3: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(if test true_body false_body)</span>
-<span class="linenr">4: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">and if no flase expression, return nil. e.g.</span>
-<span class="linenr">5: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">if</span> <span style="color: #a626a4;">(</span>&lt; 3 2<span style="color: #a626a4;">)</span> <span style="color: #a626a4;">(</span>message <span style="color: #50a14f;">"yes"</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>            <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">nil</span>
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">(if test body)</span>
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">or</span>
+<span class="linenr">3: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">(if test true_body false_body)</span>
+<span class="linenr">4: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">and if no flase expression, return nil. e.g.</span>
+<span class="linenr">5: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">if</span> <span style="color: #7388d6;">(</span>&lt; 3 2<span style="color: #7388d6;">)</span> <span style="color: #7388d6;">(</span>message <span style="color: #50a14f;">"yes"</span><span style="color: #7388d6;">)</span><span style="color: #707183;">)</span>            <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">nil</span>
 </pre>
 </div>
 
@@ -277,9 +277,9 @@ If you do not need a "else" part, you should use the function <code>when</code> 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(when test expr1 expr2 ...)</span>
-<span class="linenr">2: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">Its meaning is the same as</span>
-<span class="linenr">3: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(if test (progn expr1 expr2 ...))</span>
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">(when test expr1 expr2 ...)</span>
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">Its meaning is the same as</span>
+<span class="linenr">3: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">(if test (progn expr1 expr2 ...))</span>
 </pre>
 </div>
 
@@ -297,19 +297,19 @@ The purpose of <code>(progn ...)</code> is similar to a block of code <code>{...
 </div>
 </div>
 
-<div id="outline-container-org5376d90" class="outline-3">
-<h3 id="org5376d90">Loop</h3>
-<div class="outline-text-3" id="text-org5376d90">
+<div id="outline-container-org6c02ede" class="outline-3">
+<h3 id="org6c02ede">Loop</h3>
+<div class="outline-text-3" id="text-org6c02ede">
 <p>
 Most basic loop in elisp is with <code>(while test body)</code>, where <code>body</code> is one or more lisp expressions.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">setq</span> x 0<span style="color: #4078f2;">)</span>
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">setq</span> x 0<span style="color: #707183;">)</span>
 <span class="linenr">2: </span>
-<span class="linenr">3: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">while</span> <span style="color: #a626a4;">(</span>&lt; x 4<span style="color: #a626a4;">)</span>
-<span class="linenr">4: </span>  <span style="color: #a626a4;">(</span>print <span style="color: #50a14f;">(</span>format <span style="color: #50a14f;">"number is %d"</span> x<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span>
-<span class="linenr">5: </span>  <span style="color: #a626a4;">(</span><span style="color: #e45649;">setq</span> x <span style="color: #50a14f;">(</span>1+ x<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+<span class="linenr">3: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">while</span> <span style="color: #7388d6;">(</span>&lt; x 4<span style="color: #7388d6;">)</span>
+<span class="linenr">4: </span>  <span style="color: #7388d6;">(</span>print <span style="color: #909183;">(</span>format <span style="color: #50a14f;">"number is %d"</span> x<span style="color: #909183;">)</span><span style="color: #7388d6;">)</span>
+<span class="linenr">5: </span>  <span style="color: #7388d6;">(</span><span style="color: #a626a4;">setq</span> x <span style="color: #909183;">(</span>1+ x<span style="color: #909183;">)</span><span style="color: #7388d6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -331,9 +331,9 @@ Usually it's better to use <code>dolist</code> or <code>dotimes</code> .
 </div>
 </div>
 
-<div id="outline-container-org43d1066" class="outline-3">
-<h3 id="org43d1066">Sequence, List, Vector</h3>
-<div class="outline-text-3" id="text-org43d1066">
+<div id="outline-container-org0c8bbb6" class="outline-3">
+<h3 id="org0c8bbb6">Sequence, List, Vector</h3>
+<div class="outline-text-3" id="text-org0c8bbb6">
 <p>
 Here's a chart of elisp's most important list-like datatypes.
 </p>
@@ -377,24 +377,24 @@ Here's the primary differences between list and vector:
 </ul>
 
 <p>
-We will learn more at <a href="#orgcf296e4">Lisp Data Structure</a>.
+We will learn more at <a href="#org631bbb6">Lisp Data Structure</a>.
 </p>
 </div>
 </div>
 
-<div id="outline-container-orgf84a2ec" class="outline-3">
-<h3 id="orgf84a2ec">Define a Function or Command</h3>
-<div class="outline-text-3" id="text-orgf84a2ec">
+<div id="outline-container-org2578108" class="outline-3">
+<h3 id="org2578108">Define a Function or Command</h3>
+<div class="outline-text-3" id="text-org2578108">
 <p>
 Basic function definition is of the form:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(defun function_name (param1 param2 ...) "doc_string" body)</span>
-<span class="linenr">2: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">defun</span> <span style="color: #a626a4;">myFunction</span> <span style="color: #a626a4;">()</span>
-<span class="linenr">3: </span>  <span style="color: #84888b; font-style: italic;">"testing"</span>
-<span class="linenr">4: </span>  <span style="color: #9ca0a4;">;; </span><span style="color: #9ca0a4;">(interactive)</span>
-<span class="linenr">5: </span>  <span style="color: #a626a4;">(</span>message <span style="color: #50a14f;">"Yay!"</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">(defun function_name (param1 param2 ...) "doc_string" body)</span>
+<span class="linenr">2: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">defun</span> <span style="color: #0184bc;">myFunction</span> <span style="color: #7388d6;">()</span>
+<span class="linenr">3: </span>  <span style="color: #50a14f; font-style: italic;">"testing"</span>
+<span class="linenr">4: </span>  <span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">(interactive)</span>
+<span class="linenr">5: </span>  <span style="color: #7388d6;">(</span>message <span style="color: #50a14f;">"Yay!"</span><span style="color: #7388d6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -423,16 +423,16 @@ Here is a function definition template that majority of elisp commands follow:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp"><span class="linenr"> 1: </span><span style="color: #4078f2;">(</span><span style="color: #e45649;">defun</span> <span style="color: #a626a4;">myCommand</span> <span style="color: #a626a4;">()</span>
-<span class="linenr"> 2: </span>  <span style="color: #84888b; font-style: italic;">"One sentence summary of what this command do.</span>
+<pre class="src src-elisp"><span class="linenr"> 1: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">defun</span> <span style="color: #0184bc;">myCommand</span> <span style="color: #7388d6;">()</span>
+<span class="linenr"> 2: </span>  <span style="color: #50a14f; font-style: italic;">"One sentence summary of what this command do.</span>
 <span class="linenr"> 3: </span>
-<span class="linenr"> 4: </span><span style="color: #84888b; font-style: italic;">More detailed documentation here."</span>
-<span class="linenr"> 5: </span>  <span style="color: #a626a4;">(</span><span style="color: #e45649;">interactive</span><span style="color: #a626a4;">)</span>
-<span class="linenr"> 6: </span>  <span style="color: #a626a4;">(</span><span style="color: #e45649;">let</span> <span style="color: #50a14f;">(</span>localVar1 localVar2 ...<span style="color: #50a14f;">)</span>
-<span class="linenr"> 7: </span>    <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">do somethins here...</span>
-<span class="linenr"> 8: </span>    <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">...</span>
-<span class="linenr"> 9: </span>    <span style="color: #9ca0a4;">; </span><span style="color: #9ca0a4;">last expression is returned</span>
-<span class="linenr">10: </span>    <span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>
+<span class="linenr"> 4: </span><span style="color: #50a14f; font-style: italic;">More detailed documentation here."</span>
+<span class="linenr"> 5: </span>  <span style="color: #7388d6;">(</span><span style="color: #a626a4;">interactive</span><span style="color: #7388d6;">)</span>
+<span class="linenr"> 6: </span>  <span style="color: #7388d6;">(</span><span style="color: #a626a4;">let</span> <span style="color: #909183;">(</span>localVar1 localVar2 ...<span style="color: #909183;">)</span>
+<span class="linenr"> 7: </span>    <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">do somethins here...</span>
+<span class="linenr"> 8: </span>    <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">...</span>
+<span class="linenr"> 9: </span>    <span style="color: #a0a1a7; font-weight: bold;">; </span><span style="color: #a0a1a7;">last expression is returned</span>
+<span class="linenr">10: </span>    <span style="color: #7388d6;">)</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -447,20 +447,20 @@ Here is a function definition template that majority of elisp commands follow:
 </div>
 </div>
 
-<div id="outline-container-orgcf296e4" class="outline-2">
-<h2 id="orgcf296e4">Lisp Data Structure</h2>
-<div class="outline-text-2" id="text-orgcf296e4">
+<div id="outline-container-org631bbb6" class="outline-2">
+<h2 id="org631bbb6">Lisp Data Structure</h2>
+<div class="outline-text-2" id="text-org631bbb6">
 </div>
-<div id="outline-container-org52125be" class="outline-3">
-<h3 id="org52125be">List</h3>
-<div class="outline-text-3" id="text-org52125be">
+<div id="outline-container-org52d1011" class="outline-3">
+<h3 id="org52d1011">List</h3>
+<div class="outline-text-3" id="text-org52d1011">
 <p>
 Emacs Lisp's list datatype is known as linked list in computer science.
 </p>
 </div>
 
-<div id="outline-container-orgd9b090f" class="outline-4">
-<h4 id="orgd9b090f">Create List</h4>
+<div id="outline-container-org666927b" class="outline-4">
+<h4 id="org666927b">Create List</h4>
 </div>
 </div>
 </div>
@@ -468,7 +468,7 @@ Emacs Lisp's list datatype is known as linked list in computer science.
 <div id="postamble" class="status">
 <p class="date">Date: 2021-03-05 Fri 09:15</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-03-05 Fri 10:48</p>
+<p class="date">Created: 2021-05-18 Tue 15:53</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

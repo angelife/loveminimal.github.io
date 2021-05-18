@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:44 -->
+<!-- 2021-05-18 Tue 15:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Virtual DOM</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,32 +18,32 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org672d331">What, exactly, is the DOM?</a>
+<li><a href="#orgae49541">What, exactly, is the DOM?</a>
 <ul>
-<li><a href="#org6d1846f">How is a web page built?</a></li>
-<li><a href="#org780256b">How is the DOM created?</a></li>
-<li><a href="#org1df31af">What the DOM is not</a></li>
-<li><a href="#org1f53352">Recap</a></li>
+<li><a href="#orgfa8861b">How is a web page built?</a></li>
+<li><a href="#orgab1cc97">How is the DOM created?</a></li>
+<li><a href="#org36c6f28">What the DOM is not</a></li>
+<li><a href="#org55a394b">Recap</a></li>
 </ul>
 </li>
-<li><a href="#org1c8b69f">Understanding the Critical Rendering Path</a>
+<li><a href="#org27740d7">Understanding the Critical Rendering Path</a>
 <ul>
-<li><a href="#org9d4e563">1.Constructing the DOM Tree</a></li>
-<li><a href="#org9283849">2.Constructing the CSSOM Tree</a></li>
-<li><a href="#org71e1c38">3.Running JavaScript</a></li>
-<li><a href="#org1c0e35c">4.Creating the Render Tree</a></li>
-<li><a href="#orgda78bad">5.Generating the Layout</a></li>
-<li><a href="#org88cd726">6.Painting</a></li>
-<li><a href="#orgccee9b8">Putting it All Together</a></li>
+<li><a href="#orga8c4af6">1.Constructing the DOM Tree</a></li>
+<li><a href="#orgcadcb18">2.Constructing the CSSOM Tree</a></li>
+<li><a href="#org8799391">3.Running JavaScript</a></li>
+<li><a href="#org0dab511">4.Creating the Render Tree</a></li>
+<li><a href="#orgd17f72b">5.Generating the Layout</a></li>
+<li><a href="#org2148728">6.Painting</a></li>
+<li><a href="#orgf3ae662">Putting it All Together</a></li>
 </ul>
 </li>
-<li><a href="#orgf3b7c83">Understanding the Virtual DOM</a>
+<li><a href="#org4ae9b8d">Understanding the Virtual DOM</a>
 <ul>
-<li><a href="#org0fb382a">Why do we need a virtual DOM?</a></li>
-<li><a href="#org3dd5165">What does a virtual DOM look like?</a></li>
-<li><a href="#org6ed4e62">Under the hood of the virtual DOM</a></li>
-<li><a href="#org03dd4e7">The virtual DOM and frameworks</a></li>
-<li><a href="#org1b0f244">The DOM vs the virtual DOM</a></li>
+<li><a href="#org97d062a">Why do we need a virtual DOM?</a></li>
+<li><a href="#org4a37b12">What does a virtual DOM look like?</a></li>
+<li><a href="#org997827b">Under the hood of the virtual DOM</a></li>
+<li><a href="#org800e860">The virtual DOM and frameworks</a></li>
+<li><a href="#org2333402">The DOM vs the virtual DOM</a></li>
 </ul>
 </li>
 </ul>
@@ -53,17 +53,17 @@
 Before learning Virtual DOM, lets take a look at DOM.
 </p>
 
-<div id="outline-container-org672d331" class="outline-2">
-<h2 id="org672d331">What, exactly, is the DOM?<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-org672d331">
+<div id="outline-container-orgae49541" class="outline-2">
+<h2 id="orgae49541">What, exactly, is the DOM?<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-orgae49541">
 <p>
 The Document Object Model, or the "DOM", is an interface to web pages. It is essentially an API to the page, allowing programs to read an manipulate the page's content, structure, and styles. Let'w break this down.
 </p>
 </div>
 
-<div id="outline-container-org6d1846f" class="outline-3">
-<h3 id="org6d1846f">How is a web page built?</h3>
-<div class="outline-text-3" id="text-org6d1846f">
+<div id="outline-container-orgfa8861b" class="outline-3">
+<h3 id="orgfa8861b">How is a web page built?</h3>
+<div class="outline-text-3" id="text-orgfa8861b">
 <p>
 How a browser goes from a source HTML document to displaying a styled and interactive page in the viewport is called the <b>"Critical Rendering Path"</b>. Although this process can be broken down into several steps, as I cover in my article on <a href="https://bitsofco.de/understanding-the-critical-rendering-path/">Understanding the Critical Rendering Path</a>, these steps can be roughy grouped into two stages.
 </p>
@@ -94,9 +94,9 @@ The render tree is a representation of the HTML elements that will be rendered o
 </div>
 </div>
 
-<div id="outline-container-org780256b" class="outline-3">
-<h3 id="org780256b">How is the DOM created?</h3>
-<div class="outline-text-3" id="text-org780256b">
+<div id="outline-container-orgab1cc97" class="outline-3">
+<h3 id="orgab1cc97">How is the DOM created?</h3>
+<div class="outline-text-3" id="text-orgab1cc97">
 <img
 src="images/vdom-2.png"
 width="300"
@@ -123,15 +123,15 @@ Let's take this HTML document as an example:
 
 <div class="org-src-container">
 <pre class="src src-html"><span class="linenr"> 1: </span><span style="color: #50a14f;">&lt;!doctype html&gt;</span>
-<span class="linenr"> 2: </span>&lt;<span style="color: #a626a4;">html</span> <span style="color: #6a1868;">lang</span>=<span style="color: #50a14f;">"en"</span>&gt;
-<span class="linenr"> 3: </span> &lt;<span style="color: #a626a4;">head</span>&gt;
-<span class="linenr"> 4: </span>   &lt;<span style="color: #a626a4;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">My first web page</span>&lt;/<span style="color: #a626a4;">title</span>&gt;
-<span class="linenr"> 5: </span>  &lt;/<span style="color: #a626a4;">head</span>&gt;
-<span class="linenr"> 6: </span> &lt;<span style="color: #a626a4;">body</span>&gt;
-<span class="linenr"> 7: </span>    &lt;<span style="color: #a626a4;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello, world!</span>&lt;/<span style="color: #a626a4;">h1</span>&gt;
-<span class="linenr"> 8: </span>    &lt;<span style="color: #a626a4;">p</span>&gt;How are you?&lt;/<span style="color: #a626a4;">p</span>&gt;
-<span class="linenr"> 9: </span>  &lt;/<span style="color: #a626a4;">body</span>&gt;
-<span class="linenr">10: </span>&lt;/<span style="color: #a626a4;">html</span>&gt;
+<span class="linenr"> 2: </span>&lt;<span style="color: #0184bc;">html</span> <span style="color: #8b4513;">lang</span>=<span style="color: #50a14f;">"en"</span>&gt;
+<span class="linenr"> 3: </span> &lt;<span style="color: #0184bc;">head</span>&gt;
+<span class="linenr"> 4: </span>   &lt;<span style="color: #0184bc;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">My first web page</span>&lt;/<span style="color: #0184bc;">title</span>&gt;
+<span class="linenr"> 5: </span>  &lt;/<span style="color: #0184bc;">head</span>&gt;
+<span class="linenr"> 6: </span> &lt;<span style="color: #0184bc;">body</span>&gt;
+<span class="linenr"> 7: </span>    &lt;<span style="color: #0184bc;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello, world!</span>&lt;/<span style="color: #0184bc;">h1</span>&gt;
+<span class="linenr"> 8: </span>    &lt;<span style="color: #0184bc;">p</span>&gt;How are you?&lt;/<span style="color: #0184bc;">p</span>&gt;
+<span class="linenr"> 9: </span>  &lt;/<span style="color: #0184bc;">body</span>&gt;
+<span class="linenr">10: </span>&lt;/<span style="color: #0184bc;">html</span>&gt;
 </pre>
 </div>
 
@@ -141,9 +141,9 @@ This document can be represented as the above node tree.
 </div>
 </div>
 
-<div id="outline-container-org1df31af" class="outline-3">
-<h3 id="org1df31af">What the DOM is not</h3>
-<div class="outline-text-3" id="text-org1df31af">
+<div id="outline-container-org36c6f28" class="outline-3">
+<h3 id="org36c6f28">What the DOM is not</h3>
+<div class="outline-text-3" id="text-org36c6f28">
 <p>
 In the example I gabe above, it seems like the DOM is a 1-to-1 mapping of the source HTML document or what you see your DevTools. However, as I mentioned, there are differences. In order to fully understand what the DOM <b>is</b>, we need to look at what it is <b>not</b>.
 </p>
@@ -166,9 +166,9 @@ The DOM is an interface for <b>valid</b> HTML documents. During the process of c
 
 <div class="org-src-container">
 <pre class="src src-html"><span class="linenr">1: </span><span style="color: #50a14f;">&lt;!doctype html&gt;</span>
-<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">html</span>&gt;
+<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">html</span>&gt;
 <span class="linenr">3: </span>  Hello, world!
-<span class="linenr">4: </span>&lt;/<span style="color: #a626a4;">html</span>&gt;
+<span class="linenr">4: </span>&lt;/<span style="color: #0184bc;">html</span>&gt;
 </pre>
 </div>
 
@@ -197,11 +197,11 @@ We can, for example, crate additional nodes to the DOM using JavaScript.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">var</span> <span style="color: #6a1868;">newParagraph</span> = document.crateElement<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'p'</span><span style="color: #4078f2;">)</span>
-<span class="linenr">2: </span><span style="color: #e45649;">var</span> <span style="color: #6a1868;">paragraphContent</span> = document.createTextNode<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'I\'m new!'</span><span style="color: #4078f2;">)</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">var</span> <span style="color: #8b4513;">newParagraph</span> = document.crateElement<span style="color: #707183;">(</span><span style="color: #50a14f;">'p'</span><span style="color: #707183;">)</span>
+<span class="linenr">2: </span><span style="color: #a626a4;">var</span> <span style="color: #8b4513;">paragraphContent</span> = document.createTextNode<span style="color: #707183;">(</span><span style="color: #50a14f;">'I\'m new!'</span><span style="color: #707183;">)</span>
 <span class="linenr">3: </span>
-<span class="linenr">4: </span>newParagraph.appendChild<span style="color: #4078f2;">(</span>paragraphContent<span style="color: #4078f2;">)</span>
-<span class="linenr">5: </span>document.body.appendChild<span style="color: #4078f2;">(</span>newParagraph<span style="color: #4078f2;">)</span>
+<span class="linenr">4: </span>newParagraph.appendChild<span style="color: #707183;">(</span>paragraphContent<span style="color: #707183;">)</span>
+<span class="linenr">5: </span>document.body.appendChild<span style="color: #707183;">(</span>newParagraph<span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -227,13 +227,13 @@ Becuase the render tree is only concerned with what is rendered, it excludes ele
 
 <div class="org-src-container">
 <pre class="src src-html"><span class="linenr">1: </span><span style="color: #50a14f;">&lt;!doctype html&gt;</span>
-<span class="linenr">2: </span>&lt;<span style="color: #a626a4;">html</span> <span style="color: #6a1868;">lang</span>=<span style="color: #50a14f;">"en"</span>&gt;
-<span class="linenr">3: </span>  &lt;<span style="color: #a626a4;">head</span>&gt;&lt;/<span style="color: #a626a4;">head</span>&gt;
-<span class="linenr">4: </span>  &lt;<span style="color: #a626a4;">body</span>&gt;
-<span class="linenr">5: </span>    &lt;<span style="color: #a626a4;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello, world!</span>&lt;/<span style="color: #a626a4;">h1</span>&gt;
-<span class="linenr">6: </span>    &lt;<span style="color: #a626a4;">p</span> <span style="color: #6a1868;">style</span>=<span style="color: #50a14f;">"display: none;"</span>&gt;How are you?&lt;/<span style="color: #a626a4;">p</span>&gt;
-<span class="linenr">7: </span>  &lt;/<span style="color: #a626a4;">body</span>&gt;
-<span class="linenr">8: </span>&lt;/<span style="color: #a626a4;">html</span>&gt;
+<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">html</span> <span style="color: #8b4513;">lang</span>=<span style="color: #50a14f;">"en"</span>&gt;
+<span class="linenr">3: </span>  &lt;<span style="color: #0184bc;">head</span>&gt;&lt;/<span style="color: #0184bc;">head</span>&gt;
+<span class="linenr">4: </span>  &lt;<span style="color: #0184bc;">body</span>&gt;
+<span class="linenr">5: </span>    &lt;<span style="color: #0184bc;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Hello, world!</span>&lt;/<span style="color: #0184bc;">h1</span>&gt;
+<span class="linenr">6: </span>    &lt;<span style="color: #0184bc;">p</span> <span style="color: #8b4513;">style</span>=<span style="color: #50a14f;">"display: none;"</span>&gt;How are you?&lt;/<span style="color: #0184bc;">p</span>&gt;
+<span class="linenr">7: </span>  &lt;/<span style="color: #0184bc;">body</span>&gt;
+<span class="linenr">8: </span>&lt;/<span style="color: #0184bc;">html</span>&gt;
 </pre>
 </div>
 
@@ -291,9 +291,9 @@ This is why pseudo-elements cannot be targetted by JavaScript, because they are 
 </div>
 </div>
 
-<div id="outline-container-org1f53352" class="outline-3">
-<h3 id="org1f53352">Recap</h3>
-<div class="outline-text-3" id="text-org1f53352">
+<div id="outline-container-org55a394b" class="outline-3">
+<h3 id="org55a394b">Recap</h3>
+<div class="outline-text-3" id="text-org55a394b">
 <p>
 The DOM is an interface to an HTML document. It is used by browsers as a first step towards determining what to render in the viewport, and by Javascript programs to modify the content, structure, or styling of the page.
 </p>
@@ -311,9 +311,9 @@ Although similar to other forms of the source HTML document, the DOM is differen
 </div>
 </div>
 
-<div id="outline-container-org1c8b69f" class="outline-2">
-<h2 id="org1c8b69f">Understanding the Critical Rendering Path<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h2>
-<div class="outline-text-2" id="text-org1c8b69f">
+<div id="outline-container-org27740d7" class="outline-2">
+<h2 id="org27740d7">Understanding the Critical Rendering Path<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h2>
+<div class="outline-text-2" id="text-org27740d7">
 <p>
 When a browser receives the HTML response for a page from the server, there are lot of steps to be taken before pixels are drawn on the screen. This sequence the browser needs to run through for the initial paint of the page is called the <b>"Critical Rendering Path"</b>.
 </p>
@@ -346,9 +346,9 @@ title=""
 />
 </div>
 
-<div id="outline-container-org9d4e563" class="outline-3">
-<h3 id="org9d4e563">1.Constructing the DOM Tree</h3>
-<div class="outline-text-3" id="text-org9d4e563">
+<div id="outline-container-orga8c4af6" class="outline-3">
+<h3 id="orga8c4af6">1.Constructing the DOM Tree</h3>
+<div class="outline-text-3" id="text-orga8c4af6">
 <p>
 The DOM (Document Object Model) Tree is an Object representation of the fully parsed HTML page.
 </p>
@@ -362,24 +362,24 @@ Take, for example, this sample document:
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr"> 1: </span>&lt;<span style="color: #a626a4;">html</span>&gt;
-<span class="linenr"> 2: </span>&lt;<span style="color: #a626a4;">head</span>&gt;
-<span class="linenr"> 3: </span>  &lt;<span style="color: #a626a4;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Understanding the Critical Rendering Path</span>&lt;/<span style="color: #a626a4;">title</span>&gt;
-<span class="linenr"> 4: </span>  &lt;<span style="color: #a626a4;">link</span> <span style="color: #6a1868;">rel</span>=<span style="color: #50a14f;">"stylesheet"</span> <span style="color: #6a1868;">href</span>=<span style="color: #50a14f;">"style.css"</span>&gt;
-<span class="linenr"> 5: </span>&lt;/<span style="color: #a626a4;">head</span>&gt;
-<span class="linenr"> 6: </span>&lt;<span style="color: #a626a4;">body</span>&gt;
-<span class="linenr"> 7: </span>  &lt;<span style="color: #a626a4;">header</span>&gt;
-<span class="linenr"> 8: </span>      &lt;<span style="color: #a626a4;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Understanding the Critical Rendering Path</span>&lt;/<span style="color: #a626a4;">h1</span>&gt;
-<span class="linenr"> 9: </span>  &lt;/<span style="color: #a626a4;">header</span>&gt;
-<span class="linenr">10: </span>  &lt;<span style="color: #a626a4;">main</span>&gt;
-<span class="linenr">11: </span>      &lt;<span style="color: #a626a4;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Introduction</span>&lt;/<span style="color: #a626a4;">h2</span>&gt;
-<span class="linenr">12: </span>      &lt;<span style="color: #a626a4;">p</span>&gt;Lorem ipsum dolor sit amet&lt;/<span style="color: #a626a4;">p</span>&gt;
-<span class="linenr">13: </span>  &lt;/<span style="color: #a626a4;">main</span>&gt;
-<span class="linenr">14: </span>  &lt;<span style="color: #a626a4;">footer</span>&gt;
-<span class="linenr">15: </span>      &lt;<span style="color: #a626a4;">small</span>&gt;<span style="color: #383a42; background-color: #fafafa;">Copyright 2017</span>&lt;/<span style="color: #a626a4;">small</span>&gt;
-<span class="linenr">16: </span>  &lt;/<span style="color: #a626a4;">footer</span>&gt;
-<span class="linenr">17: </span>&lt;/<span style="color: #a626a4;">body</span>&gt;
-<span class="linenr">18: </span>&lt;/<span style="color: #a626a4;">html</span>&gt;
+<pre class="src src-html"><span class="linenr"> 1: </span>&lt;<span style="color: #0184bc;">html</span>&gt;
+<span class="linenr"> 2: </span>&lt;<span style="color: #0184bc;">head</span>&gt;
+<span class="linenr"> 3: </span>  &lt;<span style="color: #0184bc;">title</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Understanding the Critical Rendering Path</span>&lt;/<span style="color: #0184bc;">title</span>&gt;
+<span class="linenr"> 4: </span>  &lt;<span style="color: #0184bc;">link</span> <span style="color: #8b4513;">rel</span>=<span style="color: #50a14f;">"stylesheet"</span> <span style="color: #8b4513;">href</span>=<span style="color: #50a14f;">"style.css"</span>&gt;
+<span class="linenr"> 5: </span>&lt;/<span style="color: #0184bc;">head</span>&gt;
+<span class="linenr"> 6: </span>&lt;<span style="color: #0184bc;">body</span>&gt;
+<span class="linenr"> 7: </span>  &lt;<span style="color: #0184bc;">header</span>&gt;
+<span class="linenr"> 8: </span>      &lt;<span style="color: #0184bc;">h1</span>&gt;<span style="font-weight: bold; text-decoration: underline;">Understanding the Critical Rendering Path</span>&lt;/<span style="color: #0184bc;">h1</span>&gt;
+<span class="linenr"> 9: </span>  &lt;/<span style="color: #0184bc;">header</span>&gt;
+<span class="linenr">10: </span>  &lt;<span style="color: #0184bc;">main</span>&gt;
+<span class="linenr">11: </span>      &lt;<span style="color: #0184bc;">h2</span>&gt;<span style="font-weight: bold; font-style: italic; text-decoration: underline;">Introduction</span>&lt;/<span style="color: #0184bc;">h2</span>&gt;
+<span class="linenr">12: </span>      &lt;<span style="color: #0184bc;">p</span>&gt;Lorem ipsum dolor sit amet&lt;/<span style="color: #0184bc;">p</span>&gt;
+<span class="linenr">13: </span>  &lt;/<span style="color: #0184bc;">main</span>&gt;
+<span class="linenr">14: </span>  &lt;<span style="color: #0184bc;">footer</span>&gt;
+<span class="linenr">15: </span>      &lt;<span style="color: #0184bc;">small</span>&gt;<span style="color: #383a42; background-color: #fafafa;">Copyright 2017</span>&lt;/<span style="color: #0184bc;">small</span>&gt;
+<span class="linenr">16: </span>  &lt;/<span style="color: #0184bc;">footer</span>&gt;
+<span class="linenr">17: </span>&lt;/<span style="color: #0184bc;">body</span>&gt;
+<span class="linenr">18: </span>&lt;/<span style="color: #0184bc;">html</span>&gt;
 </pre>
 </div>
 
@@ -401,9 +401,9 @@ A good thing about HTML is that it can be executed in parts. The full document d
 </div>
 </div>
 
-<div id="outline-container-org9283849" class="outline-3">
-<h3 id="org9283849">2.Constructing the CSSOM Tree</h3>
-<div class="outline-text-3" id="text-org9283849">
+<div id="outline-container-orgcadcb18" class="outline-3">
+<h3 id="orgcadcb18">2.Constructing the CSSOM Tree</h3>
+<div class="outline-text-3" id="text-orgcadcb18">
 <p>
 The CSSOM (CSS Object Model) is an Object representation of the styles associated with the DOM. It is represented in a similar way to the DOM, but with the associated styles for each node, whether they explicitly declared or implicitly inherited, included.
 </p>
@@ -413,15 +413,15 @@ In the <code>style.css</code> file from the document mentioned above, we have th
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span class="linenr">1: </span><span style="color: #4078f2;">body </span><span style="color: #4078f2;">{</span> <span style="color: #50a14f;">font-size</span>: 18px; <span style="color: #4078f2;">}</span>
+<pre class="src src-css"><span class="linenr">1: </span><span style="color: #0184bc;">body </span><span style="color: #707183;">{</span> <span style="color: #a626a4;">font-size</span>: 18px; <span style="color: #707183;">}</span>
 <span class="linenr">2: </span>
-<span class="linenr">3: </span><span style="color: #4078f2;">header </span><span style="color: #4078f2;">{</span> <span style="color: #50a14f;">color</span>: <span style="color: #000000; background-color: #dda0dd;">plum</span>; <span style="color: #4078f2;">}</span>
-<span class="linenr">4: </span><span style="color: #4078f2;">h1 </span><span style="color: #4078f2;">{</span> <span style="color: #50a14f;">font-size</span>: 28px; <span style="color: #4078f2;">}</span>
+<span class="linenr">3: </span><span style="color: #0184bc;">header </span><span style="color: #707183;">{</span> <span style="color: #a626a4;">color</span>: <span style="color: #000000; background-color: #dda0dd;">plum</span>; <span style="color: #707183;">}</span>
+<span class="linenr">4: </span><span style="color: #0184bc;">h1 </span><span style="color: #707183;">{</span> <span style="color: #a626a4;">font-size</span>: 28px; <span style="color: #707183;">}</span>
 <span class="linenr">5: </span>
-<span class="linenr">6: </span><span style="color: #4078f2;">main </span><span style="color: #4078f2;">{</span> <span style="color: #50a14f;">color</span>: <span style="color: #ffffff; background-color: #b22222;">firebrick</span>; <span style="color: #4078f2;">}</span>
-<span class="linenr">7: </span><span style="color: #4078f2;">h2 </span><span style="color: #4078f2;">{</span> <span style="color: #50a14f;">font-size</span>: 20px; <span style="color: #4078f2;">}</span>
+<span class="linenr">6: </span><span style="color: #0184bc;">main </span><span style="color: #707183;">{</span> <span style="color: #a626a4;">color</span>: <span style="color: #ffffff; background-color: #b22222;">firebrick</span>; <span style="color: #707183;">}</span>
+<span class="linenr">7: </span><span style="color: #0184bc;">h2 </span><span style="color: #707183;">{</span> <span style="color: #a626a4;">font-size</span>: 20px; <span style="color: #707183;">}</span>
 <span class="linenr">8: </span>
-<span class="linenr">9: </span><span style="color: #4078f2;">footer </span><span style="color: #4078f2;">{</span> <span style="color: #50a14f;">display</span>: none; <span style="color: #4078f2;">}</span>
+<span class="linenr">9: </span><span style="color: #0184bc;">footer </span><span style="color: #707183;">{</span> <span style="color: #a626a4;">display</span>: none; <span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -438,7 +438,7 @@ title=""
 />
 
 <p>
-CSS is considered a <b>"render blocking resource"</b>. This means that the <a href="#org1c0e35c">Render Tree (see below)</a> cannot be constructed without first fully parsing the resource.
+CSS is considered a <b>"render blocking resource"</b>. This means that the <a href="#org0dab511">Render Tree (see below)</a> cannot be constructed without first fully parsing the resource.
 </p>
 
 <p>
@@ -459,9 +459,9 @@ CSS can also be <b>"script blocking"</b>. This is because JavaScript files must 
 </div>
 </div>
 
-<div id="outline-container-org71e1c38" class="outline-3">
-<h3 id="org71e1c38">3.Running JavaScript</h3>
-<div class="outline-text-3" id="text-org71e1c38">
+<div id="outline-container-org8799391" class="outline-3">
+<h3 id="org8799391">3.Running JavaScript</h3>
+<div class="outline-text-3" id="text-org8799391">
 <p>
 JavaScript is considered a <b>"parser blocking resource"</b>. This means that the parsing of the HTML document itself is blocked by JavaScript.
 </p>
@@ -475,15 +475,15 @@ To avoid JavaScript being parse blocking, it can be loaded asynchronously be app
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">script</span> async <span style="color: #6a1868;">src</span>=<span style="color: #50a14f;">"script.js"</span>&gt;&lt;/<span style="color: #a626a4;">script</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">script</span> async <span style="color: #8b4513;">src</span>=<span style="color: #50a14f;">"script.js"</span>&gt;&lt;/<span style="color: #0184bc;">script</span>&gt;
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org1c0e35c" class="outline-3">
-<h3 id="org1c0e35c">4.Creating the Render Tree</h3>
-<div class="outline-text-3" id="text-org1c0e35c">
+<div id="outline-container-org0dab511" class="outline-3">
+<h3 id="org0dab511">4.Creating the Render Tree</h3>
+<div class="outline-text-3" id="text-org0dab511">
 <p>
 The Render Tree is a combination of both the DOM and CSSOM. It is a Tree that represents what will be eventually rendered on the page. This means that it only captures the visible content and will not include, for example, elements that have been hidden with CSS using <code>display: none</code>.
 </p>
@@ -502,9 +502,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-orgda78bad" class="outline-3">
-<h3 id="orgda78bad">5.Generating the Layout</h3>
-<div class="outline-text-3" id="text-orgda78bad">
+<div id="outline-container-orgd17f72b" class="outline-3">
+<h3 id="orgd17f72b">5.Generating the Layout</h3>
+<div class="outline-text-3" id="text-orgd17f72b">
 <p>
 The Layout is what determines <b>what the size of the viewport is</b> , which provides context for CSS styles that are dependent on it, e.g. percentage or viewport units. The viewport size is determined by meta viewport tag provided in the document head or, if no tag is provided, the default viewport width of 980px is used.
 </p>
@@ -514,7 +514,7 @@ For example, the most common meta viewport value is to set the viewport size to 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">meta</span> <span style="color: #6a1868;">name</span>=<span style="color: #50a14f;">"viewport"</span> <span style="color: #6a1868;">content</span>=<span style="color: #50a14f;">"width=device-width,initial-scale=1"</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">meta</span> <span style="color: #8b4513;">name</span>=<span style="color: #50a14f;">"viewport"</span> <span style="color: #8b4513;">content</span>=<span style="color: #50a14f;">"width=device-width,initial-scale=1"</span>&gt;
 </pre>
 </div>
 
@@ -524,9 +524,9 @@ If the user visits the webpage on a device with a width of, for example, 1000px,
 </div>
 </div>
 
-<div id="outline-container-org88cd726" class="outline-3">
-<h3 id="org88cd726">6.Painting</h3>
-<div class="outline-text-3" id="text-org88cd726">
+<div id="outline-container-org2148728" class="outline-3">
+<h3 id="org2148728">6.Painting</h3>
+<div class="outline-text-3" id="text-org2148728">
 <p>
 Finally, in the Painting step, the visible content of the page can be converted to pixels to be displayed on the screen.
 </p>
@@ -537,9 +537,9 @@ How much time the paint step takes depends on the size of the DOM, as well as wh
 </div>
 </div>
 
-<div id="outline-container-orgccee9b8" class="outline-3">
-<h3 id="orgccee9b8">Putting it All Together</h3>
-<div class="outline-text-3" id="text-orgccee9b8">
+<div id="outline-container-orgf3ae662" class="outline-3">
+<h3 id="orgf3ae662">Putting it All Together</h3>
+<div class="outline-text-3" id="text-orgf3ae662">
 <p>
 To see the Critical Rendering Path in process, we can inspect it in DevTools. In Chrome, it is under the <b>Timeline</b> tab (in Canary, and soon to be Chrome stable, it's renamed <b>Performance</b>).
 </p>
@@ -599,9 +599,9 @@ Based on this information, we can make decisions on how to optimize the Critical
 </div>
 </div>
 
-<div id="outline-container-orgf3b7c83" class="outline-2">
-<h2 id="orgf3b7c83">Understanding the Virtual DOM<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h2>
-<div class="outline-text-2" id="text-orgf3b7c83">
+<div id="outline-container-org4ae9b8d" class="outline-2">
+<h2 id="org4ae9b8d">Understanding the Virtual DOM<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h2>
+<div class="outline-text-2" id="text-org4ae9b8d">
 <p>
 I've recently been writing about what exactly the DOM and the shodow DOM are and how they differ.
 </p>
@@ -623,9 +623,9 @@ Although the concep has been around for several years, it was made more popular 
 </p>
 </div>
 
-<div id="outline-container-org0fb382a" class="outline-3">
-<h3 id="org0fb382a">Why do we need a virtual DOM?</h3>
-<div class="outline-text-3" id="text-org0fb382a">
+<div id="outline-container-org97d062a" class="outline-3">
+<h3 id="org97d062a">Why do we need a virtual DOM?</h3>
+<div class="outline-text-3" id="text-org97d062a">
 <p>
 To understand why the concept of the virtual DOM arose, let's revisit the original DOM.
 </p>
@@ -647,8 +647,8 @@ For example, let's take this simple HTML document with an unordered list and one
 <span class="linenr">2: </span>&lt;html lang=<span style="color: #50a14f;">"en"</span>&gt;
 <span class="linenr">3: </span> &lt;head&gt;&lt;/head&gt;
 <span class="linenr">4: </span> &lt;body&gt;
-<span class="linenr">5: </span>    &lt;ul <span style="color: #e45649;">class</span>=<span style="color: #50a14f;">"list"</span>&gt;
-<span class="linenr">6: </span>        &lt;li <span style="color: #e45649;">class</span>=<span style="color: #50a14f;">"list__item"</span>&gt;List item&lt;/li&gt;
+<span class="linenr">5: </span>    &lt;ul <span style="color: #a626a4;">class</span>=<span style="color: #50a14f;">"list"</span>&gt;
+<span class="linenr">6: </span>        &lt;li <span style="color: #a626a4;">class</span>=<span style="color: #50a14f;">"list__item"</span>&gt;List item&lt;/li&gt;
 <span class="linenr">7: </span>    &lt;/ul&gt;
 <span class="linenr">8: </span>  &lt;/body&gt;
 <span class="linenr">9: </span>&lt;/html&gt;
@@ -672,14 +672,14 @@ Let's say we want to modify the content of the first list item to <b>"List item 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">listItemOne</span> = document.getElementsByClassName<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'list__item'</span><span style="color: #4078f2;">)[</span>0<span style="color: #4078f2;">]</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">listItemOne</span> = document.getElementsByClassName<span style="color: #707183;">(</span><span style="color: #50a14f;">'list__item'</span><span style="color: #707183;">)[</span>0<span style="color: #707183;">]</span>
 <span class="linenr">2: </span>listItemOne.textContent = <span style="color: #50a14f;">'List item one'</span>
 <span class="linenr">3: </span>
-<span class="linenr">4: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">list</span> = document.getElementsByClassName<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'list'</span><span style="color: #4078f2;">)[</span>0<span style="color: #4078f2;">]</span>
-<span class="linenr">5: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">listItemTwo</span> = document.createElement<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'li'</span><span style="color: #4078f2;">)</span>
-<span class="linenr">6: </span>listItemTwo.classList.add<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'list__item'</span><span style="color: #4078f2;">)</span>
+<span class="linenr">4: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">list</span> = document.getElementsByClassName<span style="color: #707183;">(</span><span style="color: #50a14f;">'list'</span><span style="color: #707183;">)[</span>0<span style="color: #707183;">]</span>
+<span class="linenr">5: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">listItemTwo</span> = document.createElement<span style="color: #707183;">(</span><span style="color: #50a14f;">'li'</span><span style="color: #707183;">)</span>
+<span class="linenr">6: </span>listItemTwo.classList.add<span style="color: #707183;">(</span><span style="color: #50a14f;">'list__item'</span><span style="color: #707183;">)</span>
 <span class="linenr">7: </span>listItemTwo.textContent = <span style="color: #50a14f;">'List item two'</span>
-<span class="linenr">8: </span>list.appendChild<span style="color: #4078f2;">(</span>listItemTwo<span style="color: #4078f2;">)</span>
+<span class="linenr">8: </span>list.appendChild<span style="color: #707183;">(</span>listItemTwo<span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -700,7 +700,7 @@ Even further, because of the way the APIs are setup, it is usually simpler to pe
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">list</span> = document.getElementsByClassName<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'list'</span><span style="color: #4078f2;">)[</span>0<span style="color: #4078f2;">]</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">list</span> = document.getElementsByClassName<span style="color: #707183;">(</span><span style="color: #50a14f;">'list'</span><span style="color: #707183;">)[</span>0<span style="color: #707183;">]</span>
 <span class="linenr">2: </span>list.innerHTML = <span style="color: #50a14f;">`</span>
 <span class="linenr">3: </span><span style="color: #50a14f;">&lt;li class="list__item"&gt;List item one&lt;/li&gt;</span>
 <span class="linenr">4: </span><span style="color: #50a14f;">&lt;li class="list__item"&gt;List item two&lt;/li&gt;</span>
@@ -726,9 +726,9 @@ The virtual DOM was created to solve these problems of needing to frequently upd
 </div>
 </div>
 
-<div id="outline-container-org3dd5165" class="outline-3">
-<h3 id="org3dd5165">What does a virtual DOM look like?</h3>
-<div class="outline-text-3" id="text-org3dd5165">
+<div id="outline-container-org4a37b12" class="outline-3">
+<h3 id="org4a37b12">What does a virtual DOM look like?</h3>
+<div class="outline-text-3" id="text-org4a37b12">
 <p>
 The name "virtual DOM" tends to add to the mystery of what the concept actually is. <b>In fact, a virtual DOM is just a regular JavaScript object.</b>
 </p>
@@ -750,28 +750,28 @@ This tree can also be represented as a JavaScript object.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">vdom</span> = <span style="color: #4078f2;">{</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">vdom</span> = <span style="color: #707183;">{</span>
 <span class="linenr"> 2: </span>    tagName: <span style="color: #50a14f;">'html'</span>,
-<span class="linenr"> 3: </span>    children: <span style="color: #a626a4;">[</span>
-<span class="linenr"> 4: </span>        <span style="color: #50a14f;">{</span> tagName: <span style="color: #50a14f;">'head'</span><span style="color: #50a14f;">}</span>,
-<span class="linenr"> 5: </span>        <span style="color: #50a14f;">{</span>
+<span class="linenr"> 3: </span>    children: <span style="color: #7388d6;">[</span>
+<span class="linenr"> 4: </span>        <span style="color: #909183;">{</span> tagName: <span style="color: #50a14f;">'head'</span><span style="color: #909183;">}</span>,
+<span class="linenr"> 5: </span>        <span style="color: #909183;">{</span>
 <span class="linenr"> 6: </span>            tagName: <span style="color: #50a14f;">'body'</span>,
-<span class="linenr"> 7: </span>            children: <span style="color: #da8548;">[</span>
-<span class="linenr"> 8: </span>                <span style="color: #b751b6;">{</span>
+<span class="linenr"> 7: </span>            children: <span style="color: #709870;">[</span>
+<span class="linenr"> 8: </span>                <span style="color: #907373;">{</span>
 <span class="linenr"> 9: </span>                    tagName: <span style="color: #50a14f;">'ul'</span>,
-<span class="linenr">10: </span>                    attributes: <span style="color: #986801;">{</span> <span style="color: #e45649;">class</span>: <span style="color: #50a14f;">'list'</span> <span style="color: #986801;">}</span>,
-<span class="linenr">11: </span>                    children: <span style="color: #986801;">[</span>
-<span class="linenr">12: </span>                        <span style="color: #4db5bd;">{</span>
+<span class="linenr">10: </span>                    attributes: <span style="color: #6276ba;">{</span> <span style="color: #a626a4;">class</span>: <span style="color: #50a14f;">'list'</span> <span style="color: #6276ba;">}</span>,
+<span class="linenr">11: </span>                    children: <span style="color: #6276ba;">[</span>
+<span class="linenr">12: </span>                        <span style="color: #858580;">{</span>
 <span class="linenr">13: </span>                            tagName: <span style="color: #50a14f;">'li'</span>,
-<span class="linenr">14: </span>                            attributes: <span style="color: #80a880;">{</span> <span style="color: #e45649;">class</span>: <span style="color: #50a14f;">'list__item'</span> <span style="color: #80a880;">}</span>,
+<span class="linenr">14: </span>                            attributes: <span style="color: #80a880;">{</span> <span style="color: #a626a4;">class</span>: <span style="color: #50a14f;">'list__item'</span> <span style="color: #80a880;">}</span>,
 <span class="linenr">15: </span>                            textContent: <span style="color: #50a14f;">'List item'</span>
-<span class="linenr">16: </span>                        <span style="color: #4db5bd;">}</span>   <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">end li</span>
-<span class="linenr">17: </span>                    <span style="color: #986801;">]</span>
-<span class="linenr">18: </span>                <span style="color: #b751b6;">}</span>   <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">end ul</span>
-<span class="linenr">19: </span>            <span style="color: #da8548;">]</span>
-<span class="linenr">20: </span>        <span style="color: #50a14f;">}</span>   <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">end body</span>
-<span class="linenr">21: </span>    <span style="color: #a626a4;">]</span>
-<span class="linenr">22: </span><span style="color: #4078f2;">}</span>   <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">end html</span>
+<span class="linenr">16: </span>                        <span style="color: #858580;">}</span>   <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">end li</span>
+<span class="linenr">17: </span>                    <span style="color: #6276ba;">]</span>
+<span class="linenr">18: </span>                <span style="color: #907373;">}</span>   <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">end ul</span>
+<span class="linenr">19: </span>            <span style="color: #709870;">]</span>
+<span class="linenr">20: </span>        <span style="color: #909183;">}</span>   <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">end body</span>
+<span class="linenr">21: </span>    <span style="color: #7388d6;">]</span>
+<span class="linenr">22: </span><span style="color: #707183;">}</span>   <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">end html</span>
 </pre>
 </div>
 
@@ -784,25 +784,25 @@ Instead of using one object for the entire object, it is more common to work wit
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">list</span> = <span style="color: #4078f2;">{</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">list</span> = <span style="color: #707183;">{</span>
 <span class="linenr"> 2: </span>    tabName: <span style="color: #50a14f;">'ul'</span>,
-<span class="linenr"> 3: </span>    attributes: <span style="color: #a626a4;">{</span> <span style="color: #e45649;">class</span>: <span style="color: #50a14f;">'list'</span> <span style="color: #a626a4;">}</span>,
-<span class="linenr"> 4: </span>    children: <span style="color: #a626a4;">[</span>
-<span class="linenr"> 5: </span>        <span style="color: #50a14f;">{</span>
+<span class="linenr"> 3: </span>    attributes: <span style="color: #7388d6;">{</span> <span style="color: #a626a4;">class</span>: <span style="color: #50a14f;">'list'</span> <span style="color: #7388d6;">}</span>,
+<span class="linenr"> 4: </span>    children: <span style="color: #7388d6;">[</span>
+<span class="linenr"> 5: </span>        <span style="color: #909183;">{</span>
 <span class="linenr"> 6: </span>            tagName: <span style="color: #50a14f;">'li'</span>,
-<span class="linenr"> 7: </span>            attributes: <span style="color: #da8548;">{</span> <span style="color: #e45649;">class</span>: <span style="color: #50a14f;">'list__item'</span> <span style="color: #da8548;">}</span>,
+<span class="linenr"> 7: </span>            attributes: <span style="color: #709870;">{</span> <span style="color: #a626a4;">class</span>: <span style="color: #50a14f;">'list__item'</span> <span style="color: #709870;">}</span>,
 <span class="linenr"> 8: </span>            textContent: <span style="color: #50a14f;">'List item'</span>
-<span class="linenr"> 9: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">10: </span>    <span style="color: #a626a4;">]</span>
-<span class="linenr">11: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 9: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">10: </span>    <span style="color: #7388d6;">]</span>
+<span class="linenr">11: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org6ed4e62" class="outline-3">
-<h3 id="org6ed4e62">Under the hood of the virtual DOM</h3>
-<div class="outline-text-3" id="text-org6ed4e62">
+<div id="outline-container-org997827b" class="outline-3">
+<h3 id="org997827b">Under the hood of the virtual DOM</h3>
+<div class="outline-text-3" id="text-org997827b">
 <p>
 Now that we've seen what a virtual DOM looks like, how does it work to solve the performance and usability problems of the DOM?
 </p>
@@ -816,22 +816,22 @@ The first thing we would do is make a copy of the virtual DOM, containing the ch
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">copy</span> = <span style="color: #4078f2;">{</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">copy</span> = <span style="color: #707183;">{</span>
 <span class="linenr"> 2: </span>    tagName: <span style="color: #50a14f;">'ul'</span>,
-<span class="linenr"> 3: </span>    attributes: <span style="color: #a626a4;">{</span> <span style="color: #e45649;">class</span>: <span style="color: #50a14f;">'list'</span> <span style="color: #a626a4;">}</span>,
-<span class="linenr"> 4: </span>    children: <span style="color: #a626a4;">[</span>
-<span class="linenr"> 5: </span>        <span style="color: #50a14f;">{</span>
+<span class="linenr"> 3: </span>    attributes: <span style="color: #7388d6;">{</span> <span style="color: #a626a4;">class</span>: <span style="color: #50a14f;">'list'</span> <span style="color: #7388d6;">}</span>,
+<span class="linenr"> 4: </span>    children: <span style="color: #7388d6;">[</span>
+<span class="linenr"> 5: </span>        <span style="color: #909183;">{</span>
 <span class="linenr"> 6: </span>            tagName: <span style="color: #50a14f;">'li'</span>,
-<span class="linenr"> 7: </span>            attributes: <span style="color: #da8548;">{</span> <span style="color: #e45649;">class</span>: <span style="color: #50a14f;">'list__item'</span> <span style="color: #da8548;">}</span>,
+<span class="linenr"> 7: </span>            attributes: <span style="color: #709870;">{</span> <span style="color: #a626a4;">class</span>: <span style="color: #50a14f;">'list__item'</span> <span style="color: #709870;">}</span>,
 <span class="linenr"> 8: </span>            textContent: <span style="color: #50a14f;">'List item one'</span>
-<span class="linenr"> 9: </span>        <span style="color: #50a14f;">}</span>,
-<span class="linenr">10: </span>        <span style="color: #50a14f;">{</span>
+<span class="linenr"> 9: </span>        <span style="color: #909183;">}</span>,
+<span class="linenr">10: </span>        <span style="color: #909183;">{</span>
 <span class="linenr">11: </span>            tagName: <span style="color: #50a14f;">'li'</span>,
-<span class="linenr">12: </span>            attributes: <span style="color: #da8548;">{</span> <span style="color: #e45649;">class</span>: <span style="color: #50a14f;">'list__item'</span> <span style="color: #da8548;">}</span>,
+<span class="linenr">12: </span>            attributes: <span style="color: #709870;">{</span> <span style="color: #a626a4;">class</span>: <span style="color: #50a14f;">'list__item'</span> <span style="color: #709870;">}</span>,
 <span class="linenr">13: </span>            textContent: <span style="color: #50a14f;">'List item two'</span>
-<span class="linenr">14: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">15: </span>    <span style="color: #a626a4;">]</span>
-<span class="linenr">16: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">14: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">15: </span>    <span style="color: #7388d6;">]</span>
+<span class="linenr">16: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -840,17 +840,17 @@ This <b>copy</b> is used to create what is called a "diff" between the original 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">diffs</span> = <span style="color: #4078f2;">[</span>
-<span class="linenr"> 2: </span>    <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        newNode: <span style="color: #50a14f;">{</span> <span style="color: #9ca0a4;">/* </span><span style="color: #9ca0a4;">new version of list item one */</span> <span style="color: #50a14f;">}</span>,
-<span class="linenr"> 4: </span>        oldNode: <span style="color: #50a14f;">{</span> <span style="color: #9ca0a4;">/* </span><span style="color: #9ca0a4;">original version of list item one */</span> <span style="color: #50a14f;">}</span>,
-<span class="linenr"> 5: </span>        index: <span style="color: #9ca0a4;">/* </span><span style="color: #9ca0a4;">index of element in parent's list of child nodes */</span>
-<span class="linenr"> 6: </span>    <span style="color: #a626a4;">}</span>,
-<span class="linenr"> 7: </span>    <span style="color: #a626a4;">{</span>
-<span class="linenr"> 8: </span>        newNode: <span style="color: #50a14f;">{</span> <span style="color: #9ca0a4;">/* </span><span style="color: #9ca0a4;">list item two */</span> <span style="color: #50a14f;">}</span>,
-<span class="linenr"> 9: </span>        index: <span style="color: #50a14f;">{</span> <span style="color: #9ca0a4;">/* </span><span style="color: #9ca0a4;">*/</span> <span style="color: #50a14f;">}</span>
-<span class="linenr">10: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">11: </span><span style="color: #4078f2;">]</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">diffs</span> = <span style="color: #707183;">[</span>
+<span class="linenr"> 2: </span>    <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        newNode: <span style="color: #909183;">{</span> <span style="color: #a0a1a7; font-weight: bold;">/* </span><span style="color: #a0a1a7;">new version of list item one */</span> <span style="color: #909183;">}</span>,
+<span class="linenr"> 4: </span>        oldNode: <span style="color: #909183;">{</span> <span style="color: #a0a1a7; font-weight: bold;">/* </span><span style="color: #a0a1a7;">original version of list item one */</span> <span style="color: #909183;">}</span>,
+<span class="linenr"> 5: </span>        index: <span style="color: #a0a1a7; font-weight: bold;">/* </span><span style="color: #a0a1a7;">index of element in parent's list of child nodes */</span>
+<span class="linenr"> 6: </span>    <span style="color: #7388d6;">}</span>,
+<span class="linenr"> 7: </span>    <span style="color: #7388d6;">{</span>
+<span class="linenr"> 8: </span>        newNode: <span style="color: #909183;">{</span> <span style="color: #a0a1a7; font-weight: bold;">/* </span><span style="color: #a0a1a7;">list item two */</span> <span style="color: #909183;">}</span>,
+<span class="linenr"> 9: </span>        index: <span style="color: #909183;">{</span> <span style="color: #a0a1a7; font-weight: bold;">/* </span><span style="color: #a0a1a7;">*/</span> <span style="color: #909183;">}</span>
+<span class="linenr">10: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">11: </span><span style="color: #707183;">]</span>
 </pre>
 </div>
 
@@ -863,22 +863,22 @@ For example we could loop through each diff and either add a new child or update
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">domElement</span> = document.getElementsByClassName<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'list'</span><span style="color: #4078f2;">)[</span>0<span style="color: #4078f2;">]</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">domElement</span> = document.getElementsByClassName<span style="color: #707183;">(</span><span style="color: #50a14f;">'list'</span><span style="color: #707183;">)[</span>0<span style="color: #707183;">]</span>
 <span class="linenr"> 2: </span>
-<span class="linenr"> 3: </span>diffs.forEach<span style="color: #4078f2;">(</span><span style="color: #a626a4;">(</span>diff<span style="color: #a626a4;">)</span> =&gt; <span style="color: #a626a4;">{</span>
+<span class="linenr"> 3: </span>diffs.forEach<span style="color: #707183;">(</span><span style="color: #7388d6;">(</span>diff<span style="color: #7388d6;">)</span> =&gt; <span style="color: #7388d6;">{</span>
 <span class="linenr"> 4: </span>
-<span class="linenr"> 5: </span>    cosnt newElement = document.createElement<span style="color: #50a14f;">(</span>diff.newNode.tagName<span style="color: #50a14f;">)</span>
-<span class="linenr"> 6: </span>    <span style="color: #9ca0a4;">/* </span><span style="color: #9ca0a4;">Add attributes ... */</span>
+<span class="linenr"> 5: </span>    cosnt newElement = document.createElement<span style="color: #909183;">(</span>diff.newNode.tagName<span style="color: #909183;">)</span>
+<span class="linenr"> 6: </span>    <span style="color: #a0a1a7; font-weight: bold;">/* </span><span style="color: #a0a1a7;">Add attributes ... */</span>
 <span class="linenr"> 7: </span>
-<span class="linenr"> 8: </span>    <span style="color: #e45649;">if</span> <span style="color: #50a14f;">(</span>diff.oldNode<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 9: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">If there is an old version, replace it with the new version</span>
-<span class="linenr">10: </span>        domElement.replaceChild<span style="color: #da8548;">(</span>diff.newNode, diff.index<span style="color: #da8548;">)</span>
+<span class="linenr"> 8: </span>    <span style="color: #a626a4;">if</span> <span style="color: #909183;">(</span>diff.oldNode<span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 9: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">If there is an old version, replace it with the new version</span>
+<span class="linenr">10: </span>        domElement.replaceChild<span style="color: #709870;">(</span>diff.newNode, diff.index<span style="color: #709870;">)</span>
 <span class="linenr">11: </span>
-<span class="linenr">12: </span>    <span style="color: #50a14f;">}</span> <span style="color: #e45649;">else</span> <span style="color: #50a14f;">{</span>
-<span class="linenr">13: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">if no old version exists, create a new node</span>
-<span class="linenr">14: </span>        domElement.appendChild<span style="color: #da8548;">(</span>diffNode<span style="color: #da8548;">)</span>
-<span class="linenr">15: </span>    <span style="color: #50a14f;">}</span>
-<span class="linenr">16: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">12: </span>    <span style="color: #909183;">}</span> <span style="color: #a626a4;">else</span> <span style="color: #909183;">{</span>
+<span class="linenr">13: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">if no old version exists, create a new node</span>
+<span class="linenr">14: </span>        domElement.appendChild<span style="color: #709870;">(</span>diffNode<span style="color: #709870;">)</span>
+<span class="linenr">15: </span>    <span style="color: #909183;">}</span>
+<span class="linenr">16: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -888,9 +888,9 @@ Note that this is a really simplified and stripped-back version of how a virtual
 </div>
 </div>
 
-<div id="outline-container-org03dd4e7" class="outline-3">
-<h3 id="org03dd4e7">The virtual DOM and frameworks</h3>
-<div class="outline-text-3" id="text-org03dd4e7">
+<div id="outline-container-org800e860" class="outline-3">
+<h3 id="org800e860">The virtual DOM and frameworks</h3>
+<div class="outline-text-3" id="text-org800e860">
 <p>
 It's more common to work with the virtual DOM via a framework, rather than interfacing with it directly as I showed in the example above.
 </p>
@@ -900,15 +900,15 @@ Frameworks such as React and Vue use the virtual DOM concept to make more perfor
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">import</span> React from <span style="color: #50a14f;">'react'</span>
-<span class="linenr">2: </span><span style="color: #e45649;">import</span> ReactDOM from <span style="color: #50a14f;">'react-dom'</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">import</span> React from <span style="color: #50a14f;">'react'</span>
+<span class="linenr">2: </span><span style="color: #a626a4;">import</span> ReactDOM from <span style="color: #50a14f;">'react-dom'</span>
 <span class="linenr">3: </span>
-<span class="linenr">4: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">list</span> = React.createElement<span style="color: #4078f2;">(</span>
-<span class="linenr">5: </span>    <span style="color: #50a14f;">'ul'</span>, <span style="color: #a626a4;">{</span> className: <span style="color: #50a14f;">'list'</span> <span style="color: #a626a4;">}</span>,
-<span class="linenr">6: </span>     React.createElement<span style="color: #a626a4;">(</span><span style="color: #50a14f;">'li'</span>, <span style="color: #50a14f;">{</span> className: <span style="color: #50a14f;">'list__item'</span> <span style="color: #50a14f;">}</span>, <span style="color: #50a14f;">'List item'</span><span style="color: #a626a4;">)</span>
-<span class="linenr">7: </span><span style="color: #4078f2;">)</span>
+<span class="linenr">4: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">list</span> = React.createElement<span style="color: #707183;">(</span>
+<span class="linenr">5: </span>    <span style="color: #50a14f;">'ul'</span>, <span style="color: #7388d6;">{</span> className: <span style="color: #50a14f;">'list'</span> <span style="color: #7388d6;">}</span>,
+<span class="linenr">6: </span>     React.createElement<span style="color: #7388d6;">(</span><span style="color: #50a14f;">'li'</span>, <span style="color: #909183;">{</span> className: <span style="color: #50a14f;">'list__item'</span> <span style="color: #909183;">}</span>, <span style="color: #50a14f;">'List item'</span><span style="color: #7388d6;">)</span>
+<span class="linenr">7: </span><span style="color: #707183;">)</span>
 <span class="linenr">8: </span>
-<span class="linenr">9: </span>ReactDOM.render<span style="color: #4078f2;">(</span>list, document.body<span style="color: #4078f2;">)</span>
+<span class="linenr">9: </span>ReactDOM.render<span style="color: #707183;">(</span>list, document.body<span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -917,13 +917,13 @@ If we wanted to update our list, we could just rewrite the entire list template,
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">newList</span> = React.createElement<span style="color: #4078f2;">(</span>
-<span class="linenr">2: </span>    <span style="color: #50a14f;">'ul'</span>, <span style="color: #a626a4;">{</span> className: <span style="color: #50a14f;">'list'</span> <span style="color: #a626a4;">}</span>,
-<span class="linenr">3: </span>    React.createElement<span style="color: #a626a4;">(</span><span style="color: #50a14f;">'li'</span>, <span style="color: #50a14f;">{</span> className: <span style="color: #50a14f;">'list__item'</span> <span style="color: #50a14f;">}</span>, <span style="color: #50a14f;">'List item one'</span><span style="color: #a626a4;">)</span>,
-<span class="linenr">4: </span>    React.createElement<span style="color: #a626a4;">(</span><span style="color: #50a14f;">'li'</span>, <span style="color: #50a14f;">{</span> className: <span style="color: #50a14f;">'list__item'</span> <span style="color: #50a14f;">}</span>, <span style="color: #50a14f;">'List item two'</span><span style="color: #a626a4;">)</span>
-<span class="linenr">5: </span><span style="color: #4078f2;">)</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">newList</span> = React.createElement<span style="color: #707183;">(</span>
+<span class="linenr">2: </span>    <span style="color: #50a14f;">'ul'</span>, <span style="color: #7388d6;">{</span> className: <span style="color: #50a14f;">'list'</span> <span style="color: #7388d6;">}</span>,
+<span class="linenr">3: </span>    React.createElement<span style="color: #7388d6;">(</span><span style="color: #50a14f;">'li'</span>, <span style="color: #909183;">{</span> className: <span style="color: #50a14f;">'list__item'</span> <span style="color: #909183;">}</span>, <span style="color: #50a14f;">'List item one'</span><span style="color: #7388d6;">)</span>,
+<span class="linenr">4: </span>    React.createElement<span style="color: #7388d6;">(</span><span style="color: #50a14f;">'li'</span>, <span style="color: #909183;">{</span> className: <span style="color: #50a14f;">'list__item'</span> <span style="color: #909183;">}</span>, <span style="color: #50a14f;">'List item two'</span><span style="color: #7388d6;">)</span>
+<span class="linenr">5: </span><span style="color: #707183;">)</span>
 <span class="linenr">6: </span>
-<span class="linenr">7: </span>setTimeout<span style="color: #4078f2;">(</span><span style="color: #a626a4;">()</span> =&gt; ReactDOM.render<span style="color: #a626a4;">(</span>newList, document.body<span style="color: #a626a4;">)</span>, 5000<span style="color: #4078f2;">)</span>
+<span class="linenr">7: </span>setTimeout<span style="color: #707183;">(</span><span style="color: #7388d6;">()</span> =&gt; ReactDOM.render<span style="color: #7388d6;">(</span>newList, document.body<span style="color: #7388d6;">)</span>, 5000<span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -933,9 +933,9 @@ Because React uses the virtual DOM, even though we are re-rendering the entire t
 </div>
 </div>
 
-<div id="outline-container-org1b0f244" class="outline-3">
-<h3 id="org1b0f244">The DOM vs the virtual DOM</h3>
-<div class="outline-text-3" id="text-org1b0f244">
+<div id="outline-container-org2333402" class="outline-3">
+<h3 id="org2333402">The DOM vs the virtual DOM</h3>
+<div class="outline-text-3" id="text-org2333402">
 <p>
 To recap, the virtual DOM is a tool that enables us to interface with DOM elements in an easier and more performant way. It is a JavaScript object representation of the DOM, which we can modify as frequently as we need to. Changes made to this object are then collated, and modifications to the actual DOM are targetted and made less often.
 </p>
@@ -963,7 +963,7 @@ To recap, the virtual DOM is a tool that enables us to interface with DOM elemen
 <div id="postamble" class="status">
 <p class="date">Date: 2020-12-02 Wed 16:14</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:44</p>
+<p class="date">Created: 2021-05-18 Tue 15:55</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

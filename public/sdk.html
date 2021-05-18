@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:44 -->
+<!-- 2021-05-18 Tue 15:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Software Developement Kit</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,18 +18,18 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org117531e">简介</a></li>
-<li><a href="#org533338c">设计原则</a></li>
-<li><a href="#org186c2ef">如何实现</a>
+<li><a href="#org7e08c54">简介</a></li>
+<li><a href="#orga74b903">设计原则</a></li>
+<li><a href="#orgdec287e">如何实现</a>
 <ul>
-<li><a href="#org26c05d1">明职责，定边界</a></li>
-<li><a href="#org1445832">筑框架，夯基础</a></li>
-<li><a href="#org99ef581">领域分析，模块划分</a></li>
-<li><a href="#org2b6a8e9">测试覆盖，线上无忧</a></li>
-<li><a href="#org8f57e8c">细节打磨，极致体验</a></li>
+<li><a href="#org75f22bd">明职责，定边界</a></li>
+<li><a href="#org824ba03">筑框架，夯基础</a></li>
+<li><a href="#org7c65a57">领域分析，模块划分</a></li>
+<li><a href="#org6aebfb7">测试覆盖，线上无忧</a></li>
+<li><a href="#org23ffe2f">细节打磨，极致体验</a></li>
 </ul>
 </li>
-<li><a href="#org1d7e8ff">结语</a></li>
+<li><a href="#org58c3362">结语</a></li>
 </ul>
 </div>
 </div>
@@ -37,9 +37,9 @@
 → 转载自 <a href="https://zhuanlan.zhihu.com/p/272614462">如何打造一款标准的 JS-SDK</a>
 </p>
 
-<div id="outline-container-org117531e" class="outline-2">
-<h2 id="org117531e">简介</h2>
-<div class="outline-text-2" id="text-org117531e">
+<div id="outline-container-org7e08c54" class="outline-2">
+<h2 id="org7e08c54">简介</h2>
+<div class="outline-text-2" id="text-org7e08c54">
 <img
 src="images/sdk-1.jpg"
 width="400"
@@ -62,9 +62,9 @@ SDK（Software Development Kit，软件开发工具包），一般都是一些�
 </div>
 </div>
 
-<div id="outline-container-org533338c" class="outline-2">
-<h2 id="org533338c">设计原则</h2>
-<div class="outline-text-2" id="text-org533338c">
+<div id="outline-container-orga74b903" class="outline-2">
+<h2 id="orga74b903">设计原则</h2>
+<div class="outline-text-2" id="text-orga74b903">
 <p>
 <b>如何设计 SDK ？</b> 更多取决于其应用场景和最终用途。比如，实现一个给网页调用的 SDK 与用于服务端的 SDK 就有明显的差异，但综们之间存在着一些共通的原则：
 </p>
@@ -108,17 +108,17 @@ SDK 一般都是偏向于某个领域，所以，同时在设计和实现的时�
 </div>
 </div>
 
-<div id="outline-container-org186c2ef" class="outline-2">
-<h2 id="org186c2ef">如何实现</h2>
-<div class="outline-text-2" id="text-org186c2ef">
+<div id="outline-container-orgdec287e" class="outline-2">
+<h2 id="orgdec287e">如何实现</h2>
+<div class="outline-text-2" id="text-orgdec287e">
 <p>
 下面我们将通过剖析岳鹰前端监控 SDK 的设计过程，来看看上述的设计原则是如何应用到实际的开发过程中的。
 </p>
 </div>
 
-<div id="outline-container-org26c05d1" class="outline-3">
-<h3 id="org26c05d1">明职责，定边界</h3>
-<div class="outline-text-3" id="text-org26c05d1">
+<div id="outline-container-org75f22bd" class="outline-3">
+<h3 id="org75f22bd">明职责，定边界</h3>
+<div class="outline-text-3" id="text-org75f22bd">
 <p>
 岳鹰前端监控 SDK 是前端稳定性和性能监控的 SDK，主要面向前端 H5 领域。因此，稍加分析即可得出以下结论：
 </p>
@@ -154,9 +154,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org1445832" class="outline-3">
-<h3 id="org1445832">筑框架，夯基础</h3>
-<div class="outline-text-3" id="text-org1445832">
+<div id="outline-container-org824ba03" class="outline-3">
+<h3 id="org824ba03">筑框架，夯基础</h3>
+<div class="outline-text-3" id="text-org824ba03">
 <p>
 <span class="underline">1. 确定 SDK 的引用形式</span>
 </p>
@@ -176,20 +176,20 @@ title=""
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #e45649;">import</span> wpkReporter from <span style="color: #50a14f;">'wpkReporter'</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">import</span> wpkReporter from <span style="color: #50a14f;">'wpkReporter'</span>
 <span class="linenr"> 2: </span>
-<span class="linenr"> 3: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">CommonJS</span>
-<span class="linenr"> 4: </span><span style="color: #e45649;">const</span> <span style="color: #6a1868;">wpkReporter</span> = require<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'wpkReporter'</span><span style="color: #4078f2;">)</span>
+<span class="linenr"> 3: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">CommonJS</span>
+<span class="linenr"> 4: </span><span style="color: #a626a4;">const</span> <span style="color: #8b4513;">wpkReporter</span> = require<span style="color: #707183;">(</span><span style="color: #50a14f;">'wpkReporter'</span><span style="color: #707183;">)</span>
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">AMD requireJS &#24341;&#29992;</span>
-<span class="linenr"> 7: </span>require.config<span style="color: #4078f2;">(</span><span style="color: #a626a4;">{</span>
-<span class="linenr"> 8: </span>    paths: <span style="color: #50a14f;">{</span>
+<span class="linenr"> 6: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">AMD requireJS &#24341;&#29992;</span>
+<span class="linenr"> 7: </span>require.config<span style="color: #707183;">(</span><span style="color: #7388d6;">{</span>
+<span class="linenr"> 8: </span>    paths: <span style="color: #909183;">{</span>
 <span class="linenr"> 9: </span>        <span style="color: #50a14f;">'wpk'</span>: <span style="color: #50a14f;">'https://g.alicdn.com/woodpeckerx/jssdk/wpkReporter.js'</span>,
-<span class="linenr">10: </span>    <span style="color: #50a14f;">}</span>
-<span class="linenr">11: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
-<span class="linenr">12: </span>require<span style="color: #4078f2;">(</span><span style="color: #a626a4;">[</span><span style="color: #50a14f;">'wpk'</span>, <span style="color: #50a14f;">'test'</span><span style="color: #a626a4;">]</span>, <span style="color: #e45649;">function</span><span style="color: #a626a4;">(</span><span style="color: #6a1868;">wpk</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">13: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">do your business</span>
-<span class="linenr">14: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<span class="linenr">10: </span>    <span style="color: #909183;">}</span>
+<span class="linenr">11: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
+<span class="linenr">12: </span>require<span style="color: #707183;">(</span><span style="color: #7388d6;">[</span><span style="color: #50a14f;">'wpk'</span>, <span style="color: #50a14f;">'test'</span><span style="color: #7388d6;">]</span>, <span style="color: #a626a4;">function</span><span style="color: #7388d6;">(</span><span style="color: #8b4513;">wpk</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">13: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">do your business</span>
+<span class="linenr">14: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -198,15 +198,15 @@ title=""
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>module.exports = <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>    output: <span style="color: #a626a4;">{</span>
+<pre class="src src-js"><span class="linenr">1: </span>module.exports = <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    output: <span style="color: #7388d6;">{</span>
 <span class="linenr">3: </span>        filename: <span style="color: #50a14f;">'[name].js'</span>,
 <span class="linenr">4: </span>        path: <span style="color: #50a14f;">`${__dirname}/dist`</span>,
 <span class="linenr">5: </span>        globalObject: <span style="color: #50a14f;">'this'</span>,
 <span class="linenr">6: </span>        library: <span style="color: #50a14f;">'[name]'</span>,
 <span class="linenr">7: </span>        libraryTarget: <span style="color: #50a14f;">'umd'</span>
-<span class="linenr">8: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">9: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">8: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">9: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -241,15 +241,15 @@ title=""
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>wpk.report<span style="color: #4078f2;">(</span>logData<span style="color: #4078f2;">)</span>
-<span class="linenr">2: </span>wpk.reportJSError<span style="color: #4078f2;">(</span>error<span style="color: #4078f2;">)</span>
-<span class="linenr">3: </span>wpk.reportAPIError<span style="color: #4078f2;">(</span>apiData<span style="color: #4078f2;">)</span>
-<span class="linenr">4: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#37197;&#32622;&#21464;&#26356;</span>
-<span class="linenr">5: </span>wpk.setConfig<span style="color: #4078f2;">(</span>data<span style="color: #4078f2;">)</span>
-<span class="linenr">6: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">SDK &#35786;&#26029;</span>
-<span class="linenr">7: </span>wpk.diagnose<span style="color: #4078f2;">()</span>
-<span class="linenr">8: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#28155;&#21152;&#25554;&#20214;</span>
-<span class="linenr">9: </span>wpk.addPlugin<span style="color: #4078f2;">(</span>plugin<span style="color: #4078f2;">)</span>
+<pre class="src src-js"><span class="linenr">1: </span>wpk.report<span style="color: #707183;">(</span>logData<span style="color: #707183;">)</span>
+<span class="linenr">2: </span>wpk.reportJSError<span style="color: #707183;">(</span>error<span style="color: #707183;">)</span>
+<span class="linenr">3: </span>wpk.reportAPIError<span style="color: #707183;">(</span>apiData<span style="color: #707183;">)</span>
+<span class="linenr">4: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#37197;&#32622;&#21464;&#26356;</span>
+<span class="linenr">5: </span>wpk.setConfig<span style="color: #707183;">(</span>data<span style="color: #707183;">)</span>
+<span class="linenr">6: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">SDK &#35786;&#26029;</span>
+<span class="linenr">7: </span>wpk.diagnose<span style="color: #707183;">()</span>
+<span class="linenr">8: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#28155;&#21152;&#25554;&#20214;</span>
+<span class="linenr">9: </span>wpk.addPlugin<span style="color: #707183;">(</span>plugin<span style="color: #707183;">)</span>
 </pre>
 </div>
 
@@ -271,9 +271,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org99ef581" class="outline-3">
-<h3 id="org99ef581">领域分析，模块划分</h3>
-<div class="outline-text-3" id="text-org99ef581">
+<div id="outline-container-org7c65a57" class="outline-3">
+<h3 id="org7c65a57">领域分析，模块划分</h3>
+<div class="outline-text-3" id="text-org7c65a57">
 <p>
 确定边界的时候，我们已经清楚划分了 SDK 的几个关键部分：全局异常、API 异常、页面性能和白屏， <b>每一块都对应一个专业的领域</b> ，因此对应到 SDK 也是每一个独立的模块。
 </p>
@@ -318,9 +318,9 @@ Biz 部分更多是对于不同宿主环境的多入口适配，当前支持浏�
 </div>
 </div>
 
-<div id="outline-container-org2b6a8e9" class="outline-3">
-<h3 id="org2b6a8e9">测试覆盖，线上无忧</h3>
-<div class="outline-text-3" id="text-org2b6a8e9">
+<div id="outline-container-org6aebfb7" class="outline-3">
+<h3 id="org6aebfb7">测试覆盖，线上无忧</h3>
+<div class="outline-text-3" id="text-org6aebfb7">
 <p>
 SDK是一个基础服务，相对于前台业务而言可能更底层些。其影响面跟应用的范围是正比的关系，更多的用户意味着更大的责任。所以 SDK 的质量保障也是很重要的一个环节。
 岳鹰前端监控SDK的质量保障策略很简单，只有两条：
@@ -335,18 +335,18 @@ SDK是一个基础服务，相对于前台业务而言可能更底层些。其�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>test<span style="color: #4078f2;">(</span><span style="color: #50a14f;">'isError: real error'</span>, <span style="color: #e45649;">function</span> <span style="color: #a626a4;">()</span> <span style="color: #a626a4;">{</span>
-<span class="linenr">2: </span>    <span style="color: #e45649;">var</span> <span style="color: #6a1868;">err</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">Error</span><span style="color: #50a14f;">(</span><span style="color: #50a14f;">'this is an error'</span><span style="color: #50a14f;">)</span>
-<span class="linenr">3: </span>    expect<span style="color: #50a14f;">(</span>util.isError<span style="color: #da8548;">(</span>err<span style="color: #da8548;">)</span><span style="color: #50a14f;">)</span>.toBeTruthy<span style="color: #50a14f;">()</span>
-<span class="linenr">4: </span><span style="color: #a626a4;">}</span><span style="color: #4078f2;">)</span>
+<pre class="src src-js"><span class="linenr">1: </span>test<span style="color: #707183;">(</span><span style="color: #50a14f;">'isError: real error'</span>, <span style="color: #a626a4;">function</span> <span style="color: #7388d6;">()</span> <span style="color: #7388d6;">{</span>
+<span class="linenr">2: </span>    <span style="color: #a626a4;">var</span> <span style="color: #8b4513;">err</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">Error</span><span style="color: #909183;">(</span><span style="color: #50a14f;">'this is an error'</span><span style="color: #909183;">)</span>
+<span class="linenr">3: </span>    expect<span style="color: #909183;">(</span>util.isError<span style="color: #709870;">(</span>err<span style="color: #709870;">)</span><span style="color: #909183;">)</span>.toBeTruthy<span style="color: #909183;">()</span>
+<span class="linenr">4: </span><span style="color: #7388d6;">}</span><span style="color: #707183;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org8f57e8c" class="outline-3">
-<h3 id="org8f57e8c">细节打磨，极致体验</h3>
-<div class="outline-text-3" id="text-org8f57e8c">
+<div id="outline-container-org23ffe2f" class="outline-3">
+<h3 id="org23ffe2f">细节打磨，极致体验</h3>
+<div class="outline-text-3" id="text-org23ffe2f">
 <p>
 快捷引入：
 </p>
@@ -356,9 +356,9 @@ SDK是一个基础服务，相对于前台业务而言可能更底层些。其�
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">script</span>&gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">script</span>&gt;
 <span class="linenr">2: </span>  !(function(c,i,e,b){var h=i.createElement("script");var f=i.getElementsByTagName("script")[0];h.type="text/javascript";h.crossorigin=true;h.onload=function(){c[b]||(c[b]=new c.wpkReporter({bid:"dta_1_203933078"}));c[b].installAll()};f.parentNode.insertBefore(h,f);h.src=e})(window,document,"https://g.alicdn.com/woodpeckerx/jssdk/wpkReporter.js","__wpk");
-<span class="linenr">3: </span>&lt;/<span style="color: #a626a4;">script</span>&gt;
+<span class="linenr">3: </span>&lt;/<span style="color: #0184bc;">script</span>&gt;
 </pre>
 </div>
 
@@ -394,9 +394,9 @@ SDK是一个基础服务，相对于前台业务而言可能更底层些。其�
 </div>
 </div>
 
-<div id="outline-container-org1d7e8ff" class="outline-2">
-<h2 id="org1d7e8ff">结语</h2>
-<div class="outline-text-2" id="text-org1d7e8ff">
+<div id="outline-container-org58c3362" class="outline-2">
+<h2 id="org58c3362">结语</h2>
+<div class="outline-text-2" id="text-org58c3362">
 <p>
 实际在SDK的设计和开发过程中，要处理的问题还远不止本文所述的内容，比如 NPM 模块开发时本地如何引用，构建的 bundle 大小如何调优等等。不过还是希望阅完此文，对你有所启发。
 </p>
@@ -406,7 +406,7 @@ SDK是一个基础服务，相对于前台业务而言可能更底层些。其�
 <div id="postamble" class="status">
 <p class="date">Date: 2020-12-01 Tue 11:10</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:44</p>
+<p class="date">Created: 2021-05-18 Tue 15:55</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

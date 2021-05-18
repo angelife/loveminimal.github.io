@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:42 -->
+<!-- 2021-05-18 Tue 15:52 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Compilers</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,26 +18,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org03b5d01">编译过程概述</a>
+<li><a href="#orgdb3edc6">编译过程概述</a>
 <ul>
-<li><a href="#org36f8ebd">词法分析</a></li>
-<li><a href="#org7fb0384">语法分析</a></li>
-<li><a href="#org12e87cf">从语法树到中间代码再到目标代码</a></li>
+<li><a href="#orgf9e3c66">词法分析</a></li>
+<li><a href="#org2995a22">语法分析</a></li>
+<li><a href="#orge223c1a">从语法树到中间代码再到目标代码</a></li>
 </ul>
 </li>
-<li><a href="#orge239c08">案例二</a>
+<li><a href="#org626af14">案例二</a>
 <ul>
-<li><a href="#org233fee1">1.词法分析</a></li>
-<li><a href="#org17eb13e">2.语法分析</a></li>
-<li><a href="#org6dca3a2">3.语义分析</a></li>
-<li><a href="#org3a0f5cb">4.中间代码生成</a></li>
-<li><a href="#orgda1690e">5.代码优化</a></li>
-<li><a href="#org3076bb9">6.代码生成</a></li>
-<li><a href="#orgcf3e5d5">7.编译的总过程</a></li>
-<li><a href="#orgdacf447">8.相关扩展</a></li>
+<li><a href="#orgda1e8da">1.词法分析</a></li>
+<li><a href="#org51bcbe7">2.语法分析</a></li>
+<li><a href="#org5b1437a">3.语义分析</a></li>
+<li><a href="#org130bcb3">4.中间代码生成</a></li>
+<li><a href="#org15df64b">5.代码优化</a></li>
+<li><a href="#orgc298360">6.代码生成</a></li>
+<li><a href="#org07a4260">7.编译的总过程</a></li>
+<li><a href="#org7c6f888">8.相关扩展</a></li>
 </ul>
 </li>
-<li><a href="#org2e38470">编译原理三大经典</a></li>
+<li><a href="#org641cbdc">编译原理三大经典</a></li>
 </ul>
 </div>
 </div>
@@ -45,9 +45,9 @@
 谁能想到，有一天，百度百科上的资料，竟然也有料……
 </essay>
 
-<div id="outline-container-org03b5d01" class="outline-2">
-<h2 id="org03b5d01">编译过程概述<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-org03b5d01">
+<div id="outline-container-orgdb3edc6" class="outline-2">
+<h2 id="orgdb3edc6">编译过程概述<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-orgdb3edc6">
 <p>
 源程序是给人看的，本质上就是文本文件，可以用文本编辑程序打开、编辑，但计算机无法直接执行源程序，需要通过一个专门的程序将源程序编译为计算机可执行程序，这个专门的程序就是 <span class="underline">编译器</span> 。
 </p>
@@ -57,29 +57,29 @@
 </p>
 </div>
 
-<div id="outline-container-org36f8ebd" class="outline-3">
-<h3 id="org36f8ebd">词法分析</h3>
-<div class="outline-text-3" id="text-org36f8ebd">
+<div id="outline-container-orgf9e3c66" class="outline-3">
+<h3 id="orgf9e3c66">词法分析</h3>
+<div class="outline-text-3" id="text-orgf9e3c66">
 <p>
 我们眼中看到的源代码，如下：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-c"><span class="linenr"> 1: </span><span style="color: #986801;">int</span> <span style="color: #a626a4;">fun</span><span style="color: #4078f2;">(</span><span style="color: #986801;">int</span> <span style="color: #6a1868;">a</span>, <span style="color: #986801;">int</span> <span style="color: #6a1868;">b</span><span style="color: #4078f2;">)</span>;
-<span class="linenr"> 2: </span><span style="color: #986801;">int</span> <span style="color: #6a1868;">m</span>=10;
-<span class="linenr"> 3: </span><span style="color: #986801;">int</span> <span style="color: #a626a4;">main</span><span style="color: #4078f2;">()</span>
-<span class="linenr"> 4: </span><span style="color: #4078f2;">{</span>
-<span class="linenr"> 5: </span>  <span style="color: #986801;">int</span> <span style="color: #6a1868;">i</span>=4;
-<span class="linenr"> 6: </span>  <span style="color: #986801;">int</span> <span style="color: #6a1868;">j</span>=5;
-<span class="linenr"> 7: </span>  m = fun<span style="color: #a626a4;">(</span>i,j<span style="color: #a626a4;">)</span>;
-<span class="linenr"> 8: </span>  <span style="color: #e45649;">return</span> 0;
-<span class="linenr"> 9: </span><span style="color: #4078f2;">}</span>
-<span class="linenr">10: </span><span style="color: #986801;">int</span> <span style="color: #a626a4;">fun</span><span style="color: #4078f2;">(</span><span style="color: #986801;">int</span> <span style="color: #6a1868;">a</span>, <span style="color: #986801;">int</span> <span style="color: #6a1868;">b</span><span style="color: #4078f2;">)</span>
-<span class="linenr">11: </span><span style="color: #4078f2;">{</span>
-<span class="linenr">12: </span>  <span style="color: #986801;">int</span> <span style="color: #6a1868;">c</span>=0;
+<pre class="src src-c"><span class="linenr"> 1: </span><span style="color: #c18401;">int</span> <span style="color: #0184bc;">fun</span><span style="color: #707183;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">a</span>, <span style="color: #c18401;">int</span> <span style="color: #8b4513;">b</span><span style="color: #707183;">)</span>;
+<span class="linenr"> 2: </span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">m</span>=10;
+<span class="linenr"> 3: </span><span style="color: #c18401;">int</span> <span style="color: #0184bc;">main</span><span style="color: #707183;">()</span>
+<span class="linenr"> 4: </span><span style="color: #707183;">{</span>
+<span class="linenr"> 5: </span>  <span style="color: #c18401;">int</span> <span style="color: #8b4513;">i</span>=4;
+<span class="linenr"> 6: </span>  <span style="color: #c18401;">int</span> <span style="color: #8b4513;">j</span>=5;
+<span class="linenr"> 7: </span>  m = fun<span style="color: #7388d6;">(</span>i,j<span style="color: #7388d6;">)</span>;
+<span class="linenr"> 8: </span>  <span style="color: #a626a4;">return</span> 0;
+<span class="linenr"> 9: </span><span style="color: #707183;">}</span>
+<span class="linenr">10: </span><span style="color: #c18401;">int</span> <span style="color: #0184bc;">fun</span><span style="color: #707183;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">a</span>, <span style="color: #c18401;">int</span> <span style="color: #8b4513;">b</span><span style="color: #707183;">)</span>
+<span class="linenr">11: </span><span style="color: #707183;">{</span>
+<span class="linenr">12: </span>  <span style="color: #c18401;">int</span> <span style="color: #8b4513;">c</span>=0;
 <span class="linenr">13: </span>  c=a+b;
-<span class="linenr">14: </span>  <span style="color: #e45649;">return</span> c;
-<span class="linenr">15: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">14: </span>  <span style="color: #a626a4;">return</span> c;
+<span class="linenr">15: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -129,9 +129,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org7fb0384" class="outline-3">
-<h3 id="org7fb0384">语法分析</h3>
-<div class="outline-text-3" id="text-org7fb0384">
+<div id="outline-container-org2995a22" class="outline-3">
+<h3 id="org2995a22">语法分析</h3>
+<div class="outline-text-3" id="text-org2995a22">
 <p>
 如果说词法分析的作用是从连续的字符中识别出标识符、关键字、数字、运算符并存储为 <span class="underline">符号（token）流</span> ，语法分析的作用就是从词法分析识别出的符号流中识别出符合 C 语言规范的语句。
 </p>
@@ -192,9 +192,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org12e87cf" class="outline-3">
-<h3 id="org12e87cf">从语法树到中间代码再到目标代码</h3>
-<div class="outline-text-3" id="text-org12e87cf">
+<div id="outline-container-orge223c1a" class="outline-3">
+<h3 id="orge223c1a">从语法树到中间代码再到目标代码</h3>
+<div class="outline-text-3" id="text-orge223c1a">
 <p>
 至此，语法树已经承载了源程序的全部信息，后续的转换工作就和源程序没关系了。
 </p>
@@ -243,9 +243,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-orge239c08" class="outline-2">
-<h2 id="orge239c08">案例二<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h2>
-<div class="outline-text-2" id="text-orge239c08">
+<div id="outline-container-org626af14" class="outline-2">
+<h2 id="org626af14">案例二<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h2>
+<div class="outline-text-2" id="text-org626af14">
 <p>
 让我们再来看一个具体案例来深化一下对编译过程的认识。
 </p>
@@ -263,9 +263,9 @@ title=""
 />
 </div>
 
-<div id="outline-container-org233fee1" class="outline-3">
-<h3 id="org233fee1">1.词法分析</h3>
-<div class="outline-text-3" id="text-org233fee1">
+<div id="outline-container-orgda1e8da" class="outline-3">
+<h3 id="orgda1e8da">1.词法分析</h3>
+<div class="outline-text-3" id="text-orgda1e8da">
 <p>
 词法分析，又叫线性分析或者线性扫描。
 </p>
@@ -284,9 +284,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org17eb13e" class="outline-3">
-<h3 id="org17eb13e">2.语法分析</h3>
-<div class="outline-text-3" id="text-org17eb13e">
+<div id="outline-container-org51bcbe7" class="outline-3">
+<h3 id="org51bcbe7">2.语法分析</h3>
+<div class="outline-text-3" id="text-org51bcbe7">
 <p>
 语法分析，又叫层次分析。
 </p>
@@ -314,9 +314,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org6dca3a2" class="outline-3">
-<h3 id="org6dca3a2">3.语义分析</h3>
-<div class="outline-text-3" id="text-org6dca3a2">
+<div id="outline-container-org5b1437a" class="outline-3">
+<h3 id="org5b1437a">3.语义分析</h3>
+<div class="outline-text-3" id="text-org5b1437a">
 <p>
 进行主义分析，生成语法树。其作用如下：
 </p>
@@ -335,9 +335,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org3a0f5cb" class="outline-3">
-<h3 id="org3a0f5cb">4.中间代码生成</h3>
-<div class="outline-text-3" id="text-org3a0f5cb">
+<div id="outline-container-org130bcb3" class="outline-3">
+<h3 id="org130bcb3">4.中间代码生成</h3>
+<div class="outline-text-3" id="text-org130bcb3">
 <img
 src="images/compiler-10.png"
 width="220"
@@ -365,9 +365,9 @@ title="中间代码生成"
 </div>
 </div>
 
-<div id="outline-container-orgda1690e" class="outline-3">
-<h3 id="orgda1690e">5.代码优化</h3>
-<div class="outline-text-3" id="text-orgda1690e">
+<div id="outline-container-org15df64b" class="outline-3">
+<h3 id="org15df64b">5.代码优化</h3>
+<div class="outline-text-3" id="text-org15df64b">
 <img
 src="images/compiler-11.png"
 width="220"
@@ -382,9 +382,9 @@ title="代码优化"
 </div>
 </div>
 
-<div id="outline-container-org3076bb9" class="outline-3">
-<h3 id="org3076bb9">6.代码生成</h3>
-<div class="outline-text-3" id="text-org3076bb9">
+<div id="outline-container-orgc298360" class="outline-3">
+<h3 id="orgc298360">6.代码生成</h3>
+<div class="outline-text-3" id="text-orgc298360">
 <p>
 生成可重定位的机器代码或者汇编码，其功能如下：
 </p>
@@ -395,9 +395,9 @@ title="代码优化"
 </div>
 </div>
 
-<div id="outline-container-orgcf3e5d5" class="outline-3">
-<h3 id="orgcf3e5d5">7.编译的总过程</h3>
-<div class="outline-text-3" id="text-orgcf3e5d5">
+<div id="outline-container-org07a4260" class="outline-3">
+<h3 id="org07a4260">7.编译的总过程</h3>
+<div class="outline-text-3" id="text-org07a4260">
 <img
 src="images/compiler-12.png"
 width="460"
@@ -408,9 +408,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-orgdacf447" class="outline-3">
-<h3 id="orgdacf447">8.相关扩展</h3>
-<div class="outline-text-3" id="text-orgdacf447">
+<div id="outline-container-org7c6f888" class="outline-3">
+<h3 id="org7c6f888">8.相关扩展</h3>
+<div class="outline-text-3" id="text-org7c6f888">
 <p>
 <span class="underline">8.1 符号表管理</span>
 </p>
@@ -487,9 +487,9 @@ title=""
 </div>
 </div>
 
-<div id="outline-container-org2e38470" class="outline-2">
-<h2 id="org2e38470">编译原理三大经典</h2>
-<div class="outline-text-2" id="text-org2e38470">
+<div id="outline-container-org641cbdc" class="outline-2">
+<h2 id="org641cbdc">编译原理三大经典</h2>
+<div class="outline-text-2" id="text-org641cbdc">
 <table>
 
 <colgroup>
@@ -563,7 +563,7 @@ title=""
 <div id="postamble" class="status">
 <p class="date">Date: 2020-10-29 Thu 12:06</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:42</p>
+<p class="date">Created: 2021-05-18 Tue 15:52</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

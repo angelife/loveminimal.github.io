@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:43 -->
+<!-- 2021-05-18 Tue 15:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Drag And Drop</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,16 +18,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org26c6b47">简介</a></li>
-<li><a href="#orgb6beddc">示例</a></li>
-<li><a href="#orgbe27f93">拖放</a></li>
+<li><a href="#orgcc957b4">简介</a></li>
+<li><a href="#orgdca005b">示例</a></li>
+<li><a href="#orga047ce9">拖放</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org26c6b47" class="outline-2">
-<h2 id="org26c6b47">简介</h2>
-<div class="outline-text-2" id="text-org26c6b47">
+<div id="outline-container-orgcc957b4" class="outline-2">
+<h2 id="orgcc957b4">简介</h2>
+<div class="outline-text-2" id="text-orgcc957b4">
 <p>
 <span class="underline">拖放</span> 是一种常见的特性，即抓取对象以后拖到另一个位置。在 HTML5 中，拖放是标准的一部分，任何元素都能够拖放。
 </p>
@@ -38,37 +38,37 @@
 </div>
 </div>
 
-<div id="outline-container-orgb6beddc" class="outline-2">
-<h2 id="orgb6beddc">示例<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-orgb6beddc">
+<div id="outline-container-orgdca005b" class="outline-2">
+<h2 id="orgdca005b">示例<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-orgdca005b">
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">div</span> <span style="color: #6a1868;">id</span>=<span style="color: #50a14f;">"drop-box"</span>
-<span class="linenr">2: </span>     <span style="color: #6a1868;">ondrop</span>=<span style="color: #50a14f;">"drop(event)"</span>
-<span class="linenr">3: </span>     <span style="color: #6a1868;">ondragover</span>=<span style="color: #50a14f;">"allowDrop(event)"</span>&gt;
-<span class="linenr">4: </span>&lt;/<span style="color: #a626a4;">div</span>&gt;
-<span class="linenr">5: </span>&lt;<span style="color: #a626a4;">img</span> <span style="color: #6a1868;">id</span>=<span style="color: #50a14f;">"drag-ele"</span> <span style="color: #6a1868;">src</span>=<span style="color: #50a14f;">"./images/drap.png"</span>
-<span class="linenr">6: </span>     <span style="color: #6a1868;">draggable</span>=<span style="color: #50a14f;">"true"</span>
-<span class="linenr">7: </span>     <span style="color: #6a1868;">ondragstart</span>=<span style="color: #50a14f;">"drag(event)"</span>
-<span class="linenr">8: </span>     <span style="color: #6a1868;">width</span>=<span style="color: #50a14f;">"200"</span> <span style="color: #6a1868;">height</span>=<span style="color: #50a14f;">"160"</span>
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">id</span>=<span style="color: #50a14f;">"drop-box"</span>
+<span class="linenr">2: </span>     <span style="color: #8b4513;">ondrop</span>=<span style="color: #50a14f;">"drop(event)"</span>
+<span class="linenr">3: </span>     <span style="color: #8b4513;">ondragover</span>=<span style="color: #50a14f;">"allowDrop(event)"</span>&gt;
+<span class="linenr">4: </span>&lt;/<span style="color: #0184bc;">div</span>&gt;
+<span class="linenr">5: </span>&lt;<span style="color: #0184bc;">img</span> <span style="color: #8b4513;">id</span>=<span style="color: #50a14f;">"drag-ele"</span> <span style="color: #8b4513;">src</span>=<span style="color: #50a14f;">"./images/drap.png"</span>
+<span class="linenr">6: </span>     <span style="color: #8b4513;">draggable</span>=<span style="color: #50a14f;">"true"</span>
+<span class="linenr">7: </span>     <span style="color: #8b4513;">ondragstart</span>=<span style="color: #50a14f;">"drag(event)"</span>
+<span class="linenr">8: </span>     <span style="color: #8b4513;">width</span>=<span style="color: #50a14f;">"200"</span> <span style="color: #8b4513;">height</span>=<span style="color: #50a14f;">"160"</span>
 <span class="linenr">9: </span>/&gt;
 </pre>
 </div>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #e45649;">function</span> <span style="color: #a626a4;">allowDrop</span><span style="color: #4078f2;">(</span><span style="color: #6a1868;">e</span><span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    e.preventDefault<span style="color: #a626a4;">()</span>
-<span class="linenr"> 3: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">function</span> <span style="color: #0184bc;">allowDrop</span><span style="color: #707183;">(</span><span style="color: #8b4513;">e</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    e.preventDefault<span style="color: #7388d6;">()</span>
+<span class="linenr"> 3: </span><span style="color: #707183;">}</span>
 <span class="linenr"> 4: </span>
-<span class="linenr"> 5: </span><span style="color: #e45649;">function</span> <span style="color: #a626a4;">drag</span><span style="color: #4078f2;">(</span><span style="color: #6a1868;">e</span><span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 6: </span>    e.dataTransfer.setData<span style="color: #a626a4;">(</span><span style="color: #50a14f;">'Text'</span>, e.target.id<span style="color: #a626a4;">)</span>
-<span class="linenr"> 7: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 5: </span><span style="color: #a626a4;">function</span> <span style="color: #0184bc;">drag</span><span style="color: #707183;">(</span><span style="color: #8b4513;">e</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 6: </span>    e.dataTransfer.setData<span style="color: #7388d6;">(</span><span style="color: #50a14f;">'Text'</span>, e.target.id<span style="color: #7388d6;">)</span>
+<span class="linenr"> 7: </span><span style="color: #707183;">}</span>
 <span class="linenr"> 8: </span>
-<span class="linenr"> 9: </span><span style="color: #e45649;">function</span> <span style="color: #a626a4;">drop</span><span style="color: #4078f2;">(</span><span style="color: #6a1868;">e</span><span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">10: </span>    e.preventDefault<span style="color: #a626a4;">()</span>
+<span class="linenr"> 9: </span><span style="color: #a626a4;">function</span> <span style="color: #0184bc;">drop</span><span style="color: #707183;">(</span><span style="color: #8b4513;">e</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr">10: </span>    e.preventDefault<span style="color: #7388d6;">()</span>
 <span class="linenr">11: </span>
-<span class="linenr">12: </span>    <span style="color: #e45649;">var</span> <span style="color: #6a1868;">data</span> = e.dataTransfer.getData<span style="color: #a626a4;">(</span><span style="color: #50a14f;">'Text'</span><span style="color: #a626a4;">)</span>;
-<span class="linenr">13: </span>    e.target.appendChild<span style="color: #a626a4;">(</span>document.getElementById<span style="color: #50a14f;">(</span>data<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span>
-<span class="linenr">14: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">12: </span>    <span style="color: #a626a4;">var</span> <span style="color: #8b4513;">data</span> = e.dataTransfer.getData<span style="color: #7388d6;">(</span><span style="color: #50a14f;">'Text'</span><span style="color: #7388d6;">)</span>;
+<span class="linenr">13: </span>    e.target.appendChild<span style="color: #7388d6;">(</span>document.getElementById<span style="color: #909183;">(</span>data<span style="color: #909183;">)</span><span style="color: #7388d6;">)</span>
+<span class="linenr">14: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -78,9 +78,9 @@
 </div>
 </div>
 
-<div id="outline-container-orgbe27f93" class="outline-2">
-<h2 id="orgbe27f93">拖放</h2>
-<div class="outline-text-2" id="text-orgbe27f93">
+<div id="outline-container-orga047ce9" class="outline-2">
+<h2 id="orga047ce9">拖放</h2>
+<div class="outline-text-2" id="text-orga047ce9">
 <p>
 为了方便后文描述，我们称被拖元素为“小拖”，放置到的目标元素为“小盒” : )
 </p>
@@ -94,7 +94,7 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #a626a4;">img</span> <span style="color: #6a1868;">draggable</span>=<span style="color: #50a14f;">"true"</span> / &gt;
+<pre class="src src-html"><span class="linenr">1: </span>&lt;<span style="color: #0184bc;">img</span> <span style="color: #8b4513;">draggable</span>=<span style="color: #50a14f;">"true"</span> / &gt;
 </pre>
 </div>
 
@@ -115,9 +115,9 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span><span style="color: #e45649;">function</span> <span style="color: #a626a4;">drag</span><span style="color: #4078f2;">(</span><span style="color: #6a1868;">e</span><span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr">2: </span>    e.dataTransfer.setData<span style="color: #a626a4;">(</span><span style="color: #50a14f;">'Text'</span>, e.target.id<span style="color: #a626a4;">)</span>
-<span class="linenr">3: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-js"><span class="linenr">1: </span><span style="color: #a626a4;">function</span> <span style="color: #0184bc;">drag</span><span style="color: #707183;">(</span><span style="color: #8b4513;">e</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr">2: </span>    e.dataTransfer.setData<span style="color: #7388d6;">(</span><span style="color: #50a14f;">'Text'</span>, e.target.id<span style="color: #7388d6;">)</span>
+<span class="linenr">3: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -156,7 +156,7 @@ IE 不死，天下不安。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr">1: </span>event.preventDefault<span style="color: #4078f2;">()</span>
+<pre class="src src-js"><span class="linenr">1: </span>event.preventDefault<span style="color: #707183;">()</span>
 </pre>
 </div>
 
@@ -169,17 +169,17 @@ IE 不死，天下不安。
 </p>
 
 <div class="org-src-container">
-<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #e45649;">function</span> <span style="color: #a626a4;">drop</span><span style="color: #4078f2;">(</span><span style="color: #6a1868;">e</span><span style="color: #4078f2;">)</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35843;&#29992; `preventDefault()` &#26469;&#36991;&#20813;&#27983;&#35272;&#22120;&#23545;&#25968;&#25454;&#30340;&#40664;&#35748;&#22788;&#29702;</span>
-<span class="linenr"> 3: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">`drop` &#20107;&#20214;&#30340;&#40664;&#35748;&#34892;&#20026;&#26159;&#20197;&#38142;&#25509;&#24418;&#24335;&#25171;&#24320;</span>
-<span class="linenr"> 4: </span>    e.preventDefault<span style="color: #a626a4;">()</span>
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">function</span> <span style="color: #0184bc;">drop</span><span style="color: #707183;">(</span><span style="color: #8b4513;">e</span><span style="color: #707183;">)</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35843;&#29992; `preventDefault()` &#26469;&#36991;&#20813;&#27983;&#35272;&#22120;&#23545;&#25968;&#25454;&#30340;&#40664;&#35748;&#22788;&#29702;</span>
+<span class="linenr"> 3: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">`drop` &#20107;&#20214;&#30340;&#40664;&#35748;&#34892;&#20026;&#26159;&#20197;&#38142;&#25509;&#24418;&#24335;&#25171;&#24320;</span>
+<span class="linenr"> 4: </span>    e.preventDefault<span style="color: #7388d6;">()</span>
 <span class="linenr"> 5: </span>
-<span class="linenr"> 6: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36890;&#36807; `dataTransfer.getData('Text')` &#26041;&#27861;&#33719;&#24471;&#8220;&#23567;&#25302;&#8221;&#35774;&#32622;&#30340;&#25968;&#25454;</span>
-<span class="linenr"> 7: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35813;&#26041;&#27861;&#23558;&#36820;&#22238;&#22312; `setData()` &#26041;&#27861;&#20013;&#35774;&#32622;&#30340;&#30456;&#21516;&#31867;&#22411;&#30340;&#20219;&#20309;&#25968;&#25454;</span>
-<span class="linenr"> 8: </span>    <span style="color: #e45649;">var</span> <span style="color: #6a1868;">data</span> = e.dataTransfer.getData<span style="color: #a626a4;">(</span><span style="color: #50a14f;">'Text'</span><span style="color: #a626a4;">)</span>
-<span class="linenr"> 9: </span>    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36825;&#37324; `data` &#23601;&#26159;&#21069;&#38754;&#35774;&#32622;&#30340; `e.target.id`</span>
-<span class="linenr">10: </span>    e.target.appendChild<span style="color: #a626a4;">(</span>document.getElementById<span style="color: #50a14f;">(</span>data<span style="color: #50a14f;">)</span><span style="color: #a626a4;">)</span>
-<span class="linenr">11: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 6: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36890;&#36807; `dataTransfer.getData('Text')` &#26041;&#27861;&#33719;&#24471;&#8220;&#23567;&#25302;&#8221;&#35774;&#32622;&#30340;&#25968;&#25454;</span>
+<span class="linenr"> 7: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35813;&#26041;&#27861;&#23558;&#36820;&#22238;&#22312; `setData()` &#26041;&#27861;&#20013;&#35774;&#32622;&#30340;&#30456;&#21516;&#31867;&#22411;&#30340;&#20219;&#20309;&#25968;&#25454;</span>
+<span class="linenr"> 8: </span>    <span style="color: #a626a4;">var</span> <span style="color: #8b4513;">data</span> = e.dataTransfer.getData<span style="color: #7388d6;">(</span><span style="color: #50a14f;">'Text'</span><span style="color: #7388d6;">)</span>
+<span class="linenr"> 9: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36825;&#37324; `data` &#23601;&#26159;&#21069;&#38754;&#35774;&#32622;&#30340; `e.target.id`</span>
+<span class="linenr">10: </span>    e.target.appendChild<span style="color: #7388d6;">(</span>document.getElementById<span style="color: #909183;">(</span>data<span style="color: #909183;">)</span><span style="color: #7388d6;">)</span>
+<span class="linenr">11: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 </div>
@@ -197,7 +197,7 @@ IE 不死，天下不安。
 <div id="postamble" class="status">
 <p class="date">Date: 2020-11-10 Tue 14:27</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:43</p>
+<p class="date">Created: 2021-05-18 Tue 15:53</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

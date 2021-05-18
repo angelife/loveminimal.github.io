@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:43 -->
+<!-- 2021-05-18 Tue 15:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>反射机制</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,11 +18,11 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org14dea9c">反射机制是什么</a></li>
-<li><a href="#orgac1a17d">反射机制 API</a></li>
-<li><a href="#orge2bcf84"><span class="todo TODO">TODO</span> 通过反射访问构造方法</a></li>
-<li><a href="#orga8287de"><span class="todo TODO">TODO</span> 通过反射访问方法</a></li>
-<li><a href="#orgdbd925e"><span class="todo TODO">TODO</span> 通过反射方法成员变量</a></li>
+<li><a href="#org21f7239">反射机制是什么</a></li>
+<li><a href="#org4dcb689">反射机制 API</a></li>
+<li><a href="#orga1abd65"><span class="todo TODO">TODO</span> 通过反射访问构造方法</a></li>
+<li><a href="#org4fec5ff"><span class="todo TODO">TODO</span> 通过反射访问方法</a></li>
+<li><a href="#org6b3c666"><span class="todo TODO">TODO</span> 通过反射方法成员变量</a></li>
 </ul>
 </div>
 </div>
@@ -30,9 +30,9 @@
 通过 Java 的反射机制，程序员可以更深入地控制程序的运行过程。例如，在 <b>程序运行时</b> 由用户输入一个类名，然后动态获取该类拥有的构造、属性和方法，甚至调用任意类的任意方法。
 </p>
 
-<div id="outline-container-org14dea9c" class="outline-2">
-<h2 id="org14dea9c">反射机制是什么</h2>
-<div class="outline-text-2" id="text-org14dea9c">
+<div id="outline-container-org21f7239" class="outline-2">
+<h2 id="org21f7239">反射机制是什么</h2>
+<div class="outline-text-2" id="text-org21f7239">
 <p>
 Java 反射机制是 Java 语言的一个重要特性。在学习 Java 反射机制前，我们先来了解两个概念：编译期和运行期。
 </p>
@@ -81,7 +81,7 @@ Java 反射机制主要提供了以下功能，这些功能都位于 <code>java.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">Class</span> <span style="color: #6a1868;">labelCls</span> = label1.getClass<span style="color: #4078f2;">()</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">label1 &#20026; JLabel &#31867;&#30340;&#23545;&#35937;</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">Class</span> <span style="color: #8b4513;">labelCls</span> = label1.getClass<span style="color: #707183;">()</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">label1 &#20026; JLabel &#31867;&#30340;&#23545;&#35937;</span>
 </pre>
 </div>
 
@@ -239,9 +239,9 @@ Java 反射机制的缺点：
 </div>
 </div>
 
-<div id="outline-container-orgac1a17d" class="outline-2">
-<h2 id="orgac1a17d">反射机制 API</h2>
-<div class="outline-text-2" id="text-orgac1a17d">
+<div id="outline-container-org4dcb689" class="outline-2">
+<h2 id="org4dcb689">反射机制 API</h2>
+<div class="outline-text-2" id="text-org4dcb689">
 <p>
 实现 Java 反射机制的类都位于 <code>java.lang.reflect</code> 包中， <code>java.lang.Class</code> 类是 Java 反射机制 API 中的核心类。
 </p>
@@ -259,11 +259,11 @@ Java 反射机制的缺点：
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">1. &#36890;&#36807;&#31867;&#22411; class &#38745;&#24577;&#21464;&#37327;</span>
-<span class="linenr">2: </span><span style="color: #986801;">Class</span> <span style="color: #6a1868;">clz1</span> = String.<span style="color: #e45649;">class</span>;
-<span class="linenr">3: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">2. &#36890;&#36807;&#23545;&#35937;&#30340; getClass() &#26041;&#27861;</span>
-<span class="linenr">4: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">str</span> = <span style="color: #50a14f;">"Hello"</span>;
-<span class="linenr">5: </span><span style="color: #986801;">Class</span> <span style="color: #6a1868;">clz2</span> = str.getClass<span style="color: #4078f2;">()</span>;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">1. &#36890;&#36807;&#31867;&#22411; class &#38745;&#24577;&#21464;&#37327;</span>
+<span class="linenr">2: </span><span style="color: #c18401;">Class</span> <span style="color: #8b4513;">clz1</span> = String.<span style="color: #a626a4;">class</span>;
+<span class="linenr">3: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">2. &#36890;&#36807;&#23545;&#35937;&#30340; getClass() &#26041;&#27861;</span>
+<span class="linenr">4: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">str</span> = <span style="color: #50a14f;">"Hello"</span>;
+<span class="linenr">5: </span><span style="color: #c18401;">Class</span> <span style="color: #8b4513;">clz2</span> = str.getClass<span style="color: #707183;">()</span>;
 </pre>
 </div>
 
@@ -276,36 +276,36 @@ Class 类提供了很多方法可以获得运行时对象的相关信息，下�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">ReflectionTest</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33719;&#24471; Class &#23454;&#20363;</span>
-<span class="linenr"> 4: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">1. &#36890;&#36807;&#31867;&#22411; class &#38745;&#24577;&#21464;&#37327;</span>
-<span class="linenr"> 5: </span>        <span style="color: #986801;">Class</span> <span style="color: #6a1868;">clz1</span> = String.<span style="color: #e45649;">class</span>;
-<span class="linenr"> 6: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">2. &#36890;&#36807;&#23545;&#35937;&#30340; getClass() &#26041;&#27861;</span>
-<span class="linenr"> 7: </span>        <span style="color: #986801;">String</span> <span style="color: #6a1868;">str</span> = <span style="color: #50a14f;">"Hello"</span>;
-<span class="linenr"> 8: </span>        <span style="color: #986801;">Class</span> <span style="color: #6a1868;">clz2</span> = str.getClass<span style="color: #50a14f;">()</span>;
-<span class="linenr"> 9: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33719;&#24471; int &#31867;&#22411;&#30340; Class &#23454;&#20363;</span>
-<span class="linenr">10: </span>        <span style="color: #986801;">Class</span> <span style="color: #6a1868;">clz3</span> = <span style="color: #986801;">int</span>.<span style="color: #e45649;">class</span>;
-<span class="linenr">11: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33719;&#24471; Integer &#31867;&#22411; Class &#23454;&#20363;</span>
-<span class="linenr">12: </span>        <span style="color: #986801;">Class</span> <span style="color: #6a1868;">clz4</span> = Integer.<span style="color: #e45649;">class</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">ReflectionTest</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33719;&#24471; Class &#23454;&#20363;</span>
+<span class="linenr"> 4: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">1. &#36890;&#36807;&#31867;&#22411; class &#38745;&#24577;&#21464;&#37327;</span>
+<span class="linenr"> 5: </span>        <span style="color: #c18401;">Class</span> <span style="color: #8b4513;">clz1</span> = String.<span style="color: #a626a4;">class</span>;
+<span class="linenr"> 6: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">2. &#36890;&#36807;&#23545;&#35937;&#30340; getClass() &#26041;&#27861;</span>
+<span class="linenr"> 7: </span>        <span style="color: #c18401;">String</span> <span style="color: #8b4513;">str</span> = <span style="color: #50a14f;">"Hello"</span>;
+<span class="linenr"> 8: </span>        <span style="color: #c18401;">Class</span> <span style="color: #8b4513;">clz2</span> = str.getClass<span style="color: #909183;">()</span>;
+<span class="linenr"> 9: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33719;&#24471; int &#31867;&#22411;&#30340; Class &#23454;&#20363;</span>
+<span class="linenr">10: </span>        <span style="color: #c18401;">Class</span> <span style="color: #8b4513;">clz3</span> = <span style="color: #c18401;">int</span>.<span style="color: #a626a4;">class</span>;
+<span class="linenr">11: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33719;&#24471; Integer &#31867;&#22411; Class &#23454;&#20363;</span>
+<span class="linenr">12: </span>        <span style="color: #c18401;">Class</span> <span style="color: #8b4513;">clz4</span> = Integer.<span style="color: #a626a4;">class</span>;
 <span class="linenr">13: </span>
-<span class="linenr">14: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"clz2 &#31867;&#21517;&#31216;&#65306;"</span> + clz2.getName<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">15: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"clz2 &#26159;&#21542;&#20026;&#25509;&#21475;&#65306;"</span> + clz2.isInterface<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">16: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"clz2 &#26159;&#21542;&#20026;&#25968;&#32452;&#23545;&#35937;&#65306;"</span> + clz2.isArray<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">17: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"clz2 &#29238;&#31867;&#21517;&#31216;&#65306;"</span> + clz2.getSuperclass<span style="color: #da8548;">()</span>.getName<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">18: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"clz2 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;"</span> + clz2.isPrimitive<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">19: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"clz3 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;"</span> + clz3.isPrimitive<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;
-<span class="linenr">20: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"clz4 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;"</span> + clz4.isPrimitive<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span>;
+<span class="linenr">14: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"clz2 &#31867;&#21517;&#31216;&#65306;"</span> + clz2.getName<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;
+<span class="linenr">15: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"clz2 &#26159;&#21542;&#20026;&#25509;&#21475;&#65306;"</span> + clz2.isInterface<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;
+<span class="linenr">16: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"clz2 &#26159;&#21542;&#20026;&#25968;&#32452;&#23545;&#35937;&#65306;"</span> + clz2.isArray<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;
+<span class="linenr">17: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"clz2 &#29238;&#31867;&#21517;&#31216;&#65306;"</span> + clz2.getSuperclass<span style="color: #709870;">()</span>.getName<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;
+<span class="linenr">18: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"clz2 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;"</span> + clz2.isPrimitive<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;
+<span class="linenr">19: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"clz3 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;"</span> + clz3.isPrimitive<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;
+<span class="linenr">20: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"clz4 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;"</span> + clz4.isPrimitive<span style="color: #709870;">()</span><span style="color: #909183;">)</span>;
 <span class="linenr">21: </span>
-<span class="linenr">22: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; clz2 &#31867;&#21517;&#31216;&#65306; java.lang.String</span>
-<span class="linenr">23: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; clz2 &#26159;&#21542;&#20026;&#25509;&#21475;&#65306; false</span>
-<span class="linenr">24: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; clz2 &#26159;&#21542;&#20026;&#25968;&#32452;&#23545;&#35937;&#65306; false</span>
-<span class="linenr">25: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; clz2 &#29238;&#31867;&#21517;&#31216;&#65306; java.lang.Object</span>
-<span class="linenr">26: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; clz2 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;false</span>
-<span class="linenr">27: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; clz3 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;true</span>
-<span class="linenr">28: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; clz4 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;false</span>
-<span class="linenr">29: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">30: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">22: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; clz2 &#31867;&#21517;&#31216;&#65306; java.lang.String</span>
+<span class="linenr">23: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; clz2 &#26159;&#21542;&#20026;&#25509;&#21475;&#65306; false</span>
+<span class="linenr">24: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; clz2 &#26159;&#21542;&#20026;&#25968;&#32452;&#23545;&#35937;&#65306; false</span>
+<span class="linenr">25: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; clz2 &#29238;&#31867;&#21517;&#31216;&#65306; java.lang.Object</span>
+<span class="linenr">26: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; clz2 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;false</span>
+<span class="linenr">27: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; clz3 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;true</span>
+<span class="linenr">28: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; clz4 &#26159;&#21542;&#20026;&#22522;&#26412;&#31867;&#22411;&#65306;false</span>
+<span class="linenr">29: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">30: </span><span style="color: #707183;">}</span>
 <span class="linenr">31: </span>
 </pre>
 </div>
@@ -330,27 +330,27 @@ Class 类提供了很多方法可以获得运行时对象的相关信息，下�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">ReflectionTest</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #e45649;">try</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 4: </span>            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21160;&#24577;&#21152;&#36733; xx &#31867;&#30340;&#36816;&#34892;&#26102;&#23545;&#35937;</span>
-<span class="linenr"> 5: </span>            <span style="color: #986801;">Class</span> <span style="color: #6a1868;">c</span> = Class.forName<span style="color: #da8548;">(</span><span style="color: #50a14f;">"java.lang.String"</span><span style="color: #da8548;">)</span>;
-<span class="linenr"> 6: </span>            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#33719;&#21462;&#25104;&#21592;&#26041;&#27861;&#38598;&#21512;</span>
-<span class="linenr"> 7: </span>            <span style="color: #986801;">Method</span><span style="color: #da8548;">[]</span> <span style="color: #6a1868;">methods</span> = c.getDeclaredMethods<span style="color: #da8548;">()</span>;
-<span class="linenr"> 8: </span>            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36941;&#21382;&#25104;&#21592;&#26041;&#27861;&#38598;&#21512;</span>
-<span class="linenr"> 9: </span>            <span style="color: #e45649;">for</span> <span style="color: #da8548;">(</span><span style="color: #986801;">Method</span> <span style="color: #6a1868;">method</span> : methods<span style="color: #da8548;">)</span> <span style="color: #da8548;">{</span>
-<span class="linenr">10: </span>                <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25171;&#21360;&#26435;&#38480;&#20462;&#39280;&#31526;&#65292;&#22914; public&#12289;protected&#12289;private</span>
-<span class="linenr">11: </span>                System.out.println<span style="color: #b751b6;">(</span>Modifier.toString<span style="color: #986801;">(</span>method.getModifiers<span style="color: #4db5bd;">()</span><span style="color: #986801;">)</span><span style="color: #b751b6;">)</span>;
-<span class="linenr">12: </span>                <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25171;&#21360;&#36820;&#22238;&#20540;&#31867;&#22411;&#21517;&#31216;</span>
-<span class="linenr">13: </span>                System.out.println<span style="color: #b751b6;">(</span>method.getReturnType<span style="color: #986801;">()</span>.getName<span style="color: #986801;">()</span><span style="color: #b751b6;">)</span>;
-<span class="linenr">14: </span>                <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#25171;&#21360;&#26041;&#27861;&#21517;&#31216;</span>
-<span class="linenr">15: </span>                System.out.println<span style="color: #b751b6;">(</span>method.getName<span style="color: #986801;">()</span> + <span style="color: #50a14f;">"()"</span><span style="color: #b751b6;">)</span>;
-<span class="linenr">16: </span>            <span style="color: #da8548;">}</span>
-<span class="linenr">17: </span>        <span style="color: #50a14f;">}</span> <span style="color: #e45649;">catch</span> <span style="color: #50a14f;">(</span><span style="color: #986801;">ClassNotFoundException</span> <span style="color: #6a1868;">e</span><span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr">18: </span>            System.out.println<span style="color: #da8548;">(</span><span style="color: #50a14f;">"&#25214;&#19981;&#21040;&#25351;&#23450;&#31867;"</span><span style="color: #da8548;">)</span>;
-<span class="linenr">19: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">20: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">21: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">ReflectionTest</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #a626a4;">try</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 4: </span>            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21160;&#24577;&#21152;&#36733; xx &#31867;&#30340;&#36816;&#34892;&#26102;&#23545;&#35937;</span>
+<span class="linenr"> 5: </span>            <span style="color: #c18401;">Class</span> <span style="color: #8b4513;">c</span> = Class.forName<span style="color: #709870;">(</span><span style="color: #50a14f;">"java.lang.String"</span><span style="color: #709870;">)</span>;
+<span class="linenr"> 6: </span>            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#33719;&#21462;&#25104;&#21592;&#26041;&#27861;&#38598;&#21512;</span>
+<span class="linenr"> 7: </span>            <span style="color: #c18401;">Method</span><span style="color: #709870;">[]</span> <span style="color: #8b4513;">methods</span> = c.getDeclaredMethods<span style="color: #709870;">()</span>;
+<span class="linenr"> 8: </span>            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36941;&#21382;&#25104;&#21592;&#26041;&#27861;&#38598;&#21512;</span>
+<span class="linenr"> 9: </span>            <span style="color: #a626a4;">for</span> <span style="color: #709870;">(</span><span style="color: #c18401;">Method</span> <span style="color: #8b4513;">method</span> : methods<span style="color: #709870;">)</span> <span style="color: #709870;">{</span>
+<span class="linenr">10: </span>                <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#25171;&#21360;&#26435;&#38480;&#20462;&#39280;&#31526;&#65292;&#22914; public&#12289;protected&#12289;private</span>
+<span class="linenr">11: </span>                System.out.println<span style="color: #907373;">(</span>Modifier.toString<span style="color: #6276ba;">(</span>method.getModifiers<span style="color: #858580;">()</span><span style="color: #6276ba;">)</span><span style="color: #907373;">)</span>;
+<span class="linenr">12: </span>                <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#25171;&#21360;&#36820;&#22238;&#20540;&#31867;&#22411;&#21517;&#31216;</span>
+<span class="linenr">13: </span>                System.out.println<span style="color: #907373;">(</span>method.getReturnType<span style="color: #6276ba;">()</span>.getName<span style="color: #6276ba;">()</span><span style="color: #907373;">)</span>;
+<span class="linenr">14: </span>                <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#25171;&#21360;&#26041;&#27861;&#21517;&#31216;</span>
+<span class="linenr">15: </span>                System.out.println<span style="color: #907373;">(</span>method.getName<span style="color: #6276ba;">()</span> + <span style="color: #50a14f;">"()"</span><span style="color: #907373;">)</span>;
+<span class="linenr">16: </span>            <span style="color: #709870;">}</span>
+<span class="linenr">17: </span>        <span style="color: #909183;">}</span> <span style="color: #a626a4;">catch</span> <span style="color: #909183;">(</span><span style="color: #c18401;">ClassNotFoundException</span> <span style="color: #8b4513;">e</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr">18: </span>            System.out.println<span style="color: #709870;">(</span><span style="color: #50a14f;">"&#25214;&#19981;&#21040;&#25351;&#23450;&#31867;"</span><span style="color: #709870;">)</span>;
+<span class="linenr">19: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">20: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">21: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -360,22 +360,22 @@ Class 类提供了很多方法可以获得运行时对象的相关信息，下�
 </div>
 </div>
 
-<div id="outline-container-orge2bcf84" class="outline-2">
-<h2 id="orge2bcf84"><span class="todo TODO">TODO</span> 通过反射访问构造方法</h2>
+<div id="outline-container-orga1abd65" class="outline-2">
+<h2 id="orga1abd65"><span class="todo TODO">TODO</span> 通过反射访问构造方法</h2>
 </div>
 
-<div id="outline-container-orga8287de" class="outline-2">
-<h2 id="orga8287de"><span class="todo TODO">TODO</span> 通过反射访问方法</h2>
+<div id="outline-container-org4fec5ff" class="outline-2">
+<h2 id="org4fec5ff"><span class="todo TODO">TODO</span> 通过反射访问方法</h2>
 </div>
 
-<div id="outline-container-orgdbd925e" class="outline-2">
-<h2 id="orgdbd925e"><span class="todo TODO">TODO</span> 通过反射方法成员变量</h2>
+<div id="outline-container-org6b3c666" class="outline-2">
+<h2 id="org6b3c666"><span class="todo TODO">TODO</span> 通过反射方法成员变量</h2>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2020-10-02 Fri 11:51</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:43</p>
+<p class="date">Created: 2021-05-18 Tue 15:53</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

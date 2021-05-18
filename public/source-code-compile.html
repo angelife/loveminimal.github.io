@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:44 -->
+<!-- 2021-05-18 Tue 15:55 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>源码编译安装</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,23 +18,23 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga24a3c1">如何编译安装</a></li>
-<li><a href="#orga4e0def">如何理解编译过程</a>
+<li><a href="#orgc4a898a">如何编译安装</a></li>
+<li><a href="#org0798851">如何理解编译过程</a>
 <ul>
-<li><a href="#org46cd4dd">./configure</a></li>
-<li><a href="#orge401fa5">make</a></li>
-<li><a href="#orge36992e">*cmake</a></li>
-<li><a href="#org68fc19c">make install</a></li>
+<li><a href="#orgd921c63">./configure</a></li>
+<li><a href="#orgcd8f663">make</a></li>
+<li><a href="#orge637d51">*cmake</a></li>
+<li><a href="#org25dfa31">make install</a></li>
 </ul>
 </li>
-<li><a href="#org3351e15">扩展 - C/C++ 编译过程</a>
+<li><a href="#orgfd1d8c3">扩展 - C/C++ 编译过程</a>
 <ul>
-<li><a href="#orgfcb3d22">相关名词</a></li>
-<li><a href="#org9c1f513">编译过程</a></li>
-<li><a href="#orgc1a1f32">链接过程</a></li>
+<li><a href="#orgefe26a4">相关名词</a></li>
+<li><a href="#org6287e3f">编译过程</a></li>
+<li><a href="#orgc794a2d">链接过程</a></li>
 </ul>
 </li>
-<li><a href="#org8578b4d"><span class="todo TODO">TODO</span> 进阶 - Linux 下源码编译安装详解</a></li>
+<li><a href="#org649c33b"><span class="todo TODO">TODO</span> 进阶 - Linux 下源码编译安装详解</a></li>
 </ul>
 </div>
 </div>
@@ -48,9 +48,9 @@ style=""
 Linux 下源代码的编译安装，及其编译过程和可能遇到的问题。
 </p>
 
-<div id="outline-container-orga24a3c1" class="outline-2">
-<h2 id="orga24a3c1">如何编译安装<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-orga24a3c1">
+<div id="outline-container-orgc4a898a" class="outline-2">
+<h2 id="orgc4a898a">如何编译安装<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-orgc4a898a">
 <p>
 下载源码包，解压、进入源代码目录后，执行以下命令：
 </p>
@@ -59,7 +59,7 @@ Linux 下源代码的编译安装，及其编译过程和可能遇到的问题�
 <pre class="src src-sh"><span class="linenr">1: </span>./configure
 <span class="linenr">2: </span>make
 <span class="linenr">3: </span>make install
-<span class="linenr">4: </span><span style="color: #9ca0a4;"># </span><span style="color: #9ca0a4;">&#22810;&#25968;&#26102;&#20505;&#38656;&#35201; `sudo`</span>
+<span class="linenr">4: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#22810;&#25968;&#26102;&#20505;&#38656;&#35201; `sudo`</span>
 </pre>
 </div>
 
@@ -69,13 +69,13 @@ Linux 下源代码的编译安装，及其编译过程和可能遇到的问题�
 </div>
 </div>
 
-<div id="outline-container-orga4e0def" class="outline-2">
-<h2 id="orga4e0def">如何理解编译过程<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> <sup>, </sup><sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h2>
-<div class="outline-text-2" id="text-orga4e0def">
+<div id="outline-container-org0798851" class="outline-2">
+<h2 id="org0798851">如何理解编译过程<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup> <sup>, </sup><sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup></h2>
+<div class="outline-text-2" id="text-org0798851">
 </div>
-<div id="outline-container-org46cd4dd" class="outline-3">
-<h3 id="org46cd4dd">./configure</h3>
-<div class="outline-text-3" id="text-org46cd4dd">
+<div id="outline-container-orgd921c63" class="outline-3">
+<h3 id="orgd921c63">./configure</h3>
+<div class="outline-text-3" id="text-orgd921c63">
 <p>
 <code>configure</code> 脚本是用来检查当前安装平台的开发环境，比如是不是有 CC 或 GCC ，也用来供用户指定程序包的编译参数、启用特性、安装路径等等。
 </p>
@@ -109,9 +109,9 @@ Linux 下源代码的编译安装，及其编译过程和可能遇到的问题�
 </div>
 </div>
 
-<div id="outline-container-orge401fa5" class="outline-3">
-<h3 id="orge401fa5">make</h3>
-<div class="outline-text-3" id="text-orge401fa5">
+<div id="outline-container-orgcd8f663" class="outline-3">
+<h3 id="orgcd8f663">make</h3>
+<div class="outline-text-3" id="text-orgcd8f663">
 <p>
 <code>make</code> 是 Linux 开发套件里面自动化编译的一个控制程序。每个源代码都有专用的 <code>Makefile</code> ，在执行 <code>make</code> 时依据 <code>Makefile</code> 这个配置文件，调用指定的预处理器做处理、调用指定的编译器做处理、编译文件的顺序操作等。
 </p>
@@ -122,9 +122,9 @@ Linux 下源代码的编译安装，及其编译过程和可能遇到的问题�
 </div>
 </div>
 
-<div id="outline-container-orge36992e" class="outline-3">
-<h3 id="orge36992e">*cmake<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup></h3>
-<div class="outline-text-3" id="text-orge36992e">
+<div id="outline-container-orge637d51" class="outline-3">
+<h3 id="orge637d51">*cmake<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup></h3>
+<div class="outline-text-3" id="text-orge637d51">
 <p>
 <code>cmake</code> 就是一个与 <code>make</code> 同级别的编译工具，只不过它依靠的不是 <code>Makefile</code> 作为编译规则，而是根据 <code>CMakeLists.txt</code> 来编译的。它比 <code>make</code> 更高级，可以根据不同平台、不同的编译器，通过编写 <code>CMakeLists.txt</code> ，可以控制生成的 <code>Makefile</code> ，从而控制编译过程。
 </p>
@@ -141,9 +141,9 @@ style=""
 </div>
 </div>
 
-<div id="outline-container-org68fc19c" class="outline-3">
-<h3 id="org68fc19c">make install</h3>
-<div class="outline-text-3" id="text-org68fc19c">
+<div id="outline-container-org25dfa31" class="outline-3">
+<h3 id="org25dfa31">make install</h3>
+<div class="outline-text-3" id="text-org25dfa31">
 <p>
 这条命令用来进行安装（当然有些软件需要先运行 <code>make check</code> 或 <code>make test</code> 来进行一些测试），一般需要你有 root 权限（因为要向系统写入文件）。
 </p>
@@ -156,9 +156,9 @@ style=""
 </div>
 </div>
 
-<div id="outline-container-org3351e15" class="outline-2">
-<h2 id="org3351e15">扩展 - C/C++ 编译过程<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></h2>
-<div class="outline-text-2" id="text-org3351e15">
+<div id="outline-container-orgfd1d8c3" class="outline-2">
+<h2 id="orgfd1d8c3">扩展 - C/C++ 编译过程<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup></h2>
+<div class="outline-text-2" id="text-orgfd1d8c3">
 <img
 src="images/c-compile.jpg"
 width="400"
@@ -166,9 +166,9 @@ style=""
 />
 </div>
 
-<div id="outline-container-orgfcb3d22" class="outline-3">
-<h3 id="orgfcb3d22">相关名词</h3>
-<div class="outline-text-3" id="text-orgfcb3d22">
+<div id="outline-container-orgefe26a4" class="outline-3">
+<h3 id="orgefe26a4">相关名词</h3>
+<div class="outline-text-3" id="text-orgefe26a4">
 <p>
 <span class="underline">编译</span> ，是读取源程序（字符流），对之进行词法和语法的分析，将高级语言转换为等效的汇编代码，再转换为机器代码，保存到目标文件 <code>*.obj</code> 中（如果编译通过）。
 </p>
@@ -179,9 +179,9 @@ style=""
 </div>
 </div>
 
-<div id="outline-container-org9c1f513" class="outline-3">
-<h3 id="org9c1f513">编译过程</h3>
-<div class="outline-text-3" id="text-org9c1f513">
+<div id="outline-container-org6287e3f" class="outline-3">
+<h3 id="org6287e3f">编译过程</h3>
+<div class="outline-text-3" id="text-org6287e3f">
 <p>
 编译分为两个过程： <span class="underline">预处理阶段</span> 和 <span class="underline">编译、优化阶段</span> 。
 </p>
@@ -219,9 +219,9 @@ style=""
 </div>
 </div>
 
-<div id="outline-container-orgc1a1f32" class="outline-3">
-<h3 id="orgc1a1f32">链接过程</h3>
-<div class="outline-text-3" id="text-orgc1a1f32">
+<div id="outline-container-orgc794a2d" class="outline-3">
+<h3 id="orgc794a2d">链接过程</h3>
+<div class="outline-text-3" id="text-orgc794a2d">
 <p>
 链接方式分为：静态链接和动态链接。
 </p>
@@ -237,8 +237,8 @@ style=""
 </div>
 </div>
 
-<div id="outline-container-org8578b4d" class="outline-2">
-<h2 id="org8578b4d"><span class="todo TODO">TODO</span> 进阶 - Linux 下源码编译安装详解<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup></h2>
+<div id="outline-container-org649c33b" class="outline-2">
+<h2 id="org649c33b"><span class="todo TODO">TODO</span> 进阶 - Linux 下源码编译安装详解<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup></h2>
 </div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
@@ -273,7 +273,7 @@ style=""
 <div id="postamble" class="status">
 <p class="date">Date: 2020-05-13 Wed 15:03</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:44</p>
+<p class="date">Created: 2021-05-18 Tue 15:55</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

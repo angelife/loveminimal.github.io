@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:43 -->
+<!-- 2021-05-18 Tue 15:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Java 字符串处理</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,26 +18,26 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org7b736d2">定义字符串</a></li>
-<li><a href="#orgdca7272">String 和 int 的相互转换</a></li>
-<li><a href="#org50f11fb">字符串拼接</a></li>
-<li><a href="#org68508aa">字符串的若干操作</a>
+<li><a href="#org995c605">定义字符串</a></li>
+<li><a href="#orgd0c3456">String 和 int 的相互转换</a></li>
+<li><a href="#org6e095b8">字符串拼接</a></li>
+<li><a href="#orgd5d0cdf">字符串的若干操作</a>
 <ul>
-<li><a href="#org4143aba">获取字符串长度</a></li>
-<li><a href="#orge1f7232">字符串的大小写转换</a></li>
-<li><a href="#org0253540">去除字符串中的空格</a></li>
-<li><a href="#org6cf818b">截取子字符串</a></li>
-<li><a href="#org12346d1">分割字符串</a></li>
-<li><a href="#orgaeeca87">字符串的替换</a></li>
-<li><a href="#org04a3915">字符串比较</a></li>
-<li><a href="#org2be9770">字符串查找</a></li>
+<li><a href="#org11c8205">获取字符串长度</a></li>
+<li><a href="#org086c450">字符串的大小写转换</a></li>
+<li><a href="#org7f3f0fb">去除字符串中的空格</a></li>
+<li><a href="#org386d169">截取子字符串</a></li>
+<li><a href="#orgcba3003">分割字符串</a></li>
+<li><a href="#org3898c9f">字符串的替换</a></li>
+<li><a href="#org74a7aa0">字符串比较</a></li>
+<li><a href="#org535a99b">字符串查找</a></li>
 </ul>
 </li>
-<li><a href="#org658dc53">StringBuffer 类</a></li>
-<li><a href="#orgef75eb7">正则表达式</a>
+<li><a href="#org680456c">StringBuffer 类</a></li>
+<li><a href="#orgf5cd60f">正则表达式</a>
 <ul>
-<li><a href="#orgbad95f7">理解正则表达式</a></li>
-<li><a href="#org8726c33">Pattern 类和 Matcher 类</a></li>
+<li><a href="#org163c1f0">理解正则表达式</a></li>
+<li><a href="#org75428ce">Pattern 类和 Matcher 类</a></li>
 </ul>
 </li>
 </ul>
@@ -53,9 +53,9 @@
 </p>
 </blockquote>
 
-<div id="outline-container-org7b736d2" class="outline-2">
-<h2 id="org7b736d2">定义字符串</h2>
-<div class="outline-text-2" id="text-org7b736d2">
+<div id="outline-container-org995c605" class="outline-2">
+<h2 id="org995c605">定义字符串</h2>
+<div class="outline-text-2" id="text-org995c605">
 <p>
 字符串是 Java 中特殊的类，使用方法像一般的基本数据类型，被广泛应用在 Java 编程中。 <b>Java 没有内置的字符类型，而是在标准 Java 类库中提供了一个 <code>String</code> 类来创建和操作字符串。</b>
 </p>
@@ -73,10 +73,10 @@
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">str1</span> = <span style="color: #50a14f;">"Hello Java"</span>;
-<span class="linenr">2: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">OR</span>
-<span class="linenr">3: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">str2</span>;
-<span class="linenr">4: </span>str = <span style="color: #50a14f;">"Hello Java"</span>;             <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#24517;&#39035;&#21021;&#22987;&#21270;&#21734;</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">str1</span> = <span style="color: #50a14f;">"Hello Java"</span>;
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">OR</span>
+<span class="linenr">3: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">str2</span>;
+<span class="linenr">4: </span>str = <span style="color: #50a14f;">"Hello Java"</span>;             <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#24517;&#39035;&#21021;&#22987;&#21270;&#21734;</span>
 </pre>
 </div>
 
@@ -117,8 +117,8 @@ String 类的构造方法有多种重载形式，每种形式都可以定义字�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">str1</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">String</span><span style="color: #4078f2;">(</span><span style="color: #50a14f;">"Hello Java"</span><span style="color: #4078f2;">)</span>;
-<span class="linenr">2: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">str2</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">String</span><span style="color: #4078f2;">(</span>str1<span style="color: #4078f2;">)</span>;
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">str1</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">String</span><span style="color: #707183;">(</span><span style="color: #50a14f;">"Hello Java"</span><span style="color: #707183;">)</span>;
+<span class="linenr">2: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">str2</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">String</span><span style="color: #707183;">(</span>str1<span style="color: #707183;">)</span>;
 </pre>
 </div>
 
@@ -135,9 +135,9 @@ String 类的构造方法有多种重载形式，每种形式都可以定义字�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">char</span><span style="color: #4078f2;">[]</span> <span style="color: #6a1868;">a</span> = <span style="color: #4078f2;">{</span><span style="color: #50a14f;">'H'</span>, <span style="color: #50a14f;">'e'</span>, <span style="color: #50a14f;">'l'</span>, <span style="color: #50a14f;">'l'</span>, <span style="color: #50a14f;">'o'</span><span style="color: #4078f2;">}</span>;
-<span class="linenr">2: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">sChar</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">String</span><span style="color: #4078f2;">(</span>a<span style="color: #4078f2;">)</span>;
-<span class="linenr">3: </span>a<span style="color: #4078f2;">[</span>1<span style="color: #4078f2;">]</span> = <span style="color: #50a14f;">'s'</span>;                     <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23545;&#25968;&#32452; a &#20013;&#20803;&#32032;&#30340;&#26356;&#25913;&#24182;&#19981;&#20250;&#24433;&#21709; sChar &#30340;&#20540;&#65288;&#27605;&#31455;&#26159;&#25335;&#36125;&#20102;&#65289;</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">char</span><span style="color: #707183;">[]</span> <span style="color: #8b4513;">a</span> = <span style="color: #707183;">{</span><span style="color: #50a14f;">'H'</span>, <span style="color: #50a14f;">'e'</span>, <span style="color: #50a14f;">'l'</span>, <span style="color: #50a14f;">'l'</span>, <span style="color: #50a14f;">'o'</span><span style="color: #707183;">}</span>;
+<span class="linenr">2: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">sChar</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">String</span><span style="color: #707183;">(</span>a<span style="color: #707183;">)</span>;
+<span class="linenr">3: </span>a<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span> = <span style="color: #50a14f;">'s'</span>;                     <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23545;&#25968;&#32452; a &#20013;&#20803;&#32032;&#30340;&#26356;&#25913;&#24182;&#19981;&#20250;&#24433;&#21709; sChar &#30340;&#20540;&#65288;&#27605;&#31455;&#26159;&#25335;&#36125;&#20102;&#65289;</span>
 </pre>
 </div>
 
@@ -150,17 +150,17 @@ String 类的构造方法有多种重载形式，每种形式都可以定义字�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">char</span><span style="color: #4078f2;">[]</span> <span style="color: #6a1868;">a</span> = <span style="color: #4078f2;">{</span><span style="color: #50a14f;">'H'</span>, <span style="color: #50a14f;">'e'</span>, <span style="color: #50a14f;">'l'</span>, <span style="color: #50a14f;">'l'</span>, <span style="color: #50a14f;">'o'</span><span style="color: #4078f2;">}</span>;
-<span class="linenr">2: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">sChar</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">String</span><span style="color: #4078f2;">(</span>a, 1, 4<span style="color: #4078f2;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; "ello"</span>
-<span class="linenr">3: </span>a<span style="color: #4078f2;">[</span>1<span style="color: #4078f2;">]</span> = <span style="color: #50a14f;">'s'</span>;                         <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23545; sChar &#30340;&#20540;&#20063;&#27809;&#26377;&#20219;&#20309;&#24433;&#21709;</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">char</span><span style="color: #707183;">[]</span> <span style="color: #8b4513;">a</span> = <span style="color: #707183;">{</span><span style="color: #50a14f;">'H'</span>, <span style="color: #50a14f;">'e'</span>, <span style="color: #50a14f;">'l'</span>, <span style="color: #50a14f;">'l'</span>, <span style="color: #50a14f;">'o'</span><span style="color: #707183;">}</span>;
+<span class="linenr">2: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">sChar</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">String</span><span style="color: #707183;">(</span>a, 1, 4<span style="color: #707183;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; "ello"</span>
+<span class="linenr">3: </span>a<span style="color: #707183;">[</span>1<span style="color: #707183;">]</span> = <span style="color: #50a14f;">'s'</span>;                         <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23545; sChar &#30340;&#20540;&#20063;&#27809;&#26377;&#20219;&#20309;&#24433;&#21709;</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgdca7272" class="outline-2">
-<h2 id="orgdca7272">String 和 int 的相互转换</h2>
-<div class="outline-text-2" id="text-orgdca7272">
+<div id="outline-container-orgd0c3456" class="outline-2">
+<h2 id="orgd0c3456">String 和 int 的相互转换</h2>
+<div class="outline-text-2" id="text-orgd0c3456">
 <p>
 String 在编程中被广泛使用，所以掌握 String 和 int 的相互转换方法是极其重要的。
 </p>
@@ -266,9 +266,9 @@ String 字符串转整型 int 有以下两种方式：
 </div>
 </div>
 
-<div id="outline-container-org50f11fb" class="outline-2">
-<h2 id="org50f11fb">字符串拼接</h2>
-<div class="outline-text-2" id="text-org50f11fb">
+<div id="outline-container-org6e095b8" class="outline-2">
+<h2 id="org6e095b8">字符串拼接</h2>
+<div class="outline-text-2" id="text-org6e095b8">
 <p>
 通过字符串连接，可以将两个或多个字符串、字符、整数和浮点数等类型的数据连成一个更大的字符，String 字符串拼接可以使用 <code>+</code> 运算符或 String 的 <code>concat(String str)</code> 方法。
 </p>
@@ -319,13 +319,13 @@ str1.concat(str2)
 </div>
 </div>
 
-<div id="outline-container-org68508aa" class="outline-2">
-<h2 id="org68508aa">字符串的若干操作</h2>
-<div class="outline-text-2" id="text-org68508aa">
+<div id="outline-container-orgd5d0cdf" class="outline-2">
+<h2 id="orgd5d0cdf">字符串的若干操作</h2>
+<div class="outline-text-2" id="text-orgd5d0cdf">
 </div>
-<div id="outline-container-org4143aba" class="outline-3">
-<h3 id="org4143aba">获取字符串长度</h3>
-<div class="outline-text-3" id="text-org4143aba">
+<div id="outline-container-org11c8205" class="outline-3">
+<h3 id="org11c8205">获取字符串长度</h3>
+<div class="outline-text-3" id="text-org11c8205">
 <p>
 在 Java 中，要获取字符串的长度，可以使用 String 类的 <code>length()</code> 方法，其语法形式如下：
 </p>
@@ -336,9 +336,9 @@ str1.concat(str2)
 </div>
 </div>
 
-<div id="outline-container-orge1f7232" class="outline-3">
-<h3 id="orge1f7232">字符串的大小写转换</h3>
-<div class="outline-text-3" id="text-orge1f7232">
+<div id="outline-container-org086c450" class="outline-3">
+<h3 id="org086c450">字符串的大小写转换</h3>
+<div class="outline-text-3" id="text-org086c450">
 <p>
 String 类的 <code>toLowerCase()</code> 方法可以将字符串中的所有字符全部转换成小写，而非字母的字符不受影响。语法格式如下：
 </p>
@@ -357,9 +357,9 @@ String 类的 <code>toLowerCase()</code> 方法可以将字符串中的所有字
 </div>
 </div>
 
-<div id="outline-container-org0253540" class="outline-3">
-<h3 id="org0253540">去除字符串中的空格</h3>
-<div class="outline-text-3" id="text-org0253540">
+<div id="outline-container-org7f3f0fb" class="outline-3">
+<h3 id="org7f3f0fb">去除字符串中的空格</h3>
+<div class="outline-text-3" id="text-org7f3f0fb">
 <p>
 字符串中存在的首尾空格一般情况下都没有任何意义，如字符串 <code>“ Hello ”</code> ，但是这些空格会影响到字符串的操作，如连接字符串或比较字符串等，所以应该去掉字符串中的首尾空格，这需要使用 String 类提供的 <code>trim()</code> 方法。语法格式如下：
 </p>
@@ -374,9 +374,9 @@ String 类的 <code>toLowerCase()</code> 方法可以将字符串中的所有字
 </div>
 </div>
 
-<div id="outline-container-org6cf818b" class="outline-3">
-<h3 id="org6cf818b">截取子字符串</h3>
-<div class="outline-text-3" id="text-org6cf818b">
+<div id="outline-container-org386d169" class="outline-3">
+<h3 id="org386d169">截取子字符串</h3>
+<div class="outline-text-3" id="text-org386d169">
 <p>
 形式如下：
 </p>
@@ -400,9 +400,9 @@ String 类的 <code>toLowerCase()</code> 方法可以将字符串中的所有字
 </div>
 </div>
 
-<div id="outline-container-org12346d1" class="outline-3">
-<h3 id="org12346d1">分割字符串</h3>
-<div class="outline-text-3" id="text-org12346d1">
+<div id="outline-container-orgcba3003" class="outline-3">
+<h3 id="orgcba3003">分割字符串</h3>
+<div class="outline-text-3" id="text-orgcba3003">
 <p>
 String 类的 <code>split()</code> 方法可以按指定的分割符对目标字符串进行分割，分割后的内容存放在字符串数组中。该方法主要有以下两种重载形式：
 </p>
@@ -431,9 +431,9 @@ str.split(String sign, int limit)
 </div>
 </div>
 
-<div id="outline-container-orgaeeca87" class="outline-3">
-<h3 id="orgaeeca87">字符串的替换</h3>
-<div class="outline-text-3" id="text-orgaeeca87">
+<div id="outline-container-org3898c9f" class="outline-3">
+<h3 id="org3898c9f">字符串的替换</h3>
+<div class="outline-text-3" id="text-org3898c9f">
 <p>
 <span class="underline">1. replace()</span>
 </p>
@@ -488,9 +488,9 @@ str.split(String sign, int limit)
 </div>
 </div>
 
-<div id="outline-container-org04a3915" class="outline-3">
-<h3 id="org04a3915">字符串比较</h3>
-<div class="outline-text-3" id="text-org04a3915">
+<div id="outline-container-org74a7aa0" class="outline-3">
+<h3 id="org74a7aa0">字符串比较</h3>
+<div class="outline-text-3" id="text-org74a7aa0">
 <p>
 字符串比较是常见的操作，包括比较相等、大小、前缀和后缀等。
 </p>
@@ -536,10 +536,10 @@ str1.equals(str2);
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">s1</span> = <span style="color: #50a14f;">"Hello"</span>;
-<span class="linenr">2: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">s2</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">String</span><span style="color: #4078f2;">(</span>s1<span style="color: #4078f2;">)</span>;
-<span class="linenr">3: </span>System.out.println<span style="color: #4078f2;">(</span>s1.equals<span style="color: #a626a4;">(</span>s2<span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; true</span>
-<span class="linenr">4: </span>System.out.println<span style="color: #4078f2;">(</span>s1 == s2<span style="color: #4078f2;">)</span>;      <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; false</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">s1</span> = <span style="color: #50a14f;">"Hello"</span>;
+<span class="linenr">2: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">s2</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">String</span><span style="color: #707183;">(</span>s1<span style="color: #707183;">)</span>;
+<span class="linenr">3: </span>System.out.println<span style="color: #707183;">(</span>s1.equals<span style="color: #7388d6;">(</span>s2<span style="color: #7388d6;">)</span><span style="color: #707183;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; true</span>
+<span class="linenr">4: </span>System.out.println<span style="color: #707183;">(</span>s1 == s2<span style="color: #707183;">)</span>;      <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; false</span>
 </pre>
 </div>
 
@@ -587,9 +587,9 @@ str.compartTo(String otherstr);
 </div>
 </div>
 
-<div id="outline-container-org2be9770" class="outline-3">
-<h3 id="org2be9770">字符串查找</h3>
-<div class="outline-text-3" id="text-org2be9770">
+<div id="outline-container-org535a99b" class="outline-3">
+<h3 id="org535a99b">字符串查找</h3>
+<div class="outline-text-3" id="text-org535a99b">
 <p>
 在给定的字符串中查找字符或字符串是比较常见的操作。字符串查找分为两种形式：
 </p>
@@ -646,16 +646,16 @@ str.lastIndexOf(value, int fromIndex)
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21407;&#22987;&#23383;&#31526;&#20018;&#26159; "today,monday,sunday"</span>
-<span class="linenr"> 2: </span>indexOf<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"day"</span><span style="color: #4078f2;">)</span>;                 <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 2</span>
-<span class="linenr"> 3: </span>indexOf<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"day"</span>, 5<span style="color: #4078f2;">)</span>;              <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 9</span>
-<span class="linenr"> 4: </span>indexOf<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"o"</span><span style="color: #4078f2;">)</span>;                   <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 1</span>
-<span class="linenr"> 5: </span>indexOf<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"o"</span>, 6<span style="color: #4078f2;">)</span>;                <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 7</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21407;&#22987;&#23383;&#31526;&#20018;&#26159; "today,monday,sunday"</span>
+<span class="linenr"> 2: </span>indexOf<span style="color: #707183;">(</span><span style="color: #50a14f;">"day"</span><span style="color: #707183;">)</span>;                 <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 2</span>
+<span class="linenr"> 3: </span>indexOf<span style="color: #707183;">(</span><span style="color: #50a14f;">"day"</span>, 5<span style="color: #707183;">)</span>;              <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 9</span>
+<span class="linenr"> 4: </span>indexOf<span style="color: #707183;">(</span><span style="color: #50a14f;">"o"</span><span style="color: #707183;">)</span>;                   <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 1</span>
+<span class="linenr"> 5: </span>indexOf<span style="color: #707183;">(</span><span style="color: #50a14f;">"o"</span>, 6<span style="color: #707183;">)</span>;                <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 7</span>
 <span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span>lastIndexOf<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"day"</span><span style="color: #4078f2;">)</span>;             <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 16</span>
-<span class="linenr"> 8: </span>lastIndexOf<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"day"</span>, 5<span style="color: #4078f2;">)</span>;          <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 2</span>
-<span class="linenr"> 9: </span>lastIndexOf<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"o"</span><span style="color: #4078f2;">)</span>;               <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 7</span>
-<span class="linenr">10: </span>lastIndexOf<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"o"</span>, 6<span style="color: #4078f2;">)</span>;            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 1</span>
+<span class="linenr"> 7: </span>lastIndexOf<span style="color: #707183;">(</span><span style="color: #50a14f;">"day"</span><span style="color: #707183;">)</span>;             <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 16</span>
+<span class="linenr"> 8: </span>lastIndexOf<span style="color: #707183;">(</span><span style="color: #50a14f;">"day"</span>, 5<span style="color: #707183;">)</span>;          <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 2</span>
+<span class="linenr"> 9: </span>lastIndexOf<span style="color: #707183;">(</span><span style="color: #50a14f;">"o"</span><span style="color: #707183;">)</span>;               <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 7</span>
+<span class="linenr">10: </span>lastIndexOf<span style="color: #707183;">(</span><span style="color: #50a14f;">"o"</span>, 6<span style="color: #707183;">)</span>;            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 1</span>
 </pre>
 </div>
 
@@ -678,9 +678,9 @@ String 类的 <code>charAt()</code> 方法可以在字符串内根据指定的�
 </div>
 </div>
 
-<div id="outline-container-org658dc53" class="outline-2">
-<h2 id="org658dc53">StringBuffer 类</h2>
-<div class="outline-text-2" id="text-org658dc53">
+<div id="outline-container-org680456c" class="outline-2">
+<h2 id="org680456c">StringBuffer 类</h2>
+<div class="outline-text-2" id="text-org680456c">
 <p>
 在 Java 中，除了通过 String 类创建和处理字符串之外，还可以使用 StringBuffer 类来处理字符串，它可以比 String 类更高效地处理字符串。
 </p>
@@ -731,10 +731,10 @@ StringBuffer 对象.setCharAt(int index, char ch);
 </pre>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">StringBuffer</span> <span style="color: #6a1868;">sb</span> = <span style="color: #e45649;">new</span> <span style="color: #986801;">StringBuffer</span><span style="color: #4078f2;">(</span><span style="color: #50a14f;">"hello"</span><span style="color: #4078f2;">)</span>;
-<span class="linenr">2: </span>sb.setCharAt<span style="color: #4078f2;">(</span>1, <span style="color: #50a14f;">'E'</span><span style="color: #4078f2;">)</span>;           <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; hEllo</span>
-<span class="linenr">3: </span>sb.setCharAt<span style="color: #4078f2;">(</span>0, <span style="color: #50a14f;">'H'</span><span style="color: #4078f2;">)</span>;           <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; HEllo</span>
-<span class="linenr">4: </span><span style="color: #b751b6;">sb</span>.Setcharat<span style="color: #4078f2;">(</span>2, <span style="color: #50a14f;">'p'</span><span style="color: #4078f2;">)</span>;           <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; HEplo</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">StringBuffer</span> <span style="color: #8b4513;">sb</span> = <span style="color: #a626a4;">new</span> <span style="color: #c18401;">StringBuffer</span><span style="color: #707183;">(</span><span style="color: #50a14f;">"hello"</span><span style="color: #707183;">)</span>;
+<span class="linenr">2: </span>sb.setCharAt<span style="color: #707183;">(</span>1, <span style="color: #50a14f;">'E'</span><span style="color: #707183;">)</span>;           <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; hEllo</span>
+<span class="linenr">3: </span>sb.setCharAt<span style="color: #707183;">(</span>0, <span style="color: #50a14f;">'H'</span><span style="color: #707183;">)</span>;           <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; HEllo</span>
+<span class="linenr">4: </span><span style="color: #008b8b;">sb</span>.Setcharat<span style="color: #707183;">(</span>2, <span style="color: #50a14f;">'p'</span><span style="color: #707183;">)</span>;           <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; HEplo</span>
 </pre>
 </div>
 
@@ -829,13 +829,13 @@ StringBuffer 就是为了解决大量拼接字符串时产生很多中间对象�
 </div>
 </div>
 
-<div id="outline-container-orgef75eb7" class="outline-2">
-<h2 id="orgef75eb7">正则表达式</h2>
-<div class="outline-text-2" id="text-orgef75eb7">
+<div id="outline-container-orgf5cd60f" class="outline-2">
+<h2 id="orgf5cd60f">正则表达式</h2>
+<div class="outline-text-2" id="text-orgf5cd60f">
 </div>
-<div id="outline-container-orgbad95f7" class="outline-3">
-<h3 id="orgbad95f7">理解正则表达式</h3>
-<div class="outline-text-3" id="text-orgbad95f7">
+<div id="outline-container-org163c1f0" class="outline-3">
+<h3 id="org163c1f0">理解正则表达式</h3>
+<div class="outline-text-3" id="text-org163c1f0">
 <p>
 正则表达式（Regular Expression）是一个强大的字符串处理工具，可以对字符进行查找、提取、分割、替换等操作，是一种用于模式匹配和替换的规范。
 </p>
@@ -1051,9 +1051,9 @@ String 类里也提供了如下几个特殊的方法：
 将上面多个字符拼起来，就可以创建一个正则表达式，还是来看几个例子吧：
 </p>
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #50a14f;">"\u0041\\\\"</span>                    <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#21305;&#37197; A\</span>
-<span class="linenr">2: </span><span style="color: #50a14f;">"\u0061\t"</span>                      <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#21305;&#37197; a&lt;&#21046;&#34920;&#31526;&gt;</span>
-<span class="linenr">3: </span><span style="color: #50a14f;">"\\?\\["</span>                        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#21305;&#37197; ?[</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #50a14f;">"\u0041\\\\"</span>                    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#21305;&#37197; A\</span>
+<span class="linenr">2: </span><span style="color: #50a14f;">"\u0061\t"</span>                      <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#21305;&#37197; a&lt;&#21046;&#34920;&#31526;&gt;</span>
+<span class="linenr">3: </span><span style="color: #50a14f;">"\\?\\["</span>                        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#21305;&#37197; ?[</span>
 </pre>
 </div>
 
@@ -1140,8 +1140,8 @@ Java 中的正则表达式和 Emacs Lisp 中的一样让人感到…… xx?+-^|.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #50a14f;">"c\\wt"</span>                            <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#21487;&#20197;&#21305;&#37197; cat cbt cct cOt c9t &#31561;&#19968;&#25209;&#23383;&#31526;&#20018;</span>
-<span class="linenr">2: </span><span style="color: #50a14f;">"\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d"</span> <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#21305;&#37197; 000-000-0000 &#24418;&#24335;&#30340;&#30005;&#35805;&#21495;&#30721;</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #50a14f;">"c\\wt"</span>                            <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#21487;&#20197;&#21305;&#37197; cat cbt cct cOt c9t &#31561;&#19968;&#25209;&#23383;&#31526;&#20018;</span>
+<span class="linenr">2: </span><span style="color: #50a14f;">"\\d\\d\\d-\\d\\d\\d-\\d\\d\\d\\d"</span> <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#21305;&#37197; 000-000-0000 &#24418;&#24335;&#30340;&#30005;&#35805;&#21495;&#30721;</span>
 </pre>
 </div>
 
@@ -1381,18 +1381,18 @@ Java 中的正则表达式和 Emacs Lisp 中的一样让人感到…… xx?+-^|.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">String</span> <span style="color: #6a1868;">str</span> = <span style="color: #50a14f;">"hello, java"</span>;
-<span class="linenr">2: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#36138;&#23146;&#27169;&#24335;&#30340;&#27491;&#21017;&#34920;&#36798;&#24335;</span>
-<span class="linenr">3: </span>System.out.println<span style="color: #4078f2;">(</span>str.replaceFirst<span style="color: #a626a4;">(</span><span style="color: #50a14f;">"\\w*"</span>, <span style="color: #50a14f;">"&#9632;"</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>;  <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#9632;, java!</span>
-<span class="linenr">4: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21193;&#24378;&#27169;&#24335;&#30340;&#27491;&#21017;&#34920;&#36798;&#24335;</span>
-<span class="linenr">5: </span>System.out.println<span style="color: #4078f2;">(</span>str.replaceFirst<span style="color: #a626a4;">(</span><span style="color: #50a14f;">"\\w*?"</span>, <span style="color: #50a14f;">"&#9632;"</span><span style="color: #a626a4;">)</span><span style="color: #4078f2;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; &#9632;hello, java!</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">str</span> = <span style="color: #50a14f;">"hello, java"</span>;
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#36138;&#23146;&#27169;&#24335;&#30340;&#27491;&#21017;&#34920;&#36798;&#24335;</span>
+<span class="linenr">3: </span>System.out.println<span style="color: #707183;">(</span>str.replaceFirst<span style="color: #7388d6;">(</span><span style="color: #50a14f;">"\\w*"</span>, <span style="color: #50a14f;">"&#9632;"</span><span style="color: #7388d6;">)</span><span style="color: #707183;">)</span>;  <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#9632;, java!</span>
+<span class="linenr">4: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21193;&#24378;&#27169;&#24335;&#30340;&#27491;&#21017;&#34920;&#36798;&#24335;</span>
+<span class="linenr">5: </span>System.out.println<span style="color: #707183;">(</span>str.replaceFirst<span style="color: #7388d6;">(</span><span style="color: #50a14f;">"\\w*?"</span>, <span style="color: #50a14f;">"&#9632;"</span><span style="color: #7388d6;">)</span><span style="color: #707183;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; &#9632;hello, java!</span>
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-org8726c33" class="outline-3">
-<h3 id="org8726c33">Pattern 类和 Matcher 类</h3>
-<div class="outline-text-3" id="text-org8726c33">
+<div id="outline-container-org75428ce" class="outline-3">
+<h3 id="org75428ce">Pattern 类和 Matcher 类</h3>
+<div class="outline-text-3" id="text-org75428ce">
 <p>
 <code>java.util.regex</code> 是一个用正则表达式所订制的模式来对字符串进行匹配工作的类库包，它包括两个类： <code>Pattern</code> 和 <code>Matcher</code> 。
 </p>
@@ -1406,11 +1406,11 @@ Pattern 对象是正则表达式编译后在内存中的表示形式，因此，
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23558;&#19968;&#20010;&#23383;&#31526;&#20018;&#32534;&#35793;&#25104; Pattern &#23545;&#35937;</span>
-<span class="linenr">2: </span><span style="color: #986801;">Pattern</span> <span style="color: #6a1868;">p</span> = Pattern.compile<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"a*b"</span><span style="color: #4078f2;">)</span>;
-<span class="linenr">3: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20351;&#29992; Pattern &#23545;&#35937;&#21019;&#24314; Matcher &#23545;&#35937;</span>
-<span class="linenr">4: </span><span style="color: #986801;">Matcher</span> <span style="color: #6a1868;">m</span> = p.matcher<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"aaaaab"</span><span style="color: #4078f2;">)</span>;
-<span class="linenr">5: </span><span style="color: #986801;">boolean</span> <span style="color: #6a1868;">b</span> = m.mathces<span style="color: #4078f2;">()</span>;       <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; true</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23558;&#19968;&#20010;&#23383;&#31526;&#20018;&#32534;&#35793;&#25104; Pattern &#23545;&#35937;</span>
+<span class="linenr">2: </span><span style="color: #c18401;">Pattern</span> <span style="color: #8b4513;">p</span> = Pattern.compile<span style="color: #707183;">(</span><span style="color: #50a14f;">"a*b"</span><span style="color: #707183;">)</span>;
+<span class="linenr">3: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20351;&#29992; Pattern &#23545;&#35937;&#21019;&#24314; Matcher &#23545;&#35937;</span>
+<span class="linenr">4: </span><span style="color: #c18401;">Matcher</span> <span style="color: #8b4513;">m</span> = p.matcher<span style="color: #707183;">(</span><span style="color: #50a14f;">"aaaaab"</span><span style="color: #707183;">)</span>;
+<span class="linenr">5: </span><span style="color: #c18401;">boolean</span> <span style="color: #8b4513;">b</span> = m.mathces<span style="color: #707183;">()</span>;       <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; true</span>
 </pre>
 </div>
 
@@ -1419,7 +1419,7 @@ Pattern 对象是正则表达式编译后在内存中的表示形式，因此，
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #986801;">boolean</span> <span style="color: #6a1868;">b</span> = Patter.matches<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"a*b"</span>, <span style="color: #50a14f;">"aaaaab"</span><span style="color: #4078f2;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; true</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #c18401;">boolean</span> <span style="color: #8b4513;">b</span> = Patter.matches<span style="color: #707183;">(</span><span style="color: #50a14f;">"a*b"</span>, <span style="color: #50a14f;">"aaaaab"</span><span style="color: #707183;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; true</span>
 </pre>
 </div>
 
@@ -1494,23 +1494,23 @@ Pattern 对象是正则表达式编译后在内存中的表示形式，因此，
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">FindGroup</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#20351;&#29992;&#23383;&#31526;&#20018;&#27178;&#25209;&#20174;&#32593;&#32476;&#19978;&#24471;&#21040;&#30340;&#32593;&#39029;&#28304;&#30721;</span>
-<span class="linenr"> 4: </span>        <span style="color: #986801;">String</span> <span style="color: #6a1868;">str</span> = <span style="color: #50a14f;">"&#25105;&#24819;&#25214;&#19968;&#22871;&#36866;&#21512;&#33258;&#24049;&#30340;JAVA&#25945;&#31243;&#65292;&#23613;&#24555;&#32852;&#31995;&#25105;13500006666"</span> + <span style="color: #50a14f;">"&#20132;&#26379;&#21451;&#65292;&#30005;&#35805;&#21495;&#30721;&#26159;13611125565"</span> + <span style="color: #50a14f;">"&#20986;&#21806;&#20108;&#25163;&#30005;&#33041;&#65292;&#32852;&#31995;&#26041;&#24335;15899903312"</span>;
-<span class="linenr"> 5: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21019;&#24314;&#19968;&#20010; Pattern &#23545;&#35937;&#65292;&#24182;&#29992;&#23427;&#24314;&#31435;&#19968;&#20010; Matcher &#23545;&#35937;</span>
-<span class="linenr"> 6: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#35813;&#27491;&#21017;&#34920;&#36798;&#24335;&#21482;&#25235;&#21462; 13X &#21644; 15X &#27573;&#30340;&#25163;&#26426;&#21495;</span>
-<span class="linenr"> 7: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23454;&#38469;&#35201;&#25235;&#21462;&#21738;&#20123;&#30005;&#35805;&#21495;&#30721;&#65292;&#21482;&#35201;&#20462;&#25913;&#27491;&#21017;&#34920;&#36798;&#24335;&#22909;&#21487;</span>
-<span class="linenr"> 8: </span>        <span style="color: #986801;">Matcher</span> <span style="color: #6a1868;">m</span> = Pattern.compile<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"((13\\d)|(15\\d))\\d{8}"</span><span style="color: #50a14f;">)</span>.matcher<span style="color: #50a14f;">(</span>str<span style="color: #50a14f;">)</span>;
-<span class="linenr"> 9: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#23558;&#25152;&#26377;&#31526;&#21512;&#27491;&#21017;&#34920;&#36798;&#24335;&#30340;&#23376;&#20018;&#65288;&#30005;&#35805;&#21495;&#30721;&#65289;&#20840;&#37096;&#36755;&#20986;</span>
-<span class="linenr">10: </span>        <span style="color: #e45649;">while</span> <span style="color: #50a14f;">(</span>m.find<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr">11: </span>            System.out.println<span style="color: #da8548;">(</span>m.group<span style="color: #b751b6;">()</span><span style="color: #da8548;">)</span>;
-<span class="linenr">12: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">13: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">14: </span><span style="color: #4078f2;">}</span>
-<span class="linenr">15: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 13500006666</span>
-<span class="linenr">16: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 13611125565</span>
-<span class="linenr">17: </span><span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; 15899903312</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">FindGroup</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20351;&#29992;&#23383;&#31526;&#20018;&#27178;&#25209;&#20174;&#32593;&#32476;&#19978;&#24471;&#21040;&#30340;&#32593;&#39029;&#28304;&#30721;</span>
+<span class="linenr"> 4: </span>        <span style="color: #c18401;">String</span> <span style="color: #8b4513;">str</span> = <span style="color: #50a14f;">"&#25105;&#24819;&#25214;&#19968;&#22871;&#36866;&#21512;&#33258;&#24049;&#30340;JAVA&#25945;&#31243;&#65292;&#23613;&#24555;&#32852;&#31995;&#25105;13500006666"</span> + <span style="color: #50a14f;">"&#20132;&#26379;&#21451;&#65292;&#30005;&#35805;&#21495;&#30721;&#26159;13611125565"</span> + <span style="color: #50a14f;">"&#20986;&#21806;&#20108;&#25163;&#30005;&#33041;&#65292;&#32852;&#31995;&#26041;&#24335;15899903312"</span>;
+<span class="linenr"> 5: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21019;&#24314;&#19968;&#20010; Pattern &#23545;&#35937;&#65292;&#24182;&#29992;&#23427;&#24314;&#31435;&#19968;&#20010; Matcher &#23545;&#35937;</span>
+<span class="linenr"> 6: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#35813;&#27491;&#21017;&#34920;&#36798;&#24335;&#21482;&#25235;&#21462; 13X &#21644; 15X &#27573;&#30340;&#25163;&#26426;&#21495;</span>
+<span class="linenr"> 7: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23454;&#38469;&#35201;&#25235;&#21462;&#21738;&#20123;&#30005;&#35805;&#21495;&#30721;&#65292;&#21482;&#35201;&#20462;&#25913;&#27491;&#21017;&#34920;&#36798;&#24335;&#22909;&#21487;</span>
+<span class="linenr"> 8: </span>        <span style="color: #c18401;">Matcher</span> <span style="color: #8b4513;">m</span> = Pattern.compile<span style="color: #909183;">(</span><span style="color: #50a14f;">"((13\\d)|(15\\d))\\d{8}"</span><span style="color: #909183;">)</span>.matcher<span style="color: #909183;">(</span>str<span style="color: #909183;">)</span>;
+<span class="linenr"> 9: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#23558;&#25152;&#26377;&#31526;&#21512;&#27491;&#21017;&#34920;&#36798;&#24335;&#30340;&#23376;&#20018;&#65288;&#30005;&#35805;&#21495;&#30721;&#65289;&#20840;&#37096;&#36755;&#20986;</span>
+<span class="linenr">10: </span>        <span style="color: #a626a4;">while</span> <span style="color: #909183;">(</span>m.find<span style="color: #709870;">()</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr">11: </span>            System.out.println<span style="color: #709870;">(</span>m.group<span style="color: #907373;">()</span><span style="color: #709870;">)</span>;
+<span class="linenr">12: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">13: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">14: </span><span style="color: #707183;">}</span>
+<span class="linenr">15: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 13500006666</span>
+<span class="linenr">16: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 13611125565</span>
+<span class="linenr">17: </span><span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; 15899903312</span>
 </pre>
 </div>
 
@@ -1529,17 +1529,17 @@ Pattern 对象是正则表达式编译后在内存中的表示形式，因此，
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">StartEnd</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#21019;&#24314;&#19968;&#20010; Pattern &#23545;&#35937;&#65292;&#24182;&#29992;&#23427;&#24314;&#31435;&#19968;&#20010; Matcher &#23545;&#35937;</span>
-<span class="linenr"> 4: </span>        <span style="color: #986801;">String</span> <span style="color: #6a1868;">regStr</span> = <span style="color: #50a14f;">"Java is very easy!"</span>;
-<span class="linenr"> 5: </span>        System.out.println<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"&#30446;&#26631;&#23383;&#31526;&#20018;&#26159;&#65306;"</span> + regStr<span style="color: #50a14f;">)</span>;
-<span class="linenr"> 6: </span>        <span style="color: #986801;">Matcher</span> <span style="color: #6a1868;">m</span> = Pattern.compile<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"\\w+"</span><span style="color: #50a14f;">)</span>.matcher<span style="color: #50a14f;">(</span>regStr<span style="color: #50a14f;">)</span>;
-<span class="linenr"> 7: </span>        <span style="color: #e45649;">while</span> <span style="color: #50a14f;">(</span>m.find<span style="color: #da8548;">()</span><span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 8: </span>            System.out.println<span style="color: #da8548;">(</span>m.group<span style="color: #b751b6;">()</span> + <span style="color: #50a14f;">"&#23376;&#20018;&#30340;&#36215;&#22987;&#20301;&#32622;&#65306;"</span> + m.start<span style="color: #b751b6;">()</span> + <span style="color: #50a14f;">"&#65292;&#20854;&#32467;&#26463;&#20301;&#32622;&#65306;"</span> + m.end<span style="color: #b751b6;">()</span><span style="color: #da8548;">)</span>;
-<span class="linenr"> 9: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">10: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">11: </span><span style="color: #4078f2;">}</span>
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">StartEnd</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21019;&#24314;&#19968;&#20010; Pattern &#23545;&#35937;&#65292;&#24182;&#29992;&#23427;&#24314;&#31435;&#19968;&#20010; Matcher &#23545;&#35937;</span>
+<span class="linenr"> 4: </span>        <span style="color: #c18401;">String</span> <span style="color: #8b4513;">regStr</span> = <span style="color: #50a14f;">"Java is very easy!"</span>;
+<span class="linenr"> 5: </span>        System.out.println<span style="color: #909183;">(</span><span style="color: #50a14f;">"&#30446;&#26631;&#23383;&#31526;&#20018;&#26159;&#65306;"</span> + regStr<span style="color: #909183;">)</span>;
+<span class="linenr"> 6: </span>        <span style="color: #c18401;">Matcher</span> <span style="color: #8b4513;">m</span> = Pattern.compile<span style="color: #909183;">(</span><span style="color: #50a14f;">"\\w+"</span><span style="color: #909183;">)</span>.matcher<span style="color: #909183;">(</span>regStr<span style="color: #909183;">)</span>;
+<span class="linenr"> 7: </span>        <span style="color: #a626a4;">while</span> <span style="color: #909183;">(</span>m.find<span style="color: #709870;">()</span><span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 8: </span>            System.out.println<span style="color: #709870;">(</span>m.group<span style="color: #907373;">()</span> + <span style="color: #50a14f;">"&#23376;&#20018;&#30340;&#36215;&#22987;&#20301;&#32622;&#65306;"</span> + m.start<span style="color: #907373;">()</span> + <span style="color: #50a14f;">"&#65292;&#20854;&#32467;&#26463;&#20301;&#32622;&#65306;"</span> + m.end<span style="color: #907373;">()</span><span style="color: #709870;">)</span>;
+<span class="linenr"> 9: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">10: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">11: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1564,25 +1564,25 @@ easy子串的起始位置：13，其结束位置：17
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">MatchesTest</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">mails</span> = <span style="color: #50a14f;">{</span><span style="color: #50a14f;">"kongyeeku@163.com"</span>, <span style="color: #50a14f;">"kongyeeku@gmail.com"</span>, <span style="color: #50a14f;">"ligang@crazyit.org"</span>, <span style="color: #50a14f;">"wawa@abc.xx"</span><span style="color: #50a14f;">}</span>;
-<span class="linenr"> 4: </span>        <span style="color: #986801;">String</span> <span style="color: #6a1868;">mailRegEx</span> = <span style="color: #50a14f;">"\\w{3, 20}@\\w+\\.(com|org|cn|net|gov)"</span>;
-<span class="linenr"> 5: </span>        <span style="color: #986801;">Pattern</span> <span style="color: #6a1868;">mailPattern</span> = Pattern.compile<span style="color: #50a14f;">(</span>mailRegEx<span style="color: #50a14f;">)</span>;
-<span class="linenr"> 6: </span>        <span style="color: #986801;">Matcher</span> <span style="color: #6a1868;">matcher</span> = <span style="color: #b751b6;">null</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">MatchesTest</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">mails</span> = <span style="color: #909183;">{</span><span style="color: #50a14f;">"kongyeeku@163.com"</span>, <span style="color: #50a14f;">"kongyeeku@gmail.com"</span>, <span style="color: #50a14f;">"ligang@crazyit.org"</span>, <span style="color: #50a14f;">"wawa@abc.xx"</span><span style="color: #909183;">}</span>;
+<span class="linenr"> 4: </span>        <span style="color: #c18401;">String</span> <span style="color: #8b4513;">mailRegEx</span> = <span style="color: #50a14f;">"\\w{3, 20}@\\w+\\.(com|org|cn|net|gov)"</span>;
+<span class="linenr"> 5: </span>        <span style="color: #c18401;">Pattern</span> <span style="color: #8b4513;">mailPattern</span> = Pattern.compile<span style="color: #909183;">(</span>mailRegEx<span style="color: #909183;">)</span>;
+<span class="linenr"> 6: </span>        <span style="color: #c18401;">Matcher</span> <span style="color: #8b4513;">matcher</span> = <span style="color: #008b8b;">null</span>;
 <span class="linenr"> 7: </span>
-<span class="linenr"> 8: </span>        <span style="color: #e45649;">for</span> <span style="color: #50a14f;">(</span><span style="color: #986801;">String</span> <span style="color: #6a1868;">mail</span> : mails<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 9: </span>            <span style="color: #e45649;">if</span> <span style="color: #da8548;">(</span>matcher == <span style="color: #b751b6;">null</span><span style="color: #da8548;">)</span> <span style="color: #da8548;">{</span>
-<span class="linenr">10: </span>                matcher = mailPattern.matcher<span style="color: #b751b6;">(</span>mail<span style="color: #b751b6;">)</span>;
-<span class="linenr">11: </span>            <span style="color: #da8548;">}</span> <span style="color: #e45649;">else</span> <span style="color: #da8548;">{</span>
-<span class="linenr">12: </span>                matcher.reset<span style="color: #b751b6;">(</span>mail<span style="color: #b751b6;">)</span>;
-<span class="linenr">13: </span>            <span style="color: #da8548;">}</span>
+<span class="linenr"> 8: </span>        <span style="color: #a626a4;">for</span> <span style="color: #909183;">(</span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">mail</span> : mails<span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 9: </span>            <span style="color: #a626a4;">if</span> <span style="color: #709870;">(</span>matcher == <span style="color: #008b8b;">null</span><span style="color: #709870;">)</span> <span style="color: #709870;">{</span>
+<span class="linenr">10: </span>                matcher = mailPattern.matcher<span style="color: #907373;">(</span>mail<span style="color: #907373;">)</span>;
+<span class="linenr">11: </span>            <span style="color: #709870;">}</span> <span style="color: #a626a4;">else</span> <span style="color: #709870;">{</span>
+<span class="linenr">12: </span>                matcher.reset<span style="color: #907373;">(</span>mail<span style="color: #907373;">)</span>;
+<span class="linenr">13: </span>            <span style="color: #709870;">}</span>
 <span class="linenr">14: </span>
-<span class="linenr">15: </span>            <span style="color: #986801;">String</span> <span style="color: #6a1868;">result</span> = mail + <span style="color: #da8548;">(</span>matcher.matches<span style="color: #b751b6;">()</span> ? <span style="color: #50a14f;">"&#26159;"</span> : <span style="color: #50a14f;">"&#19981;&#26159;"</span> + <span style="color: #50a14f;">"&#19968;&#20010;&#26377;&#25928;&#30340;&#37038;&#20214;&#22320;&#22336;&#65281;"</span><span style="color: #da8548;">)</span>;
-<span class="linenr">16: </span>            System.out.println<span style="color: #da8548;">(</span>result<span style="color: #da8548;">)</span>;
-<span class="linenr">17: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">18: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">19: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">15: </span>            <span style="color: #c18401;">String</span> <span style="color: #8b4513;">result</span> = mail + <span style="color: #709870;">(</span>matcher.matches<span style="color: #907373;">()</span> ? <span style="color: #50a14f;">"&#26159;"</span> : <span style="color: #50a14f;">"&#19981;&#26159;"</span> + <span style="color: #50a14f;">"&#19968;&#20010;&#26377;&#25928;&#30340;&#37038;&#20214;&#22320;&#22336;&#65281;"</span><span style="color: #709870;">)</span>;
+<span class="linenr">16: </span>            System.out.println<span style="color: #709870;">(</span>result<span style="color: #709870;">)</span>;
+<span class="linenr">17: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">18: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">19: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1599,7 +1599,7 @@ easy子串的起始位置：13，其结束位置：17
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr">1: </span><span style="color: #50a14f;">"kongyeeku@163.com"</span>.matches<span style="color: #4078f2;">(</span><span style="color: #50a14f;">"\\w{3, 20}@\\w+\\.(com|org|cn|net|gov)"</span><span style="color: #4078f2;">)</span>; <span style="color: #9ca0a4;">// </span><span style="color: #9ca0a4;">&#8594; true</span>
+<pre class="src src-java"><span class="linenr">1: </span><span style="color: #50a14f;">"kongyeeku@163.com"</span>.matches<span style="color: #707183;">(</span><span style="color: #50a14f;">"\\w{3, 20}@\\w+\\.(com|org|cn|net|gov)"</span><span style="color: #707183;">)</span>; <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#8594; true</span>
 </pre>
 </div>
 
@@ -1608,23 +1608,23 @@ easy子串的起始位置：13，其结束位置：17
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">ReplaceTest</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">msgs</span> = <span style="color: #50a14f;">{</span> <span style="color: #50a14f;">"Java has regular expressions in 1.4"</span>, <span style="color: #50a14f;">"regular expressions now expressing in Java"</span><span style="color: #50a14f;">}</span>;
-<span class="linenr"> 4: </span>        <span style="color: #986801;">Pattern</span> <span style="color: #6a1868;">p</span> = Pattern.compile<span style="color: #50a14f;">(</span><span style="color: #50a14f;">"re\\w*"</span><span style="color: #50a14f;">)</span>;
-<span class="linenr"> 5: </span>        <span style="color: #986801;">Matcher</span> <span style="color: #6a1868;">matcher</span> = <span style="color: #b751b6;">null</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">ReplaceTest</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">msgs</span> = <span style="color: #909183;">{</span> <span style="color: #50a14f;">"Java has regular expressions in 1.4"</span>, <span style="color: #50a14f;">"regular expressions now expressing in Java"</span><span style="color: #909183;">}</span>;
+<span class="linenr"> 4: </span>        <span style="color: #c18401;">Pattern</span> <span style="color: #8b4513;">p</span> = Pattern.compile<span style="color: #909183;">(</span><span style="color: #50a14f;">"re\\w*"</span><span style="color: #909183;">)</span>;
+<span class="linenr"> 5: </span>        <span style="color: #c18401;">Matcher</span> <span style="color: #8b4513;">matcher</span> = <span style="color: #008b8b;">null</span>;
 <span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span>        <span style="color: #e45649;">for</span> <span style="color: #50a14f;">(</span><span style="color: #986801;">int</span> <span style="color: #6a1868;">i</span> = 0; i &lt; msgs.<span style="color: #986801;">length</span>; i++<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 8: </span>            <span style="color: #e45649;">if</span> <span style="color: #da8548;">(</span>matcher == <span style="color: #b751b6;">null</span><span style="color: #da8548;">)</span> <span style="color: #da8548;">{</span>
-<span class="linenr"> 9: </span>                matcher = p.matcher<span style="color: #b751b6;">(</span>msgs<span style="color: #986801;">[</span>i<span style="color: #986801;">]</span><span style="color: #b751b6;">)</span>;
-<span class="linenr">10: </span>            <span style="color: #da8548;">}</span> <span style="color: #e45649;">else</span> <span style="color: #da8548;">{</span>
-<span class="linenr">11: </span>                matcher.reset<span style="color: #b751b6;">(</span>msgs<span style="color: #986801;">[</span>i<span style="color: #986801;">]</span><span style="color: #b751b6;">)</span>;
-<span class="linenr">12: </span>            <span style="color: #da8548;">}</span>
+<span class="linenr"> 7: </span>        <span style="color: #a626a4;">for</span> <span style="color: #909183;">(</span><span style="color: #c18401;">int</span> <span style="color: #8b4513;">i</span> = 0; i &lt; msgs.<span style="color: #c18401;">length</span>; i++<span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 8: </span>            <span style="color: #a626a4;">if</span> <span style="color: #709870;">(</span>matcher == <span style="color: #008b8b;">null</span><span style="color: #709870;">)</span> <span style="color: #709870;">{</span>
+<span class="linenr"> 9: </span>                matcher = p.matcher<span style="color: #907373;">(</span>msgs<span style="color: #6276ba;">[</span>i<span style="color: #6276ba;">]</span><span style="color: #907373;">)</span>;
+<span class="linenr">10: </span>            <span style="color: #709870;">}</span> <span style="color: #a626a4;">else</span> <span style="color: #709870;">{</span>
+<span class="linenr">11: </span>                matcher.reset<span style="color: #907373;">(</span>msgs<span style="color: #6276ba;">[</span>i<span style="color: #6276ba;">]</span><span style="color: #907373;">)</span>;
+<span class="linenr">12: </span>            <span style="color: #709870;">}</span>
 <span class="linenr">13: </span>
-<span class="linenr">14: </span>            System.out.println<span style="color: #da8548;">(</span>matcher.replaceAll<span style="color: #b751b6;">(</span><span style="color: #50a14f;">"&#21704;&#21704; :)"</span><span style="color: #b751b6;">)</span><span style="color: #da8548;">)</span>;
-<span class="linenr">15: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr">16: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">17: </span><span style="color: #4078f2;">}</span>
+<span class="linenr">14: </span>            System.out.println<span style="color: #709870;">(</span>matcher.replaceAll<span style="color: #907373;">(</span><span style="color: #50a14f;">"&#21704;&#21704; :)"</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span>;
+<span class="linenr">15: </span>        <span style="color: #909183;">}</span>
+<span class="linenr">16: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">17: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -1633,16 +1633,16 @@ easy子串的起始位置：13，其结束位置：17
 </p>
 
 <div class="org-src-container">
-<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #e45649;">public</span> <span style="color: #e45649;">class</span> <span style="color: #986801;">StringReg</span> <span style="color: #4078f2;">{</span>
-<span class="linenr"> 2: </span>    <span style="color: #e45649;">public</span> <span style="color: #e45649;">static</span> <span style="color: #986801;">void</span> <span style="color: #a626a4;">main</span><span style="color: #a626a4;">(</span><span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">args</span><span style="color: #a626a4;">)</span> <span style="color: #a626a4;">{</span>
-<span class="linenr"> 3: </span>        <span style="color: #986801;">String</span><span style="color: #50a14f;">[]</span> <span style="color: #6a1868;">msgs</span> = <span style="color: #50a14f;">{</span> <span style="color: #50a14f;">"Java has regular expressions in 1.4"</span>, <span style="color: #50a14f;">"regular expressions now expressing in Java"</span>, <span style="color: #50a14f;">"Java represses oracular expressions"</span><span style="color: #50a14f;">}</span>;
+<pre class="src src-java"><span class="linenr"> 1: </span><span style="color: #a626a4;">public</span> <span style="color: #a626a4;">class</span> <span style="color: #c18401;">StringReg</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a626a4;">public</span> <span style="color: #a626a4;">static</span> <span style="color: #c18401;">void</span> <span style="color: #0184bc;">main</span><span style="color: #7388d6;">(</span><span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">args</span><span style="color: #7388d6;">)</span> <span style="color: #7388d6;">{</span>
+<span class="linenr"> 3: </span>        <span style="color: #c18401;">String</span><span style="color: #909183;">[]</span> <span style="color: #8b4513;">msgs</span> = <span style="color: #909183;">{</span> <span style="color: #50a14f;">"Java has regular expressions in 1.4"</span>, <span style="color: #50a14f;">"regular expressions now expressing in Java"</span>, <span style="color: #50a14f;">"Java represses oracular expressions"</span><span style="color: #909183;">}</span>;
 <span class="linenr"> 4: </span>
-<span class="linenr"> 5: </span>        <span style="color: #e45649;">for</span> <span style="color: #50a14f;">(</span><span style="color: #986801;">String</span> <span style="color: #6a1868;">msg</span> : msgs<span style="color: #50a14f;">)</span> <span style="color: #50a14f;">{</span>
-<span class="linenr"> 6: </span>            System.out.println<span style="color: #da8548;">(</span>msg.replaceFirst<span style="color: #b751b6;">(</span><span style="color: #50a14f;">"re\\w*"</span>, <span style="color: #50a14f;">"&#21704;&#21704;:)"</span><span style="color: #b751b6;">)</span><span style="color: #da8548;">)</span>;
-<span class="linenr"> 7: </span>            System.out.println<span style="color: #da8548;">(</span>Arrays.toString<span style="color: #b751b6;">(</span>msg.split<span style="color: #986801;">(</span><span style="color: #50a14f;">" "</span><span style="color: #986801;">)</span><span style="color: #b751b6;">)</span><span style="color: #da8548;">)</span>;
-<span class="linenr"> 8: </span>        <span style="color: #50a14f;">}</span>
-<span class="linenr"> 9: </span>    <span style="color: #a626a4;">}</span>
-<span class="linenr">10: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 5: </span>        <span style="color: #a626a4;">for</span> <span style="color: #909183;">(</span><span style="color: #c18401;">String</span> <span style="color: #8b4513;">msg</span> : msgs<span style="color: #909183;">)</span> <span style="color: #909183;">{</span>
+<span class="linenr"> 6: </span>            System.out.println<span style="color: #709870;">(</span>msg.replaceFirst<span style="color: #907373;">(</span><span style="color: #50a14f;">"re\\w*"</span>, <span style="color: #50a14f;">"&#21704;&#21704;:)"</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span>;
+<span class="linenr"> 7: </span>            System.out.println<span style="color: #709870;">(</span>Arrays.toString<span style="color: #907373;">(</span>msg.split<span style="color: #6276ba;">(</span><span style="color: #50a14f;">" "</span><span style="color: #6276ba;">)</span><span style="color: #907373;">)</span><span style="color: #709870;">)</span>;
+<span class="linenr"> 8: </span>        <span style="color: #909183;">}</span>
+<span class="linenr"> 9: </span>    <span style="color: #7388d6;">}</span>
+<span class="linenr">10: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 </div>
@@ -1652,7 +1652,7 @@ easy子串的起始位置：13，其结束位置：17
 <div id="postamble" class="status">
 <p class="date">Date: 2020-09-17 Thu 07:54</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:43</p>
+<p class="date">Created: 2021-05-18 Tue 15:53</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-02-23 Tue 17:43 -->
+<!-- 2021-05-18 Tue 15:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CSS 中的动效</title>
 <meta name="generator" content="Org mode">
 <meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/rose-red.png" type="image/x-icon" />
+<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
            <link rel="stylesheet" href="themes/style.css" type="text/css"  />
            <script type="module" src="themes/main.js" defer></script>
 </head>
@@ -18,10 +18,10 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1f62aa4">简介</a></li>
-<li><a href="#org762725b">Transform 变换</a></li>
-<li><a href="#org6065124">Transition 过渡</a></li>
-<li><a href="#org858cdc0">Animation 动画 </a></li>
+<li><a href="#org3b219fb">简介</a></li>
+<li><a href="#orgb852333">Transform 变换</a></li>
+<li><a href="#orgf4a24e1">Transition 过渡</a></li>
+<li><a href="#org08e3b92">Animation 动画 </a></li>
 </ul>
 </div>
 </div>
@@ -33,9 +33,9 @@ CSS 中的 <code>transform、transition</code> 和 <code>animation</code> ，简
 CSS 什么的这种逻辑性略弱、规则性很强的领域，边用边深入就好，不常用的记了也会忘。
 </essay>
 
-<div id="outline-container-org1f62aa4" class="outline-2">
-<h2 id="org1f62aa4">简介</h2>
-<div class="outline-text-2" id="text-org1f62aa4">
+<div id="outline-container-org3b219fb" class="outline-2">
+<h2 id="org3b219fb">简介</h2>
+<div class="outline-text-2" id="text-org3b219fb">
 <p>
 <code>transform</code> 其实是描述元素的静态属性，一旦写到 style 里面，将会直接显示作用，本身不会呈现任何动画效果。
 </p>
@@ -58,9 +58,9 @@ CSS 什么的这种逻辑性略弱、规则性很强的领域，边用边深入�
 </div>
 </div>
 
-<div id="outline-container-org762725b" class="outline-2">
-<h2 id="org762725b">Transform 变换</h2>
-<div class="outline-text-2" id="text-org762725b">
+<div id="outline-container-orgb852333" class="outline-2">
+<h2 id="orgb852333">Transform 变换</h2>
+<div class="outline-text-2" id="text-orgb852333">
 <p>
 <code>transform</code> 属性应用于元素的 2D 或 3D 转换，这个属性允许你将元素旋转，缩放，平移，倾斜（拉伸）等。
 </p>
@@ -127,9 +127,9 @@ transform: none|transform-functions;
 </div>
 </div>
 
-<div id="outline-container-org6065124" class="outline-2">
-<h2 id="org6065124">Transition 过渡</h2>
-<div class="outline-text-2" id="text-org6065124">
+<div id="outline-container-orgf4a24e1" class="outline-2">
+<h2 id="orgf4a24e1">Transition 过渡</h2>
+<div class="outline-text-2" id="text-orgf4a24e1">
 <p>
 <code>transition</code> 属性设置元素当过渡效果。
 </p>
@@ -180,16 +180,16 @@ transition: property duration timing-function delay;
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span class="linenr"> 1: </span><span style="color: #4078f2;">.select </span><span style="color: #4078f2;">{</span>
+<pre class="src src-css"><span class="linenr"> 1: </span><span style="color: #0184bc;">.select </span><span style="color: #707183;">{</span>
 <span class="linenr"> 2: </span>    ...
-<span class="linenr"> 3: </span>    <span style="color: #50a14f;">width</span>: 100px;
-<span class="linenr"> 4: </span>    <span style="color: #50a14f;">transition</span>: width 2s;
+<span class="linenr"> 3: </span>    <span style="color: #a626a4;">width</span>: 100px;
+<span class="linenr"> 4: </span>    <span style="color: #a626a4;">transition</span>: width 2s;
 <span class="linenr"> 5: </span>    ...
-<span class="linenr"> 6: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 6: </span><span style="color: #707183;">}</span>
 <span class="linenr"> 7: </span>
-<span class="linenr"> 8: </span><span style="color: #4078f2;">.select:hover </span><span style="color: #4078f2;">{</span>
-<span class="linenr"> 9: </span>    <span style="color: #50a14f;">width</span>: 200px;
-<span class="linenr">10: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 8: </span><span style="color: #0184bc;">.select:hover </span><span style="color: #707183;">{</span>
+<span class="linenr"> 9: </span>    <span style="color: #a626a4;">width</span>: 200px;
+<span class="linenr">10: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -213,9 +213,9 @@ CSS Animation就是为了解决这些问题而提出的。
 </div>
 </div>
 
-<div id="outline-container-org858cdc0" class="outline-2">
-<h2 id="org858cdc0">Animation 动画 <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
-<div class="outline-text-2" id="text-org858cdc0">
+<div id="outline-container-org08e3b92" class="outline-2">
+<h2 id="org08e3b92">Animation 动画 <sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
+<div class="outline-text-2" id="text-org08e3b92">
 <p>
 CSS3 可以创建动画，它可以取代许多网页动画图像、Flash 动画和 JavaScript 实现效果。
 </p>
@@ -302,18 +302,18 @@ Hmm... 其实这种属性表是令人讨厌的，还是具体的例子看起来�
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span class="linenr"> 1: </span><span style="color: #4078f2;">.select </span><span style="color: #4078f2;">{</span>
+<pre class="src src-css"><span class="linenr"> 1: </span><span style="color: #0184bc;">.select </span><span style="color: #707183;">{</span>
 <span class="linenr"> 2: </span>    ...
-<span class="linenr"> 3: </span>    <span style="color: #50a14f;">animation</span>: myanimation 5s;
+<span class="linenr"> 3: </span>    <span style="color: #a626a4;">animation</span>: myanimation 5s;
 <span class="linenr"> 4: </span>    ...
-<span class="linenr"> 5: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 5: </span><span style="color: #707183;">}</span>
 <span class="linenr"> 6: </span>
-<span class="linenr"> 7: </span><span style="color: #a626a4;">@keyframes</span> myanimation <span style="color: #4078f2;">{</span>
-<span class="linenr"> 8: </span>    <span style="color: #4078f2;">0%   </span><span style="color: #a626a4;">{</span><span style="color: #50a14f;">background</span>: <span style="color: #ffffff; background-color: #ff0000;">red</span>;<span style="color: #a626a4;">}</span>
-<span class="linenr"> 9: </span>    <span style="color: #4078f2;">25%  </span><span style="color: #a626a4;">{</span><span style="color: #50a14f;">background</span>: <span style="color: #000000; background-color: #ffff00;">yellow</span>;<span style="color: #a626a4;">}</span>
-<span class="linenr">10: </span>    <span style="color: #4078f2;">50%  </span><span style="color: #a626a4;">{</span><span style="color: #50a14f;">background</span>: <span style="color: #ffffff; background-color: #0000ff;">blue</span>;<span style="color: #a626a4;">}</span>
-<span class="linenr">11: </span>    <span style="color: #4078f2;">100% </span><span style="color: #a626a4;">{</span><span style="color: #50a14f;">background</span>: <span style="color: #ffffff; background-color: #008000;">green</span>;<span style="color: #a626a4;">}</span>
-<span class="linenr">12: </span><span style="color: #4078f2;">}</span>
+<span class="linenr"> 7: </span><span style="color: #e44649;">@keyframes</span> myanimation <span style="color: #707183;">{</span>
+<span class="linenr"> 8: </span>    <span style="color: #0184bc;">0%   </span><span style="color: #7388d6;">{</span><span style="color: #a626a4;">background</span>: <span style="color: #ffffff; background-color: #ff0000;">red</span>;<span style="color: #7388d6;">}</span>
+<span class="linenr"> 9: </span>    <span style="color: #0184bc;">25%  </span><span style="color: #7388d6;">{</span><span style="color: #a626a4;">background</span>: <span style="color: #000000; background-color: #ffff00;">yellow</span>;<span style="color: #7388d6;">}</span>
+<span class="linenr">10: </span>    <span style="color: #0184bc;">50%  </span><span style="color: #7388d6;">{</span><span style="color: #a626a4;">background</span>: <span style="color: #ffffff; background-color: #0000ff;">blue</span>;<span style="color: #7388d6;">}</span>
+<span class="linenr">11: </span>    <span style="color: #0184bc;">100% </span><span style="color: #7388d6;">{</span><span style="color: #a626a4;">background</span>: <span style="color: #ffffff; background-color: #008000;">green</span>;<span style="color: #7388d6;">}</span>
+<span class="linenr">12: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
 
@@ -335,7 +335,7 @@ Hmm... 其实这种属性表是令人讨厌的，还是具体的例子看起来�
 <div id="postamble" class="status">
 <p class="date">Date: 2020-10-19 Mon 11:58</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-02-23 Tue 17:43</p>
+<p class="date">Created: 2021-05-18 Tue 15:53</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
