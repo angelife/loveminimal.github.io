@@ -9,8 +9,6 @@
 
 A [[./org-to-site-tutor.org][pure site]] based on org mode.
 
-→ [[./car-inbox.org][科三练车]]
-
 [[./nav.org][_Nav_]] ➭ [[./idea.org][_Idea_]] ➯ [[./wiki.org][_Wiki_]]
 
  ░ 文章列表 ❐ ⓛⓞⓥⓔ
@@ -28,6 +26,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./shell.org][Shell]]               |
 | [[./elisp.org][Elisp]]               |
 | [[./sql-inbox.org][SQL Inbox]]           |
+| [[./car-inbox.org][科三练车]]            |
 
 | GTD             |
 |-----------------|

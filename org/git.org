@@ -23,18 +23,18 @@ title=""
 </essay>
 #+END_EXPORT
 
-** WIKI
+** Inbox
 
 *** 推送指定分支到远程分支上
 
 如果你本地的分支名称和远程名称相同，则使用以下命令：
 
-#+BEGIN_SRC sh -n
+#+BEGIN_SRC sh
   $ git push origin branchName
 #+END_SRC
 
 如果本地的分支跟远程的分支不一样，则指定本地和远程的分支的名称：
 
-#+BEGIN_SRC sh -n
+#+BEGIN_SRC sh
   $ git push origin localBranchName:remoteBranchName
 #+END_SRC
