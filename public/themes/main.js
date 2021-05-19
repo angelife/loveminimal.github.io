@@ -27,6 +27,7 @@ if (location.pathname.indexOf('inbox') > -1) {
 // ------------------------------------------------------------------
 initCardPages(userconfig.card.pages, userconfig.card.activeAll);
 initEncryptedPages(userconfig.encrypt.pages, userconfig.encrypt.password);
+initEncryptedPages('joker', 'justgoout');
 initImageZoom();
 
 // Init global variables

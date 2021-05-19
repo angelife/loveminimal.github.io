@@ -30,6 +30,7 @@ export default {
     // 加密的页面
     encrypt: {
         password: '123456',
-        pages: ['joker'],
+        // 你的私有页面
+        pages: ['foo', 'bar'],
     },
 };
