@@ -11,6 +11,17 @@
 # />
 # #+END_EXPORT
 
+** 设置 git-bash 为 Emacs 默认 shell
+ [2021-05-19 Wed 16:36]
+
+→ https://blog.csdn.net/csfreebird/article/details/9719221
+
+#+BEGIN_SRC elisp -n
+  (setq explicit-shell-file-name
+        "C:/Program Files/Git/bin/bash.exe")
+  (setq shell-file-name explicit-shell-file-name)
+  (add-to-list 'exec-path "C:/Program Files/Git/bin")
+#+END_SRC
 ** IDE Active
  [2021-04-13 Tue 11:41]
 

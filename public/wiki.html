@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-05-18 Tue 15:55 -->
+<!-- 2021-05-19 Wed 16:38 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wiki</title>
@@ -20,6 +20,7 @@
 <ul>
 <li><a href="#org0223e53">WIKI</a>
 <ul>
+<li><a href="#orga3eea13">设置 git-bash 为 Emacs 默认 shell</a></li>
 <li><a href="#orgb85d727">IDE Active</a></li>
 <li><a href="#orge6afa95">Ubuntu 下清空 DNS 缓存</a></li>
 <li><a href="#orgfea6b20">GitHub 图片不加载问题</a></li>
@@ -54,6 +55,26 @@
 <div class="outline-text-2" id="text-org0223e53">
 </div>
 
+<div id="outline-container-orga3eea13" class="outline-3">
+<h3 id="orga3eea13">设置 git-bash 为 Emacs 默认 shell</h3>
+<div class="outline-text-3" id="text-orga3eea13">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-05-19 Wed 16:36]</span></span>
+</p>
+
+<p>
+→ <a href="https://blog.csdn.net/csfreebird/article/details/9719221">https://blog.csdn.net/csfreebird/article/details/9719221</a>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">setq</span> explicit-shell-file-name
+<span class="linenr">2: </span>      <span style="color: #50a14f;">"C:/Program Files/Git/bin/bash.exe"</span><span style="color: #707183;">)</span>
+<span class="linenr">3: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">setq</span> shell-file-name explicit-shell-file-name<span style="color: #707183;">)</span>
+<span class="linenr">4: </span><span style="color: #707183;">(</span>add-to-list 'exec-path <span style="color: #50a14f;">"C:/Program Files/Git/bin"</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+</div>
+</div>
 <div id="outline-container-orgb85d727" class="outline-3">
 <h3 id="orgb85d727">IDE Active</h3>
 <div class="outline-text-3" id="text-orgb85d727">
@@ -866,24 +887,24 @@ arr.includes(searchElement, fromIndex)
 <div class="org-src-container">
 <pre class="src src-css"><span class="linenr"> 1: </span><span style="color: #a626a4;">input</span>::-webkit-input-placeholder <span style="color: #707183;">{</span>
 <span class="linenr"> 2: </span>    <span style="color: #a626a4;">color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
-<span class="linenr"> 3: </span>    <span style="color: #a626a4; text-decoration: underline;">-webkit-text-fill-color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
+<span class="linenr"> 3: </span>    <span style="color: #a626a4; font-style: italic;">-webkit-text-fill-color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
 <span class="linenr"> 4: </span>    <span style="color: #a626a4;">opacity</span>: 1;
-<span class="linenr"> 5: </span>    <span style="color: #a626a4; text-decoration: underline;">-webkit-opacity</span>: 1;
+<span class="linenr"> 5: </span>    <span style="color: #a626a4; font-style: italic;">-webkit-opacity</span>: 1;
 <span class="linenr"> 6: </span><span style="color: #707183;">}</span>
 <span class="linenr"> 7: </span>
 <span class="linenr"> 8: </span><span style="color: #0184bc;">input:disabled </span><span style="color: #707183;">{</span>
 <span class="linenr"> 9: </span>    <span style="color: #a626a4;">background</span>: none;
 <span class="linenr">10: </span>    <span style="color: #a626a4;">color</span>: <span style="color: #ffffff; background-color: #333;">#333</span>;
-<span class="linenr">11: </span>    <span style="color: #a626a4; text-decoration: underline;">-webkit-text-fill-color</span>: <span style="color: #ffffff; background-color: #333;">#333</span>;
+<span class="linenr">11: </span>    <span style="color: #a626a4; font-style: italic;">-webkit-text-fill-color</span>: <span style="color: #ffffff; background-color: #333;">#333</span>;
 <span class="linenr">12: </span>    <span style="color: #a626a4;">opacity</span>: 1;
-<span class="linenr">13: </span>    <span style="color: #a626a4; text-decoration: underline;">-webkit-opacity</span>: 1;
+<span class="linenr">13: </span>    <span style="color: #a626a4; font-style: italic;">-webkit-opacity</span>: 1;
 <span class="linenr">14: </span><span style="color: #707183;">}</span>
 <span class="linenr">15: </span>
 <span class="linenr">16: </span><span style="color: #a626a4;">input</span>:disabled::-webkit-input-placeholder <span style="color: #707183;">{</span>
 <span class="linenr">17: </span>    <span style="color: #a626a4;">color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
-<span class="linenr">18: </span>    <span style="color: #a626a4; text-decoration: underline;">-webkit-text-fill-color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
+<span class="linenr">18: </span>    <span style="color: #a626a4; font-style: italic;">-webkit-text-fill-color</span>: <span style="color: #000000; background-color: #ccc;">#ccc</span>;
 <span class="linenr">19: </span>    <span style="color: #a626a4;">opacity</span>: 1;
-<span class="linenr">20: </span>    <span style="color: #a626a4; text-decoration: underline;">-webkit-opacity</span>: 1;
+<span class="linenr">20: </span>    <span style="color: #a626a4; font-style: italic;">-webkit-opacity</span>: 1;
 <span class="linenr">21: </span><span style="color: #707183;">}</span>
 </pre>
 </div>
@@ -1350,7 +1371,7 @@ windows 下 <span class="underline">刷新 DNS</span> 的方法：打开 cmd →
 <div id="postamble" class="status">
 <p class="date">Date: 2020-01-28 Tue 14:02</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-05-18 Tue 15:55</p>
+<p class="date">Created: 2021-05-19 Wed 16:38</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
