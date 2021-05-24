@@ -2,7 +2,25 @@
 #+TITLE: Virgo
 
 #+BEGIN_EXPORT html
-<div style="color: #ccc;">o virgo ➭ 哦 处女座……</div>
+<div style="
+            color: #ccc;
+            background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange, yellow, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            animation: move 5s infinite;
+            color: transparent;
+            ">
+  o virgo ➭ 哦 处女座……
+</div>
+
+<style>
+@keyframes move {
+      0% {background-position: 0 0;}
+      100% {
+        background-position: -300px 0;
+      }
+}
+</style>
+
 #+END_EXPORT
 
 # #+BEGIN_EXPORT html
