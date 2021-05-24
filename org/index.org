@@ -43,11 +43,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./nginx.org][Nginx]]               |
 | [[./compilers.org][Compilers]]           |
 | [[./wubi.org][WuBi]]                |
-| [[./git.org][Git]]                 |
 | [[./sdk.org][SDK]]                 |
-| [[./shell.org][Shell]]               |
-| [[./elisp.org][Elisp]]               |
-| [[./sql-inbox.org][SQL Inbox]]           |
 
 | GTD             |
 |-----------------|
@@ -69,9 +65,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./modular-programming.org][模块化编程]]              |
 | [[./test-talking.org][Test Talking]]            |
 | [[./scroll-bar.org][Scroll Bar]]              |
-| [[./vue-inbox.org][Vue Inbox]]               |
-| [[./vue-element-admin-inbox.org][Vue Element Admin Inbox]] |
-| [[./vuex-inbox.org][Vuex Inbox]]              |
 
 | Asm                    |
 |------------------------|
@@ -105,6 +98,10 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 |---------------|
 | [[./app-inbox.org][App Inbox]]     |
 
+| SQL       |
+|-----------|
+| [[./sql-inbox.org][SQL Inbox]] |
+
 | 休闲     |
 |----------|
 | [[./diet-modification.org][饮食调整]] |
@@ -124,7 +121,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 
 | 读书 |
 |------|
-| [[./book-inbox.org][书单]] |
 | [[./yi-jing.org][易经]] |
 | [[./lao-zi.org][老子]] |
 
