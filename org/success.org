@@ -1,0 +1,26 @@
+#+DATE: <2021-05-24 Mon 09:43>
+#+TITLE: Success
+
+#+BEGIN_EXPORT html
+
+<div style="
+            font-size: 72px;
+            font-weight: 900;
+            background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange, yellow, green, yellow, orange, red);
+            -webkit-background-clip: text;
+            animation: move 5s infinite;
+            color: transparent;
+            "
+         >
+  老婆科三必过！！！
+</div>
+
+<style>
+@keyframes move {
+      0% {background-position: 0 0;}
+      100% {
+        background-position: -300px 0;
+      }
+}
+</style>
+#+END_EXPORT
