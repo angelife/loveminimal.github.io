@@ -48,7 +48,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./shell.org][Shell]]               |
 | [[./elisp.org][Elisp]]               |
 | [[./sql-inbox.org][SQL Inbox]]           |
-| [[./car-inbox.org][科三练车]]            |
 
 | GTD             |
 |-----------------|
