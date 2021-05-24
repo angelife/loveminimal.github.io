@@ -98,9 +98,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 |---------------|
 | [[./app-inbox.org][App Inbox]]     |
 
-| SQL       |
-|-----------|
-| [[./sql-inbox.org][SQL Inbox]] |
 
 | 休闲     |
 |----------|
