@@ -115,9 +115,9 @@ if (isHome()) {
     });
 
     // Open link in a new tab
-    // $('a').each(function () {
-    //     $(this).attr('target', '_blank');
-    // });
+    $('a').each(function () {
+        $(this).attr('target', '_blank');
+    });
 }
 
 // Customize annotations
@@ -239,6 +239,23 @@ if (isCurPage('nav')) {
     );
 
     $('.org-ul').addClass('js-nav-bookmarks-container');
+
+    if (isPC) {
+        let _container = $('.nav-iframe');
+        // let _iframe = $(window.frames[0].document);
+        // let _body = _iframe.find('body');
+        let _cw = _container.width();
+        let _left = 20 - _cw + 'px';
+        _container.css({ left: _left });
+        _container.mouseenter(() =>
+            _container.css({ left: 0, transition: '0.2s' })
+        );
+        _container.mouseleave(() =>
+            _container.css({ left: _left, transition: '0.2s' })
+        );
+    } else {
+        $('.nav-iframe').hide();
+    }
 }
 
 // ==================================================================

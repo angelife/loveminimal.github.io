@@ -1,6 +1,16 @@
 #+DATE: <2020-04-10 Fri 20:56>
 #+TITLE: Navigations
 
+#+BEGIN_EXPORT html
+<div class="nav-iframe"
+     style=" position: fixed;
+            left: 0;
+            top: 7px;"
+>
+  <iframe id="IFRAMEID" frameborder="0" scrolling="auto" src="./index.html" width="90%" height="800px"></iframe>
+</div>
+#+END_EXPORT
+
 | C/N  | A           | B            | C              | D              |
 |------+-------------+--------------+----------------+----------------|
 | 我的 | [[./index.org][Virgo]]       | [[https://www.dida365.com/webapp/#p/inbox/tasks][GTD]]          | [[https://emacs-china.org/][Emacs China]]    | [[https://github.com/loveminimal][Github]]         |
