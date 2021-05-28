@@ -130,6 +130,36 @@ $('essay').each(function () {
     $(this).addClass('js-essay');
 });
 
+$('drawer').each(function () {
+    $(this).addClass('js-drawer');
+});
+
+$('drawer .collapsible').each(function () {
+    $(this).click(function () {
+        this.classList.toggle('active');
+        let _ctx = this.nextElementSibling;
+        if (_ctx.style.maxHeight) {
+            _ctx.style.maxHeight = null;
+        } else {
+            _ctx.style.maxHeight = _ctx.scrollHeight + 'px';
+        }
+    });
+});
+
+// let coll = document.getElementsByClassName('collapsible');
+// let i;
+// for (i = 0; i < coll.length; i++) {
+//     coll[i].addEventListener('click', function () {
+//         this.classList.toggle('active');
+//         let content = this.nextElementSibling;
+//         if (content.style.maxHeight) {
+//             content.style.maxHeight = null;
+//         } else {
+//             content.style.maxHeight = content.scrollHeight + 'px';
+//         }
+//     });
+// }
+
 // Customize contacts way
 // -------------------------------------------
 $('.me .contact #weibo').attr('href', '//weibo.com/u/' + userconfig.weibo);

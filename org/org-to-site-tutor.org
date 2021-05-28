@@ -558,3 +558,23 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
   <div>俱往矣，数风流人物，还看今朝。</div>
 </essay>
 #+END_EXPORT
+
+*** 页面折叠样式
+
+#+BEGIN_EXPORT html
+<drawer>
+<div class="collapsible">Open Collapsible</div>
+<div class="content">
+  111111111111111111
+</div>
+</drawer>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
+<drawer>
+<div class="collapsible">2222222</div>
+<div class="content">
+  222222222222222222
+</div>
+</drawer>
+#+END_EXPORT

@@ -104,6 +104,28 @@ body,
     top: -30px;
 }
 
+.js-drawer {
+    display: block;
+    margin: 16px 0;
+}
+.js-drawer .collapsible {
+    background-color: #777;
+    color: white;
+    cursor: pointer;
+    padding: 16px;
+}
+.js-drawer .active,
+.js-drawer .collapsible:hover {
+    background-color: #555;
+}
+.js-drawer .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f1f2f6;
+}
+
 /* Page init style */
 /* ////////////////////////////////////////// */
 p {
