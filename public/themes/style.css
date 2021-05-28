@@ -109,17 +109,17 @@ body,
     margin: 16px 0;
 }
 .js-drawer .collapsible {
-    background-color: #777;
-    color: white;
+    background-color: #899;
+    color: #fff;
     cursor: pointer;
     padding: 16px;
 }
 .js-drawer .active,
 .js-drawer .collapsible:hover {
-    background-color: #555;
+    background-color: #799;
 }
 .js-drawer .content {
-    padding: 0 18px;
+    padding: 0 16px 16px 16px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
