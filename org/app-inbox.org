@@ -36,31 +36,10 @@
 
 *如何配置呢？*
 
-=File -> setting -> System Settings -> HTTP Proxy= ，配置镜像地址，如下：
-
-#+BEGIN_EXPORT html
-<img
-src="images/android-6.jpg"
-width="400"
-height=""
-style="float: left; margin-right: 8px;"
-title=""
-/>
-#+END_EXPORT
-
-#+BEGIN_EXPORT html
-<img
-src="images/android-7.jpg"
-width="400"
-height=""
-style=""
-title=""
-/>
-#+END_EXPORT
-
+=File -> setting -> System Settings -> HTTP Proxy= ，配置镜像地址。
 重启 AS 查看。
 
-如果配置后还不可以，则有可能得查一下 Android SDK 中 SDK Update Sites 中的配置，如上右图。
+如果配置后还不可以，则有可能得查一下 Android SDK 中 SDK Update Sites 中的配置。
 
 ** Waiting for Target Device to Come Online
 
