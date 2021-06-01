@@ -46,6 +46,7 @@
  *Bookmarks InboX*
 
 - 合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。
+- 前端多种方式实现文件下载 https://blog.csdn.net/z591102/article/details/105529761/
 - git log 输出指定条目 https://blog.csdn.net/leedaning/article/details/44976987
 - vea excel exports https://panjiachen.github.io/vue-element-admin-site/zh/feature/component/excel.html#excel-%E5%AF%BC%E5%87%BA
 - vue-element-ui https://juejin.cn/post/6844903476661583880
