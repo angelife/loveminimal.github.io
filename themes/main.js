@@ -14,8 +14,8 @@ import {
     betterLocalStorage as bls,
 } from './assets/utils.js';
 
-// Every area may have a `*-inbox.org`, so set card as its default style
-if (location.pathname.indexOf('inbox') > -1) {
+// Every area may have a `*-card.org`, so set card as its default style
+if (location.pathname.indexOf('card') > -1) {
     let _re = /[\w+-]+\w+(.html)$/,
         _pages = location.pathname.match(_re),
         _page = _pages[0].split('.html')[0];
