@@ -73,7 +73,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 
 | Java                  |
 |-----------------------|
-| [[./java-inbox.org][Java Inbox]]            |
+| [[./java-inbox-card.org][Java Inbox]]            |
 | [[./network-programming.org][网络编程]]              |
 | [[./socket.org][Socket]]                |
 | [[./servlet.org][Servlet]]               |
@@ -104,7 +104,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 
 | 马克思主义                                    |
 |-----------------------------------------------|
-| [[./marxism-0.org][绪论 马克思主义是关于工人阶级和人类解放的科学]] |
+| [[./marxism-0-card.org][绪论 马克思主义是关于工人阶级和人类解放的科学]] |
 
 | 读书 |
 |------|
