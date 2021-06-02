@@ -14,6 +14,7 @@ export default {
     icp: '豫ICP备19025929号',
     // 指定卡片风格页面
     // 当 `activeAll` 为 `true` 时，所有页面激活卡片风格
+    // 另外，当你的文件名以 `*-card.org` 这样的格式结尾时，也会激活卡片风格
     card: {
         activeAll: false,
         pages: [
