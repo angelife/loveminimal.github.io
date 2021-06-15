@@ -158,7 +158,9 @@ blockquote {
 
 ul,
 ol {
-    list-style-position: inside;
+    /* list-style-position: inside; */
+    list-style-position: outside;
+    padding-left: .2rem;
 }
 li > ul,
 li > ol {
