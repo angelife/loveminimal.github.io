@@ -10,7 +10,9 @@
 *X → - I wouldn't recommend
 #+END_EXAMPLE
 
-** Basics
+* Basics
+
+** Intro
 
 #+BEGIN_QUOTE
 CSS:
@@ -25,7 +27,7 @@ CSS:
 - [ ] *R → Responsive design and Media Queries
 #+END_QUOTE
 
-*** Box Model
+** Box Model
 
 Box Model（CSS 盒模型），本质上是一个盒子，封装周围的 HTML 元素，它包括：
 
@@ -52,7 +54,7 @@ width/height = content + padding + border
 
 *注：其实，IE 盒模型更符合逻辑。
 
-*** CSS Grid
+** CSS Grid
 
 更多了解，可以参考 [[http://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html][CSS Grid 网格布局教程]] 。
 
@@ -64,7 +66,9 @@ Flex 布局是轴线布局，只能指定"项目"针对轴线的位置，可以�
 
 Grid 布局远比 Flex 布局强大。
 
-** CSS Architecture
+* CSS Architecture
+
+** Intro
 
 #+BEGIN_QUOTE
 CSS Architecture:
@@ -75,7 +79,7 @@ CSS Architecture:
 
 Witdh modern frameworks and CSS-in-JS you don't have to worry about these anymore but still it would be a good idea to get familiarized with BEM at least.
 
-*** BEM
+** BEM
 
 BEM（Block 块、Element 元素、Modifier 修饰符），是一种前端命名的方法论，主要是针对 CSS，便于统一团队开发规范和维护。
 
@@ -101,7 +105,9 @@ block-name__element-name--modifier-name
   .person__hand--left {}          /*人的左手*/
 #+END_SRC
 
-** CSS Preprocessor
+* CSS Preprocessor
+
+** Intro
 
 #+BEGIN_QUOTE
 CSS Preprocessor:
@@ -116,13 +122,13 @@ CSS Preprocesssor（CSS 预处理器）是什么？为什么我们需要它？
 
 众所周知，CSS 并不能算是一门真正意义上的编程语言，它本身无法完成像其它编程语言一样的嵌套、继承、设置变量等工作。为了解决 CSS 的不足，开发者们想到了编写一种对 CSS 进行预处理的 *“中间语言”* ，可以实现一些编程语言才有的功能，然后自动编译成 CSS 供浏览器识别。
 
-*** Sass
+** Sass
 
 *Sass 就是最早的 CSS 预处理语言！*
 
 Sass 是采用 Ruby 语言编写的，最初采用缩进式语法。从第三代开始，放弃了缩进式风格，并且完全向下兼容普通的 CSS 代码，这一代的 Sass 也被称为 _Scss_ 。
 
-*** PostCSS[fn:1]
+** PostCSS[fn:1]
 
 PostCSS 是一个用 JavaScript 工具和插件转换 CSS 代码的工具。
 
@@ -257,7 +263,9 @@ Then create =post.config.js= :
   }
 #+END_SRC
 
-** Modern CSS
+* Modern CSS
+
+** Intro
 
 #+BEGIN_QUOTE
 Modern CSS:
@@ -269,7 +277,7 @@ Modern CSS:
 - [ ] *X → Glamorous
 #+END_QUOTE
 
-*** CSS Modules[fn:2]
+** CSS Modules[fn:2]
 
 学过网页开发就会知道，CSS 不能算编程语言，只是网页样式的一种描述方法。
 
@@ -301,7 +309,9 @@ When importing the *CSS Moudle* from a JS Module, it exports an object with all 
   element.innerHTML = '<div class="' + styles.className + '">'
 #+END_SRC
 
-** CSS Frameworks
+* CSS Frameworks
+
+** Intro
 
 JS based and better to use with your framework based JavaScript applications:
 

@@ -11,7 +11,9 @@ title=""
 />
 #+END_EXPORT
 
-** TODO Index
+* TODO Index
+
+** Intro
 
 Learn the difference between *Unit, Integration and Functional* tests and learn how to write them with the tools listed on the followwing.
 
@@ -41,7 +43,7 @@ Type Checkers:
 - [ ] *X → Flow
 #+END_QUOTE
 
-*** Jest[fn:6]
+** Jest[fn:6]
 
 _1. 安装_
 
@@ -93,7 +95,7 @@ PASS  ./sum.test.js
 
 ...
 
-*** Vue Testing Librart[fn:7]
+** Vue Testing Librart[fn:7]
 
 Vue Testing Library builds on top of *DOM Testing Library* by adding APIs for working with Vue components. It is built on top of [[https://github.com/vuejs/vue-test-utils][@vue/test-utils]] , the official testing library for Vue.
 
@@ -108,7 +110,7 @@ npm install --save-dev @testing-library/vue
 
 You can now use all of *DOM Testing Library*'s =getBy, getAllBy, queryBy= and =queryAllBy= commands. See here the [[https://testing-library.com/docs/dom-testing-library/api-queries][full list of queries]].
 
-*** Cypress[fn:8]
+** Cypress[fn:8]
 
 Our users are typically developers or QA engineers building web applications using modern JavaScript frameworks.
 
@@ -119,7 +121,9 @@ Cypress enables you to write all types of tests:
 
 Cypress can test anything that runs in a browser.
 
-** *Vue 中的测试[fn:1]
+* *Vue 中的测试[fn:1]
+
+** Intro
 
 #+BEGIN_QUOTE
 该章节是个引子，先以 Vue 中的测试为切入点，在这个应用场景下引入一些测试相关的概念。
@@ -135,7 +139,7 @@ Cypress can test anything that runs in a browser.
 
 本章节致力于引导大家了解测试的生态系统并为 Vue 应用或组件库选择适合的工具。
 
-*** 单元测试
+** 单元测试
 
 单元测试允许你将独立单元的代码进行隔离测试，其目的是为开发者提供对代码的信心。通过编写细致且有意义的测试，你能够有信心在构建新特性或重构已有代码的同时，保持应用的功能和稳定。
 
@@ -173,7 +177,7 @@ Mocha 一个专注于灵活性的 JavaScript 测试框架。因为其灵活性�
 
 更多资料： [[https://mochajs.org/][Mocha 官网]] 和 [[https://cli.vuejs.org/core-plugins/unit-mocha.html][Vue CLI 官方插件 - Mocha]] 。
 
-*** 组件测试
+** 组件测试
 
 测试大多数 Vue 组件时都必须将它们挂载到 DOM （虚拟或真实）上，才能完全断言它们在工作。这是另一个与框架无头的概念。因此组件测试框架的诞生，是为了让用户能够以可靠的方式完成这项工作，同时还提供了 Vue 特有的诸如对 Vuex、Vue Router 和其他 Vue 插件的集成的便利性。
 
@@ -207,7 +211,7 @@ Vue Test Utils 是官方的偏底层的组件测试库，它是为用户提供�
 
 更多资料： [[https://vue-test-utils.vuejs.org/][Vue Test Utils 官方文档]] 和 [[https://lmiller1990.github.io/vue-testing-handbook/zh-CN][Vue 测试指南]] by Lachlan Miller
 
-*** 端到端（E2E）测试
+** 端到端（E2E）测试
 
 虽然单元测试为开发者提供了一定程度的信心，但是单元测试和组件测试在部署到生产环境时提供应用整体覆盖的能力是有限的。因此，端到端测试可以说从应用最重要的方面进行测试覆盖：当用户实际使用应用时会发生什么。
 
@@ -267,7 +271,9 @@ TestCafe 是一个基于端到端的 NodeJS 框架，旨在提供简单的设置
 </essay>
 #+END_EXPORT
 
-** 简介
+* 简介
+
+** Intro
 
 #+BEGIN_EXPORT html
 <img
@@ -289,7 +295,9 @@ title=""
 />
 #+END_EXPORT
 
-** 单元测试[fn:2]
+* 单元测试[fn:2]
+
+** Intro
 
 单元测试（Unit Testing），是指对软件中的最小可测试单元进行检查和验证。
 
@@ -308,7 +316,7 @@ _静态分析_ 就是对软件的源代码进行研读，查找错误或收集�
 </note>
 #+END_EXPORT
 
-*** 详解
+** 详解
 
 单元测试（模块测试）是开发者编写的一小段代码，用于检验被测代码的一个很小的、很明确的功能是否正确。通常而言，一个单元测试是用于判断某个特定条件（或者场景）下某个特定函数的行为。
 
@@ -328,7 +336,7 @@ _静态分析_ 就是对软件的源代码进行研读，查找错误或收集�
 </essay>
 #+END_EXPORT
 
-*** 使用效果
+** 使用效果
 
 我们编写代码时，一定会反复调试保证它能够编译通过。但代码通过编译，只是说明了它的语法正确，我们却无法保证它的语义也一定正确。
 
@@ -415,7 +423,7 @@ _2. 成本效率_
 
 相比后阶段的测试，单元测试的创建更简单，维护更容易，并且可以更方便的进行重复。从全程的费用来考虑， 相比起那些复杂且旷日持久的集成测试，或是不稳定的软件系统来说，单元测试所需的费用是很低的。
 
-*** 结论
+** 结论
 
 经验表明一个尽责的单元测试方法将会在软件开发的某个阶段发现很多的 Bug，并且修改它们的成本很低。在软件开发的后期阶段，Bug 的发现并修改将会变得更加困难，并要消耗大量的时间和开发费用。
 
@@ -423,7 +431,7 @@ _2. 成本效率_
 
 在提供了经过测试的单元的情况下，系统集成过程将会大大地简化。开发人员可以将精力集中在单元之间的交互作用和全局的功能实现上，而不是陷入充满很多 Bug 的单元之中不能自拔。
 
-*** 优点
+** 优点
 
 _1. 它是一种验证行为_
 
@@ -441,7 +449,7 @@ _4. 它具有回归性_
 
 自动化的单元测试避免了代码出现回归，编写完成之后，可以随时随地的快速运行测试。
 
-*** 范畴
+** 范畴
 
 如果要给单元测试一个明确的范畴，指出哪些功能是属于单元测试，这似乎很难。我们下面讨论四个问题，基本上可以说明单元测试的范畴，单元测试所要做的工作。
 
@@ -463,7 +471,7 @@ _4. 单元测试说明我的意图了吗？_
 
 单元测试能够帮我们充分了解代码的用法，从效果上而言，单元测试就像是能执行的文档，说明了在你用各种条件调用代码时，你所期望这段代码完成的功能。
 
-*** 测试用例
+** 测试用例
 
 下面说说测试用例，输入数据及预期输出。
 
@@ -507,7 +515,7 @@ _预期输出_ 是指：返回值及被测试函数所写入的外部数据的�
 
 推荐的方法是：先完成黑盒测试，然后统计白盒覆盖率，针对未覆盖的逻辑单位设计测试用例覆盖它。
 
-*** 应用
+** 应用
 
 _1. 极限编程_
 
@@ -539,13 +547,15 @@ _3. 单元测试框架_
 
 通常在没有特定框架支持下，通过撰写在测试中的运行单元，并使用判定、异常处理、或其他控制流程机制来表示失败的用户代码运行单元测试是可行的。不通过框架的单元测试有用之处在于进行单元测试时会有一个参进障碍（barrier to entry），进行一点单元测试几乎不比没做好多少，但是一旦使用了框架，加入单元测试相对来说就会简单许多。
 
-** 集成测试[fn:4]
+* 集成测试[fn:4]
+
+** Intro
 
 集成测试，也叫组装测试或联合测试。在单元测试的基础上，将所有模块按照设计要求（如根据结构图）组装成为子系统或系统，进行集成测试。
 
 实践表明，一些模块虽然能够单独地工作，但并不能保证连接起来也能正常的工作。一些局部反映不出来的问题，在全局上很可能暴露出来。
 
-*** 详解
+** 详解
 
 集成测试（也叫组装测试，联合测试）是单元测试的逻辑扩展。它最简单的形式是：把两个已经测试过的单元组合成一个组件，测试它们之间的接口。
 
@@ -560,7 +570,7 @@ _3. 单元测试框架_
 
 *注：集成测试需要花费的时间远远超过单元测试，直接从单元测试过渡到系统测试是极不妥当的做法。
 
-*** 目标
+** 目标
 
 集成测试的目标是按照设计要求使用那些通过单元测试的构件来构造程序结构。单个模块具有高质量但不足以保证整个系统的质量。有许多隐蔽的失效是高质量模块间发生非预期交互而产生的。
 
@@ -576,7 +586,9 @@ _3. 单元测试框架_
 
 ...
 
-** 功能测试[fn:5]
+* 功能测试[fn:5]
+
+** Intro
 
 功能测试就是对产品的各功能进行验证，根据功能测试用例，逐项测试，检查产品是否达到用户要求的功能。
 
