@@ -11,6 +11,21 @@
 # />
 # #+END_EXPORT
 
+** 批处理命令启动网站服务[fn:3]
+ [2021-06-15 Tue 14:46]
+
+#+BEGIN_SRC bat -n
+@echo off
+%1(start /min cmd.exe /c %0 :& exit )
+echo Start your site server...
+echo -------------------------
+:: pause
+cd C:\Users\jack\AppData\Roaming\site
+live-server --open=public
+#+END_SRC
+
+更多： [[https://blog.csdn.net/bigbear00007/article/details/105759248][怎么给批处理（bat）添加注释]]
+
 ** Vue 文件的命名规范
  [2021-05-24 Mon 16:40]
 
@@ -795,6 +810,8 @@ formData 里面存储的数据形式是什么？一对 key/value 组成一条数
 windows 下 _刷新 DNS_ 的方法：打开 cmd → 输入 =ipconfig /flushdns= 。 Github 有时候，连接很慢，甚至有打不开的状况，此时，可以尝试刷新一下 DNS ，会有意象不到的效果哦。
 
 * Footnotes
+
+[fn:3] https://www.jianshu.com/p/f3b84f2eb7c4
 
 [fn:2] https://www.cnblogs.com/Shd-Study/p/6560808.html
 

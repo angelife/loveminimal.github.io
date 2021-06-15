@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-05-24 Mon 16:40 -->
+<!-- 2021-06-15 Tue 14:52 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Wiki</title>
@@ -20,6 +20,7 @@
 <ul>
 <li><a href="#org0223e53">WIKI</a>
 <ul>
+<li><a href="#orga0dc9cf">批处理命令启动网站服务</a></li>
 <li><a href="#orgcd3292e">Vue 文件的命名规范</a></li>
 <li><a href="#orga3eea13">设置 git-bash 为 Emacs 默认 shell</a></li>
 <li><a href="#orgb85d727">IDE Active</a></li>
@@ -54,6 +55,30 @@
 <div id="outline-container-org0223e53" class="outline-2">
 <h2 id="org0223e53">WIKI</h2>
 <div class="outline-text-2" id="text-org0223e53">
+</div>
+
+<div id="outline-container-orga0dc9cf" class="outline-3">
+<h3 id="orga0dc9cf">批处理命令启动网站服务<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
+<div class="outline-text-3" id="text-orga0dc9cf">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2021-06-15 Tue 14:46]</span></span>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bat"><span class="linenr">1: </span>@<span style="color: #e44649;">echo</span> off
+<span class="linenr">2: </span>%<span style="color: #8b4513;">1</span><span style="color: #707183;">(</span><span style="color: #8b4513;">start</span> /<span style="color: #c18401;">min</span> <span style="color: #a626a4;">cmd</span>.exe /<span style="color: #c18401;">c</span> %<span style="color: #8b4513;">0</span> :&amp; <span style="color: #a626a4;">exit</span> <span style="color: #707183;">)</span>
+<span class="linenr">3: </span><span style="color: #e44649;">echo</span> <span style="color: #a626a4;">Start</span> your site server...
+<span class="linenr">4: </span><span style="color: #e44649;">echo</span> -------------------------
+<span class="linenr">5: </span><span style="color: #a0a1a7;">:: pause</span>
+<span class="linenr">6: </span><span style="color: #e44649;">cd</span> C:\Users\jack\AppData\Roaming\site
+<span class="linenr">7: </span>live-server --<span style="color: #c18401;">open</span>=public
+</pre>
+</div>
+
+<p>
+更多： <a href="https://blog.csdn.net/bigbear00007/article/details/105759248">怎么给批处理（bat）添加注释</a>
+</p>
+</div>
 </div>
 
 <div id="outline-container-orgcd3292e" class="outline-3">
@@ -615,7 +640,7 @@ Web 浏览器有计算有效宽度时会考虑浏览器窗口的打开宽度，�
 </div>
 
 <div id="outline-container-orgea2ae84" class="outline-3">
-<h3 id="orgea2ae84">JavaScript 中的 bind、call、apply 方法<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h3>
+<h3 id="orgea2ae84">JavaScript 中的 bind、call、apply 方法<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h3>
 <div class="outline-text-3" id="text-orgea2ae84">
 <p>
 <span class="timestamp-wrapper"><span class="timestamp">[2020-04-20 Mon 14:25]</span></span>
@@ -1435,6 +1460,10 @@ windows 下 <span class="underline">刷新 DNS</span> 的方法：打开 cmd →
 <div id="text-footnotes">
 
 <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<a href="https://www.jianshu.com/p/f3b84f2eb7c4">https://www.jianshu.com/p/f3b84f2eb7c4</a>
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
 <a href="https://www.cnblogs.com/Shd-Study/p/6560808.html">https://www.cnblogs.com/Shd-Study/p/6560808.html</a>
 </p></div></div>
 
@@ -1443,7 +1472,7 @@ windows 下 <span class="underline">刷新 DNS</span> 的方法：打开 cmd →
 <div id="postamble" class="status">
 <p class="date">Date: 2020-01-28 Tue 14:02</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-05-24 Mon 16:40</p>
+<p class="date">Created: 2021-06-15 Tue 14:52</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
 </div>
 </body>
