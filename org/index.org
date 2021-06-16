@@ -59,7 +59,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./ajax.org][Ajax]]                  |
 | [[./virtual-dom.org][Virtual DOM]]           |
 | [[./build-tools.org][Build Tools]]           |
-| [[./css-inbox-card.org][CSS Inbox]]           |
+| [[./css-inbox-card.org][CSS Inbox]]             |
 | [[./css-tta.org][CSS 中的动效]]          |
 | [[./modular-programming.org][模块化编程]]            |
 | [[./test-inbox-card.org][Test Inbox]]            |

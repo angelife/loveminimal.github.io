@@ -1,11 +1,11 @@
 #+DATE: <2020-05-06 Wed 14:47>
 #+TITLE: Manjaro Linux
 
-** 安装
+* 安装
 
 去 [[https://manjaro.org/][Manjaro]] 官网下载镜像 ISO ，使用 [[https://rufus.ie/][rufus]] 刻录，安装过程……
 
-** 换源
+* 换源
 
 _1. 编辑_
 
@@ -54,7 +54,7 @@ _2. 更新_
   sudo pacman -Syyu
 #+END_SRC
 
-** 映射 Caps Lock
+* 映射 Caps Lock
 
 编辑 =.zshrc= 或 =.bashrc= ，添加如下内容：
 
@@ -64,7 +64,7 @@ _2. 更新_
 
 然后，执行 =source ~/.zshrc= 或 =source ~/.bashrc= 使配置生效。
 
-*** 使用 Xmodmap 工具 [fn:2] [fn:3]
+** 使用 Xmodmap 工具 [fn:2] [fn:3]
 
 #+BEGIN_SRC sh -n
   # 自定义映射表
@@ -80,7 +80,7 @@ _2. 更新_
   xmodmap ~/.Xmodmap
 #+END_SRC
 
-** 中文输入法
+* 中文输入法
 
 安装 =fcitx= 及其相关依赖，如下：
 
@@ -98,7 +98,7 @@ _2. 更新_
 
 之后，重启电脑后，添加新的输入法即可。
 
-** 五笔输入
+* 五笔输入
 
 #+BEGIN_QUOTE
 Windows 上使用的极品五笔，感觉很不错。 Linux 上的 fcitx 也是包含 Wubi 输入的，但是词库有点可怜， 所以 rime 是一个不错的选择，它是一个输入法框架，可以按需引入。
@@ -139,14 +139,14 @@ _2. IBus Rime_
   ibus-daemon -x -d
 #+END_EXAMPLE
 
-** 中文字体[fn:1]
+* 中文字体[fn:1]
 
 #+BEGIN_SRC sh -n
   # 文泉驿字体
   sudo pacman -S wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei
 #+END_SRC
 
-** 美化
+* 美化
 
 | 字段               | 选项                      |
 |--------------------+---------------------------|
@@ -155,16 +155,16 @@ _2. IBus Rime_
 |                    | Maia                      |
 | Plasma Style       | Blur-Glassy               |
 
-** 工具
+* 工具
 
 | 工具   | 描述                  |
 |--------+-----------------------|
 | Plank  | 类 Mac 的 Doc 栏      |
 | Albert | 搜索 Mac 的 spotlight |
 
-** FAQ
+* FAQ
 
-*** OBS 录制窗口撕裂
+** OBS 录制窗口撕裂
 
 #+BEGIN_EXAMPLE
   System Settings → Display and Monitor → Compositor → Tearing prevention ("vsync")
