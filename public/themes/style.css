@@ -324,9 +324,11 @@ pre {
     font-family: Monaco, Consolas, 'monospace', 'kaiti';
     overflow: hidden;
     /* monokai background */
-    border: 2px solid rgba(234, 234, 234, 0.8);
+    /* border: 2px solid rgba(234, 234, 234, 0.8); */
     /* color: #ccc; */
     /* background: #272822; */
+
+    background: #f7fbfc;
 }
 
 pre:hover {
