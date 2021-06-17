@@ -481,6 +481,10 @@ td:last-child {
     transition: 0.3s all ease-in-out;
     opacity: 0.3;
     cursor: pointer;
+
+
+    background-image: linear-gradient(0deg, #eee 50%,#fff 50%);
+    background-size: 100% 3px;
 }
 
 .top-btn {
@@ -493,7 +497,7 @@ td:last-child {
 .top-btn:hover,
 .nav-btn:hover,
 .nav-show-hide {
-    background: #eee;
+    /*background: #eee;*/
     opacity: 0.8;
 }
 
@@ -738,12 +742,12 @@ td:last-child {
     .top-btn {
         right: 0;
         bottom: 1%;
-        opacity: 0.1;
+        opacity: 0;
     }
     .nav-btn {
         right: 0;
         bottom: 7%;
-        opacity: 0.1;
+        opacity: 0;
     }
     .top-btn:hover,
     .nav-btn:hover {

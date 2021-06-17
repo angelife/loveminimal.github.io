@@ -372,7 +372,7 @@ function scrollFunc(e) {
             _showNav();
             setTimeout(() => {
                 _hideNav();
-            }, 1000);
+            }, 2000);
         }
     }
 }
@@ -403,7 +403,7 @@ function touchEnd(e) {
         _showNav();
         setTimeout(() => {
             _hideNav();
-        }, 1000);
+        }, 2000);
     }
 }
 
@@ -421,8 +421,8 @@ function _showNav() {
 // Reduce opaciry
 function _hideNav() {
     if (isMB) {
-        $('.top-btn').css('opacity', '0.1');
-        $('.nav-btn').css('opacity', '0.1');
+        $('.top-btn').css('opacity', '0');
+        $('.nav-btn').css('opacity', '0');
     } else {
         $('.top-btn').removeClass('nav-show-hide');
         $('.nav-btn').removeClass('nav-show-hide');
