@@ -72,8 +72,8 @@ body,
 /* Self annotations */
 .js-note {
     position: absolute;
-    right: -32%;
-    width: 29.5%;
+    right: -30%;
+    width: 28%;
     padding: 6px;
     color: #666;
     box-sizing: border-box;
