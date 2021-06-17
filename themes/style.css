@@ -573,13 +573,15 @@ td:last-child {
 }
 
 .js-outline-3:nth-child(even) {
-    background-color: rgba(200, 200, 200, 0.1);
+    /*background-color: rgba(200, 200, 200, 0.1);*/
+    background-image: linear-gradient(0deg,rgba(240, 245, 249, 0.5) 50%,#fff 50%);
+    background-size: 100% 3px;
 }
 .js-outline-3:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.5);
 }
 .js-outline-3:nth-child(odd) pre {
-    border: 2px solid rgba(234, 234, 234, 0.2);
+    /*border: 2px solid rgba(234, 234, 234, 0.2);*/
 }
 .js-outline-3:nth-child(odd) .js-code-src {
     z-index: 0;
@@ -679,7 +681,7 @@ td:last-child {
 /* Mobile UI */
 /* ////////////////////////////////////////// */
 @media screen and (max-width: 1026px) {
-    /* body, #content::before, #postamble::before { background: url('../images/bg/rose.jpg') center center / cover no-repeat fixed; } */
+     /*body, #content::before, #postamble::before { background: url('../images/bg/rose.jpg') center center / cover no-repeat fixed; }*/
 
     #content,
     #postamble {
