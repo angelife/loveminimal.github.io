@@ -751,6 +751,17 @@ td:last-child {
     /* .js-outline-2, */
     .js-outline-3 {
         padding: 0.25rem 0.1rem 0.05rem 0.1rem;
+        box-shadow: 0px 0px 0px #ccc;
+        /*border-bottom: 2px solid #eee;*/
+        border-radius: 0;
+    }
+
+    .js-outline-3:nth-child(even) {
+        background-color: rgba(200, 200, 200, 0.1);
+    }
+
+    .js-outline-3:hover {
+        box-shadow: 0px 0px 0px #ccc;
     }
 
     .org-ul {

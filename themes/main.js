@@ -63,7 +63,7 @@ TITLE.click(toggleColor);
 $(window).scroll(() => scrollToTop($('.top-btn')[0]));
 
 // Hide directory when click it of Mobile.
-if (TOC) TOC.click(hideDir);
+if (isMB && TOC) TOC.click(hideDir);
 if (isPC && TOC) {
     // Auto adjust TOC width to avoid it hover the main contents.
     let t_w = '' + -parseInt((TOC.width() / $(document).width()) * 100) + '%';
