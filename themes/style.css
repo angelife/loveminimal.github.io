@@ -39,7 +39,7 @@ html {
 body,
 #content::before,
 #postamble::before {
-    /* background: url('../images/bg/lightcolor.jpg') center center / cover no-repeat fixed; */
+     /*background: url('../images/bg/lightcolor.jpg') center center / cover no-repeat fixed;*/
     /* background-color: #f5f5d5; */
 }
 
@@ -72,7 +72,7 @@ body,
 /* Self annotations */
 .js-note {
     position: absolute;
-    right: -30%;
+    right: -32%;
     width: 29.5%;
     padding: 6px;
     color: #666;
@@ -99,7 +99,7 @@ body,
 .js-essay::before {
     content: '✍';
     position: absolute;
-    font-size: 0.26rem;
+    font-size: 0.20rem;
     right: 0;
     top: -30px;
 }
