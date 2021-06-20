@@ -17,7 +17,7 @@
 Emacs China 中的描述，比较散乱，这里整理一下。我尽量把所有的操作步骤纳入其中，以避免不必要的跳转。
 #+END_QUOTE
 
-** 更新日志
+* 更新日志
 
 _1. 预计更新_
 
@@ -53,7 +53,7 @@ _2. 过往更新_
 - [[https://www.bilibili.com/video/av90738660][视频闲聊这个项目]] （2020-03-04 Wed 22:46）
 #+END_QUOTE
 
-** 起步
+* 起步
 
 #+BEGIN_QUOTE
 这个章节中，我们会叙述如何 _让项目先运行起来_ ，这才是主要的，不是吗？放心，我们会在后续章节中介绍细节。
@@ -108,7 +108,7 @@ _2. 拷贝 Emacs 配置到你的配置中_
 
 启动 Emacs 后，打开 =...site/org/index.org= 文件，执行 =M-x preview-current-buffer-in-browser= 即可看到效果。
 
-** 简介
+* 简介
 
 本文旨在介绍如何利用 =org-publish= 把 =.org= 文件生成为 =.html= ，以及如何解决静态文件（主要是图片）的缩放问题。
 
@@ -116,7 +116,7 @@ Emacs 是一个强大的 _“编辑器”_ ，或者说 _“操作系统”_ ，
 
 这个站点的生成方式其实很简单，灵感来自于多方面。感谢 [[https://github.com/fniessen/org-html-themes][org-html-themes]] 项目，Virgo 的生成和组织结构都借鉴了该项目。感谢 [[https://emacs-china.org/][Emacs China]] 社区的朋友，他们提供了许多不错的建议和指导。
 
-** 文件组织方式
+* 文件组织方式
 
 [[https://github.com/loveminimal/site][→ loveminimal/site]]
 
@@ -156,7 +156,7 @@ Emacs 是一个强大的 _“编辑器”_ ，或者说 _“操作系统”_ ，
 
 在 Windows 下，Emacs 的配置默认生效的目录就是 =C:\Users\jack\AppData\Roaming= ，该目录被称为漫游家目录。如此，将 site 文件夹也放在这个目录，就会有很多的好处，比如， =.emacs.d= 和 =site= 的相对位置是固定的，基于此你可以做一些定制化的便捷性操作（写一些操作脚本等），并且在切换到 Linux 上使用的时候，保持了操作行为的统一。
 
-** Emacs 中的配置
+* Emacs 中的配置
 
 #+BEGIN_QUOTE
 目前，并没有把在 Emacs 中的配置，组织成插件，比较分散，这个主题用来介绍 Virgo 站点生成所需要的配置。
@@ -164,7 +164,7 @@ Emacs 是一个强大的 _“编辑器”_ ，或者说 _“操作系统”_ ，
 
 在我的 [[https://github.com/loveminimal/emacs.d][emacs.d]] 配置中，插件主要使用 [[https://github.com/jwiegley/use-package][use-package]] 组织管理，它同样也是 [[https://github.com/syl20bnr/spacemacs][spacemacs]] 项目所采用的的组织方式。
 
-*** htmlize
+** htmlize
 
 该插件用来转换并打开生成的 =.html= 文件。
 
@@ -176,7 +176,7 @@ Emacs 是一个强大的 _“编辑器”_ ，或者说 _“操作系统”_ ，
     )
 #+END_SRC
 
-*** ox-html
+** ox-html
 
 #+BEGIN_SRC elisp -n
   (use-package ox-html
@@ -187,7 +187,7 @@ Emacs 是一个强大的 _“编辑器”_ ，或者说 _“操作系统”_ ，
      user-full-name "Jack Liu"))          ;; 将 "Jack Liu" 更换成你自己的的名称，网站脚注处的 Author 值
 #+END_SRC
 
-*** ox-publish
+** ox-publish
 
 这个是 Emacs 中内置的输出功能，它也是 Virgo 站点生成的核心所在。为了不让大家感到困扰，我把 Virgo 没有用到的一些配置代码全部删除了，如果你想了解更多可以查看 [[https://github.com/loveminimal/emacs.d/blob/master/lisp/init-orgs.el][init-orgs.el]] 文件。强烈建议按照默认的配置使用，等熟悉之后再自定义。
 
@@ -267,7 +267,7 @@ Emacs 是一个强大的 _“编辑器”_ ，或者说 _“操作系统”_ ，
             )))
 #+END_SRC
 
-*** 默认输出设置
+** 默认输出设置
 
 Emacs 默认的 =ox-publish= 会输出一些默认格式，因为比较原生，我们把它禁止掉，只保留对于代码块的高亮。
 
@@ -282,9 +282,9 @@ Emacs 默认的 =ox-publish= 会输出一些默认格式，因为比较原生，
           ))
 #+END_SRC
 
-** 自定义函数
+* 自定义函数
 
-*** 保存并输出页面
+** 保存并输出页面
 
 为了减少频繁重复性的操作，我们对默认的输出函数进行了一些封装，如下：
 
@@ -317,7 +317,7 @@ Emacs 默认的 =ox-publish= 会输出一些默认格式，因为比较原生，
 
 建议，绑定函数到按键，更加方便操作。如，我使用的 evil 中它们分别被绑定到 =<SPC> p w= 、 =<SPC> p f= 和 =<SPC> p s= 按键。
 
-*** 预览当前页面
+** 预览当前页面
 
 #+BEGIN_SRC elisp -n
   (defun preview-current-buffer-in-browser ()
@@ -340,7 +340,7 @@ Emacs 默认的 =ox-publish= 会输出一些默认格式，因为比较原生，
 
 如此，当执行 =M-x preview-current-buffer-in-brower= 时，就可以在默认浏览器中该页面了。
 
-*** 删除 Org 及 Html
+** 删除 Org 及 Html
 
 有时候，我们会对 =.org= 文件进行删除操作，为了使网站也删除这个页面，就需要删除其对应的 =.html= 文件，然而，每次都进行这样的步骤是一件令人讨厌的事。现在，我们可以使用下面这个函数，它会删除当前 =.org= 文件，且同时删除其生成的 =.html= 文件。
 
@@ -358,9 +358,9 @@ Emacs 默认的 =ox-publish= 会输出一些默认格式，因为比较原生，
       (message "Delete org and the relative html done."))))
 #+END_SRC
 
-** 自定义宏
+* 自定义宏
 
-*** 删除当前文章
+** 删除当前文章
 
 目前，我们在 =./index.org= 的列表 =Table= 中管理所有的文章。通过执行这个宏 =mc/delete-this-post= ，可以同时删除当前光标下的 =.org= 文件及其对应的 =.html= 文件。
 
@@ -381,7 +381,7 @@ Emacs 默认的 =ox-publish= 会输出一些默认格式，因为比较原生，
 - =y= ，确定执行 =delelte-org-and-html= 函数；
 - =dd= ，删除所在光标所在行，即当前文章在主页中的行。
 
-** 自定义模式
+* 自定义模式
 
 [[https://github.com/kaushalmodi/ox-hugo/blob/master/org-hugo-auto-export-mode.el][→ org-hugo-auto-export-mode]]
 
@@ -402,7 +402,7 @@ Emacs 默认的 =ox-publish= 会输出一些默认格式，因为比较原生，
       (remove-hook 'after-save-hook #'save-and-publish-file :local)))
 #+END_SRC
 
-** 图片
+* 图片
 
 #+BEGIN_QUOTE
 NOTE: 这个章节只是补充，可以不了解。
@@ -426,7 +426,7 @@ NOTE: 这个章节只是补充，可以不了解。
   <img src="images/$1" width="${2:6}0%" />
 #+END_EXAMPLE
 
-** 总结
+* 总结
 
 总体来说，比较简单，也不需要下载多少额外的插件，充分利用 Emacs 本身拥有的功能。综上所述，我们来总结一下步骤：
 1. =git clone https://github.com/loveminimal/site.git ~/site= ，即把 site 文件夹放在家目录；
@@ -435,9 +435,9 @@ NOTE: 这个章节只是补充，可以不了解。
 
 如此，生成的 public 文件夹中就是你的站点所需要的一切文件，把它部署到 Github 或是私人服务器即可。
 
-** 附录
+* 附录
 
-*** 网站功能图示
+** 网站功能图示
 
 #+BEGIN_EXPORT html
 <img
@@ -487,7 +487,7 @@ _4. 返回主页和回到顶部_
 
 右下角，包含两个功能按钮 - =IDX ←= （返回主页）和 =TOP ↑=  （返回页面顶部，且滚动时显示当前页面滚动百分比）。
 
-*** 关于执行脚本
+** 关于执行脚本
 
 为什么会有这个脚本？我们来看这样一种场景。
 
@@ -521,7 +521,7 @@ _2. 在 bash 终端执行脚本_
 #+END_SRC
 
 放心，它会保存你的文章状态，并在拉取更新后恢复它。
-*** 右侧批注样式
+** 右侧批注样式
 
 其实，使用很简单，我们把要加的批注写在 =<note>...</note>= 中就可以了，放心，在渲染的时候已经做好了处理，如下：
 
@@ -541,7 +541,7 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 
 原理就是，在 Org Mode 中输出 HTML 片段，指定了自定义的标签 =<note>= （用来后续的 DOM 操作）。在浏览器渲染的过程中，无效的标签符并不会做为普通文本绘制出来，但其内的内容却可以。
 
-*** 文内随笔样式
+** 文内随笔样式
 
 #+BEGIN_EXPORT html
 <essay>
@@ -559,7 +559,7 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 </essay>
 #+END_EXPORT
 
-*** 页面折叠样式
+** 页面折叠样式
 
 #+BEGIN_EXPORT html
 <drawer>
