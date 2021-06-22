@@ -47,7 +47,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 
 | GTD             |
 |-----------------|
-| [[./get-things-done.org][Get Things Done]] |
+| [[./get-things-done-card.org][Get Things Done]] |
 
 | Web                   |
 |-----------------------|
