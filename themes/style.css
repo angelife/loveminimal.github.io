@@ -104,6 +104,10 @@ body,
     top: -30px;
 }
 
+.js-essay p {
+    margin-bottom: 0;
+}
+
 .js-drawer {
     display: block;
     margin: 16px 0;
