@@ -95,7 +95,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 
 | 鸿蒙/安卓/IOS |
 |---------------|
-| [[./app-inbox.org][App Inbox]]     |
+| [[./app-inbox-card.org][App Inbox]]     |
 
 | 休闲     |
 |----------|
