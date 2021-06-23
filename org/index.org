@@ -100,7 +100,7 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | 休闲     |
 |----------|
 | [[./diet-modification.org][饮食调整]] |
-| [[./flute.org][箫笛]]     |
+| [[./flute-card.org][箫笛]]     |
 
 | 马克思主义                                    |
 |-----------------------------------------------|
