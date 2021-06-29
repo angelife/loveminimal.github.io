@@ -666,11 +666,12 @@ td:last-child {
 
 .js-nav-bookmarks-container {
     padding: 0.16rem 0.09rem;
-    border: 2px solid #eee;
-    border-radius: 6px;
     list-style-type: none;
     white-space: nowrap;
     overflow: hidden;
+    /* 241,252,255 */
+    background-image: linear-gradient(0deg,rgba(246, 246, 246, 0.5) 50%,#fff 50%);
+    background-size: 100% 28px;
 }
 
 .js-nav-bookmarks-container:hover {

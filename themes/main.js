@@ -234,27 +234,34 @@ $('pre').each(function () {
 if (isCurPage('nav')) {
     BODY.addClass('js-nav-body');
 
-    $('<div class="js-nav-link-container"></div>').insertAfter(TITLE);
-
     $('td a').each(function (idx, item) {
         $(this).attr('target', '_blank');
-        $('.js-nav-link-container').append(item);
     });
 
-    $('.org-ul a').each(function () {
-        $(this).attr('target', '_blank');
-    });
+    if (isMB) {
+        $('table').hide();
+        $('<div class="js-nav-link-container"></div>').insertAfter(TITLE);
 
-    let NL = $('.js-nav-link-container a');
-    let _len = NL.length,
-        _remainder = 0;
+        $('td a').each(function (idx, item) {
+            $(this).attr('target', '_blank');
+            $('.js-nav-link-container').append(item);
+        });
 
-    _remainder = _len % 5;
+        $('.org-ul a').each(function () {
+            $(this).attr('target', '_blank');
+        });
 
-    if (_remainder == 0) _remainder = 5;
+        let NL = $('.js-nav-link-container a');
+        let _len = NL.length,
+            _remainder = 0;
 
-    for (let i = 0; i < 5 - _remainder; i++) {
-        $('.js-nav-link-container').append('<a></a>');
+        _remainder = _len % 5;
+
+        if (_remainder == 0) _remainder = 5;
+
+        for (let i = 0; i < 5 - _remainder; i++) {
+            $('.js-nav-link-container').append('<a></a>');
+        }
     }
 
     // Bookmark tips
