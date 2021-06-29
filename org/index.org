@@ -20,7 +20,6 @@
   }
   100% {background-position: 0 0;}}
 </style>
-
 #+END_EXPORT
 
 # #+BEGIN_EXPORT html
