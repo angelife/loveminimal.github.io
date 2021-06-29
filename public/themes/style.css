@@ -626,7 +626,7 @@ td:last-child {
 
 .js-nav-body thead,
 .js-nav-body tbody:nth-child(even) {
-    background-color: #f1fcff;
+    background-color: #f7fbfc;
 }
 
 .js-nav-body tbody tr td a {
