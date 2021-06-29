@@ -619,8 +619,23 @@ td:last-child {
 
 /* Navigations page style */
 /* ////////////////////////////////////////// */
+
 .js-nav-body table {
-    display: none;
+    width: 100%;
+}
+
+.js-nav-body thead,
+.js-nav-body tbody:nth-child(even) {
+    background-color: #f1fcff;
+}
+
+.js-nav-body tbody tr td a {
+    display: block;
+    text-align: center;
+}
+
+.js-nav-body tbody tr td:hover {
+    box-shadow: 1px 1px 6px #369;
 }
 
 .js-nav-link-container {
@@ -652,7 +667,7 @@ td:last-child {
 .js-nav-bookmarks-container {
     padding: 0.16rem 0.09rem;
     border: 2px solid #eee;
-    border-radius: 0.09rem;
+    border-radius: 6px;
     list-style-type: none;
     white-space: nowrap;
     overflow: hidden;
