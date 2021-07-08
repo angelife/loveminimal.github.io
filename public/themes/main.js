@@ -43,7 +43,7 @@ const CONTENT = $('#content');
 // Add animate effects.
 // Create nav & top buttons.
 // ------------------------------------------------------------------
-BODY.addClass('animated fadeIn slow');
+
 BODY.append(
     `<div class="nav-btn" onclick="location.href = './index.html'">IDX ←</div>`
 );

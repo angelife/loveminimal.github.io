@@ -8,6 +8,11 @@ html {
     font-size: 100px;
 }
 
+body {
+    animation: fadeIn;
+	animation-duration: 2s;
+}
+
 /* Background options */
 body,
 #content::before,
