@@ -22,7 +22,7 @@
 |--------------+--------------+----------------+----------------+----------------|
 | [[./index.org][Virgo]]        | [[https://www.dida365.com/webapp/#p/inbox/tasks][GTD]]          | [[https://emacs-china.org/][Emacs China]]    | [[https://github.com/loveminimal][Github]]         | [[https://gitee.com/loveminimal][Gitee]]          |
 | [[https://cloud.huawei.com/home#/notepad/task/2f0739e3$ee3c$4049$8422$461c7e46d116/none][华为云]]       | [[https://cloud.tencent.com/developer/labs][腾讯云]]       | [[https://www.youtube.com/][YouTube]]        | [[https://www.icourse163.org/][MOOC]]           | [[https://twitter.com/home][Twitter]]        |
-| [[https://www.bilibili.com/][Bilibili]]     | [[https://www.zhihu.com/][知乎]]         |                |                |                |
+| [[https://www.bilibili.com/][Bilibili]]     | [[https://www.zhihu.com/][知乎]]         | [[https://sm.ms/home/picture][SM.MS]]          |                |                |
 |--------------+--------------+----------------+----------------+----------------|
 | [[http://fanyi.youdao.com/][有道翻译]]     | [[http://www.fhdq.net/emoji.html][符号大全]]     | [[https://www.bejson.com/ui/compress_img/][图压缩]]         | [[https://man.linuxde.net/][Linux 命令大全]] | [[https://www.bootcss.com/][BootNav]]        |
 | [[http://www.hepou.com/peise/dapei.html][Web Color]]    | [[https://pixabay.com/zh/][Pixabay]]      | [[http://www.fonts.net.cn/][字体之家]]       | [[https://c.runoob.com/front-end/854][RegExp]]         | [[https://animate.style/][AnimateCSS]]     |
