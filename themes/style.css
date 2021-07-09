@@ -296,7 +296,7 @@ h6 code:last-child {
 /* Source code style */
 /* ////////////////////////////////////////// */
 code {
-    color: #135;
+    color: #135; /*  #D63384*/
     font-size: 0.14rem;
     font-family: Monaco, Consolas, 'monospace', 'kaiti';
 }
