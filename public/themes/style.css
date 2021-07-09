@@ -210,6 +210,9 @@ li > ol {
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+
+    animation: flipInX;
+	animation-duration: 2s;
 }
 
 h2,
