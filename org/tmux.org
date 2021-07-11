@@ -2,7 +2,7 @@
 #+TITLE: 十分钟掌握 TMUX
 
 #+BEGIN_EXPORT html
-<img src="https://www.wangbase.com/blogimg/asset/201910/bg2019102005.png" width="60%" />
+<img src="https://www.wangbase.com/blogimg/asset/201910/bg2019102005.png" width="300" />
 #+END_EXPORT
 
 → [[http://www.ruanyifeng.com/blog/2019/10/tmux.html][友情链接]]
