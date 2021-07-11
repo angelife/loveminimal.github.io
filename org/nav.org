@@ -17,28 +17,28 @@
 </div>
 #+END_EXPORT
 
-| V            | I            | R              | G              | O              |
-| <c>          | <c>          | <c>            | <c>            | <c>            |
-|--------------+--------------+----------------+----------------+----------------|
-| [[./index.org][Virgo]]        | [[https://www.dida365.com/webapp/#p/inbox/tasks][GTD]]          | [[https://emacs-china.org/][Emacs China]]    | [[https://github.com/loveminimal][Github]]         | [[https://gitee.com/loveminimal][Gitee]]          |
-| [[https://cloud.huawei.com/home#/notepad/task/2f0739e3$ee3c$4049$8422$461c7e46d116/none][华为云]]       | [[https://cloud.tencent.com/developer/labs][腾讯云]]       | [[https://www.youtube.com/][YouTube]]        | [[https://www.icourse163.org/][MOOC]]           | [[https://twitter.com/home][Twitter]]        |
-| [[https://www.bilibili.com/][Bilibili]]     | [[https://www.zhihu.com/][知乎]]         | [[https://sm.ms/home/picture][SM.MS]]          |                |                |
-|--------------+--------------+----------------+----------------+----------------|
-| [[http://fanyi.youdao.com/][有道翻译]]     | [[http://www.fhdq.net/emoji.html][符号大全]]     | [[https://www.bejson.com/ui/compress_img/][图压缩]]         | [[https://man.linuxde.net/][Linux 命令大全]] | [[https://www.bootcss.com/][BootNav]]        |
-| [[http://www.hepou.com/peise/dapei.html][Web Color]]    | [[https://pixabay.com/zh/][Pixabay]]      | [[http://www.fonts.net.cn/][字体之家]]       | [[https://c.runoob.com/front-end/854][RegExp]]         | [[https://animate.style/][AnimateCSS]]     |
-| [[https://www.jsdelivr.com/][JSDelivr CDN]] |              |                |                |                |
-|--------------+--------------+----------------+----------------+----------------|
-| [[http://www.etymon.cn/index.html][英语字根]]     | [[https://www.hanjutv2020.com/][韩剧]]         | [[https://www.gushiwen.org/][古诗文网]]       | [[https://www.meijutt.tv/][天天美剧]]       | [[http://www.people.com.cn/][人民网]]         |
-| [[https://v.kyikan.com/][看一看]]       | [[https://www.flvcd.com/index.htm][硕鼠]]         | [[https://pic.netbian.com/][壁纸]]           | [[http://www.agefans.top/][AGE动漫]]        | [[https://www.daodejing.org/][道德经]]         |
-|--------------+--------------+----------------+----------------+----------------|
-| [[https://www.crx4chrome.com/][Crx4Chrome]]   | [[https://chocolatey.org/packages][Chocolatey]]   | [[https://vimawesome.com/][VimAwesome]]     | [[http://www.melpa.org/#/][Melpa]]          |                |
-|--------------+--------------+----------------+----------------+----------------|
-| [[http://www.runoob.com/][菜鸟教程]]     | [[http://es6.ruanyifeng.com/][ES6]]          |                | [[https://developer.huawei.com/consumer/cn/forum/][鸿蒙论坛]]       | [[https://developer.android.google.cn/training/basics/firstapp/creating-project][Android Doc]]    |
-| [[http://www.nginx.cn/doc/][Nginx Doc]]    | [[http://c.biancheng.net/][C 语言中文网]] | [[https://www.lmonkey.com/][学习猿地]]       | [[https://axios-http.com/docs/zh/intro/][Axios Doc]]      | [[https://www.interviewcake.com/data-structures-reference][Interview Cake]] |
-|--------------+--------------+----------------+----------------+----------------|
-| [[https://bitsofco.de/][Bitsofco]]     | [[http://www.ruanyifeng.com/blog/developer/][阮一峰]]       | [[http://xahlee.org/][李杀网]]         | [[https://coolshell.cn/][酷壳]]           | [[https://www.zhangxinxu.com/][张鑫旭]]         |
-| [[http://www.tripod.fun/][阿汤]]         | [[https://www.ituring.com.cn/][图灵社区]]     | [[https://manateelazycat.github.io/index.html][ManateeLazyCat]] | [[http://www.yinwang.org/][当然我在扯淡]]   | [[https://blog.codingnow.com/][云风的 BLOG]]    |
-| [[https://www.liaoxuefeng.com/][廖雪峰]]       |              |                |                |                |
+| V          | I            | R              | G              | O              |
+| <c>        | <c>          | <c>            | <c>            | <c>            |
+|------------+--------------+----------------+----------------+----------------|
+| [[./index.org][Virgo]]      | [[https://www.dida365.com/webapp/#p/inbox/tasks][GTD]]          | [[https://emacs-china.org/][Emacs China]]    | [[https://github.com/loveminimal][Github]]         | [[https://gitee.com/loveminimal][Gitee]]          |
+| [[https://cloud.huawei.com/home#/notepad/task/2f0739e3$ee3c$4049$8422$461c7e46d116/none][华为云]]     | [[https://cloud.tencent.com/developer/labs][腾讯云]]       | [[https://www.youtube.com/][YouTube]]        | [[https://www.icourse163.org/][MOOC]]           | [[https://twitter.com/home][Twitter]]        |
+| [[https://www.bilibili.com/][Bilibili]]   | [[https://www.zhihu.com/][知乎]]         | [[https://sm.ms/home/picture][SM.MS]]          |                |                |
+|------------+--------------+----------------+----------------+----------------|
+| [[http://fanyi.youdao.com/][有道翻译]]   | [[http://www.fhdq.net/emoji.html][符号大全]]     | [[https://www.bejson.com/ui/compress_img/][图压缩]]         | [[https://man.linuxde.net/][Linux 命令大全]] | [[https://www.bootcss.com/][BootNav]]        |
+| [[http://www.hepou.com/peise/dapei.html][Web Color]]  | [[https://pixabay.com/zh/][Pixabay]]      | [[http://www.fonts.net.cn/][字体之家]]       | [[https://c.runoob.com/front-end/854][RegExp]]         | [[https://animate.style/][AnimateCSS]]     |
+| [[https://www.jsdelivr.com/][JSDelivr]]   |              |                |                |                |
+|------------+--------------+----------------+----------------+----------------|
+| [[http://www.etymon.cn/index.html][英语字根]]   | [[https://www.hanjutv2020.com/][韩剧]]         | [[https://www.gushiwen.org/][古诗文网]]       | [[https://www.meijutt.tv/][天天美剧]]       | [[http://www.people.com.cn/][人民网]]         |
+| [[https://v.kyikan.com/][看一看]]     | [[https://www.flvcd.com/index.htm][硕鼠]]         | [[https://pic.netbian.com/][壁纸]]           | [[http://www.agefans.top/][AGE动漫]]        | [[https://www.daodejing.org/][道德经]]         |
+|------------+--------------+----------------+----------------+----------------|
+| [[https://www.crx4chrome.com/][Crx4Chrome]] | [[https://chocolatey.org/packages][Chocolatey]]   | [[https://vimawesome.com/][VimAwesome]]     | [[http://www.melpa.org/#/][Melpa]]          |                |
+|------------+--------------+----------------+----------------+----------------|
+| [[http://www.runoob.com/][菜鸟教程]]   | [[http://es6.ruanyifeng.com/][ES6]]          |                | [[https://developer.huawei.com/consumer/cn/forum/][鸿蒙论坛]]       | [[https://developer.android.google.cn/training/basics/firstapp/creating-project][Android Doc]]    |
+| [[http://www.nginx.cn/doc/][Nginx Doc]]  | [[http://c.biancheng.net/][C 语言中文网]] | [[https://www.lmonkey.com/][学习猿地]]       | [[https://axios-http.com/docs/zh/intro/][Axios Doc]]      | [[https://www.interviewcake.com/data-structures-reference][Interview Cake]] |
+|------------+--------------+----------------+----------------+----------------|
+| [[https://bitsofco.de/][Bitsofco]]   | [[http://www.ruanyifeng.com/blog/developer/][阮一峰]]       | [[http://xahlee.org/][李杀网]]         | [[https://coolshell.cn/][酷壳]]           | [[https://www.zhangxinxu.com/][张鑫旭]]         |
+| [[http://www.tripod.fun/][阿汤]]       | [[https://www.ituring.com.cn/][图灵社区]]     | [[https://manateelazycat.github.io/index.html][ManateeLazyCat]] | [[http://www.yinwang.org/][当然我在扯淡]]   | [[https://blog.codingnow.com/][云风的 BLOG]]    |
+| [[https://www.liaoxuefeng.com/][廖雪峰]]     |              |                |                |                |
 
  *Bookmarks InboX*
 
