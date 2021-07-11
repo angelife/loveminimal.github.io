@@ -1,173 +1,176 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
-<!-- 2021-06-16 Wed 09:58 -->
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>十分钟掌握 TMUX</title>
-<meta name="generator" content="Org mode">
-<meta name="author" content="Jack Liu">
-<link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
-           <link rel="stylesheet" href="themes/style.css" type="text/css"  />
-           <script type="module" src="themes/main.js" defer></script>
+    <!-- 2021-06-16 Wed 09:58 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>十分钟掌握 TMUX</title>
+    <meta name="generator" content="Org mode">
+    <meta name="author" content="Jack Liu">
+    <link rel="shortcut icon" href="themes/assets/virgo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="themes/style.css" type="text/css" />
+    <script type="module" src="themes/main.js" defer></script>
 </head>
+
 <body>
-<div id="content">
-<h1 class="title">十分钟掌握 TMUX</h1>
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org2c1265b">Layouts 布局、Window 窗口、Pane 窗格</a></li>
-<li><a href="#orgf3d6a23">配置</a></li>
-</ul>
-</div>
-</div>
-<img src="https://www.wangbase.com/blogimg/asset/201910/bg2019102005.png" width="60%" />
+    <div id="content">
+        <h1 class="title">十分钟掌握 TMUX</h1>
+        <div id="table-of-contents">
+            <h2>Table of Contents</h2>
+            <div id="text-table-of-contents">
+                <ul>
+                    <li><a href="#org2c1265b">Layouts 布局、Window 窗口、Pane 窗格</a></li>
+                    <li><a href="#orgf3d6a23">配置</a></li>
+                </ul>
+            </div>
+        </div>
+        <img src="https://www.wangbase.com/blogimg/asset/201910/bg2019102005.png" width="60%" />
 
-<p>
-→ <a href="http://www.ruanyifeng.com/blog/2019/10/tmux.html">友情链接</a>
-</p>
+        <p>
+            → <a href="http://www.ruanyifeng.com/blog/2019/10/tmux.html">友情链接</a>
+        </p>
 
-<essay>
-Windows 终于有了个 Windows-Terminal 吧，配置文件还是个 txt .... 哎，微软啊，你妹。
-</essay>
+        <div class="org-essay">
+            Windows 终于有了个 Windows-Terminal 吧，配置文件还是个 txt .... 哎，微软啊，你妹。
+        </div>
 
-<div id="outline-container-org2c1265b" class="outline-2">
-<h2 id="org2c1265b">Layouts 布局、Window 窗口、Pane 窗格</h2>
-<div class="outline-text-2" id="text-org2c1265b">
-<table>
+        <div id="outline-container-org2c1265b" class="outline-2">
+            <h2 id="org2c1265b">Layouts 布局、Window 窗口、Pane 窗格</h2>
+            <div class="outline-text-2" id="text-org2c1265b">
+                <table>
 
-<colgroup>
-<col  class="org-center">
+                    <colgroup>
+                        <col class="org-center">
 
-<col  class="org-left">
+                        <col class="org-left">
 
-<col  class="org-left">
+                        <col class="org-left">
 
-<col  class="org-center">
+                        <col class="org-center">
 
-<col  class="org-left">
+                        <col class="org-left">
 
-<col  class="org-left">
+                        <col class="org-left">
 
-<col  class="org-center">
+                        <col class="org-center">
 
-<col  class="org-left">
+                        <col class="org-left">
 
-<col  class="org-left">
-</colgroup>
-<thead>
-<tr>
-<th scope="col" class="org-center">布局</th>
-<th scope="col" class="org-left">层级</th>
-<th scope="col" class="org-left">描述</th>
-<th scope="col" class="org-center">窗口</th>
-<th scope="col" class="org-left">命令</th>
-<th scope="col" class="org-left">描述</th>
-<th scope="col" class="org-center">窗格</th>
-<th scope="col" class="org-left">命令</th>
-<th scope="col" class="org-left">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="org-center">*</td>
-<td class="org-left">server</td>
-<td class="org-left">服务</td>
-<td class="org-center">*</td>
-<td class="org-left">c</td>
-<td class="org-left">新建窗口</td>
-<td class="org-center">*</td>
-<td class="org-left">%</td>
-<td class="org-left">水平分屏</td>
-</tr>
+                        <col class="org-left">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="org-center">布局</th>
+                            <th scope="col" class="org-left">层级</th>
+                            <th scope="col" class="org-left">描述</th>
+                            <th scope="col" class="org-center">窗口</th>
+                            <th scope="col" class="org-left">命令</th>
+                            <th scope="col" class="org-left">描述</th>
+                            <th scope="col" class="org-center">窗格</th>
+                            <th scope="col" class="org-left">命令</th>
+                            <th scope="col" class="org-left">描述</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="org-center">*</td>
+                            <td class="org-left">server</td>
+                            <td class="org-left">服务</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">c</td>
+                            <td class="org-left">新建窗口</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">%</td>
+                            <td class="org-left">水平分屏</td>
+                        </tr>
 
-<tr>
-<td class="org-center">*</td>
-<td class="org-left">session</td>
-<td class="org-left">会话</td>
-<td class="org-center">*</td>
-<td class="org-left">&amp;</td>
-<td class="org-left">关闭窗口</td>
-<td class="org-center">*</td>
-<td class="org-left">"</td>
-<td class="org-left">垂直分屏</td>
-</tr>
+                        <tr>
+                            <td class="org-center">*</td>
+                            <td class="org-left">session</td>
+                            <td class="org-left">会话</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">&amp;</td>
+                            <td class="org-left">关闭窗口</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">"</td>
+                            <td class="org-left">垂直分屏</td>
+                        </tr>
 
-<tr>
-<td class="org-center">*</td>
-<td class="org-left">window</td>
-<td class="org-left">窗口</td>
-<td class="org-center">*</td>
-<td class="org-left">l</td>
-<td class="org-left">切换窗口</td>
-<td class="org-center">*</td>
-<td class="org-left">x</td>
-<td class="org-left">关闭窗格</td>
-</tr>
+                        <tr>
+                            <td class="org-center">*</td>
+                            <td class="org-left">window</td>
+                            <td class="org-left">窗口</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">l</td>
+                            <td class="org-left">切换窗口</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">x</td>
+                            <td class="org-left">关闭窗格</td>
+                        </tr>
 
-<tr>
-<td class="org-center">*</td>
-<td class="org-left">pane</td>
-<td class="org-left">窗格</td>
-<td class="org-center">*</td>
-<td class="org-left">n</td>
-<td class="org-left">切换到下一个窗口</td>
-<td class="org-center">*</td>
-<td class="org-left">;</td>
-<td class="org-left">切换窗格</td>
-</tr>
+                        <tr>
+                            <td class="org-center">*</td>
+                            <td class="org-left">pane</td>
+                            <td class="org-left">窗格</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">n</td>
+                            <td class="org-left">切换到下一个窗口</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">;</td>
+                            <td class="org-left">切换窗格</td>
+                        </tr>
 
-<tr>
-<td class="org-center">*</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-center">*</td>
-<td class="org-left">p</td>
-<td class="org-left">切换到上一个窗口</td>
-<td class="org-center">*</td>
-<td class="org-left">o</td>
-<td class="org-left">顺时针切换窗格</td>
-</tr>
+                        <tr>
+                            <td class="org-center">*</td>
+                            <td class="org-left">&#xa0;</td>
+                            <td class="org-left">&#xa0;</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">p</td>
+                            <td class="org-left">切换到上一个窗口</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">o</td>
+                            <td class="org-left">顺时针切换窗格</td>
+                        </tr>
 
-<tr>
-<td class="org-center">*</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-center">*</td>
-<td class="org-left">w</td>
-<td class="org-left">窗口的菜单列表</td>
-<td class="org-center">*</td>
-<td class="org-left">C-o</td>
-<td class="org-left">逆时针转换窗格</td>
-</tr>
+                        <tr>
+                            <td class="org-center">*</td>
+                            <td class="org-left">&#xa0;</td>
+                            <td class="org-left">&#xa0;</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">w</td>
+                            <td class="org-left">窗口的菜单列表</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">C-o</td>
+                            <td class="org-left">逆时针转换窗格</td>
+                        </tr>
 
-<tr>
-<td class="org-center">*</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-center">*</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-left">&#xa0;</td>
-<td class="org-center">*</td>
-<td class="org-left">M-o</td>
-<td class="org-left">顺时针转换窗格</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+                        <tr>
+                            <td class="org-center">*</td>
+                            <td class="org-left">&#xa0;</td>
+                            <td class="org-left">&#xa0;</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">&#xa0;</td>
+                            <td class="org-left">&#xa0;</td>
+                            <td class="org-center">*</td>
+                            <td class="org-left">M-o</td>
+                            <td class="org-left">顺时针转换窗格</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-<div id="outline-container-orgf3d6a23" class="outline-2">
-<h2 id="orgf3d6a23">配置<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> <sup>, </sup><sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup></h2>
-<div class="outline-text-2" id="text-orgf3d6a23">
-<p>
-新建 <code>~/.tmux.conf</code> 文件，并写入：
-</p>
+        <div id="outline-container-orgf3d6a23" class="outline-2">
+            <h2 id="orgf3d6a23">配置<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> <sup>, </sup><sup><a
+                        id="fnr.2" class="footref" href="#fn.2">2</a></sup></h2>
+            <div class="outline-text-2" id="text-orgf3d6a23">
+                <p>
+                    新建 <code>~/.tmux.conf</code> 文件，并写入：
+                </p>
 
-<div class="org-src-container">
-<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">Set new default prefix</span>
+                <div class="org-src-container">
+                    <pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">Set new default prefix</span>
 <span class="linenr"> 2: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#20462;&#25913;&#20027;&#38190;</span>
 <span class="linenr"> 3: </span>unbind C-b
 <span class="linenr"> 4: </span>set-option -g prefix C-j
@@ -183,28 +186,40 @@ Windows 终于有了个 Windows-Terminal 吧，配置文件还是个 txt .... �
 <span class="linenr">14: </span>unbind <span style="color: #50a14f;">'"'</span>
 <span class="linenr">15: </span>unbind %
 </pre>
-</div>
-</div>
-</div>
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
+                </div>
+            </div>
+        </div>
+        <div id="footnotes">
+            <h2 class="footnotes">Footnotes: </h2>
+            <div id="text-footnotes">
 
-<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://learnxinyminutes.com/docs/zh-cn/tmux-cn/">https://learnxinyminutes.com/docs/zh-cn/tmux-cn/</a>
-</p></div></div>
+                <div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup>
+                    <div class="footpara">
+                        <p class="footpara">
+                            <a
+                                href="https://learnxinyminutes.com/docs/zh-cn/tmux-cn/">https://learnxinyminutes.com/docs/zh-cn/tmux-cn/</a>
+                        </p>
+                    </div>
+                </div>
 
-<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
-<a href="https://www.cnblogs.com/weiyinfu/p/10462738.html">https://www.cnblogs.com/weiyinfu/p/10462738.html</a>
-</p></div></div>
+                <div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup>
+                    <div class="footpara">
+                        <p class="footpara">
+                            <a
+                                href="https://www.cnblogs.com/weiyinfu/p/10462738.html">https://www.cnblogs.com/weiyinfu/p/10462738.html</a>
+                        </p>
+                    </div>
+                </div>
 
-</div>
-</div></div>
-<div id="postamble" class="status">
-<p class="date">Date: 2020-02-26 Wed 18:00</p>
-<p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-06-16 Wed 09:58</p>
-<p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
-</div>
+            </div>
+        </div>
+    </div>
+    <div id="postamble" class="status">
+        <p class="date">Date: 2020-02-26 Wed 18:00</p>
+        <p class="author">Author: Jack Liu</p>
+        <p class="date">Created: 2021-06-16 Wed 09:58</p>
+        <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19025929号</a></p>
+    </div>
 </body>
+
 </html>

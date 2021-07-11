@@ -2,9 +2,9 @@
 #+TITLE: 饮食调整
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 饮食调整，贵在平衡。保证必需营养吸收，减少不必要的食物摄入。
-</essay>
+</div>
 #+END_EXPORT
 
 ** 七分饱[fn:1] [fn:2]

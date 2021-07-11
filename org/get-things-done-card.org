@@ -27,9 +27,9 @@ GTD 分为 _横向管理_ 和 _纵向管理_ 两个方面。
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 在纯粹的精神世界中，一切起于 念 !
-</essay>
+</div>
 #+END_EXPORT
 
 *** 2.分析：清空工作篮
@@ -85,9 +85,9 @@ style=""
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 在“分析”阶段，我们要做的是快速判断清空收集篮，在“管理”阶段，则需要认真分析，依照不同类型事物的标准进行切实的处理。
-</essay>
+</div>
 #+END_EXPORT
 
 *** 4.检查
@@ -191,9 +191,9 @@ style="float: right; margin-left: 8px;"
 - 把分析组织工作置于次要的位置，放在下个阶段处理。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 在头脑中搜集所有的可能性，不放过任何蛛丝马迹。
-</essay>
+</div>
 #+END_EXPORT
 
 *** 4.组织协调
@@ -208,7 +208,7 @@ style="float: right; margin-left: 8px;"
 如果一项工作具有可操作性，其下一步行动方案就必须予以落实，必须有切实可行的具体行动。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 实践，是实现一切计划的根本途径！
-</essay>
+</div>
 #+END_EXPORT

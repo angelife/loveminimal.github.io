@@ -20,9 +20,9 @@ AJAX（Asynchronous JavaScript and XML），是一种异步请求数据的 Web �
 ** *进程、线程[fn:1]
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 在讲述 AJAX 之前，有必要先了解一些进程和线程方面的知识。
-</essay>
+</div>
 #+END_EXPORT
 
 进程（process）和线程（thread）是操作系统的基本概念，比较抽象，不易掌握。
@@ -36,9 +36,9 @@ AJAX（Asynchronous JavaScript and XML），是一种异步请求数据的 Web �
 *注：一个进程至少有一个线程。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 哈哈，线程才是真正做事的喽。
-</essay>
+</div>
 #+END_EXPORT
 
 线程是最小的执行单元，而进程由至少一个线程组成。如何调度进程和线程，完全由操作系统决定，程序自己不能决定什么时候执行，执行多长时间。
@@ -180,9 +180,9 @@ XMLHttpRequest 在连接后是通过浏览器新开一个线程请求，在检�
 ** *JavaScript 运行机制[fn:3]
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 学习一门语言，再怎么了解它的运行机制都是不为过的。
-</essay>
+</div>
 #+END_EXPORT
 
 在了解 AJAX 之前，我们再通过以下几个方面，来加强一下对 JavaScript 的运行机制的认识。
@@ -215,9 +215,9 @@ JavaScript 语言的一大特点就是单线程，即同一时间只能做一件
 如果排队是因为计算量大，CPU 忙不过来，倒也算了，但是多数时候 CPU 是闲着的，因为 I/O 设备很慢（比如 Ajax 操作从网络读取数据），不得不等着结果出来，再往下执行。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 明显对 CPU “压榨”的不够啊，嘿嘿……
-</essay>
+</div>
 #+END_EXPORT
 
 JavaScript 语言的设计者意识到，这时主线程完全可以不管 I/O 设备，挂起处于等待中的任务，先运行排在后面的任务。等待 I/O 设备返回了结果，再回过头，把挂起的任务继续执行下去。
@@ -331,9 +331,9 @@ title=""
 ** Ajax 异步的原理
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 Hmm... 终于讲到 Ajax 了……
-</essay>
+</div>
 #+END_EXPORT
 
 在正式了解 Ajax 之前，我们先来看看它的原理。前面的章节中，我们了解了浏览器的多线程：GUI 渲染线程、JavaScript 引擎线程、事件触发线程、Http 请求线程、定时器触发线程。
@@ -481,9 +481,9 @@ XHR 对象如果要用于 AJAX 的话，其 =open()= 方法的 =async= 参数必
 ** *HTTP 协议
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 我们已经初步了解 AJAX 了，深入地话，就需要进一步认识一下 HTTP 协议喽。
-</essay>
+</div>
 #+END_EXPORT
 
 HTTP 协议（HyperText Transfer Protocol，超文本传输协议），是一个基于 TCP/IP 通信协议来传递数据（HTML 文件、图片、查询结果等）的协议。
@@ -505,9 +505,9 @@ HTTP 协议工作于“客户端-服务端”架构上，如浏览器（HTTP 客
 （1）HTTP 是无连接：无连接的含义是限制每次连接只处理一个请求，采用这种方式可以节省传输时间。服务器处理完客户的请求，并收到客户的应答后，即断开连接。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 无连接？？？
-</essay>
+</div>
 #+END_EXPORT
 
 （2）HTTP 是媒体独立的：只要客户端和服务器 *知道如何处理* 的数据内容，任何类型的数据都可以通过 HTTP 发送，客户端以及服务器指定使用适合的 MIME-type 内容类型。
@@ -655,9 +655,9 @@ jQuery 提供多个与 AJAX 有关的方法。
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 jQuery 也算是 DOM 时代的霸主了……
-</essay>
+</div>
 #+END_EXPORT
 
 在现代 Web 项目中，我们已经很少使用 jQuery 做主力了，除非你要和万恶的 IE 打交道，我们这里只稍微认识一下 jQuery 中 Ajax 的一般应用。
@@ -680,9 +680,9 @@ jQuery 也算是 DOM 时代的霸主了……
 ** Axios[fn:4]
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 来看看这个比较火热的 Ajax 封装库吧。
-</essay>
+</div>
 #+END_EXPORT
 
 Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 NodeJS 中，它具有以下特性：
@@ -710,9 +710,9 @@ Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 NodeJS 中
 #+END_EXAMPLE
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 我们提供 JavaScript 软件包的时候，一般也需要提供 NPM 和 CDN 两种分发方式。
-</essay>
+</div>
 #+END_EXPORT
 
 在项目（模块化开发）中，我们一般通过如下两种方式引入 axios ：

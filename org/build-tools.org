@@ -113,9 +113,9 @@ Now, *format all files with Prettier*:
 #+END_SRC
 
 #+BEGIN_EXPORT html
-<note>
+<div class="org-note">
 `npx` ships with `npm` and lets you run locally installed tools.
-</note>
+</div>
 #+END_EXPORT
 
 =prettier --write .= is great for formatting everything, but for a big project it might take a litter while. You may run:
@@ -155,9 +155,9 @@ List some frequent configurations:
 | ...     |                        |                          |                                                        |
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 永远不要期待一蹴而就，认识是螺旋上升的，只需所需即可。
-</essay>
+</div>
 #+END_EXPORT
 
 *** ESLint[fn:2]

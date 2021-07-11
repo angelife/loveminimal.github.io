@@ -33,9 +33,9 @@ _2. 使用 String 类定义_
 String 类的构造方法有多种重载形式，每种形式都可以定义字符串。
 
 #+BEGIN_EXPORT html
-<note>
+<div class="org-note">
 具有和类名相同的名称，而且没有返回类型的方法称为构造方法。重载是指在一个类中定义多个同名的方法，但要求每个方法具有不同的参数的类型或参数的个数。
-</note>
+</div>
 #+END_EXPORT
 
 _2.1 String()_
@@ -123,9 +123,9 @@ _3.1 valueOf()_
 对大多数数组， =valueOf()= 方法返回一个相当晦涩的字符串，说明它是一个某种类型的数组。然而，对于字符数组，它创建一个包含了字符数组中的字符的字符串对象。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 字符串，无疑是很重要的，毕竟数字之上就是它了，然而这些稀奇古怪的方法却不用太在意的，只需要掌握一种通用的性能较好的就可以了，关键在于理解它们在编译器和内存中所作的动作。
-</essay>
+</div>
 #+END_EXPORT
 
 _3.2 parse()_
@@ -264,9 +264,9 @@ _3. replaceAll()_
 #+END_EXAMPLE
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 正则表达式，以后专题再说……
-</essay>
+</div>
 #+END_EXPORT
 
 *** 字符串比较
@@ -492,9 +492,9 @@ StringBuffer 就是为了解决大量拼接字符串时产生很多中间对象�
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 普通字符串是正则表达式的一种特殊形式，字符串统一于正则表达式。哎，哲学这个诱人的小妞，哪儿都有你。
-</essay>
+</div>
 #+END_EXPORT
 
 String 类里也提供了如下几个特殊的方法：
@@ -549,9 +549,9 @@ String 类里也提供了如下几个特殊的方法：
 为什么第一行的正则表达式会有那么多反斜杠？这是由于 Java 字符串中反斜杠本身需要转义，因此两个反斜杠（ =\\= ）实际上相当于一个（前一个用于转义）。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 Java 中的正则表达式和 Emacs Lisp 中的一样让人感到…… xx?+-^|...
-</essay>
+</div>
 #+END_EXPORT
 
 *上面的正则表达式依然只能匹配单个字符，这是因为还未在表达式中使用“通配符”。*

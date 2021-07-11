@@ -66,9 +66,9 @@ File 对象是特殊类型的 =Blob= ，且可以用在任意的 Blob 类型的 
 Base64 是一组相似的二进制到文本（binary-to-text）的 *编码规则* ，使得二进制数据在解释成 radix-64 的表现形式后能够用 ASCII 字符串的格式表示出来。
 
 #+BEGIN_EXPORT html
-<note>
+<div class="org-note">
 Base64 这个词出自一种 MIME 数据传输编码。
-</note>
+</div>
 #+END_EXPORT
 
 Base64 编码普遍应用于需要通过被设计为处理文本数据的媒介上储存和传输二进制数据而需要编码该二进制数据的场景，这样是为了保证数据的完整并且不用在传输过程中修改这些数据。
@@ -93,9 +93,9 @@ Base64 编码普遍应用于需要通过被设计为处理文本数据的媒介�
 这意味着 Base64 格式的字符串或文件的尺寸是原始尺寸的 133% ，如果编码的数据很少，增加的比例可能会更高。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 是不是有些混乱？Hmm... 来看下百度百科吧。
-</essay>
+</div>
 #+END_EXPORT
 
 #+BEGIN_QUOTE
@@ -133,9 +133,9 @@ FormData 接口提供了一种表示表单数据的键值 =key/value= 的构造�
 =FormData()= 构造函数用来创建一个新的 FormData 对象。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 有时候，这种“参考书式的定义”真的让人很……
-</essay>
+</div>
 #+END_EXPORT
 
 *FormData 有会么用呢？*
@@ -188,9 +188,9 @@ _2. 直接创建一个 FormData 对象_
 _3. 常用方法_
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 无非是“增删查改”那些事儿……
-</essay>
+</div>
 #+END_EXPORT
 
 | 方法                 | 描述                                                                                |

@@ -60,9 +60,9 @@ title=""
 =Collection= 接口是 =List、Set= 和 =Queue= 接口的父接口，通常情况下不被直接使用。 =Collection= 接口定义了一些通用的方法，通过这些方法可以实现对集合的基本操作，它们也可用于操作 =Set、List、Queue= 。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 List、Set、Queue 继承自 Collection 接口，自然已经实现了 Collection 接口中的方法。
-</essay>
+</div>
 #+END_EXPORT
 
 #+CAPTION: Collection 接口的常用方法
@@ -86,9 +86,9 @@ List、Set、Queue 继承自 Collection 接口，自然已经实现了 Collectio
 集合类像容器，现实生活中容器的功能，就是添加对象、删除对象、清空容器和判断容器是否为空等，集合类为这些功能提供了对应的方法。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 看，其实只要联系现实，记忆就突然变得简单了，这就是用以为学了。
-</essay>
+</div>
 #+END_EXPORT
 
 #+BEGIN_QUOTE

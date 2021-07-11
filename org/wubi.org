@@ -26,9 +26,9 @@ title=""
 当要输入汉字时，我们就按照汉字的书写顺序依次按键盘上与字根对应的键，组成一个代码，系统根据输入字根组成的代码，在五笔输入的字库中检索出所要的字。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 拆字 → 分配 → 组代 → 字库检索
-</essay>
+</div>
 #+END_EXPORT
 
 我们已经了解了五笔的基本原理，那么究竟应该如何学习五笔呢？
@@ -39,9 +39,9 @@ title=""
 3. 输入字根对应的字母，必要时要键入识别码。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 分三步：把冰箱门打开，把大象装进去，把冰箱门关上。
-</essay>
+</div>
 #+END_EXPORT
 
 ** 键盘分区和区位号
@@ -91,9 +91,9 @@ title=""
 让我们再来看看上面这张图中标红的字体，每个区位选取了一个最常用的字根作为键的名字，该字根称为 _键名字根_ 。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 Hmm... 怎么说呢，“被”这个字我经常使用，但每次都要输入“puhc”四个键...
-</essay>
+</div>
 #+END_EXPORT
 
 如何输入键名字根呢？对应的键按四下就行了，如：
@@ -245,9 +245,9 @@ title=""
 例如，如果“辶”为末笔的话，“边”、“连”的识别码都是 V，就无法区分了，所以才这样约定。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 哈，约定末笔是为了便于打识别码。
-</essay>
+</div>
 #+END_EXPORT
 
 其次，对“九、刀、七、力、匕”等字根，当它们参加“识别”时一律用“折笔”作为末笔。

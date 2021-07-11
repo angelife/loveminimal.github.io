@@ -124,19 +124,19 @@ if (isHome()) {
 
 // Customize annotations
 // ------------------------------------------
-$('note').each(function () {
-    $(this).addClass('js-note');
-});
+// $('note').each(function () {
+//     $(this).addClass('org-note');
+// });
 
-$('essay').each(function () {
-    $(this).addClass('js-essay');
-});
+// $('essay').each(function () {
+//     $(this).addClass('org-essay');
+// });
 
-$('drawer').each(function () {
-    $(this).addClass('js-drawer');
-});
+// $('drawer').each(function () {
+//     $(this).addClass('org-drawer');
+// });
 
-$('drawer .collapsible').each(function () {
+$('.org-drawer .collapsible').each(function () {
     $(this).click(function () {
         this.classList.toggle('active');
         let _ctx = this.nextElementSibling;

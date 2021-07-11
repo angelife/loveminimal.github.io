@@ -109,9 +109,9 @@ JVM 总是动态加载 =class= ，可以在运行期根据条件来控制加载 
 Maven 是一个 Java 项目管理和构建工具，它可以定义 _项目结构_ 、 _项目依赖_ ，并且用统一的方式进行 _自动化构建_ （编译、测试、打包、发布……）。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 在标准化这件事上，真是你好、我好、大家好！
-</essay>
+</div>
 #+END_EXPORT
 
 ** 为什么需要 Maven
@@ -129,9 +129,9 @@ Maven 是一个 Java 项目管理和构建工具，它可以定义 _项目结构
 这些工作难度不大，但是非常琐碎且耗时。如果每一个项目都自己搞一套配置，肯定会一团糟。我们需要的是一个标准化的Java项目管理和构建工具。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 哎，多项目，不标准化，真的是一言难尽……
-</essay>
+</div>
 #+END_EXPORT
 
 ** Maven 项目结构
@@ -151,9 +151,9 @@ title=""
 所有的目录结构都是约定好的标准结构，我们千万不要随意修改目录结构。使用标准结构不需要做任何配置，Maven 就可以正常使用。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 确定的目录结构，对于 Maven 来说也是必须的，因为实现 Maven 这个工具本身也需要按照相对确定的路径来扫描所要使用的文件。
-</essay>
+</div>
 #+END_EXPORT
 
 ** 项目描述文件
@@ -238,9 +238,9 @@ Maven定义了几种依赖关系，分别是 =compile、test、runtime= 和 =pro
 =provided= 依赖表示编译时需要，但运行时不需要。最典型的 =provided= 依赖是 =Servlet API= ，编译的时候需要，但是运行时，Servlet服务器内置了相关的 jar，所以运行期不需要。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 比如，运行的时候，Servlet 容器 Tomcat 会提供相关的 Servlet API 。
-</essay>
+</div>
 #+END_EXPORT
 
 *搜索第三方组件*
@@ -809,9 +809,9 @@ Spring 对接口类型使用 JDK 动态代理，对普通类使用 CGLIB 创建�
 ……
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 使用的过程中，慢慢埋坑吧……
-</essay>
+</div>
 #+END_EXPORT
 
 ** 访问数据库

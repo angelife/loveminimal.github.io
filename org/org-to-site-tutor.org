@@ -32,9 +32,9 @@ _2. 过往更新_
 - 新增批注样式，如右侧所示，使用方法见附录右侧批注样式（2020-07-27 Mon 11:01）
 
 #+BEGIN_EXPORT html
-<note>
+<div class="org-note">
 这就是批注喽，可以充分利用右侧的空间。
-</note>
+</div>
 #+END_EXPORT
 
 - 变更了项目结构，添加部署脚本，方便直接部署在 Github/Gitee Pages （2021-03-01 Mon 14:36）
@@ -523,28 +523,28 @@ _2. 在 bash 终端执行脚本_
 放心，它会保存你的文章状态，并在拉取更新后恢复它。
 ** 右侧批注样式
 
-其实，使用很简单，我们把要加的批注写在 =<note>...</note>= 中就可以了，放心，在渲染的时候已经做好了处理，如下：
+其实，使用很简单，我们把要加的批注写在 =<div class="org-note">...</div>= 中就可以了，放心，在渲染的时候已经做好了处理，如下：
 
 #+BEGIN_EXPORT html
-<note>
+<div class="org-note">
 Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yasnippets 哦，推荐后者 :)
-</note>
+</div>
 #+END_EXPORT
 
 #+BEGIN_SRC html -n
 #+BEGIN_EXPORT html
-<note>
+<div class="org-note">
 这就是批注喽，哈哈，可以充分利用右侧的空间。
-</note>
+</div>
 #+END_EXPORT
 #+END_SRC
 
-原理就是，在 Org Mode 中输出 HTML 片段，指定了自定义的标签 =<note>= （用来后续的 DOM 操作）。在浏览器渲染的过程中，无效的标签符并不会做为普通文本绘制出来，但其内的内容却可以。
+原理就是，在 Org Mode 中输出 HTML 片段，指定了自定义的标签 =<div class="org-note">= （用来后续的 DOM 操作）。在浏览器渲染的过程中，无效的标签符并不会做为普通文本绘制出来，但其内的内容却可以。
 
 ** 文内随笔样式
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
   <p>沁园春·雪</p>
 
   <div>近现代： 毛泽东</div>
@@ -556,13 +556,13 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
   <div>惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。</div>
   <div>一代天骄，成吉思汗，只识弯弓射大雕。</div>
   <div>俱往矣，数风流人物，还看今朝。</div>
-</essay>
+</div>
 #+END_EXPORT
 
 ** 页面折叠样式
 
 #+BEGIN_EXPORT html
-<drawer>
+<div class="org-drawer">
 <div class="collapsible">第一个折叠板</div>
 <div class="content">
   <p>沁园春·雪</p>
@@ -577,11 +577,11 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
   <div>一代天骄，成吉思汗，只识弯弓射大雕。</div>
   <div>俱往矣，数风流人物，还看今朝。</div>
 </div>
-</drawer>
+</div>
 #+END_EXPORT
 
 #+BEGIN_EXPORT html
-<drawer>
+<div class="org-drawer">
 <div class="collapsible">The second drawer</div>
 <div class="content">
   <p>沁园春·雪</p>
@@ -596,5 +596,5 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
   <div>一代天骄，成吉思汗，只识弯弓射大雕。</div>
   <div>俱往矣，数风流人物，还看今朝。</div>
 </div>
-</drawer>
+</div>
 #+END_EXPORT

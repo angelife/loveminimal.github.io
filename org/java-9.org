@@ -326,9 +326,9 @@ Java 允许同一个类中定义多个同名方法，只要它们的形参列表
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 方法重载，其实就是同类同名不同参啦，别的木有什么要求。
-</essay>
+</div>
 #+END_EXPORT
 
 *** 方法重写
@@ -497,9 +497,9 @@ Java 语言提供了两种类，分别为具体类和抽象类。
 *注：需要注意的是 =abstract= 关键字只能用于普通方法，不能用于 =static= 方法或者构造方法中。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 因为，静态方法和构造方法都是要用来使用和实现的，抽象方法只有声明没有实现，肯定是不行的啊。
-</essay>
+</div>
 #+END_EXPORT
 
 抽象方法的 3 个特征如下：

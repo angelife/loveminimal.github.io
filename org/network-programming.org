@@ -43,9 +43,9 @@ IP 地址又分为 _公网 IP 地址_ （可以直接被访问）和 _内网 IP 
 |             | =101.202.99.12= |
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 这就是 IPv4 的本质了 : )
-</essay>
+</div>
 #+END_EXPORT
 
 如果一台计算机只有一个网卡，并且接入了网络，那么，它有一个本机地址 =127.0.0.1= ，还有一个 IP 地址，例如 =101.202.99.12= ，可以通过这个 IP 地址接入网络。
@@ -65,9 +65,9 @@ IP 地址又分为 _公网 IP 地址_ （可以直接被访问）和 _内网 IP 
 每台计算机都需要正确配置 IP 地址和子网掩码，根据这两个就可以计算网络号。如果两台计算机计算出的网络号相同，说明两台计算机在同一个网络，可以直接通信；如果网络号不同，说明两台计算机不在同个网络，不能直接通信。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 网络号，就是用来判断两台计算机是否在同一网络中的。
-</essay>
+</div>
 #+END_EXPORT
 
 不在同一网络（网络号不同）的计算机，必须通过 *路由器或者交换机* 这样的网络设备间接通信，我们把这种设备称为 _网关_ 。
@@ -108,9 +108,9 @@ Address: 193.112.245.112
 由于计算机网络从底层的传输到高层的软件设计十分复杂，要合理地设计计算机网络模型，必须采用分层模型，每一层负责处理自己的操作。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 分层抽象！
-</essay>
+</div>
 #+END_EXPORT
 
 OSI（Open System Interconnect）网络模型是 ISO 组织定义的一个计算机互联的标准模型，注意它只是一个定义，目的是为了简化网络各层的操作，提供标准接口便于实现和维护。
@@ -521,9 +521,9 @@ username=hello&password=123456
 =POST= 请求通常要设置 =Content-Type= 表示 Body 的类型， =Content-Length= 表示 Body 的长度，这样服务器就可以根据请求的 Header 和 Body 做出正确的响应。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 请求的 Header 就是给服务器用的。
-</essay>
+</div>
 #+END_EXPORT
 
 此外， =GET= 请求的参数必须附加在 URL 上，并以 URLEncoded 方式编码，例如： =http://www.example.com/?a=1&b=K%26R= ，参数分别是 =a=1= 和 =b=K&R= 。
@@ -591,9 +591,9 @@ title=""
 因为 HTTP 协议是一个请求-响应协议，客户端在发送了一个 HTTP 请求后，必须等待服务器响应后，才能发送下一个请求，这样一来，如果某个响应太慢，它就会堵住后面的请求。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 TCP 连接是能复用了，等待响应又成问题了……
-</essay>
+</div>
 #+END_EXPORT
 
 所以，为了进一步提速， =HTTP/2.0= 允许客户端在没有收到响应的时候，发送多个 HTTP 请求，服务器返回响应的时候，不一定按顺序返回，只要双方能识别出哪个响应对应哪个请求，就可以做到并行发送和接收：
@@ -609,7 +609,7 @@ title=""
 #+END_EXPORT
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 有了问题，也就有同时产生了解决问题的可能。
-</essay>
+</div>
 #+END_EXPORT

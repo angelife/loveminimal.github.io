@@ -32,9 +32,9 @@
  “对用户不友好”的背后，其实是程序设计的不合理使得它们 *缺少抽象* ，而不是用户的问题。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  这点确实，比如，我就总是搞不清楚冰箱中的致冷程度数字、洗衣机面板上的各种设置开关……
- </essay>
+ </div>
  #+END_EXPORT
 
  如何对用户更加友好呢？ *统一、抽象！*
@@ -86,9 +86,9 @@
  可是自从《设计模式》（通常叫做 GoF，“Gang of Four”，“四人帮”）这本书在 1994 年发表以来，“设计模式”这个词有了新的，扭曲的含义。它变成了一种教条，带来了公司里程序的严重复杂化以及效率低下。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  教条主义不能有！当然，GoF 还是值得读的！
- </essay>
+ </div>
  #+END_EXPORT
 
  照搬模式东拼西凑，而不能抓住事物的本质，没有“灵感”，其实是设计不出好东西的。
@@ -100,9 +100,9 @@
  这段时间受到很多人的来信。他们看了我很早以前写的推崇 Linux 的文章，想知道如何“抛弃 Windows，学习 Linux”。天知道他们在哪里找到那么老的文章，真是好事不出门…… 我觉得我有责任消除我以前的文章对人的误导，洗清我这个“Linux 狂热分子”的恶名。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  Hmm... 我也受这篇文章影响过……
- </essay>
+ </div>
  #+END_EXPORT
 
  学习操作系统最好的办法是 *学会（真正的）程序设计思想* ，而不是去“学习”各种古怪的工具。所有操作系统，数据库，Internet，以至于 WEB 的设计思想（和缺陷），几乎都能用程序语言的思想简单的解释。
@@ -110,9 +110,9 @@
  一个好的工具，应该只有少数几条需要记忆的规则，就像象棋一样。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  这里其实是一个悖论，工具实现的其实是心中所想，而如果你要进行精细化的操作，就很难仅用很简单的规则就可以。
- </essay>
+ </div>
  #+END_EXPORT
 
  有些人鄙视图形界面，鄙视 IDE，鄙视含有垃圾回收的语言（比如 Java），鄙视一切“容易”的东西。他们却不知道，把自己沉浸在别人设计的繁复的规则中，是始终无法成为大师的。
@@ -148,17 +148,17 @@
  但是人们喜欢耍小聪明，在有了基本的语法之后，他们开始在这上面大做文章，使得简单的问题变得复杂……
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  语法糖？但有时候真的便捷易用啊……
- </essay>
+ </div>
  #+END_EXPORT
 
  最老的是 Fortran 的程序，最早的时候都是用打孔机打在卡片上的，所以它其实是几乎没有语法可言的。
 
  #+BEGIN_EXPORT html
- <note>
+ <div class="org-note">
  Lisp （Scheme 的前身）是世界上第二老的程序语言。
- </note>
+ </div>
  #+END_EXPORT
 
  #+BEGIN_EXPORT html
@@ -180,9 +180,9 @@
  其次，把“操作符”全都放在表达式的最前面，使得基本算术操作和函数调用，在语法上发生 *完美的统一* ，而且使得程序员可以使用几乎任何符号作为函数名。
 
  #+BEGIN_EXPORT html
- <note>
+ <div class="org-note">
  拓展阅读“前缀表达式”和“中缀表达式”相关知识。
- </note>
+ </div>
  #+END_EXPORT
 
  #+BEGIN_QUOTE
@@ -192,9 +192,9 @@
  Lisp 的很多其它的设计，比如“垃圾回收”，后来被很多现代语言（比如 Java）所借鉴。可是人们遗漏了一个很重要的东西：Lisp 的语法，其实才是世界上最好的语法。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  我也感觉 S-expression 很好用！
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2013/03/15/language-design-mistake1][程序语言的常见设计错误 - 片面追求短小]]
@@ -204,9 +204,9 @@
  我的这种短小往往是在 *语义和逻辑层面* 的，而不是在语法上死抠几行代码。我绝不会为了程序显得短小而让它变得难以理解或者容易出错。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  文中举了两个小例子，这里只做简要概括。
- </essay>
+ </div>
  #+END_EXPORT
 
  -----
@@ -217,9 +217,9 @@
  有些人很在乎 =i++= 与 =++i= 的区别，去追究 =i++= 与 =++i= 谁的效率更高。这些其实都是徒劳的。比如，i++ 与 ++i 的效率差别，其实来自于早期 C 编译器的愚蠢。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  以下是正确讲解 i++ 的办法！！！它曾是多少人的痛……
- </essay>
+ </div>
  #+END_EXPORT
 
  因为 *=i++= 需要在增加之后返回 =i= 原来的值* ，所以它其实被编译为：
@@ -256,9 +256,9 @@
  =y = 0= 不应该具有一个值。它的作用应该是“赋值”这种“动作”，而不应该具有任何“值”。即使牵强一点硬说它有值，它的值也应该是 =void= 。这样一来 =x = y = 0= 和 =if (y = 0)= 就会因为“类型不匹配”而被编译器拒绝接受，从而避免了可能出现的错误。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  if (y == 0) 写成 if (y = 0) ，Hmm……
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2013/03/19/eliminate-problems][“解决问题”与“消灭问题”]]
@@ -274,9 +274,9 @@
  3. 这问题是否可以在简单的改变某些“设计”或者“思路”之后，不复存在？
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  本质上是认真思考一下问题产生的原因！
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2013/03/26/lisp-dead-alive][Lisp 已死，Lisp 万岁！]]
@@ -370,9 +370,9 @@
 *** TODO [[http://www.yinwang.org/blog-cn/2013/04/11/scheme-setup][Scheme 编程环境的设置]]
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  学习 Sheme 的时候可以参考下……
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2013/04/17/languages][关于语言的思考]]
@@ -436,9 +436,9 @@
  #+END_QUOTE
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  Hmm……
- </essay>
+ </div>
  #+END_EXPORT
 
  *Unix*
@@ -466,9 +466,9 @@
  几经颠簸的求学生涯，让我获得了异常强大的力量。我的力量不仅来自于老师们的教诲，而且在于我自己不懈的追求，因为机会只亲睐有准备的头脑。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  王垠指出了现存的许多问题和弊端，也提出了许多改进和设想，然而只到现在也没有一件可用的…… 我倒觉得他应该听 Knuth 的，如他现在这样，开班教学也不错。
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2014/01/25/pl-and][程序语言与……]]
@@ -488,9 +488,9 @@
  由于程序员的工作最近几年比较容易找，工资还不错，所以很多程序员往往只看到自己的肚脐眼，看不到自己在整个社会里的位置其实并不是那么的关键和重要。很多程序员除了自己会的那点东西，几乎对其它领域和事情完全不感兴趣，看不起其他人……
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  这一点确实需要警醒！！！
- </essay>
+ </div>
  #+END_EXPORT
 
  *2.垃圾当宝贝*
@@ -500,9 +500,9 @@
  为了达到这个愚蠢的目的，很多人开始兜售各种像减肥药一样的东西。面向对象方法，软件“重用”，设计模式，关系式数据库，NoSQL，大数据…… 没完没了。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  不赞同！
- </essay>
+ </div>
  #+END_EXPORT
 
  *3.宗教斗争*
@@ -579,9 +579,9 @@
  创新往往也是与良好的设计理念背道而驰的。一个好的设计，总是力求减少“新”的感觉，而着重于让整个设计浑然一体，天衣无缝，用起来顺手。最好的设计就是让设计的目标消失掉，或者感觉不到它的存在。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  这里王垠有些偷换概念了……
- </essay>
+ </div>
  #+END_EXPORT
 
  ……
@@ -593,9 +593,9 @@
  #+END_QUOTE
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  你的朋友说的是对的！！！都 2021 了，还持有这种思想（“技术和设计是没有国界的”）的人，在我看来不是坏透了，就是个傻B ……
- </essay>
+ </div>
  #+END_EXPORT
 
  一味的试图创新而不仔细思考，是人们的生活由于各种“新事物”而变得复杂的重要原因。
@@ -611,9 +611,9 @@
  我体会很深的一个例子就是Git版本控制工具。有人很把这种东西当回事，引以为豪记得住如何用一些稀奇古怪的Git命令（比如git rebase, git submodule之类）。好像自己知道了这些就真的是某种专家一样，每当遇到不会用这些命令的人，都在心底默默地鄙视他们。 *作为一个比 Git 的作者还要高明的程序员，我却发现自己永远无法记住那些命令* 。在我看来，这些命令晦涩难懂，很有可能是因为没设计好造成的。因为如果一个东西设计好了，以我的能力是不可能不理解的。可是Linus Torvalds的名气之大，威望之高，有谁敢说：“我就是不会用你设计的破玩意儿！你把我怎么着？
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  Hmm…… 如果你高明到让自己并不高明，是不是说明你并不如自己想象的那么高明……
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2015/03/03/how-to-respect-a-programmer][怎样尊重一个程序员]]
@@ -697,9 +697,9 @@
 *** [[http://www.yinwang.org/blog-cn/2015/06/07/software-engineering][所谓软件工程]]
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  这是一个比较有趣的话题，后续可以了解一下。
- </essay>
+ </div>
  #+END_EXPORT
 
  有人把软件工程领域的本质总结为：“How to program if you cannot？”（如果你不会编程，那么你如何编程？）我觉得这句话说得很好，因为我发现软件工程这整个领域，基本就是吹牛扯淡卖“减肥药”的。软件行业的大部分莫名其妙的愚昧行为，很多是由所谓“软件工程专家”发明的。
@@ -743,9 +743,9 @@
  那么提高程序正确性最有效的方法是什么呢？在我看来，最有效的方法莫过于对代码反复琢磨推敲，让它变得简单，直观，直到你一眼就可以看得出它不可能有问题。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  具体如何做呢？
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2015/09/19/parser][对 Parser 的误解]]
@@ -812,9 +812,9 @@
 *** TODO [[http://www.yinwang.org/blog-cn/2015/10/18/turing][图灵的光环]]
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  王垠的博文写的真长，一定读了不少的书，并且作了验证（对错暂不论），就这一点也是非常值得学习的。
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2015/11/21/programming-philosophy][编程的智慧]]
@@ -868,17 +868,17 @@
  如果你发现两件事情大部分内容相同，只有少数不同，多半时候你可以把相同的部分提取出去，做成一个辅助函数。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  具体示例，可以参考原文，确实简洁明了！
- </essay>
+ </div>
  #+END_EXPORT
 
  _4) 避免使用全局变量和类成员（class member）来传递信息，尽量使用局部变量和参数_
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  这个确实，使用全局变量，就不得不考虑该变量是不是在别处作了改变。
- </essay>
+ </div>
  #+END_EXPORT
 
  依赖全局的数据，函数不再有明确的输入和输出，依赖于当前的上下文。全局的数据还有可能被其他代码改变，代码变得难以理解，难以确保正确性。
@@ -924,11 +924,11 @@
  _4) 不要重用局部变量_
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  我认为这是逻辑意义上的局部，比如 A 逻辑嵌套了 B 和 C ，A 中定义了一个变量 x ，在 B 和 C 中改变后，在 A 内后续使用该变量的值，则“不算重用”。
 
  <p>不过仍然需要注意，变量定义和最终使用距离不要太远，否则，就应该考虑其他方式。</p>
- </essay>
+ </div>
  #+END_EXPORT
 
  _5) 把复杂的逻辑提取出去，做成“帮助函数”_
@@ -992,9 +992,9 @@
  _7) 在合理的地方换行_
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  是的，现在用自动化的格式工具，确实没有手动让语义更易读。
- </essay>
+ </div>
  #+END_EXPORT
 
  -----
@@ -1056,9 +1056,9 @@
  - 如果以上都失败了，你也许可以把循环里面复杂的部分提取出来，做成函数调用，之后 continue 或者 break 就可以去掉了。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  详细示例见原文。
- </essay>
+ </div>
  #+END_EXPORT
 
  -----
@@ -1148,9 +1148,9 @@
  ……
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  关于异常，这里先不谈……
- </essay>
+ </div>
  #+END_EXPORT
 
  -----
@@ -1169,9 +1169,9 @@
  - 先写出可用，简单，明显没有bug的代码，再考虑测试的问题。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  真知灼见！！！好好思考下，值得反复阅读和学习！
- </essay>
+ </div>
  #+END_EXPORT
 *** [[http://www.yinwang.org/blog-cn/2016/01/18/java][给Java说句公道话]]
 
@@ -1196,11 +1196,11 @@
  在我心目中，代码本身的地位大大的高于测试。我不忽视测试，但我不会本末倒置，过分强调测试，我并不推崇测试驱动开发（TDD）。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  看，别人的经验也不是空中楼阁，是自己一步步领悟出来的。
 
  <p>PS.我不怎么写测试……</p>
- </essay>
+ </div>
  #+END_EXPORT
 
  现在我就把这些自己领悟到的关于测试的道理总结一下，其中有一些是鲜为人知或者被误解的。
@@ -1226,11 +1226,11 @@
  什么是洞察力？洞察力就是透过现象看到本质的能力。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  一切的东西走到最后，都会成为一个哲学问题。
 
  <p>其实，经验和洞察力并不是矛盾的，王垠想表达的是他得到了“道”，所以可以很快的掌握“术”。</p>
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2017/07/06/master-pl][如何掌握所有的程序语言]]
@@ -1347,9 +1347,9 @@
  大部分人从学校，从书籍，从文献学知识，结果学到一堆“死知识”。要检验知识是不是死的，很简单。如果你遇到前所未见的问题，却不能把这些知识运用出来解决问题，那么这些知识就很可能是死的。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  实践出真知！
- </essay>
+ </div>
  #+END_EXPORT
 
  死知识可能来源于真正聪明的人，但普通人往往是间接得到它。从知识的创造者到你之间，经过了多次的转手倒卖。就算你直接跟知识的鼻祖学习都不容易得到真传，普通人还得经过多次转手。每一次转手都损失里面的信息含量，增加“噪音”，甚至完全被误传。所以到你这里的时候，里面的“信噪比”就很低了。这就是为什么你学了东西，到时候却没法用出来。
@@ -1409,9 +1409,9 @@
  代码是死的，它是对已有问题的解决方案。而你想要知道的是这个人在面对新的问题的时候，他会怎样去解决它。所以你必须知道这个人的思维方式，看清楚他是否真的知道他声称“精通”的那些东西。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  凡事皆有度，物极必反。
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2019/12/24/compilers][我不是编译器专家]]
@@ -1419,9 +1419,9 @@
  我不是编译器专家，而且我看不起编译器这个领域。我一般不会居高临下看低其它人，然而对于认识肤浅却又自视很高的人，我确实会表示出藐视的态度。现在我的态度是针对编译器这整个领域。真的，我看这些人不顺眼很多年了。
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  “哈哈，不要误会，我不是针对某个人，我是说在座的各位都是垃圾……”
- </essay>
+ </div>
  #+END_EXPORT
 
  就最后研究的领域，我是一个编程语言（PL）研究者，从更广的角度来看，我是一个计算机科学家。
@@ -1537,9 +1537,9 @@
  #+END_EXPORT
 
  #+BEGIN_EXPORT html
- <essay>
+ <div class="org-essay">
  我一定是年龄大了，比以前成熟点了。但看到这个题目，我还是忍不住想说： “去你妈的！你才丑陋，你全家都丑陋，操！！！”
- </essay>
+ </div>
  #+END_EXPORT
 
 *** [[http://www.yinwang.org/blog-cn/2021/02/15/cs3][计算机科学基础班（第三期）报名]]

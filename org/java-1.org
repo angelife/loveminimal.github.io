@@ -139,9 +139,9 @@ title=""
 ** Java 程序的运行过程
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 老规矩，先和这个世界打个招呼吧。
-</essay>
+</div>
 #+END_EXPORT
 
 #+BEGIN_SRC java -n

@@ -188,9 +188,9 @@ File 类中有以下两个常用常量：
 - =public static final String separator= ：用来分隔同一个路径字符串中的目录的，Windows 下指 =/= ，如 =C:/Program Files/Common Files= 。
 
 #+BEGIN_EXPORT html
-<note>
+<div class="org-note">
 注意：可以看到 File 类的常量定义的命名规则不符合标准命名规则，常量名没有全部大写，这是因为 Java 的发展经过了一段相当长的时间，而命名规范也是逐步形成的，File 类出现较早，所以当时并没有对命名规范有严格的要求，这些都属于 Java 的历史遗留问题。
-</note>
+</div>
 #+END_EXPORT
 
 Windows 的路径分隔符使用反斜线 =\= ，而 Java 程序中的反斜线表示转义字符，所以如果需要在 Windows 的路径下包括反斜线，则应该使用两条反斜线或直接使用斜线 =/= 也可以。Java 程序支持将斜线当成平台无关的路径分隔符。

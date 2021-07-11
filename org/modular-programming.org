@@ -16,9 +16,9 @@ i.e. Modular Programming
 _模块化编程_ （模块化程序设计），是指在进行程序设计时将一个大程序 *按照功能划分* 为若干小程序模块，每个小程序模块完成一个确定的功能，并在这些模块之间 *建立必要的联系* ，通过模块的互相协作完成整个功能的程序设计方法。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 大程序 → （功能）小程序模块（ → 子过程） → 模块联系、协作
-</essay>
+</div>
 #+END_EXPORT
 
 随着程序规模的扩大，无论是项目本身（编写、扩展、测试、维护），还是经济上的考虑（效率、收支），分工协作都是不可避免的。
@@ -26,17 +26,17 @@ _模块化编程_ （模块化程序设计），是指在进行程序设计时�
 在模块化的过程中可能会产生什么问题呢？ *命名冲突* ，本质在于作用域。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 实际项目中，模块化开发几乎不会是一个人开发所有模块，那就很难避免命名冲突（小甲和小乙都使用了同一个变量名、函数名），项目越大，越难控制。
-</essay>
+</div>
 #+END_EXPORT
 
 下面我们就以 JavaScript 为例来看一下其模块化的发展。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 为什么选用 JavaScript 呢？因为 JavaScript 最初的设计是没有模块化考虑的，而是随着其应用场景和范围的变化，逐渐通过各种方式实现了模块化，如此，我们可以看一下其模块化的全貌和历程。
-</essay>
+</div>
 #+END_EXPORT
 
 ** JavaScript 的模块化[fn:1]
@@ -57,9 +57,9 @@ title=""
 检查一下网页源码的话，你会发现，它只是纯 HTML 文本，没有 CSS ，更没有 JavaScript 。
 
 #+BEGIN_EXPORT html
-<note>
+<div class="org-note">
 哈坤·利于 1994 年在芝加哥的一次会议上第一次展示了 CSS 的建议；JavaScript 是 1995 年由 Netscape公司的 Brendan Eich，在网景导航者浏览器上首次设计实现而成。
-</note>
+</div>
 #+END_EXPORT
 
 随着网页越来越像桌面程序，需要一个团队分工协作、进度管理、单元测试等等……开发者不得不使用软件工程的方法，管理网页的业务逻辑。JavaScript 的模块化编程，已经成为一个迫切的需求。
@@ -101,9 +101,9 @@ title=""
 上边的函数 =m1()= 和 =m2()= ，都封装在 =module1= 对象里（现在它们有关系了，都属于一个对象嘛），使用的时候，就是调用这个对象的属性，如 =module1.m1()= 。但是，这样的写法会暴露所有模块成员，内部状态可以被外部改写，如 =module1._count = 5= 。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 很显然，这样的封装是不安全的。
-</essay>
+</div>
 #+END_EXPORT
 
 *** 立即执行函数划分
@@ -183,9 +183,9 @@ _1. 模块隔离_
 其实要实现“模块”这个功能，并不需要语法层面的支持，NodeJS 也没有增加任何新的 JavaScript 语法。实现“模块”功能的奥妙就在于 JavaScript 是一种函数式编程语言， *它运行闭包！闭包！闭包！* ，如我们上面说到是 IIFE 。我们只需要把一段 JavaScript 代码用一个函数包装起来，这段代码的所有“全局”变量就变成了函数内部的局部变量。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 看，我们使用函数的作用域作了隔离，如此，就避免了不同模块内部变量、函数名的命名冲突。
-</essay>
+</div>
 #+END_EXPORT
 
 下面，我们来看看 NodeJS 具体为我们做了什么？
@@ -277,17 +277,17 @@ NodeJS 利用 JavaScript 的函数式编程特性 -- 闭包，轻松实现了模
 ES Module 模块的设计思想是尽量的 *静态化* ，使得编译时就能确定模块的依赖关系，以及输入和输出的变量。CommonJS 和 AMD 模块，都只能在运行时确定这些东东。比如，CommonJS 模块输出的就是 =module.exports= 对象，输入时必须查找对象属性。
 
 #+BEGIN_EXPORT html
-<note>
+<div class="org-note">
 有了 ES6 静态加载，使得静态分析成为可能，就能进一步拓宽 JavaScript 的语法，比如引入宏（macro）和类型系统（type system）。
-</note>
+</div>
 #+END_EXPORT
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 想一想，为什么 CommonJS 和 AMD 只有在运行时才能确定模块的依赖关系及输入输出变量呢？
 
 <p>因为它们本质上都是“立即执行函数”（IIFE），不执行自然无法得到！</p>
-</essay>
+</div>
 #+END_EXPORT
 
 #+BEGIN_SRC js -n
@@ -305,9 +305,9 @@ ES Module 模块的设计思想是尽量的 *静态化* ，使得编译时就能
 这种加载称为 _运行时加载_ ，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 所谓“静态化”，没那么玄乎，不过就是在运行之前，编译阶段就可以确定的一些东东。
-</essay>
+</div>
 #+END_EXPORT
 
 与 CommonJS 模块输出的是 =module.exports= 对象不同的时，ES Module 模块输出的并不是对象，而是 *通过 =export= 命令显式指定输出的代码，再通过 =import= 命令输入* 。如下：
@@ -330,9 +330,9 @@ ES Module 模块功能主要由两个命令构成： =export= 和 =import= ：
 **注： =export= 命令显式指定输出的代码，对，是代码！代码！代码！*
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 其实，看一下基本的编译原理，就很容易理解这个地方了，`export` 输出的其实是一个动态外链。
-</essay>
+</div>
 #+END_EXPORT
 
 #+BEGIN_SRC js -n

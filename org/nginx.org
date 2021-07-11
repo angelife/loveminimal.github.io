@@ -34,9 +34,9 @@ title=""
 *首先，从服务器的物理特性来看，这个服务器可能就不能支持这么高的请求量。* 这种情况下，就迫使开发者去把服务迁移到一个 CPU 更强、内存更高，综合性能更好的服务器。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 在不考虑成本的条件下，总可以找到性能更好的服务器来支撑服务，然而，这是不现实的，地主家也没有余粮啊……
-</essay>
+</div>
 #+END_EXPORT
 
 *其次，如果服务 Server 单节点发生了故障，就必然会影响整个服务。* 因为对于众多的 Client 客户端都是连接的一个 Server 服务端，一旦这个节点不可用了，势必会影响所有使用了客户端的用户。
@@ -114,11 +114,11 @@ title=""
 ** 正向代理和反向代理
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 *开始先做个总结：
 
 所谓“正向代理”其实应该称为“客户端代理”，而“反向代理”应该称为“服务端代理”。
-</essay>
+</div>
 #+END_EXPORT
 
 本质上来讲，代理都是存在于 Client 和 Server 之间，但是由于性质不同，可以分为正向代理和反向代理两种。那么，什么是反向代理？什么是正向代理呢？
@@ -147,9 +147,9 @@ title=""
 在这个过程中，B 就充当了代理借钱的角色，并且是代替 A 去借钱的，这样就是正向代理。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 比如国内日常使用的“科学上网” VPN 工具，就是正向代理了。比如，小明要访问 Twitter ，但是访问不了，就委托 VPN 帮他访问，然后再把响应结果返回给他。 Twitter 只知道是 VPN 访问它的，并不知道也不关心 VPN 把结果返回给谁。 对于小明们来说，VPN 就是他们的访问代理，即正向代理。
-</essay>
+</div>
 #+END_EXPORT
 
 _2. 反向代理_
@@ -175,13 +175,13 @@ title=""
 在这个过程中，B 也充当了代理代理借钱的角色，不过这次不是代替 A 去借的，而是用 C 的钱借给 A 的，换言之即是代替 C 将钱代给了 A ，这就是反向代理。
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 同样都是 A 借钱：
 
 <p>正向代理是 A 委任 B 去借。B 去借钱，借钱的人只知道钱借给了 B ，并不知道、也不关心 B 拿来做什么用。</p>
 
 <p>反向代理是 A 去向 B 借钱，A 并不知道、也不关心 B 的钱是从哪儿来的。</p>
-</essay>
+</div>
 #+END_EXPORT
 
 _3. 两者区别_
@@ -439,9 +439,9 @@ title=""
 #+END_SRC
 
 #+BEGIN_EXPORT html
-<essay>
+<div class="org-essay">
 如 Nginx 这种配置性的软件，用时查询即可，重在理解它的原理。
-</essay>
+</div>
 #+END_EXPORT
 
 * Footnotes
