@@ -42,6 +42,9 @@
  *Bookmarks InboX*
 
 - 合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。
+- 雪山
+- - https://www.maigoo.com/goomai/152272.html
+- - https://www.lm263.com/article/202004/2960.html
 - vscode snippets https://www.jianshu.com/p/1f1132df1def
 - Post请求的两种编码格式：application/x-www-form-urlencoded和multipart/form-data https://www.jianshu.com/p/53b5bd0f1d44
 - https://wohugb.gitbooks.io/ecmascript-6/content/docs/iterator.html
