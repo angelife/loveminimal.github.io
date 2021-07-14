@@ -36,7 +36,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./file-conversion.org][File Conversion]]       |
 | [[./ajax.org][Ajax]]                  |
 | [[./virtual-dom.org][Virtual DOM]]           |
-| [[./build-tools.org][Build Tools]]           |
 | [[./css-tta.org][CSS 中的动效]]          |
 | [[./modular-programming.org][模块化编程]]            |
 | [[./scroll-bar.org][Scroll Bar]]            |
