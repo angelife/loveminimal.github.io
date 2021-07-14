@@ -315,6 +315,10 @@ h6 code:last-child {
 
 /* Image zoom style */
 /* ////////////////////////////////////////// */
+img {
+    cursor: pointer;
+}
+
 .img-wrapper {
     position: fixed;
     width: 100%;
@@ -323,6 +327,9 @@ h6 code:last-child {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.8);
     overflow: auto;
+
+    animation: pulse;
+    animation-duration: 600ms;
 }
 
 .img-zoom {

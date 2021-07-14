@@ -178,7 +178,7 @@ export function initImageZoom() {
         $(this).click(function () {
             if (!isZoom) {
                 $('html').append(
-                    `<div class='img-wrapper animated pulse faster'>
+                    `<div class='img-wrapper'>
                         <img class='img-zoom' src=${ele.src} />
                     </div>`
                 );
