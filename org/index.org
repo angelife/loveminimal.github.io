@@ -22,12 +22,6 @@
 </style>
 #+END_EXPORT
 
-# #+BEGIN_EXPORT html
-# <audio preload="metadata" autoplay>
-#   <source src="../assets/doctor.mp3" type="audio/mpeg" />
-# </audio>
-# #+END_EXPORT
-
 A [[./org-to-site-tutor.org][pure site]] based on org mode.
 
 [[./nav.org][_Nav_]] ➭ [[./idea.org][_Idea_]] ➯ [[./wiki.org][_Wiki_]]
