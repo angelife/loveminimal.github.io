@@ -54,21 +54,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./network-programming.org][网络编程]]              |
 | [[./socket.org][Socket]]                |
 | [[./servlet.org][Servlet]]               |
-|-----------------------|
-| [[./java-1.org][Java 程序简介]]         |
-| [[./java-2.org][Java 程序设计基础]]     |
-| [[./java-3.org][Java 流程控制语句]]     |
-| [[./java-4.org][Java 字符串处理]]       |
-| [[./java-5.org][Java 数字和日期处理]]   |
-| [[./java-6.org][Java 内置包装类]]       |
-| [[./java-7.org][Java 数组处理]]         |
-| [[./java-8.org][Java 类和对象]]         |
-| [[./java-9.org][Java 继承和多态]]       |
-| [[./java-10.org][Java 异常处理]]         |
-| [[./java-11.org][Java 集合、泛型和枚举]] |
-| [[./java-12.org][Java 反射机制]]         |
-| [[./java-13.org][Java 输入/输出流]]      |
-| [[./java-14.org][Java 注解]]             |
 
 | 鸿蒙/安卓/IOS |
 |---------------|
