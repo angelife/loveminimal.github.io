@@ -225,7 +225,7 @@ foreach 循环和普通循环不同的是，它无须循环条件，无须循环
 使用 foreach 循环迭代数组元素时，并不能改变数组元素的值，因此不要对 foreach 的循环变量进行赋值。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 其实，这里也不是绝对，比如说数组的元素是一个引用类型的时候，你如果修改了它的某个属性值，也是生效的。但除非你知道你在做什么，否则强烈不建议这么做。
 </div>
 #+END_EXPORT

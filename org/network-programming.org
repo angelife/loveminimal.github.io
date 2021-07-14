@@ -43,7 +43,7 @@ IP 地址又分为 _公网 IP 地址_ （可以直接被访问）和 _内网 IP 
 |             | =101.202.99.12= |
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 这就是 IPv4 的本质了 : )
 </div>
 #+END_EXPORT
@@ -65,7 +65,7 @@ IP 地址又分为 _公网 IP 地址_ （可以直接被访问）和 _内网 IP 
 每台计算机都需要正确配置 IP 地址和子网掩码，根据这两个就可以计算网络号。如果两台计算机计算出的网络号相同，说明两台计算机在同一个网络，可以直接通信；如果网络号不同，说明两台计算机不在同个网络，不能直接通信。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 网络号，就是用来判断两台计算机是否在同一网络中的。
 </div>
 #+END_EXPORT
@@ -108,7 +108,7 @@ Address: 193.112.245.112
 由于计算机网络从底层的传输到高层的软件设计十分复杂，要合理地设计计算机网络模型，必须采用分层模型，每一层负责处理自己的操作。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 分层抽象！
 </div>
 #+END_EXPORT
@@ -521,7 +521,7 @@ username=hello&password=123456
 =POST= 请求通常要设置 =Content-Type= 表示 Body 的类型， =Content-Length= 表示 Body 的长度，这样服务器就可以根据请求的 Header 和 Body 做出正确的响应。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 请求的 Header 就是给服务器用的。
 </div>
 #+END_EXPORT
@@ -591,7 +591,7 @@ title=""
 因为 HTTP 协议是一个请求-响应协议，客户端在发送了一个 HTTP 请求后，必须等待服务器响应后，才能发送下一个请求，这样一来，如果某个响应太慢，它就会堵住后面的请求。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 TCP 连接是能复用了，等待响应又成问题了……
 </div>
 #+END_EXPORT
@@ -609,7 +609,7 @@ title=""
 #+END_EXPORT
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 有了问题，也就有同时产生了解决问题的可能。
 </div>
 #+END_EXPORT

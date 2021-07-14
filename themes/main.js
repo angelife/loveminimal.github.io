@@ -125,18 +125,18 @@ if (isHome()) {
 // Customize annotations
 // ------------------------------------------
 // $('note').each(function () {
-//     $(this).addClass('org-note');
+//     $(this).addClass('jk-note');
 // });
 
 // $('essay').each(function () {
-//     $(this).addClass('org-essay');
+//     $(this).addClass('jk-essay');
 // });
 
 // $('drawer').each(function () {
-//     $(this).addClass('org-drawer');
+//     $(this).addClass('jk-drawer');
 // });
 
-$('.org-drawer .collapsible').each(function () {
+$('.jk-drawer .collapsible').each(function () {
     $(this).click(function () {
         this.classList.toggle('active');
         let _ctx = this.nextElementSibling;
@@ -180,8 +180,8 @@ $('.me .contact #bilibili').attr(
 // -------------------------------------------
 $('.validation').html(
     '<a href="http://beian.miit.gov.cn" target="_blank">' +
-        userconfig.icp +
-        '</a>'
+    userconfig.icp +
+    '</a>'
 ); // Update copyright.
 $('.timestamp-wrapper').parent().addClass('gtd-timestamp');
 $('#postamble .date')[1].innerText =

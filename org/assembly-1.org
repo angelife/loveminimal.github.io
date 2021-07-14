@@ -6,7 +6,7 @@
 汇编语言是一种最低级、最古老、不具有移植性的编程语言，它能够直接访问计算机硬件，所以执行效率极高，占用资源极少，一般用于嵌入式设备、驱动程序、实时应用、核心算法等。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 虚拟机的概念在理解软件与硬件之间的关系时非常重要。
 </div>
 #+END_EXPORT
@@ -16,7 +16,7 @@
 本文主要介绍与运行 Windows 32 位和 64 位系统的 Intel 和 AMD 处理器相兼容的微处理器编程，文中使用了 Microsoft 宏汇编器（MASM）。
 
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 <p>MS Visual Studio 的大多数版本都包含 MASM 。</p>
 
 在运行 MS Windows 的 x86 系统中，其他一些有名的汇编器包括：TASM（Turbo 汇编器），NASM（Netwide 汇编器）和 MASM32（MASM 的一种变体）。
@@ -61,7 +61,7 @@ _机器语言_ （machine language）是一种数字语言，专门设计成能�
 #+END_SRC
 
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 寄存器（register）是 CPU 中被命名的存储位置，用于保存操作的中间结果。
 </div>
 #+END_EXPORT
@@ -73,7 +73,7 @@ _机器语言_ （machine language）是一种数字语言，专门设计成能�
 *汇编语言不是可移植的* ，因为它是为特定处理器系列设计的。
 
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 对于一些广为人知的处理器系列如 Motorola 68x00、x86、SUN Sparc、Vax 和 IBM-370 ，汇编语言指令会直接与该计算机体系结构相匹配，或者在执行时用一种被称为微代码解释器（microcode interpreter）的处理器内置程序来进行转换。
 </div>
 #+END_EXPORT
@@ -431,7 +431,7 @@ ASCII 是美国标准信息交换码（American Standard Code for Information In
 美国国家标准协会（ANSI）定义了 8 位字符集来表示多达 256 个字符。前 128 个字符对应标准美国键盘上的字母和符号。后 128 个字符表示特殊字符，诸如国际字母表、重音符号、货币符号和分数。
 
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 Microsoft Windows 早期版本使用 ANSI 字符集。
 </div>
 #+END_EXPORT
@@ -444,7 +444,7 @@ Unicode 定义了数字代码（称为代码点（code point）），定义了�
 - UTF-8 用于 HTML ，与 ASCII 有相同的字节数值；
 - UTF-16 用于节约使用内存与高效访问字符相互平衡的环境中；
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 Microsoft Windows 近期版本使用了 UTF-16 ，其中的每个字符都有一个 16 位的编码。
 </div>
 #+END_EXPORT

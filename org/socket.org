@@ -60,7 +60,7 @@ Windows 也有类似“文件描述符”的概念，但通常被称为“文件
 与 UNIX/Linux 不同的是，Windows 会区分 socket 和文件，Windows 就把 socket 当做一个网络连接来对待，因此需要调用专门针对 socket 而设计的数据传输函数，针对普通文件的输入输出函数就无效了。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 Hmmm... 说了那么多，有点懂，又好像不太懂，有点隔靴搔痒…… 看一下原理吧。
 </div>
 #+END_EXPORT
@@ -68,7 +68,7 @@ Hmmm... 说了那么多，有点懂，又好像不太懂，有点隔靴搔痒…
 ** Socket 原理[fn:1]
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 在上个章节中，我们提到了许多概念，但不具体，你其实很难去凭空理解一个从未在你脑海中具象化或相关具象化过的事物。
 </div>
 #+END_EXPORT
@@ -177,7 +177,7 @@ int socket(int af, int type, int protocol);
 - =af= 为地址族（ =Address Family= ），也就是 IP 地址类型，常用的有 =AF_INET= 和 =AF_INET6= ；
 
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 INET 是 “Internet” 的简写；AF_INET（i.e. PF_INET） 表示 IPv4f 地址，如 127.0.0.1；AF_INET6（i.e. PF_INET6） 表示 IPv6 地址，如 1030::C9B4:FF12:48AA:1A2B 。
 </div>
 #+END_EXPORT
@@ -260,7 +260,7 @@ Windows 和 Linux 不同，Windows 区分普通文件和套接字，并定义了
 从服务器端发送数据使用 =send()= 函数，在客户端接收数据使用 =recv()= 函数。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 这里只是建立一个初步概念，知道有这回事就行了，毕竟日常开发中，你是不直接接触这些的，当然，无聊的时候可以深入了解下。
 </div>
 #+END_EXPORT
@@ -274,7 +274,7 @@ Windows 和 Linux 不同，Windows 区分普通文件和套接字，并定义了
 根据数据的传输方式，可以将 Internet 套接字分成两种类型（其实更多）。通过 =socket()= 函数创建连接时，必须告诉它使用哪种数据传输方式。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 了解本质，举一反三，万变不离其宗。
 </div>
 #+END_EXPORT
@@ -313,7 +313,7 @@ TCP 用来确保数据的正确性，IP（Internet Protocol，网络协议）用
 假设传送带传送的是水果，接收者需要凑齐 100 个后才能装袋，但是传送带可能把这 100 个水果分批传送，比如第一批传送 20 个，第二批传送 50 个，第三批传送 30 个。接收者不需要和传送带保持同步，只要根据自己的节奏来装袋即可，不用管传送带传送了几批，也不用每到一批就装袋一次，可以等到凑够了 100 个水果再装袋。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 所谓不同步，其实就是“节奏的不同步”。你发任你发，我收按我需。
 </div>
 #+END_EXPORT

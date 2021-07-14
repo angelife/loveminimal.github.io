@@ -149,7 +149,7 @@
                     而设计的数据传输函数，针对普通文件的输入输出函数就无效了。
                 </p>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     Hmmm... 说了那么多，有点懂，又好像不太懂，有点隔靴搔痒…… 看一下原理吧。
                 </div>
             </div>
@@ -158,7 +158,7 @@
         <div id="outline-container-org73a7ea9" class="outline-2">
             <h2 id="org73a7ea9">Socket 原理<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup></h2>
             <div class="outline-text-2" id="text-org73a7ea9">
-                <div class="org-essay">
+                <div class="jk-essay">
                     在上个章节中，我们提到了许多概念，但不具体，你其实很难去凭空理解一个从未在你脑海中具象化或相关具象化过的事物。
                 </div>
 
@@ -327,7 +327,7 @@ int socket(int af, int type, int protocol);
                         </li>
                     </ul>
 
-                    <div class="org-note">
+                    <div class="jk-note">
                         INET 是 “Internet” 的简写；AF_INET（i.e. PF_INET） 表示 IPv4f 地址，如 127.0.0.1；AF_INET6（i.e.
                         PF_INET6） 表示
                         IPv6 地址，如 1030::C9B4:FF12:48AA:1A2B 。
@@ -480,7 +480,7 @@ SOCKET socket(int af, int type, int protocol);
                         从服务器端发送数据使用 <code>send()</code> 函数，在客户端接收数据使用 <code>recv()</code> 函数。
                     </p>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         这里只是建立一个初步概念，知道有这回事就行了，毕竟日常开发中，你是不直接接触这些的，当然，无聊的时候可以深入了解下。
                     </div>
                 </div>
@@ -503,7 +503,7 @@ SOCKET socket(int af, int type, int protocol);
                     根据数据的传输方式，可以将 Internet 套接字分成两种类型（其实更多）。通过 <code>socket()</code> 函数创建连接时，必须告诉它使用哪种数据传输方式。
                 </p>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     了解本质，举一反三，万变不离其宗。
                 </div>
 
@@ -556,7 +556,7 @@ SOCKET socket(int af, int type, int protocol);
                     个。接收者不需要和传送带保持同步，只要根据自己的节奏来装袋即可，不用管传送带传送了几批，也不用每到一批就装袋一次，可以等到凑够了 100 个水果再装袋。
                 </p>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     所谓不同步，其实就是“节奏的不同步”。你发任你发，我收按我需。
                 </div>
 

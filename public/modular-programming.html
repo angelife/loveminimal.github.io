@@ -73,7 +73,7 @@
                     为若干小程序模块，每个小程序模块完成一个确定的功能，并在这些模块之间 <b>建立必要的联系</b> ，通过模块的互相协作完成整个功能的程序设计方法。
                 </p>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     大程序 → （功能）小程序模块（ → 子过程） → 模块联系、协作
                 </div>
 
@@ -85,7 +85,7 @@
                     在模块化的过程中可能会产生什么问题呢？ <b>命名冲突</b> ，本质在于作用域。
                 </p>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     实际项目中，模块化开发几乎不会是一个人开发所有模块，那就很难避免命名冲突（小甲和小乙都使用了同一个变量名、函数名），项目越大，越难控制。
                 </div>
 
@@ -93,7 +93,7 @@
                     下面我们就以 JavaScript 为例来看一下其模块化的发展。
                 </p>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     为什么选用 JavaScript 呢？因为 JavaScript
                     最初的设计是没有模块化考虑的，而是随着其应用场景和范围的变化，逐渐通过各种方式实现了模块化，如此，我们可以看一下其模块化的全貌和历程。
                 </div>
@@ -118,7 +118,7 @@
                     检查一下网页源码的话，你会发现，它只是纯 HTML 文本，没有 CSS ，更没有 JavaScript 。
                 </p>
 
-                <div class="org-note">
+                <div class="jk-note">
                     哈坤·利于 1994 年在芝加哥的一次会议上第一次展示了 CSS 的建议；JavaScript 是 1995 年由 Netscape公司的 Brendan
                     Eich，在网景导航者浏览器上首次设计实现而成。
                 </div>
@@ -185,7 +185,7 @@
                         。但是，这样的写法会暴露所有模块成员，内部状态可以被外部改写，如 <code>module1._count = 5</code> 。
                     </p>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         很显然，这样的封装是不安全的。
                     </div>
                 </div>
@@ -325,7 +325,7 @@
                         代码用一个函数包装起来，这段代码的所有“全局”变量就变成了函数内部的局部变量。
                     </p>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         看，我们使用函数的作用域作了隔离，如此，就避免了不同模块内部变量、函数名的命名冲突。
                     </div>
 
@@ -476,12 +476,12 @@
                         对象，输入时必须查找对象属性。
                     </p>
 
-                    <div class="org-note">
+                    <div class="jk-note">
                         有了 ES6 静态加载，使得静态分析成为可能，就能进一步拓宽 JavaScript 的语法，比如引入宏（macro）和类型系统（type
                         system）。
                     </div>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         想一想，为什么 CommonJS 和 AMD 只有在运行时才能确定模块的依赖关系及输入输出变量呢？
 
                         <p>因为它们本质上都是“立即执行函数”（IIFE），不执行自然无法得到！</p>
@@ -509,7 +509,7 @@
                         ，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。
                     </p>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         所谓“静态化”，没那么玄乎，不过就是在运行之前，编译阶段就可以确定的一些东东。
                     </div>
 
@@ -553,7 +553,7 @@
                         <b>*注： <code>export</code> 命令显式指定输出的代码，对，是代码！代码！代码！</b>
                     </p>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         其实，看一下基本的编译原理，就很容易理解这个地方了，`export` 输出的其实是一个动态外链。
                     </div>
 

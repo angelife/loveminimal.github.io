@@ -73,7 +73,7 @@
                     同源策略的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。
                 </p>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     每一件事物都有其产生的源头……
                 </div>
 
@@ -82,7 +82,7 @@
                     。
                 </p>
 
-                <div class="org-note">
+                <div class="jk-note">
                     Cookie 往往用来保存用户的登录状态，所以“同源策略”是必需的，否则 Cookie 可以共享，互联网就毫无安全可言了。
                 </div>
 
@@ -99,7 +99,7 @@
                     跨域的限制当然是有必要的，但实际应用过程中也常常需要在保证相对安全的情况下规避上述的三种限制。
                 </p>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     往往是这样，建立的束缚就是用来打挣脱的…… 在同源策略不允许跨域的那一刻，也就产生了需要跨域的需求。
                 </div>
             </div>
@@ -165,7 +165,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
                     如此，二级域名和三级域名不用做任何设置，都可以读取这个 Cookie 。
                 </p>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     旨在理解吧，已经是被时代淘汰了的东东了……
                 </div>
             </div>
@@ -283,7 +283,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
                         属性的变化，影响网页性能。
                     </p>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         不强制兼容 IE 的话，实在不想碰这玩意儿...
                     </div>
                 </div>
@@ -298,7 +298,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
                         （Cross-document messaging）。
                     </p>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         所谓破解，就是把公鸡的工作交给大鹅去做，虽然也能叫你起床，但总归不那么悦耳。
                     </div>
 
@@ -394,7 +394,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
                         <b>通过 <code>window.postMessage</code> ，读写其他窗口的 LocalStorage 也成为了可能。</b>
                     </p>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         其实吧，只要是能序列化字符串的信息，都可以传递。
                     </div>
 
@@ -426,7 +426,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
 </pre>
                     </div>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         下面来个加强版的...
                     </div>
 
@@ -468,7 +468,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
 </pre>
                     </div>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         从本质上来说，这几种方法都是利用浏览器的某些信息保留机制，把信息序列化为字符串，以参数形式在跨域窗口之间的传递。
                     </div>
                 </div>
@@ -486,7 +486,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
                     除了架设服务器代理（浏览器请求同源服务器，再由后者请求外部服务），有三种方法规避这个限制： <span class="underline">JSONP、WebSocket、CORS</span> 。
                 </p>
 
-                <div class="org-note">
+                <div class="jk-note">
                     这里架设的服务器是用来代理客户端的，是正向代理。
                 </div>
             </div>
@@ -513,7 +513,7 @@ Set-Cookie: key=value; domain=.example.com; path=/
                         数据的做法是不受同源策略限制的；服务器收到请求后，将数据放在一个指定名字的回调函数里传回来。
                     </p>
 
-                    <div class="org-essay">
+                    <div class="jk-essay">
                         通过 `script` 标签的 `src` 属性值作为请求地址，666 。
                     </div>
 
@@ -650,7 +650,7 @@ Sec-WebSocket-Protocol: chat
                     </p>
                 </blockquote>
 
-                <div class="org-essay">
+                <div class="jk-essay">
                     浏览器是个好宿主，直接帮你（用户）解决了。本质上讲，CORS 在浏览器端而言，就是浏览器对用户的 AJAX 请求的“封装代理”。
                 </div>
 

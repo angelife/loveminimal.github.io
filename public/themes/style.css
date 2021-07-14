@@ -49,7 +49,7 @@ body,
 }
 
 /* Self annotations */
-.org-note {
+.jk-note {
     position: absolute;
     right: -30%;
     width: 28%;
@@ -59,14 +59,14 @@ body,
     font-size: 12px;
 }
 
-.org-note::before {
+.jk-note::before {
     content: '☜';
     position: absolute;
     top: -36px;
     font-size: 32px;
 }
 
-.org-essay {
+.jk-essay {
     position: relative;
     display: block;
     margin: 0.16rem auto;
@@ -75,7 +75,7 @@ body,
     background-color: rgba(255, 255, 230, 0.6);
     color: #003333;
 }
-.org-essay::before {
+.jk-essay::before {
     content: '✍';
     position: absolute;
     font-size: 0.20rem;
@@ -83,25 +83,25 @@ body,
     top: -30px;
 }
 
-.org-essay p {
+.jk-essay p {
     margin-bottom: 0;
 }
 
-.org-drawer {
+.jk-drawer {
     display: block;
     margin: 16px 0;
 }
-.org-drawer .collapsible {
+.jk-drawer .collapsible {
     background-color: #899;
     color: #fff;
     cursor: pointer;
     padding: 16px;
 }
-.org-drawer .active,
-.org-drawer .collapsible:hover {
+.jk-drawer .active,
+.jk-drawer .collapsible:hover {
     background-color: #799;
 }
-.org-drawer .content {
+.jk-drawer .content {
     padding: 0 16px 16px 16px;
     max-height: 0;
     overflow: hidden;
@@ -800,13 +800,13 @@ td:last-child {
         font-size: 0.14rem;
     }
 
-    .org-note,
-    .org-note::before {
+    .jk-note,
+    .jk-note::before {
         position: initial;
         float: right;
     }
 
-    .org-essay::before {
+    .jk-essay::before {
         font-size: 0.24rem;
         right: 0;
         top: -20px;

@@ -151,7 +151,7 @@ PostCSS 是一个用 JavaScript 工具和插件转换 CSS 代码的工具。
 通过 [[https://stylelint.io/][stylelint]] 强化一致性约束并避免样式表中的错误。stylelint 是一个现代化 CSS 代码检查工具，它支持最新的 CSS 语法，也包括类似 CSS 的语法，如 SCSS 。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 所有的工具都是为了解决实际工程中遇到的痛点，你懂得！
 </div>
 #+END_EXPORT

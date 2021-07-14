@@ -4,7 +4,7 @@
 CSS 中的 =transform、transition= 和 =animation= ，简称 TTA。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 CSS 什么的这种逻辑性略弱、规则性很强的领域，边用边深入就好，不常用的记了也会忘。
 </div>
 #+END_EXPORT
@@ -80,7 +80,7 @@ transition: property duration timing-function delay;
 - 一条规则只能定义一个属性的变化，不能涉及多个属性。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 自古有矛必有盾！
 </div>
 #+END_EXPORT
@@ -112,7 +112,7 @@ animation: name duration timing-function delay iteration-count direction fill-mo
 | ...                         |                                                                         |
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 Hmm... 其实这种属性表是令人讨厌的，还是具体的例子看起来更加明了，另外，大多数情况下，你并不需要了解这么多属性。
 </div>
 #+END_EXPORT

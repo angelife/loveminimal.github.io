@@ -77,7 +77,7 @@ IE 浏览器中 =e.originalEvent.dataTransfer.setData= 可能会产生以下报�
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 IE 不死，天下不安。
 </div>
 #+END_EXPORT

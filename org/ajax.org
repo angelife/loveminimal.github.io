@@ -20,7 +20,7 @@ AJAX（Asynchronous JavaScript and XML），是一种异步请求数据的 Web �
 ** *进程、线程[fn:1]
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 在讲述 AJAX 之前，有必要先了解一些进程和线程方面的知识。
 </div>
 #+END_EXPORT
@@ -36,7 +36,7 @@ AJAX（Asynchronous JavaScript and XML），是一种异步请求数据的 Web �
 *注：一个进程至少有一个线程。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 哈哈，线程才是真正做事的喽。
 </div>
 #+END_EXPORT
@@ -180,7 +180,7 @@ XMLHttpRequest 在连接后是通过浏览器新开一个线程请求，在检�
 ** *JavaScript 运行机制[fn:3]
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 学习一门语言，再怎么了解它的运行机制都是不为过的。
 </div>
 #+END_EXPORT
@@ -215,7 +215,7 @@ JavaScript 语言的一大特点就是单线程，即同一时间只能做一件
 如果排队是因为计算量大，CPU 忙不过来，倒也算了，但是多数时候 CPU 是闲着的，因为 I/O 设备很慢（比如 Ajax 操作从网络读取数据），不得不等着结果出来，再往下执行。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 明显对 CPU “压榨”的不够啊，嘿嘿……
 </div>
 #+END_EXPORT
@@ -331,7 +331,7 @@ title=""
 ** Ajax 异步的原理
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 Hmm... 终于讲到 Ajax 了……
 </div>
 #+END_EXPORT
@@ -481,7 +481,7 @@ XHR 对象如果要用于 AJAX 的话，其 =open()= 方法的 =async= 参数必
 ** *HTTP 协议
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 我们已经初步了解 AJAX 了，深入地话，就需要进一步认识一下 HTTP 协议喽。
 </div>
 #+END_EXPORT
@@ -505,7 +505,7 @@ HTTP 协议工作于“客户端-服务端”架构上，如浏览器（HTTP 客
 （1）HTTP 是无连接：无连接的含义是限制每次连接只处理一个请求，采用这种方式可以节省传输时间。服务器处理完客户的请求，并收到客户的应答后，即断开连接。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 无连接？？？
 </div>
 #+END_EXPORT
@@ -655,7 +655,7 @@ jQuery 提供多个与 AJAX 有关的方法。
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 jQuery 也算是 DOM 时代的霸主了……
 </div>
 #+END_EXPORT
@@ -680,7 +680,7 @@ jQuery 也算是 DOM 时代的霸主了……
 ** Axios[fn:4]
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 来看看这个比较火热的 Ajax 封装库吧。
 </div>
 #+END_EXPORT
@@ -710,7 +710,7 @@ Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 NodeJS 中
 #+END_EXAMPLE
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 我们提供 JavaScript 软件包的时候，一般也需要提供 NPM 和 CDN 两种分发方式。
 </div>
 #+END_EXPORT

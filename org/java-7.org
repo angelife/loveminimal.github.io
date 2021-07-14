@@ -15,7 +15,7 @@ _数组_ （array）是一种最简单的复合数据类型，它是有序数据
 - 不可变性：数组一旦初始化，则长度（数组中元素的个数）不可变。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 其实，以上种种的限制都是由数组在内存中的存储方式所决定的。
 </div>
 #+END_EXPORT

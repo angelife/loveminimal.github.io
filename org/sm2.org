@@ -110,7 +110,7 @@ title=""
 - [[https://www.ruanyifeng.com/blog/2013/07/rsa_algorithm_part_two.html][RSA 算法原理（二）]]
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 Hmm... 数学，这个奇妙的东西，真的让人爱恨交加！
 </div>
 #+END_EXPORT

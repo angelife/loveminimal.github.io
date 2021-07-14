@@ -113,7 +113,7 @@ Now, *format all files with Prettier*:
 #+END_SRC
 
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 `npx` ships with `npm` and lets you run locally installed tools.
 </div>
 #+END_EXPORT
@@ -155,7 +155,7 @@ List some frequent configurations:
 | ...     |                        |                          |                                                        |
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 永远不要期待一蹴而就，认识是螺旋上升的，只需所需即可。
 </div>
 #+END_EXPORT

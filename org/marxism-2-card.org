@@ -16,7 +16,7 @@
 认识是人同外部世界的一种关系，这种关系随着人的劳动实践的产生而产生，随着劳动实践的发展而发展。
 
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 由于认识和意识本质上都是对客观存在的反映，所以在一般的意义上，可以把意识和认识同等对待。
 </div>
 #+END_EXPORT
@@ -49,7 +49,7 @@ _认识_ 是人脑对外部世界的反映，是人的意识同外部世界的�
 - 社会实践推动人的思维能力的发展。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 什么时候，可以解决芯片的问题啊？任重而道远！我们一定可以胜利，也必然胜利！！
 </div>
 #+END_EXPORT
@@ -111,7 +111,7 @@ _2.2 认识客体的性质_
 第三，主体和客体的相互作用。无论是实践关系还是认识关系，都不是主体或客体各自独立进行的，而是二者相互作用的过程。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 主客体在实践中认识并相互作用。
 </div>
 #+END_EXPORT

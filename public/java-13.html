@@ -344,7 +344,8 @@ void write(int byteval) throws IOException
                 </p>
                 <ul class="org-ul">
                     <li><code>File(String path)</code> ：如果 <code>path</code> 是实际存在的路径，则该 <code>File</code> 对象表示的是目录；如果
-                        <code>path</code> 是文件名，则该 <code>File</code> 对象表示的是文件；</li>
+                        <code>path</code> 是文件名，则该 <code>File</code> 对象表示的是文件；
+                    </li>
                     <li><code>File(String path, String name)</code> ： <code>path</code> 是路径名， <code>name</code> 是文件名；
                     </li>
                     <li><code>File(File dir, String name)</code> ： <code>dir</code> 是路径对象， <code>name</code> 是文件名。</li>
@@ -456,12 +457,13 @@ void write(int byteval) throws IOException
                 </p>
                 <ul class="org-ul">
                     <li><code>public static final String pathSeparator</code> ：指的是分隔连续多个路径字符串的分隔符，Windows 下指
-                        <code>;</code> ，如 <code>java -cp test.jar;abc.jar HelloWorld</code> ；</li>
+                        <code>;</code> ，如 <code>java -cp test.jar;abc.jar HelloWorld</code> ；
+                    </li>
                     <li><code>public static final String separator</code> ：用来分隔同一个路径字符串中的目录的，Windows 下指 <code>/</code>
                         ，如 <code>C:/Program Files/Common Files</code> 。</li>
                 </ul>
 
-                <div class="org-note">
+                <div class="jk-note">
                     注意：可以看到 File 类的常量定义的命名规则不符合标准命名规则，常量名没有全部大写，这是因为 Java 的发展经过了一段相当长的时间，而命名规范也是逐步形成的，File
                     类出现较早，所以当时并没有对命名规范有严格的要求，这些都属于 Java 的历史遗留问题。
                 </div>

@@ -139,7 +139,7 @@ title=""
 ** Java 程序的运行过程
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 老规矩，先和这个世界打个招呼吧。
 </div>
 #+END_EXPORT

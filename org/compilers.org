@@ -2,7 +2,7 @@
 #+TITLE: Compilers
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 谁能想到，有一天，百度百科上的资料，竟然也有料……
 </div>
 #+END_EXPORT
@@ -52,7 +52,7 @@ title=""
 与人相比，现在计算机的智能还是相当低的，无法像人那样同时看多个字符，只能依据一个非常机械的“电子版”词法，一个字符一个字符地识别。
 
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 “电子版”词法是将状态转换图的思路融汇在词法分析器的代码中得以体现的。
 </div>
 #+END_EXPORT
@@ -78,7 +78,7 @@ title=""
 如果说词法分析的作用是从连续的字符中识别出标识符、关键字、数字、运算符并存储为 _符号（token）流_ ，语法分析的作用就是从词法分析识别出的符号流中识别出符合 C 语言规范的语句。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 语法分析的作用就是从符号（token）流中识别出符合相应编程语言（C、Java...）规范的语句。
 </div>
 #+END_EXPORT
@@ -90,7 +90,7 @@ title=""
 语法的计算机表示就是 _产生式_ ，在语法分析器中把通过 _产生式_ 产生的 C 语言语法映射成一套模板，并把这套模板融汇在语法分析器的程序中。语法分析器的作用就是将词法分析器识别出的符号（token）一个一个地与这套模板进行匹配，匹配上这套模板中的某个语法，就可以识别出一名完整的语句，并确定这条语句的语法。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 Hmm... 有点抽象，所以需要具体的实践。
 </div>
 #+END_EXPORT

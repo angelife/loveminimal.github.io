@@ -18,7 +18,7 @@
 面向对象开发模式，在具体的开发过程中便于程序的划分，方便程序员分工合作，提高开发效率。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 Hmm... 对企业来说，效率是关键啊。
 </div>
 #+END_EXPORT
@@ -74,7 +74,7 @@ _3. 多态性_
 类实际上是表示一个客观世界某类群体的一些基本特征抽象，对象就是表示一个个具体的东西，所以说类是对象的抽象，对象是类的具体。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 看，哲学小妞又来了。
 </div>
 #+END_EXPORT
@@ -220,7 +220,7 @@ _2. 参数列表_
 （1）形参变量只有在被调用时才分配内存单元，在调用结束时，即刻释放所分配的内存单元。因此，形参只有在方法内部才有效，方法调用结束返回主调方法后则不能再使用该形参变量。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 一切的机理，最终都要回到内存去解释，也只有如此，才能理解它的本质。
 </div>
 #+END_EXPORT
@@ -260,7 +260,7 @@ _5. 方法体中的局部变量_
 另外，在一个方法内部，可以在复合语句（把多个语句用括号 ={}= 括起来组成的一个语句称复合语句）中定义变量，这些变量只在复合语句中有效。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 其实，说了那么多，说到底不过是一个作用域的问题，作用域的还是要回归到内存中去找寻终极答案。
 </div>
 #+END_EXPORT
@@ -306,7 +306,7 @@ _2. this.方法名_
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 这话怎么读着有点抽象…… 来看一个具体的例子吧。很多时候都是这样，当你对所知理论感到困惑的时候，就回归到它所描述的具体的事物吧，因为那才是具体的、可感知的。
 </div>
 #+END_EXPORT
@@ -362,7 +362,7 @@ this 可以代表任何对象，当 this 出现在某个方法体中时，它所
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 现在再看这段话，是不是容易理解一些了呢？好的，让我们继续。
 </div>
 #+END_EXPORT
@@ -477,7 +477,7 @@ _1.3 调用对象的 clone() 方法_
 _1.4 调用 java.io.ObjectInputStream 对旬的 readObject() 方法_
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 创建方式千千万，掌握最基本的就可以了。
 </div>
 #+END_EXPORT
@@ -620,7 +620,7 @@ Exception in thread "main" java.lang.NullPointerException
 *注：此异常是开发中最常见的异常，也会始终伴随着每位开发人员，使用了未实例化的对象则肯定会出现此异常。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 嗯，这件事还挺扯淡的…… ^_||
 </div>
 #+END_EXPORT
@@ -682,7 +682,7 @@ Java 语言的内存自动回收称为 _垃圾回收（Garbage Collection，GC�
 *注：类中被设定为 =public= 的方法是这个类对外的接口部分，避免了程序的其他部分直接去操作类内的数据，实际就是数据封装思想的体现。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 所谓访问控制修饰符，说白了，就是禁止你使用业务以后可能需要修改的数据，否则就会造成“你已经用了，我改了，你的就可能出现异常”这种状况。
 
 <p>另外，所谓控制就是基于作用域的概念，从这个角度就很容易理解这些修饰符了。比如，private 就是类作用域；friendly 就是包作用域，之所以友好就是你不用去写它也可以（毕竟默认就是它）；protected 就是继承链作用域了，俗称一条绳子上的蚂蚱；public 很容易理解了，就是公共的。</p>
@@ -705,7 +705,7 @@ Java 语言的内存自动回收称为 _垃圾回收（Garbage Collection，GC�
 - 静态方法不能调用非静态成员，编译会报错。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 为什么静态方法不能调用非静态成员呢？因为，非静态成员需要类实例化对象后才有效，而静态方法是可以通过类直接调用的。
 </div>
 #+END_EXPORT
@@ -860,7 +860,7 @@ _1. final 修饰变量_
 - =final= 修饰的成员变量在声明时没有赋值的叫“空白 final 变量”，它必须在构造方法或静态代码块中初始化。
 
 #+BEGIN_EXPORT html
-<div class="org-note">
+<div class="jk-note">
 空白 final 实例变量在构造方法中初始化；空白 final 静态变量在静态代码块中初始化。
 </div>
 #+END_EXPORT
@@ -942,7 +942,7 @@ Java 提供的 Object 类里就有一个 =final= 方法 =getClass()= ，因为 J
 #+END_SRC
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 方法重载 - 同类同名不同参，一般同返回；<br/>
 方法重写 - 用在继承中，异类同名同参同返回。
 </div>

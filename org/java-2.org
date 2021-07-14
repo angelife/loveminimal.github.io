@@ -4,7 +4,7 @@
 一个 Java 程序通常由 *数据类型、变量、运算符和控制流程语句* 4 部分组成，其中数据类型和运算符不仅定义了语言的规范，还决定了可以执行什么样的操作；变量是用来存储指定类型的数据，其值在程序运行期间是可变的；与变量对应的是常量，其值是固定的。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 数据类型肯定是要有的，它关系到数据在内存中的存储。
 </div>
 #+END_EXPORT
@@ -14,7 +14,7 @@
 任何一种计算机语言都离不开标识符和关键字。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 Hmm，机器语言就不需要……
 <p>
 需要经过“翻译”才能转换为机器语言的编程语言都离不开标识符和关键字，因为编译器或解释器在“翻译”代码的过程中，语法、语义分析都依赖它们。
@@ -27,7 +27,7 @@ Hmm，机器语言就不需要……
 Java 中标识符是为方法、变量或其他用户定义项所定义的名称，标识符可以有一个或多个字符。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 标识符的规则，各种编程语言都大同小异。日常使用过程中，优先使用字母，区分大小写就 Okay 了。
 </div>
 #+END_EXPORT
@@ -48,7 +48,7 @@ Java 中标识符是为方法、变量或其他用户定义项所定义的名称
 *注：标识符不能与关键字重名。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 `用户自定义标识符` 就是变量名、方法名之类的喽。
 </div>
 #+END_EXPORT
@@ -70,7 +70,7 @@ Java 语言目前定义了 51 个关键字，这些关键字不能作为变量�
 | 动作     | =package、import、throw、throws、extends、implements、this、super、instanceof、new=                            |
 | 保留字   | =true、false、null、goto、const=                                                                               |
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 再次强调，不用刻意记，用的多了，就记住了。
 </div>
 #+END_EXPORT
@@ -92,7 +92,7 @@ _文档注释_ ，包含在 =/**= 和 =*/= 之间，也能注释多行内容，�
 当编译器执行到 =//= 时，就会忽略该行 =//= 之后的所有文本；当执行到 =/*= 时，会扫描下一个 =*/= 并忽略 =/*= 和 =*/= 之间的任何文本；当执行到 =/**= 时，也会扫描下一个 =*/= 并忽略 =/**= 和 =*/= 之间的任何文本内容。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 注释在编译的过程中就会被编译器忽略，因为注释是给开发者看的，编译器看不懂，也没有必要懂。
 </div>
 #+END_EXPORT
@@ -106,7 +106,7 @@ _文档注释_ ，包含在 =/**= 和 =*/= 之间，也能注释多行内容，�
 常量是指在程序的整个运行过程中值保持不变的量。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 常量（constant）是程序中使用的一个确定数值，在汇编阶段就可以确定，直接编码于指令代码中，不是保存在存储器中可变的变量，因为是编码在指令中的量，和指令一起存储了，所以不用单独开辟主存空间，所以也就没法动态改变它了，这也正是高级语言常量无法修改的原因。
 </div>
 #+END_EXPORT
@@ -116,7 +116,7 @@ _文档注释_ ，包含在 =/**= 和 =*/= 之间，也能注释多行内容，�
 #+END_QUOTE
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 说得很绕，其实没什么用……
 </div>
 #+END_EXPORT
@@ -147,7 +147,7 @@ Java 实型常量默认在内存中占 64 位，是具有双精度型（ =double
 单精度型数值一般要在该常数后面加 =F、f= ，如 =67.9f= ，表示一个 =float= 型实数，它在内存中占 32 位（取决于系统的版本高低）。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 请注意，计算机无法精确地表示一个小数。
 </div>
 #+END_EXPORT
@@ -184,7 +184,7 @@ Java 的字符型常量值是用 *单引号* 引起来的一个字符，如 ='e'
 常量不同于常量值，它可以在程序中用符号来代替常量值使用，因此在使用前必须先定义。在声明常量的同时要赋予一个初始值，常量一旦初始化就不可以被修改。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 常量，指向常量值，必须“定义，且初始化”后才可使用。
 </div>
 #+END_EXPORT
@@ -225,7 +225,7 @@ final dataType variableName = value
 当常量被设定后，一般情况下不允许再进行更改，如果更改其值将提示错误。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 常量（constant）是程序中使用的一个确定数值，在汇编阶段就可以确定，直接编码于指令代码中，不是保存在存储器中可变的变量，因为是编码在指令中的量，和指令一起存储了，所以不用单独开辟主存空间，所以也就没法动态改变它了，这也正是高级语言常量无法修改的原因。
 </div>
 #+END_EXPORT
@@ -290,7 +290,7 @@ o
 _1. 成员变量_
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 成员，就是类的成员喽。
 </div>
 #+END_EXPORT
@@ -310,7 +310,7 @@ _局部变量_ 是指在方法或者方法代码块中定义的变量，其作�
 - 代码块局部变量（代码块内定义）：从定义这个变量开始到代码块结束这一段时间内有效。
 
 #+BEGIN_EXPORT html
-<div class="org-essay">
+<div class="jk-essay">
 形参、方法内部、代码块内部。
 </div>
 #+END_EXPORT
