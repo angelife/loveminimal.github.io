@@ -11,14 +11,14 @@ html {
 
 body {
     animation: fadeIn;
-	animation-duration: 2s;
+    animation-duration: 2s;
 }
 
 /* Background options */
 body,
 #content::before,
 #postamble::before {
-     /*background: url('../images/bg/lightcolor.jpg') center center / cover no-repeat fixed;*/
+    /*background: url('../images/bg/lightcolor.jpg') center center / cover no-repeat fixed;*/
     /* background-color: #f5f5d5; */
 }
 
@@ -78,7 +78,7 @@ body,
 .jk-essay::before {
     content: '✍';
     position: absolute;
-    font-size: 0.20rem;
+    font-size: 0.2rem;
     right: 0;
     top: -30px;
 }
@@ -111,18 +111,37 @@ body,
 
 .jk-rainbow {
     color: #ccc;
-    background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange, yellow, green, yellow, orange, red);
+    background-image: linear-gradient(
+        to right,
+        red,
+        orange,
+        yellow,
+        green,
+        yellow,
+        orange,
+        red,
+        orange,
+        yellow,
+        green,
+        yellow,
+        orange,
+        red
+    );
     -webkit-background-clip: text;
     animation: move 5s infinite;
     color: transparent;
 }
 
 @keyframes move {
-    0% { background-position: 0 0; }
+    0% {
+        background-position: 0 0;
+    }
     50% {
         background-position: -500px 0;
     }
-    100% { background-position: 0 0; }
+    100% {
+        background-position: 0 0;
+    }
 }
 
 /* Page init style */
@@ -159,11 +178,11 @@ ul,
 ol {
     /* list-style-position: inside; */
     list-style-position: outside;
-    padding-left: .2rem;
+    padding-left: 0.2rem;
 }
 
 ol {
-    padding-left: .28rem;
+    padding-left: 0.28rem;
 }
 
 li > ul,
@@ -228,7 +247,7 @@ li > ol {
     color: transparent;
 
     animation: flipInX;
-	animation-duration: 2s;
+    animation-duration: 2s;
 }
 
 h2,
@@ -491,7 +510,7 @@ td:last-child {
     opacity: 0.3;
     cursor: pointer;
 
-    background-image: linear-gradient(0deg, #eee 50%,#fff 50%);
+    background-image: linear-gradient(0deg, #eee 50%, #fff 50%);
     background-size: 100% 3px;
 }
 
@@ -586,7 +605,11 @@ td:last-child {
 
 .js-outline-3:nth-child(even) {
     /*background-color: rgba(200, 200, 200, 0.1);*/
-    background-image: linear-gradient(0deg,rgba(240, 245, 249, 0.5) 50%,#fff 50%);
+    background-image: linear-gradient(
+        0deg,
+        rgba(240, 245, 249, 0.5) 50%,
+        #fff 50%
+    );
     background-size: 100% 3px;
 }
 .js-outline-3:nth-child(odd) {
@@ -668,7 +691,11 @@ td:last-child {
     white-space: nowrap;
     overflow: hidden;
     /* 241,252,255 */
-    background-image: linear-gradient(0deg,rgba(246, 246, 246, 0.5) 50%,#fff 50%);
+    background-image: linear-gradient(
+        0deg,
+        rgba(246, 246, 246, 0.5) 50%,
+        #fff 50%
+    );
     background-size: 100% 3px;
 }
 
@@ -709,7 +736,7 @@ td:last-child {
 /* Mobile UI */
 /* ////////////////////////////////////////// */
 @media screen and (max-width: 1026px) {
-     /*body, #content::before, #postamble::before { background: url('../images/bg/rose.jpg') center center / cover no-repeat fixed; }*/
+    /*body, #content::before, #postamble::before { background: url('../images/bg/rose.jpg') center center / cover no-repeat fixed; }*/
 
     #content,
     #postamble {
