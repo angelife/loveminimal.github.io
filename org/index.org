@@ -2,24 +2,9 @@
 #+TITLE: Virgo
 
 #+BEGIN_EXPORT html
-<div style="
-            color: #ccc;
-            background-image: linear-gradient(to right, red, orange, yellow, green, yellow, orange, red, orange, yellow, green, yellow, orange, red);
-            -webkit-background-clip: text;
-            animation: move 5s infinite;
-            color: transparent;
-            ">
+<div class="jk-rainbow">
   o virgo ➭ 哦 处女座……
 </div>
-
-<style>
-@keyframes move {
-  0% {background-position: 0 0;}
-  50% {
-    background-position: -500px 0;
-  }
-  100% {background-position: 0 0;}}
-</style>
 #+END_EXPORT
 
 A [[./org-to-site-tutor.org][pure site]] based on org mode.
