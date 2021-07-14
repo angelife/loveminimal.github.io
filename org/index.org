@@ -40,11 +40,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./modular-programming.org][模块化编程]]            |
 | [[./scroll-bar.org][Scroll Bar]]            |
 
-| Java                  |
-|-----------------------|
-| [[./network-programming.org][网络编程]]              |
-| [[./socket.org][Socket]]                |
-
 | 休闲     |
 |----------|
 | [[./diet-modification.org][饮食调整]] |
