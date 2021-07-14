@@ -53,7 +53,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 |-----------------------|
 | [[./network-programming.org][网络编程]]              |
 | [[./socket.org][Socket]]                |
-| [[./servlet.org][Servlet]]               |
 
 | 鸿蒙/安卓/IOS |
 |---------------|
