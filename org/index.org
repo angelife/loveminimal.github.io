@@ -22,7 +22,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./compilers.org][Compilers]]                        |
 | [[./wubi.org][WuBi]]                             |
 | [[./sdk.org][SDK]]                              |
-| [[./sm2.org][SM2 算法税务数字证书应用接口规范]] |
 
 | GTD             |
 |-----------------|
