@@ -40,12 +40,6 @@ A [[./org-to-site-tutor.org][pure site]] based on org mode.
 | [[./modular-programming.org][模块化编程]]            |
 | [[./scroll-bar.org][Scroll Bar]]            |
 
-| Asm                    |
-|------------------------|
-| [[./assembly-1.org][Asm 汇编语言的基本概念]] |
-| [[./assembly-2.org][Asm x86 处理器架构]]     |
-| [[./assembly-3.org][Asm 汇编语言基础]]       |
-
 | Java                  |
 |-----------------------|
 | [[./network-programming.org][网络编程]]              |
