@@ -3,7 +3,7 @@
 
 #+BEGIN_EXPORT html
 <img
-src="images/scc-1.png"
+src="images/scc/scc-1.png"
 width="600"
 style=""
 />
@@ -62,7 +62,7 @@ Linux 下源代码的编译安装，及其编译过程和可能遇到的问题�
 
 #+BEGIN_EXPORT html
 <img
-src="images/scc-2.png"
+src="images/scc/scc-2.png"
 width="600"
 style=""
 />
@@ -81,7 +81,7 @@ style=""
 
 #+BEGIN_EXPORT html
 <img
-src="images/scc-3.jpg"
+src="images/scc/scc-3.jpg"
 width="400"
 style=""
 />
