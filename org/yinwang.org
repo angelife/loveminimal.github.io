@@ -13,7 +13,7 @@
 
  #+BEGIN_EXPORT html
  <img
- src="images/yinwang-1.jpg"
+ src="images/yinw/yinwang-1.jpg"
  width="160"
  height=""
  style="float: right; margin-left: 8px;"
@@ -125,7 +125,7 @@
 
  #+BEGIN_EXPORT html
  <img
- src="http://www.yinwang.org/images/lisp_cycles.png"
+ src="http://www.yinwang.org/images/yinw/lisp_cycles.png"
  width=""
  height=""
  style=""
@@ -163,7 +163,7 @@
 
  #+BEGIN_EXPORT html
  <img
- src="http://www.yinwang.org/images/punch-card.gif"
+ src="http://www.yinwang.org/images/yinw/punch-card.gif"
  width=""
  height=""
  style=""
@@ -421,7 +421,7 @@
 
  #+BEGIN_EXPORT html
  <img
- src="images/yinwang-2.jpg"
+ src="images/yinw/yinwang-2.jpg"
  width="400"
  height=""
  style=""
@@ -511,7 +511,7 @@
 
  #+BEGIN_EXPORT html
  <img
- src="images/yinwang-3.jpg"
+ src="images/yinw/yinwang-3.jpg"
  width="600"
  height=""
  style=""
@@ -1390,7 +1390,7 @@
 
  #+BEGIN_EXPORT html
  <img
- src="https://www.yinwang.org/images/talk-is-cheap.jpg"
+ src="https://www.yinwang.org/images/yinw/talk-is-cheap.jpg"
  width="600"
  height=""
  style="margin-top: 16px;"
@@ -1528,7 +1528,7 @@
 
  #+BEGIN_EXPORT html
  <img
- src="images/yinwang-4.jpg"
+ src="images/yinw/yinwang-4.jpg"
  width=""
  height=""
  style=""
