@@ -1,22 +1,6 @@
 #+DATE: <2020-04-10 Fri 20:56>
 #+TITLE: Navigations
 
-#+BEGIN_EXPORT html
-<div class="nav-iframe"
-     style=" position: fixed;
-            height: 100%;
-            left: 0;
-            top: 7px;"
-     >
-  <iframe id="IFRAMEID" frameborder="0" scrolling="auto"
-          src="./index.html"
-          width="90%"
-          style="min-height: 100%;"
-          >
-  </iframe>
-</div>
-#+END_EXPORT
-
 | V          | I            | R              | G           | O           |
 | <c>        | <c>          | <c>            | <c>         | <c>         |
 |------------+--------------+----------------+-------------+-------------|
