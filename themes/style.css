@@ -657,6 +657,11 @@ td:last-child {
     background-color: #f7fbfc;
 }
 
+.js-nav-body thead {
+    color: #ccc;
+    font-family:'Segoe Script', 'Courier New';
+}
+
 .js-nav-body tbody tr td a {
     display: block;
     text-align: center;
