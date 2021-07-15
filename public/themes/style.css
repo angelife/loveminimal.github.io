@@ -18,7 +18,7 @@ body {
 body,
 #content::before,
 #postamble::before {
-    background: url('../images/bg/rose.jpg') center center / cover no-repeat fixed;
+    /* background: url('../images/bg/rose.jpg') center center / cover no-repeat fixed; */
     /* background-color: #f5f5d5; */
 }
 
@@ -517,7 +517,7 @@ td:last-child {
     opacity: 0.3;
     cursor: pointer;
 
-    background-image: linear-gradient(0deg, #eee 50%, /* #fff 50%,*/ rgba(250, 250, 250, 1) 50% );
+    background-image: linear-gradient(0deg, #eee 50%, #fff 50%);
     background-size: 100% 3px;
 }
 
@@ -615,8 +615,7 @@ td:last-child {
     background-image: linear-gradient(
         0deg,
         rgba(240, 245, 249, 0.5) 50%,
-        /* #fff 50%, */
-        rgba(250, 250, 250, 1) 50%
+        #fff 50%
     );
     background-size: 100% 3px;
 }
@@ -660,7 +659,7 @@ td:last-child {
 
 .js-nav-body thead {
     color: #ccc;
-    font-family:'Segoe Script', 'Courier New';
+    font-family: 'Segoe Script', 'Courier New';
 }
 
 .js-nav-body tbody tr td a {
@@ -707,8 +706,7 @@ td:last-child {
     background-image: linear-gradient(
         0deg,
         rgba(246, 246, 246, 0.5) 50%,
-        /* #fff 50%, */
-        rgba(250, 250, 250, 1) 50%
+        #fff 50%
     );
     background-size: 100% 3px;
 }
