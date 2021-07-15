@@ -3,9 +3,9 @@
 
 #+BEGIN_EXPORT html
 <img
-src="images/gtd-1.jpg"
-width="100%"
-style="border-radius: 10px;"
+src="images/gtd/gtd-1.jpg"
+width="80%"
+style="border-radius: 6px;"
 />
 #+END_EXPORT
 
@@ -76,7 +76,7 @@ GTD 分为 _横向管理_ 和 _纵向管理_ 两个方面。
 
 #+BEGIN_EXPORT html
 <img
-src="images/gtd-2.jpg"
+src="images/gtd/gtd-2.jpg"
 width="400"
 style=""
 />
@@ -132,7 +132,7 @@ style=""
 
 #+BEGIN_EXPORT html
 <img
-src="images/gtd-3.jpg"
+src="images/gtd/gtd-3.jpg"
 width="500"
 style=""
 />
@@ -160,7 +160,7 @@ style=""
 
 #+BEGIN_EXPORT html
 <img
-src="images/gtd-4.jpg"
+src="images/gtd/gtd-4.jpg"
 width="200"
 style=""
 />
@@ -174,7 +174,7 @@ style=""
 
 #+BEGIN_EXPORT html
 <img
-src="images/gtd-5.jpg"
+src="images/gtd/gtd-5.jpg"
 width="200"
 style="float: right; margin-left: 8px;"
 />
