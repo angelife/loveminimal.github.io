@@ -241,9 +241,9 @@ Emacs 是一个强大的 _“编辑器”_ ，或者说 _“操作系统”_ ，
              :publishing-function org-publish-attachment
              )
             ("images"
-             :base-directory "~/site/images/"
+             :base-directory "~/site/images/ost/"
              :base-extension "jpg\\|gif\\|png\\|svg\\|gif"
-             :publishing-directory "~/site/public/images/"
+             :publishing-directory "~/site/public/images/ost/"
              :recursive t
              :publishing-function org-publish-attachment
              )
@@ -412,7 +412,7 @@ NOTE: 这个章节只是补充，可以不了解。
 
 #+BEGIN_EXAMPLE
   ,#+BEGIN_EXPORT html
-  <img src="images/xxx.jpg" width="60%" />
+  <img src="images/ost/xxx.jpg" width="60%" />
   ,#+END_EXPORT
 #+END_EXAMPLE
 
@@ -423,7 +423,7 @@ NOTE: 这个章节只是补充，可以不了解。
   # name: insert img
   # key: ii
   # --
-  <img src="images/$1" width="${2:6}0%" />
+  <img src="images/ost/$1" width="${2:6}0%" />
 #+END_EXAMPLE
 
 * 总结
@@ -441,7 +441,7 @@ NOTE: 这个章节只是补充，可以不了解。
 
 #+BEGIN_EXPORT html
 <img
-src="images/ost-1.jpg"
+src="images/ost/ost-1.jpg"
 width="390"
 style="box-shadow: 3px 3px 5px #aaa;"
 />
@@ -449,7 +449,7 @@ style="box-shadow: 3px 3px 5px #aaa;"
 
 #+BEGIN_EXPORT html
 <img
-src="images/ost-2.jpg"
+src="images/ost/ost-2.jpg"
 width="390"
 style="box-shadow: 3px 3px 5px #aaa; float: right;"
 />
@@ -465,7 +465,7 @@ _2. 主题切换_
 
 #+BEGIN_EXPORT html
 <img
-src="images/ost-3.jpg"
+src="images/ost/ost-3.jpg"
 width="390"
 style="box-shadow: 3px 3px 5px #aaa;"
 />
@@ -473,7 +473,7 @@ style="box-shadow: 3px 3px 5px #aaa;"
 
 #+BEGIN_EXPORT html
 <img
-src="images/ost-4.jpg"
+src="images/ost/ost-4.jpg"
 width="390"
 style="box-shadow: 3px 3px 5px #aaa; float: right;"
 />
