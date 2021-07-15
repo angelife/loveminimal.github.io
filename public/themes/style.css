@@ -361,7 +361,7 @@ pre {
     /* color: #ccc; */
     /* background: #272822; */
 
-    background: #f7fbfc;
+    /* background: #f7fbfc; */
 }
 
 pre:hover {
@@ -517,7 +517,7 @@ td:last-child {
     opacity: 0.3;
     cursor: pointer;
 
-    background-image: linear-gradient(0deg, #eee 50%, #fff 50%);
+    background-image: linear-gradient(0deg, #eee 50%, /* #fff 50%,*/ rgba(250, 250, 250, 1) 50% );
     background-size: 100% 3px;
 }
 
@@ -615,7 +615,8 @@ td:last-child {
     background-image: linear-gradient(
         0deg,
         rgba(240, 245, 249, 0.5) 50%,
-        #fff 50%
+        /* #fff 50%, */
+        rgba(250, 250, 250, 1) 50%
     );
     background-size: 100% 3px;
 }
@@ -654,7 +655,7 @@ td:last-child {
 
 .js-nav-body thead,
 .js-nav-body tbody:nth-child(even) {
-    background-color: #f7fbfc;
+    /* background-color: #f7fbfc; */
 }
 
 .js-nav-body thead {
@@ -706,7 +707,8 @@ td:last-child {
     background-image: linear-gradient(
         0deg,
         rgba(246, 246, 246, 0.5) 50%,
-        #fff 50%
+        /* #fff 50%, */
+        rgba(250, 250, 250, 1) 50%
     );
     background-size: 100% 3px;
 }
