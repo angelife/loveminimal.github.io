@@ -12,7 +12,7 @@ import {
     browserRedirect,
     scrollToTop,
     betterLocalStorage as bls,
-} from './assets/utils.js';
+} from './assets/js/utils.js';
 
 // Every area may have a `*-card.org`, so set card as its default style
 if (location.pathname.indexOf('card') > -1) {
