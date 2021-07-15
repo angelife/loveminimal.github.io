@@ -1,6 +1,4 @@
 'use strict';
-// import './assets/jquery.min.js';
-// import './assets/darkreader.min.js';
 import 'https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js';
 import 'https://cdn.jsdelivr.net/npm/darkreader@4.9.34/darkreader.min.js';
 import userconfig from '../user.config.js';

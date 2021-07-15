@@ -1,7 +1,6 @@
-/* @import './assets/animate.min.css'; */
 @import url(https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css);
-@import './assets/init.taobao.css';
-@import './assets/scrollbar.css';
+@import './assets/css/init.taobao.css';
+@import './assets/css/scrollbar.css';
 
 /* Basic style */
 /* ////////////////////////////////////////// */
