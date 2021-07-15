@@ -1,19 +1,18 @@
 @import url(https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css);
 @import './assets/css/init.taobao.css';
+@import './assets/css/init.custom.css';
 @import './assets/css/scrollbar.css';
+@import './assets/css/jk.org.css';
 
 /* Basic style */
 /* ////////////////////////////////////////// */
-html {
-    font-size: 100px;
-}
 
 body {
     animation: fadeIn;
     animation-duration: 2s;
 }
-
 /* Background options */
+
 body,
 #content::before,
 #postamble::before {
@@ -45,152 +44,6 @@ body,
     line-height: 1.6;
     font-size: 0.16rem;
     font-family: Consolas, Monaco, 'kaiti';
-}
-
-/* Self annotations */
-.jk-note {
-    position: absolute;
-    right: -30%;
-    width: 28%;
-    padding: 6px;
-    color: #666;
-    box-sizing: border-box;
-    font-size: 12px;
-}
-
-.jk-note::before {
-    content: '☜';
-    position: absolute;
-    top: -36px;
-    font-size: 32px;
-}
-
-.jk-essay {
-    position: relative;
-    display: block;
-    margin: 0.16rem auto;
-    padding: 0.2rem;
-    font-size: 0.15rem;
-    background-color: rgba(255, 255, 230, 0.6);
-    color: #003333;
-}
-.jk-essay::before {
-    content: '✍';
-    position: absolute;
-    font-size: 0.2rem;
-    right: 0;
-    top: -30px;
-}
-
-.jk-essay p {
-    margin-bottom: 0;
-}
-
-.jk-drawer {
-    display: block;
-    margin: 16px 0;
-}
-.jk-drawer .collapsible {
-    background-color: #899;
-    color: #fff;
-    cursor: pointer;
-    padding: 16px;
-}
-.jk-drawer .active,
-.jk-drawer .collapsible:hover {
-    background-color: #799;
-}
-.jk-drawer .content {
-    padding: 0 16px 16px 16px;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    background-color: #f1f2f6;
-}
-
-.jk-rainbow {
-    color: #ccc;
-    background-image: linear-gradient(
-        to right,
-        red,
-        orange,
-        yellow,
-        green,
-        yellow,
-        orange,
-        red,
-        orange,
-        yellow,
-        green,
-        yellow,
-        orange,
-        red
-    );
-    -webkit-background-clip: text;
-    animation: move 5s infinite;
-    color: transparent;
-}
-
-@keyframes move {
-    0% {
-        background-position: 0 0;
-    }
-    50% {
-        background-position: -500px 0;
-    }
-    100% {
-        background-position: 0 0;
-    }
-}
-
-/* Page init style */
-/* ////////////////////////////////////////// */
-p {
-    margin: 0.16rem 0;
-}
-img {
-    max-width: 100%;
-}
-
-a {
-    color: #19f;
-}
-a:hover {
-    color: #e69;
-    text-shadow: 0px 0px 1px #e69;
-}
-
-.figure p:last-child {
-    margin: 0.06rem 0;
-    text-align: center;
-    color: #666;
-    font-size: 0.14rem;
-}
-
-blockquote {
-    padding-left: 0.16rem;
-    border-left: 1px solid #369;
-    color: #369;
-}
-
-ul,
-ol {
-    /* list-style-position: inside; */
-    list-style-position: outside;
-    padding-left: 0.2rem;
-}
-
-ol {
-    padding-left: 0.28rem;
-}
-
-li > ul,
-li > ol {
-    padding-left: 0.16rem;
-}
-
-.underline {
-    border-bottom: 1px solid #333;
 }
 
 /* Footer sytle */
@@ -360,7 +213,7 @@ pre {
     /* color: #ccc; */
     /* background: #272822; */
 
-    /* background: #f7fbfc; */
+    background: #f7fbfc;
 }
 
 pre:hover {

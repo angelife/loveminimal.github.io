@@ -7,7 +7,12 @@
 /* Basic style */
 /* ////////////////////////////////////////// */
 
+body {
+    animation: fadeIn;
+    animation-duration: 2s;
+}
 /* Background options */
+
 body,
 #content::before,
 #postamble::before {
@@ -208,7 +213,7 @@ pre {
     /* color: #ccc; */
     /* background: #272822; */
 
-    /* background: #f7fbfc; */
+    background: #f7fbfc;
 }
 
 pre:hover {
