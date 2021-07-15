@@ -506,7 +506,7 @@ td:last-child {
 
 .js-nav-body thead,
 .js-nav-body tbody:nth-child(even) {
-    /* background-color: #f7fbfc; */
+    background-color: #f7fbfc;
 }
 
 .js-nav-body thead {
