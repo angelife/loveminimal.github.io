@@ -42,7 +42,7 @@ const CONTENT = $('#content');
 
 // Valine comments.
 if (!isCurPage(['index', 'nav'])) {
-    CONTENT.append(`<div id="vcomments" style="margin-top: 32px;"></div>`);
+    CONTENT.append(`<div id="vcomments" style="margin: 24px 0;"></div>`);
     new Valine({
         el: '#vcomments',
         appId: 'pBwk0ut3wQWR9nxTfncT3c6d-gzGzoHsz',
