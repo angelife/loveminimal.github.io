@@ -43,7 +43,10 @@ const CONTENT = $('#content');
 
 // Valine comments.
 if (!isCurPage(userConfig.nonvaline)) {
-    CONTENT.append(`<div id="vcomments" style="margin: 24px 0;"></div>`);
+    CONTENT.append(`
+        <p style="font-family: 'segoe print'; font-size: .18rem; color: #ccc;">✒&nbsp; May you want to say :</p>
+        <div id="vcomments" style="margin: 24px 0;"></div>
+    `);
     new Valine({
         el: '#vcomments',
         appId: 'pBwk0ut3wQWR9nxTfncT3c6d-gzGzoHsz',
