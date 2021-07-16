@@ -50,7 +50,8 @@ if (!isCurPage(userConfig.nonvaline) && !isHome()) {
     new Valine({
         el: '#vcomments',
         appId: 'pBwk0ut3wQWR9nxTfncT3c6d-gzGzoHsz',
-        appKey: 'KMWHVAMFBGd2mx3Nd8pVeAA1'
+        appKey: 'KMWHVAMFBGd2mx3Nd8pVeAA1',
+        avatar: 'wavatar', // robohash
     })
 }
 
