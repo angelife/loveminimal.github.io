@@ -13,6 +13,7 @@ import {
     scrollToTop,
     betterLocalStorage as bls,
 } from './assets/js/utils.js';
+import userConfig from '../user.config.js';
 
 // Every area may have a `*-card.org`, so set card as its default style
 if (location.pathname.indexOf('card') > -1) {
@@ -41,7 +42,7 @@ const TITLE = $('.title');
 const CONTENT = $('#content');
 
 // Valine comments.
-if (!isCurPage(['index', 'nav'])) {
+if (!isCurPage(userConfig.nonvaline)) {
     CONTENT.append(`<div id="vcomments" style="margin: 24px 0;"></div>`);
     new Valine({
         el: '#vcomments',

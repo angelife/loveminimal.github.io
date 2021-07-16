@@ -34,4 +34,6 @@ export default {
         // 你的私有页面
         pages: ['foo', 'bar'],
     },
+    // 不显示评论的页面
+    nonvaline: ['index', 'nav', '404']
 };
