@@ -42,7 +42,7 @@ const TITLE = $('.title');
 const CONTENT = $('#content');
 
 // Valine comments.
-if (!isCurPage(userConfig.nonvaline)) {
+if (!isCurPage(userConfig.nonvaline) && !isHome()) {
     CONTENT.append(`
         <p style="font-family: 'segoe print'; font-size: .18rem; color: #ccc;">✒&nbsp; May you want to say :</p>
         <div id="vcomments" style="margin: 24px 0;"></div>
