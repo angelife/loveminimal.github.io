@@ -5,6 +5,8 @@
 
 if [ -d "public" ]
 then
+    rm -rf "public/CNAME" && cp -r "CNAME" "public/" # Fix potential error - Recovery `CNAME` before deploy.
+
     cp -r "public" "../.temp"
     cd "../.temp"
     pwd
