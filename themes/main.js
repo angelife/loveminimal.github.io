@@ -40,6 +40,14 @@ const BODY = $('body');
 const TITLE = $('.title');
 const CONTENT = $('#content');
 
+// Valine comments.
+CONTENT.append(`<div id="vcomments">valine...</div>`);
+new Valine({
+    el: '#vcomments',
+    appId: 'pBwk0ut3wQWR9nxTfncT3c6d-gzGzoHsz',
+    appKey: 'KMWHVAMFBGd2mx3Nd8pVeAA1'
+})
+
 // Add animate effects.
 // Create nav & top buttons.
 // ------------------------------------------------------------------
