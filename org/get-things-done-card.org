@@ -4,7 +4,7 @@
 #+BEGIN_EXPORT html
 <img
 src="images/gtd/gtd-1.jpg"
-width="80%"
+width="100%"
 style="border-radius: 6px;"
 />
 #+END_EXPORT
