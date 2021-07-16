@@ -16,7 +16,7 @@ body {
 body,
 #content::before,
 #postamble::before {
-    /* background: url('../images/bg/rose.jpg') center center / cover no-repeat fixed; */
+    background: url('../images/bg/bg.jpg') center center / cover no-repeat fixed;
     /* background-color: #f5f5d5; */
 }
 
@@ -36,7 +36,7 @@ body,
 #content,
 #postamble {
     position: relative;
-    background-color: rgba(250, 250, 250, 0.3);
+    /* background-color: rgba(250, 250, 250, 0.3); */
 
     width: 60%;
     margin: 0 auto;
@@ -375,7 +375,11 @@ td:last-child {
     opacity: 0.3;
     cursor: pointer;
 
-    background-image: linear-gradient(0deg, #eee 50%, #fff 50%);
+    background-image: linear-gradient(
+        0deg,
+        #eee 50%,
+        rgba(255, 255, 255, 0.5) 50%
+    );
     background-size: 100% 3px;
 }
 
@@ -473,7 +477,7 @@ td:last-child {
     background-image: linear-gradient(
         0deg,
         rgba(240, 245, 249, 0.5) 50%,
-        #fff 50%
+        rgba(255, 255, 255, 0.5) 50%
     );
     background-size: 100% 3px;
 }
@@ -512,7 +516,8 @@ td:last-child {
 
 .js-nav-body thead,
 .js-nav-body tbody:nth-child(even) {
-    background-color: #f7fbfc;
+    /* background-color: #f7fbfc; */
+    background-color: #f7fbfc91;
 }
 
 .js-nav-body thead {
@@ -564,7 +569,7 @@ td:last-child {
     background-image: linear-gradient(
         0deg,
         rgba(246, 246, 246, 0.5) 50%,
-        #fff 50%
+        rgba(255, 255, 255, 0.5) 50%
     );
     background-size: 100% 3px;
 }
