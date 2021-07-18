@@ -2,6 +2,17 @@
 #+TITLE: Virgo
 
 #+BEGIN_EXPORT html
+<div style="
+            font-size: 16px;
+            color: #ccc;
+            writing-mode: vertical-lr;
+            float: right;
+            ">
+  极简，有序，断、舍、离！
+</div>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
 <div class="jk-rainbow">
   o virgo ➭ 哦 处女座……
 </div>
