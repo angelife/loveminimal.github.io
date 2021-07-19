@@ -1,6 +1,6 @@
 A simple site based on org mode.
 
-[[./org/org-to-site-tutor.org][→ 中文说明（详细）]]
+[[./org/tutor.org][→ 中文说明（详细）]]
 
 ** Introduction
 

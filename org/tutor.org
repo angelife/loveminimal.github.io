@@ -3,6 +3,42 @@
 
 → [[./org-to-site-tutor.org][历史说明文档]]
 
+* 更新日志
+
+_1. 预计更新_
+
+- [ ] 本地全局搜索功能（[[http://182.61.145.178:4000/][Hurricane's 实现]]）；
+- [ ] 添加 RSS 、sitemap 、robots.txt
+
+_2. 过往更新_
+
+#+BEGIN_QUOTE
+- 2021-07-19 Mon 18:21 - 更新一些脚本，如 =deploy.sh= 等
+- 2021-03-29 Mon 09:53 - 结构调整，新增部署 Github Page 脚本
+- 2020-08-26 Wed 18:51 - 新增文内随笔样式，随手记录一些东西
+- 2020-07-27 Mon 11:01 - 新增批注样式，如右侧所示，使用方法见附录右侧批注样式
+
+#+BEGIN_EXPORT html
+<div class="jk-note">
+这就是批注喽，可以充分利用右侧的空间。
+</div>
+#+END_EXPORT
+
+- 2021-03-01 Mon 14:36 - 变更了项目结构，添加部署脚本，方便直接部署在 Github/Gitee Pages
+- 2020-07-26 Sun 22:36 - 新增 =user.config.js= ，抽离一些配置项（微博、GitHub、Author 等）
+- 2020-05-29 Fri 21:04 - 新增执行脚本 =copy.sh= ，用来在 Emacs 外部同步拷贝图片、JS、CSS 等资源文件
+- 2020-05-17 Sun 13:04 - 双击代码块开始复制，10s 后自动恢复行号（原来的悬浮隐藏有的体验不好）
+- 2020-05-16 Sat 21:05 - 激活毛玻璃风格（总看纯白色，有点腻歪了……）
+- 2020-04-17 Fri 15:04 - 对带行号代码块的处理（复制时隐藏行号，确保复制内容只含代码）
+- 2020-04-11 Sat 12:11 - 添加导航页 ，包括导航和书签
+- 2020-04-04 Sat 02:36 - 调整 IDEA 页面样式
+- 2020-04-03 Fri 21:58 - 本地化依赖库，实现点击查看页面全屏尺寸图片
+- 2020-04-02 Thu 15:02 - 显示当前代码块类型
+- 2020-03-27 Fri 19:49 - 添加 [[*%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%9B%BE%E7%A4%BA][网站功能图示]]
+- 2020-03-22 Sun 18:55 - 录制删除当前文章的宏
+- 2020-03-04 Wed 22:46 - [[https://www.bilibili.com/video/av90738660][视频闲聊这个项目]]
+#+END_QUOTE
+
 * 简介
 
 一款基于 =Org mode= 的静态博客生成工具。它以 =org-publish= 为核心，配合一套简约、有效的主题，方便日常记录和知识积累。
@@ -341,7 +377,7 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 </div>
 #+END_EXPORT
 
-#+BEGIN_SRC html -n
+#+BEGIN_SRC org -n
 #+BEGIN_EXPORT html
 <div class="jk-note">
 这就是批注喽，哈哈，可以充分利用右侧的空间。
@@ -353,7 +389,7 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 
 ** 文内随笔样式
 
-#+BEGIN_SRC html -n
+#+BEGIN_SRC org -n
 #+BEGIN_EXPORT html
 <div class="jk-essay">
   随笔内容……
@@ -381,7 +417,7 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 
 ** 页面折叠样式
 
-#+BEGIN_SRC html -n
+#+BEGIN_SRC org -n
 #+BEGIN_EXPORT html
 <div class="jk-drawer">
   <div class="collapsible">折叠板标题</div>
@@ -436,12 +472,16 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 
 静态页面的图片输出一直是个让人比较烦扰的问题，在 Windows 上输出指定大小的图片比较不易，我们可以曲线实现，在 =.org= 文件中插入 Html 标签，如：
 
-#+BEGIN_EXAMPLE
-  ,#+BEGIN_EXPORT html
-  <img src="images/ost/xxx.jpg" width="60%" />
-  ,#+END_EXPORT
-#+END_EXAMPLE
-
+#+BEGIN_SRC org -n
+#+BEGIN_EXPORT html
+<img
+src=""
+width=""
+style=""
+alt=""
+/>
+#+END_EXPORT
+#+END_SRC
 如此，便可以指定图片输出的宽高。为了方便，你可以使用 yasnippet 写一个快速插入的 snippet ，如：
 
 #+BEGIN_EXAMPLE

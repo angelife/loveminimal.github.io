@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-07-19 Mon 18:12 -->
+<!-- 2021-07-19 Mon 18:21 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tutor</title>
@@ -19,6 +19,7 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
+<li><a href="#orgfe6ec15">更新日志</a></li>
 <li><a href="#org05397e6">简介</a></li>
 <li><a href="#org8ddff66">快速上手</a></li>
 <li><a href="#org0fb07ec">入门篇</a>
@@ -56,6 +57,53 @@
 <p>
 → <a href="./org-to-site-tutor.html">历史说明文档</a>
 </p>
+
+<div id="outline-container-orgfe6ec15" class="outline-2">
+<h2 id="orgfe6ec15">更新日志</h2>
+<div class="outline-text-2" id="text-orgfe6ec15">
+<p>
+<span class="underline">1. 预计更新</span>
+</p>
+
+<ul class="org-ul">
+<li class="off">&#x2610; 本地全局搜索功能（<a href="http://182.61.145.178:4000/">Hurricane's 实现</a>）；</li>
+<li class="off">&#x2610; 添加 RSS 、sitemap 、robots.txt</li>
+</ul>
+
+<p>
+<span class="underline">2. 过往更新</span>
+</p>
+
+<blockquote>
+<ul class="org-ul">
+<li>2021-07-19 Mon 18:21 - 更新一些脚本，如 <code>deploy.sh</code> 等</li>
+<li>2021-03-29 Mon 09:53 - 结构调整，新增部署 Github Page 脚本</li>
+<li>2020-08-26 Wed 18:51 - 新增文内随笔样式，随手记录一些东西</li>
+<li>2020-07-27 Mon 11:01 - 新增批注样式，如右侧所示，使用方法见附录右侧批注样式</li>
+</ul>
+
+<div class="jk-note">
+这就是批注喽，可以充分利用右侧的空间。
+</div>
+
+<ul class="org-ul">
+<li>2021-03-01 Mon 14:36 - 变更了项目结构，添加部署脚本，方便直接部署在 Github/Gitee Pages</li>
+<li>2020-07-26 Sun 22:36 - 新增 <code>user.config.js</code> ，抽离一些配置项（微博、GitHub、Author 等）</li>
+<li>2020-05-29 Fri 21:04 - 新增执行脚本 <code>copy.sh</code> ，用来在 Emacs 外部同步拷贝图片、JS、CSS 等资源文件</li>
+<li>2020-05-17 Sun 13:04 - 双击代码块开始复制，10s 后自动恢复行号（原来的悬浮隐藏有的体验不好）</li>
+<li>2020-05-16 Sat 21:05 - 激活毛玻璃风格（总看纯白色，有点腻歪了……）</li>
+<li>2020-04-17 Fri 15:04 - 对带行号代码块的处理（复制时隐藏行号，确保复制内容只含代码）</li>
+<li>2020-04-11 Sat 12:11 - 添加导航页 ，包括导航和书签</li>
+<li>2020-04-04 Sat 02:36 - 调整 IDEA 页面样式</li>
+<li>2020-04-03 Fri 21:58 - 本地化依赖库，实现点击查看页面全屏尺寸图片</li>
+<li>2020-04-02 Thu 15:02 - 显示当前代码块类型</li>
+<li>2020-03-27 Fri 19:49 - 添加 <a href="#orge425b6d">网站功能图示</a></li>
+<li>2020-03-22 Sun 18:55 - 录制删除当前文章的宏</li>
+<li>2020-03-04 Wed 22:46 - <a href="https://www.bilibili.com/video/av90738660">视频闲聊这个项目</a></li>
+</ul>
+</blockquote>
+</div>
+</div>
 
 <div id="outline-container-org05397e6" class="outline-2">
 <h2 id="org05397e6">简介</h2>
@@ -583,11 +631,11 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 </div>
 
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>#+BEGIN_EXPORT html
-<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"jk-note"</span>&gt;
-<span class="linenr">3: </span>&#36825;&#23601;&#26159;&#25209;&#27880;&#21949;&#65292;&#21704;&#21704;&#65292;&#21487;&#20197;&#20805;&#20998;&#21033;&#29992;&#21491;&#20391;&#30340;&#31354;&#38388;&#12290;
-<span class="linenr">4: </span>&lt;/<span style="color: #0184bc;">div</span>&gt;
-<span class="linenr">5: </span>#+END_EXPORT
+<pre class="src src-org"><span class="linenr">1: </span><span style="color: #a0a1a7;">#+BEGIN_EXPORT html</span>
+<span class="linenr">2: </span><span style="color: #7f7f7f;">&lt;</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;"> </span><span style="color: #8b4513;">class</span><span style="color: #7f7f7f;">=</span><span style="color: #50a14f;">"jk-note"</span><span style="color: #7f7f7f;">&gt;</span>
+<span class="linenr">3: </span><span style="color: #7f7f7f;">&#36825;&#23601;&#26159;&#25209;&#27880;&#21949;&#65292;&#21704;&#21704;&#65292;&#21487;&#20197;&#20805;&#20998;&#21033;&#29992;&#21491;&#20391;&#30340;&#31354;&#38388;&#12290;</span>
+<span class="linenr">4: </span><span style="color: #7f7f7f;">&lt;/</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;">&gt;</span>
+<span class="linenr">5: </span><span style="color: #a0a1a7;">#+END_EXPORT</span>
 </pre>
 </div>
 
@@ -601,11 +649,11 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 <h3 id="orga31a65e">文内随笔样式</h3>
 <div class="outline-text-3" id="text-orga31a65e">
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>#+BEGIN_EXPORT html
-<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"jk-essay"</span>&gt;
-<span class="linenr">3: </span>  &#38543;&#31508;&#20869;&#23481;&#8230;&#8230;
-<span class="linenr">4: </span>&lt;/<span style="color: #0184bc;">div</span>&gt;
-<span class="linenr">5: </span>#+END_EXPORT
+<pre class="src src-org"><span class="linenr">1: </span><span style="color: #a0a1a7;">#+BEGIN_EXPORT html</span>
+<span class="linenr">2: </span><span style="color: #7f7f7f;">&lt;</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;"> </span><span style="color: #8b4513;">class</span><span style="color: #7f7f7f;">=</span><span style="color: #50a14f;">"jk-essay"</span><span style="color: #7f7f7f;">&gt;</span>
+<span class="linenr">3: </span><span style="color: #7f7f7f;">  &#38543;&#31508;&#20869;&#23481;&#8230;&#8230;</span>
+<span class="linenr">4: </span><span style="color: #7f7f7f;">&lt;/</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;">&gt;</span>
+<span class="linenr">5: </span><span style="color: #a0a1a7;">#+END_EXPORT</span>
 </pre>
 </div>
 
@@ -633,14 +681,14 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 <h3 id="orgc7be621">页面折叠样式</h3>
 <div class="outline-text-3" id="text-orgc7be621">
 <div class="org-src-container">
-<pre class="src src-html"><span class="linenr">1: </span>#+BEGIN_EXPORT html
-<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"jk-drawer"</span>&gt;
-<span class="linenr">3: </span>  &lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"collapsible"</span>&gt;&#25240;&#21472;&#26495;&#26631;&#39064;&lt;/<span style="color: #0184bc;">div</span>&gt;
-<span class="linenr">4: </span>  &lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"content"</span>&gt;
-<span class="linenr">5: </span>    &#25240;&#21472;&#30340;&#20869;&#23481;&#8230;&#8230;
-<span class="linenr">6: </span>  &lt;/<span style="color: #0184bc;">div</span>&gt;
-<span class="linenr">7: </span>&lt;/<span style="color: #0184bc;">div</span>&gt;
-<span class="linenr">8: </span>#+END_EXPORT
+<pre class="src src-org"><span class="linenr">1: </span><span style="color: #a0a1a7;">#+BEGIN_EXPORT html</span>
+<span class="linenr">2: </span><span style="color: #7f7f7f;">&lt;</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;"> </span><span style="color: #8b4513;">class</span><span style="color: #7f7f7f;">=</span><span style="color: #50a14f;">"jk-drawer"</span><span style="color: #7f7f7f;">&gt;</span>
+<span class="linenr">3: </span><span style="color: #7f7f7f;">  &lt;</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;"> </span><span style="color: #8b4513;">class</span><span style="color: #7f7f7f;">=</span><span style="color: #50a14f;">"collapsible"</span><span style="color: #7f7f7f;">&gt;&#25240;&#21472;&#26495;&#26631;&#39064;&lt;/</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;">&gt;</span>
+<span class="linenr">4: </span><span style="color: #7f7f7f;">  &lt;</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;"> </span><span style="color: #8b4513;">class</span><span style="color: #7f7f7f;">=</span><span style="color: #50a14f;">"content"</span><span style="color: #7f7f7f;">&gt;</span>
+<span class="linenr">5: </span><span style="color: #7f7f7f;">    &#25240;&#21472;&#30340;&#20869;&#23481;&#8230;&#8230;</span>
+<span class="linenr">6: </span><span style="color: #7f7f7f;">  &lt;/</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;">&gt;</span>
+<span class="linenr">7: </span><span style="color: #7f7f7f;">&lt;/</span><span style="color: #0184bc;">div</span><span style="color: #7f7f7f;">&gt;</span>
+<span class="linenr">8: </span><span style="color: #a0a1a7;">#+END_EXPORT</span>
 </pre>
 </div>
 
@@ -691,12 +739,17 @@ Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yas
 静态页面的图片输出一直是个让人比较烦扰的问题，在 Windows 上输出指定大小的图片比较不易，我们可以曲线实现，在 <code>.org</code> 文件中插入 Html 标签，如：
 </p>
 
-<pre class="example">
-#+BEGIN_EXPORT html
-&lt;img src="images/ost/xxx.jpg" width="60%" /&gt;
-#+END_EXPORT
+<div class="org-src-container">
+<pre class="src src-org"><span class="linenr">1: </span><span style="color: #a0a1a7;">#+BEGIN_EXPORT html</span>
+<span class="linenr">2: </span><span style="color: #7f7f7f;">&lt;</span><span style="color: #0184bc;">img</span>
+<span class="linenr">3: </span><span style="color: #8b4513;">src</span><span style="color: #7f7f7f;">=</span><span style="color: #50a14f;">""</span>
+<span class="linenr">4: </span><span style="color: #8b4513;">width</span><span style="color: #7f7f7f;">=</span><span style="color: #50a14f;">""</span>
+<span class="linenr">5: </span><span style="color: #8b4513;">style</span><span style="color: #7f7f7f;">=</span><span style="color: #50a14f;">""</span>
+<span class="linenr">6: </span><span style="color: #8b4513;">alt</span><span style="color: #7f7f7f;">=</span><span style="color: #50a14f;">""</span>
+<span class="linenr">7: </span><span style="color: #7f7f7f;">/&gt;</span>
+<span class="linenr">8: </span><span style="color: #a0a1a7;">#+END_EXPORT</span>
 </pre>
-
+</div>
 <p>
 如此，便可以指定图片输出的宽高。为了方便，你可以使用 yasnippet 写一个快速插入的 snippet ，如：
 </p>
@@ -733,7 +786,7 @@ $5
 <div id="postamble" class="status">
 <p class="date">Date: 2021-07-19 Mon 09:50</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-07-19 Mon 18:12</p>
+<p class="date">Created: 2021-07-19 Mon 18:21</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19900901号</a></p>
 </div>
 </body>
