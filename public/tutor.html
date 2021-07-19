@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-07-19 Mon 15:22 -->
+<!-- 2021-07-19 Mon 18:12 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tutor</title>
@@ -30,9 +30,26 @@
 <li><a href="#orgd9a4dd3">进阶篇</a>
 <ul>
 <li><a href="#org394d6c6">扩展准备</a></li>
-<li><a href="#org1ab4cd5">安装配置</a></li>
+<li><a href="#org1ab4cd5">安装配置</a>
+<ul>
+<li><a href="#org51cd122">live-server</a></li>
+<li><a href="#orga183240">Emacs 中的配置</a></li>
+<li><a href="#org02dd908">脚本配置</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li><a href="#org6cc964d">FAQ</a></li>
+<li><a href="#org091a7d6">附录</a>
+<ul>
+<li><a href="#orge425b6d">网站功能图示</a></li>
+<li><a href="#org3ebcf3e">右侧批注样式</a></li>
+<li><a href="#orga31a65e">文内随笔样式</a></li>
+<li><a href="#orgc7be621">页面折叠样式</a></li>
+<li><a href="#org7cf58c9">自定义尺寸图片</a></li>
+</ul>
+</li>
+<li><a href="#org5ef8a1c">总结</a></li>
 </ul>
 </div>
 </div>
@@ -53,6 +70,10 @@
 <h2 id="org8ddff66">快速上手</h2>
 <div class="outline-text-2" id="text-org8ddff66">
 <p>
+<b>如果你是第一次访问这个页面，强烈建议先跳转至附录的 <a href="#orge425b6d">网站功能图示</a> 章节，浏览一下站点的功能使用概要 :)</b>
+</p>
+
+<p>
 *建议使用 git-bash 进行终端操作
 </p>
 
@@ -72,7 +93,7 @@
 </div>
 
 <p>
-启动 emacs 后，打开 <code>~/site/org/index.org</code> 文件， <code>M-x</code> 执行 <code>preview-current-buffer-in-browser</code> 命令，就可以预览页面效果。
+启动 emacs 后，打开 <code>site/org/index.org</code> 文件， <code>M-x</code> 执行 <code>preview-current-buffer-in-browser</code> 命令，就可以预览页面效果。
 </p>
 
 <blockquote>
@@ -109,15 +130,104 @@
 <h3 id="org5ce8070">基本使用</h3>
 <div class="outline-text-3" id="text-org5ce8070">
 <p>
-入手使用是非常简单的，你只需要编辑 <code>*.org</code> 文件，在保存后，会在 <code>~/site/public</code> 中生成对应的 <code>*.html</code> 文件。
+我们的项目结构如下：
+</p>
+
+<img
+src="images/ost/ost-5.jpg"
+width=""
+style=""
+alt=""
+/>
+
+<p>
+<span class="underline">1.自定义站点信息</span>
 </p>
 
 <p>
-比如，我们使用 emacs 编辑 <code>~/site/org/index.org</code> （事实上，我们的主页就是这个文件生成的）， <code>M-x</code> 执行 <code>preview-current-buffer-in-browser</code> 命令，就可以预览首页效果。
+关于个人信息的定义，只需要修改 <code>site/user.config.js</code> 文件就可以了，其内容如下：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-js"><span class="linenr"> 1: </span><span style="color: #a626a4;">export</span> <span style="color: #a626a4;">default</span> <span style="color: #707183;">{</span>
+<span class="linenr"> 2: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21338;&#20027;</span>
+<span class="linenr"> 3: </span>    author: <span style="color: #50a14f;">'Jack Liu'</span>,
+<span class="linenr"> 4: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22914; https://weibo.com/u/6867589681</span>
+<span class="linenr"> 5: </span>    weibo: <span style="color: #50a14f;">'6867589681'</span>,
+<span class="linenr"> 6: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#24494;&#20449;&#20108;&#32500;&#30721;&#65292;&#40664;&#35748;&#20301;&#20110; `images/` &#20013;</span>
+<span class="linenr"> 7: </span>    wechat: <span style="color: #50a14f;">'bg/wechat.jpg'</span>,
+<span class="linenr"> 8: </span>    email: <span style="color: #50a14f;">'loveminimal@outlook.com'</span>,
+<span class="linenr"> 9: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22914; https://github.com/loveminimal</span>
+<span class="linenr">10: </span>    github: <span style="color: #50a14f;">'loveminimal'</span>,
+<span class="linenr">11: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#22914; https://space.bilibili.com/11608450</span>
+<span class="linenr">12: </span>    bilibili: <span style="color: #50a14f;">'11608450'</span>,
+<span class="linenr">13: </span>    icp: <span style="color: #50a14f;">'&#35947;ICP&#22791;19025929&#21495;'</span>,
+<span class="linenr">14: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#25351;&#23450;&#21345;&#29255;&#39118;&#26684;&#39029;&#38754;</span>
+<span class="linenr">15: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#24403; `activeAll` &#20026; `true` &#26102;&#65292;&#25152;&#26377;&#39029;&#38754;&#28608;&#27963;&#21345;&#29255;&#39118;&#26684;</span>
+<span class="linenr">16: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21478;&#22806;&#65292;&#24403;&#20320;&#30340;&#25991;&#20214;&#21517;&#20197; `*-card.org` &#36825;&#26679;&#30340;&#26684;&#24335;&#32467;&#23614;&#26102;&#65292;&#20063;&#20250;&#28608;&#27963;&#21345;&#29255;&#39118;&#26684;</span>
+<span class="linenr">17: </span>    card: <span style="color: #7388d6;">{</span>
+<span class="linenr">18: </span>        activeAll: <span style="color: #008b8b;">false</span>,
+<span class="linenr">19: </span>        pages: <span style="color: #909183;">[</span>
+<span class="linenr">20: </span>            <span style="color: #50a14f;">'idea'</span>,
+<span class="linenr">21: </span>            <span style="color: #50a14f;">'wiki'</span>,
+<span class="linenr">22: </span>        <span style="color: #909183;">]</span>,
+<span class="linenr">23: </span>    <span style="color: #7388d6;">}</span>,
+<span class="linenr">24: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#21152;&#23494;&#30340;&#39029;&#38754;</span>
+<span class="linenr">25: </span>    encrypt: <span style="color: #7388d6;">{</span>
+<span class="linenr">26: </span>        password: <span style="color: #50a14f;">'123456'</span>,
+<span class="linenr">27: </span>        <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#20320;&#30340;&#31169;&#26377;&#39029;&#38754;</span>
+<span class="linenr">28: </span>        pages: <span style="color: #909183;">[</span><span style="color: #50a14f;">'foo'</span>, <span style="color: #50a14f;">'bar'</span><span style="color: #909183;">]</span>,
+<span class="linenr">29: </span>    <span style="color: #7388d6;">}</span>,
+<span class="linenr">30: </span>    <span style="color: #a0a1a7; font-weight: bold;">// </span><span style="color: #a0a1a7;">&#19981;&#26174;&#31034;&#35780;&#35770;&#30340;&#39029;&#38754;&#65292;&#39318;&#39029;&#40664;&#35748;&#19981;&#26174;&#31034;</span>
+<span class="linenr">31: </span>    nonvaline: <span style="color: #7388d6;">[</span><span style="color: #50a14f;">'nav'</span>, <span style="color: #50a14f;">'404'</span><span style="color: #7388d6;">]</span>
+<span class="linenr">32: </span><span style="color: #707183;">}</span>;
+</pre>
+</div>
+
+<p>
+<span class="underline">2.编辑博文内容</span>
+</p>
+
+<blockquote>
+<p>
+*注意： <code>site/org/</code> 中，务必保留 <code>index.org（首页）、 nav.org（导航）、404.org（错误页）</code> 三个文件，内容可以按需修改。
+</p>
+</blockquote>
+
+<p>
+入手使用是非常简单的，你只需要编辑 <code>*.org</code> 文件，在保存后，会自动在 <code>site/public</code> 中生成对应的 <code>*.html</code> 文件。比如，我们的主页 <code>site/public/index.html</code> 就是由  <code>site/org/index.org</code> 文件生成的。
 </p>
 
 <p>
-是的， <code>~/site/public</code> 文件夹中的内容，就是我们在服务器部署站点时的全部所需文件。比如，我们的站点就是部署在 <a href="https://github.com/loveminimal/loveminimal.github.io/tree/master">loveminimal.github.io</a> 上的（Hmm..褥 Github 羊毛 😄），可以看到，它就是 <code>public</code> 中的内容。
+如果，你已经有了 <code>*.org</code> 文件存稿，只需要在文件头部增加以下内容：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-org"><span class="linenr">1: </span><span style="color: #7f7f7f;">#+DATE:</span> <span style="color: #191970;">&lt;2021-07-19 Mon 09:50&gt; # &#25991;&#31456;&#26085;&#26399;</span>
+<span class="linenr">2: </span><span style="color: #7f7f7f;">#+TITLE:</span> <span style="color: #191970; font-weight: bold;">Tutor                 # &#25991;&#31456;&#26631;&#39064;</span>
+</pre>
+</div>
+
+<p>
+并放入到 <code>site/org/</code> 文件夹中， <code>M-x</code> 执行 <code>save-and-publish-website</code> 命令即可。
+</p>
+
+<blockquote>
+<p>
+手动输入上述内容自然是很繁琐的操作，使用 Yasnippets 这个插件就很方便了。比如，我们创建了 <a href="https://github.com/loveminimal/emacs.d/blob/master/snippets/org-mode/insert%20header">insert header</a> 这个 snippet ，只需要键入 <code>ih</code> 并使用 <code>TAB</code> 展开就可以自动生成了。
+</p>
+</blockquote>
+
+<p>
+<span class="underline">3.部署站点</span>
+</p>
+
+<p>
+<code>site/public</code> 文件夹中的内容，就是我们在服务器部署站点时的全部所需文件。比如，我们的站点就是部署在 <a href="https://github.com/loveminimal/loveminimal.github.io/tree/master">loveminimal.github.io</a> 上的（Hmm..褥 Github 羊毛 😄），可以看到，它就是 <code>public</code> 中的内容。
+</p>
+
+<p>
+你可以有创建一个名为 <code>&lt;github_username&gt;.github.io</code> 的仓库，如我的 Github 用户名为 <code>loveminimal</code> ，创建的仓库即为 <code>loveminimal.github.io</code> ，把生成的 <code>site/public</code> 中有内容推送到 <code>&lt;github_username&gt;.github.io</code> 中，稍后，在浏览器中访问 <code>http://&lt;github_username&gt;.github.io</code> 就可以看到你的博文站点了。
 </p>
 </div>
 </div>
@@ -147,12 +257,16 @@
 <div id="outline-container-org1ab4cd5" class="outline-3">
 <h3 id="org1ab4cd5">安装配置</h3>
 <div class="outline-text-3" id="text-org1ab4cd5">
+</div>
+<div id="outline-container-org51cd122" class="outline-4">
+<h4 id="org51cd122">live-server</h4>
+<div class="outline-text-4" id="text-org51cd122">
 <div class="jk-essay">
 <code>live-server</code> 的安装是可选的，完全可以使用 Emacs 配置文件中已经包含的 <code>simple-httpd</code> 服务器插件进行预览。但实际实用过程中，还是建议使用 <code>live-server</code> ，它会根据文件变动实时更新，也方便进行二次扩展和自定义。
 </div>
 
 <p>
-下面我们主要来看一下 <code>live-server</code> 的安装及相关配置：
+下面我们主要来看一下 <code>live-server</code> （可选）的安装及相关配置：
 </p>
 
 <div class="org-src-container">
@@ -207,12 +321,419 @@
 </p>
 </div>
 </div>
+
+<div id="outline-container-orga183240" class="outline-4">
+<h4 id="orga183240">Emacs 中的配置</h4>
+<div class="outline-text-4" id="text-orga183240">
+<p>
+所有用于生成站点的 emacs 配置几乎都在 <a href="https://github.com/loveminimal/emacs.d/blob/master/lisp/init-site.el">init-site.el</a> 文件中，你可以使用以下方式引入到你个人的 emacs 配置中使用：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp"><span class="linenr">1: </span><span style="color: #707183;">(</span>add-to-list 'load-path <span style="color: #50a14f;">"&lt;your_path&gt;/init-site.el"</span><span style="color: #707183;">)</span> <span style="color: #a0a1a7; font-weight: bold;">;; </span><span style="color: #a0a1a7;">&#22914; ~/.emacs.d/lisp/init-site.el</span>
+<span class="linenr">2: </span><span style="color: #707183;">(</span><span style="color: #a626a4;">require</span> '<span style="color: #008b8b;">init-site</span><span style="color: #707183;">)</span>
+</pre>
+</div>
+
+<p>
+下面我们来看一下该文件中的几个关键函数命令及配置：
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">命令</th>
+<th scope="col" class="org-left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>save-and-publish-website</code></td>
+<td class="org-left">生成站点内容到 <code>public</code> 中</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>save-and-publish-file</code></td>
+<td class="org-left">生成或更新当前 <code>.org</code> 到对应的 <code>.html</code> 文件</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>delete-org-and-html</code></td>
+<td class="org-left">同时删除当前 <code>.org</code> 文件及其对应的 <code>.html</code> 文件</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>just-delete-relative-html</code></td>
+<td class="org-left">仅删除当前 <code>.org</code> 文件对应的 <code>.html</code> 文件</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>preview-current-buffer-in-browser</code></td>
+<td class="org-left">预览当前文件对应的页面</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+当然，如果你使用了 <code>live-server</code> ， <code>preview-current-buffer-in-browser</code> 就基本没有用武之地了。
+</p>
+
+<p>
+其他配置，可以直接参考 <a href="https://github.com/loveminimal/emacs.d/blob/master/lisp/init-site.el">init-site.el</a> 。
+</p>
+
+<p>
+在 Emacs 中，我们基本上不用做过多的修改，满足需求就好。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org02dd908" class="outline-4">
+<h4 id="org02dd908">脚本配置</h4>
+<div class="outline-text-4" id="text-org02dd908">
+<p>
+为了更加方便的使用，我们创建了一些简单的运行脚本（务必在 <code>git-bash</code> 中使用，😺 懒得写 powershell 脚本 ），如下：
+</p>
+
+<img
+src="images/ost/scripts.jpg"
+width=""
+style=""
+alt=""
+/>
+
+<p>
+我们只列出一些常用的脚本及其说明：
+</p>
+
+<table>
+
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">脚本</th>
+<th scope="col" class="org-left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><code>serve.sh</code></td>
+<td class="org-left"><code>live-server</code> 服务器的启动脚本</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>rcopy.sh</code></td>
+<td class="org-left">同步 <code>public/</code> 中的静态/逻辑样式文件（图片、js、css）到 <code>site/</code> 中</td>
+</tr>
+
+<tr>
+<td class="org-left"><code>deploy.sh</code></td>
+<td class="org-left">部署到 Github 仓库</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+下面我们来详细说明一下 <code>deploy.sh</code> 如何修改自己可用的，其内容如下：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;">#</span><span style="color: #a0a1a7;">!/bin/</span><span style="color: #a626a4;">sh</span>
+<span class="linenr"> 2: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">-------------------</span>
+<span class="linenr"> 3: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">Deploy posts to `loveminimal.github.io`</span>
+<span class="linenr"> 4: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">-------------------</span>
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span><span style="color: #a626a4;">if</span> <span style="color: #707183;">[</span> -d <span style="color: #50a14f;">"public"</span> <span style="color: #707183;">]</span>
+<span class="linenr"> 7: </span><span style="color: #a626a4;">then</span>
+<span class="linenr"> 8: </span>    <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">CNAME &#20013;&#35760;&#24405;&#30340;&#26159;&#32465;&#23450;&#30340;&#22495;&#21517;&#65288;&#29992;&#21040;&#30340;&#26102;&#20505;&#20877;&#20102;&#35299;&#21363;&#21487;&#65289;</span>
+<span class="linenr"> 9: </span>    rm -rf <span style="color: #50a14f;">"public/CNAME"</span> &amp;&amp; cp -r <span style="color: #50a14f;">"CNAME"</span> <span style="color: #50a14f;">"public/"</span> <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">Fix potential error - Recovery `CNAME` before deploy.</span>
+<span class="linenr">10: </span>
+<span class="linenr">11: </span>    cp -r <span style="color: #50a14f;">"public"</span> <span style="color: #50a14f;">"../.temp"</span>
+<span class="linenr">12: </span>    <span style="color: #e44649;">cd</span> <span style="color: #50a14f;">"../.temp"</span>
+<span class="linenr">13: </span>    <span style="color: #e44649;">pwd</span>
+<span class="linenr">14: </span>    git init
+<span class="linenr">15: </span>    git add .
+<span class="linenr">16: </span>    git commit -m <span style="color: #50a14f;">"Posts update."</span>
+<span class="linenr">17: </span>    git remote add origin https://github.com/loveminimal/loveminimal.github.io.git
+<span class="linenr">18: </span>    <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">git push -f origin master:main</span>
+<span class="linenr">19: </span>    git push -f origin master
+<span class="linenr">20: </span>    <span style="color: #e44649;">cd</span> ..
+<span class="linenr">21: </span>    rm -rf <span style="color: #50a14f;">".temp"</span>
+<span class="linenr">22: </span>    <span style="color: #e44649;">cd</span> <span style="color: #50a14f;">"site"</span>
+</pre>
+</div>
+
+<p>
+只需要修改第 17 行中的仓库地址（即 <code>https://github.com/loveminimal/loveminimal.github.io.git</code> ）为你自己的仓库地址即可。
+</p>
+
+<p>
+<b>如何使用这些脚本呢？</b>
+</p>
+
+<p>
+使用 <code>git-bash</code> ，进入 <code>~/AppData/Roaming/site</code> 目录，执行 <code>source scripts/&lt;script_name&gt;.sh</code> 即可，如：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span><span style="color: #e44649;">cd</span> ~/AppData/Roaming/site
+<span class="linenr">2: </span>source scripts/deploy.sh
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6cc964d" class="outline-2">
+<h2 id="org6cc964d">FAQ</h2>
+<div class="outline-text-2" id="text-org6cc964d">
+<p>
+……
+</p>
+</div>
+</div>
+
+<div id="outline-container-org091a7d6" class="outline-2">
+<h2 id="org091a7d6">附录</h2>
+<div class="outline-text-2" id="text-org091a7d6">
+</div>
+<div id="outline-container-orge425b6d" class="outline-3">
+<h3 id="orge425b6d">网站功能图示</h3>
+<div class="outline-text-3" id="text-orge425b6d">
+<img
+src="images/ost/ost-1.jpg"
+width="390"
+style="box-shadow: 3px 3px 5px #aaa;"
+/>
+
+<img
+src="images/ost/ost-2.jpg"
+width="390"
+style="box-shadow: 3px 3px 5px #aaa; float: right;"
+/>
+
+<p>
+<span class="underline">1. 文章列表</span>
+</p>
+
+<p>
+所有文章在主页列表中管理、分类，光标移入/移出表头，用来切换其内容（文章标题）的显示/隐藏。
+</p>
+
+<p>
+<span class="underline">2. 主题切换</span>
+</p>
+
+<p>
+站点提供了亮/暗两种主题模式，所有页面点击文章标题，即可切换。
+</p>
+
+<img
+src="images/ost/ost-3.jpg"
+width="390"
+style="box-shadow: 3px 3px 5px #aaa;"
+/>
+
+<img
+src="images/ost/ost-4.jpg"
+width="390"
+style="box-shadow: 3px 3px 5px #aaa; float: right;"
+/>
+
+<p>
+<span class="underline">3. 目录显隐</span>
+</p>
+
+<p>
+光标移入/移出页面左侧（移动端点击页面顶部），用来切换目录的显示/隐藏。
+</p>
+
+<p>
+<span class="underline">4. 返回主页和回到顶部</span>
+</p>
+
+<p>
+右下角，包含两个功能按钮 - <code>IDX ←</code> （返回主页）和 <code>TOP ↑</code>  （返回页面顶部，且滚动时显示当前页面滚动百分比）。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3ebcf3e" class="outline-3">
+<h3 id="org3ebcf3e">右侧批注样式</h3>
+<div class="outline-text-3" id="text-org3ebcf3e">
+<p>
+其实，使用很简单，我们把要加的批注写在 <code>&lt;div class</code>"jk-note"&gt;&#x2026;&lt;/div&gt;= 中就可以了，放心，在渲染的时候已经做好了处理，如下：
+</p>
+
+<div class="jk-note">
+Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yasnippets 哦，推荐后者 :)
+</div>
+
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>#+BEGIN_EXPORT html
+<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"jk-note"</span>&gt;
+<span class="linenr">3: </span>&#36825;&#23601;&#26159;&#25209;&#27880;&#21949;&#65292;&#21704;&#21704;&#65292;&#21487;&#20197;&#20805;&#20998;&#21033;&#29992;&#21491;&#20391;&#30340;&#31354;&#38388;&#12290;
+<span class="linenr">4: </span>&lt;/<span style="color: #0184bc;">div</span>&gt;
+<span class="linenr">5: </span>#+END_EXPORT
+</pre>
+</div>
+
+<p>
+原理就是，在 Org Mode 中输出 HTML 片段，指定了自定义的标签 <code>&lt;div class</code>"jk-note"&gt;= （用来后续的 DOM 操作）。在浏览器渲染的过程中，无效的标签符并不会做为普通文本绘制出来，但其内的内容却可以。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga31a65e" class="outline-3">
+<h3 id="orga31a65e">文内随笔样式</h3>
+<div class="outline-text-3" id="text-orga31a65e">
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>#+BEGIN_EXPORT html
+<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"jk-essay"</span>&gt;
+<span class="linenr">3: </span>  &#38543;&#31508;&#20869;&#23481;&#8230;&#8230;
+<span class="linenr">4: </span>&lt;/<span style="color: #0184bc;">div</span>&gt;
+<span class="linenr">5: </span>#+END_EXPORT
+</pre>
+</div>
+
+<p>
+示例效果如下：
+</p>
+
+<div class="jk-essay">
+  <p>沁园春·雪</p>
+
+  <div>近现代： 毛泽东</div>
+  <div>北国风光，千里冰封，万里雪飘。</div>
+  <div>望长城内外，惟余莽莽；大河上下，顿失滔滔。(余 通：馀)</div>
+  <div>山舞银蛇，原驰蜡象，欲与天公试比高。(原驰 原作：原驱)</div>
+  <div>须晴日，看红装素裹，分外妖娆。(红装 一作：银装)</div>
+  <div>江山如此多娇，引无数英雄竞折腰。</div>
+  <div>惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。</div>
+  <div>一代天骄，成吉思汗，只识弯弓射大雕。</div>
+  <div>俱往矣，数风流人物，还看今朝。</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc7be621" class="outline-3">
+<h3 id="orgc7be621">页面折叠样式</h3>
+<div class="outline-text-3" id="text-orgc7be621">
+<div class="org-src-container">
+<pre class="src src-html"><span class="linenr">1: </span>#+BEGIN_EXPORT html
+<span class="linenr">2: </span>&lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"jk-drawer"</span>&gt;
+<span class="linenr">3: </span>  &lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"collapsible"</span>&gt;&#25240;&#21472;&#26495;&#26631;&#39064;&lt;/<span style="color: #0184bc;">div</span>&gt;
+<span class="linenr">4: </span>  &lt;<span style="color: #0184bc;">div</span> <span style="color: #8b4513;">class</span>=<span style="color: #50a14f;">"content"</span>&gt;
+<span class="linenr">5: </span>    &#25240;&#21472;&#30340;&#20869;&#23481;&#8230;&#8230;
+<span class="linenr">6: </span>  &lt;/<span style="color: #0184bc;">div</span>&gt;
+<span class="linenr">7: </span>&lt;/<span style="color: #0184bc;">div</span>&gt;
+<span class="linenr">8: </span>#+END_EXPORT
+</pre>
+</div>
+
+<p>
+示例效果如下：
+</p>
+
+<div class="jk-drawer">
+<div class="collapsible">第一个折叠板</div>
+<div class="content">
+  <p>沁园春·雪</p>
+
+  <div>近现代： 毛泽东</div>
+  <div>北国风光，千里冰封，万里雪飘。</div>
+  <div>望长城内外，惟余莽莽；大河上下，顿失滔滔。(余 通：馀)</div>
+  <div>山舞银蛇，原驰蜡象，欲与天公试比高。(原驰 原作：原驱)</div>
+  <div>须晴日，看红装素裹，分外妖娆。(红装 一作：银装)</div>
+  <div>江山如此多娇，引无数英雄竞折腰。</div>
+  <div>惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。</div>
+  <div>一代天骄，成吉思汗，只识弯弓射大雕。</div>
+  <div>俱往矣，数风流人物，还看今朝。</div>
+</div>
+</div>
+
+<div class="jk-drawer">
+<div class="collapsible">The second drawer</div>
+<div class="content">
+  <p>沁园春·雪</p>
+
+  <div>近现代： 毛泽东</div>
+  <div>北国风光，千里冰封，万里雪飘。</div>
+  <div>望长城内外，惟余莽莽；大河上下，顿失滔滔。(余 通：馀)</div>
+  <div>山舞银蛇，原驰蜡象，欲与天公试比高。(原驰 原作：原驱)</div>
+  <div>须晴日，看红装素裹，分外妖娆。(红装 一作：银装)</div>
+  <div>江山如此多娇，引无数英雄竞折腰。</div>
+  <div>惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。</div>
+  <div>一代天骄，成吉思汗，只识弯弓射大雕。</div>
+  <div>俱往矣，数风流人物，还看今朝。</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7cf58c9" class="outline-3">
+<h3 id="org7cf58c9">自定义尺寸图片</h3>
+<div class="outline-text-3" id="text-org7cf58c9">
+<p>
+静态页面的图片输出一直是个让人比较烦扰的问题，在 Windows 上输出指定大小的图片比较不易，我们可以曲线实现，在 <code>.org</code> 文件中插入 Html 标签，如：
+</p>
+
+<pre class="example">
+#+BEGIN_EXPORT html
+&lt;img src="images/ost/xxx.jpg" width="60%" /&gt;
+#+END_EXPORT
+</pre>
+
+<p>
+如此，便可以指定图片输出的宽高。为了方便，你可以使用 yasnippet 写一个快速插入的 snippet ，如：
+</p>
+
+<pre class="example">
+# -*- mode: snippet -*-
+# name: insert img
+# key: ii
+# --
+#+BEGIN_EXPORT html
+&lt;img
+    src="$1"
+    width="$2"
+    style="$3"
+    alt="$4"
+/&gt;
+#+END_EXPORT
+
+$5
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5ef8a1c" class="outline-2">
+<h2 id="org5ef8a1c">总结</h2>
+<div class="outline-text-2" id="text-org5ef8a1c">
+<p>
+写文档真的不能一蹴而就 😢 ，慢慢补充修改吧，目前结合 <a href="./org-to-site-tutor.html">历史说明文档</a> 使用先。
+</p>
+</div>
 </div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-07-19 Mon 09:50</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-07-19 Mon 15:22</p>
+<p class="date">Created: 2021-07-19 Mon 18:12</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19900901号</a></p>
 </div>
 </body>

@@ -9,6 +9,8 @@
 
 * 快速上手
 
+*如果你是第一次访问这个页面，强烈建议先跳转至附录的 [[*%E7%BD%91%E7%AB%99%E5%8A%9F%E8%83%BD%E5%9B%BE%E7%A4%BA][网站功能图示]] 章节，浏览一下站点的功能使用概要 :)*
+
 *建议使用 git-bash 进行终端操作
 
 #+BEGIN_SRC sh -n
@@ -25,7 +27,7 @@
   git checkout -b source origin/source # 克隆源码 source 分支
 #+END_SRC
 
-启动 emacs 后，打开 =~/site/org/index.org= 文件， =M-x= 执行 =preview-current-buffer-in-browser= 命令，就可以预览页面效果。
+启动 emacs 后，打开 =site/org/index.org= 文件， =M-x= 执行 =preview-current-buffer-in-browser= 命令，就可以预览页面效果。
 
 #+BEGIN_QUOTE
 *当然，也可以直接访问线上 [[https://ovirgo.com][个人站点]] 。
@@ -47,11 +49,82 @@
 
 ** 基本使用
 
-入手使用是非常简单的，你只需要编辑 =*.org= 文件，在保存后，会在 =~/site/public= 中生成对应的 =*.html= 文件。
+我们的项目结构如下：
 
-比如，我们使用 emacs 编辑 =~/site/org/index.org= （事实上，我们的主页就是这个文件生成的）， =M-x= 执行 =preview-current-buffer-in-browser= 命令，就可以预览首页效果。
+#+BEGIN_EXPORT html
+<img
+src="images/ost/ost-5.jpg"
+width=""
+style=""
+alt=""
+/>
+#+END_EXPORT
 
-是的， =~/site/public= 文件夹中的内容，就是我们在服务器部署站点时的全部所需文件。比如，我们的站点就是部署在 [[https://github.com/loveminimal/loveminimal.github.io/tree/master][loveminimal.github.io]] 上的（Hmm..褥 Github 羊毛 😄），可以看到，它就是 =public= 中的内容。
+_1.自定义站点信息_
+
+关于个人信息的定义，只需要修改 =site/user.config.js= 文件就可以了，其内容如下：
+
+#+BEGIN_SRC js -n
+  export default {
+      // 博主
+      author: 'Jack Liu',
+      // 如 https://weibo.com/u/6867589681
+      weibo: '6867589681',
+      // 微信二维码，默认位于 `images/` 中
+      wechat: 'bg/wechat.jpg',
+      email: 'loveminimal@outlook.com',
+      // 如 https://github.com/loveminimal
+      github: 'loveminimal',
+      // 如 https://space.bilibili.com/11608450
+      bilibili: '11608450',
+      icp: '豫ICP备19025929号',
+      // 指定卡片风格页面
+      // 当 `activeAll` 为 `true` 时，所有页面激活卡片风格
+      // 另外，当你的文件名以 `*-card.org` 这样的格式结尾时，也会激活卡片风格
+      card: {
+          activeAll: false,
+          pages: [
+              'idea',
+              'wiki',
+          ],
+      },
+      // 加密的页面
+      encrypt: {
+          password: '123456',
+          // 你的私有页面
+          pages: ['foo', 'bar'],
+      },
+      // 不显示评论的页面，首页默认不显示
+      nonvaline: ['nav', '404']
+  };
+#+END_SRC
+
+_2.编辑博文内容_
+
+#+BEGIN_QUOTE
+*注意： =site/org/= 中，务必保留 =index.org（首页）、 nav.org（导航）、404.org（错误页）= 三个文件，内容可以按需修改。
+#+END_QUOTE
+
+入手使用是非常简单的，你只需要编辑 =*.org= 文件，在保存后，会自动在 =site/public= 中生成对应的 =*.html= 文件。比如，我们的主页 =site/public/index.html= 就是由  =site/org/index.org= 文件生成的。
+
+如果，你已经有了 =*.org= 文件存稿，只需要在文件头部增加以下内容：
+
+#+BEGIN_SRC org -n
+#+DATE: <2021-07-19 Mon 09:50> # 文章日期
+#+TITLE: Tutor                 # 文章标题
+#+END_SRC
+
+并放入到 =site/org/= 文件夹中， =M-x= 执行 =save-and-publish-website= 命令即可。
+
+#+BEGIN_QUOTE
+手动输入上述内容自然是很繁琐的操作，使用 Yasnippets 这个插件就很方便了。比如，我们创建了 [[https://github.com/loveminimal/emacs.d/blob/master/snippets/org-mode/insert%2520header][insert header]] 这个 snippet ，只需要键入 =ih= 并使用 =TAB= 展开就可以自动生成了。
+#+END_QUOTE
+
+_3.部署站点_
+
+ =site/public= 文件夹中的内容，就是我们在服务器部署站点时的全部所需文件。比如，我们的站点就是部署在 [[https://github.com/loveminimal/loveminimal.github.io/tree/master][loveminimal.github.io]] 上的（Hmm..褥 Github 羊毛 😄），可以看到，它就是 =public= 中的内容。
+
+你可以有创建一个名为 =<github_username>.github.io= 的仓库，如我的 Github 用户名为 =loveminimal= ，创建的仓库即为 =loveminimal.github.io= ，把生成的 =site/public= 中有内容推送到 =<github_username>.github.io= 中，稍后，在浏览器中访问 =http://<github_username>.github.io= 就可以看到你的博文站点了。
 
 * 进阶篇
 
@@ -70,13 +143,15 @@
 
 ** 安装配置
 
+*** live-server
+
 #+BEGIN_EXPORT html
 <div class="jk-essay">
 <code>live-server</code> 的安装是可选的，完全可以使用 Emacs 配置文件中已经包含的 <code>simple-httpd</code> 服务器插件进行预览。但实际实用过程中，还是建议使用 <code>live-server</code> ，它会根据文件变动实时更新，也方便进行二次扩展和自定义。
 </div>
 #+END_EXPORT
 
-下面我们主要来看一下 =live-server= 的安装及相关配置：
+下面我们主要来看一下 =live-server= （可选）的安装及相关配置：
 
 #+BEGIN_SRC sh -n
   npm i -g live-server            # 全局安装 live-server
@@ -115,3 +190,277 @@
 #+END_SRC
 
 如此，每次只需要双击打开运行这个脚本就可以了，上述两种方式的效果是相同的。
+
+*** Emacs 中的配置
+
+所有用于生成站点的 emacs 配置几乎都在 [[https://github.com/loveminimal/emacs.d/blob/master/lisp/init-site.el][init-site.el]] 文件中，你可以使用以下方式引入到你个人的 emacs 配置中使用：
+
+#+BEGIN_SRC elisp -n
+  (add-to-list 'load-path "<your_path>/init-site.el") ;; 如 ~/.emacs.d/lisp/init-site.el
+  (require 'init-site)
+#+END_SRC
+
+下面我们来看一下该文件中的几个关键函数命令及配置：
+
+| 命令                                | 说明                                            |
+|-------------------------------------+-------------------------------------------------|
+| =save-and-publish-website=          | 生成站点内容到 =public= 中                      |
+| =save-and-publish-file=             | 生成或更新当前 =.org= 到对应的 =.html= 文件     |
+| =delete-org-and-html=               | 同时删除当前 =.org= 文件及其对应的 =.html= 文件 |
+| =just-delete-relative-html=         | 仅删除当前 =.org= 文件对应的 =.html= 文件       |
+| =preview-current-buffer-in-browser= | 预览当前文件对应的页面                          |
+
+当然，如果你使用了 =live-server= ， =preview-current-buffer-in-browser= 就基本没有用武之地了。
+
+其他配置，可以直接参考 [[https://github.com/loveminimal/emacs.d/blob/master/lisp/init-site.el][init-site.el]] 。
+
+在 Emacs 中，我们基本上不用做过多的修改，满足需求就好。
+
+*** 脚本配置
+
+为了更加方便的使用，我们创建了一些简单的运行脚本（务必在 =git-bash= 中使用，😺 懒得写 powershell 脚本 ），如下：
+
+#+BEGIN_EXPORT html
+<img
+src="images/ost/scripts.jpg"
+width=""
+style=""
+alt=""
+/>
+#+END_EXPORT
+
+我们只列出一些常用的脚本及其说明：
+
+| 脚本        | 说明                                                               |
+|-------------+--------------------------------------------------------------------|
+| ~serve.sh~  | ~live-server~ 服务器的启动脚本                                     |
+| ~rcopy.sh~  | 同步 ~public/~ 中的静态/逻辑样式文件（图片、js、css）到 ~site/~ 中 |
+| ~deploy.sh~ | 部署到 Github 仓库                                                 |
+
+下面我们来详细说明一下 =deploy.sh= 如何修改自己可用的，其内容如下：
+
+#+BEGIN_SRC sh -n
+  #!/bin/sh
+  # -------------------
+  # Deploy posts to `loveminimal.github.io`
+  # -------------------
+
+  if [ -d "public" ]
+  then
+      # CNAME 中记录的是绑定的域名（用到的时候再了解即可）
+      rm -rf "public/CNAME" && cp -r "CNAME" "public/" # Fix potential error - Recovery `CNAME` before deploy.
+
+      cp -r "public" "../.temp"
+      cd "../.temp"
+      pwd
+      git init
+      git add .
+      git commit -m "Posts update."
+      git remote add origin https://github.com/loveminimal/loveminimal.github.io.git
+      # git push -f origin master:main
+      git push -f origin master
+      cd ..
+      rm -rf ".temp"
+      cd "site"
+#+END_SRC
+
+只需要修改第 17 行中的仓库地址（即 =https://github.com/loveminimal/loveminimal.github.io.git= ）为你自己的仓库地址即可。
+
+*如何使用这些脚本呢？*
+
+使用 =git-bash= ，进入 =~/AppData/Roaming/site= 目录，执行 =source scripts/<script_name>.sh= 即可，如：
+
+#+BEGIN_SRC sh -n
+  cd ~/AppData/Roaming/site
+  source scripts/deploy.sh
+#+END_SRC
+
+* FAQ
+
+……
+
+* 附录
+
+** 网站功能图示
+
+#+BEGIN_EXPORT html
+<img
+src="images/ost/ost-1.jpg"
+width="390"
+style="box-shadow: 3px 3px 5px #aaa;"
+/>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
+<img
+src="images/ost/ost-2.jpg"
+width="390"
+style="box-shadow: 3px 3px 5px #aaa; float: right;"
+/>
+#+END_EXPORT
+
+_1. 文章列表_
+
+所有文章在主页列表中管理、分类，光标移入/移出表头，用来切换其内容（文章标题）的显示/隐藏。
+
+_2. 主题切换_
+
+站点提供了亮/暗两种主题模式，所有页面点击文章标题，即可切换。
+
+#+BEGIN_EXPORT html
+<img
+src="images/ost/ost-3.jpg"
+width="390"
+style="box-shadow: 3px 3px 5px #aaa;"
+/>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
+<img
+src="images/ost/ost-4.jpg"
+width="390"
+style="box-shadow: 3px 3px 5px #aaa; float: right;"
+/>
+#+END_EXPORT
+
+_3. 目录显隐_
+
+光标移入/移出页面左侧（移动端点击页面顶部），用来切换目录的显示/隐藏。
+
+_4. 返回主页和回到顶部_
+
+右下角，包含两个功能按钮 - =IDX ←= （返回主页）和 =TOP ↑=  （返回页面顶部，且滚动时显示当前页面滚动百分比）。
+
+** 右侧批注样式
+
+其实，使用很简单，我们把要加的批注写在 =<div class="jk-note">...</div>= 中就可以了，放心，在渲染的时候已经做好了处理，如下：
+
+#+BEGIN_EXPORT html
+<div class="jk-note">
+Tips：诸如此类经常需要插入的片段，可以尝试使用 abbr 或 yasnippets 哦，推荐后者 :)
+</div>
+#+END_EXPORT
+
+#+BEGIN_SRC html -n
+#+BEGIN_EXPORT html
+<div class="jk-note">
+这就是批注喽，哈哈，可以充分利用右侧的空间。
+</div>
+#+END_EXPORT
+#+END_SRC
+
+原理就是，在 Org Mode 中输出 HTML 片段，指定了自定义的标签 =<div class="jk-note">= （用来后续的 DOM 操作）。在浏览器渲染的过程中，无效的标签符并不会做为普通文本绘制出来，但其内的内容却可以。
+
+** 文内随笔样式
+
+#+BEGIN_SRC html -n
+#+BEGIN_EXPORT html
+<div class="jk-essay">
+  随笔内容……
+</div>
+#+END_EXPORT
+#+END_SRC
+
+示例效果如下：
+
+#+BEGIN_EXPORT html
+<div class="jk-essay">
+  <p>沁园春·雪</p>
+
+  <div>近现代： 毛泽东</div>
+  <div>北国风光，千里冰封，万里雪飘。</div>
+  <div>望长城内外，惟余莽莽；大河上下，顿失滔滔。(余 通：馀)</div>
+  <div>山舞银蛇，原驰蜡象，欲与天公试比高。(原驰 原作：原驱)</div>
+  <div>须晴日，看红装素裹，分外妖娆。(红装 一作：银装)</div>
+  <div>江山如此多娇，引无数英雄竞折腰。</div>
+  <div>惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。</div>
+  <div>一代天骄，成吉思汗，只识弯弓射大雕。</div>
+  <div>俱往矣，数风流人物，还看今朝。</div>
+</div>
+#+END_EXPORT
+
+** 页面折叠样式
+
+#+BEGIN_SRC html -n
+#+BEGIN_EXPORT html
+<div class="jk-drawer">
+  <div class="collapsible">折叠板标题</div>
+  <div class="content">
+    折叠的内容……
+  </div>
+</div>
+#+END_EXPORT
+#+END_SRC
+
+示例效果如下：
+
+#+BEGIN_EXPORT html
+<div class="jk-drawer">
+<div class="collapsible">第一个折叠板</div>
+<div class="content">
+  <p>沁园春·雪</p>
+
+  <div>近现代： 毛泽东</div>
+  <div>北国风光，千里冰封，万里雪飘。</div>
+  <div>望长城内外，惟余莽莽；大河上下，顿失滔滔。(余 通：馀)</div>
+  <div>山舞银蛇，原驰蜡象，欲与天公试比高。(原驰 原作：原驱)</div>
+  <div>须晴日，看红装素裹，分外妖娆。(红装 一作：银装)</div>
+  <div>江山如此多娇，引无数英雄竞折腰。</div>
+  <div>惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。</div>
+  <div>一代天骄，成吉思汗，只识弯弓射大雕。</div>
+  <div>俱往矣，数风流人物，还看今朝。</div>
+</div>
+</div>
+#+END_EXPORT
+
+#+BEGIN_EXPORT html
+<div class="jk-drawer">
+<div class="collapsible">The second drawer</div>
+<div class="content">
+  <p>沁园春·雪</p>
+
+  <div>近现代： 毛泽东</div>
+  <div>北国风光，千里冰封，万里雪飘。</div>
+  <div>望长城内外，惟余莽莽；大河上下，顿失滔滔。(余 通：馀)</div>
+  <div>山舞银蛇，原驰蜡象，欲与天公试比高。(原驰 原作：原驱)</div>
+  <div>须晴日，看红装素裹，分外妖娆。(红装 一作：银装)</div>
+  <div>江山如此多娇，引无数英雄竞折腰。</div>
+  <div>惜秦皇汉武，略输文采；唐宗宋祖，稍逊风骚。</div>
+  <div>一代天骄，成吉思汗，只识弯弓射大雕。</div>
+  <div>俱往矣，数风流人物，还看今朝。</div>
+</div>
+</div>
+#+END_EXPORT
+
+** 自定义尺寸图片
+
+静态页面的图片输出一直是个让人比较烦扰的问题，在 Windows 上输出指定大小的图片比较不易，我们可以曲线实现，在 =.org= 文件中插入 Html 标签，如：
+
+#+BEGIN_EXAMPLE
+  ,#+BEGIN_EXPORT html
+  <img src="images/ost/xxx.jpg" width="60%" />
+  ,#+END_EXPORT
+#+END_EXAMPLE
+
+如此，便可以指定图片输出的宽高。为了方便，你可以使用 yasnippet 写一个快速插入的 snippet ，如：
+
+#+BEGIN_EXAMPLE
+  # -*- mode: snippet -*-
+  # name: insert img
+  # key: ii
+  # --
+  ,#+BEGIN_EXPORT html
+  <img
+      src="$1"
+      width="$2"
+      style="$3"
+      alt="$4"
+  />
+  ,#+END_EXPORT
+
+  $5
+#+END_EXAMPLE
+
+* 总结
+
+写文档真的不能一蹴而就 😢 ，慢慢补充修改吧，目前结合 [[./org-to-site-tutor.org][历史说明文档]] 使用先。
