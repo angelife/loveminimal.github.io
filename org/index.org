@@ -18,7 +18,7 @@
 </div>
 #+END_EXPORT
 
-A [[./org-to-site-tutor.org][pure site]] based on org mode.
+A [[./tutor.org][pure site]] based on org mode.
 
 [[./nav.org][_Nav_]] ➭ [[./idea.org][_Idea_]] ➯ [[./wiki.org][_Wiki_]]
 
