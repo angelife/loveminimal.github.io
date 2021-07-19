@@ -24,15 +24,16 @@ A [[./tutor.org][pure site]] based on org mode.
 
  ░ 文章列表 ❐ ⓛⓞⓥⓔ
 
-| Misc                             |
-|----------------------------------|
-| [[./tmux.org][Tmux]]                             |
-| [[./manjaro-linux.org][Manjaro Linux]]                    |
-| [[./source-code-compile.org][Source Code Compile]]              |
-| [[./nginx.org][Nginx]]                            |
-| [[./compilers.org][Compilers]]                        |
-| [[./wubi.org][WuBi]]                             |
-| [[./sdk.org][SDK]]                              |
+| Misc                |
+|---------------------|
+| [[./tmux.org][Tmux]]                |
+| [[./manjaro-linux.org][Manjaro Linux]]       |
+| [[./source-code-compile.org][Source Code Compile]] |
+| [[./nginx.org][Nginx]]               |
+| [[./compilers.org][Compilers]]           |
+| [[./wubi.org][WuBi]]                |
+| [[./sdk.org][SDK]]                 |
+| [[./zh-tech-doc.org][中文技术文档]]        |
 
 | GTD             |
 |-----------------|

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-<!-- 2021-07-19 Mon 10:01 -->
+<!-- 2021-07-19 Mon 15:22 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tutor</title>
@@ -20,6 +20,19 @@
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#org05397e6">简介</a></li>
+<li><a href="#org8ddff66">快速上手</a></li>
+<li><a href="#org0fb07ec">入门篇</a>
+<ul>
+<li><a href="#orgf051b71">环境准备</a></li>
+<li><a href="#org5ce8070">基本使用</a></li>
+</ul>
+</li>
+<li><a href="#orgd9a4dd3">进阶篇</a>
+<ul>
+<li><a href="#org394d6c6">扩展准备</a></li>
+<li><a href="#org1ab4cd5">安装配置</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -35,11 +48,171 @@
 </p>
 </div>
 </div>
+
+<div id="outline-container-org8ddff66" class="outline-2">
+<h2 id="org8ddff66">快速上手</h2>
+<div class="outline-text-2" id="text-org8ddff66">
+<p>
+*建议使用 git-bash 进行终端操作
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#36827;&#20837;&#23478;&#30446;&#24405;</span>
+<span class="linenr"> 2: </span><span style="color: #e44649;">cd</span> ~/AppData/Roaming/
+<span class="linenr"> 3: </span>
+<span class="linenr"> 4: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#20811;&#38534; emacs &#37197;&#32622;</span>
+<span class="linenr"> 5: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">*&#27880;&#24847;&#20570;&#22909;&#20010;&#20154;&#30340; emacs &#37197;&#32622;&#30340;&#22791;&#20221;</span>
+<span class="linenr"> 6: </span>git clone https://github.com/loveminimal/emacs.d.git .emacs.d
+<span class="linenr"> 7: </span>
+<span class="linenr"> 8: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#20811;&#38534;&#32593;&#31449;&#20027;&#39064;</span>
+<span class="linenr"> 9: </span>git clone https://github.com/loveminimal/loveminimal.github.io.git site
+<span class="linenr">10: </span><span style="color: #e44649;">cd</span> site
+<span class="linenr">11: </span>git checkout -b source origin/source <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#20811;&#38534;&#28304;&#30721; source &#20998;&#25903;</span>
+</pre>
+</div>
+
+<p>
+启动 emacs 后，打开 <code>~/site/org/index.org</code> 文件， <code>M-x</code> 执行 <code>preview-current-buffer-in-browser</code> 命令，就可以预览页面效果。
+</p>
+
+<blockquote>
+<p>
+*当然，也可以直接访问线上 <a href="https://ovirgo.com">个人站点</a> 。
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org0fb07ec" class="outline-2">
+<h2 id="org0fb07ec">入门篇</h2>
+<div class="outline-text-2" id="text-org0fb07ec">
+</div>
+<div id="outline-container-orgf051b71" class="outline-3">
+<h3 id="orgf051b71">环境准备</h3>
+<div class="outline-text-3" id="text-orgf051b71">
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>jack@jk:~$ emacs --version
+<span class="linenr">2: </span>GNU Emacs 26.3
+<span class="linenr">3: </span>
+<span class="linenr">4: </span>jack@jk:~$ git --version
+<span class="linenr">5: </span>git version 2.31.1.windows.1
+</pre>
+</div>
+
+<p>
+以上为个人桌面环境及软件版本，理论上只要版本跨度不大，就不存在兼容性问题。至于 Emacs 和 Git 的安装，请自行查询，此处不再赘述。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5ce8070" class="outline-3">
+<h3 id="org5ce8070">基本使用</h3>
+<div class="outline-text-3" id="text-org5ce8070">
+<p>
+入手使用是非常简单的，你只需要编辑 <code>*.org</code> 文件，在保存后，会在 <code>~/site/public</code> 中生成对应的 <code>*.html</code> 文件。
+</p>
+
+<p>
+比如，我们使用 emacs 编辑 <code>~/site/org/index.org</code> （事实上，我们的主页就是这个文件生成的）， <code>M-x</code> 执行 <code>preview-current-buffer-in-browser</code> 命令，就可以预览首页效果。
+</p>
+
+<p>
+是的， <code>~/site/public</code> 文件夹中的内容，就是我们在服务器部署站点时的全部所需文件。比如，我们的站点就是部署在 <a href="https://github.com/loveminimal/loveminimal.github.io/tree/master">loveminimal.github.io</a> 上的（Hmm..褥 Github 羊毛 😄），可以看到，它就是 <code>public</code> 中的内容。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgd9a4dd3" class="outline-2">
+<h2 id="orgd9a4dd3">进阶篇</h2>
+<div class="outline-text-2" id="text-orgd9a4dd3">
+</div>
+<div id="outline-container-org394d6c6" class="outline-3">
+<h3 id="org394d6c6">扩展准备</h3>
+<div class="outline-text-3" id="text-org394d6c6">
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>jack@jk:~$ node -v
+<span class="linenr">2: </span>v12.22.1
+<span class="linenr">3: </span>jack@jk:~$ npm -v
+<span class="linenr">4: </span>6.14.12
+<span class="linenr">5: </span>
+<span class="linenr">6: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#19968;&#20010;&#26356;&#20415;&#25463;&#30340;&#21709;&#24212;&#24335;&#26381;&#21153;&#22120;&#65288;&#23454;&#26102;&#26356;&#26032;&#65289;</span>
+<span class="linenr">7: </span>jack@jk:~$ live-server -v
+<span class="linenr">8: </span>live-server 1.2.1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org1ab4cd5" class="outline-3">
+<h3 id="org1ab4cd5">安装配置</h3>
+<div class="outline-text-3" id="text-org1ab4cd5">
+<div class="jk-essay">
+<code>live-server</code> 的安装是可选的，完全可以使用 Emacs 配置文件中已经包含的 <code>simple-httpd</code> 服务器插件进行预览。但实际实用过程中，还是建议使用 <code>live-server</code> ，它会根据文件变动实时更新，也方便进行二次扩展和自定义。
+</div>
+
+<p>
+下面我们主要来看一下 <code>live-server</code> 的安装及相关配置：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>npm i -g live-server            <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#20840;&#23616;&#23433;&#35013; live-server</span>
+<span class="linenr">2: </span>
+<span class="linenr">3: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#21019;&#24314; live-server &#30340;&#37197;&#32622;&#25991;&#20214;</span>
+<span class="linenr">4: </span><span style="color: #e44649;">cd</span> ~
+<span class="linenr">5: </span>touch .live-server.json
+</pre>
+</div>
+
+<p>
+关于 <code>.live-server.json</code> 的内容，如下：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-json"><span class="linenr">1: </span>{
+<span class="linenr">2: </span>    "port": 6600,
+<span class="linenr">3: </span>    "host": "127.0.0.1",
+<span class="linenr">4: </span>    "root": "/public",
+<span class="linenr">5: </span>    "open": true,
+<span class="linenr">6: </span>    "file": "index.html"
+<span class="linenr">7: </span>}
+</pre>
+</div>
+
+<p>
+<b>如何启动 <code>live-server</code> 呢？</b>
+</p>
+
+<p>
+可以直接执行 <code>cd ~/AppData/Roaming/site &amp;&amp; live-server --open=public"</code> 命令启动服务器，并打开浏览器。
+</p>
+
+<p>
+为了方便在 Windows 系统上启动服务，你也可以创建一个 <code>server.bat</code> 脚本，其内容如下：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-bat"><span class="linenr">1: </span>@<span style="color: #e44649;">echo</span> off
+<span class="linenr">2: </span>%<span style="color: #8b4513;">1</span><span style="color: #707183;">(</span><span style="color: #8b4513;">start</span> /<span style="color: #c18401;">min</span> <span style="color: #a626a4;">cmd</span>.exe /<span style="color: #c18401;">c</span> %<span style="color: #8b4513;">0</span> :&amp; <span style="color: #a626a4;">exit</span> <span style="color: #707183;">)</span>
+<span class="linenr">3: </span><span style="color: #e44649;">echo</span> <span style="color: #a626a4;">Start</span> your site server...
+<span class="linenr">4: </span><span style="color: #e44649;">echo</span> -------------------------
+<span class="linenr">5: </span><span style="color: #a0a1a7;">:: pause</span>
+<span class="linenr">6: </span><span style="color: #e44649;">cd</span> C:\Users\jack\AppData\Roaming\site
+<span class="linenr">7: </span>live-server --<span style="color: #c18401;">open</span>=public
+</pre>
+</div>
+
+<p>
+如此，每次只需要双击打开运行这个脚本就可以了，上述两种方式的效果是相同的。
+</p>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
 <p class="date">Date: 2021-07-19 Mon 09:50</p>
 <p class="author">Author: Jack Liu</p>
-<p class="date">Created: 2021-07-19 Mon 10:01</p>
+<p class="date">Created: 2021-07-19 Mon 15:22</p>
 <p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19900901号</a></p>
 </div>
 </body>
