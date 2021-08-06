@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<!-- 2021-08-02 Mon 16:30 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teach Yourself Computer Science</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Jack Liu">
+<link rel="shortcut icon" href="themes/favicon.ico" type="image/x-icon" />
+           <link rel="stylesheet" href="themes/style.css" type="text/css"  />
+           <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+           <script type="module" src="themes/main.js" defer></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Teach Yourself Computer Science</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org2d21762">简介</a></li>
+<li><a href="#org0d5b81e">书籍视频</a></li>
+<li><a href="#org7a9d3c5">为什么要学习计算机科学</a></li>
+<li><a href="#org0231293">分科目指引</a>
+<ul>
+<li><a href="#org386f885">编程</a></li>
+<li><a href="#org8ed1100">计算机系统结构</a></li>
+<li><a href="#org34c985b">算法与数据结构</a></li>
+<li><a href="#org0b56736">数学知识</a></li>
+<li><a href="#org3a1875e">操作系统</a></li>
+<li><a href="#org99a1e4c">计算机网络</a></li>
+<li><a href="#orgcd4c904">数据库</a></li>
+<li><a href="#orga50f83f">编程语言与编译器</a></li>
+<li><a href="#orgb760231">分布式系统</a></li>
+</ul>
+</li>
+<li><a href="#orga872416">FAQ 常见问题解答</a>
+<ul>
+<li><a href="#org5fc2ef5">这份指引的目标受众是？</a></li>
+<li><a href="#org9babfdc">人工智能/计算机图形学/XX主题怎么样？</a></li>
+<li><a href="#orgdbb6fc4">一定要严格遵守推荐的学习次序吗？</a></li>
+<li><a href="#org0ea7bbf">和 其他指引比起来，这份指引?</a></li>
+<li><a href="#org9e829d6">XX编程语言怎么样?</a></li>
+<li><a href="#org2bf3526">XX流行技术怎么样?</a></li>
+<li><a href="#orgc37ee1d">为什么你们还在推荐SICP?</a></li>
+<li><a href="#org1ec81bd">为什么你们还在推荐龙书?</a></li>
+<li><a href="#orgbfffce4">如何便宜获取教材?</a></li>
+<li><a href="#org93b6409">这份指引是谁写的?</a></li>
+<li><a href="#orgb32c693">这份指引是谁翻译的？</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<p>
+i.e. 自学计算机科学
+</p>
+
+<p>
+→ 转载 <a href="https://teachyourselfcs.com/">英文原文</a>、<a href="https://github.com/keithnull/TeachYourselfCS-CN/blob/master/TeachYourselfCS-CN.md">中文译本</a>
+</p>
+
+<blockquote>
+<p>
+无意中看到这篇文章，感觉挺不错的，转载一下，方便摘录！
+</p>
+</blockquote>
+
+<div id="outline-container-org2d21762" class="outline-2">
+<h2 id="org2d21762">简介</h2>
+<div class="outline-text-2" id="text-org2d21762">
+<p>
+本文档是对 <a href="https://teachyourselfcs.com/">TeachYourselfCS</a> 内容的中文翻译，原作者为 <a href="https://twitter.com/oznova_">Ozan Onay</a> 和 <a href="https://twitter.com/quackingduck">Myles Byrne</a> 。
+</p>
+
+<p>
+如果你是一个自学成才的工程师，或者从编程培训班毕业，那么你很有必要学习计算机科学。幸运的是，不必为此花上数年光阴和不菲的费用去攻读一个学位：仅仅依靠自己，你就可以获得世界一流水平的教育💸。
+</p>
+
+<p>
+互联网上，到处都有很多的学习资源，然而精华与糟粕并存。你所需要的，不是一个诸如“200+免费在线课程”的清单，而是以下问题的答案：
+</p>
+<ul class="org-ul">
+<li>你应该学习 <b>哪些科目</b> ，为什么？</li>
+<li>对于这些科目， <b>最好的书籍或者视频课程</b> 是什么？</li>
+</ul>
+
+<div class="jk-essay">
+解决了“学什么？从哪儿学？”的问题！
+</div>
+
+<p>
+在这份指引中，我们尝试对这些问题做出确定的回答。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0d5b81e" class="outline-2">
+<h2 id="org0d5b81e">书籍视频</h2>
+<div class="outline-text-2" id="text-org0d5b81e">
+<p>
+大致按照列出的顺序，借助我们所建议的教材或者视频课程（但是最好二者兼用），学习如下的九门科目。目标是先花 100 到 200 个小时学习完每一个科目，然后在你职业生涯中，不时温习其中的精髓🚀。
+</p>
+
+<div class="jk-essay">
+100 - 200 小时，Hmm…… 可以入门吧，比起 10000 小时，这不算什么。
+</div>
+
+<table>
+
+<colgroup>
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+
+<col  class="org-left">
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">科目</th>
+<th scope="col" class="org-left">为何要学？</th>
+<th scope="col" class="org-left">最佳书籍</th>
+<th scope="col" class="org-left">最佳视频</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">编程</td>
+<td class="org-left">不要做一个“永远没彻底搞懂”诸如递归等概念的程序员</td>
+<td class="org-left"><a href="https://book.douban.com/subject/1148282/">《计算机程序的构造和解释》</a></td>
+<td class="org-left">Brian Harvey’s Berkeley CS 61A</td>
+</tr>
+
+<tr>
+<td class="org-left">计算机系统结构</td>
+<td class="org-left">如果你对于计算机如何工作没有具体的概念，那么你所做出的所有高级抽象都是空中楼阁</td>
+<td class="org-left"><a href="https://book.douban.com/subject/26912767/">《深入理解计算机系统》</a></td>
+<td class="org-left">Berkeley CS 61C</td>
+</tr>
+
+<tr>
+<td class="org-left">算法与数据结构</td>
+<td class="org-left">如果你不懂得如何使用栈、队列、树、图等常见数据结构，遇到有难度的问题时，你将束手无策</td>
+<td class="org-left"><a href="https://book.douban.com/subject/4048566/">《算法设计手册》</a></td>
+<td class="org-left">Steven Skiena’s lectures</td>
+</tr>
+
+<tr>
+<td class="org-left">数学知识</td>
+<td class="org-left">计算机科学基本上应用数学的一个“跑偏的”分支，因此学习数学将会给你带来竞争优势</td>
+<td class="org-left"><a href="https://book.douban.com/subject/33396340/">《计算机科学中的数学》</a></td>
+<td class="org-left">Tom Leighton’s MIT 6.042J</td>
+</tr>
+
+<tr>
+<td class="org-left">操作系统</td>
+<td class="org-left">你所写的代码，基本上都由操作系统来运行，因此你应当了解其工作原理</td>
+<td class="org-left"><a href="https://book.douban.com/subject/33463930/">《操作系统导论》</a></td>
+<td class="org-left">Berkeley CS 162</td>
+</tr>
+
+<tr>
+<td class="org-left">计算机网络</td>
+<td class="org-left">互联网已然势不可挡：理解工作原理才能解锁全部潜力</td>
+<td class="org-left"><a href="https://book.douban.com/subject/30280001/">《计算机网络：自顶向下方法》</a></td>
+<td class="org-left">Stanford CS 144</td>
+</tr>
+
+<tr>
+<td class="org-left">数据库</td>
+<td class="org-left">对于多数重要程序，数据是其核心，然而很少人理解数据库系统的工作原理</td>
+<td class="org-left"><a href="https://book.douban.com/subject/2256069/">《Readings in Database Systems》</a> (暂无中文译本)</td>
+<td class="org-left">Joe Hellerstein’s Berkeley CS 186</td>
+</tr>
+
+<tr>
+<td class="org-left">编程语言与编译器</td>
+<td class="org-left">若你懂得编程语言和编译器如何工作，你就能写出更好的代码，更轻松地学习新的编程语言</td>
+<td class="org-left"><a href="https://craftinginterpreters.com/">《Crafting Interpreters》</a></td>
+<td class="org-left">Alex Aiken’s course on Lagunita</td>
+</tr>
+
+<tr>
+<td class="org-left">分布式系统</td>
+<td class="org-left">如今，多数系统都是分布式的</td>
+<td class="org-left"><a href="https://book.douban.com/subject/30329536/">《数据密集型应用系统设计》</a></td>
+<td class="org-left">MIT 6.824</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<b>还是太多？</b>
+</p>
+
+<p>
+如果花几年时间自学 9 门科目让人望而却步，我们建议你只专注于两本书：《深入理解计算机系统》和《数据密集型应用系统设计》。根据我们的经验，投入到这两本书的时间可以获得极高的效率，特别适合从事网络应用开发的自学工程师。这两本书也可以作为上面表格中其他科目的纲领。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org7a9d3c5" class="outline-2">
+<h2 id="org7a9d3c5">为什么要学习计算机科学</h2>
+<div class="outline-text-2" id="text-org7a9d3c5">
+<p>
+软件工程师分为两种：一种充分理解了计算机科学，从而有能力应对充满挑战的创造性工作；另一种仅仅凭着对一些高级工具的熟悉而勉强应付。
+</p>
+
+<p>
+这两种人都自称软件工程师，都能在职业生涯早期挣到差不多的工资。然而，随着时间流逝，第一种工程师不断成长，所做的事情将会起来真有意义且更为高薪，不论是有价值的商业工作、突破性的开源项目、技术上的领导力或者高质量的个人贡献。第一种工程师总是寻求深入学习计算机科学的方法，或是通过传统的方法学习，或是在职业生涯中永无止息地学习。
+</p>
+
+<p>
+第二种工程师通常浮于表面，只学习某些特定的工具和技术，而不研究其底层的基本原理，仅仅在技术潮流的风向改变时学习新的技能。如今，涌入计算机行业的人数激增，然而计算机专业的毕业生数量基本上未曾改变。第二种工程师的供过于求正在开始减少他们的工作机会，使他们无法涉足行业内更加有意义的工作。
+</p>
+
+<p>
+对你而言，不论正在努力成为第一种工程师，还是想让自己的职业生涯更加安全，学习计算机科学是唯一可靠的途径。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0231293" class="outline-2">
+<h2 id="org0231293">分科目指引</h2>
+<div class="outline-text-2" id="text-org0231293">
+</div>
+<div id="outline-container-org386f885" class="outline-3">
+<h3 id="org386f885">编程</h3>
+<div class="outline-text-3" id="text-org386f885">
+<p>
+大多数计算机专业本科教学以 <b>程序设计“导论”</b> 作为开始。这类课程的最佳版本不仅能满足初学者的需要，还适用于那些在初学编程阶段遗漏了某些有益的概念和程序设计模式的人。
+</p>
+
+<img
+src="images/tycs/sicp.jpg"
+width="200"
+style=""
+alt=""
+/>
+
+<p>
+对于这部分内容，我们的标准推荐是这部经典著作：<a href="https://book.douban.com/subject/1148282/">《计算机的构造和解释》</a>。在网络上，这本书既可供 <a href="https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book.html">免费阅读（英文版）</a> ，也作为 <a href="http://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-001-structure-and-interpretation-of-computer-programs-spring-2005/video-lectures/">MIT 的免费视频课程</a> 。不过尽管这些视频课程很不错，我们对于视频课程的推荐实际上是 <a href="https://archive.org/details/ucberkeley-webcast-PL3E89002AA9B9879E?sort=titleSorter">Brian Harvey 开设的 SICP 课程</a> （即 Berkeley 的 61A 课程）。比起 MIT 的课程，它更加完善，更适用于初学者。
+</p>
+
+<blockquote>
+<p>
+中文翻译新增：
+</p>
+<ul class="org-ul">
+<li>关于 SICP 国内视频观看地址
+<ul class="org-ul">
+<li><a href="https://www.bilibili.com/video/av8515129/">MIT 的免费视频课程（中英字幕）</a></li>
+<li><a href="https://www.bilibili.com/video/av40460492/">Brian Harvey 开设的 SICP 课程（中英字幕）</a></li>
+</ul></li>
+<li>Scheme 学习的相关资源参见： <a href="https://github.com/DeathKing/Learning-SICP">https://github.com/DeathKing/Learning-SICP</a></li>
+<li>更多
+<ul class="org-ul">
+<li>MIT 经典公开课（中英字幕）：<a href="https://www.bilibili.com/video/av8515129/">https://www.bilibili.com/video/av8515129/</a></li>
+<li>应该是伯克利 Scheme 版本最后一次公开课（英文字幕）：<a href="https://www.bilibili.com/video/av40460492/">https://www.bilibili.com/video/av40460492/</a></li>
+<li>伯克利 2018 年春课程（英文字幕，有部分字幕缺失）：<a href="https://www.bilibili.com/video/av20538548">https://www.bilibili.com/video/av20538548</a></li>
+<li>伯克利 2019 年夏课程（中英字幕，中文机翻）：<a href="https://www.bilibili.com/video/av82503560">https://www.bilibili.com/video/av82503560</a></li>
+</ul></li>
+</ul>
+</blockquote>
+
+<p>
+自从 2016 年首次发布这份指南以来，最常被问的一个问题是，我们是否推荐 John DeNero 讲授的 CS 61A 课程，以及配套的书籍 <a href="https://composingprograms.com/">《Composing Programs》</a> ，这本书“继承自 SICP 但使用 Python 讲解”。我们认为 DeNero 的课程也很不错，有的学生可能更喜欢，但我们还是建议把 SICP、 Scheme 和 Brain Harvey 的视频课程作为首选。
+</p>
+
+<p>
+为什么这么说呢？因为 SICP 是独一无二的，它可以 &#x2013; 至少很有可能 &#x2013; 改变你对计算机和编程的基本认识。不是每个人都有这样的经验，有的讨厌这本书，有的人看了前几页就放弃了，但潜在的回报让它值得一读。
+</p>
+
+<p>
+如果你觉得 SICP 过于难，试试 《Composing Programs》，如果还是不合适，那我们推荐《程序设计方法》（<a href="https://book.douban.com/subject/1140942/">中文版</a>，<a href="http://www.htdp.org/">英文版</a>）；如果你觉得 SICP 过于简单，那我们推荐 <a href="https://book.douban.com/subject/1782316/">《Concepts, Techniques, and Models of Computer Programming》</a> ；如果读这些让你觉得没有收获，也许你应该先学习其他科目，一两年后再重新审视编程的理念。
+</p>
+
+<blockquote>
+<p>
+新版原文删除了对 《Concepts, Techniques, and Models of Computer Programming》 一书的推荐，但这本书对各种编程模型有深入的见解，值得一读。所以译文中依然保留。 — 译者注
+</p>
+</blockquote>
+
+<p>
+最后，有一点要说明的是：本指南不适用于完全不懂编程的新手。我们假定你是一个没有计算机专业背景的程序员，希望填补一些知识空白。事实上， 我们把“编程”章节包括进来只是提醒你还有更多知识需要学习。对于那些从来没有学过编程，但又想学的人来说，这份 <a href="https://www.reddit.com/r/learnprogramming/wiki/faq#wiki_getting_started">指南</a> 更合适。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8ed1100" class="outline-3">
+<h3 id="org8ed1100">计算机系统结构</h3>
+<div class="outline-text-3" id="text-org8ed1100">
+<p>
+计算机系统结构 &#x2013; 有时候又被称为“计算机系统”或者“计算机组成” &#x2013; 是了解软件底层的重要视角。根据我们的经验，这是自学的软件工程师最容易忽视的领域。
+</p>
+
+<p>
+我们最喜欢是入门书是 <a href="https://book.douban.com/subject/26912767/">《深入理解计算机系统》</a> ，典型的 <a href="http://csapp.cs.cmu.edu/3e/courses.html">计算机体系结构导论课程</a> 会涵盖本书的 1-6 章。
+</p>
+
+<p>
+我们喜爱《深入理解计算机系统》，因为它的实用性，并且站在程序员的视角。虽然计算机体系的内容比本书所涉及的内容多得多，但对于那些想了解计算机系统以求编写更快、更高效、更可靠的软件的人来说，这本书是很好的起点。
+</p>
+
+<img
+src="images/tycs/csc-1.jpg"
+width="200"
+style=""
+alt=""
+/>
+
+<img
+src="images/tycs/csc-2.jpg"
+width="230"
+style=""
+alt=""
+/>
+
+<p>
+对那些既想了解这个主题又想兼顾硬件和软件的知识的人来说，我们推荐 <a href="https://book.douban.com/subject/1998341/">《计算机系统要素》</a>，又名“从与非门到俄罗斯方块” （Nand2Tetris），这本书规模宏大，让读者对计算机内的所有部分如何协同工作有完全的认识。这本书的每一章节对应如何构建计算机整体系统中的一小部分，从用 HDL （硬件描述语言）写基本的逻辑门电路出发，途径 CPU 和汇编，最终抵达诸如俄罗斯方块这般规模的应用程序。
+</p>
+
+<p>
+我们推荐把此书的前六章读完，并完成对应的项目练习。这么做，你将更加深入地理解计算机体系结构和运行其上的软件之间的关系。
+</p>
+
+<p>
+这本书的前半部分（包括所有对应的项目）均可从 <a href="http://www.nand2tetris.org/">Nand2Tetris 的网站上</a> 免费获得。同时，在 Coursera 上，这是一门 <a href="https://www.coursera.org/learn/build-a-computer">视频课程</a> 。
+</p>
+
+<p>
+为了追求简洁和紧凑，这本书牺牲了内容上的深度。尤其值得注意的是，流水线和存储层次结构是现代计算机体系结构中极其重要的两个概念，然而这本书对些几乎毫无涉及。
+</p>
+
+<p>
+当你掌握了 Nand2Tetris 的内容后，我们推荐要么回到《深入理解计算机系统》，或者考虑 Patterson 和 Hennessy 二人所著的 <a href="https://book.douban.com/subject/26604008/">《计算机组成与设计》</a>，一本优秀的经典著作。这本书中的不同章节重要程度不一，因此我们建议根据 Berkeley 的 <a href="http://inst.eecs.berkeley.edu/~cs61c/sp15/">CS61C 课程</a> “计算机体系结构中的伟大思想”来着重阅读一些章节。这门课的笔记和实验在网络上可以免费获得，并且在 <a href="https://archive.org/details/ucberkeley-webcast-PL-XXv-cvA_iCl2-D-FS5mk0jFF6cYSJs_">互联网档案</a> 中有这门课程的过往资料。
+</p>
+
+<blockquote>
+<p>
+硬件是平台。 &#x2013; <a href="https://www.youtube.com/watch?v=rX0ItVEVjHc">Mike Acton 在 CppCon 上的演说</a>
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org34c985b" class="outline-3">
+<h3 id="org34c985b">算法与数据结构</h3>
+<div class="outline-text-3" id="text-org34c985b">
+<p>
+正如几十年来的共识，我们认为，计算机科学教育所赋予人们的最大能量在于对常见算法和数据结构的熟悉。此外，这也可以训练一个人对于各种问题的解决能力，有助于其他领域的学习。
+</p>
+
+<img
+src="images/tycs/ad-1.jpg"
+width="240"
+style=""
+alt=""
+/>
+
+<img
+src="images/tycs/ad-2.jpg"
+width="200"
+style=""
+alt=""
+/>
+
+<p>
+关于算法与数据结构，有成百上千的书可供使用，但是我们的最爱是 Steven Skiena 编写的<a href="https://book.douban.com/subject/4048566/">《算法设计手册》</a> 。显而易见，他对此充满热爱，迫不及待地想要帮助其他人理解。在我们看来，这本书给人一种焕然一新的体验，完全不同于那些更加经常被推荐的书（比如 Cormen，Leiserson，Rivest 和 Stein，或者 Sedgewick 的书，后两者充斥着过多的证明，不适合以解决问题为导向的学习）。
+</p>
+
+<p>
+如果你更喜欢视频课程， <a href="https://www.youtube.com/watch?v=A2bFN3MyNDA&amp;list=PLOtl7M3yp-DX32N0fVIyvn7ipWKNGmwpp">Skiena 慷慨地提供了他的课程</a> 。此外，Tim Roughgarden 的课程也很不错，在 Stanford 的 MOOC 平台 Lagunita ，或者 <a href="https://www.coursera.org/specializations/algorithms">Coursera</a> 上均可获得。Skiena 和 Roughgarden 的这两门课程没有优劣之分，选择何者取决于个人口味。
+</p>
+
+<p>
+至于练习，我们推荐学生在 <a href="https://leetcode.com/">Leetcode</a> 上解决问题，Leetcode 上的问题往往有趣且带有良好的解法和讨论。此外，在竞争日益激烈的软件行业，这些问题可以帮助你评估自己应对技术面试中常见问题的能力。我们建议大约 100 道随机挑选的 Leetcode 问题，作为学习的一部分。
+</p>
+
+<p>
+最后，我们强烈推荐 <a href="https://book.douban.com/subject/2124114/">《怎样解题》</a> ，这本书极为优秀且独特，指导人们解决广义上的问题，因而一如其适用于数学，它适用于计算机科学。
+</p>
+
+<blockquote>
+<p>
+我可以广泛推荐的方法只有一个： 写之前先思考。 &#x2013; Richard Hamming
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org0b56736" class="outline-3">
+<h3 id="org0b56736">数学知识</h3>
+<div class="outline-text-3" id="text-org0b56736">
+<p>
+从某个角度说，计算机科学是应用数学的一个“发育过度”的分支。尽管许多软件工程师试图 &#x2013; 并且在不同程度上成功做到 &#x2013; 忽视这一点，我们鼓励你用学习来拥抱数学。如若成功，比起那些没有掌握数学的人，你将获得巨大的竞争优势。
+</p>
+
+<p>
+对于计算机科学，数学中最相关的领域是“离散数学”，其中的“离散”与“连续”相对立，大致上指的是应用数学中那些有趣的主题，而不是微积分之类的。由于定义比较含糊，试图掌握离散数学的全部内容是没有意义的。较为现实的学习目标是， <b>了解逻辑、排列组合、概率论、集合论、图论以及密码学相关的一些数论知识</b> 。考虑到 <b>线性代数</b> 在计算机图形学和机器学习中的重要性，该领域同样值得学习。
+</p>
+
+<p>
+学习离散数学，我们建议从<a href="http://www.cs.elte.hu/~lovasz/dmbook.ps">László Lovász的课程笔记</a> 开始。Lovász教授成功地让这些内容浅显易懂且符合直觉，因此，比起正式的教材，这更适合初学者。
+</p>
+
+<p>
+对于更加高阶的学习，我们推荐 <a href="https://book.douban.com/subject/33396340/">《计算机科学中的数学》</a> ，MIT 同名课程的课程笔记，篇幅与书籍相当（事实上，现已出版）。这门课程的视频同样可 <a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-042j-mathematics-for-computer-science-fall-2010/video-lectures/">免费获得</a> ，是我们所推荐的学习视频。
+</p>
+
+<img
+src="images/tycs/mic.jpg"
+width="240"
+style=""
+alt=""
+/>
+
+<p>
+对于线性代数，我们建议从 <a href="https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab">Essence of linear algebra</a> 系列视频开始，然后再学习 Gilbert Strang 的 <a href="https://book.douban.com/subject/34820335/">《线性代数导论》</a> 和 <a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/video-lectures/">视频课程</a> 。
+</p>
+
+<blockquote>
+<p>
+如果人们不相信数学是简单的，那么只能是因为他们没有意识到生活有多么复杂。 — John von Neumann
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-org3a1875e" class="outline-3">
+<h3 id="org3a1875e">操作系统</h3>
+<div class="outline-text-3" id="text-org3a1875e">
+<p>
+<a href="https://book.douban.com/subject/30297919/">《操作系统概念》</a> （“恐龙书”）和 <a href="https://book.douban.com/subject/27096665/">《现代操作系统》</a> 是操作系统领域的经典书籍，二者都因为写作风格和对学生不友好而招致了一些批评。
+</p>
+
+<img
+src="images/tycs/os.jpg"
+width="230"
+style=""
+alt=""
+/>
+
+<p>
+<a href="https://book.douban.com/subject/33463930/">《操作系统导论》</a> （Operating Systems: Three Easy Pieces） 是一个不错的替代品，并且可在网上<a href="http://pages.cs.wisc.edu/~remzi/OSTEP/">免费获得（英文版）</a>。我们格外喜欢这本书的结构，并且认为这本书的习题很值得一做。
+</p>
+
+<p>
+在读完《操作系统导论》后，我们鼓励你探索特定操作系统的设计。可以借助 “{OS name} Internals” 风格的书籍，比如 <a href="https://www.amazon.com/Lions-Commentary-Unix-John/dp/1573980137/">Lion's commentary on Unix</a>， <a href="https://www.amazon.com/Design-Implementation-FreeBSD-Operating-System/dp/0321968972/">The Design and Implementation of the FreeBSD Operating System</a>，以及 <a href="https://www.amazon.com/Mac-OS-Internals-Systems-Approach/dp/0321278542/%5C">Mac OS X Internals</a>。对于 Linux ，我们推荐 Robert Love 的 <a href="https://book.douban.com/subject/6097773/">《Linux内核设计与实现》</a>。
+</p>
+
+<p>
+为了巩固对操作系统的理解，阅读小型系统内核的代码并且为其增加特性是一个很不错的方法。比如 <a href="https://pdos.csail.mit.edu/6.828/2016/xv6.html">xv6</a> ，由 MIT 的一门课程所维护的从 Unix V6 到 ANSI C 和 x86 的移植，就是一个很棒的选择。《操作系统导论》有一个附录，记载了一些可能的 <a href="http://pages.cs.wisc.edu/~remzi/OSTEP/lab-projects-xv6.pdf">xv6 实验项目</a>，其中关于潜在项目的很棒想法。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org99a1e4c" class="outline-3">
+<h3 id="org99a1e4c">计算机网络</h3>
+<div class="outline-text-3" id="text-org99a1e4c">
+<p>
+鉴于有那么多关于网络服务端和客户端的软件工程，计算机网络是计算机科学中价值最为“立竿见影”的领域之一。我们的学生，系统性的学习了计算机网络，最终能够理解那些曾困扰他们多年的术语、概念和协议。
+</p>
+
+<img
+src="images/tycs/net.jpg"
+width="230"
+style=""
+alt=""
+/>
+
+<p>
+在这一主题上，我们最爱的书籍是 <a href="https://book.douban.com/subject/30280001/">《计算机网络：自顶向下方法》</a>。书中的小项目和习题相当值得练习，尤其是其中的“Wireshark labs”（这部分在<a href="http://www-net.cs.umass.edu/wireshark-labs/">网上可以获得</a>）。
+</p>
+
+<p>
+如果更喜欢视频课程，我们推荐Stanford的 <a href="https://lagunita.stanford.edu/courses/Engineering/Networking-SP/SelfPaced/about">Introduction to Computer Networking</a> ，可在他们的MOOC平台Lagunita上免费观看。
+</p>
+
+<p>
+对于计算机网络的学习，做项目比完成小的习题更有益。一些可能的项目有： HTTP 服务器，基于 UDP 的聊天 APP ，<a href="http://jvns.ca/blog/2014/08/12/what-happens-if-you-write-a-tcp-stack-in-python/">迷你 TCP 栈</a>，代理，负载均衡器，或者分布式哈希表。
+</p>
+
+<blockquote>
+<p>
+你无法盯着水晶球预见未来，未来的互联网何去何从取决于社会。 &#x2013; Bob Kahn
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgcd4c904" class="outline-3">
+<h3 id="orgcd4c904">数据库</h3>
+<div class="outline-text-3" id="text-orgcd4c904">
+<p>
+比起其他主题，自学数据库系统需要更多的付出。这是一个相对年轻的研究领域，并且出于很强的商业动机，研究者把想法藏在紧闭的门后。此外，许多原本有潜力写出优秀教材的作者反而选择了加入或创立公司。
+</p>
+
+<p>
+鉴于如上情况，我们鼓励自学者大体上抛弃教材，而是从 <a href="https://archive.org/details/UCBerkeley_Course_Computer_Science_186">2015年春季学期的CS 186课程</a> （Joe Hellerstein 在 Berkeley 的数据库课程）开始，然后前往阅读论文。
+</p>
+
+<p>
+对于初学者，有一篇格外值得提及的论文：“<a href="http://db.cs.berkeley.edu/papers/fntdb07-architecture.pdf">Architecture of a Database System</a>”。这篇论文提供了独特的对关系型数据库管理系统（RDBMS）如何工作的高层次观点，是后续学习的实用梗概。
+</p>
+
+<img
+src="images/tycs/sql-1.jpg"
+width="230"
+style=""
+alt=""
+/>
+
+<img
+src="images/tycs/sql-2.jpg"
+width="213"
+style=""
+alt=""
+/>
+
+<p>
+<a href="https://book.douban.com/subject/2256069/">《Readings in Database Systems》</a>，或者以 <a href="http://www.redbook.io/">数据库“红书”</a> 更为人知，是由 Peter Bailis，Joe Hellerstein 和 Michael Stonebraker 编纂的论文合集。对于那些想要在CS 186 课程的水平更进一步的学习者，“红书”应当是下一步。
+</p>
+
+<p>
+如果你坚持一定要一本导论教材，那我们推荐 Ramakrishnan 和 Gehrke 所著的 <a href="https://book.douban.com/subject/1155934/">《数据库管理系统：原理与设计》</a>。如需更深一步，Jim Gray的经典著作 <a href="https://book.douban.com/subject/2586390/">《Transaction Processing: Concepts and Techniques》</a> 值得一读，不过我们不建议把这本书当作首要资源。
+</p>
+
+<p>
+如果没有编写足够数量的代码，很难巩固数据库理论。CS 186 课程的学生给 Spark 添加特性，倒是不错的项目，不过我们仅仅建议从零实现一个简单的关系型数据库管理系统。自然，它将不会有太多的特性，但是即便只实现典型的关系型数据库管理系统每个方面最基础的功能，也是相当有启发的。
+</p>
+
+<p>
+最后，数据模型往往是数据库中一个被忽视的、教学不充分的方面。关于这个主题，我们推荐的书籍是 <a href="https://book.douban.com/subject/17915870/">Data and Reality: A Timeless Perspective on Perceiving and Managing Information in Our Imprecise World</a>。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orga50f83f" class="outline-3">
+<h3 id="orga50f83f">编程语言与编译器</h3>
+<div class="outline-text-3" id="text-orga50f83f">
+<p>
+多数程序员学习编程语言的知识，而多数计算机科学家学习编程语言相关的知识。这使得计算机科学家比起程序员拥有显著的优势，即便在编程领域！因为他们的知识可以推而广之：相较只学习过特定编程语言的人，他们可以更深入更快速地理解新的编程语言。
+</p>
+
+<p>
+我们推荐的入门书是 Bob Nystrom 所著的优秀的 <a href="https://craftinginterpreters.com/contents.html">Crafting Interpreters</a>，可在网上免费获取。这本书条理清晰，富有趣味性，非常适合那些想要更好地理解语言和语言工具的人。我们建议你花时间读完整本书，并尝试任何一个感兴趣的“挑战”。
+</p>
+
+<p>
+另一本更为传统的推荐书籍是 <a href="https://book.douban.com/subject/3296317/">《编译原理》</a>，通常称为“龙书”。不幸的是，这本书不是为自学者而设计的，而是供教师从中挑选一些主题用于 1-2 学期的教学。
+</p>
+
+<img
+src="images/tycs/comp.jpg"
+width="230"
+style=""
+alt=""
+/>
+
+<p>
+如果你选择使用龙书进行自学，你需要从中甄选主题，而且最好是在导师的帮助下。我们建议依据某个视频课程来设定学习的结构，然后按需从龙书中获取深入的内容。我们推荐的在线课程是 <a href="https://www.edx.org/course/compilers">Alex Aiken在MOOC平台 edX 所开设的</a>。
+</p>
+
+<blockquote>
+<p>
+不要做一个只写样板代码的程序员。相反，给用户和其他程序员创造工具。从纺织工业和钢铁工业中学习历史教训：你想制造机器和工具，还是操作这些机器？ — Ras Bodik 在他的编译器课程伊始
+</p>
+</blockquote>
+</div>
+</div>
+
+<div id="outline-container-orgb760231" class="outline-3">
+<h3 id="orgb760231">分布式系统</h3>
+<div class="outline-text-3" id="text-orgb760231">
+<p>
+随着计算机在数量上的增加，计算机同样开始 分散。尽管商业公司过去愿意购买越来越大的大型机，现在的典型情况是，甚至很小的应用程序都同时在多台机器上运行。思考这样做的利弊权衡，即是分布式系统的研究所在，也是越来越重要的一项技能。
+</p>
+
+<img
+src="images/tycs/dispatch.jpg"
+width="230"
+style=""
+alt=""
+/>
+
+<p>
+我们推荐的自学参考书是 Martin Kleppmann 的 <a href="https://book.douban.com/subject/30329536/">《数据密集型应用系统设计》</a>。与传统的教科书相比，它是一本为实践者设计的具有很高的可读性的书，并且保持了深度和严谨性。
+</p>
+
+<p>
+对于那些偏爱传统教材，或者希望可以从网上免费获取的人，我们推荐的教材是 Maarten van Steen 和 Andrew Tanenbaum 所著的 《分布式系统原理与范型》（<a href="https://book.douban.com/subject/3108801/">中文第二版</a>，<a href="https://book.douban.com/subject/26979326/">英文第三版</a>）。
+</p>
+
+<p>
+对于喜欢视频课程的人，<a href="https://www.youtube.com/watch?v=cQP8WApzIQQ&amp;list=PLrw6a1wE39_tb2fErI4-WkMbsvGQk9_UB">MIT的6.824</a> 是一门很好的在线视频课程，由 Robert Morris 教授的研究生课程，在这里可以看到课程安排。
+</p>
+
+<p>
+不管选择怎样的教材或者其他辅助资料，学习分布式系统必然要求阅读论文。<a href="http://dsrg.pdos.csail.mit.edu/papers/">这里</a>有一个不错的论文清单，而且我们强烈建议你出席你当地的 <a href="http://paperswelove.org/">Papers We Love</a> （仅限美国）。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga872416" class="outline-2">
+<h2 id="orga872416">FAQ 常见问题解答</h2>
+<div class="outline-text-2" id="text-orga872416">
+</div>
+<div id="outline-container-org5fc2ef5" class="outline-3">
+<h3 id="org5fc2ef5">这份指引的目标受众是？</h3>
+<div class="outline-text-3" id="text-org5fc2ef5">
+<p>
+我们面向自学的软件工程师、培训班学生、“早熟的”高中生或者想要通过自学补充正式教育的大学生。关于何时开启这段自学旅程，完全取决于个人，不过多数人在有一定的职业经历后深入学习计算机科学理论会获益匪浅。比如，我们注意到，如果学生在工作中曾经使用过数据库，他们会 喜爱学习数据库系统课程；如果学生从事过一两个 Web 项目，他们会喜爱学习计算机网络。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9babfdc" class="outline-3">
+<h3 id="org9babfdc">人工智能/计算机图形学/XX主题怎么样？</h3>
+<div class="outline-text-3" id="text-org9babfdc">
+<p>
+我们试图把计算机科学主题清单限制到那些我们认为 每一个软件工程师 都应该了解的内容，不限于专业或行业。拥有了这些基础，你将能更加轻松地挑选教材或论文，然而无需指引地学习核心概念。在这里，我们给出一些其他常见主题的自学起点：
+</p>
+<ul class="org-ul">
+<li>人工智能：通过观看视频并完成Pacman项目来学习 <a href="http://ai.berkeley.edu/">Berkeley的AI课程</a>。至于教材，使用Russell和Norvig编写的 <a href="https://book.douban.com/subject/25796281/">《人工智能：一种现代方法》</a>。</li>
+<li>机器学习：学习吴恩达在Coursera上的课程。耐心学习，先确保理解了基础概念再奔向类如深度学习的诱人新主题。</li>
+<li>计算机图形学：学习 <a href="http://inst.eecs.berkeley.edu/~cs184/fa12/onlinelectures.html">Berkeley CS 184 课程</a> 的材料，使用 <a href="https://book.douban.com/subject/30402778/">《计算机图形学：原理及实践》</a> 作为教材。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdbb6fc4" class="outline-3">
+<h3 id="orgdbb6fc4">一定要严格遵守推荐的学习次序吗？</h3>
+<div class="outline-text-3" id="text-orgdbb6fc4">
+<p>
+事实上，所有主题之间都有一定程度的重叠，彼此循环引用。以离散数学和算法的关系为例：先学习数学可以帮助你更深入地分析和理解算法，然而先学习算法可以为学习离散数学提供更大的动力和应用背景。理想情况下，你将在你的职业生涯多次重温二者。
+</p>
+
+<p>
+因此，我们所推荐的次序主要是为了帮助你起步……如果你出于某种强烈的原因而倾向以不同的顺序学习，那也没有关系，勇敢开始吧！不过在我们看来，最重要的“先决条件”是：先学计算机体系结构再学操作系统或数据库，先学计算机网络和操作系统再学分布式系统。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0ea7bbf" class="outline-3">
+<h3 id="org0ea7bbf">和 其他指引比起来，这份指引?</h3>
+<div class="outline-text-3" id="text-org0ea7bbf">
+<p>
+aka. Open Source Society、freeCodeCamp curricula
+</p>
+
+<p>
+<a href="https://github.com/open-source-society/computer-science">OSS 指引</a> 涵盖太多主题，在许多主题中推荐劣质资源，没有就特定课程哪些方面有价值提供原因或指引。我们努力对这份指引中的课程加以限制，仅仅包括那些你作为软件工程师 确实需要了解的，不论你的专业方向，并且对每门课程为何必要做出了解释以帮助你理解。
+</p>
+
+<p>
+FreeCodeCamp 主要关注编程，而不是计算机科学。至于你为什么要学习计算机科学，参见上文。如果你是个新手，我们建议先学 freeCodeCamp 的课程，一两年后再回归本指南。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9e829d6" class="outline-3">
+<h3 id="org9e829d6">XX编程语言怎么样?</h3>
+<div class="outline-text-3" id="text-org9e829d6">
+<p>
+学习一门特定的编程语言和学习计算机科学的一个领域 <b>完全不在一个维度</b> —— 相比之下，学习语言容易且缺乏价值。如果你已经了解了一些语言，我们强烈建议遵照我们的指引，然后在学习的空当中习得语言，或者暂且不管以后再说。如果你已经把编程学得不错了（比如学完了 《计算机程序的构造和解释》），尤其是如果你学习过编译器，那么面对一门新的语言，你只需要花一个周末稍多的时间即可基本掌握，之后你可以在工作中学习相关的类库/工具/生态。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2bf3526" class="outline-3">
+<h3 id="org2bf3526">XX流行技术怎么样?</h3>
+<div class="outline-text-3" id="text-org2bf3526">
+<p>
+没有任何一种技术的重要程度可以达到学习其使用足以成为计算机科学教学的核心部分。不过，你对学习那门技术充满热情，这很不错。诀窍是先从特定的技术回退到基本的领域或概念，判断这门流行技术在技术的宏观大局中位于何处，然后才深入学习这门技术。
+</p>
+
+<div class="jk-essay">
+计算机科学的核心是什么？
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc37ee1d" class="outline-3">
+<h3 id="orgc37ee1d">为什么你们还在推荐SICP?</h3>
+<div class="outline-text-3" id="text-orgc37ee1d">
+<p>
+先尝试读一下，有些人觉得 SICP 让人神魂颠倒，这在其他书很少见。如果你不喜欢，你可以尝试其他的东西，也许以后再回到 SICP。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1ec81bd" class="outline-3">
+<h3 id="org1ec81bd">为什么你们还在推荐龙书?</h3>
+<div class="outline-text-3" id="text-org1ec81bd">
+<p>
+龙书依旧是内容最为完整的编译器单本书籍。由于过分强调一些如今不够时新的主题的细节，比如解析，这本书招致了恶评。然而事实上，这本书从未打算供人一页一页的学习，而仅仅是为了给教师准备一门课程提供足够的材料。类似地，自学者可以从书中量身按需挑选主题，或者最好依照公开课授课教师在课程大纲中的建议。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbfffce4" class="outline-3">
+<h3 id="orgbfffce4">如何便宜获取教材?</h3>
+<div class="outline-text-3" id="text-orgbfffce4">
+<p>
+我们所建议的许多教材在网上都可以免费获得，这多亏了作者们的慷慨。对于那些不免费的书籍，我们建议购买旧版本的二手书籍。广而言之，如果一本教材有多个版本，旧版本大概率是完全足够使用的。即便新版本的价格是旧版本的10倍，新版本也绝不可能比旧版本好 10 倍！
+</p>
+
+<p>
+<b>中文翻译新增：</b>
+ 事实上，比起美国，在国内购买技术书籍可以说是相当“廉价”了。如果仍旧寻求更加便宜的购买渠道，可以参考这篇 V2EX 上的<a href="https://www.v2ex.com/t/578615">讨论帖子</a>，其中提到了一些不错的购买渠道。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org93b6409" class="outline-3">
+<h3 id="org93b6409">这份指引是谁写的?</h3>
+<div class="outline-text-3" id="text-org93b6409">
+<p>
+这份指引由 <a href="https://bradfieldcs.com/">Bradfield School of Computer Science</a> （旧金山）的两位教员： <a href="https://twitter.com/oznova_">Ozan Onay</a> 和 <a href="https://twitter.com/quackingduck">Myles Byrne</a> 编写，并由 Oz 于 2020 年更新。这份指引基于我们对数千名自学成才的工程师和培训班学生教授计算机科学基础的经验。感谢我们所有学生对自学资源的持续反馈。
+</p>
+
+<p>
+只要有足够的时间和动力，我们非常有信心，你可以自学完以上所有课程。如果你喜欢一个集中式、结构化、由教师指导的课程，你可能对我们的<a href="https://bradfieldcs.com/csi/">计算机科学强化班</a>感兴趣。我们<a href="https://ozwrites.com/masters/">不建议</a>你去攻读硕士学位。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb32c693" class="outline-3">
+<h3 id="orgb32c693">这份指引是谁翻译的？</h3>
+<div class="outline-text-3" id="text-orgb32c693">
+<p>
+这份指引的中文翻译是<a href="https://github.com/keithnull/TeachYourselfCS-CN/">社区共同贡献的成果</a>，我们欢迎任何反馈和改进！
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-07-28 Wed 23:38</p>
+<p class="author">Author: Jack Liu</p>
+<p class="date">Created: 2021-08-02 Mon 16:30</p>
+<p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19900901号</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<!-- 2021-07-21 Wed 15:18 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Git</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Jack Liu">
+<link rel="shortcut icon" href="themes/favicon.ico" type="image/x-icon" />
+           <link rel="stylesheet" href="themes/style.css" type="text/css"  />
+           <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+           <script type="module" src="themes/main.js" defer></script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Git</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org048a178">简介</a></li>
+<li><a href="#org2dba77e">入门篇</a>
+<ul>
+<li><a href="#org458d2ff">安装设置</a></li>
+<li><a href="#orgf8cb1b6">基本操作</a></li>
+</ul>
+</li>
+<li><a href="#org3eca0d6">进阶篇</a>
+<ul>
+<li><a href="#org18aae89">远程仓库</a></li>
+<li><a href="#org33ffd1f">分支</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<blockquote>
+<p>
+不可或缺的工具！！！
+</p>
+</blockquote>
+
+<div id="outline-container-org048a178" class="outline-2">
+<h2 id="org048a178">简介</h2>
+<div class="outline-text-2" id="text-org048a178">
+<p>
+本文旨在记录个人使用过程中遇到的相关 Git 命令，非教程式的，详细学习请参阅 <a href="https://git-scm.com/book/zh/v2">《Pro Git》 的中文文档</a>。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2dba77e" class="outline-2">
+<h2 id="org2dba77e">入门篇</h2>
+<div class="outline-text-2" id="text-org2dba77e">
+<img
+src="images/git/workflow.jpg"
+width="600"
+style=""
+alt=""
+/>
+</div>
+
+<div id="outline-container-org458d2ff" class="outline-3">
+<h3 id="org458d2ff">安装设置</h3>
+<div class="outline-text-3" id="text-org458d2ff">
+<p>
+去 <a href="https://git-scm.com/">Git 官网</a> 下载对应版本的 Git 安装即可，此处不再赘述。
+</p>
+
+<p>
+安装完成后，需要设置当前用户的名字和 Email 地址：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>git config --global user.name <span style="color: #50a14f;">"Your Name"</span>
+<span class="linenr">2: </span>git config --global user.email <span style="color: #50a14f;">"email@example.com"</span>
+</pre>
+</div>
+
+<p>
+你总是可以通过以下方式获取帮助：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>git help &lt;verb&gt;
+<span class="linenr">2: </span>git &lt;verb&gt; -h                   <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">--help &#26368;&#24120;&#29992;&#65292;&#22914; git config --help</span>
+<span class="linenr">3: </span>man git-&lt;verb&gt;
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf8cb1b6" class="outline-3">
+<h3 id="orgf8cb1b6">基本操作</h3>
+<div class="outline-text-3" id="text-orgf8cb1b6">
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>git init                         <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#21021;&#22987;&#21270;&#20179;&#24211;</span>
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#8230;&#8230;</span>
+<span class="linenr">3: </span>git add .                        <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#28155;&#21152;&#24037;&#20316;&#21306;&#25152;&#26377;&#21464;&#26356;&#21040;&#26242;&#23384;&#21306;</span>
+<span class="linenr">4: </span>git commit -m <span style="color: #50a14f;">"some commit log."</span> <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#25552;&#20132;&#32531;&#23384;&#21306;&#20869;&#21464;&#26356;&#21040;&#26412;&#22320;&#20179;&#24211;</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3eca0d6" class="outline-2">
+<h2 id="org3eca0d6">进阶篇</h2>
+<div class="outline-text-2" id="text-org3eca0d6">
+</div>
+<div id="outline-container-org18aae89" class="outline-3">
+<h3 id="org18aae89">远程仓库</h3>
+<div class="outline-text-3" id="text-org18aae89">
+<p>
+我们就以 <a href="https://github.com/loveminimal/loveminimal.github.io">站点仓库</a> 为例。
+</p>
+
+<p>
+本地仓库和远程仓库之间的传输是通过 SSH 加密的，在使用远程仓库之前，我们需要先创建 SSH Key 。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span>ssh-keygen -t rsa -C <span style="color: #50a14f;">"youremail@example.com"</span>
+</pre>
+</div>
+
+<p>
+在用户主目录下，会生成 <code>.ssh</code> 目录，包含 <code>id_rsa</code> （私钥）和 <code>id_rsa.pub</code> （公钥）等文件。
+</p>
+
+<p>
+……
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#21015;&#20986;&#36828;&#31243;&#20179;&#24211;&#65288;&#21517;&#31216;&#21450;&#22320;&#22336;&#65289;</span>
+<span class="linenr">2: </span>git remote -v                   <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">--verbose</span>
+<span class="linenr">3: </span>
+<span class="linenr">4: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#28155;&#21152;&#36828;&#31243;&#20179;&#24211;</span>
+<span class="linenr">5: </span>git remote add &lt;name&gt; &lt;url&gt;
+<span class="linenr">6: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#31227;&#38500;&#36828;&#31243;&#20179;&#24211;</span>
+<span class="linenr">7: </span>git remote remove &lt;name&gt;
+<span class="linenr">8: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#37325;&#21629;&#21517;&#36828;&#31243;&#20179;&#24211;&#20998;&#25903;</span>
+<span class="linenr">9: </span>git remote rename &lt;old&gt; &lt;new&gt;
+</pre>
+</div>
+
+<p>
+关于远程仓库的其他操作，会分散在后续章节中，不在此处单独列出。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org33ffd1f" class="outline-3">
+<h3 id="org33ffd1f">分支</h3>
+<div class="outline-text-3" id="text-org33ffd1f">
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr"> 1: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#21015;&#20986;&#20998;&#25903;</span>
+<span class="linenr"> 2: </span>git branch
+<span class="linenr"> 3: </span>git branch -l                   <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">--list &#21015;&#20986;&#26412;&#22320;&#20998;&#25903;</span>
+<span class="linenr"> 4: </span>git branch -a                   <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">--all  &#21015;&#20986;&#36828;&#31243;&#12289;&#26412;&#22320;&#20998;&#25903;</span>
+<span class="linenr"> 5: </span>
+<span class="linenr"> 6: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#21019;&#24314;&#20998;&#25903;</span>
+<span class="linenr"> 7: </span>git checkout -b &lt;branch&gt;
+<span class="linenr"> 8: </span>
+<span class="linenr"> 9: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#20999;&#25442;&#20998;&#25903;</span>
+<span class="linenr">10: </span>git checkout &lt;branch&gt;
+<span class="linenr">11: </span>
+<span class="linenr">12: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#21024;&#38500;&#20998;&#25903;</span>
+<span class="linenr">13: </span>git branch -d &lt;branch&gt;          <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">--delete &#21024;&#38500;&#21512;&#24182;&#23436;&#20840;&#30340;&#20998;&#25903;</span>
+<span class="linenr">14: </span>git branch -D &lt;branch&gt;          <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#24378;&#21046;&#21024;&#38500;&#20998;&#25903;&#65288;&#21253;&#21547;&#26410;&#21512;&#24182;&#23436;&#20840;&#65289;</span>
+<span class="linenr">15: </span>
+<span class="linenr">16: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#37325;&#21629;&#21517;&#20998;&#25903;</span>
+<span class="linenr">17: </span>git branch -m &lt;branch&gt;          <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">--move</span>
+<span class="linenr">18: </span>
+<span class="linenr">19: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#21512;&#24182;&#20998;&#25903;</span>
+<span class="linenr">20: </span>git merge &lt;other-branch&gt; &lt;current-branch&gt;
+</pre>
+</div>
+
+<p>
+我们从一个远程仓库拉取分支，默认会在本地创建 <code>master</code> 分支，并关联到远程仓库的主分支。
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#25289;&#21462;&#36828;&#31243;&#20179;&#24211;&#24182;&#20851;&#32852;&#21040;&#33258;&#23450;&#20041;&#26412;&#22320;&#20998;&#25903;</span>
+<span class="linenr">2: </span>git clone -b &lt;local-branch&gt; &lt;remote-repo-url&gt;
+<span class="linenr">3: </span>
+<span class="linenr">4: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#25688;&#21462;&#36828;&#31243;&#20179;&#24211;&#25351;&#23450;&#20998;&#25903;&#24182;&#20851;&#32852;&#33258;&#23450;&#20041;&#26412;&#22320;&#20998;&#25903;</span>
+<span class="linenr">5: </span>git remote add origin &lt;remote-repo-url&gt;
+<span class="linenr">6: </span>git fetch origin &lt;remote-branch&gt;
+<span class="linenr">7: </span>git checkout -b &lt;local-branch&gt; origin/&lt;remote-branch&gt; <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#65281;&#20851;&#38190;</span>
+<span class="linenr">8: </span>git pull origin &lt;remote-branch&gt;
+</pre>
+</div>
+
+<p>
+强制推送本地分支到远程仓库分支（两者分支名称不同时），如下：
+</p>
+
+<div class="org-src-container">
+<pre class="src src-sh"><span class="linenr">1: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">git remote add origin https://github.com/loveminimal/loveminimal.github.io.git</span>
+<span class="linenr">2: </span><span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">git push -f origin master:main  # &#26412;&#22320;&#20998;&#25903; master &#65292;&#36828;&#31243;&#20998;&#25903; main</span>
+<span class="linenr">3: </span>git push -f origin master         <span style="color: #a0a1a7; font-weight: bold;"># </span><span style="color: #a0a1a7;">&#26412;&#22320;&#20998;&#25903;&#19982;&#36828;&#31243;&#20998;&#25903;&#21517;&#31216;&#30456;&#21516;&#65292;&#30342;&#20026; master</span>
+</pre>
+</div>
+
+<div class="jk-essay">
+<b>!!永远不要试图一蹴而就，在使用的过程中慢慢补充完善即可！</b>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2021-07-21 Wed 11:41</p>
+<p class="author">Author: Jack Liu</p>
+<p class="date">Created: 2021-07-21 Wed 15:18</p>
+<p class="validation"><a href="http://beian.miit.gov.cn/">豫ICP备19900901号</a></p>
+</div>
+</body>
+</html>
